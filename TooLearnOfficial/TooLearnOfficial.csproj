@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D166990C-A8FF-433C-BA91-2AF5EB7688A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TooLearnOfficial</RootNamespace>
+    <AssemblyName>TooLearnOfficial</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChooseUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseUser.Designer.cs">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFacilitator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFacilitator.Designer.cs">
+      <DependentUpon>CreateFacilitator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateParticipant.Designer.cs">
+      <DependentUpon>CreateParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacilitatorLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacilitatorLogin.Designer.cs">
+      <DependentUpon>FacilitatorLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratePincode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratePincode.Designer.cs">
+      <DependentUpon>GeneratePincode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu2.Designer.cs">
+      <DependentUpon>MainMenu2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParticipantLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParticipantLogin.Designer.cs">
+      <DependentUpon>ParticipantLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuizMultipleChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizMultipleChoice.Designer.cs">
+      <DependentUpon>QuizMultipleChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuizPicturePuzzle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizPicturePuzzle.Designer.cs">
+      <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuizTrueOrFalse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizTrueOrFalse.Designer.cs">
+      <DependentUpon>QuizTrueOrFalse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMultipleChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMultipleChoice.Designer.cs">
+      <DependentUpon>UpdateMultipleChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePicturePuzzle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdatePicturePuzzle.Designer.cs">
+      <DependentUpon>UpdatePicturePuzzle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateTrueOrFalse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateTrueOrFalse.Designer.cs">
+      <DependentUpon>UpdateTrueOrFalse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\AboutSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\AboutSystem.Designer.cs">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\CreateClassroom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\CreateClassroom.Designer.cs">
+      <DependentUpon>CreateClassroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\CreateQuiz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\CreateQuiz.Designer.cs">
+      <DependentUpon>CreateQuiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\MyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\MyQuiz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\MyQuiz.Designer.cs">
+      <DependentUpon>MyQuiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Facilitator\ClassroomHandle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\ClassroomHandle.Designer.cs">
+      <DependentUpon>ClassroomHandle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Participant\AboutSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Participant\AboutSystem.Designer.cs">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Participant\ClassroomEnrolled.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Participant\ClassroomEnrolled.Designer.cs">
+      <DependentUpon>ClassroomEnrolled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Participant\Join Quiz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Participant\Join Quiz.Designer.cs">
+      <DependentUpon>Join Quiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Participant\MyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Participant\MyAccount.Designer.cs">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChooseUser.resx">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateFacilitator.resx">
+      <DependentUpon>CreateFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateParticipant.resx">
+      <DependentUpon>CreateParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacilitatorLogin.resx">
+      <DependentUpon>FacilitatorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratePincode.resx">
+      <DependentUpon>GeneratePincode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu2.resx">
+      <DependentUpon>MainMenu2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticipantLogin.resx">
+      <DependentUpon>ParticipantLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QuizMultipleChoice.resx">
+      <DependentUpon>QuizMultipleChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizPicturePuzzle.resx">
+      <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizTrueOrFalse.resx">
+      <DependentUpon>QuizTrueOrFalse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMultipleChoice.resx">
+      <DependentUpon>UpdateMultipleChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdatePicturePuzzle.resx">
+      <DependentUpon>UpdatePicturePuzzle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateTrueOrFalse.resx">
+      <DependentUpon>UpdateTrueOrFalse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\AboutSystem.resx">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\CreateClassroom.resx">
+      <DependentUpon>CreateClassroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\CreateQuiz.resx">
+      <DependentUpon>CreateQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\MyQuiz.resx">
+      <DependentUpon>MyQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\ClassroomHandle.resx">
+      <DependentUpon>ClassroomHandle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Participant\AboutSystem.resx">
+      <DependentUpon>AboutSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Participant\ClassroomEnrolled.resx">
+      <DependentUpon>ClassroomEnrolled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Participant\Join Quiz.resx">
+      <DependentUpon>Join Quiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Participant\MyAccount.resx">
+      <DependentUpon>MyAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
