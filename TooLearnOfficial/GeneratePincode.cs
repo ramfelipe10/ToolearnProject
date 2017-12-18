@@ -30,7 +30,7 @@ namespace TooLearnOfficial
             textBoxPincode.Text = Convert.ToString(randomNumber);
 
             //SqlDataAdapter sda = new SqlDataAdapter(query, con);
-            sda.SelectCommand.ExecuteNonQuery();
+            //sda.SelectCommand.ExecuteNonQuery();
             con.Close();
         }
 
