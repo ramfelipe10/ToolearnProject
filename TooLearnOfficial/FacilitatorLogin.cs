@@ -76,6 +76,18 @@ namespace TooLearnOfficial
 
         }
 
+        private void passbox_OnValueChanged(object sender, EventArgs e)
+        {
+            if (passbox.Text.Length <= 0)
+            {
+                bunifuImageButton1.Visible = false;
+            }
+
+            else
+            {
+                bunifuImageButton1.Visible = true;
+            }
+        }
     }
     }
 

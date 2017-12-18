@@ -71,6 +71,7 @@
             this.passbox.TabIndex = 4;
             this.passbox.Tag = "";
             this.passbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.passbox.OnValueChanged += new System.EventHandler(this.passbox_OnValueChanged);
             // 
             // bunifuElipse1
             // 
