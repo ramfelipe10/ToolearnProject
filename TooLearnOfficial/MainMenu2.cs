@@ -19,7 +19,7 @@ namespace TooLearnOfficial
 
         private void btnMnu_Click(object sender, EventArgs e)
         {
-            if (sidemenu.Width == 260)
+           /* if (sidemenu.Width == 260)
             {
                 sidemenu.Visible = false;
                 sidemenu.Width = 50;
@@ -40,7 +40,7 @@ namespace TooLearnOfficial
                 sidemenu.Width = 260;
                 PanelTransition.ShowSync(sidemenu);
 
-            }
+            } */
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -64,6 +64,11 @@ namespace TooLearnOfficial
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCreateQuiz_Click(object sender, EventArgs e)
         {
 
         }

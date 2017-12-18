@@ -172,6 +172,12 @@
     <Compile Include="User Control Facilitator\CreateQuiz.Designer.cs">
       <DependentUpon>CreateQuiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control Facilitator\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control Facilitator\MyAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     <EmbeddedResource Include="User Control Facilitator\CreateQuiz.resx">
       <DependentUpon>CreateQuiz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +354,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="TooLearn Pictures\Back Arrow_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
