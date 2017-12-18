@@ -70,7 +70,7 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLe
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLearnOfficial.pdb
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\MaterialSkin.dll
 =======
->>>>>>> origin/master
+
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLearnOfficial.exe.config
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.exe
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.pdb
