@@ -32,5 +32,15 @@ namespace TooLearnOfficial
             ParticipantLogin pl = new ParticipantLogin();
             pl.Show();
         }
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

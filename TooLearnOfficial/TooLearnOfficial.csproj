@@ -255,6 +255,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuizMultipleChoice.resx">
       <DependentUpon>QuizMultipleChoice.cs</DependentUpon>
@@ -321,7 +322,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="TooLearn Pictures\Minimize Window_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\Close Window_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\toolearn_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\20916861_1628655903872405_932534712_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\newfaci.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\newparti.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
