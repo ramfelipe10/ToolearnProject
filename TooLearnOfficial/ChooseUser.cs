@@ -19,18 +19,12 @@ namespace TooLearnOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            FacilitatorLogin fl = new FacilitatorLogin();
-            fl.Show();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            ParticipantLogin pl = new ParticipantLogin();
-            pl.Show();
+           
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
@@ -41,6 +35,22 @@ namespace TooLearnOfficial
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            FacilitatorLogin fl = new FacilitatorLogin();
+            fl.Show();
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            ParticipantLogin pl = new ParticipantLogin();
+            pl.Show();
         }
     }
 }

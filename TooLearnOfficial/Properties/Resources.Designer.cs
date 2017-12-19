@@ -143,6 +143,26 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap set_of_beautiful_children_characters_23_2147575063 {
+            get {
+                object obj = ResourceManager.GetObject("set-of-beautiful-children-characters_23-2147575063", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap teacher_with_blackboard_cartoon_23_2147497851 {
+            get {
+                object obj = ResourceManager.GetObject("teacher-with-blackboard-cartoon_23-2147497851", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap toolearn_icon {
             get {
                 object obj = ResourceManager.GetObject("toolearn_icon", resourceCulture);
