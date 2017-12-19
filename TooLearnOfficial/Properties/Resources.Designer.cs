@@ -73,6 +73,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _99 {
+            get {
+                object obj = ResourceManager.GetObject("99", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap After_Effects_and_Cinema_4D_Flat_Design_Animation_Tutorial {
             get {
                 object obj = ResourceManager.GetObject("After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial", resourceCulture);
@@ -106,6 +116,26 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap Eye_52px {
             get {
                 object obj = ResourceManager.GetObject("Eye_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loader1 {
+            get {
+                object obj = ResourceManager.GetObject("loader1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loaderbookshelf {
+            get {
+                object obj = ResourceManager.GetObject("loaderbookshelf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

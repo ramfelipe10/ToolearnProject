@@ -358,6 +358,12 @@
   <ItemGroup>
     <None Include="TooLearn Pictures\After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\teacher-with-blackboard-cartoon_23-2147497851.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\set-of-beautiful-children-characters_23-2147575063.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
