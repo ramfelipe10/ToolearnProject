@@ -181,6 +181,7 @@
             this.TextboxName.Size = new System.Drawing.Size(379, 33);
             this.TextboxName.TabIndex = 16;
             this.TextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxName.OnValueChanged += new System.EventHandler(this.TextboxName_OnValueChanged);
             // 
             // label2
             // 

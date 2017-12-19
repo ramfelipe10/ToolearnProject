@@ -40,7 +40,7 @@ namespace TooLearnOfficial
 
         private void ButtonFacilitatorCreateAccount_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\TooLearnDatabase.mdf;Integrated Security=True;Connect Timeout=30;");
+            
             con.Open();
             if (labelAvailableUsername.ForeColor == System.Drawing.Color.Green)
             {
@@ -69,6 +69,11 @@ namespace TooLearnOfficial
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxName_OnValueChanged(object sender, EventArgs e)
         {
 
         }
