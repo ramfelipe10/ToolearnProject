@@ -70,6 +70,7 @@
             this.textBoxPincode.Name = "textBoxPincode";
             this.textBoxPincode.Size = new System.Drawing.Size(271, 41);
             this.textBoxPincode.TabIndex = 70;
+            this.textBoxPincode.TextChanged += new System.EventHandler(this.textBoxPincode_TextChanged);
             // 
             // ButtonGeneratePincode
             // 

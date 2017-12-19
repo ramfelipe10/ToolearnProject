@@ -13,6 +13,7 @@ namespace TooLearnOfficial
 {
     public partial class ParticipantLogin : Form
     {
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         public ParticipantLogin()
         {
             InitializeComponent();
@@ -38,8 +39,7 @@ namespace TooLearnOfficial
 
         private void ButtonParticipantSignIn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\TooLearnDatabase.mdf;Integrated Security=True;Connect Timeout=30;");
-            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Stephen_Kent\Documents\Visual Studio 2015\Projects\TooLearnOfficial\TooLearnOfficialDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+            
             SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where username='" + TextboxUsername.Text + "' and password= '" + TextboxPassword.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -54,6 +54,11 @@ namespace TooLearnOfficial
             {
                 MessageBox.Show("Please Check your Username and Password");
             }
+        }
+
+        private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,6 +13,8 @@ namespace TooLearnOfficial
 {
     public partial class CreateFacilitator : Form
     {
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
         public CreateFacilitator()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace TooLearnOfficial
 
         private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\TooLearnDatabase.mdf;Integrated Security=True;Connect Timeout=30;");
+            
             SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -66,6 +68,9 @@ namespace TooLearnOfficial
             }
         }
 
-        
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

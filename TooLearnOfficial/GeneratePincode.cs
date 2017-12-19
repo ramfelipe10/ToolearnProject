@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
+    SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
     public partial class GeneratePincode : Form
     {
         public GeneratePincode()
@@ -18,7 +19,7 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\crud2.mdf;Integrated Security=True;Connect Timeout=30");
+        
 
         private void ButtonGeneratePincode_Click(object sender, EventArgs e)
         {
@@ -35,6 +36,11 @@ namespace TooLearnOfficial
         }
 
         private void GeneratePincode_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPincode_TextChanged(object sender, EventArgs e)
         {
 
         }

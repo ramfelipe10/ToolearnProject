@@ -13,6 +13,7 @@ namespace TooLearnOfficial
 {
     public partial class CreateParticipant : Form
     {
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         public CreateParticipant()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace TooLearnOfficial
 
         private void ButtonParticipantCreateAccount_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\TooLearnDatabase.mdf;Integrated Security=True;Connect Timeout=30;");
+           
             con.Open();
             if (labelAvailableUsername.ForeColor == System.Drawing.Color.Green)
             {
@@ -50,7 +51,7 @@ namespace TooLearnOfficial
 
         private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\TooLearnDatabase.mdf;Integrated Security=True;Connect Timeout=30;");
+            
             con.Open();
             if (labelAvailableUsername.ForeColor == System.Drawing.Color.Green)
             {
@@ -76,6 +77,11 @@ namespace TooLearnOfficial
             {
                 MessageBox.Show("Please use Available Username");
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
