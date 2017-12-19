@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TooLearnOfficial
 {
-    public partial class Form1 : Form
+    public partial class Splash : Form
     {
-        public Form1()
+        public Splash()
         {
             InitializeComponent();
         }
@@ -21,15 +21,17 @@ namespace TooLearnOfficial
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-            progressBar1.Increment(1);
+          //  timer1.Start();
+           // progressBar1.Increment(1);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Start();
-            progressBar1.Increment(1);
-            if(progressBar1.Value == 100)
+            bunifuCircleProgressbar1.Value += 2;
+            if (bunifuCircleProgressbar1.Value == 100)
+
+             label2.Text = bunifuCircleProgressbar1.Value.ToString() + "%";
             {
                 timer1.Stop();
 
@@ -37,12 +39,19 @@ namespace TooLearnOfficial
 
                 ChooseUser cu = new ChooseUser();
                 cu.Show();
+
+
+               
             }
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
     }
-}
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+    }

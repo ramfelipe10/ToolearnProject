@@ -86,11 +86,11 @@
     <Compile Include="FacilitatorLogin.Designer.cs">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="GeneratePincode.cs">
       <SubType>Form</SubType>
@@ -238,8 +238,8 @@
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneratePincode.resx">
       <DependentUpon>GeneratePincode.cs</DependentUpon>
@@ -363,6 +363,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="TooLearn Pictures\set-of-beautiful-children-characters_23-2147575063.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\loader1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\loaderbookshelf.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\99.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
