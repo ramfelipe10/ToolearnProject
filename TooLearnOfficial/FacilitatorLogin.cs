@@ -24,11 +24,12 @@ namespace TooLearnOfficial
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             
-            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' and password= '" + passbox.Text + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
+                Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                 this.Hide();
 
                 MainMenu mm = new MainMenu();
@@ -36,7 +37,9 @@ namespace TooLearnOfficial
             }
             else
             {
-                MessageBox.Show("Please Check your Username and Password");
+
+                Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
+                //MessageBox.Show("Please Check your Username and Password");
             }
         }
 

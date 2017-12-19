@@ -11,9 +11,11 @@ using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
-    SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+   
     public partial class GeneratePincode : Form
     {
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
         public GeneratePincode()
         {
             InitializeComponent();
