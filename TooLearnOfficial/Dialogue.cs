@@ -17,11 +17,11 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        static DialogueBox MsgBox; static DialogResult result = DialogResult.No;
+        static Dialogue MsgBox; static DialogResult result = DialogResult.No;
 
         public static DialogResult Show(string Text, string Caption, string btnOK, string btnCancel)
         {
-            MsgBox = new DialogueBox();
+            MsgBox = new Dialogue();
             MsgBox.label1.Text = Text;
             MsgBox.bunifuFlatButton1.Text = btnOK;
             MsgBox.bunifuFlatButton2.Text = btnCancel;
