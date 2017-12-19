@@ -17,12 +17,12 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-       
+
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
-          //  timer1.Start();
-           // progressBar1.Increment(1);
+            //  timer1.Start();
+            // progressBar1.Increment(1);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace TooLearnOfficial
             bunifuCircleProgressbar1.Value += 2;
             if (bunifuCircleProgressbar1.Value == 100)
 
-             label2.Text = bunifuCircleProgressbar1.Value.ToString() + "%";
+                label2.Text = bunifuCircleProgressbar1.Value.ToString() + "%";
             {
                 timer1.Stop();
 
@@ -41,17 +41,20 @@ namespace TooLearnOfficial
                 cu.Show();
 
 
-               
+
             }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
+           
         }
-    }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+}
