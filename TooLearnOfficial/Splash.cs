@@ -28,7 +28,7 @@ namespace TooLearnOfficial
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Start();
-            bunifuCircleProgressbar1.Value += 2;
+            bunifuCircleProgressbar1.Value += 1;
             if (bunifuCircleProgressbar1.Value == 100)
 
                 label2.Text = bunifuCircleProgressbar1.Value.ToString() + "%";

@@ -37,7 +37,6 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLe
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.CreateFacilitator.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.CreateParticipant.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.FacilitatorLogin.resources
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.Form1.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GeneratePincode.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.MainMenu.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.MainMenu2.resources
