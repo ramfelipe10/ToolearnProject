@@ -23,8 +23,8 @@ namespace TooLearnOfficial
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stephen_Kent\Documents\TooLearnDatabase.mdf;Integrated Security=True;Connect Timeout=30;"); //Steph Sipalay con string
-            //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Documents\Toolearn.mdf;Integrated Security=True;Connect Timeout=30"); //Ram Felipe con string
-            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficialDatabase.mdf; Integrated Security = True; Connect Timeout = 30"); //Kyle Boclot con string
+          SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Documents\GitHub\ToolearnProject\Toolearn.mdf;Integrated Security=True;Connect Timeout=30"); //Ram Felipe con string
+            //SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficialDatabase.mdf; Integrated Security = True; Connect Timeout = 30"); //Kyle Boclot con string
             SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' and password= '" + passbox.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
