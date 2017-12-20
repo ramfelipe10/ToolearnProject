@@ -52,7 +52,7 @@ namespace TooLearnOfficial
             }
             else
             {
-                Dialogue.Show("Please Check your Username and Password");
+                Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
             }
         }
 
