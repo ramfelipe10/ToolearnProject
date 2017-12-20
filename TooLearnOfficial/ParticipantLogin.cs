@@ -52,11 +52,16 @@ namespace TooLearnOfficial
             }
             else
             {
-                MessageBox.Show("Please Check your Username and Password");
+                Dialogue.Show("Please Check your Username and Password");
             }
         }
 
         private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
 
         }
