@@ -237,7 +237,7 @@
             this.buttonLogout.Location = new System.Drawing.Point(0, 403);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonLogout.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.buttonLogout.OnHovercolor = System.Drawing.Color.DimGray;
             this.buttonLogout.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonLogout.selected = false;
             this.buttonLogout.Size = new System.Drawing.Size(239, 45);
@@ -295,7 +295,7 @@
             this.buttonAboutSystem.Location = new System.Drawing.Point(0, 356);
             this.buttonAboutSystem.Name = "buttonAboutSystem";
             this.buttonAboutSystem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonAboutSystem.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.buttonAboutSystem.OnHovercolor = System.Drawing.Color.DimGray;
             this.buttonAboutSystem.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAboutSystem.selected = false;
             this.buttonAboutSystem.Size = new System.Drawing.Size(239, 45);
@@ -333,7 +333,7 @@
             this.buttonSettings.Location = new System.Drawing.Point(0, 309);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonSettings.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.buttonSettings.OnHovercolor = System.Drawing.Color.DimGray;
             this.buttonSettings.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonSettings.selected = false;
             this.buttonSettings.Size = new System.Drawing.Size(239, 45);
@@ -371,7 +371,7 @@
             this.buttonSubjectHandle.Location = new System.Drawing.Point(0, 262);
             this.buttonSubjectHandle.Name = "buttonSubjectHandle";
             this.buttonSubjectHandle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonSubjectHandle.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.buttonSubjectHandle.OnHovercolor = System.Drawing.Color.DimGray;
             this.buttonSubjectHandle.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonSubjectHandle.selected = false;
             this.buttonSubjectHandle.Size = new System.Drawing.Size(239, 45);
@@ -409,7 +409,7 @@
             this.buttonMyQuiz.Location = new System.Drawing.Point(0, 215);
             this.buttonMyQuiz.Name = "buttonMyQuiz";
             this.buttonMyQuiz.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonMyQuiz.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.buttonMyQuiz.OnHovercolor = System.Drawing.Color.DimGray;
             this.buttonMyQuiz.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonMyQuiz.selected = false;
             this.buttonMyQuiz.Size = new System.Drawing.Size(239, 45);
@@ -447,7 +447,7 @@
             this.buttonCreateQuiz.Location = new System.Drawing.Point(0, 168);
             this.buttonCreateQuiz.Name = "buttonCreateQuiz";
             this.buttonCreateQuiz.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonCreateQuiz.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.buttonCreateQuiz.OnHovercolor = System.Drawing.Color.DimGray;
             this.buttonCreateQuiz.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonCreateQuiz.selected = false;
             this.buttonCreateQuiz.Size = new System.Drawing.Size(239, 45);
@@ -486,7 +486,7 @@
             this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 121);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.DimGray;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(239, 45);

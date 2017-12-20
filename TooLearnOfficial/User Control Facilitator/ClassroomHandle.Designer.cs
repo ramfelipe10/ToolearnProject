@@ -49,9 +49,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(895, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(553, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 113);
+            this.pictureBox1.Size = new System.Drawing.Size(230, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
@@ -59,20 +59,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(32, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 25);
+            this.label2.Size = new System.Drawing.Size(122, 24);
             this.label2.TabIndex = 68;
             this.label2.Text = "Classroom:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(30, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(348, 42);
+            this.label1.Size = new System.Drawing.Size(271, 32);
             this.label1.TabIndex = 67;
             this.label1.Text = "Classroom Handled";
             // 
@@ -88,22 +88,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(90, 193);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(52, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 25);
+            this.label3.Size = new System.Drawing.Size(191, 24);
             this.label3.TabIndex = 71;
             this.label3.Text = "List of Participants:";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(107, 221);
+            this.dataGridView1.Location = new System.Drawing.Point(90, 219);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(951, 411);
+            this.dataGridView1.Size = new System.Drawing.Size(667, 261);
             this.dataGridView1.TabIndex = 72;
             // 
-            // SubjectHandle
+            // ClassroomHandle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,8 +114,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "SubjectHandle";
-            this.Size = new System.Drawing.Size(1150, 685);
+            this.Name = "ClassroomHandle";
+            this.Size = new System.Drawing.Size(794, 506);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -234,7 +234,7 @@
             this.ErrorImage.BackColor = System.Drawing.Color.Transparent;
             this.ErrorImage.Cursor = System.Windows.Forms.Cursors.Default;
             this.ErrorImage.Image = global::TooLearnOfficial.Properties.Resources.Error_40px;
-            this.ErrorImage.Location = new System.Drawing.Point(111, 71);
+            this.ErrorImage.Location = new System.Drawing.Point(100, 83);
             this.ErrorImage.Name = "ErrorImage";
             this.ErrorImage.Size = new System.Drawing.Size(37, 23);
             this.ErrorImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -247,7 +247,7 @@
             this.CheckImage.BackColor = System.Drawing.Color.Transparent;
             this.CheckImage.Cursor = System.Windows.Forms.Cursors.No;
             this.CheckImage.Image = global::TooLearnOfficial.Properties.Resources.Checked_40px;
-            this.CheckImage.Location = new System.Drawing.Point(111, 71);
+            this.CheckImage.Location = new System.Drawing.Point(100, 83);
             this.CheckImage.Name = "CheckImage";
             this.CheckImage.Size = new System.Drawing.Size(37, 23);
             this.CheckImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -385,7 +385,7 @@
             this.labelAvailableUsername.AutoSize = true;
             this.labelAvailableUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelAvailableUsername.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAvailableUsername.Location = new System.Drawing.Point(143, 74);
+            this.labelAvailableUsername.Location = new System.Drawing.Point(130, 86);
             this.labelAvailableUsername.Name = "labelAvailableUsername";
             this.labelAvailableUsername.Size = new System.Drawing.Size(0, 18);
             this.labelAvailableUsername.TabIndex = 22;

@@ -34,6 +34,8 @@
             this.ButtonTrueOrFalse = new Bunifu.Framework.UI.BunifuFlatButton();
             this.ButtonMultipleChoice = new Bunifu.Framework.UI.BunifuFlatButton();
             this.ButtonPicturePuzzle = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -146,17 +148,29 @@
             this.ButtonPicturePuzzle.TextFont = new System.Drawing.Font("Century Gothic", 12F);
             this.ButtonPicturePuzzle.Click += new System.EventHandler(this.ButtonPicturePuzzle_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(237, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 127;
+            this.pictureBox1.TabStop = false;
+            // 
             // CreateQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ButtonPicturePuzzle);
             this.Controls.Add(this.ButtonMultipleChoice);
             this.Controls.Add(this.ButtonTrueOrFalse);
             this.Name = "CreateQuiz";
             this.Size = new System.Drawing.Size(685, 370);
             this.Load += new System.EventHandler(this.CreateQuiz_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,5 +181,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton ButtonPicturePuzzle;
         private Bunifu.Framework.UI.BunifuFlatButton ButtonMultipleChoice;
         private Bunifu.Framework.UI.BunifuFlatButton ButtonTrueOrFalse;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -77,12 +77,17 @@ namespace TooLearnOfficial //commenting for git
         private void buttonCreateQuiz_Click(object sender, EventArgs e)
         {
             createQuiz1.BringToFront();
+            myQuiz1.Visible = false;
+            classroomHandle1.Visible = false;
 
         }
 
         private void buttonMyQuiz_Click(object sender, EventArgs e)
         {
-            
+            myQuiz1.Visible = true;
+            classroomHandle1.Visible = false;
+            myQuiz1.BringToFront();
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -99,6 +104,46 @@ namespace TooLearnOfficial //commenting for git
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             settings1.BringToFront();
+            myQuiz1.Visible = false;
+            classroomHandle1.Visible = false;
+        }
+
+        private void buttonCreateClassroom_Click(object sender, EventArgs e)
+        {
+            createClassroom1.BringToFront();
+            myQuiz1.Visible = false;
+            classroomHandle1.Visible = false;
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            myAccount1.BringToFront();
+            myQuiz1.Visible = false;
+            classroomHandle1.Visible = false;
+        }
+
+        private void buttonSubjectHandle_Click(object sender, EventArgs e)
+        {
+            classroomHandle1.Visible = true;
+            myQuiz1.Visible = false;
+            classroomHandle1.BringToFront();
+        }
+
+        private void buttonAboutSystem_Click(object sender, EventArgs e)
+        {
+            aboutSystem1.BringToFront();
+            myQuiz1.Visible = false;
+            classroomHandle1.Visible = false;
+        }
+
+        private void myQuiz1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createClassroom1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

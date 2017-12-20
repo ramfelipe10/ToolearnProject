@@ -68,10 +68,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(19, 274);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 25);
+            this.label5.Size = new System.Drawing.Size(166, 24);
             this.label5.TabIndex = 139;
             this.label5.Text = "Add Participant";
             // 
@@ -121,7 +121,7 @@
             this.buttonDELETEParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDELETEParticipant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDELETEParticipant.ForeColor = System.Drawing.Color.White;
-            this.buttonDELETEParticipant.Location = new System.Drawing.Point(590, 363);
+            this.buttonDELETEParticipant.Location = new System.Drawing.Point(582, 319);
             this.buttonDELETEParticipant.Name = "buttonDELETEParticipant";
             this.buttonDELETEParticipant.Size = new System.Drawing.Size(75, 34);
             this.buttonDELETEParticipant.TabIndex = 135;
@@ -134,7 +134,7 @@
             this.buttonEDITParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonEDITParticipant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEDITParticipant.ForeColor = System.Drawing.Color.White;
-            this.buttonEDITParticipant.Location = new System.Drawing.Point(509, 363);
+            this.buttonEDITParticipant.Location = new System.Drawing.Point(501, 319);
             this.buttonEDITParticipant.Name = "buttonEDITParticipant";
             this.buttonEDITParticipant.Size = new System.Drawing.Size(75, 34);
             this.buttonEDITParticipant.TabIndex = 134;
@@ -147,7 +147,7 @@
             this.buttonADDParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonADDParticipant.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonADDParticipant.ForeColor = System.Drawing.Color.White;
-            this.buttonADDParticipant.Location = new System.Drawing.Point(428, 363);
+            this.buttonADDParticipant.Location = new System.Drawing.Point(420, 319);
             this.buttonADDParticipant.Name = "buttonADDParticipant";
             this.buttonADDParticipant.Size = new System.Drawing.Size(75, 34);
             this.buttonADDParticipant.TabIndex = 133;
@@ -158,28 +158,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(322, 164);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(323, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 25);
+            this.label2.Size = new System.Drawing.Size(151, 24);
             this.label2.TabIndex = 132;
             this.label2.Text = "Participant List";
             // 
             // dataGridViewPList
             // 
             this.dataGridViewPList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPList.Location = new System.Drawing.Point(328, 197);
+            this.dataGridViewPList.Location = new System.Drawing.Point(328, 165);
             this.dataGridViewPList.Name = "dataGridViewPList";
-            this.dataGridViewPList.Size = new System.Drawing.Size(336, 160);
+            this.dataGridViewPList.Size = new System.Drawing.Size(336, 134);
             this.dataGridViewPList.TabIndex = 130;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(19, 201);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 25);
+            this.label4.Size = new System.Drawing.Size(151, 24);
             this.label4.TabIndex = 129;
             this.label4.Text = "Classroom List";
             // 
@@ -194,10 +194,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(19, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 25);
+            this.label3.Size = new System.Drawing.Size(195, 24);
             this.label3.TabIndex = 127;
             this.label3.Text = "Create Classroom";
             // 
@@ -206,7 +206,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(443, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 113);
+            this.pictureBox1.Size = new System.Drawing.Size(230, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 126;
             this.pictureBox1.TabStop = false;
@@ -228,10 +228,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(30, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 42);
+            this.label1.Size = new System.Drawing.Size(250, 32);
             this.label1.TabIndex = 125;
             this.label1.Text = "Create Classroom";
             // 
@@ -257,7 +257,7 @@
             this.Controls.Add(this.comboBoxClassroomList);
             this.Controls.Add(this.label1);
             this.Name = "CreateClassroom";
-            this.Size = new System.Drawing.Size(685, 410);
+            this.Size = new System.Drawing.Size(685, 370);
             this.Load += new System.EventHandler(this.CreateClassroom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

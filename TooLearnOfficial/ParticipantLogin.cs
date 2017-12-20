@@ -83,5 +83,35 @@ namespace TooLearnOfficial
             h.Show();
             this.Hide();
         }
+
+        private void TextboxPassword_OnValueChanged(object sender, EventArgs e)
+        {
+            if (TextboxPassword.Text.Length <= 0)
+            {
+                bunifuImageButton1.Visible = false;
+            }
+
+            else
+            {
+                bunifuImageButton1.Visible = true;
+            }
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            if (TextboxPassword.isPassword == true)
+            {
+                TextboxPassword.isPassword = false;
+
+            }
+
+            else
+            {
+
+                TextboxPassword.isPassword = true;
+
+            }
+
+        }
     }
 }

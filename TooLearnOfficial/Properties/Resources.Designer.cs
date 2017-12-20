@@ -83,6 +83,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AdNU_Seal_LATEST_PROTOTYPE {
+            get {
+                object obj = ResourceManager.GetObject("AdNU-Seal-LATEST-PROTOTYPE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap After_Effects_and_Cinema_4D_Flat_Design_Animation_Tutorial {
             get {
                 object obj = ResourceManager.GetObject("After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial", resourceCulture);

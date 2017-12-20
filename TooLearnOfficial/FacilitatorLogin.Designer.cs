@@ -266,9 +266,9 @@
             // 
             this.ButtonFacilitatorCreateAccount.ActiveBorderThickness = 1;
             this.ButtonFacilitatorCreateAccount.ActiveCornerRadius = 20;
-            this.ButtonFacilitatorCreateAccount.ActiveFillColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonFacilitatorCreateAccount.ActiveForecolor = System.Drawing.Color.Black;
-            this.ButtonFacilitatorCreateAccount.ActiveLineColor = System.Drawing.Color.White;
+            this.ButtonFacilitatorCreateAccount.ActiveFillColor = System.Drawing.Color.Transparent;
+            this.ButtonFacilitatorCreateAccount.ActiveForecolor = System.Drawing.Color.Gray;
+            this.ButtonFacilitatorCreateAccount.ActiveLineColor = System.Drawing.Color.Transparent;
             this.ButtonFacilitatorCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ButtonFacilitatorCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ButtonFacilitatorCreateAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonFacilitatorCreateAccount.BackgroundImage")));
@@ -278,10 +278,10 @@
             this.ButtonFacilitatorCreateAccount.ForeColor = System.Drawing.Color.DodgerBlue;
             this.ButtonFacilitatorCreateAccount.IdleBorderThickness = 1;
             this.ButtonFacilitatorCreateAccount.IdleCornerRadius = 20;
-            this.ButtonFacilitatorCreateAccount.IdleFillColor = System.Drawing.Color.SkyBlue;
-            this.ButtonFacilitatorCreateAccount.IdleForecolor = System.Drawing.Color.Black;
-            this.ButtonFacilitatorCreateAccount.IdleLineColor = System.Drawing.Color.White;
-            this.ButtonFacilitatorCreateAccount.Location = new System.Drawing.Point(113, 388);
+            this.ButtonFacilitatorCreateAccount.IdleFillColor = System.Drawing.Color.Transparent;
+            this.ButtonFacilitatorCreateAccount.IdleForecolor = System.Drawing.Color.White;
+            this.ButtonFacilitatorCreateAccount.IdleLineColor = System.Drawing.Color.Transparent;
+            this.ButtonFacilitatorCreateAccount.Location = new System.Drawing.Point(118, 388);
             this.ButtonFacilitatorCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonFacilitatorCreateAccount.Name = "ButtonFacilitatorCreateAccount";
             this.ButtonFacilitatorCreateAccount.Size = new System.Drawing.Size(122, 33);
@@ -293,9 +293,9 @@
             // 
             this.bunifuThinButton21.ActiveBorderThickness = 1;
             this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.Gray;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.DodgerBlue;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.DimGray;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.Transparent;
             this.bunifuThinButton21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuThinButton21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
@@ -305,9 +305,9 @@
             this.bunifuThinButton21.ForeColor = System.Drawing.Color.DodgerBlue;
             this.bunifuThinButton21.IdleBorderThickness = 1;
             this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.DodgerBlue;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Gray;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.Transparent;
             this.bunifuThinButton21.Location = new System.Drawing.Point(106, 344);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
