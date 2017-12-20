@@ -65,5 +65,23 @@ namespace TooLearnOfficial
         {
 
         }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            ChooseUser h = new ChooseUser();
+            h.Show();
+            this.Hide();
+        }
     }
 }
