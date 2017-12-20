@@ -383,6 +383,12 @@
   <ItemGroup>
     <None Include="TooLearn Pictures\99.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\Checked_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TooLearn Pictures\Error_40px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

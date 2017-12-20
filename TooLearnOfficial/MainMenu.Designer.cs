@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.sidemenu = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -120,6 +120,7 @@
             this.buttonCreateClassroom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonCreateClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCreateClassroom.BorderRadius = 0;
+            this.buttonCreateClassroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonCreateClassroom.ButtonText = "     Create Classroom";
             this.buttonCreateClassroom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonCreateClassroom, BunifuAnimatorNS.DecorationType.None);
@@ -157,6 +158,7 @@
             this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLogout.BorderRadius = 0;
+            this.buttonLogout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonLogout.ButtonText = "     Logout";
             this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonLogout, BunifuAnimatorNS.DecorationType.None);
@@ -195,6 +197,7 @@
             this.buttonAboutSystem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonAboutSystem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAboutSystem.BorderRadius = 0;
+            this.buttonAboutSystem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonAboutSystem.ButtonText = "     About System";
             this.buttonAboutSystem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonAboutSystem, BunifuAnimatorNS.DecorationType.None);
@@ -232,6 +235,7 @@
             this.buttonSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSettings.BorderRadius = 0;
+            this.buttonSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonSettings.ButtonText = "     Settings";
             this.buttonSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonSettings, BunifuAnimatorNS.DecorationType.None);
@@ -270,6 +274,7 @@
             this.buttonSubjectHandle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonSubjectHandle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSubjectHandle.BorderRadius = 0;
+            this.buttonSubjectHandle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonSubjectHandle.ButtonText = "     Classroom Handle";
             this.buttonSubjectHandle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonSubjectHandle, BunifuAnimatorNS.DecorationType.None);
@@ -307,6 +312,7 @@
             this.buttonMyQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonMyQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonMyQuiz.BorderRadius = 0;
+            this.buttonMyQuiz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonMyQuiz.ButtonText = "     My Quiz";
             this.buttonMyQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonMyQuiz, BunifuAnimatorNS.DecorationType.None);
@@ -345,6 +351,7 @@
             this.buttonCreateQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonCreateQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCreateQuiz.BorderRadius = 0;
+            this.buttonCreateQuiz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.buttonCreateQuiz.ButtonText = "     Create Quiz";
             this.buttonCreateQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonCreateQuiz, BunifuAnimatorNS.DecorationType.None);
@@ -383,6 +390,7 @@
             this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuFlatButton1.ButtonText = "     My Account";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
@@ -573,7 +581,7 @@
             this.LogosTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
-            this.settings1.Location = new System.Drawing.Point(265, 228);
+            this.settings1.Location = new System.Drawing.Point(393, 141);
             this.settings1.Name = "settings1";
             this.settings1.Size = new System.Drawing.Size(685, 370);
             this.settings1.TabIndex = 3;
@@ -584,7 +592,7 @@
             this.LogosTransition.SetDecoration(this.createQuiz1, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.createQuiz1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.createQuiz1, BunifuAnimatorNS.DecorationType.None);
-            this.createQuiz1.Location = new System.Drawing.Point(265, 228);
+            this.createQuiz1.Location = new System.Drawing.Point(393, 141);
             this.createQuiz1.Name = "createQuiz1";
             this.createQuiz1.Size = new System.Drawing.Size(683, 371);
             this.createQuiz1.TabIndex = 2;
@@ -671,12 +679,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 681);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.home1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.sidemenu);
+            this.Controls.Add(this.header);
             this.Controls.Add(this.settings1);
             this.Controls.Add(this.createQuiz1);
-            this.Controls.Add(this.header);
             this.PanelTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogosTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);

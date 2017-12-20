@@ -62,7 +62,7 @@
             this.ButtonTrueOrFalse.IconVisible = true;
             this.ButtonTrueOrFalse.IconZoom = 90D;
             this.ButtonTrueOrFalse.IsTab = false;
-            this.ButtonTrueOrFalse.Location = new System.Drawing.Point(231, 54);
+            this.ButtonTrueOrFalse.Location = new System.Drawing.Point(18, 141);
             this.ButtonTrueOrFalse.Name = "ButtonTrueOrFalse";
             this.ButtonTrueOrFalse.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.ButtonTrueOrFalse.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -73,7 +73,7 @@
             this.ButtonTrueOrFalse.Text = "True or False";
             this.ButtonTrueOrFalse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonTrueOrFalse.Textcolor = System.Drawing.Color.White;
-            this.ButtonTrueOrFalse.TextFont = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonTrueOrFalse.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonTrueOrFalse.Click += new System.EventHandler(this.ButtonTrueOrFalse_Click);
             // 
             // ButtonMultipleChoice
@@ -97,7 +97,7 @@
             this.ButtonMultipleChoice.IconVisible = true;
             this.ButtonMultipleChoice.IconZoom = 90D;
             this.ButtonMultipleChoice.IsTab = false;
-            this.ButtonMultipleChoice.Location = new System.Drawing.Point(231, 141);
+            this.ButtonMultipleChoice.Location = new System.Drawing.Point(237, 141);
             this.ButtonMultipleChoice.Name = "ButtonMultipleChoice";
             this.ButtonMultipleChoice.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.ButtonMultipleChoice.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -108,7 +108,7 @@
             this.ButtonMultipleChoice.Text = "Multiple Choice";
             this.ButtonMultipleChoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonMultipleChoice.Textcolor = System.Drawing.Color.White;
-            this.ButtonMultipleChoice.TextFont = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonMultipleChoice.TextFont = new System.Drawing.Font("Century Gothic", 12F);
             this.ButtonMultipleChoice.Click += new System.EventHandler(this.ButtonMultipleChoice_Click);
             // 
             // ButtonPicturePuzzle
@@ -132,7 +132,7 @@
             this.ButtonPicturePuzzle.IconVisible = true;
             this.ButtonPicturePuzzle.IconZoom = 90D;
             this.ButtonPicturePuzzle.IsTab = false;
-            this.ButtonPicturePuzzle.Location = new System.Drawing.Point(231, 227);
+            this.ButtonPicturePuzzle.Location = new System.Drawing.Point(456, 141);
             this.ButtonPicturePuzzle.Name = "ButtonPicturePuzzle";
             this.ButtonPicturePuzzle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.ButtonPicturePuzzle.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -143,7 +143,7 @@
             this.ButtonPicturePuzzle.Text = "Picture Puzzle";
             this.ButtonPicturePuzzle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonPicturePuzzle.Textcolor = System.Drawing.Color.White;
-            this.ButtonPicturePuzzle.TextFont = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonPicturePuzzle.TextFont = new System.Drawing.Font("Century Gothic", 12F);
             this.ButtonPicturePuzzle.Click += new System.EventHandler(this.ButtonPicturePuzzle_Click);
             // 
             // CreateQuiz
@@ -156,6 +156,7 @@
             this.Controls.Add(this.ButtonTrueOrFalse);
             this.Name = "CreateQuiz";
             this.Size = new System.Drawing.Size(685, 370);
+            this.Load += new System.EventHandler(this.CreateQuiz_Load);
             this.ResumeLayout(false);
 
         }

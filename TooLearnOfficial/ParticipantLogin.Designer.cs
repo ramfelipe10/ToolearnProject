@@ -32,9 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParticipantLogin));
             this.TextboxPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.TextboxUsername = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.ButtonParticipantSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.ButtonParticipantCreateAccount = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.LoginHeader = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -42,9 +43,8 @@
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.ButtonParticipantCreateAccount = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.ButtonParticipantSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
             this.LoginHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -92,64 +92,39 @@
             this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TextboxUsername.OnValueChanged += new System.EventHandler(this.TextboxUsername_OnValueChanged);
             // 
-            // ButtonParticipantSignIn
-            // 
-            this.ButtonParticipantSignIn.ActiveBorderThickness = 1;
-            this.ButtonParticipantSignIn.ActiveCornerRadius = 20;
-            this.ButtonParticipantSignIn.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.ButtonParticipantSignIn.ActiveForecolor = System.Drawing.Color.White;
-            this.ButtonParticipantSignIn.ActiveLineColor = System.Drawing.Color.DarkViolet;
-            this.ButtonParticipantSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonParticipantSignIn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonParticipantSignIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantSignIn.BackgroundImage")));
-            this.ButtonParticipantSignIn.ButtonText = "Sign In";
-            this.ButtonParticipantSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonParticipantSignIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonParticipantSignIn.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonParticipantSignIn.IdleBorderThickness = 1;
-            this.ButtonParticipantSignIn.IdleCornerRadius = 20;
-            this.ButtonParticipantSignIn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.ButtonParticipantSignIn.IdleForecolor = System.Drawing.Color.White;
-            this.ButtonParticipantSignIn.IdleLineColor = System.Drawing.Color.DarkViolet;
-            this.ButtonParticipantSignIn.Location = new System.Drawing.Point(106, 344);
-            this.ButtonParticipantSignIn.Margin = new System.Windows.Forms.Padding(5);
-            this.ButtonParticipantSignIn.Name = "ButtonParticipantSignIn";
-            this.ButtonParticipantSignIn.Size = new System.Drawing.Size(137, 35);
-            this.ButtonParticipantSignIn.TabIndex = 8;
-            this.ButtonParticipantSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ButtonParticipantSignIn.Click += new System.EventHandler(this.ButtonParticipantSignIn_Click);
-            // 
-            // ButtonParticipantCreateAccount
-            // 
-            this.ButtonParticipantCreateAccount.ActiveBorderThickness = 1;
-            this.ButtonParticipantCreateAccount.ActiveCornerRadius = 20;
-            this.ButtonParticipantCreateAccount.ActiveFillColor = System.Drawing.Color.DimGray;
-            this.ButtonParticipantCreateAccount.ActiveForecolor = System.Drawing.Color.White;
-            this.ButtonParticipantCreateAccount.ActiveLineColor = System.Drawing.Color.DimGray;
-            this.ButtonParticipantCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonParticipantCreateAccount.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonParticipantCreateAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantCreateAccount.BackgroundImage")));
-            this.ButtonParticipantCreateAccount.ButtonText = "Create Account";
-            this.ButtonParticipantCreateAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonParticipantCreateAccount.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.ButtonParticipantCreateAccount.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.ButtonParticipantCreateAccount.IdleBorderThickness = 1;
-            this.ButtonParticipantCreateAccount.IdleCornerRadius = 20;
-            this.ButtonParticipantCreateAccount.IdleFillColor = System.Drawing.Color.DimGray;
-            this.ButtonParticipantCreateAccount.IdleForecolor = System.Drawing.Color.White;
-            this.ButtonParticipantCreateAccount.IdleLineColor = System.Drawing.Color.DimGray;
-            this.ButtonParticipantCreateAccount.Location = new System.Drawing.Point(113, 388);
-            this.ButtonParticipantCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ButtonParticipantCreateAccount.Name = "ButtonParticipantCreateAccount";
-            this.ButtonParticipantCreateAccount.Size = new System.Drawing.Size(122, 33);
-            this.ButtonParticipantCreateAccount.TabIndex = 7;
-            this.ButtonParticipantCreateAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ButtonParticipantCreateAccount.Click += new System.EventHandler(this.bunifuThinButton22_Click);
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(140, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 21);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Password";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(140, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Username";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.LoginHeader;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // bunifuImageButton6
             // 
@@ -248,34 +223,59 @@
             this.pictureBox3.TabIndex = 24;
             this.pictureBox3.TabStop = false;
             // 
-            // label2
+            // ButtonParticipantCreateAccount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(140, 284);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 21);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Password";
+            this.ButtonParticipantCreateAccount.ActiveBorderThickness = 1;
+            this.ButtonParticipantCreateAccount.ActiveCornerRadius = 20;
+            this.ButtonParticipantCreateAccount.ActiveFillColor = System.Drawing.Color.Gray;
+            this.ButtonParticipantCreateAccount.ActiveForecolor = System.Drawing.Color.White;
+            this.ButtonParticipantCreateAccount.ActiveLineColor = System.Drawing.Color.DimGray;
+            this.ButtonParticipantCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonParticipantCreateAccount.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonParticipantCreateAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantCreateAccount.BackgroundImage")));
+            this.ButtonParticipantCreateAccount.ButtonText = "Create Account";
+            this.ButtonParticipantCreateAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonParticipantCreateAccount.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.ButtonParticipantCreateAccount.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonParticipantCreateAccount.IdleBorderThickness = 1;
+            this.ButtonParticipantCreateAccount.IdleCornerRadius = 20;
+            this.ButtonParticipantCreateAccount.IdleFillColor = System.Drawing.Color.DarkGray;
+            this.ButtonParticipantCreateAccount.IdleForecolor = System.Drawing.Color.White;
+            this.ButtonParticipantCreateAccount.IdleLineColor = System.Drawing.Color.DimGray;
+            this.ButtonParticipantCreateAccount.Location = new System.Drawing.Point(113, 388);
+            this.ButtonParticipantCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonParticipantCreateAccount.Name = "ButtonParticipantCreateAccount";
+            this.ButtonParticipantCreateAccount.Size = new System.Drawing.Size(122, 33);
+            this.ButtonParticipantCreateAccount.TabIndex = 7;
+            this.ButtonParticipantCreateAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ButtonParticipantCreateAccount.Click += new System.EventHandler(this.bunifuThinButton22_Click);
             // 
-            // label1
+            // ButtonParticipantSignIn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(140, 210);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Username";
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.LoginHeader;
-            this.bunifuDragControl1.Vertical = true;
+            this.ButtonParticipantSignIn.ActiveBorderThickness = 1;
+            this.ButtonParticipantSignIn.ActiveCornerRadius = 20;
+            this.ButtonParticipantSignIn.ActiveFillColor = System.Drawing.Color.ForestGreen;
+            this.ButtonParticipantSignIn.ActiveForecolor = System.Drawing.Color.White;
+            this.ButtonParticipantSignIn.ActiveLineColor = System.Drawing.Color.DarkViolet;
+            this.ButtonParticipantSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonParticipantSignIn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonParticipantSignIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantSignIn.BackgroundImage")));
+            this.ButtonParticipantSignIn.ButtonText = "Sign In";
+            this.ButtonParticipantSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonParticipantSignIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonParticipantSignIn.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.ButtonParticipantSignIn.IdleBorderThickness = 1;
+            this.ButtonParticipantSignIn.IdleCornerRadius = 20;
+            this.ButtonParticipantSignIn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.ButtonParticipantSignIn.IdleForecolor = System.Drawing.Color.White;
+            this.ButtonParticipantSignIn.IdleLineColor = System.Drawing.Color.DarkViolet;
+            this.ButtonParticipantSignIn.Location = new System.Drawing.Point(106, 344);
+            this.ButtonParticipantSignIn.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonParticipantSignIn.Name = "ButtonParticipantSignIn";
+            this.ButtonParticipantSignIn.Size = new System.Drawing.Size(137, 35);
+            this.ButtonParticipantSignIn.TabIndex = 8;
+            this.ButtonParticipantSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ButtonParticipantSignIn.Click += new System.EventHandler(this.ButtonParticipantSignIn_Click);
             // 
             // ParticipantLogin
             // 

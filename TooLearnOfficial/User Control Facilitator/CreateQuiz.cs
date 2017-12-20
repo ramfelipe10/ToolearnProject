@@ -34,5 +34,10 @@ namespace TooLearnOfficial.User_Control
             QuizPicturePuzzle qpp = new QuizPicturePuzzle();
             qpp.Show();
         }
+
+        private void CreateQuiz_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
