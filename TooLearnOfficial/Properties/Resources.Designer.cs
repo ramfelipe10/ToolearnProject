@@ -133,6 +133,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Edit_Property_52px {
+            get {
+                object obj = ResourceManager.GetObject("Edit Property_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Error_40px {
             get {
                 object obj = ResourceManager.GetObject("Error_40px", resourceCulture);
@@ -203,6 +213,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Plus_52px {
+            get {
+                object obj = ResourceManager.GetObject("Plus_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap set_of_beautiful_children_characters_23_2147575063 {
             get {
                 object obj = ResourceManager.GetObject("set-of-beautiful-children-characters_23-2147575063", resourceCulture);
@@ -226,6 +246,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap toolearn_icon {
             get {
                 object obj = ResourceManager.GetObject("toolearn_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Trash_52px {
+            get {
+                object obj = ResourceManager.GetObject("Trash_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

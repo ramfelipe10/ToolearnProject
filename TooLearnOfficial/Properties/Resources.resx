@@ -121,29 +121,35 @@
   <data name="loader1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\loader1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Checked_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Checked_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Back Arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Back Arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="teacher-with-blackboard-cartoon_23-2147497851" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\teacher-with-blackboard-cartoon_23-2147497851.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Eye_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Eye_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Back Arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Back Arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit Property_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Edit Property_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="toolearn_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\toolearn_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loaderbookshelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\loaderbookshelf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Error_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Error_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Plus_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Plus_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="newfaci" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\newfaci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Error_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Error_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Minimize Window_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Minimize Window_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,10 +169,13 @@
   <data name="Close Window_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Close Window_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Checked_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Checked_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loaderbookshelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\loaderbookshelf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AdNU-Seal-LATEST-PROTOTYPE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\AdNU-Seal-LATEST-PROTOTYPE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Trash_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
