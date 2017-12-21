@@ -38,7 +38,7 @@ namespace TooLearnOfficial
             else
             {
 
-                Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
+                Dialogue.Show("Login Failed!   Please Check your Username and Password!", "", "Ok", "Cancel");
                 //MessageBox.Show("Please Check your Username and Password");
             }
         }

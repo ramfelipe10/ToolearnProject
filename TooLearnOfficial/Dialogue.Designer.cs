@@ -156,10 +156,10 @@
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel2.Controls.Add(this.bunifuFlatButton2);
             this.bunifuGradientPanel2.Controls.Add(this.label1);
-            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.DarkGray;
-            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.DimGray;
-            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.Gray;
-            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.Gray;
+            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.White;
             this.bunifuGradientPanel2.Location = new System.Drawing.Point(11, 49);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
@@ -206,12 +206,12 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(26, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 34);
+            this.label1.Size = new System.Drawing.Size(89, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Label1nnnnnnnnnnn\r\nnnnnnnnnnnnnnnnnnnnnnnnnnnn";
+            this.label1.Text = "dadadadad";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuElipse2
@@ -223,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(449, 258);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.bunifuGradientPanel2);

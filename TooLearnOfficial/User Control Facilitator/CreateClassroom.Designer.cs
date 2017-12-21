@@ -224,6 +224,7 @@
             this.comboBoxClassroomList.Name = "comboBoxClassroomList";
             this.comboBoxClassroomList.Size = new System.Drawing.Size(260, 32);
             this.comboBoxClassroomList.TabIndex = 131;
+            this.comboBoxClassroomList.SelectedIndexChanged += new System.EventHandler(this.comboBoxClassroomList_SelectedIndexChanged);
             // 
             // label1
             // 

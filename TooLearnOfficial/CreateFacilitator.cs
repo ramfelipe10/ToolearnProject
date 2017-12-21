@@ -69,9 +69,9 @@ namespace TooLearnOfficial
             {
                 if (TextboxPassword.Text == TextboxReTypePassword.Text)
                 {
-                    SqlCommand cmd = new SqlCommand("Insert into facilitator(name, username, password) Values('" + TextboxName.Text + "','" + TextboxPassword.Text + "','" + TextboxReTypePassword.Text + "')", con);
+                    SqlCommand cmd = new SqlCommand("Insert into facilitator(name, username, password) Values('" + TextboxName.Text + "','" + TextboxUsername.Text + "','" + TextboxPassword.Text + "')", con);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Inserted");
+                    Dialogue.Show("Successfully Inserted", "", "Ok", "Cancel");
                     con.Close();
 
                     this.Hide();
@@ -80,14 +80,16 @@ namespace TooLearnOfficial
                     cf.Show();
 
                 }
-                else
+                else if(TextboxPassword.Text != TextboxReTypePassword.Text)
                 {
-                    MessageBox.Show("Your Password does not Match");
+                    Dialogue.Show("Your Password does not Match", "", "Ok", "Cancel");
+                    con.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Please use Available Username");
+                Dialogue.Show("Please use Available Username", "", "Ok", "Cancel");
+                con.Close();
             }
         }
 
