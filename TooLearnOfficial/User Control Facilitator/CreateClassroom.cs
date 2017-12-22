@@ -95,7 +95,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
             }
             else
                 Dialogue.Show("Creation Failed!", "", "Ok", "Cancel");
-
+      
+            load_class();
 
         }
 
