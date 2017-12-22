@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
     public partial class QuizMultipleChoice : Form
     {
-        String rightAnswer;
+        
         public QuizMultipleChoice()
         {
             InitializeComponent();
@@ -22,24 +23,37 @@ namespace TooLearnOfficial
         {
             textBoxQuizQuestion.Text = null;
             textBoxQuizChoiceA.Text = null; textBoxQuizChoiceB.Text = null; textBoxQuizChoiceC.Text = null; textBoxQuizChoiceD.Text = null;
-            checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckC.Checked = false; checkBoxQuizCheckD.Checked = false;
+            textBoxRightAnswer.Text = null;
         }
         private void enableFields()
         {
             textBoxQuizQuestion.Enabled = true;
             textBoxQuizChoiceA.Enabled = true; textBoxQuizChoiceB.Enabled = true; textBoxQuizChoiceC.Enabled = true; textBoxQuizChoiceD.Enabled = true;
-            checkBoxQuizCheckA.Enabled = true; checkBoxQuizCheckB.Enabled = true; checkBoxQuizCheckC.Enabled = true; checkBoxQuizCheckD.Enabled = true;
-            dataGridViewInformation.Enabled = true;
+            dataGridViewQuestion.Enabled = true;
         }
         private void disableFields()
         {
             textBoxQuizQuestion.Enabled = false;
             textBoxQuizChoiceA.Enabled = false; textBoxQuizChoiceB.Enabled = false; textBoxQuizChoiceC.Enabled = false; textBoxQuizChoiceD.Enabled = false;
-            checkBoxQuizCheckA.Enabled = false; checkBoxQuizCheckB.Enabled = false; checkBoxQuizCheckC.Enabled = false; checkBoxQuizCheckD.Enabled = false;
         }
         private void QuizMultipleChoice_Load(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand();
 
+            comboBoxQuizSubject.Items.Clear();
+            con.Open();
+            cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select classroom_name from classroom order by classroom_id asc";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd);
+            da1.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                comboBoxQuizSubject.Items.Add(dr["classroom_name"].ToString());
+            }
+            con.Close();
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
@@ -49,80 +63,77 @@ namespace TooLearnOfficial
             mm.Show();
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxQuizTimeLimit_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxQuizQuestion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxQuizCheckA_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckC.Checked = false; checkBoxQuizCheckD.Checked = false;
-            rightAnswer = "A";
-        }
-
-        private void checkBoxQuizCheckB_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckC.Checked = false; checkBoxQuizCheckD.Checked = false;
-            rightAnswer = "B";
-        }
-
-        private void checkBoxQuizCheckC_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckD.Checked = false;
-            rightAnswer = "C";
-        }
-
-        private void checkBoxQuizCheckD_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckC.Checked = false;
-            rightAnswer = "D";
-        }
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)
         {
-            buttonNextQuestion.Text = "Update";
-            //ListViewItem exams = lvExamsInfo.SelectedItems[0];
-            //textBoxQuizQuestion.Text = exams.Text;
-            //textBoxQuizChoiceA.Text = exams.SubItems[1].Text;
-            //textBoxQuizChoiceB.Text = exams.SubItems[2].Text;
-            //textBoxQuizChoiceC.Text = exams.SubItems[3].Text;
-            //textBoxQuizChoiceD.Text = exams.SubItems[4].Text;
-            /* switch (exams.SubItems[5].Text)
+            if (textBoxQuizChoiceA.Text == textBoxRightAnswer.Text)
             {
-                case "A":
-                    rightAnswer = "A";
-                    checkBoxQuizCheckA.Checked = true;
-                    checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckC.Checked = false; checkBoxQuizCheckD.Checked = false;
-                    break;
-                case "B":
-                    rightAnswer = "B";
-                    checkBoxQuizCheckB.Checked = true;
-                    checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckC.Checked = false; checkBoxQuizCheckD.Checked = false;
-                    break;
-                case "C":
-                    rightAnswer = "C";
-                    checkBoxQuizCheckC.Checked = true;
-                    checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckD.Checked = false;
-                    break;
-                case "D":
-                    rightAnswer = "D";
-                    checkBoxQuizCheckD.Checked = true;
-                    checkBoxQuizCheckA.Checked = false; checkBoxQuizCheckB.Checked = false; checkBoxQuizCheckC.Checked = false;
-                    break;
-                default:
-                    break;
+                con.Open();
+                String query1 = "INSERT INTO quiz_multiple_choice(question, choice_a, choice_b, choice_c, choice_d, right_answer) VALUES ('" + textBoxQuizQuestion.Text + "', '" + textBoxQuizChoiceA.Text + "', '" + textBoxQuizChoiceB.Text + "', '" + textBoxQuizChoiceC.Text + "', '" + textBoxQuizChoiceD.Text + "', '" + textBoxRightAnswer.Text + "')";
+                SqlDataAdapter sda1 = new SqlDataAdapter(query1, con);
+                sda1.SelectCommand.ExecuteNonQuery();
+                //MessageBox.Show("Question Created!");
+                con.Close();
+
             }
-            */
+            else if (textBoxQuizChoiceB.Text == textBoxRightAnswer.Text)
+            {
+                con.Open();
+                String query2 = "INSERT INTO quiz_multiple_choice(question, choice_a, choice_b, choice_c, choice_d, right_answer) VALUES ('" + textBoxQuizQuestion.Text + "', '" + textBoxQuizChoiceA.Text + "', '" + textBoxQuizChoiceB.Text + "', '" + textBoxQuizChoiceC.Text + "', '" + textBoxQuizChoiceD.Text + "', '" + textBoxRightAnswer.Text + "')";
+                SqlDataAdapter sda2 = new SqlDataAdapter(query2, con);
+                sda2.SelectCommand.ExecuteNonQuery();
+                //MessageBox.Show("Question Created!");
+                con.Close();
+
+            }
+            else if (textBoxQuizChoiceC.Text == textBoxRightAnswer.Text)
+            {
+                con.Open();
+                String query3 = "INSERT INTO quiz_multiple_choice(question, choice_a, choice_b, choice_c, choice_d, right_answer) VALUES ('" + textBoxQuizQuestion.Text + "', '" + textBoxQuizChoiceA.Text + "', '" + textBoxQuizChoiceB.Text + "', '" + textBoxQuizChoiceC.Text + "', '" + textBoxQuizChoiceD.Text + "', '" + textBoxRightAnswer.Text + "')";
+                SqlDataAdapter sda3 = new SqlDataAdapter(query3, con);
+                sda3.SelectCommand.ExecuteNonQuery();
+                //MessageBox.Show("Question Created!");
+                con.Close();
+
+            }
+            else if (textBoxQuizChoiceD.Text == textBoxRightAnswer.Text)
+            {
+                con.Open();
+                String query4 = "INSERT INTO quiz_multiple_choice(question, choice_a, choice_b, choice_c, choice_d, right_answer) VALUES ('" + textBoxQuizQuestion.Text + "', '" + textBoxQuizChoiceA.Text + "', '" + textBoxQuizChoiceB.Text + "', '" + textBoxQuizChoiceC.Text + "', '" + textBoxQuizChoiceD.Text + "', '" + textBoxRightAnswer.Text + "')";
+                SqlDataAdapter sda4 = new SqlDataAdapter(query4, con);
+                sda4.SelectCommand.ExecuteNonQuery();
+                //MessageBox.Show("Question Created!");
+                con.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("The correct answer does not Match");
+            }
+            //ADD
+            con.Open();
+            String query = "SELECT question, choice_a, choice_b, choice_c, choice_d, right_answer FROM quiz_multiple_choice";
+            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridViewQuestion.DataSource = dt;
+            con.Close();
+            resetAll();
+        }
+
+        private void dataGridViewInformation_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            textBoxQuizQuestion.Text = dataGridViewQuestion.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxQuizChoiceA.Text = dataGridViewQuestion.SelectedRows[0].Cells[2].Value.ToString();
+            textBoxQuizChoiceB.Text = dataGridViewQuestion.SelectedRows[0].Cells[3].Value.ToString();
+            textBoxQuizChoiceC.Text = dataGridViewQuestion.SelectedRows[0].Cells[4].Value.ToString();
+            textBoxQuizChoiceD.Text = dataGridViewQuestion.SelectedRows[0].Cells[5].Value.ToString();
+            textBoxRightAnswer.Text = dataGridViewQuestion.SelectedRows[0].Cells[5].Value.ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

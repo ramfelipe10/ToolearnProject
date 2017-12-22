@@ -109,3 +109,6 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLear
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Facilitator.Home.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.Dialogue.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
+C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLearnOfficial.exe.config
+C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.exe
+C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.pdb

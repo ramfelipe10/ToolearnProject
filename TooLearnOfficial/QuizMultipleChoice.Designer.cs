@@ -36,21 +36,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridViewInformation = new System.Windows.Forms.DataGridView();
+            this.dataGridViewQuestion = new System.Windows.Forms.DataGridView();
             this.buttonNextQuestion = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkBoxQuizCheckC = new System.Windows.Forms.CheckBox();
-            this.checkBoxQuizCheckD = new System.Windows.Forms.CheckBox();
-            this.checkBoxQuizCheckB = new System.Windows.Forms.CheckBox();
-            this.checkBoxQuizCheckA = new System.Windows.Forms.CheckBox();
-            this.textBoxQuizChoiceD = new System.Windows.Forms.TextBox();
-            this.textBoxQuizChoiceC = new System.Windows.Forms.TextBox();
-            this.textBoxQuizChoiceB = new System.Windows.Forms.TextBox();
-            this.textBoxQuizChoiceA = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxQuizQuestion = new System.Windows.Forms.TextBox();
@@ -64,8 +51,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ButtonBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBoxRightAnswer = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxQuizChoiceD = new System.Windows.Forms.TextBox();
+            this.textBoxQuizChoiceC = new System.Windows.Forms.TextBox();
+            this.textBoxQuizChoiceB = new System.Windows.Forms.TextBox();
+            this.textBoxQuizChoiceA = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonQuizCopy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonBack)).BeginInit();
             this.SuspendLayout();
@@ -128,13 +125,16 @@
             this.label13.TabIndex = 118;
             this.label13.Text = "No. Of Items :";
             // 
-            // dataGridViewInformation
+            // dataGridViewQuestion
             // 
-            this.dataGridViewInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInformation.Location = new System.Drawing.Point(64, 426);
-            this.dataGridViewInformation.Name = "dataGridViewInformation";
-            this.dataGridViewInformation.Size = new System.Drawing.Size(899, 168);
-            this.dataGridViewInformation.TabIndex = 117;
+            this.dataGridViewQuestion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQuestion.Location = new System.Drawing.Point(64, 426);
+            this.dataGridViewQuestion.Name = "dataGridViewQuestion";
+            this.dataGridViewQuestion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewQuestion.Size = new System.Drawing.Size(899, 168);
+            this.dataGridViewQuestion.TabIndex = 117;
+            this.dataGridViewQuestion.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewInformation_MouseDoubleClick);
             // 
             // buttonNextQuestion
             // 
@@ -149,136 +149,6 @@
             this.buttonNextQuestion.Text = "NEXT";
             this.buttonNextQuestion.UseVisualStyleBackColor = false;
             this.buttonNextQuestion.Click += new System.EventHandler(this.buttonNextQuestion_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(655, 383);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(256, 17);
-            this.label12.TabIndex = 115;
-            this.label12.Text = "(Please put check on the right answer)";
-            // 
-            // checkBoxQuizCheckC
-            // 
-            this.checkBoxQuizCheckC.AutoSize = true;
-            this.checkBoxQuizCheckC.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxQuizCheckC.Location = new System.Drawing.Point(969, 296);
-            this.checkBoxQuizCheckC.Name = "checkBoxQuizCheckC";
-            this.checkBoxQuizCheckC.Size = new System.Drawing.Size(46, 28);
-            this.checkBoxQuizCheckC.TabIndex = 114;
-            this.checkBoxQuizCheckC.Text = "C";
-            this.checkBoxQuizCheckC.UseVisualStyleBackColor = true;
-            this.checkBoxQuizCheckC.CheckedChanged += new System.EventHandler(this.checkBoxQuizCheckC_CheckedChanged);
-            // 
-            // checkBoxQuizCheckD
-            // 
-            this.checkBoxQuizCheckD.AutoSize = true;
-            this.checkBoxQuizCheckD.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxQuizCheckD.Location = new System.Drawing.Point(969, 342);
-            this.checkBoxQuizCheckD.Name = "checkBoxQuizCheckD";
-            this.checkBoxQuizCheckD.Size = new System.Drawing.Size(45, 28);
-            this.checkBoxQuizCheckD.TabIndex = 113;
-            this.checkBoxQuizCheckD.Text = "D";
-            this.checkBoxQuizCheckD.UseVisualStyleBackColor = true;
-            this.checkBoxQuizCheckD.CheckedChanged += new System.EventHandler(this.checkBoxQuizCheckD_CheckedChanged);
-            // 
-            // checkBoxQuizCheckB
-            // 
-            this.checkBoxQuizCheckB.AutoSize = true;
-            this.checkBoxQuizCheckB.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxQuizCheckB.Location = new System.Drawing.Point(969, 249);
-            this.checkBoxQuizCheckB.Name = "checkBoxQuizCheckB";
-            this.checkBoxQuizCheckB.Size = new System.Drawing.Size(41, 28);
-            this.checkBoxQuizCheckB.TabIndex = 112;
-            this.checkBoxQuizCheckB.Text = "B";
-            this.checkBoxQuizCheckB.UseVisualStyleBackColor = true;
-            this.checkBoxQuizCheckB.CheckedChanged += new System.EventHandler(this.checkBoxQuizCheckB_CheckedChanged);
-            // 
-            // checkBoxQuizCheckA
-            // 
-            this.checkBoxQuizCheckA.AutoSize = true;
-            this.checkBoxQuizCheckA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxQuizCheckA.Location = new System.Drawing.Point(969, 203);
-            this.checkBoxQuizCheckA.Name = "checkBoxQuizCheckA";
-            this.checkBoxQuizCheckA.Size = new System.Drawing.Size(44, 28);
-            this.checkBoxQuizCheckA.TabIndex = 111;
-            this.checkBoxQuizCheckA.Text = "A";
-            this.checkBoxQuizCheckA.UseVisualStyleBackColor = true;
-            this.checkBoxQuizCheckA.CheckedChanged += new System.EventHandler(this.checkBoxQuizCheckA_CheckedChanged);
-            // 
-            // textBoxQuizChoiceD
-            // 
-            this.textBoxQuizChoiceD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuizChoiceD.Location = new System.Drawing.Point(678, 340);
-            this.textBoxQuizChoiceD.Name = "textBoxQuizChoiceD";
-            this.textBoxQuizChoiceD.Size = new System.Drawing.Size(285, 31);
-            this.textBoxQuizChoiceD.TabIndex = 110;
-            // 
-            // textBoxQuizChoiceC
-            // 
-            this.textBoxQuizChoiceC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuizChoiceC.Location = new System.Drawing.Point(678, 294);
-            this.textBoxQuizChoiceC.Name = "textBoxQuizChoiceC";
-            this.textBoxQuizChoiceC.Size = new System.Drawing.Size(285, 31);
-            this.textBoxQuizChoiceC.TabIndex = 109;
-            // 
-            // textBoxQuizChoiceB
-            // 
-            this.textBoxQuizChoiceB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuizChoiceB.Location = new System.Drawing.Point(678, 247);
-            this.textBoxQuizChoiceB.Name = "textBoxQuizChoiceB";
-            this.textBoxQuizChoiceB.Size = new System.Drawing.Size(285, 31);
-            this.textBoxQuizChoiceB.TabIndex = 108;
-            // 
-            // textBoxQuizChoiceA
-            // 
-            this.textBoxQuizChoiceA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuizChoiceA.Location = new System.Drawing.Point(678, 200);
-            this.textBoxQuizChoiceA.Name = "textBoxQuizChoiceA";
-            this.textBoxQuizChoiceA.Size = new System.Drawing.Size(285, 31);
-            this.textBoxQuizChoiceA.TabIndex = 107;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(641, 347);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(31, 24);
-            this.label11.TabIndex = 106;
-            this.label11.Text = "D.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(640, 297);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(32, 24);
-            this.label10.TabIndex = 105;
-            this.label10.Text = "C.";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(642, 252);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(27, 24);
-            this.label9.TabIndex = 104;
-            this.label9.Text = "B.";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(642, 204);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 24);
-            this.label8.TabIndex = 103;
-            this.label8.Text = "A.";
             // 
             // label7
             // 
@@ -308,7 +178,6 @@
             this.textBoxQuizQuestion.Name = "textBoxQuizQuestion";
             this.textBoxQuizQuestion.Size = new System.Drawing.Size(400, 171);
             this.textBoxQuizQuestion.TabIndex = 100;
-            this.textBoxQuizQuestion.TextChanged += new System.EventHandler(this.textBoxQuizQuestion_TextChanged);
             // 
             // textBoxQuizTimeLimit
             // 
@@ -317,7 +186,6 @@
             this.textBoxQuizTimeLimit.Name = "textBoxQuizTimeLimit";
             this.textBoxQuizTimeLimit.Size = new System.Drawing.Size(158, 31);
             this.textBoxQuizTimeLimit.TabIndex = 99;
-            this.textBoxQuizTimeLimit.TextChanged += new System.EventHandler(this.textBoxQuizTimeLimit_TextChanged);
             // 
             // textBoxQuizTitle
             // 
@@ -386,6 +254,7 @@
             this.label1.Size = new System.Drawing.Size(490, 42);
             this.label1.TabIndex = 92;
             this.label1.Text = "Create Multiple Choice Quiz";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ButtonBack
             // 
@@ -410,7 +279,96 @@
             this.label14.Size = new System.Drawing.Size(165, 17);
             this.label14.TabIndex = 124;
             this.label14.Text = "(Time Limit Per Question)";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // textBoxRightAnswer
+            // 
+            this.textBoxRightAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRightAnswer.Location = new System.Drawing.Point(678, 379);
+            this.textBoxRightAnswer.Name = "textBoxRightAnswer";
+            this.textBoxRightAnswer.Size = new System.Drawing.Size(285, 31);
+            this.textBoxRightAnswer.TabIndex = 135;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(643, 351);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(234, 21);
+            this.label12.TabIndex = 134;
+            this.label12.Text = "(Please put the right answer)";
+            // 
+            // textBoxQuizChoiceD
+            // 
+            this.textBoxQuizChoiceD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQuizChoiceD.Location = new System.Drawing.Point(678, 307);
+            this.textBoxQuizChoiceD.Name = "textBoxQuizChoiceD";
+            this.textBoxQuizChoiceD.Size = new System.Drawing.Size(285, 31);
+            this.textBoxQuizChoiceD.TabIndex = 133;
+            // 
+            // textBoxQuizChoiceC
+            // 
+            this.textBoxQuizChoiceC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQuizChoiceC.Location = new System.Drawing.Point(678, 271);
+            this.textBoxQuizChoiceC.Name = "textBoxQuizChoiceC";
+            this.textBoxQuizChoiceC.Size = new System.Drawing.Size(285, 31);
+            this.textBoxQuizChoiceC.TabIndex = 132;
+            // 
+            // textBoxQuizChoiceB
+            // 
+            this.textBoxQuizChoiceB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQuizChoiceB.Location = new System.Drawing.Point(678, 234);
+            this.textBoxQuizChoiceB.Name = "textBoxQuizChoiceB";
+            this.textBoxQuizChoiceB.Size = new System.Drawing.Size(285, 31);
+            this.textBoxQuizChoiceB.TabIndex = 131;
+            // 
+            // textBoxQuizChoiceA
+            // 
+            this.textBoxQuizChoiceA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQuizChoiceA.Location = new System.Drawing.Point(678, 197);
+            this.textBoxQuizChoiceA.Name = "textBoxQuizChoiceA";
+            this.textBoxQuizChoiceA.Size = new System.Drawing.Size(285, 31);
+            this.textBoxQuizChoiceA.TabIndex = 130;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(641, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 24);
+            this.label11.TabIndex = 129;
+            this.label11.Text = "D.";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(640, 274);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(32, 24);
+            this.label10.TabIndex = 128;
+            this.label10.Text = "C.";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(642, 238);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 24);
+            this.label9.TabIndex = 127;
+            this.label9.Text = "B.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(642, 201);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 24);
+            this.label8.TabIndex = 126;
+            this.label8.Text = "A.";
             // 
             // QuizMultipleChoice
             // 
@@ -418,20 +376,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1045, 615);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.ButtonBack);
-            this.Controls.Add(this.comboBoxQuizSubject);
-            this.Controls.Add(this.ButtonQuizCopy);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.dataGridViewInformation);
-            this.Controls.Add(this.buttonNextQuestion);
+            this.Controls.Add(this.textBoxRightAnswer);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.checkBoxQuizCheckC);
-            this.Controls.Add(this.checkBoxQuizCheckD);
-            this.Controls.Add(this.checkBoxQuizCheckB);
-            this.Controls.Add(this.checkBoxQuizCheckA);
             this.Controls.Add(this.textBoxQuizChoiceD);
             this.Controls.Add(this.textBoxQuizChoiceC);
             this.Controls.Add(this.textBoxQuizChoiceB);
@@ -440,6 +386,15 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.ButtonBack);
+            this.Controls.Add(this.comboBoxQuizSubject);
+            this.Controls.Add(this.ButtonQuizCopy);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dataGridViewQuestion);
+            this.Controls.Add(this.buttonNextQuestion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxQuizQuestion);
@@ -457,7 +412,7 @@
             this.Text = "QuizMultipleChoice";
             this.Load += new System.EventHandler(this.QuizMultipleChoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ButtonQuizCopy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonBack)).EndInit();
             this.ResumeLayout(false);
@@ -473,21 +428,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridViewInformation;
+        private System.Windows.Forms.DataGridView dataGridViewQuestion;
         private System.Windows.Forms.Button buttonNextQuestion;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox checkBoxQuizCheckC;
-        private System.Windows.Forms.CheckBox checkBoxQuizCheckD;
-        private System.Windows.Forms.CheckBox checkBoxQuizCheckB;
-        private System.Windows.Forms.CheckBox checkBoxQuizCheckA;
-        private System.Windows.Forms.TextBox textBoxQuizChoiceD;
-        private System.Windows.Forms.TextBox textBoxQuizChoiceC;
-        private System.Windows.Forms.TextBox textBoxQuizChoiceB;
-        private System.Windows.Forms.TextBox textBoxQuizChoiceA;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxQuizQuestion;
@@ -501,5 +443,15 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton ButtonBack;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxRightAnswer;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxQuizChoiceD;
+        private System.Windows.Forms.TextBox textBoxQuizChoiceC;
+        private System.Windows.Forms.TextBox textBoxQuizChoiceB;
+        private System.Windows.Forms.TextBox textBoxQuizChoiceA;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
