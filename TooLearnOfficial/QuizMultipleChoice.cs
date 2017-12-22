@@ -13,7 +13,8 @@ namespace TooLearnOfficial
 {
     public partial class QuizMultipleChoice : Form
     {
-        
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
         public QuizMultipleChoice()
         {
             InitializeComponent();
@@ -44,14 +45,14 @@ namespace TooLearnOfficial
             con.Open();
             cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select classroom_name from classroom order by classroom_id asc";
+            cmd.CommandText = "select class_name from classrooms order by class_id asc";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da1 = new SqlDataAdapter(cmd);
             da1.Fill(dt);
             foreach (DataRow dr in dt.Rows)
             {
-                comboBoxQuizSubject.Items.Add(dr["classroom_name"].ToString());
+                comboBoxQuizSubject.Items.Add(dr["class_name"].ToString());
             }
             con.Close();
         }
