@@ -14,7 +14,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
     public partial class CreateClassroom : UserControl
     {
 
-        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+       // SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
         public CreateClassroom()
         {
@@ -35,7 +35,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
         void load_class()
         {
 
-
+/*
             try
             {
                 SqlDataAdapter sda = new SqlDataAdapter("Select class_name from classrooms", con);
@@ -50,7 +50,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }  */
 
         }
 
@@ -82,7 +82,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
         private void createC_Click(object sender, EventArgs e)
         {
-            con.Open();
+          /*  con.Open();
             String query = "INSERT INTO classrooms (class_name) VALUES ('" + textBoxCreateClassroom.Text + "')";
             //comboBoxClassroomList.Items.Add(query);   Sala ni Temporary lng ni saka si query mismo ang tgkakaag dapat si sa combo box tlga ma query
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
@@ -96,18 +96,20 @@ namespace TooLearnOfficial.User_Control_Facilitator
             else
                 Dialogue.Show("Creation Failed!", "", "Ok", "Cancel");
       
-            load_class();
+            load_class();  */
 
         }
 
         private void createP_Click(object sender, EventArgs e)
         {
+            /*
             con.Open();
             String query = "INSERT INTO participant (participant_id, name) VALUES ('" + textBoxAddParticipant.Text + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             sda.SelectCommand.ExecuteNonQuery();
             con.Close();
             Dialogue.Show("Participant Added!", "", "Ok", "Cancel");
+            */
         }
 
       
