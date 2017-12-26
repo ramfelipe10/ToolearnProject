@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateClassroom));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateClassroom));
             this.Usercontrol = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.textBoxAddParticipant = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +46,12 @@
             this.classgrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label1 = new System.Windows.Forms.Label();
+            this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.classbox = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.partbox = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.partgrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.deleteP = new Bunifu.Framework.UI.BunifuImageButton();
             this.editP = new Bunifu.Framework.UI.BunifuImageButton();
             this.createP = new Bunifu.Framework.UI.BunifuImageButton();
@@ -53,11 +59,9 @@
             this.editC = new Bunifu.Framework.UI.BunifuImageButton();
             this.createC = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.classbox = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.partbox = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.partgrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createP)).BeginInit();
@@ -65,12 +69,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.editC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
             this.SuspendLayout();
             // 
             // Usercontrol
             // 
-            this.Usercontrol.ElipseRadius = 50;
+            this.Usercontrol.ElipseRadius = 20;
             this.Usercontrol.TargetControl = this;
             // 
             // textBoxAddParticipant
@@ -177,6 +180,7 @@
             this.bunifuCustomDataGrid1.ShowCellErrors = false;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(257, 127);
             this.bunifuCustomDataGrid1.TabIndex = 142;
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
             // label1
             // 
@@ -187,6 +191,86 @@
             this.label1.Size = new System.Drawing.Size(250, 32);
             this.label1.TabIndex = 125;
             this.label1.Text = "Create Classroom";
+            // 
+            // bunifuCustomDataGrid2
+            // 
+            this.bunifuCustomDataGrid2.AllowUserToAddRows = false;
+            this.bunifuCustomDataGrid2.AllowUserToDeleteRows = false;
+            this.bunifuCustomDataGrid2.AllowUserToResizeColumns = false;
+            this.bunifuCustomDataGrid2.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.bunifuCustomDataGrid2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomDataGrid2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bunifuCustomDataGrid2.ColumnHeadersVisible = false;
+            this.bunifuCustomDataGrid2.DoubleBuffered = true;
+            this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
+            this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.MediumSeaGreen;
+            this.bunifuCustomDataGrid2.HeaderForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(346, 209);
+            this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
+            this.bunifuCustomDataGrid2.ReadOnly = true;
+            this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGrid2.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            this.bunifuCustomDataGrid2.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.bunifuCustomDataGrid2.RowTemplate.DividerHeight = 1;
+            this.bunifuCustomDataGrid2.RowTemplate.Height = 25;
+            this.bunifuCustomDataGrid2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuCustomDataGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.bunifuCustomDataGrid2.ShowCellErrors = false;
+            this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(299, 100);
+            this.bunifuCustomDataGrid2.TabIndex = 154;
+            // 
+            // classbox
+            // 
+            this.classbox.ElipseRadius = 5;
+            this.classbox.TargetControl = this.textBoxCreateClassroom;
+            // 
+            // partbox
+            // 
+            this.partbox.ElipseRadius = 5;
+            this.partbox.TargetControl = this.textBoxAddParticipant;
+            // 
+            // partgrid
+            // 
+            this.partgrid.ElipseRadius = 7;
+            this.partgrid.TargetControl = this.bunifuCustomDataGrid2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(485, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 18);
+            this.label6.TabIndex = 155;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.Right_104px;
+            this.pictureBox2.Location = new System.Drawing.Point(286, 228);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 81);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 156;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
             // 
             // deleteP
             // 
@@ -278,70 +362,13 @@
             this.pictureBox1.TabIndex = 126;
             this.pictureBox1.TabStop = false;
             // 
-            // bunifuCustomDataGrid2
-            // 
-            this.bunifuCustomDataGrid2.AllowUserToAddRows = false;
-            this.bunifuCustomDataGrid2.AllowUserToDeleteRows = false;
-            this.bunifuCustomDataGrid2.AllowUserToResizeColumns = false;
-            this.bunifuCustomDataGrid2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid2.ColumnHeadersVisible = false;
-            this.bunifuCustomDataGrid2.DoubleBuffered = true;
-            this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuCustomDataGrid2.HeaderForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(346, 209);
-            this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
-            this.bunifuCustomDataGrid2.ReadOnly = true;
-            this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid2.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-            this.bunifuCustomDataGrid2.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.bunifuCustomDataGrid2.RowTemplate.DividerHeight = 1;
-            this.bunifuCustomDataGrid2.RowTemplate.Height = 25;
-            this.bunifuCustomDataGrid2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.bunifuCustomDataGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.bunifuCustomDataGrid2.ShowCellErrors = false;
-            this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(299, 100);
-            this.bunifuCustomDataGrid2.TabIndex = 154;
-            // 
-            // classbox
-            // 
-            this.classbox.ElipseRadius = 5;
-            this.classbox.TargetControl = this.textBoxCreateClassroom;
-            // 
-            // partbox
-            // 
-            this.partbox.ElipseRadius = 5;
-            this.partbox.TargetControl = this.textBoxAddParticipant;
-            // 
-            // partgrid
-            // 
-            this.partgrid.ElipseRadius = 7;
-            this.partgrid.TargetControl = this.bunifuCustomDataGrid2;
-            // 
             // CreateClassroom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.bunifuCustomDataGrid2);
             this.Controls.Add(this.deleteP);
             this.Controls.Add(this.editP);
@@ -362,6 +389,8 @@
             this.Size = new System.Drawing.Size(685, 370);
             this.Load += new System.EventHandler(this.CreateClassroom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createP)).EndInit();
@@ -369,7 +398,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.editC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +426,7 @@
         private Bunifu.Framework.UI.BunifuElipse classbox;
         private Bunifu.Framework.UI.BunifuElipse partbox;
         private Bunifu.Framework.UI.BunifuElipse partgrid;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
