@@ -20,6 +20,17 @@ namespace TooLearnOfficial.User_Control
         }
 
 
+
+
+        private void MyAccount_Load(object sender, EventArgs e)
+        {
+       
+
+        }
+
+
+
+
         //Alternative
         static class Helper
         {
@@ -32,41 +43,40 @@ namespace TooLearnOfficial.User_Control
                 }
             }
         }
-        //Alternative
-
-
-        private void MyAccount_Load(object sender, EventArgs e)
-        {
-       
-
-        }
+        //Alternative 
 
 
         void load_account()
         {
 
-            //Alternative
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Helper.ConnectionString;
-
-            //Alternative-End
-
-
-            SqlDataAdapter sda = new SqlDataAdapter("Select name,username from facilitator Where username='"+ Program.Session_id + "' ", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows.Count > 0)
+            try
             {
-                accountname.Text = dt.Rows[0][0].ToString();
-                bunifuMetroTextbox1.Text= dt.Rows[0][0].ToString();
-                accountuname.Text = dt.Rows[0][1].ToString();
+
+                //Alternative
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Helper.ConnectionString;
+
+                //Alternative-End
+
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select name,username from facilitator Where username='" + Program.Session_id + "' ", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    accountname.Text = dt.Rows[0][0].ToString();
+                    bunifuMetroTextbox1.Text = dt.Rows[0][0].ToString();
+                    accountuname.Text = dt.Rows[0][1].ToString();
+                }
+                else { }
+
             }
 
-                        
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message);
+            }
         }
 
-
-
-
-    }
+}
 }

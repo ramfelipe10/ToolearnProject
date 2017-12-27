@@ -119,36 +119,13 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
 
         }
 
 
-        /*
-                private void buttonADDClassroom_Click(object sender, EventArgs e)
-                {
-
-                }
-
-                private void buttonADDParticipant_Click(object sender, EventArgs e)
-                {
-
-                }
-
-                private void comboBoxClassroomList_SelectedIndexChanged(object sender, EventArgs e)
-                {
-
-
-                    SqlDataAdapter sda = new SqlDataAdapter("Select  class_name from classrooms", con);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    comboBoxClassroomList.Items.Add(sda);
-
-
-
-
-                } */
+      
 
         private void createC_Click(object sender, EventArgs e)
         {
@@ -227,5 +204,10 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 load_participant();
             }
         }
+
+
+
+
+
     }
 }
