@@ -16,12 +16,57 @@ namespace TooLearnOfficial.User_Control
         public MyAccount()
         {
             InitializeComponent();
+            load_account();
         }
+
+
+        //Alternative
+        static class Helper
+        {
+            public static string ConnectionString
+            {
+                get
+                {
+                    string str = System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString;
+                    return str;
+                }
+            }
+        }
+        //Alternative
+
 
         private void MyAccount_Load(object sender, EventArgs e)
         {
+       
 
         }
+
+
+        void load_account()
+        {
+
+            //Alternative
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Helper.ConnectionString;
+
+            //Alternative-End
+
+
+            SqlDataAdapter sda = new SqlDataAdapter("Select name,username from facilitator Where username='"+ Program.Session_id + "' ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                accountname.Text = dt.Rows[0][0].ToString();
+                bunifuMetroTextbox1.Text= dt.Rows[0][0].ToString();
+                accountuname.Text = dt.Rows[0][1].ToString();
+            }
+
+                        
+        }
+
+
+
 
     }
 }

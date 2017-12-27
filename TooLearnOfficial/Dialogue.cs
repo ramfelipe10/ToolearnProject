@@ -34,11 +34,15 @@ namespace TooLearnOfficial
         {
             result = DialogResult.Yes;
             MsgBox.Close();
+
+         
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             MsgBox.Close();
         }
+
+       
     }
 }

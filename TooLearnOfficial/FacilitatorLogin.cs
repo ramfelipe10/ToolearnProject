@@ -29,6 +29,7 @@ namespace TooLearnOfficial
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
+                Program.Session_id = TextboxUsername.Text; //For Session
                 Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                 this.Hide();
 
@@ -106,6 +107,68 @@ namespace TooLearnOfficial
             ChooseUser h = new ChooseUser();
             h.Show();
             this.Hide();
+        }
+
+        private void TextboxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+
+                    Program.Session_id = TextboxUsername.Text; //For Session
+                    Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+                    this.Hide();
+
+                    MainMenu mm = new MainMenu();
+                    mm.Show();
+                }
+                else
+                {
+
+                    Dialogue.Show("Login Failed!   Please Check your Username and Password!", "", "Ok", "Cancel");
+                    //MessageBox.Show("Please Check your Username and Password");
+                }
+
+            }
+        }
+
+        private void passbox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    Program.Session_id = TextboxUsername.Text; //For Session
+
+                    Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+                    this.Hide();
+
+                    MainMenu mm = new MainMenu();
+                    mm.Show();
+                }
+                else
+                {
+
+                    Dialogue.Show("Login Failed!   Please Check your Username and Password!", "", "Ok", "Cancel");
+                    //MessageBox.Show("Please Check your Username and Password");
+                }
+
+            }
+
         }
     }
     }

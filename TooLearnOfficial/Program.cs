@@ -11,6 +11,9 @@ namespace TooLearnOfficial
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static String Session_id;
+
         [STAThread]
         static void Main()
         {

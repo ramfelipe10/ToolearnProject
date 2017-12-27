@@ -79,6 +79,7 @@
             this.passbox.Tag = "";
             this.passbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passbox.OnValueChanged += new System.EventHandler(this.passbox_OnValueChanged);
+            this.passbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passbox_KeyDown);
             // 
             // bunifuElipse1
             // 
@@ -104,6 +105,7 @@
             this.TextboxUsername.TabIndex = 3;
             this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextboxUsername.OnValueChanged += new System.EventHandler(this.TextboxUsername_OnValueChanged);
+            this.TextboxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxUsername_KeyDown);
             // 
             // label1
             // 
