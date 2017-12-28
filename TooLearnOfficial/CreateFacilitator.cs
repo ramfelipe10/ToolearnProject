@@ -119,5 +119,80 @@ namespace TooLearnOfficial
             fl.Show();
             this.Hide();
         }
+
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxReTypePassword_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxPassword_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ErrorImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckImage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelAvailableUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateFacilitator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

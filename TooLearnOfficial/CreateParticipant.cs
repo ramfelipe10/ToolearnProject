@@ -49,9 +49,47 @@ namespace TooLearnOfficial
             }
         }
 
-        private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
+       
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxName_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxName_OnValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            ParticipantLogin pl = new ParticipantLogin();
+            pl.Show();
+            this.Hide();
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void TextboxUsername_OnValueChanged_1(object sender, EventArgs e)
+        {
             con.Open();
             if (labelAvailableUsername.ForeColor == System.Drawing.Color.Green)
             {
@@ -77,15 +115,6 @@ namespace TooLearnOfficial
             {
                 MessageBox.Show("Please use Available Username");
             }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
     }
