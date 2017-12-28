@@ -69,11 +69,12 @@
             // 
             // bunifuElipse1
             // 
-            this.bunifuElipse1.ElipseRadius = 50;
+            this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
             // 
             // comboBoxQuizSubject
             // 
+            this.comboBoxQuizSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxQuizSubject.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxQuizSubject.FormattingEnabled = true;
             this.comboBoxQuizSubject.Location = new System.Drawing.Point(146, 125);

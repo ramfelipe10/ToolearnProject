@@ -430,6 +430,16 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\Settings_52px.png" />
+    <None Include="TooLearn Pictures\Logout Rounded Left_64px.png" />
+    <None Include="TooLearn Pictures\Create_52px.png" />
+    <None Include="TooLearn Pictures\Info_50px.png" />
+    <None Include="TooLearn Pictures\About_52px.png" />
+    <None Include="TooLearn Pictures\Database_52px.png" />
+    <None Include="TooLearn Pictures\Report Card_48px.png" />
+    <None Include="TooLearn Pictures\Classroom_50px.png" />
+    <None Include="TooLearn Pictures\Report Card_50px.png" />
+    <None Include="TooLearn Pictures\User_48px.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

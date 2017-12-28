@@ -83,6 +83,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap About_52px {
+            get {
+                object obj = ResourceManager.GetObject("About_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AdNU_Seal_LATEST_PROTOTYPE {
             get {
                 object obj = ResourceManager.GetObject("AdNU-Seal-LATEST-PROTOTYPE", resourceCulture);
@@ -123,9 +133,39 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Classroom_50px {
+            get {
+                object obj = ResourceManager.GetObject("Classroom_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_Window_48px {
             get {
                 object obj = ResourceManager.GetObject("Close Window_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Create_52px {
+            get {
+                object obj = ResourceManager.GetObject("Create_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Database_52px {
+            get {
+                object obj = ResourceManager.GetObject("Database_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +203,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Info_50px {
+            get {
+                object obj = ResourceManager.GetObject("Info_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loader1 {
             get {
                 object obj = ResourceManager.GetObject("loader1", resourceCulture);
@@ -176,6 +226,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap loaderbookshelf {
             get {
                 object obj = ResourceManager.GetObject("loaderbookshelf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logout_Rounded_Left_64px {
+            get {
+                object obj = ResourceManager.GetObject("Logout Rounded Left_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +283,26 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Report_Card_48px {
+            get {
+                object obj = ResourceManager.GetObject("Report Card_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Report_Card_50px {
+            get {
+                object obj = ResourceManager.GetObject("Report Card_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Right_104px {
             get {
                 object obj = ResourceManager.GetObject("Right_104px", resourceCulture);
@@ -253,6 +333,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Settings_52px {
+            get {
+                object obj = ResourceManager.GetObject("Settings_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap teacher_with_blackboard_cartoon_23_2147497851 {
             get {
                 object obj = ResourceManager.GetObject("teacher-with-blackboard-cartoon_23-2147497851", resourceCulture);
@@ -276,6 +366,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap Trash_52px {
             get {
                 object obj = ResourceManager.GetObject("Trash_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_48px {
+            get {
+                object obj = ResourceManager.GetObject("User_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
