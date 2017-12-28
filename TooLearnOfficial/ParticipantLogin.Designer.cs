@@ -316,7 +316,7 @@
             this.MaximizeBox = false;
             this.Name = "ParticipantLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Participant Login";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.ParticipantLogin_Load);
             this.LoginHeader.ResumeLayout(false);
             this.LoginHeader.PerformLayout();

@@ -18,6 +18,7 @@ namespace TooLearnOfficial
         public QuizMultipleChoice()
         {
             InitializeComponent();
+            load_mc();
         }
 
         private void resetAll()
@@ -30,7 +31,7 @@ namespace TooLearnOfficial
         {
             textBoxQuizQuestion.Enabled = true;
             textBoxQuizChoiceA.Enabled = true; textBoxQuizChoiceB.Enabled = true; textBoxQuizChoiceC.Enabled = true; textBoxQuizChoiceD.Enabled = true;
-            dataGridViewQuestion.Enabled = true;
+            bunifuCustomDataGrid1.Enabled = true;
         }
         private void disableFields()
         {
@@ -39,7 +40,7 @@ namespace TooLearnOfficial
         }
         private void QuizMultipleChoice_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand();
+        /*    SqlCommand cmd = new SqlCommand();
 
             comboBoxQuizSubject.Items.Clear();
             con.Open();
@@ -54,15 +55,38 @@ namespace TooLearnOfficial
             {
                 comboBoxQuizSubject.Items.Add(dr["class_name"].ToString());
             }
-            con.Close();
+            con.Close(); */ 
         }
 
-        private void ButtonBack_Click(object sender, EventArgs e)
+
+
+        void load_mc()
         {
-            this.Hide();
-            MainMenu mm = new MainMenu();
-            mm.Show();
+
+
+            try
+            {
+
+               
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select class_id AS 'ID',class_name AS 'Class' from classrooms", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dt;
+               
+                bunifuCustomDataGrid1.DataSource = bs;
+                sda.Update(dt);
+            }
+
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.Message);
+            }
+
         }
+
+
 
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)
@@ -117,12 +141,12 @@ namespace TooLearnOfficial
             SqlDataAdapter sda = new SqlDataAdapter(query, con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            dataGridViewQuestion.DataSource = dt;
+            bunifuCustomDataGrid1.DataSource = dt;
             con.Close();
             resetAll();
         }
 
-        private void dataGridViewInformation_MouseDoubleClick(object sender, MouseEventArgs e)
+       /* private void dataGridViewInformation_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             textBoxQuizQuestion.Text = dataGridViewQuestion.SelectedRows[0].Cells[1].Value.ToString();
             textBoxQuizChoiceA.Text = dataGridViewQuestion.SelectedRows[0].Cells[2].Value.ToString();
@@ -130,11 +154,18 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text = dataGridViewQuestion.SelectedRows[0].Cells[4].Value.ToString();
             textBoxQuizChoiceD.Text = dataGridViewQuestion.SelectedRows[0].Cells[5].Value.ToString();
             textBoxRightAnswer.Text = dataGridViewQuestion.SelectedRows[0].Cells[5].Value.ToString();
+        } */
+
+      
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

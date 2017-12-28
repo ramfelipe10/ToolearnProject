@@ -351,7 +351,7 @@
             this.MaximizeBox = false;
             this.Name = "FacilitatorLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Facilitator Login";
+            this.Text = " Login";
             this.Load += new System.EventHandler(this.FacilitatorLogin_Load);
             this.LoginHeader.ResumeLayout(false);
             this.LoginHeader.PerformLayout();

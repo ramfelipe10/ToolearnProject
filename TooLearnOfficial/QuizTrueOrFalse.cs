@@ -17,11 +17,16 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        private void ButtonBack_Click(object sender, EventArgs e)
+       
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu mm = new MainMenu();
-            mm.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
