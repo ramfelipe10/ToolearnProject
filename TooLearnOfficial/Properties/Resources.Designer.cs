@@ -93,6 +93,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Image_50px {
+            get {
+                object obj = ResourceManager.GetObject("Add Image_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AdNU_Seal_LATEST_PROTOTYPE {
             get {
                 object obj = ResourceManager.GetObject("AdNU-Seal-LATEST-PROTOTYPE", resourceCulture);
@@ -266,6 +276,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap newparti {
             get {
                 object obj = ResourceManager.GetObject("newparti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Picture_96px {
+            get {
+                object obj = ResourceManager.GetObject("Picture_96px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

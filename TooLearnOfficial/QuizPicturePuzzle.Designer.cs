@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuizPicturePuzzle));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBoxQuizSubject = new System.Windows.Forms.ComboBox();
@@ -40,59 +39,57 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.splitPicture = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.splitPicture1 = new System.Windows.Forms.PictureBox();
-            this.splitPicture2 = new System.Windows.Forms.PictureBox();
-            this.splitPicture3 = new System.Windows.Forms.PictureBox();
-            this.splitPicture4 = new System.Windows.Forms.PictureBox();
-            this.splitPicture5 = new System.Windows.Forms.PictureBox();
-            this.splitPicture6 = new System.Windows.Forms.PictureBox();
-            this.splitPicture7 = new System.Windows.Forms.PictureBox();
-            this.splitPicture8 = new System.Windows.Forms.PictureBox();
-            this.splitPicture9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.header = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.timeOras = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ButtonMinimize = new Bunifu.Framework.UI.BunifuImageButton();
-            this.timeOras = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.splitPicture9 = new System.Windows.Forms.PictureBox();
+            this.splitPicture8 = new System.Windows.Forms.PictureBox();
+            this.splitPicture7 = new System.Windows.Forms.PictureBox();
+            this.splitPicture6 = new System.Windows.Forms.PictureBox();
+            this.splitPicture5 = new System.Windows.Forms.PictureBox();
+            this.splitPicture4 = new System.Windows.Forms.PictureBox();
+            this.splitPicture3 = new System.Windows.Forms.PictureBox();
+            this.splitPicture2 = new System.Windows.Forms.PictureBox();
+            this.splitPicture1 = new System.Windows.Forms.PictureBox();
+            this.splitPicture = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(810, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(221, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 125;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -169,108 +166,6 @@
             this.label2.TabIndex = 127;
             this.label2.Text = "Title:";
             // 
-            // splitPicture
-            // 
-            this.splitPicture.Location = new System.Drawing.Point(50, 214);
-            this.splitPicture.Name = "splitPicture";
-            this.splitPicture.Size = new System.Drawing.Size(432, 247);
-            this.splitPicture.TabIndex = 134;
-            this.splitPicture.TabStop = false;
-            this.splitPicture.Click += new System.EventHandler(this.splitPicture_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(221, 467);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 135;
-            this.button1.Text = "Upload";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // splitPicture1
-            // 
-            this.splitPicture1.Location = new System.Drawing.Point(551, 255);
-            this.splitPicture1.Name = "splitPicture1";
-            this.splitPicture1.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture1.TabIndex = 136;
-            this.splitPicture1.TabStop = false;
-            this.splitPicture1.Click += new System.EventHandler(this.splitPicture1_Click);
-            // 
-            // splitPicture2
-            // 
-            this.splitPicture2.Location = new System.Drawing.Point(551, 314);
-            this.splitPicture2.Name = "splitPicture2";
-            this.splitPicture2.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture2.TabIndex = 137;
-            this.splitPicture2.TabStop = false;
-            // 
-            // splitPicture3
-            // 
-            this.splitPicture3.Location = new System.Drawing.Point(551, 370);
-            this.splitPicture3.Name = "splitPicture3";
-            this.splitPicture3.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture3.TabIndex = 138;
-            this.splitPicture3.TabStop = false;
-            // 
-            // splitPicture4
-            // 
-            this.splitPicture4.Location = new System.Drawing.Point(628, 255);
-            this.splitPicture4.Name = "splitPicture4";
-            this.splitPicture4.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture4.TabIndex = 139;
-            this.splitPicture4.TabStop = false;
-            // 
-            // splitPicture5
-            // 
-            this.splitPicture5.Location = new System.Drawing.Point(628, 314);
-            this.splitPicture5.Name = "splitPicture5";
-            this.splitPicture5.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture5.TabIndex = 140;
-            this.splitPicture5.TabStop = false;
-            // 
-            // splitPicture6
-            // 
-            this.splitPicture6.Location = new System.Drawing.Point(628, 370);
-            this.splitPicture6.Name = "splitPicture6";
-            this.splitPicture6.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture6.TabIndex = 141;
-            this.splitPicture6.TabStop = false;
-            // 
-            // splitPicture7
-            // 
-            this.splitPicture7.Location = new System.Drawing.Point(706, 255);
-            this.splitPicture7.Name = "splitPicture7";
-            this.splitPicture7.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture7.TabIndex = 142;
-            this.splitPicture7.TabStop = false;
-            // 
-            // splitPicture8
-            // 
-            this.splitPicture8.Location = new System.Drawing.Point(706, 314);
-            this.splitPicture8.Name = "splitPicture8";
-            this.splitPicture8.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture8.TabIndex = 143;
-            this.splitPicture8.TabStop = false;
-            // 
-            // splitPicture9
-            // 
-            this.splitPicture9.Location = new System.Drawing.Point(706, 370);
-            this.splitPicture9.Name = "splitPicture9";
-            this.splitPicture9.Size = new System.Drawing.Size(62, 50);
-            this.splitPicture9.TabIndex = 144;
-            this.splitPicture9.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.toolearn_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
             // header
             // 
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -286,6 +181,76 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(1045, 27);
             this.header.TabIndex = 145;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(39, 3);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(202, 21);
+            this.bunifuCustomLabel2.TabIndex = 13;
+            this.bunifuCustomLabel2.Text = "Picture Puzzle - TooLearn ";
+            // 
+            // timeOras
+            // 
+            this.timeOras.AutoSize = true;
+            this.timeOras.BackColor = System.Drawing.Color.Transparent;
+            this.timeOras.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.timeOras.ForeColor = System.Drawing.SystemColors.Control;
+            this.timeOras.Location = new System.Drawing.Point(83, 612);
+            this.timeOras.Name = "timeOras";
+            this.timeOras.Size = new System.Drawing.Size(50, 22);
+            this.timeOras.TabIndex = 5;
+            this.timeOras.Text = "Time";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.header;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.splitPicture;
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 6;
+            this.bunifuFlatButton1.ButtonText = "Upload";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = global::TooLearnOfficial.Properties.Resources.Add_Image_50px;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 40D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(96, 500);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(145, 31);
+            this.bunifuFlatButton1.TabIndex = 146;
+            this.bunifuFlatButton1.Text = "Upload";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // bunifuImageButton1
             // 
@@ -315,17 +280,6 @@
             this.bunifuImageButton2.Zoom = 20;
             this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(39, 3);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(202, 21);
-            this.bunifuCustomLabel2.TabIndex = 13;
-            this.bunifuCustomLabel2.Text = "Picture Puzzle - TooLearn ";
-            // 
             // ButtonMinimize
             // 
             this.ButtonMinimize.BackColor = System.Drawing.Color.Transparent;
@@ -339,17 +293,15 @@
             this.ButtonMinimize.TabStop = false;
             this.ButtonMinimize.Zoom = 20;
             // 
-            // timeOras
+            // pictureBox2
             // 
-            this.timeOras.AutoSize = true;
-            this.timeOras.BackColor = System.Drawing.Color.Transparent;
-            this.timeOras.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.timeOras.ForeColor = System.Drawing.SystemColors.Control;
-            this.timeOras.Location = new System.Drawing.Point(83, 612);
-            this.timeOras.Name = "timeOras";
-            this.timeOras.Size = new System.Drawing.Size(50, 22);
-            this.timeOras.TabIndex = 5;
-            this.timeOras.Text = "Time";
+            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.toolearn_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // buttonExit
             // 
@@ -364,12 +316,204 @@
             this.buttonExit.TabStop = false;
             this.buttonExit.Zoom = 20;
             // 
-            // bunifuDragControl1
+            // splitPicture9
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.header;
-            this.bunifuDragControl1.Vertical = true;
+            this.splitPicture9.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture9.Location = new System.Drawing.Point(255, 228);
+            this.splitPicture9.Name = "splitPicture9";
+            this.splitPicture9.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture9.TabIndex = 144;
+            this.splitPicture9.TabStop = false;
+            // 
+            // splitPicture8
+            // 
+            this.splitPicture8.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture8.Location = new System.Drawing.Point(254, 141);
+            this.splitPicture8.Name = "splitPicture8";
+            this.splitPicture8.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture8.TabIndex = 143;
+            this.splitPicture8.TabStop = false;
+            // 
+            // splitPicture7
+            // 
+            this.splitPicture7.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture7.Location = new System.Drawing.Point(254, 54);
+            this.splitPicture7.Name = "splitPicture7";
+            this.splitPicture7.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture7.TabIndex = 142;
+            this.splitPicture7.TabStop = false;
+            // 
+            // splitPicture6
+            // 
+            this.splitPicture6.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture6.Location = new System.Drawing.Point(149, 228);
+            this.splitPicture6.Name = "splitPicture6";
+            this.splitPicture6.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture6.TabIndex = 141;
+            this.splitPicture6.TabStop = false;
+            // 
+            // splitPicture5
+            // 
+            this.splitPicture5.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture5.Location = new System.Drawing.Point(149, 141);
+            this.splitPicture5.Name = "splitPicture5";
+            this.splitPicture5.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture5.TabIndex = 140;
+            this.splitPicture5.TabStop = false;
+            // 
+            // splitPicture4
+            // 
+            this.splitPicture4.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture4.Location = new System.Drawing.Point(149, 54);
+            this.splitPicture4.Name = "splitPicture4";
+            this.splitPicture4.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture4.TabIndex = 139;
+            this.splitPicture4.TabStop = false;
+            // 
+            // splitPicture3
+            // 
+            this.splitPicture3.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture3.Location = new System.Drawing.Point(44, 228);
+            this.splitPicture3.Name = "splitPicture3";
+            this.splitPicture3.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture3.TabIndex = 138;
+            this.splitPicture3.TabStop = false;
+            // 
+            // splitPicture2
+            // 
+            this.splitPicture2.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture2.Location = new System.Drawing.Point(44, 141);
+            this.splitPicture2.Name = "splitPicture2";
+            this.splitPicture2.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture2.TabIndex = 137;
+            this.splitPicture2.TabStop = false;
+            // 
+            // splitPicture1
+            // 
+            this.splitPicture1.BackColor = System.Drawing.Color.Silver;
+            this.splitPicture1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitPicture1.Location = new System.Drawing.Point(44, 54);
+            this.splitPicture1.Name = "splitPicture1";
+            this.splitPicture1.Size = new System.Drawing.Size(99, 81);
+            this.splitPicture1.TabIndex = 136;
+            this.splitPicture1.TabStop = false;
+            this.splitPicture1.Click += new System.EventHandler(this.splitPicture1_Click);
+            // 
+            // splitPicture
+            // 
+            this.splitPicture.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitPicture.Location = new System.Drawing.Point(50, 214);
+            this.splitPicture.Name = "splitPicture";
+            this.splitPicture.Size = new System.Drawing.Size(432, 247);
+            this.splitPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.splitPicture.TabIndex = 134;
+            this.splitPicture.TabStop = false;
+            this.splitPicture.Click += new System.EventHandler(this.splitPicture_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(810, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(221, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 125;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 6;
+            this.bunifuFlatButton2.ButtonText = "Clear";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = global::TooLearnOfficial.Properties.Resources.Trash_52px;
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 40D;
+            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(278, 500);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.IndianRed;
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.Black;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(145, 31);
+            this.bunifuFlatButton2.TabIndex = 147;
+            this.bunifuFlatButton2.Text = "Clear";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.Black;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture5);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture1);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture2);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture3);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture9);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture4);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture8);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture6);
+            this.bunifuGradientPanel1.Controls.Add(this.splitPicture7);
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(577, 184);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(399, 331);
+            this.bunifuGradientPanel1.TabIndex = 148;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(160, 12);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(77, 24);
+            this.bunifuCustomLabel1.TabIndex = 145;
+            this.bunifuCustomLabel1.Text = "Preview";
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 7;
+            this.bunifuElipse3.TargetControl = this.bunifuGradientPanel1;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(135, 464);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(273, 29);
+            this.bunifuCustomLabel3.TabIndex = 149;
+            this.bunifuCustomLabel3.Text = "Click on Image to Preview";
+            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel3.Visible = false;
             // 
             // QuizPicturePuzzle
             // 
@@ -377,17 +521,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1045, 615);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.bunifuFlatButton2);
+            this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.splitPicture9);
-            this.Controls.Add(this.splitPicture8);
-            this.Controls.Add(this.splitPicture7);
-            this.Controls.Add(this.splitPicture6);
-            this.Controls.Add(this.splitPicture5);
-            this.Controls.Add(this.splitPicture4);
-            this.Controls.Add(this.splitPicture3);
-            this.Controls.Add(this.splitPicture2);
-            this.Controls.Add(this.splitPicture1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.splitPicture);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBoxQuizSubject);
@@ -403,24 +541,26 @@
             this.Name = "QuizPicturePuzzle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Picture Puzzle";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitPicture9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,10 +578,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox splitPicture;
         private System.Windows.Forms.PictureBox splitPicture9;
-        private System.Windows.Forms.PictureBox splitPicture8;
         private System.Windows.Forms.PictureBox splitPicture7;
         private System.Windows.Forms.PictureBox splitPicture6;
         private System.Windows.Forms.PictureBox splitPicture5;
@@ -458,5 +596,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuImageButton buttonExit;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private System.Windows.Forms.PictureBox splitPicture8;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }
