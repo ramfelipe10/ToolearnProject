@@ -430,6 +430,7 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\bg.png" />
     <None Include="TooLearn Pictures\Add Image_50px.png" />
     <None Include="TooLearn Pictures\Picture_96px.png" />
     <None Include="TooLearn Pictures\Settings_52px.png" />
