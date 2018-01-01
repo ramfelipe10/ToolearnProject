@@ -50,7 +50,8 @@ namespace TooLearnOfficial.User_Control
                 //Alternative-End
                 string selected = comboBox1.SelectedItem.ToString();
 
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT participant_name FROM participant WHERE class_id=(SELECT class_id FROM classrooms WHERE class_name='" + comboBox1.SelectedItem + "' )", con);
+                //SqlDataAdapter sda = new SqlDataAdapter("SELECT participant_name FROM participant WHERE class_id=(SELECT class_id FROM classrooms WHERE class_name='" + comboBox1.SelectedItem + "' )", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select p_username AS 'Username',p_password AS 'Password',F_name AS 'First Name',L_name AS 'Last Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0)
@@ -115,7 +116,11 @@ namespace TooLearnOfficial.User_Control
 
         }
 
-
-
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            AddParticipantAccount pa = new AddParticipantAccount();
+            pa.Show();
+            this.Hide();
+        }
     }
 }

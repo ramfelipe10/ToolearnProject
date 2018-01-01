@@ -78,6 +78,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddParticipantAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddParticipantAccount.Designer.cs">
+      <DependentUpon>AddParticipantAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChooseUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     <Compile Include="User Control Participant\MyAccount.Designer.cs">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddParticipantAccount.resx">
+      <DependentUpon>AddParticipantAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChooseUser.resx">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,7 +40,7 @@ namespace TooLearnOfficial
         private void ButtonParticipantSignIn_Click(object sender, EventArgs e)
         {
             
-            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where username='" + TextboxUsername.Text + "' and password= '" + TextboxPassword.Text + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' and p_password= '" + TextboxPassword.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")

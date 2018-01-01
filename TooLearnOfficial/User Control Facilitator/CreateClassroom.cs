@@ -87,7 +87,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                 //Alternative-End
 
-                SqlDataAdapter sda = new SqlDataAdapter("Select participant_name from participant Where class_id = (select class_id from classrooms where class_name = '" + className + "' )", con);
+                // SqlDataAdapter sda = new SqlDataAdapter("Select participant_name from participant Where class_id = (select class_id from classrooms where class_name = '" + className + "' )", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select F_name AS 'First Name',L_name AS 'Last Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + className + "') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0)

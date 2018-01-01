@@ -116,3 +116,4 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\bin\Deb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.Dialogue.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\bin\Debug\Toolearn.mdf
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\bin\Debug\Toolearn_log.ldf
+C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.AddParticipantAccount.resources
