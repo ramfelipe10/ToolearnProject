@@ -34,12 +34,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.accountname = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.accountuname = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,18 +79,6 @@
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // accountname
-            // 
-            this.accountname.AutoSize = true;
-            this.accountname.BackColor = System.Drawing.Color.Transparent;
-            this.accountname.Font = new System.Drawing.Font("Arial Unicode MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountname.Location = new System.Drawing.Point(192, 155);
-            this.accountname.Name = "accountname";
-            this.accountname.Size = new System.Drawing.Size(281, 39);
-            this.accountname.TabIndex = 69;
-            this.accountname.Text = "bunifuCustomLabel1";
-            this.accountname.Visible = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -119,7 +106,6 @@
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.bunifuMetroTextbox1);
-            this.bunifuGradientPanel1.Controls.Add(this.accountname);
             this.bunifuGradientPanel1.Controls.Add(this.accountuname);
             this.bunifuGradientPanel1.Controls.Add(this.label3);
             this.bunifuGradientPanel1.Controls.Add(this.label2);
@@ -132,11 +118,6 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(644, 228);
             this.bunifuGradientPanel1.TabIndex = 72;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 7;
-            this.bunifuElipse2.TargetControl = this.bunifuGradientPanel1;
             // 
             // bunifuMetroTextbox1
             // 
@@ -156,6 +137,11 @@
             this.bunifuMetroTextbox1.TabIndex = 72;
             this.bunifuMetroTextbox1.Text = "Ramon Victor Felipe";
             this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 7;
+            this.bunifuElipse2.TargetControl = this.bunifuGradientPanel1;
             // 
             // MyAccount
             // 
@@ -181,7 +167,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private Bunifu.Framework.UI.BunifuCustomLabel accountname;
         private Bunifu.Framework.UI.BunifuCustomLabel accountuname;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;

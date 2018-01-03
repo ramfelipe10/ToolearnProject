@@ -64,7 +64,7 @@ namespace TooLearnOfficial.User_Control
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
                 {
-                    accountname.Text = dt.Rows[0][0].ToString();
+                  
                     bunifuMetroTextbox1.Text = dt.Rows[0][0].ToString();
                     accountuname.Text = dt.Rows[0][1].ToString();
                 }

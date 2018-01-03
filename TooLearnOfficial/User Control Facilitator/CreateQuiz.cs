@@ -20,15 +20,22 @@ namespace TooLearnOfficial.User_Control
 
        
 
-        private void ButtonPicturePuzzle_Click(object sender, EventArgs e)
-        {
-            QuizPicturePuzzle qpp = new QuizPicturePuzzle();
-            qpp.Show();
-        }
+      
 
         private void CreateQuiz_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            QuizPicturePuzzle qpp = new QuizPicturePuzzle();
+            qpp.Show();
         }
     }
 }
