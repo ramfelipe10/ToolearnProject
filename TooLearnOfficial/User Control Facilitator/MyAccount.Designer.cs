@@ -56,10 +56,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(434, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(434, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
             // 
@@ -93,7 +93,7 @@
             // accountuname
             // 
             this.accountuname.BackColor = System.Drawing.Color.Transparent;
-            this.accountuname.Font = new System.Drawing.Font("Arial Unicode MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountuname.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountuname.Location = new System.Drawing.Point(170, 82);
             this.accountuname.Name = "accountuname";
             this.accountuname.Size = new System.Drawing.Size(315, 40);
@@ -113,7 +113,7 @@
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Silver;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Silver;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Silver;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(20, 113);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(20, 123);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(644, 228);
