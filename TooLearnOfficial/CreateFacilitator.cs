@@ -23,7 +23,7 @@ namespace TooLearnOfficial
         private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
         {
            
-                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' ", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 

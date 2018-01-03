@@ -58,7 +58,7 @@
             // TextboxPassword
             // 
             this.TextboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(104)))), ((int)(((byte)(150)))));
+            this.TextboxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.TextboxPassword.BorderColorFocused = System.Drawing.Color.Black;
             this.TextboxPassword.BorderColorIdle = System.Drawing.Color.Gray;
             this.TextboxPassword.BorderColorMouseHover = System.Drawing.Color.Gray;
@@ -78,7 +78,7 @@
             // TextboxUsername
             // 
             this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(104)))), ((int)(((byte)(150)))));
+            this.TextboxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.TextboxUsername.BorderColorFocused = System.Drawing.Color.Black;
             this.TextboxUsername.BorderColorIdle = System.Drawing.Color.Gray;
             this.TextboxUsername.BorderColorMouseHover = System.Drawing.Color.Gray;
@@ -234,8 +234,7 @@
             this.ButtonParticipantCreateAccount.ActiveForecolor = System.Drawing.Color.Gray;
             this.ButtonParticipantCreateAccount.ActiveLineColor = System.Drawing.Color.Transparent;
             this.ButtonParticipantCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonParticipantCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(104)))), ((int)(((byte)(150)))));
-            this.ButtonParticipantCreateAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantCreateAccount.BackgroundImage")));
+            this.ButtonParticipantCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ButtonParticipantCreateAccount.ButtonText = "Create Account";
             this.ButtonParticipantCreateAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonParticipantCreateAccount.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -261,7 +260,7 @@
             this.ButtonParticipantSignIn.ActiveForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(18)))), ((int)(((byte)(19)))));
             this.ButtonParticipantSignIn.ActiveLineColor = System.Drawing.Color.Transparent;
             this.ButtonParticipantSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonParticipantSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(104)))), ((int)(((byte)(150)))));
+            this.ButtonParticipantSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ButtonParticipantSignIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantSignIn.BackgroundImage")));
             this.ButtonParticipantSignIn.ButtonText = "Sign In";
             this.ButtonParticipantSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -299,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(104)))), ((int)(((byte)(150)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(355, 446);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.label2);
