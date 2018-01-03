@@ -81,5 +81,41 @@ namespace TooLearnOfficial
             ChooseUser cu = new ChooseUser();
             cu.Show();
         }
+
+        private void MainMenu2_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void buttonAboutSystem_Click(object sender, EventArgs e)
+        {
+            aboutSystem1.BringToFront();
+            scoreParticipant1.Visible = false;
+            classroomEnrolled1.Visible = false;
+           
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            accountParticipant1.BringToFront();
+            scoreParticipant1.Visible = false;
+            classroomEnrolled1.Visible = false;
+
+
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            scoreParticipant1.BringToFront();
+            scoreParticipant1.Visible = true;
+          
+        }
+
+        private void buttonMyQuiz_Click(object sender, EventArgs e)
+        {
+            classroomEnrolled1.BringToFront();
+            classroomEnrolled1.Visible = true;
+
+        }
     }
 }

@@ -65,15 +65,16 @@
             this.TextboxPassword.BorderThickness = 1;
             this.TextboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxPassword.ForeColor = System.Drawing.Color.Black;
+            this.TextboxPassword.ForeColor = System.Drawing.Color.White;
             this.TextboxPassword.isPassword = true;
             this.TextboxPassword.Location = new System.Drawing.Point(38, 242);
             this.TextboxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxPassword.Name = "TextboxPassword";
             this.TextboxPassword.Size = new System.Drawing.Size(288, 38);
-            this.TextboxPassword.TabIndex = 10;
+            this.TextboxPassword.TabIndex = 4;
             this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextboxPassword.OnValueChanged += new System.EventHandler(this.TextboxPassword_OnValueChanged);
+            this.TextboxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxPassword_KeyDown);
             // 
             // TextboxUsername
             // 
@@ -85,15 +86,16 @@
             this.TextboxUsername.BorderThickness = 1;
             this.TextboxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxUsername.ForeColor = System.Drawing.Color.Black;
+            this.TextboxUsername.ForeColor = System.Drawing.Color.White;
             this.TextboxUsername.isPassword = false;
             this.TextboxUsername.Location = new System.Drawing.Point(38, 170);
             this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxUsername.Name = "TextboxUsername";
             this.TextboxUsername.Size = new System.Drawing.Size(288, 38);
-            this.TextboxUsername.TabIndex = 9;
+            this.TextboxUsername.TabIndex = 3;
             this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextboxUsername.OnValueChanged += new System.EventHandler(this.TextboxUsername_OnValueChanged);
+            this.TextboxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxUsername_KeyDown);
             // 
             // bunifuElipse1
             // 
@@ -235,6 +237,7 @@
             this.ButtonParticipantCreateAccount.ActiveLineColor = System.Drawing.Color.Transparent;
             this.ButtonParticipantCreateAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ButtonParticipantCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.ButtonParticipantCreateAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ButtonParticipantCreateAccount.BackgroundImage")));
             this.ButtonParticipantCreateAccount.ButtonText = "Create Account";
             this.ButtonParticipantCreateAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonParticipantCreateAccount.Font = new System.Drawing.Font("Century Gothic", 9.75F);

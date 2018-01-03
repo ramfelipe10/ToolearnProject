@@ -230,11 +230,11 @@
     <Compile Include="User Control Facilitator\ClassroomHandle.Designer.cs">
       <DependentUpon>ClassroomHandle.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Participant\AboutSystem.cs">
+    <Compile Include="User Control Participant\AccountParticipant.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Participant\AboutSystem.Designer.cs">
-      <DependentUpon>AboutSystem.cs</DependentUpon>
+    <Compile Include="User Control Participant\AccountParticipant.Designer.cs">
+      <DependentUpon>AccountParticipant.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control Participant\ClassroomEnrolled.cs">
       <SubType>UserControl</SubType>
@@ -248,11 +248,11 @@
     <Compile Include="User Control Participant\Join Quiz.Designer.cs">
       <DependentUpon>Join Quiz.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Participant\MyAccount.cs">
+    <Compile Include="User Control Participant\ScoreParticipant.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Participant\MyAccount.Designer.cs">
-      <DependentUpon>MyAccount.cs</DependentUpon>
+    <Compile Include="User Control Participant\ScoreParticipant.Designer.cs">
+      <DependentUpon>ScoreParticipant.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddParticipantAccount.resx">
       <DependentUpon>AddParticipantAccount.cs</DependentUpon>
@@ -339,8 +339,8 @@
     <EmbeddedResource Include="User Control Facilitator\ClassroomHandle.resx">
       <DependentUpon>ClassroomHandle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Participant\AboutSystem.resx">
-      <DependentUpon>AboutSystem.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Participant\AccountParticipant.resx">
+      <DependentUpon>AccountParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Participant\ClassroomEnrolled.resx">
       <DependentUpon>ClassroomEnrolled.cs</DependentUpon>
@@ -348,8 +348,8 @@
     <EmbeddedResource Include="User Control Participant\Join Quiz.resx">
       <DependentUpon>Join Quiz.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Participant\MyAccount.resx">
-      <DependentUpon>MyAccount.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Participant\ScoreParticipant.resx">
+      <DependentUpon>ScoreParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -439,6 +439,7 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\Handshake_52px.png" />
     <None Include="TooLearn Pictures\12 cartoon bee.jpg" />
     <None Include="TooLearn Pictures\151921-OUR8X2-162.jpg" />
     <None Include="TooLearn Pictures\OLS6A90.jpg" />

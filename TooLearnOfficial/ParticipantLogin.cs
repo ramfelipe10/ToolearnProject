@@ -40,11 +40,13 @@ namespace TooLearnOfficial
         private void ButtonParticipantSignIn_Click(object sender, EventArgs e)
         {
             
-            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' and p_password= '" + TextboxPassword.Text + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and p_password= '" + TextboxPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
+                Program.Session_id = TextboxUsername.Text; //For Session
+                Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                 this.Hide();
 
                 MainMenu2 mm = new MainMenu2();
@@ -113,5 +115,68 @@ namespace TooLearnOfficial
             }
 
         }
+
+        private void TextboxUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and p_password= '" + TextboxPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    Program.Session_id = TextboxUsername.Text; //For Session
+                    Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+                    this.Hide();
+
+                    MainMenu2 mm = new MainMenu2();
+                    mm.Show();
+                }
+                else
+                {
+                    Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
+                }
+
+
+            }
+
+
+
+        }
+
+        private void TextboxPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and p_password= '" + TextboxPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    Program.Session_id = TextboxUsername.Text; //For Session
+                    Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+                    this.Hide();
+
+                    MainMenu2 mm = new MainMenu2();
+                    mm.Show();
+                }
+                else
+                {
+                    Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
+                }
+
+
+            }
+        }
+
+
+
+
+
+
+
     }
 }
