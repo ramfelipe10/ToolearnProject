@@ -17,17 +17,8 @@ namespace TooLearnOfficial.User_Control
             InitializeComponent();
         }
 
-        private void ButtonMultipleChoice_Click(object sender, EventArgs e)
-        {
-            QuizMultipleChoice qmc = new QuizMultipleChoice();
-            qmc.Show();
-        }
 
-        private void ButtonTrueOrFalse_Click(object sender, EventArgs e)
-        {
-            QuizTrueOrFalse qtor = new QuizTrueOrFalse();
-            qtor.Show();
-        }
+       
 
         private void ButtonPicturePuzzle_Click(object sender, EventArgs e)
         {

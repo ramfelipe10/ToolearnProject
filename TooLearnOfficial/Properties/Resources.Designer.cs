@@ -63,6 +63,26 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12_cartoon_bee {
+            get {
+                object obj = ResourceManager.GetObject("12 cartoon bee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _151921_OUR8X2_162 {
+            get {
+                object obj = ResourceManager.GetObject("151921-OUR8X2-162", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _20916861_1628655903872405_932534712_n {
             get {
                 object obj = ResourceManager.GetObject("20916861_1628655903872405_932534712_n", resourceCulture);
@@ -286,6 +306,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap newparti {
             get {
                 object obj = ResourceManager.GetObject("newparti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OLS6A90 {
+            get {
+                object obj = ResourceManager.GetObject("OLS6A90", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
