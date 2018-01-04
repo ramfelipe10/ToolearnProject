@@ -114,6 +114,12 @@
     <Compile Include="FacilitatorLogin.Designer.cs">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuizBee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizBee.Designer.cs">
+      <DependentUpon>QuizBee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizBee.resx">
+      <DependentUpon>QuizBee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
