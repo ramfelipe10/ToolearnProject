@@ -110,7 +110,7 @@ namespace TooLearnOfficial
             {
                 if (TextboxPassword.Text == TextboxReTypePassword.Text)
                 {
-                    SqlCommand cmd = new SqlCommand("Insert into participant(F_name, p_username, p_password) Values('" + TextboxName.Text + "','" + TextboxUsername.Text + "','" + TextboxPassword.Text + "')", con);
+                    SqlCommand cmd = new SqlCommand("Insert into participant(F_name, M_name, L_name, p_username, p_password) Values('" + TextboxName.Text + "','" + TextboxMName.Text + "','" + TextboxLName.Text + "','" + TextboxUsername.Text + "','" + TextboxPassword.Text + "')", con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Successfully Inserted");
                     con.Close();
@@ -144,6 +144,16 @@ namespace TooLearnOfficial
         }
 
         private void TextboxReTypePassword_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxMName_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextboxLName_OnValueChanged(object sender, EventArgs e)
         {
 
         }

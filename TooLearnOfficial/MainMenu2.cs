@@ -117,5 +117,12 @@ namespace TooLearnOfficial
             classroomEnrolled1.Visible = true;
 
         }
+
+        private void buttonJoinGame_Click(object sender, EventArgs e)
+        {
+            joinGame1.BringToFront();
+            scoreParticipant1.Visible = false;
+            classroomEnrolled1.Visible = false;
+        }
     }
 }

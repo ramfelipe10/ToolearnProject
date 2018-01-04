@@ -53,6 +53,10 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TextboxMName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TextboxLName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckImage)).BeginInit();
@@ -74,6 +78,10 @@
             this.bunifuGradientPanel2.BackColor = System.Drawing.Color.White;
             this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel2.Controls.Add(this.label6);
+            this.bunifuGradientPanel2.Controls.Add(this.TextboxLName);
+            this.bunifuGradientPanel2.Controls.Add(this.label5);
+            this.bunifuGradientPanel2.Controls.Add(this.TextboxMName);
             this.bunifuGradientPanel2.Controls.Add(this.labelAvailableUsername);
             this.bunifuGradientPanel2.Controls.Add(this.ErrorImage);
             this.bunifuGradientPanel2.Controls.Add(this.label3);
@@ -124,12 +132,12 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(10, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 21);
+            this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Name:";
+            this.label3.Text = "First Name:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // TextboxUsername
@@ -244,7 +252,7 @@
             this.TextboxName.Location = new System.Drawing.Point(15, 41);
             this.TextboxName.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxName.Name = "TextboxName";
-            this.TextboxName.Size = new System.Drawing.Size(379, 33);
+            this.TextboxName.Size = new System.Drawing.Size(122, 33);
             this.TextboxName.TabIndex = 16;
             this.TextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TextboxName.OnValueChanged += new System.EventHandler(this.TextboxName_OnValueChanged_1);
@@ -405,6 +413,74 @@
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(139, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Middle Name:";
+            // 
+            // TextboxMName
+            // 
+            this.TextboxMName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxMName.BackColor = System.Drawing.Color.White;
+            this.TextboxMName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxMName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxMName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxMName.HintForeColor = System.Drawing.Color.Empty;
+            this.TextboxMName.HintText = "";
+            this.TextboxMName.isPassword = false;
+            this.TextboxMName.LineFocusedColor = System.Drawing.Color.Black;
+            this.TextboxMName.LineIdleColor = System.Drawing.Color.Gray;
+            this.TextboxMName.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.TextboxMName.LineThickness = 3;
+            this.TextboxMName.Location = new System.Drawing.Point(144, 41);
+            this.TextboxMName.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxMName.Name = "TextboxMName";
+            this.TextboxMName.Size = new System.Drawing.Size(122, 33);
+            this.TextboxMName.TabIndex = 24;
+            this.TextboxMName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxMName.OnValueChanged += new System.EventHandler(this.TextboxMName_OnValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(272, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Last Name:";
+            // 
+            // TextboxLName
+            // 
+            this.TextboxLName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxLName.BackColor = System.Drawing.Color.White;
+            this.TextboxLName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxLName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxLName.HintForeColor = System.Drawing.Color.Empty;
+            this.TextboxLName.HintText = "";
+            this.TextboxLName.isPassword = false;
+            this.TextboxLName.LineFocusedColor = System.Drawing.Color.Black;
+            this.TextboxLName.LineIdleColor = System.Drawing.Color.Gray;
+            this.TextboxLName.LineMouseHoverColor = System.Drawing.Color.Black;
+            this.TextboxLName.LineThickness = 3;
+            this.TextboxLName.Location = new System.Drawing.Point(277, 41);
+            this.TextboxLName.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxLName.Name = "TextboxLName";
+            this.TextboxLName.Size = new System.Drawing.Size(122, 33);
+            this.TextboxLName.TabIndex = 26;
+            this.TextboxLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxLName.OnValueChanged += new System.EventHandler(this.TextboxLName_OnValueChanged);
+            // 
             // CreateParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,5 +537,9 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxLName;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxMName;
     }
 }
