@@ -38,11 +38,13 @@ namespace TooLearnOfficial
             listPanel.Add(MultipleChoice);
             listPanel.Add(trueORfalse);
             listPanel.Add(shortAnswer);
+            bunifuFlatButton2.selected = true;
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             MultipleChoice.BringToFront();
+            bunifuFlatButton2.selected = true;
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
@@ -70,6 +72,59 @@ namespace TooLearnOfficial
                     imageLocation = dialog.FileName;
                     pictureBox3.ImageLocation = imageLocation;
                     pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            String imageLocation = null;
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                //dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files|*.png| All Files(*.*)|*.*";
+                dialog.Filter = "jpg files(*.jpg)|*.jpg"; //ifilter lng ang jpg formats
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                    pictureBox4.ImageLocation = imageLocation;
+                    pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An Error Occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void bunifuFlatButton8_Click(object sender, EventArgs e)
+        {
+
+            String imageLocation = null;
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                //dialog.Filter = "jpg files(*.jpg)|*.jpg| PNG files|*.png| All Files(*.*)|*.*";
+                dialog.Filter = "jpg files(*.jpg)|*.jpg"; //ifilter lng ang jpg formats
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                    pictureBox5.ImageLocation = imageLocation;
+                    pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
                 }

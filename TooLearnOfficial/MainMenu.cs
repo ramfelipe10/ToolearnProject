@@ -13,7 +13,7 @@ namespace TooLearnOfficial
 {
     public partial class MainMenu : Form
     {
-
+        bool closing = true;
 
         public MainMenu()
         {
@@ -71,7 +71,8 @@ namespace TooLearnOfficial
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Close(); //for the form closing event
         }
 
         private void buttonCreateQuiz_Click(object sender, EventArgs e)
@@ -145,5 +146,28 @@ namespace TooLearnOfficial
         {
 
         }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (closing)
+            {
+                DialogResult result = Dialogue1.Show("Are you sure you want to Exit?", "", "Ok", "Cancel");
+                if (result == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+
+        }
+
+
+
+
+
     }
 }

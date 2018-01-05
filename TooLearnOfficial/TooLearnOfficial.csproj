@@ -108,6 +108,12 @@
     <Compile Include="Dialogue.Designer.cs">
       <DependentUpon>Dialogue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogue1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogue1.Designer.cs">
+      <DependentUpon>Dialogue1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacilitatorLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogue.resx">
       <DependentUpon>Dialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogue1.resx">
+      <DependentUpon>Dialogue1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
@@ -457,6 +466,7 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\View_48px.png" />
     <None Include="TooLearn Pictures\Handshake_52px.png" />
     <None Include="TooLearn Pictures\12 cartoon bee.jpg" />
     <None Include="TooLearn Pictures\151921-OUR8X2-162.jpg" />

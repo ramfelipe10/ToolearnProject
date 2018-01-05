@@ -723,6 +723,7 @@
             this.Name = "MainMenu2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu2_FormClosing);
             this.Load += new System.EventHandler(this.MainMenu2_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
