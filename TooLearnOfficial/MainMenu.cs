@@ -80,6 +80,7 @@ namespace TooLearnOfficial
             createQuiz1.BringToFront();
             myQuiz1.Visible = false;
             classroomHandle1.Visible = false;
+            createClassroom1.Visible = false;
 
         }
 
@@ -88,7 +89,8 @@ namespace TooLearnOfficial
             myQuiz1.Visible = true;
             classroomHandle1.Visible = false;
             myQuiz1.BringToFront();
-           
+            createClassroom1.Visible = false;
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -107,6 +109,7 @@ namespace TooLearnOfficial
             settings1.BringToFront();
             myQuiz1.Visible = false;
             classroomHandle1.Visible = false;
+            createClassroom1.Visible = false;
         }
 
         private void buttonCreateClassroom_Click(object sender, EventArgs e)
@@ -114,6 +117,7 @@ namespace TooLearnOfficial
             createClassroom1.BringToFront();
             myQuiz1.Visible = false;
             classroomHandle1.Visible = false;
+            createClassroom1.Visible = true;
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -121,6 +125,7 @@ namespace TooLearnOfficial
             myAccount1.BringToFront();
             myQuiz1.Visible = false;
             classroomHandle1.Visible = false;
+            createClassroom1.Visible = false;
         }
 
         private void buttonSubjectHandle_Click(object sender, EventArgs e)
@@ -128,6 +133,7 @@ namespace TooLearnOfficial
             classroomHandle1.Visible = true;
             myQuiz1.Visible = false;
             classroomHandle1.BringToFront();
+            createClassroom1.Visible = false;
         }
 
         private void buttonAboutSystem_Click(object sender, EventArgs e)
@@ -135,6 +141,7 @@ namespace TooLearnOfficial
             aboutSystem1.BringToFront();
             myQuiz1.Visible = false;
             classroomHandle1.Visible = false;
+            createClassroom1.Visible = false;
         }
 
         private void myQuiz1_Load(object sender, EventArgs e)

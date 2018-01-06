@@ -37,6 +37,12 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+            
+            MsgBox.Close();
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
             MsgBox.Close();
         }
     }

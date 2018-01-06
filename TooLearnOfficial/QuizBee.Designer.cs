@@ -67,6 +67,8 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.trueORfalse = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.CurrentNumTF = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton11 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuDropdown5 = new Bunifu.Framework.UI.BunifuDropdown();
             this.label23 = new System.Windows.Forms.Label();
@@ -83,6 +85,9 @@
             this.label33 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.MultipleChoice = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.currentnumMC = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label20 = new System.Windows.Forms.Label();
             this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -108,6 +113,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.shortAnswer = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.CurrentnumSA = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -138,11 +146,6 @@
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse11 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -668,6 +671,7 @@
             this.trueORfalse.BackColor = System.Drawing.Color.Silver;
             this.trueORfalse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("trueORfalse.BackgroundImage")));
             this.trueORfalse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.trueORfalse.Controls.Add(this.CurrentNumTF);
             this.trueORfalse.Controls.Add(this.textBox10);
             this.trueORfalse.Controls.Add(this.bunifuFlatButton11);
             this.trueORfalse.Controls.Add(this.bunifuDropdown5);
@@ -694,6 +698,26 @@
             this.trueORfalse.Quality = 10;
             this.trueORfalse.Size = new System.Drawing.Size(1002, 295);
             this.trueORfalse.TabIndex = 4;
+            // 
+            // CurrentNumTF
+            // 
+            this.CurrentNumTF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentNumTF.Location = new System.Drawing.Point(15, 212);
+            this.CurrentNumTF.Name = "CurrentNumTF";
+            this.CurrentNumTF.Size = new System.Drawing.Size(100, 23);
+            this.CurrentNumTF.TabIndex = 208;
+            this.CurrentNumTF.Text = "1";
+            this.CurrentNumTF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(354, 15);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(69, 24);
+            this.textBox10.TabIndex = 180;
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
             // 
             // bunifuFlatButton11
             // 
@@ -915,6 +939,7 @@
             this.MultipleChoice.BackColor = System.Drawing.Color.Silver;
             this.MultipleChoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultipleChoice.BackgroundImage")));
             this.MultipleChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MultipleChoice.Controls.Add(this.currentnumMC);
             this.MultipleChoice.Controls.Add(this.textBox11);
             this.MultipleChoice.Controls.Add(this.label29);
             this.MultipleChoice.Controls.Add(this.bunifuFlatButton9);
@@ -952,6 +977,37 @@
             this.MultipleChoice.Quality = 10;
             this.MultipleChoice.Size = new System.Drawing.Size(1002, 295);
             this.MultipleChoice.TabIndex = 3;
+            // 
+            // currentnumMC
+            // 
+            this.currentnumMC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentnumMC.Location = new System.Drawing.Point(15, 212);
+            this.currentnumMC.Name = "currentnumMC";
+            this.currentnumMC.Size = new System.Drawing.Size(100, 23);
+            this.currentnumMC.TabIndex = 206;
+            this.currentnumMC.Text = "1";
+            this.currentnumMC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox11
+            // 
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(354, 15);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(69, 24);
+            this.textBox11.TabIndex = 204;
+            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(425, 19);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(65, 17);
+            this.label29.TabIndex = 205;
+            this.label29.Text = "(Minutes)";
             // 
             // bunifuFlatButton9
             // 
@@ -1010,6 +1066,7 @@
             this.bunifuCheckbox4.Name = "bunifuCheckbox4";
             this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox4.TabIndex = 158;
+            this.bunifuCheckbox4.OnChange += new System.EventHandler(this.bunifuCheckbox4_OnChange);
             // 
             // bunifuCheckbox3
             // 
@@ -1023,6 +1080,7 @@
             this.bunifuCheckbox3.Name = "bunifuCheckbox3";
             this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox3.TabIndex = 157;
+            this.bunifuCheckbox3.OnChange += new System.EventHandler(this.bunifuCheckbox3_OnChange);
             // 
             // bunifuCheckbox2
             // 
@@ -1036,6 +1094,7 @@
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 156;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // bunifuCheckbox1
             // 
@@ -1049,6 +1108,7 @@
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 155;
+            this.bunifuCheckbox1.OnChange += new System.EventHandler(this.bunifuCheckbox1_OnChange);
             // 
             // textBox2
             // 
@@ -1262,6 +1322,7 @@
             this.shortAnswer.BackColor = System.Drawing.Color.Silver;
             this.shortAnswer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("shortAnswer.BackgroundImage")));
             this.shortAnswer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.shortAnswer.Controls.Add(this.CurrentnumSA);
             this.shortAnswer.Controls.Add(this.textBox12);
             this.shortAnswer.Controls.Add(this.label18);
             this.shortAnswer.Controls.Add(this.bunifuFlatButton10);
@@ -1288,6 +1349,37 @@
             this.shortAnswer.Quality = 10;
             this.shortAnswer.Size = new System.Drawing.Size(1002, 295);
             this.shortAnswer.TabIndex = 4;
+            // 
+            // CurrentnumSA
+            // 
+            this.CurrentnumSA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentnumSA.Location = new System.Drawing.Point(15, 212);
+            this.CurrentnumSA.Name = "CurrentnumSA";
+            this.CurrentnumSA.Size = new System.Drawing.Size(100, 23);
+            this.CurrentnumSA.TabIndex = 208;
+            this.CurrentnumSA.Text = "1";
+            this.CurrentnumSA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox12
+            // 
+            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(354, 15);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(69, 24);
+            this.textBox12.TabIndex = 204;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(425, 19);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 17);
+            this.label18.TabIndex = 205;
+            this.label18.Text = "(Minutes)";
             // 
             // bunifuFlatButton10
             // 
@@ -1596,58 +1688,6 @@
             this.bunifuElipse11.ElipseRadius = 5;
             this.bunifuElipse11.TargetControl = this.textBox13;
             // 
-            // textBox10
-            // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(354, 15);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(69, 24);
-            this.textBox10.TabIndex = 180;
-            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
-            // 
-            // textBox11
-            // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(354, 15);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(69, 24);
-            this.textBox11.TabIndex = 204;
-            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(425, 19);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(65, 17);
-            this.label29.TabIndex = 205;
-            this.label29.Text = "(Minutes)";
-            // 
-            // textBox12
-            // 
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(354, 15);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(69, 24);
-            this.textBox12.TabIndex = 204;
-            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(425, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 17);
-            this.label18.TabIndex = 205;
-            this.label18.Text = "(Minutes)";
-            // 
             // QuizBee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1663,10 +1703,10 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
-            this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.TrueOrFalseLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";
@@ -1812,5 +1852,8 @@
         private System.Windows.Forms.TextBox textBox10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse11;
+        private Bunifu.Framework.UI.BunifuCustomLabel CurrentNumTF;
+        private Bunifu.Framework.UI.BunifuCustomLabel currentnumMC;
+        private Bunifu.Framework.UI.BunifuCustomLabel CurrentnumSA;
     }
 }

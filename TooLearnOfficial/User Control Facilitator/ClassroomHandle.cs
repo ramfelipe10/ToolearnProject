@@ -51,7 +51,7 @@ namespace TooLearnOfficial.User_Control
                 string selected = comboBox1.SelectedItem.ToString();
 
                 //SqlDataAdapter sda = new SqlDataAdapter("SELECT participant_name FROM participant WHERE class_id=(SELECT class_id FROM classrooms WHERE class_name='" + comboBox1.SelectedItem + "' )", con);
-                SqlDataAdapter sda = new SqlDataAdapter("select p_username AS 'Username',p_password AS 'Password',F_name AS 'First Name',L_name AS 'Last Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select p_username AS 'Username',p_password AS 'Password',fullname AS 'Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0)
@@ -95,9 +95,8 @@ namespace TooLearnOfficial.User_Control
 
                 //Alternative-End
 
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT class_name FROM classrooms";
-                cmd.Connection = con;
+                SqlCommand cmd = new SqlCommand("Select class_name from classrooms WHERE facilitator_id=(Select facilitator_id from facilitator where username = '" + Program.Session_id + "')", con);
+               
 
                 con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();

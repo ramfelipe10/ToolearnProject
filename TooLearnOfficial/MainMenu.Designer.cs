@@ -710,9 +710,9 @@
             this.LogosTransition.SetDecoration(this.createClassroom1, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.createClassroom1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.createClassroom1, BunifuAnimatorNS.DecorationType.None);
-            this.createClassroom1.Location = new System.Drawing.Point(393, 141);
+            this.createClassroom1.Location = new System.Drawing.Point(255, 44);
             this.createClassroom1.Name = "createClassroom1";
-            this.createClassroom1.Size = new System.Drawing.Size(685, 370);
+            this.createClassroom1.Size = new System.Drawing.Size(913, 611);
             this.createClassroom1.TabIndex = 14;
             this.createClassroom1.Load += new System.EventHandler(this.createClassroom1_Load);
             // 

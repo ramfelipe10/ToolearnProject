@@ -105,32 +105,51 @@ namespace TooLearnOfficial
 
         private void ButtonFacilitatorCreateAccount_Click(object sender, EventArgs e)
         {
-            con.Open();
-            if (labelAvailableUsername.ForeColor == System.Drawing.Color.Green)
+
+
+           
+            if (TextboxName.Text == "" || TextboxMName.Text == "" || TextboxLName.Text == "" || TextboxUsername.Text == "" || TextboxPassword.Text == "" || TextboxReTypePassword.Text == "")
             {
-                if (TextboxPassword.Text == TextboxReTypePassword.Text)
+                Dialogue.Show("Fill All Fields!", "", "Ok", "Cancel");
+            }
+
+            else
+            {
+
+                if (labelAvailableUsername.ForeColor == System.Drawing.Color.Green)
                 {
-                    SqlCommand cmd = new SqlCommand("Insert into participant(F_name, M_name, L_name, p_username, p_password) Values('" + TextboxName.Text + "','" + TextboxMName.Text + "','" + TextboxLName.Text + "','" + TextboxUsername.Text + "','" + TextboxPassword.Text + "')", con);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Successfully Inserted");
-                    con.Close();
+                    if (TextboxPassword.Text == TextboxReTypePassword.Text)
+                    {
+                        con.Open();
 
-                    this.Hide();
 
-                    ParticipantLogin cf = new ParticipantLogin();
-                    cf.Show();
+                        SqlCommand cmd = new SqlCommand("Insert into participant(fullname,F_name, M_name, L_name, p_username, p_password) Values('" + TextboxName.Text + " " + TextboxMName.Text + " " + TextboxLName.Text + "','" + TextboxName.Text + "','" + TextboxMName.Text + "','" + TextboxLName.Text + "','" + TextboxUsername.Text + "','" + TextboxPassword.Text + "')", con);
+                        cmd.ExecuteNonQuery();
+                        Dialogue.Show("Successfully Inserted", "", "Ok", "Cancel");
+                       
+                        con.Close();
 
+                        this.Hide();
+
+                        ParticipantLogin cf = new ParticipantLogin();
+                        cf.Show();
+
+                    }
+                    else
+                    {
+
+                        Dialogue.Show("Your Password does not Match", "", "Ok", "Cancel");
+                
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Your Password does not Match");
+                    Dialogue.Show("Please use Available Username", "", "Ok", "Cancel");
+                    
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please use Available Username");
-            }
 
+
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)

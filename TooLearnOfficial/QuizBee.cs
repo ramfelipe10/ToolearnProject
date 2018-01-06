@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
     public partial class QuizBee : Form
     {
 
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        int numOfItems, currentNumOfItems;
+        string RightAnswer;
 
         List<Panel> listPanel = new List<Panel>();
 
@@ -22,7 +26,15 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        private void enable_fields() {
+        private void resetAllMC()
+        {
+            
+           textBoxQuizQuestion.Text = null;
+            textBoxQuizChoiceA.Text = null; textBoxQuizChoiceB.Text = null; textBoxQuizChoiceC.Text = null; textBoxQuizChoiceD.Text = null;
+            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+        }
+
+        private void enable_fieldsMC() {
 
             bunifuFlatButton2.Enabled = true; //multiplechoice
             bunifuFlatButton3.Enabled = true; //trueOrfalse
@@ -53,7 +65,20 @@ namespace TooLearnOfficial
         }
 
 
+        private void disable_fieldsMC()
+        {
 
+            textBoxQuizQuestion.Enabled = false;
+            textBoxQuizChoiceB.Enabled = false;
+            textBoxQuizChoiceC.Enabled = false;
+            textBoxQuizChoiceD.Enabled = false;
+
+
+            bunifuCheckbox1.Enabled = false;
+            bunifuCheckbox2.Enabled = false;
+            bunifuCheckbox3.Enabled = false;
+            bunifuCheckbox4.Enabled = false;
+        }
 
 
 
@@ -182,28 +207,230 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
-            enable_fields();
 
+            if (bunifuDropdown6.selectedIndex == -1)
+            {
+                Dialogue.Show("Please Indicate Number Of Items", "", "Ok", "Cancel");
+            }
 
+            else
+            {
+                 numOfItems = int.Parse(bunifuDropdown6.selectedValue); currentNumOfItems = 1;                
+                bunifuFlatButton5.Enabled = false;
+                bunifuDropdown6.Enabled = false;
+                enable_fieldsMC();
+                currentnumMC.Text= currentNumOfItems.ToString();
+                CurrentnumSA.Text= currentNumOfItems.ToString();
+                CurrentNumTF.Text= currentNumOfItems.ToString();
+
+            }
             
         }
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)//for multiple choice next
         {
 
-            //Lisview
-            ListViewItem exams = new ListViewItem();
-            exams.Text = textBoxQuizQuestion.Text;
-            exams.SubItems.Add(textBoxQuizChoiceA.Text);
-            exams.SubItems.Add(textBoxQuizChoiceB.Text);
-            exams.SubItems.Add(textBoxQuizChoiceC.Text);
-            exams.SubItems.Add(textBoxQuizChoiceD.Text);
-            exams.SubItems.Add(textBoxQuizChoiceC.Text);
-            MultipleChoiceLV.Items.Add(exams);
+            switch (buttonNextQuestion.Text)
+            {
+                case "Next":
+                    if (textBoxQuizQuestion.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                    {
+                        Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                    }
+
+                    else
+                    {
+                        if (currentNumOfItems <= numOfItems)
+                        {                        //Listview
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = textBoxQuizQuestion.Text;
+                            exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                            exams.SubItems.Add(RightAnswer);
+                            MultipleChoiceLV.Items.Add(exams);
+                            currentNumOfItems++;
+
+                            if (currentNumOfItems <= numOfItems)
+                            {
+                                currentnumMC.Text = currentNumOfItems.ToString();
+                                CurrentnumSA.Text = currentNumOfItems.ToString();
+                                CurrentNumTF.Text = currentNumOfItems.ToString();
+                                rightAnswer = null;
+                                resetAllMC();
+                            }
+                            else
+                            {
+                                buttonNextQuestion.Text = "Confirm";
+                                rightAnswer = null;
+                                resetAllMC();
+
+                            }
+                        }
+
+                    }
+
+                    break;
 
 
+                case "Update":
+                    if (currentNumOfItems > numOfItems)
+                    {
+
+                        int listPosition = int.Parse(currentnumMC.Text) - 1;
+                        ListViewItem exams = new ListViewItem();
+                        exams.Text = textBoxQuizQuestion.Text;
+                        exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                        exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                        exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                        exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                        exams.SubItems.Add(RightAnswer);
+                        MultipleChoiceLV.Items.RemoveAt(listPosition);
+                        MultipleChoiceLV.Items.Insert(listPosition, exams);
+                        currentnumMC.Text = Convert.ToString(numOfItems);
+                        CurrentnumSA.Text = Convert.ToString(numOfItems);
+                        CurrentNumTF.Text = Convert.ToString(numOfItems);
+
+                        RightAnswer = null;
+                        disable_fieldsMC();
+                        resetAllMC();
+                        buttonNextQuestion.Text = "Confirm";
+
+
+                    }
+
+
+                    else
+                    {
+                        int listPosition = int.Parse(currentnumMC.Text) - 1;
+                        ListViewItem exams = new ListViewItem();
+                        exams.Text = textBoxQuizQuestion.Text;
+                        exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                        exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                        exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                        exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                        exams.SubItems.Add(RightAnswer);
+                        MultipleChoiceLV.Items.RemoveAt(listPosition);
+                        MultipleChoiceLV.Items.Insert(listPosition, exams);
+                        currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
+                        CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.Items.Count + 1);
+                        CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.Items.Count + 1);
+                        RightAnswer = null;
+                        resetAllMC(); ;
+                        buttonNextQuestion.Text = "Next";
+                    }
+                    break;
+
+                case "Confirm":
+
+                    if (bunifuDropdown6.selectedValue == null)
+                    {
+                        Dialogue.Show("Please Complete All indicated Field Before You Proceed", "", "Ok", "Cancel");
+                    }
+
+                    else
+                    {
+                        DialogResult result = Dialogue1.Show("Are You Sure You Want To Continue?", "", "Ok", "Cancel");
+                        if (result == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                SqlDataAdapter adapt = new SqlDataAdapter("Select facilitator_id from facilitator WHERE username = '" + Program.Session_id + "' ", con);
+                                DataTable dt = new DataTable();
+                                adapt.Fill(dt);
+                                int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Facilitator
+
+
+
+
+                                con.Open();
+                                String query = "INSERT INTO quizzes (quiz_name,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','h', '" + ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                int n = sda.SelectCommand.ExecuteNonQuery();
+
+                                con.Close();
+
+                                if (n > 0)
+                                {
+                                    Dialogue.Show("Quiz Added!", "", "Ok", "Cancel");
+
+
+
+
+
+
+
+                                }
+                                else
+                                {
+                                    Dialogue.Show("Creation Failed!", "", "Ok", "Cancel");
+
+
+
+
+                                }
+
+                            }
+                            catch (Exception ex)
+                            {
+                                //MessageBox.Show(ex.Message);
+                            }
+                            try
+                            {
+
+                                SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_name = '" + textBoxQuizTitle.Text + "' AND facilitator_id = (select facilitator_id from facilitator where username = '" + Program.Session_id + "')", con);
+                                con.Open();
+
+                                SqlDataReader dr = cmd.ExecuteReader();
+
+                                if (dr.Read() == true)
+                                {
+                                    int examID = (int)dr[("quiz_id")];
+                                    for (int i = 0; i < MultipleChoiceLV.Items.Count; i++)
+                                    {
+                                        ListViewItem exams = MultipleChoiceLV.Items[i];
+                                        try
+                                        {
+                                            con.Open();
+                                            String query = "INSERT INTO answers (answer_a,answer_b,answer_c,answer_d,correct_answer,question_id) VALUES ('" + textBoxQuizChoiceA + "','" + textBoxQuizChoiceB + "','" + textBoxQuizChoiceC + "', '" + textBoxQuizChoiceD + "','" + RightAnswer + "', ' 1 ')";//limit kulang question_id
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                            int n = sda.SelectCommand.ExecuteNonQuery();
+
+                                            con.Close();
+                                        }
+
+                                        catch (Exception ex)
+                                        {
+                                            MessageBox.Show(ex.Message);
+                                        }
+
+
+                                    }
+
+                                    con.Close();
+                                }
+
+                            }
+
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                            finally
+                            {
+                                // if (dr != null) datareaderDB.Close();
+                                // if (connectDB != null) connectDB.Close();
+                            }
+                        }
+                    }
+
+                    break;
+
+
+            }
         }
-
         private void bunifuFlatButton9_Click(object sender, EventArgs e) //reset
         {
             MultipleChoiceLV.Items.Clear();
@@ -311,6 +538,30 @@ namespace TooLearnOfficial
             {
                 e.Handled = true;
             }
+        }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+            RightAnswer = "A";
+        }
+
+        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox1.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+            RightAnswer = "B";
+        }
+
+        private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox4.Checked = false;
+            RightAnswer = "C";
+        }
+
+        private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
+            RightAnswer = "A";
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
