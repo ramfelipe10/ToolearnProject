@@ -120,6 +120,30 @@
     <Compile Include="FacilitatorLogin.Designer.cs">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameFacilitator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameFacilitator.Designer.cs">
+      <DependentUpon>GameFacilitator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameParticipant.Designer.cs">
+      <DependentUpon>GameParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyFacilitator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyFacilitator.Designer.cs">
+      <DependentUpon>LobbyFacilitator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LobbyParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LobbyParticipant.Designer.cs">
+      <DependentUpon>LobbyParticipant.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuizBee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +316,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameFacilitator.resx">
+      <DependentUpon>GameFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameParticipant.resx">
+      <DependentUpon>GameParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyFacilitator.resx">
+      <DependentUpon>LobbyFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LobbyParticipant.resx">
+      <DependentUpon>LobbyParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuizBee.resx">
       <DependentUpon>QuizBee.cs</DependentUpon>
