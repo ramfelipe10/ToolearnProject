@@ -1703,10 +1703,10 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
-            this.Controls.Add(this.trueORfalse);
-            this.Controls.Add(this.TrueOrFalseLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";

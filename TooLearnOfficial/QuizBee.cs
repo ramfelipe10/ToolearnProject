@@ -28,11 +28,42 @@ namespace TooLearnOfficial
 
         private void resetAllMC()
         {
-            
+            textBox11.Text = null;
+            textBox1.Text = null;
+            textBox2.Text = null;
+            pictureBox3.ImageLocation = null;
+
            textBoxQuizQuestion.Text = null;
             textBoxQuizChoiceA.Text = null; textBoxQuizChoiceB.Text = null; textBoxQuizChoiceC.Text = null; textBoxQuizChoiceD.Text = null;
             bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
         }
+
+        private void resetAllSA()
+        {
+            textBox12.Text = null;
+            textBox3.Text = null;
+            textBox4.Text = null;
+            textBox9.Text = null;
+            textBox8.Text = null;
+            pictureBox4.ImageLocation = null;
+
+
+        }
+
+        private void resetAllTF()
+        {
+            textBox10.Text = null;
+            textBox5.Text = null;
+            textBox6.Text = null;
+            textBox13.Text = null;
+           
+            pictureBox5.ImageLocation = null;
+
+
+        }
+
+
+
 
         private void enable_fieldsMC() {
 
@@ -40,7 +71,7 @@ namespace TooLearnOfficial
             bunifuFlatButton3.Enabled = true; //trueOrfalse
             bunifuFlatButton4.Enabled = true; //shortAnswer
 
-
+            //For Multiple Choice
             pictureBox3.Enabled = true;
             textBoxQuizQuestion.Enabled = true;
             bunifuFlatButton1.Enabled = true;
@@ -67,7 +98,11 @@ namespace TooLearnOfficial
 
         private void disable_fieldsMC()
         {
-
+            //For Multiple Choice
+            textBox11.Enabled = false;
+            textBox2.Enabled = false;
+            textBox1.Enabled = false;
+            bunifuFlatButton1.Enabled = false;
             textBoxQuizQuestion.Enabled = false;
             textBoxQuizChoiceB.Enabled = false;
             textBoxQuizChoiceC.Enabled = false;
@@ -78,6 +113,25 @@ namespace TooLearnOfficial
             bunifuCheckbox2.Enabled = false;
             bunifuCheckbox3.Enabled = false;
             bunifuCheckbox4.Enabled = false;
+
+            //For Short Answer
+            bunifuFlatButton7.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox12.Enabled = false;
+            textBox9.Enabled = false;
+            textBox8.Enabled = false;
+
+            //For TrueFalse
+
+            textBox13.Enabled = false;
+            bunifuDropdown5.Enabled = false;
+            bunifuFlatButton8.Enabled = false;
+            textBox10.Enabled = false;
+            textBox5.Enabled = false;
+            textBox6.Enabled = false;
+
+
         }
 
 
