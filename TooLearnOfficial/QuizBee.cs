@@ -15,6 +15,8 @@ namespace TooLearnOfficial
     {
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        SqlDataReader dr;
         int numOfItems, currentNumOfItems;
         string RightAnswer;
 
@@ -104,6 +106,7 @@ namespace TooLearnOfficial
             textBox1.Enabled = false;
             bunifuFlatButton1.Enabled = false;
             textBoxQuizQuestion.Enabled = false;
+            textBoxQuizChoiceA.Enabled = false;
             textBoxQuizChoiceB.Enabled = false;
             textBoxQuizChoiceC.Enabled = false;
             textBoxQuizChoiceD.Enabled = false;
@@ -113,6 +116,8 @@ namespace TooLearnOfficial
             bunifuCheckbox2.Enabled = false;
             bunifuCheckbox3.Enabled = false;
             bunifuCheckbox4.Enabled = false;
+
+            buttonNextQuestion.Enabled = false;
 
             //For Short Answer
             bunifuFlatButton7.Enabled = false;
@@ -134,6 +139,76 @@ namespace TooLearnOfficial
 
         }
 
+        private void updateMC()
+        {
+            buttonNextQuestion.Text = "Update";
+            ListViewItem exams = MultipleChoiceLV.SelectedItems[0];
+            textBoxQuizQuestion.Text = exams.Text;
+            textBoxQuizChoiceA.Text =exams.SubItems[1].Text;
+            textBoxQuizChoiceB.Text =exams.SubItems[2].Text;
+            textBoxQuizChoiceC.Text =exams.SubItems[3].Text;
+            textBoxQuizChoiceD.Text =exams.SubItems[4].Text;
+            switch (exams.SubItems[5].Text)
+            {
+
+                case "A":
+                    RightAnswer = "A";
+                    bunifuCheckbox1.Checked = true;
+                    bunifuCheckbox2.Checked = false;
+                    bunifuCheckbox3.Checked = false;
+                    bunifuCheckbox4.Checked = false;
+                    break;
+
+                case "B":
+                    RightAnswer = "B";
+                    bunifuCheckbox1.Checked = false;
+                    bunifuCheckbox2.Checked = true;
+                    bunifuCheckbox3.Checked = false;
+                    bunifuCheckbox4.Checked = false;
+                    break;
+
+                case "C":
+
+                    RightAnswer = "C";
+                    bunifuCheckbox1.Checked = false;
+                    bunifuCheckbox2.Checked = false;
+                    bunifuCheckbox3.Checked = true;
+                    bunifuCheckbox4.Checked = false;
+                    break;
+
+                case "D":
+
+                    RightAnswer = "D";
+                    bunifuCheckbox1.Checked = false;
+                    bunifuCheckbox2.Checked = false;
+                    bunifuCheckbox3.Checked = false;
+                    bunifuCheckbox4.Checked = true;
+                    break;
+
+                default:
+                    break;
+            }
+
+
+
+            }
+
+
+        private void clearAllMC()
+        {
+            textBoxQuizTitle.Text = null;
+            textBox7.Text = null;
+            bunifuDropdown6.selectedIndex = -1;
+            resetAllMC();
+            disable_fieldsMC();
+            MultipleChoiceLV.Items.Clear();
+            ShortAnswerLV.Items.Clear();
+            TrueOrFalseLV.Items.Clear();
+            MultipleChoiceLV.Enabled = false;
+            ShortAnswerLV.Enabled = false;
+            TrueOrFalseLV.Enabled = false;
+
+        }
 
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -276,10 +351,47 @@ namespace TooLearnOfficial
                 currentnumMC.Text= currentNumOfItems.ToString();
                 CurrentnumSA.Text= currentNumOfItems.ToString();
                 CurrentNumTF.Text= currentNumOfItems.ToString();
+                MultipleChoiceLV.Enabled = true;
+
 
             }
             
         }
+
+
+        private void bunifuImageButton3_Click(object sender, EventArgs e)//Refresh
+        {
+            DialogResult Result = Dialogue1.Show("Do You Wan't To Continue? \nResetting May Affect Questions and Answers You've Created.", "Confirmation", "Ok", "Cancel");
+            if(Result == DialogResult.Yes)
+            {
+                numOfItems = 0;
+                currentNumOfItems = 0;
+                currentnumMC.Text = null;
+                CurrentnumSA.Text = null;
+                CurrentNumTF.Text = null;
+                bunifuDropdown6.selectedIndex = -1;
+                bunifuDropdown6.Enabled = true;
+                bunifuFlatButton5.Enabled = true;
+                MultipleChoiceLV.Items.Clear();
+                ShortAnswerLV.Items.Clear();
+                TrueOrFalseLV.Items.Clear();
+                resetAllMC();
+                resetAllSA();
+                resetAllTF();
+                disable_fieldsMC();
+                MultipleChoiceLV.Enabled = false;
+                ShortAnswerLV.Enabled = false;
+                TrueOrFalseLV.Enabled = false;
+
+                
+                buttonNextQuestion.Text = "Next";
+
+            }
+
+
+
+        }
+
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)//for multiple choice next
         {
@@ -317,8 +429,10 @@ namespace TooLearnOfficial
                             }
                             else
                             {
+                                disable_fieldsMC();
                                 buttonNextQuestion.Text = "Confirm";
-                                rightAnswer = null;
+                                buttonNextQuestion.Enabled = true;
+                               rightAnswer = null;
                                 resetAllMC();
 
                             }
@@ -351,6 +465,7 @@ namespace TooLearnOfficial
                         disable_fieldsMC();
                         resetAllMC();
                         buttonNextQuestion.Text = "Confirm";
+                        buttonNextQuestion.Enabled = true;
 
 
                     }
@@ -379,7 +494,7 @@ namespace TooLearnOfficial
 
                 case "Confirm":
 
-                    if (bunifuDropdown6.selectedValue == null)
+                    if (bunifuDropdown6.selectedValue == null || textBoxQuizTitle.Text=="" )
                     {
                         Dialogue.Show("Please Complete All indicated Field Before You Proceed", "", "Ok", "Cancel");
                     }
@@ -391,6 +506,10 @@ namespace TooLearnOfficial
                         {
                             try
                             {
+
+                                con.Open();
+
+
                                 SqlDataAdapter adapt = new SqlDataAdapter("Select facilitator_id from facilitator WHERE username = '" + Program.Session_id + "' ", con);
                                 DataTable dt = new DataTable();
                                 adapt.Fill(dt);
@@ -399,12 +518,12 @@ namespace TooLearnOfficial
 
 
 
-                                con.Open();
-                                String query = "INSERT INTO quizzes (quiz_name,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','h', '" + ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                                
+                                String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" +textBox7.Text+"', '" + ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
                                 int n = sda.SelectCommand.ExecuteNonQuery();
 
-                                con.Close();
+                              
 
                                 if (n > 0)
                                 {
@@ -431,13 +550,17 @@ namespace TooLearnOfficial
                             {
                                 //MessageBox.Show(ex.Message);
                             }
+                       con.Close();
                             try
                             {
 
-                                SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_name = '" + textBoxQuizTitle.Text + "' AND facilitator_id = (select facilitator_id from facilitator where username = '" + Program.Session_id + "')", con);
+
                                 con.Open();
 
-                                SqlDataReader dr = cmd.ExecuteReader();
+                                SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_title = '" + textBoxQuizTitle.Text + "' AND facilitator_id = (select facilitator_id from facilitator where username = '" + Program.Session_id + "')", con);
+                            
+
+                                dr = cmd.ExecuteReader();
 
                                 if (dr.Read() == true)
                                 {
@@ -447,25 +570,25 @@ namespace TooLearnOfficial
                                         ListViewItem exams = MultipleChoiceLV.Items[i];
                                         try
                                         {
-                                            con.Open();
-                                            String query = "INSERT INTO answers (answer_a,answer_b,answer_c,answer_d,correct_answer,question_id) VALUES ('" + textBoxQuizChoiceA + "','" + textBoxQuizChoiceB + "','" + textBoxQuizChoiceC + "', '" + textBoxQuizChoiceD + "','" + RightAnswer + "', ' 1 ')";//limit kulang question_id
+                                            conn.Open();
+                                            String query = "INSERT INTO answers (answer_a,answer_b,answer_c,answer_d,correct_answer,question_id) VALUES ('" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "', '" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "', ' 1 ')";//limit kulang question_id  RightAnswer
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                                             int n = sda.SelectCommand.ExecuteNonQuery();
 
-                                            con.Close();
+                                           
                                         }
 
                                         catch (Exception ex)
                                         {
                                             MessageBox.Show(ex.Message);
                                         }
-
+                                        conn.Close();
 
                                     }
 
-                                    con.Close();
+                                   
                                 }
-
+                                dr.Close();
                             }
 
                             catch (Exception ex)
@@ -474,9 +597,22 @@ namespace TooLearnOfficial
                             }
                             finally
                             {
-                                // if (dr != null) datareaderDB.Close();
-                                // if (connectDB != null) connectDB.Close();
+                              
+                               if (dr != null) dr.Close();
+                                 if (con != null) con.Close();
                             }
+
+                            clearAllMC();
+                            numOfItems = 0;
+                            currentNumOfItems = 0;
+                            // Program.examID = 0;
+                            bunifuDropdown6.Enabled = true;
+                            bunifuFlatButton5.Enabled = true;
+                            Dialogue.Show("Quiz Saved In the Database", "", "Ok", "Cancel");
+
+                            //popop new form to launch or go to home and this.close
+
+
                         }
                     }
 
@@ -485,11 +621,10 @@ namespace TooLearnOfficial
 
             }
         }
-        private void bunifuFlatButton9_Click(object sender, EventArgs e) //reset
-        {
-            MultipleChoiceLV.Items.Clear();
-            
-        }
+
+
+        // delete 
+      
 
         private void button2_Click(object sender, EventArgs e)//for true or false Next
         {
@@ -516,6 +651,8 @@ namespace TooLearnOfficial
 
             ShortAnswerLV.Items.Add(exams);
         }
+
+        // Uptohere
 
         private void bunifuFlatButton10_Click(object sender, EventArgs e)//reset
         {
@@ -615,7 +752,33 @@ namespace TooLearnOfficial
         private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
         {
             bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
-            RightAnswer = "A";
+            RightAnswer = "D";
+        }
+
+        private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(MultipleChoiceLV.Items.Count !=0 && MultipleChoiceLV.SelectedItems.Count !=0)
+
+            {
+
+
+                if(currentNumOfItems>numOfItems)
+                {
+                    currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
+                    enable_fieldsMC();
+                    enable_fieldsMC();
+                    updateMC();
+                }
+                else
+                {
+                    currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
+                    updateMC();
+                }
+
+            }      
+                    
+                    
+                    
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)

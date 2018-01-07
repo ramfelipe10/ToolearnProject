@@ -24,6 +24,7 @@ namespace TooLearnOfficial
             MsgBox.label2.Text = Text;
             MsgBox.bunifuFlatButton1.Text = btnOK;
             MsgBox.bunifuFlatButton2.Text = btnCancel;
+            result = DialogResult.No;
             MsgBox.ShowDialog();
             return result;
 
