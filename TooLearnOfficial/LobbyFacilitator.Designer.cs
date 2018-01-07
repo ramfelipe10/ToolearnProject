@@ -211,6 +211,7 @@
             // bunifuGradientPanel2
             // 
             this.bunifuGradientPanel2.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomDataGrid1);
             this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.White;

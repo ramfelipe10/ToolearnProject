@@ -40,6 +40,7 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.buttonIPAddress = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,11 +147,22 @@
             this.checkBox3.Text = "Randomize";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
+            // buttonIPAddress
+            // 
+            this.buttonIPAddress.Location = new System.Drawing.Point(42, 67);
+            this.buttonIPAddress.Name = "buttonIPAddress";
+            this.buttonIPAddress.Size = new System.Drawing.Size(75, 23);
+            this.buttonIPAddress.TabIndex = 76;
+            this.buttonIPAddress.Text = "IP Address";
+            this.buttonIPAddress.UseVisualStyleBackColor = true;
+            this.buttonIPAddress.Click += new System.EventHandler(this.buttonIPAddress_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.buttonIPAddress);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.checkBox1);
@@ -162,6 +174,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Settings";
             this.Size = new System.Drawing.Size(685, 370);
+            this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +193,6 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button buttonIPAddress;
     }
 }
