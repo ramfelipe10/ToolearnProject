@@ -15,7 +15,7 @@ namespace TooLearnOfficial
     {
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlDataReader dr;
         int numOfItems, currentNumOfItems;
         string RightAnswer;
@@ -515,42 +515,25 @@ namespace TooLearnOfficial
                                 adapt.Fill(dt);
                                 int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Facilitator
 
-
+                               
 
 
                                 
+                                
                                 String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" +textBox7.Text+"', '" + ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                                int n = sda.SelectCommand.ExecuteNonQuery();
-
-                              
-
-                                if (n > 0)
-                                {
-                                    Dialogue.Show("Quiz Added!", "", "Ok", "Cancel");
+                                sda.SelectCommand.ExecuteNonQuery();
 
 
-
-
-
-
-
-                                }
-                                else
-                                {
-                                    Dialogue.Show("Creation Failed!", "", "Ok", "Cancel");
-
-
-
-
-                                }
+                                con.Close();
+                               
 
                             }
                             catch (Exception ex)
                             {
                                 //MessageBox.Show(ex.Message);
                             }
-                       con.Close();
+                       
                             try
                             {
 
@@ -558,47 +541,54 @@ namespace TooLearnOfficial
                                 con.Open();
 
                                 SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_title = '" + textBoxQuizTitle.Text + "' AND facilitator_id = (select facilitator_id from facilitator where username = '" + Program.Session_id + "')", con);
-                            
+
 
                                 dr = cmd.ExecuteReader();
-
-                                if (dr.Read() == true)
-                                {
-                                    int examID = (int)dr[("quiz_id")];
-                                    for (int i = 0; i < MultipleChoiceLV.Items.Count; i++)
+                           
+                                    
+                                    if (dr.Read() == true)
                                     {
-                                        ListViewItem exams = MultipleChoiceLV.Items[i];
-                                        try
+                                        int examID = (int)dr[("quiz_id")];
+                                        for (int i = 0; i < MultipleChoiceLV.Items.Count; i++)
                                         {
-                                            conn.Open();
-                                            String query = "INSERT INTO answers (answer_a,answer_b,answer_c,answer_d,correct_answer,question_id) VALUES ('" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "', '" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "', ' 1 ')";//limit kulang question_id  RightAnswer
-                                            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                                            int n = sda.SelectCommand.ExecuteNonQuery();
+                                            ListViewItem exams = MultipleChoiceLV.Items[i];
+                                            try
+                                            {
+                                                con2.Open();
+                                            
+                                                String query = "INSERT INTO answers (answer_a,answer_b,answer_c,answer_d,correct_answer,question_id) VALUES ('"+ exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "', ' 1 ')";//limit kulang question_id  RightAnswer
+                                                SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                                int n = sda.SelectCommand.ExecuteNonQuery();
+                                            Dialogue.Show("ok", "", "ok", "");
+                                               
+                                            }
+                                            
+                                            catch (Exception ex)
+                                            {
+                                                MessageBox.Show(ex.Message);//error
+                                            }
+                                            con2.Close();
 
-                                           
                                         }
 
-                                        catch (Exception ex)
-                                        {
-                                            MessageBox.Show(ex.Message);
-                                        }
-                                        conn.Close();
 
                                     }
-
-                                   
-                                }
-                                dr.Close();
+                               
+                             
+                               
                             }
+
+
+                             
 
                             catch (Exception ex)
                             {
-                                MessageBox.Show(ex.Message);
+                             // MessageBox.Show(ex.Message);
                             }
                             finally
                             {
-                              
-                               if (dr != null) dr.Close();
+                               
+                                 if (dr != null) dr.Close();
                                  if (con != null) con.Close();
                             }
 
@@ -609,7 +599,7 @@ namespace TooLearnOfficial
                             bunifuDropdown6.Enabled = true;
                             bunifuFlatButton5.Enabled = true;
                             Dialogue.Show("Quiz Saved In the Database", "", "Ok", "Cancel");
-
+                            this.Close();
                             //popop new form to launch or go to home and this.close
 
 
