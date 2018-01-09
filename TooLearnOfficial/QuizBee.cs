@@ -449,6 +449,7 @@ namespace TooLearnOfficial
                 label5.Visible = true; //TimeLimitQuiz
                 textBox7.Visible = true;
                 label14.Visible = true;
+                textBox7.Enabled = true;
 
 
 
@@ -493,43 +494,98 @@ namespace TooLearnOfficial
             {
                 case "Next":
 
-                    if (textBoxQuizQuestion.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                    if (textBox7.Visible == false)
                     {
-                        Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                    }
 
-                    else
-                    {
-                        if (currentNumOfItems <= numOfItems)
-                        {                        //Listview
-                            ListViewItem exams = new ListViewItem();
-                            exams.Text = textBoxQuizQuestion.Text;
-                            exams.SubItems.Add(textBoxQuizChoiceA.Text);
-                            exams.SubItems.Add(textBoxQuizChoiceB.Text);
-                            exams.SubItems.Add(textBoxQuizChoiceC.Text);
-                            exams.SubItems.Add(textBoxQuizChoiceD.Text);
-                            exams.SubItems.Add(RightAnswer);
-                            MultipleChoiceLV.Items.Add(exams);
-                            currentNumOfItems++;
 
+                        if (textBoxQuizQuestion.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                            textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                        {
+                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                        }
+
+                        else
+                        {
                             if (currentNumOfItems <= numOfItems)
-                            {
-                                currentnumMC.Text = currentNumOfItems.ToString();
-                                CurrentnumSA.Text = currentNumOfItems.ToString();
-                                CurrentNumTF.Text = currentNumOfItems.ToString();
-                                rightAnswer = null;
-                                resetAllMC();
-                            }
-                            else
-                            {
-                                disable_fieldsMC();
-                                buttonNextQuestion.Text = "Confirm";
-                                buttonNextQuestion.Enabled = true;
-                               rightAnswer = null;
-                                resetAllMC();
+                            {                        //Listview
+                                ListViewItem exams = new ListViewItem();
+                                exams.Text = textBoxQuizQuestion.Text;
+                                exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                                exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                                exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                                exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                                exams.SubItems.Add(RightAnswer);
+                                MultipleChoiceLV.Items.Add(exams);
+                                currentNumOfItems++;
 
+                                if (currentNumOfItems <= numOfItems)
+                                {
+                                    currentnumMC.Text = currentNumOfItems.ToString();
+                                    CurrentnumSA.Text = currentNumOfItems.ToString();
+                                    CurrentNumTF.Text = currentNumOfItems.ToString();
+                                    rightAnswer = null;
+                                    resetAllMC();
+                                }
+                                else
+                                {
+                                    disable_fieldsMC();
+                                    buttonNextQuestion.Text = "Confirm";
+                                    buttonNextQuestion.Enabled = true;
+                                    rightAnswer = null;
+                                    resetAllMC();
+
+                                }
                             }
+
+                        }
+
+
+                    } //If TB 7=False
+
+
+
+                    else // TB 7=True
+                    {
+
+                        if (textBoxQuizQuestion.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                           textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                        {
+                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                        }
+
+                        else
+                        {
+                            if (currentNumOfItems <= numOfItems)
+                            {                        //Listview
+                                ListViewItem exams = new ListViewItem();
+                                exams.Text = textBoxQuizQuestion.Text;
+                                exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                                exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                                exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                                exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                                exams.SubItems.Add(RightAnswer);
+                                MultipleChoiceLV.Items.Add(exams);
+                                currentNumOfItems++;
+
+                                if (currentNumOfItems <= numOfItems)
+                                {
+                                    currentnumMC.Text = currentNumOfItems.ToString();
+                                    CurrentnumSA.Text = currentNumOfItems.ToString();
+                                    CurrentNumTF.Text = currentNumOfItems.ToString();
+                                    rightAnswer = null;
+                                    resetAllMC();
+                                }
+                                else
+                                {
+                                    disable_fieldsMC();
+                                    buttonNextQuestion.Text = "Confirm";
+                                    buttonNextQuestion.Enabled = true;
+                                    rightAnswer = null;
+                                    resetAllMC();
+
+                                }
+                            }
+
                         }
 
                     }
