@@ -93,13 +93,33 @@ namespace TooLearnOfficial
 
             buttonNextQuestion.Enabled = true;
 
+            //For Short Answer
+            bunifuFlatButton7.Enabled = true;
+            textBox3.Enabled = true;
+            textBox4.Enabled = true;
+            textBox12.Enabled = true;
+            textBox9.Enabled = true;
+            textBox8.Enabled = true;
 
+            //For TrueFalse
+
+            textBox13.Enabled = true;
+            bunifuDropdown5.Enabled = true;
+            bunifuFlatButton8.Enabled = true;
+            textBox10.Enabled = true;
+            textBox5.Enabled = true;
+            textBox6.Enabled = true;
 
         }
 
 
         private void disable_fieldsMC()
         {
+
+            bunifuFlatButton2.Enabled = false; //multiplechoice
+            bunifuFlatButton3.Enabled = false; //trueOrfalse
+            bunifuFlatButton4.Enabled = false; //shortAnswer
+
             //For Multiple Choice
             textBox11.Enabled = false;
             textBox2.Enabled = false;
@@ -336,7 +356,7 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
-
+            
             if (bunifuDropdown6.selectedIndex == -1)
             {
                 Dialogue.Show("Please Indicate Number Of Items", "", "Ok", "Cancel");
@@ -344,7 +364,54 @@ namespace TooLearnOfficial
 
             else
             {
-                 numOfItems = int.Parse(bunifuDropdown6.selectedValue); currentNumOfItems = 1;                
+
+                if (textBox7.Text == "")
+                {
+                    label20.Visible = true; //MC
+                    label29.Visible = true;
+                    textBox11.Visible = true;
+
+
+                    label17.Visible = true; //SA
+                    label18.Visible = true;
+                    textBox12.Visible = true;
+
+
+                    label24.Visible = true; //TF
+                    label23.Visible = true;
+                    textBox10.Visible = true;
+
+                    label5.Visible = false; //TimeLimitQuiz
+                    textBox7.Visible = false;
+                    label14.Visible = false;
+                                  
+                }
+
+
+                else
+                {
+                    label20.Visible = false; //MC
+                    label29.Visible = false;
+                    textBox11.Visible = false;
+
+
+                    label17.Visible = false; //SA
+                    label18.Visible = false;
+                    textBox12.Visible = false;
+
+
+                    label24.Visible = false; //TF
+                    label23.Visible = false;
+                    textBox10.Visible = false;
+
+
+                    label5.Visible = true; //TimeLimitQuiz
+                    textBox7.Visible = true;
+                    label14.Visible = true;
+                    textBox7.Enabled = false;
+
+                }
+                numOfItems = int.Parse(bunifuDropdown6.selectedValue); currentNumOfItems = 1;                
                 bunifuFlatButton5.Enabled = false;
                 bunifuDropdown6.Enabled = false;
                 enable_fieldsMC();
@@ -364,6 +431,27 @@ namespace TooLearnOfficial
             DialogResult Result = Dialogue1.Show("Do You Wan't To Continue? \nResetting May Affect Questions and Answers You've Created.", "Confirmation", "Ok", "Cancel");
             if(Result == DialogResult.Yes)
             {
+
+                label20.Visible = true; //MC
+                label29.Visible = true;
+                textBox11.Visible = true;
+
+
+                label17.Visible = true; //SA
+                label18.Visible = true;
+                textBox12.Visible = true;
+
+
+                label24.Visible = true; //TF
+                label23.Visible = true;
+                textBox10.Visible = true;
+
+                label5.Visible = true; //TimeLimitQuiz
+                textBox7.Visible = true;
+                label14.Visible = true;
+
+
+
                 numOfItems = 0;
                 currentNumOfItems = 0;
                 currentnumMC.Text = null;
@@ -386,6 +474,11 @@ namespace TooLearnOfficial
                 
                 buttonNextQuestion.Text = "Next";
 
+                MultipleChoice.BringToFront();
+                MultipleChoiceLV.BringToFront();
+
+
+
             }
 
 
@@ -399,6 +492,7 @@ namespace TooLearnOfficial
             switch (buttonNextQuestion.Text)
             {
                 case "Next":
+
                     if (textBoxQuizQuestion.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
                         textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
                     {
@@ -556,16 +650,16 @@ namespace TooLearnOfficial
                                             {
                                                 con2.Open();
                                             
-                                                String query = "INSERT INTO answers (answer_a,answer_b,answer_c,answer_d,correct_answer,question_id) VALUES ('"+ exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "', ' 1 ')";//limit kulang question_id  RightAnswer
+                                                String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','"+ exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" +textBox2.Text+"','" +pictureBox3.ImageLocation+ "','" +textBox7.Text + "')";//limit kulang question_id  RightAnswer
                                                 SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                                 int n = sda.SelectCommand.ExecuteNonQuery();
-                                            Dialogue.Show("ok", "", "ok", "");
+                                           
                                                
                                             }
                                             
                                             catch (Exception ex)
                                             {
-                                                MessageBox.Show(ex.Message);//error
+                                                MessageBox.Show(ex.Message);
                                             }
                                             con2.Close();
 
@@ -583,7 +677,7 @@ namespace TooLearnOfficial
 
                             catch (Exception ex)
                             {
-                             // MessageBox.Show(ex.Message);
+                             MessageBox.Show(ex.Message);
                             }
                             finally
                             {
@@ -649,13 +743,7 @@ namespace TooLearnOfficial
             ShortAnswerLV.Items.Clear();
         }
 
-        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+       
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -769,6 +857,18 @@ namespace TooLearnOfficial
                     
                     
                     
+        }
+
+       
+
+        private void textBox7_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)

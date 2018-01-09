@@ -140,7 +140,7 @@
             this.bunifuFlatButton2.IconRightZoom = 0D;
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 70D;
-            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.IsTab = true;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 327);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -263,7 +263,7 @@
             this.buttonCreateClassroom.IconRightZoom = 0D;
             this.buttonCreateClassroom.IconVisible = true;
             this.buttonCreateClassroom.IconZoom = 70D;
-            this.buttonCreateClassroom.IsTab = false;
+            this.buttonCreateClassroom.IsTab = true;
             this.buttonCreateClassroom.Location = new System.Drawing.Point(0, 235);
             this.buttonCreateClassroom.Name = "buttonCreateClassroom";
             this.buttonCreateClassroom.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -302,7 +302,7 @@
             this.buttonLogout.IconRightZoom = 0D;
             this.buttonLogout.IconVisible = true;
             this.buttonLogout.IconZoom = 70D;
-            this.buttonLogout.IsTab = false;
+            this.buttonLogout.IsTab = true;
             this.buttonLogout.Location = new System.Drawing.Point(0, 159);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -341,7 +341,7 @@
             this.buttonAboutSystem.IconRightZoom = 0D;
             this.buttonAboutSystem.IconVisible = true;
             this.buttonAboutSystem.IconZoom = 70D;
-            this.buttonAboutSystem.IsTab = false;
+            this.buttonAboutSystem.IsTab = true;
             this.buttonAboutSystem.Location = new System.Drawing.Point(0, 571);
             this.buttonAboutSystem.Name = "buttonAboutSystem";
             this.buttonAboutSystem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -380,7 +380,7 @@
             this.buttonSettings.IconRightZoom = 0D;
             this.buttonSettings.IconVisible = true;
             this.buttonSettings.IconZoom = 70D;
-            this.buttonSettings.IsTab = false;
+            this.buttonSettings.IsTab = true;
             this.buttonSettings.Location = new System.Drawing.Point(0, 524);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -419,7 +419,7 @@
             this.buttonSubjectHandle.IconRightZoom = 0D;
             this.buttonSubjectHandle.IconVisible = true;
             this.buttonSubjectHandle.IconZoom = 70D;
-            this.buttonSubjectHandle.IsTab = false;
+            this.buttonSubjectHandle.IsTab = true;
             this.buttonSubjectHandle.Location = new System.Drawing.Point(0, 281);
             this.buttonSubjectHandle.Name = "buttonSubjectHandle";
             this.buttonSubjectHandle.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -458,7 +458,7 @@
             this.buttonMyQuiz.IconRightZoom = 0D;
             this.buttonMyQuiz.IconVisible = true;
             this.buttonMyQuiz.IconZoom = 70D;
-            this.buttonMyQuiz.IsTab = false;
+            this.buttonMyQuiz.IsTab = true;
             this.buttonMyQuiz.Location = new System.Drawing.Point(0, 449);
             this.buttonMyQuiz.Name = "buttonMyQuiz";
             this.buttonMyQuiz.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -497,7 +497,7 @@
             this.buttonCreateQuiz.IconRightZoom = 0D;
             this.buttonCreateQuiz.IconVisible = true;
             this.buttonCreateQuiz.IconZoom = 70D;
-            this.buttonCreateQuiz.IsTab = false;
+            this.buttonCreateQuiz.IsTab = true;
             this.buttonCreateQuiz.Location = new System.Drawing.Point(0, 403);
             this.buttonCreateQuiz.Name = "buttonCreateQuiz";
             this.buttonCreateQuiz.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -536,7 +536,7 @@
             this.bunifuFlatButton1.IconRightZoom = 0D;
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 70D;
-            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.IsTab = true;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 113);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
