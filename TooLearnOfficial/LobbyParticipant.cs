@@ -20,10 +20,6 @@ namespace TooLearnOfficial
         public LobbyParticipant()
         {
             InitializeComponent();
-            
-           IPAddress localAddr = IPAddress.Parse(textBoxfaciIPAddress.Text);
-           Int32 port = int.Parse(textBoxFaciPort.Text);
-           clientSocket.Connect(localAddr, port);
            
         }
 
@@ -33,6 +29,14 @@ namespace TooLearnOfficial
         }
 
         private void LobbyParticipant_Load(object sender, EventArgs e)
+        {
+            IPAddress localAddr = IPAddress.Parse("172.16.9.159");
+            Int32 port = 8080;
+            clientSocket.Connect(localAddr, port);
+            label2.Text = "Client Socket Program - Server Connected ...";
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
