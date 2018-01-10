@@ -502,6 +502,7 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\Refresh_Black.png" />
     <None Include="TooLearn Pictures\Refresh_64px.png" />
     <None Include="TooLearn Pictures\View_48px.png" />
     <None Include="TooLearn Pictures\Handshake_52px.png" />

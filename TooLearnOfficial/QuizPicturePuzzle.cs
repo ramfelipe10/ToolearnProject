@@ -156,5 +156,17 @@ namespace TooLearnOfficial
             splitPicture9.Image = null;
 
         }
+
+        private void textBoxQuizTimeLimit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
+
     }
 }
