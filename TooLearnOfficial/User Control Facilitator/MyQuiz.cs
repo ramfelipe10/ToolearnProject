@@ -16,5 +16,11 @@ namespace TooLearnOfficial.User_Control
         {
             InitializeComponent();
         }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            LobbyFacilitator lf = new LobbyFacilitator();
+            lf.Show();
+        }
     }
 }

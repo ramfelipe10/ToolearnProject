@@ -43,6 +43,7 @@
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxIPAddress = new System.Windows.Forms.TextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -244,12 +245,20 @@
             this.label1.TabIndex = 153;
             this.label1.Text = "Participant Joined";
             // 
+            // textBoxIPAddress
+            // 
+            this.textBoxIPAddress.Location = new System.Drawing.Point(19, 31);
+            this.textBoxIPAddress.Name = "textBoxIPAddress";
+            this.textBoxIPAddress.Size = new System.Drawing.Size(100, 20);
+            this.textBoxIPAddress.TabIndex = 158;
+            // 
             // LobbyFacilitator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(761, 420);
+            this.Controls.Add(this.textBoxIPAddress);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuGradientPanel2);
@@ -259,6 +268,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LobbyFacilitator";
             this.Text = "LobbyFacilitator";
+            this.Load += new System.EventHandler(this.LobbyFacilitator_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -284,5 +294,6 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxIPAddress;
     }
 }

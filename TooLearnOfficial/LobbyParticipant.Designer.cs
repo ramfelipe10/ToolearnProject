@@ -41,6 +41,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.textBoxfaciIPAddress = new System.Windows.Forms.TextBox();
+            this.textBoxFaciPort = new System.Windows.Forms.TextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -118,6 +120,7 @@
             this.label1.Size = new System.Drawing.Size(320, 42);
             this.label1.TabIndex = 148;
             this.label1.Text = "Participant Joined";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
@@ -174,12 +177,28 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(508, 229);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             // 
+            // textBoxfaciIPAddress
+            // 
+            this.textBoxfaciIPAddress.Location = new System.Drawing.Point(19, 31);
+            this.textBoxfaciIPAddress.Name = "textBoxfaciIPAddress";
+            this.textBoxfaciIPAddress.Size = new System.Drawing.Size(100, 20);
+            this.textBoxfaciIPAddress.TabIndex = 151;
+            // 
+            // textBoxFaciPort
+            // 
+            this.textBoxFaciPort.Location = new System.Drawing.Point(125, 32);
+            this.textBoxFaciPort.Name = "textBoxFaciPort";
+            this.textBoxFaciPort.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFaciPort.TabIndex = 152;
+            // 
             // LobbyParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(561, 422);
+            this.Controls.Add(this.textBoxFaciPort);
+            this.Controls.Add(this.textBoxfaciIPAddress);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
@@ -187,6 +206,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LobbyParticipant";
             this.Text = "LobbyParticipant";
+            this.Load += new System.EventHandler(this.LobbyParticipant_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -210,5 +230,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+        private System.Windows.Forms.TextBox textBoxFaciPort;
+        private System.Windows.Forms.TextBox textBoxfaciIPAddress;
     }
 }
