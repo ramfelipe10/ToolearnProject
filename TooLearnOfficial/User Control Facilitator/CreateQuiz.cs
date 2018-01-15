@@ -37,6 +37,7 @@ namespace TooLearnOfficial.User_Control
         {
             QuizPicturePuzzle qpp = new QuizPicturePuzzle();
             qpp.Show();
+            
         }
     }
 }

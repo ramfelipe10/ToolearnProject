@@ -31,6 +31,16 @@ namespace TooLearnOfficial
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
+
+                    //
+                    SqlDataAdapter adapt = new SqlDataAdapter("Select facilitator_id From facilitator Where username='" + TextboxUsername.Text + "' ", con);
+                    DataTable data = new DataTable();
+                    adapt.Fill(data);
+                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Facilitator
+                    //
+
+                    Program.ID = ID.ToString();
+
                     Program.Session_id = TextboxUsername.Text; //For Session
                     Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                     this.Hide();

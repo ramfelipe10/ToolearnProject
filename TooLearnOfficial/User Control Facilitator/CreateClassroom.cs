@@ -62,7 +62,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             //Alternative-End
 
-                            SqlDataAdapter sda = new SqlDataAdapter("Select class_name from classrooms WHERE facilitator_id=(Select facilitator_id from facilitator where username= '" + Program.Session_id + "')", con);
+                            SqlDataAdapter sda = new SqlDataAdapter("Select class_name from classrooms WHERE facilitator_id='" + Program.ID + "' ", con);
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
                             BindingSource bs = new BindingSource();
@@ -153,16 +153,13 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             else
             {
-                SqlDataAdapter adapt = new SqlDataAdapter("Select facilitator_id from facilitator WHERE username = '" + Program.Session_id + "' ", con);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Facilitator
+              
 
 
 
 
                 con.Open();
-                String query = "INSERT INTO classrooms (class_name,facilitator_id) VALUES ('" + textBoxCreateClassroom.Text + "','" + ID + "')";
+                String query = "INSERT INTO classrooms (class_name,facilitator_id) VALUES ('" + textBoxCreateClassroom.Text + "','" + Program.ID + "')";
                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
                 int n = sda.SelectCommand.ExecuteNonQuery();
 
@@ -366,7 +363,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     con.Open();
 
                     String qer = "DELETE FROM classlist WHERE class_id= '" + ID + "' ";
-                    String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id =(select facilitator_id from facilitator where username = '" + Program.Session_id + "') ";
+                    String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id = '" + Program.ID + "' ";
                     SqlDataAdapter sad = new SqlDataAdapter(qer, con);
                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                     int n = sad.SelectCommand.ExecuteNonQuery();

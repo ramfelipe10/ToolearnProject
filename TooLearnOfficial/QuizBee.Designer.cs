@@ -72,12 +72,15 @@
             this.C = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.D = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rightAnswer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.image = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ShortAnswerLV = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrueOrFalseLV = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -91,6 +94,7 @@
             this.Total = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MultipleChoice = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.currentnumMC = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -117,6 +121,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.shortAnswer = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -132,6 +137,7 @@
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CurrentnumSA = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.trueORfalse = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CurrentNumTF = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -146,9 +152,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -634,7 +637,8 @@
             this.B,
             this.C,
             this.D,
-            this.rightAnswer});
+            this.rightAnswer,
+            this.image});
             this.MultipleChoiceLV.Enabled = false;
             this.MultipleChoiceLV.FullRowSelect = true;
             this.MultipleChoiceLV.GridLines = true;
@@ -651,41 +655,46 @@
             // Question
             // 
             this.Question.Text = "Questions";
-            this.Question.Width = 300;
+            this.Question.Width = 220;
             // 
             // A
             // 
             this.A.Text = "Answer(A)";
-            this.A.Width = 150;
+            this.A.Width = 144;
             // 
             // B
             // 
             this.B.Text = "Answer(B)";
-            this.B.Width = 150;
+            this.B.Width = 124;
             // 
             // C
             // 
             this.C.Text = "Answer(C)";
-            this.C.Width = 150;
+            this.C.Width = 136;
             // 
             // D
             // 
             this.D.Text = "Answer(D)";
-            this.D.Width = 150;
+            this.D.Width = 112;
             // 
             // rightAnswer
             // 
             this.rightAnswer.Text = "Correct Answer";
-            this.rightAnswer.Width = 150;
+            this.rightAnswer.Width = 129;
+            // 
+            // image
+            // 
+            this.image.Text = "Image";
+            this.image.Width = 139;
             // 
             // ShortAnswerLV
             // 
             this.ShortAnswerLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
+            this.columnHeader2,
+            this.columnHeader3});
             this.ShortAnswerLV.FullRowSelect = true;
             this.ShortAnswerLV.GridLines = true;
-            this.ShortAnswerLV.HoverSelection = true;
             this.ShortAnswerLV.Location = new System.Drawing.Point(18, 510);
             this.ShortAnswerLV.MultiSelect = false;
             this.ShortAnswerLV.Name = "ShortAnswerLV";
@@ -698,21 +707,26 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Questions";
-            this.columnHeader1.Width = 502;
+            this.columnHeader1.Width = 440;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Answer";
-            this.columnHeader2.Width = 502;
+            this.columnHeader2.Width = 298;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Image";
+            this.columnHeader3.Width = 281;
             // 
             // TrueOrFalseLV
             // 
             this.TrueOrFalseLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader4});
             this.TrueOrFalseLV.FullRowSelect = true;
             this.TrueOrFalseLV.GridLines = true;
-            this.TrueOrFalseLV.HoverSelection = true;
             this.TrueOrFalseLV.Location = new System.Drawing.Point(18, 510);
             this.TrueOrFalseLV.MultiSelect = false;
             this.TrueOrFalseLV.Name = "TrueOrFalseLV";
@@ -725,12 +739,17 @@
             // columnHeader7
             // 
             this.columnHeader7.Text = "Questions";
-            this.columnHeader7.Width = 502;
+            this.columnHeader7.Width = 440;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Answer";
-            this.columnHeader8.Width = 502;
+            this.columnHeader8.Width = 297;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Image";
+            this.columnHeader4.Width = 274;
             // 
             // bunifuElipse9
             // 
@@ -876,6 +895,17 @@
             this.MultipleChoice.Quality = 10;
             this.MultipleChoice.Size = new System.Drawing.Size(1002, 268);
             this.MultipleChoice.TabIndex = 3;
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(24, 191);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(19, 20);
+            this.bunifuCustomLabel12.TabIndex = 213;
+            this.bunifuCustomLabel12.Text = "#";
+            this.bunifuCustomLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // bunifuCustomLabel6
             // 
@@ -1206,6 +1236,17 @@
             this.shortAnswer.Size = new System.Drawing.Size(1002, 268);
             this.shortAnswer.TabIndex = 4;
             // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(24, 191);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(19, 20);
+            this.bunifuCustomLabel10.TabIndex = 212;
+            this.bunifuCustomLabel10.Text = "#";
+            this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
@@ -1408,6 +1449,16 @@
             this.trueORfalse.Size = new System.Drawing.Size(1002, 268);
             this.trueORfalse.TabIndex = 4;
             // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(24, 191);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(19, 20);
+            this.bunifuCustomLabel11.TabIndex = 214;
+            this.bunifuCustomLabel11.Text = "#";
+            this.bunifuCustomLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // bunifuCustomLabel8
             // 
             this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
@@ -1592,38 +1643,6 @@
             this.bunifuCustomLabel3.TabIndex = 0;
             this.bunifuCustomLabel3.Text = "True/False";
             // 
-            // bunifuCustomLabel10
-            // 
-            this.bunifuCustomLabel10.AutoSize = true;
-            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(24, 191);
-            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(19, 20);
-            this.bunifuCustomLabel10.TabIndex = 212;
-            this.bunifuCustomLabel10.Text = "#";
-            this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bunifuCustomLabel11
-            // 
-            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(24, 191);
-            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(19, 20);
-            this.bunifuCustomLabel11.TabIndex = 214;
-            this.bunifuCustomLabel11.Text = "#";
-            this.bunifuCustomLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bunifuCustomLabel12
-            // 
-            this.bunifuCustomLabel12.AutoSize = true;
-            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(24, 191);
-            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(19, 20);
-            this.bunifuCustomLabel12.TabIndex = 213;
-            this.bunifuCustomLabel12.Text = "#";
-            this.bunifuCustomLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // QuizBee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1643,12 +1662,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.TrueOrFalseLV);
-            this.Controls.Add(this.MultipleChoiceLV);
-            this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.TrueOrFalseLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";
@@ -1801,5 +1820,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
+        private System.Windows.Forms.ColumnHeader image;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

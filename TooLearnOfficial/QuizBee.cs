@@ -17,8 +17,9 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlDataReader dr;
-        int numOfItems, currentNumOfItems;
-        string RightAnswer;
+        int currentNumOfItems;
+        string RightAnswer, imageLocation;
+     
 
         List<Panel> listPanel = new List<Panel>();
 
@@ -170,6 +171,7 @@ namespace TooLearnOfficial
             textBoxQuizChoiceB.Text =exams.SubItems[2].Text;
             textBoxQuizChoiceC.Text =exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text =exams.SubItems[4].Text;
+            pictureBox3.ImageLocation = exams.SubItems[6].Text;
             switch (exams.SubItems[5].Text)
             {
 
@@ -220,8 +222,9 @@ namespace TooLearnOfficial
             button2.Text = "Update";
             ListViewItem exams = TrueOrFalseLV.SelectedItems[0];
             textBox13.Text = exams.Text;
-            
-        
+            pictureBox5.ImageLocation = exams.SubItems[2].Text;
+
+
         }
 
         private void updateSA()
@@ -230,6 +233,7 @@ namespace TooLearnOfficial
             ListViewItem exams = ShortAnswerLV.SelectedItems[0];
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
+            pictureBox4.ImageLocation= exams.SubItems[2].Text;
 
 
 
@@ -313,8 +317,7 @@ namespace TooLearnOfficial
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
 
-
-            String imageLocation = null;
+          
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -341,7 +344,7 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton7_Click(object sender, EventArgs e)
         {
-            String imageLocation = null;
+          
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -367,7 +370,7 @@ namespace TooLearnOfficial
         private void bunifuFlatButton8_Click(object sender, EventArgs e)
         {
 
-            String imageLocation = null;
+           
             try
             {
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -552,6 +555,9 @@ namespace TooLearnOfficial
                             exams1.SubItems.Add(textBoxQuizChoiceC.Text);
                             exams1.SubItems.Add(textBoxQuizChoiceD.Text);
                             exams1.SubItems.Add(RightAnswer);
+                            //
+                            exams1.SubItems.Add(pictureBox3.ImageLocation);
+                           //
                             MultipleChoiceLV.Items.Add(exams1);
                             currentNumOfItems++;
 
@@ -559,6 +565,9 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
                             rightAnswer = null;
+                            //
+                            pictureBox3.ImageLocation = null;
+                            //
                             resetAllMC();
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
@@ -590,7 +599,10 @@ namespace TooLearnOfficial
                                 exams1.SubItems.Add(textBoxQuizChoiceC.Text);
                                 exams1.SubItems.Add(textBoxQuizChoiceD.Text);
                                 exams1.SubItems.Add(RightAnswer);
-                                MultipleChoiceLV.Items.Add(exams1);
+                            //
+                            exams1.SubItems.Add(pictureBox3.ImageLocation);
+                            //
+                            MultipleChoiceLV.Items.Add(exams1);
                                 currentNumOfItems++;
 
       
@@ -612,7 +624,7 @@ namespace TooLearnOfficial
 
                 case "Update":
                
-                        int listPosition = int.Parse(currentnumMC.Text) - 1;
+                        int listPosition = int.Parse(NoItems.Text) - 1;
                         ListViewItem exams = new ListViewItem();
                         exams.Text = textBoxQuizQuestion.Text;
                         exams.SubItems.Add(textBoxQuizChoiceA.Text);
@@ -620,7 +632,10 @@ namespace TooLearnOfficial
                         exams.SubItems.Add(textBoxQuizChoiceC.Text);
                         exams.SubItems.Add(textBoxQuizChoiceD.Text);
                         exams.SubItems.Add(RightAnswer);
-                        MultipleChoiceLV.Items.RemoveAt(listPosition);
+                    //
+                    exams.SubItems.Add(pictureBox3.ImageLocation);
+                    //
+                    MultipleChoiceLV.Items.RemoveAt(listPosition);
                         MultipleChoiceLV.Items.Insert(listPosition, exams);
                         currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
                         CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.Items.Count + 1);
@@ -664,12 +679,21 @@ namespace TooLearnOfficial
                             ListViewItem exams2 = new ListViewItem();
                             exams2.Text = textBox13.Text;
                             exams2.SubItems.Add(bunifuDropdown5.selectedValue);
+                            //
+                            exams2.SubItems.Add(pictureBox5.ImageLocation);
+                            //
+
                             TrueOrFalseLV.Items.Add(exams2);
                             currentNumOfItems++;
 
                             currentnumMC.Text = currentNumOfItems.ToString();
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
+
+
+                            //
+                            pictureBox5.ImageLocation = null;
+                            //
 
                             resetAllTF();
 
@@ -697,12 +721,19 @@ namespace TooLearnOfficial
                             ListViewItem exams2 = new ListViewItem();
                             exams2.Text = textBox13.Text;
                             exams2.SubItems.Add(bunifuDropdown5.selectedValue);
+                            //
+                            exams2.SubItems.Add(pictureBox5.ImageLocation);
+                            //
                             TrueOrFalseLV.Items.Add(exams2);
                             currentNumOfItems++;
 
                             currentnumMC.Text = currentNumOfItems.ToString();
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
+
+                            //
+                            pictureBox5.ImageLocation = null;
+                            //
 
                             resetAllTF();
 
@@ -719,10 +750,13 @@ namespace TooLearnOfficial
 
                 case "Update":
 
-                    int listPosition = int.Parse(CurrentnumSA.Text) - 1;
+                    int listPosition = int.Parse(NoItems.Text) - 1;
                     ListViewItem exams1 = new ListViewItem();
                     exams1.Text = textBox13.Text;
                     exams1.SubItems.Add(bunifuDropdown5.selectedValue);
+                    //
+                    exams1.SubItems.Add(pictureBox5.ImageLocation);
+                    //
                     TrueOrFalseLV.Items.Add(exams1);
                     TrueOrFalseLV.Items.RemoveAt(listPosition);
                     TrueOrFalseLV.Items.Insert(listPosition, exams1);
@@ -747,7 +781,7 @@ namespace TooLearnOfficial
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Short Answer
         {
 
             switch (button1.Text)
@@ -769,13 +803,22 @@ namespace TooLearnOfficial
                             ListViewItem exams2 = new ListViewItem();
                             exams2.Text = textBox9.Text;
                             exams2.SubItems.Add(textBox8.Text);
+                            //
+                            exams2.SubItems.Add(pictureBox4.ImageLocation);
+                            //
                             ShortAnswerLV.Items.Add(exams2);
+
                             currentNumOfItems++;
 
                             currentnumMC.Text = currentNumOfItems.ToString();
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
-                           
+
+
+                            //
+                            pictureBox4.ImageLocation = null;
+                            //
+
                             resetAllSA();
 
                             NoItems.Text = ShortAnswerLV.Items.Count.ToString();
@@ -802,12 +845,20 @@ namespace TooLearnOfficial
                             ListViewItem exams2 = new ListViewItem();
                             exams2.Text = textBox9.Text;
                             exams2.SubItems.Add(textBox8.Text);
+                            //
+                            exams2.SubItems.Add(pictureBox4.ImageLocation);
+                            //
                             ShortAnswerLV.Items.Add(exams2);
                             currentNumOfItems++;
 
                             currentnumMC.Text = currentNumOfItems.ToString();
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
+
+                            //
+                            pictureBox4.ImageLocation = null;
+                            //
+
 
                             resetAllSA();
 
@@ -824,10 +875,13 @@ namespace TooLearnOfficial
 
                 case "Update":
 
-                    int listPosition = int.Parse(CurrentnumSA.Text) - 1;
+                    int listPosition = int.Parse(NoItems.Text) - 1;
                     ListViewItem exams1 = new ListViewItem();
                     exams1.Text = textBox9.Text;
                     exams1.SubItems.Add(textBox8.Text);
+                    //
+                    exams1.SubItems.Add(pictureBox4.ImageLocation);
+                    //
                     ShortAnswerLV.Items.Add(exams1);
                     ShortAnswerLV.Items.RemoveAt(listPosition);
                     ShortAnswerLV.Items.Insert(listPosition, exams1);
@@ -964,18 +1018,11 @@ namespace TooLearnOfficial
             {
 
 
-                if(currentNumOfItems>numOfItems)
-                {
-                    currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
-                    enable_fieldsMC();
-                    enable_fieldsMC();
-                    updateMC();
-                }
-                else
-                {
+               
+                
                     currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
                     updateMC();
-                }
+               
 
             }      
                     
@@ -1010,22 +1057,18 @@ namespace TooLearnOfficial
                         con.Open();
 
 
-                        SqlDataAdapter adapt = new SqlDataAdapter("Select facilitator_id from facilitator WHERE username = '" + Program.Session_id + "' ", con);
-                        DataTable dt = new DataTable();
-                        adapt.Fill(dt);
-                        int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Facilitator
 
 
 
 
 
 
-                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" + textBox7.Text + "', '" + ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" + textBox7.Text + "', '" + Program.ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         sda.SelectCommand.ExecuteNonQuery();
 
 
-                        con.Close();
+                       
 
 
                     }
@@ -1033,6 +1076,8 @@ namespace TooLearnOfficial
                     {
                         //MessageBox.Show(ex.Message);
                     }
+                    con.Close();
+
 
                     try
                     {

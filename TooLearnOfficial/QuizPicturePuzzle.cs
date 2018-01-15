@@ -165,8 +165,16 @@ namespace TooLearnOfficial
             }
         }
 
+        private void create_Click(object sender, EventArgs e)
+        {
 
+            
+                PicturePuzzle pz = new PicturePuzzle();
+                pz.Show();
+            
+          
 
+        }
 
     }
 }
