@@ -39,8 +39,8 @@ namespace TooLearnOfficial.User_Control_Participant
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
             
-            IPAddress localAddr = IPAddress.Parse("192.168.254.102");
-            Int32 port = 8080;
+            IPAddress localAddr = IPAddress.Parse("192.168.43.144");
+            Int32 port = 13000;
             clientSocket.Connect(localAddr, port);
             LobbyParticipant lp = new LobbyParticipant();
             lp.Show();
