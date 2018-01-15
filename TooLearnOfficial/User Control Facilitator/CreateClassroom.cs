@@ -14,7 +14,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 {
     public partial class CreateClassroom : UserControl
     {
-        string className;
+        string className,participantName;
      
      //SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
@@ -208,41 +208,54 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 Dialogue.Show("Invalid Input or Empty", "", "Ok", "Cancel");
             }
 
-            SqlDataAdapter adapt = new SqlDataAdapter("Select class_id from classrooms WHERE class_name = '" + className + "' ", con);
-            DataTable dt = new DataTable();
-            adapt.Fill(dt);
-            int ID = int.Parse(dt.Rows[0][0].ToString()); //Getting the ID of The Classroom
-
-
-            SqlDataAdapter add = new SqlDataAdapter("Select participant_id from participant WHERE fullname = '" + selected + "' ", con);
-            DataTable data = new DataTable();
-            adapt.Fill(dt);
-            int id = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Participant
-
-
-
-            con.Open();
-
-
-            String query = "INSERT INTO classlist (participant_id,class_id) VALUES ('" + id + "','" + ID + "')";
-            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-            int n = sda.SelectCommand.ExecuteNonQuery();
-            con.Close();
-            if (n > 0)
-            {
-                Dialogue.Show("Participant Added!", "", "Ok", "Cancel");
-            }
-
 
             else
             {
-                Dialogue.Show("Fail to Add!", "", "Ok", "Cancel");
-            }
-            load_participant();
-            //textBoxAddParticipant.Text = "";
-        }
+                SqlDataAdapter adapt = new SqlDataAdapter("Select class_id from classrooms WHERE class_name = '" + className + "' ", con);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                int ID = int.Parse(dt.Rows[0][0].ToString()); //Getting the ID of The Classroom
+            
 
-       
+                SqlDataAdapter add = new SqlDataAdapter("Select participant_id from participant WHERE fullname = '" + selected + "' ", con);
+                DataTable data = new DataTable();
+                add.Fill(data);
+                int id = int.Parse(data.Rows[0][0].ToString());//Getting the ID of The Participant
+               
+                try
+                {
+
+                    con.Open();
+
+
+                    String query = "INSERT INTO classlist (participant_id,class_id,facilitator_id) VALUES ('" + id + "','" + ID + "','" + Program.ID + "')";
+                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                    int n = sda.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    if (n > 0)
+                    {
+                        Dialogue.Show("Participant Added!", "", "Ok", "Cancel");
+                    }
+
+
+                    else
+                    {
+                        Dialogue.Show("Fail to Add!", "", "Ok", "Cancel");
+                    }
+                    load_participant();
+                    //textBoxAddParticipant.Text = "";
+
+                }
+
+
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
+        }   
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -416,6 +429,108 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
         }
+
+        private void deleteP_Click(object sender, EventArgs e)
+        {
+
+
+            //
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Helper.ConnectionString;
+            //
+
+
+
+
+
+
+
+            if (bunifuCustomDataGrid2.SelectedCells.Count > 0)
+            {
+
+                SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "'", con);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
+
+
+           
+
+                SqlDataAdapter add = new SqlDataAdapter("select participant_id from participant where fullname= '" + participantName + "'", con);
+                DataTable data = new DataTable();
+                add.Fill(data);
+                int id = int.Parse(data.Rows[0][0].ToString());//Getting the ID of The Participant
+
+                
+
+                DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+                if (result == DialogResult.Yes)
+                {
+
+                    con.Open();
+
+                  
+                    String query = "DELETE FROM classlist WHERE class_id= '" + ID + "' AND facilitator_id = '" + Program.ID + "' AND participant_id= '" + id + "' ";
+                 
+                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                   
+                    int m = sda.SelectCommand.ExecuteNonQuery();
+                    con.Close();
+                    if ( m > 0)
+                    {
+
+                        load_class();
+                        load_participant();
+                        Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
+
+                    }
+
+
+                    else
+                    {
+                        Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
+                        load_class();
+                        load_participant();
+                    }
+                }//end if result
+                                
+            }
+
+            else
+            {
+                Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
+            {
+                 participantName = bunifuCustomDataGrid2.CurrentRow.Cells[0].Value.ToString();
+
+            }  
+
+
+        }
+
 
 
 
