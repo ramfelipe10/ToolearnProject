@@ -30,7 +30,7 @@ namespace TooLearnOfficial
 
         private void LobbyParticipant_Load(object sender, EventArgs e)
         {
-            IPAddress localAddr = IPAddress.Parse("172.16.9.159");
+            IPAddress localAddr = IPAddress.Parse("192.168.254.102");
             Int32 port = 8080;
             clientSocket.Connect(localAddr, port);
             label2.Text = "Client Socket Program - Server Connected ...";

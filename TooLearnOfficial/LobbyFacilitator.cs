@@ -18,30 +18,32 @@ namespace TooLearnOfficial
         public LobbyFacilitator()
         {
             InitializeComponent();
-            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName()); //get my IP
-            foreach (IPAddress address in localIP)
+
+            var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
+            foreach (var ip in host.AddressList)
             {
-                if (address.AddressFamily == AddressFamily.InterNetwork)
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
-                    textBoxIPAddress.Text = address.ToString();
+                    textBoxIPAddress.Text = ip.ToString();
                 }
             }
 
-            IPAddress localAddr = IPAddress.Parse(textBoxIPAddress.Text);
+
+            IPAddress localAddr = IPAddress.Parse(textBoxIPAddress.Text);//("192.168.56.1");
             Int32 port = 8080;
             TcpListener serverSocket = new TcpListener(localAddr, port);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
-            /*
+            
             while (true)
             {
                 counter += 1;
-                countParticipant.Text += 1; //to be change... count participant who entered the lobby
+                label1.Text = counter + " # of participant ";
                 clientSocket = serverSocket.AcceptTcpClient();
                 handleClient client = new handleClient();
                 client.startClient(clientSocket, Convert.ToString(counter));
             }
-            */
+            
         }
 
         public class handleClient //function that handle each client request seperately (multi client)
@@ -57,7 +59,34 @@ namespace TooLearnOfficial
             }
             private void joinLobby() //participant join the lobby of facilitator
             {
+                int requestCount = 0;
+                byte[] bytesFrom = new byte[10025];
+                string dataFromClient = null;
+                Byte[] sendBytes = null;
+                string serverResponse = null;
+                string rCount = null;
+                requestCount = 0;
+                while ((true))
+                {
+                    try
+                    {
+                        requestCount = requestCount + 1;
+                        NetworkStream networkStream = clientSocket.GetStream();
+                        networkStream.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
+                        dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
+                        dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
 
+                        rCount = Convert.ToString(requestCount);
+                        serverResponse = "Server to clinet(" + clientNo + ") " + rCount;
+                        sendBytes = Encoding.ASCII.GetBytes(serverResponse);
+                        networkStream.Write(sendBytes, 0, sendBytes.Length);
+                        networkStream.Flush();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
         }
 
@@ -66,5 +95,9 @@ namespace TooLearnOfficial
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
