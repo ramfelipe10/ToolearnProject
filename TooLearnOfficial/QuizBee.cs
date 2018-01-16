@@ -571,8 +571,8 @@ namespace TooLearnOfficial
                             resetAllMC();
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-                            Total.Text = Sum1.ToString();
+                            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                            Total.Text = Sum2.ToString();
 
 
 
@@ -624,7 +624,7 @@ namespace TooLearnOfficial
 
                 case "Update":
                
-                        int listPosition = int.Parse(NoItems.Text) - 1;
+                        int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
                         ListViewItem exams = new ListViewItem();
                         exams.Text = textBoxQuizQuestion.Text;
                         exams.SubItems.Add(textBoxQuizChoiceA.Text);
@@ -637,9 +637,12 @@ namespace TooLearnOfficial
                     //
                     MultipleChoiceLV.Items.RemoveAt(listPosition);
                         MultipleChoiceLV.Items.Insert(listPosition, exams);
-                        currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
-                        CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.Items.Count + 1);
-                        CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.Items.Count + 1);
+
+                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                        currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                        CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                        CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
                         RightAnswer = null;
                         resetAllMC(); ;
                         buttonNextQuestion.Text = "Next";
@@ -698,8 +701,8 @@ namespace TooLearnOfficial
                             resetAllTF();
 
                             NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
-                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-                            Total.Text = Sum1.ToString();
+                            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                            Total.Text = Sum2.ToString();
                         }
 
 
@@ -750,7 +753,7 @@ namespace TooLearnOfficial
 
                 case "Update":
 
-                    int listPosition = int.Parse(NoItems.Text) - 1;
+                    int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
                     ListViewItem exams1 = new ListViewItem();
                     exams1.Text = textBox13.Text;
                     exams1.SubItems.Add(bunifuDropdown5.selectedValue);
@@ -760,9 +763,11 @@ namespace TooLearnOfficial
                    
                     TrueOrFalseLV.Items.RemoveAt(listPosition);
                     TrueOrFalseLV.Items.Insert(listPosition, exams1);
-                    currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
-                    CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.Items.Count + 1);
-                    CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.Items.Count + 1);
+                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                    currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                    CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                    CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
                     resetAllTF(); ;
                     button2.Text = "Next";
@@ -822,8 +827,8 @@ namespace TooLearnOfficial
                             resetAllSA();
 
                             NoItems.Text = ShortAnswerLV.Items.Count.ToString();
-                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-                            Total.Text = Sum1.ToString();
+                            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                            Total.Text = Sum2.ToString();
                         }
 
 
@@ -875,7 +880,7 @@ namespace TooLearnOfficial
 
                 case "Update":
 
-                    int listPosition = int.Parse(NoItems.Text) - 1;
+                    int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
                     ListViewItem exams3 = new ListViewItem();
                     exams3.Text = textBox9.Text;
                     exams3.SubItems.Add(textBox8.Text);
@@ -885,10 +890,12 @@ namespace TooLearnOfficial
                     
                     ShortAnswerLV.Items.RemoveAt(listPosition);
                     ShortAnswerLV.Items.Insert(listPosition, exams3);
-                    currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
-                    CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.Items.Count + 1);
-                    CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.Items.Count + 1);
-                   
+                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                    currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                    CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                    CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
                     resetAllSA(); ;
                     button1.Text = "Next";
 
