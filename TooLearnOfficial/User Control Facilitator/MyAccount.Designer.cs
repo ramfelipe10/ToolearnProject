@@ -42,6 +42,9 @@
             this.MyAccountEdit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.fullname = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,10 +73,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(93, 21);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 24);
+            this.label3.Size = new System.Drawing.Size(63, 19);
             this.label3.TabIndex = 68;
             this.label3.Text = "Name:";
             // 
@@ -86,10 +89,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 86);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 24);
+            this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 70;
             this.label2.Text = "Username:";
             // 
@@ -118,10 +121,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 155);
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 24);
+            this.label4.Size = new System.Drawing.Size(86, 19);
             this.label4.TabIndex = 76;
             this.label4.Text = "Password:";
             // 
@@ -137,12 +140,11 @@
             this.password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.password.isPassword = true;
-            this.password.Location = new System.Drawing.Point(181, 139);
+            this.password.Location = new System.Drawing.Point(120, 143);
             this.password.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(273, 40);
             this.password.TabIndex = 75;
-            this.password.Text = "Ramon Victor Felipe";
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // username
@@ -157,12 +159,11 @@
             this.username.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.username.isPassword = false;
-            this.username.Location = new System.Drawing.Point(181, 70);
+            this.username.Location = new System.Drawing.Point(119, 78);
             this.username.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(273, 40);
             this.username.TabIndex = 74;
-            this.username.Text = "Ramon Victor Felipe";
             this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MyAccountEdit
@@ -184,9 +185,9 @@
             this.MyAccountEdit.IconRightVisible = true;
             this.MyAccountEdit.IconRightZoom = 0D;
             this.MyAccountEdit.IconVisible = true;
-            this.MyAccountEdit.IconZoom = 60D;
+            this.MyAccountEdit.IconZoom = 50D;
             this.MyAccountEdit.IsTab = false;
-            this.MyAccountEdit.Location = new System.Drawing.Point(511, 174);
+            this.MyAccountEdit.Location = new System.Drawing.Point(483, 179);
             this.MyAccountEdit.Name = "MyAccountEdit";
             this.MyAccountEdit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.MyAccountEdit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -212,18 +213,32 @@
             this.fullname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.fullname.isPassword = false;
-            this.fullname.Location = new System.Drawing.Point(181, 5);
+            this.fullname.Location = new System.Drawing.Point(119, 17);
             this.fullname.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.fullname.Name = "fullname";
             this.fullname.Size = new System.Drawing.Size(273, 40);
             this.fullname.TabIndex = 72;
-            this.fullname.Text = "Ramon Victor Felipe";
             this.fullname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 7;
             this.bunifuElipse2.TargetControl = this.bunifuGradientPanel1;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.fullname;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this.password;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 5;
+            this.bunifuElipse5.TargetControl = this.username;
             // 
             // MyAccount
             // 
@@ -257,5 +272,8 @@
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuMetroTextbox password;
         private Bunifu.Framework.UI.BunifuMetroTextbox username;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
     }
 }

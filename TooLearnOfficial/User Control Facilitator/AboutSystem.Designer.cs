@@ -67,7 +67,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 66);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Ramon Victor Felipe\r\nKyle Francis Buclot\r\nStephen Kent Sipalay";
+            this.label2.Text = "Ramon Victor Felipe\r\nKyle Francis Boclot\r\nStephen Kent Sipalay";
             // 
             // label3
             // 
