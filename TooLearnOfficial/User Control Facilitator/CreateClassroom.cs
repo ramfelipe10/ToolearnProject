@@ -62,7 +62,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             //Alternative-End
 
-                            SqlDataAdapter sda = new SqlDataAdapter("Select class_name from classrooms WHERE facilitator_id='" + Program.ID + "' ", con);
+                            SqlDataAdapter sda = new SqlDataAdapter("Select class_name from classrooms WHERE facilitator_id='" + Program.user_id + "' ", con);
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
                             BindingSource bs = new BindingSource();
@@ -159,7 +159,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
                 con.Open();
-                String query = "INSERT INTO classrooms (class_name,facilitator_id) VALUES ('" + textBoxCreateClassroom.Text + "','" + Program.ID + "')";
+                String query = "INSERT INTO classrooms (class_name,facilitator_id) VALUES ('" + textBoxCreateClassroom.Text + "','" + Program.user_id + "')";
                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
                 int n = sda.SelectCommand.ExecuteNonQuery();
 
@@ -228,7 +228,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     con.Open();
 
 
-                    String query = "INSERT INTO classlist (participant_id,class_id,facilitator_id) VALUES ('" + id + "','" + ID + "','" + Program.ID + "')";
+                    String query = "INSERT INTO classlist (participant_id,class_id,facilitator_id) VALUES ('" + id + "','" + ID + "','" + Program.user_id + "')";
                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                     int n = sda.SelectCommand.ExecuteNonQuery();
                     con.Close();
@@ -376,7 +376,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     con.Open();
 
                     String qer = "DELETE FROM classlist WHERE class_id= '" + ID + "' ";
-                    String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id = '" + Program.ID + "' ";
+                    String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id = '" + Program.user_id + "' ";
                     SqlDataAdapter sad = new SqlDataAdapter(qer, con);
                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                     int n = sad.SelectCommand.ExecuteNonQuery();
@@ -470,7 +470,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     con.Open();
 
                   
-                    String query = "DELETE FROM classlist WHERE class_id= '" + ID + "' AND facilitator_id = '" + Program.ID + "' AND participant_id= '" + id + "' ";
+                    String query = "DELETE FROM classlist WHERE class_id= '" + ID + "' AND facilitator_id = '" + Program.user_id + "' AND participant_id= '" + id + "' ";
                  
                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                    
@@ -517,6 +517,11 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
 
+
+        }
+
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 

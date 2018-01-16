@@ -548,17 +548,17 @@ namespace TooLearnOfficial
                         else
                         {
 
-                            ListViewItem exams1 = new ListViewItem();
-                            exams1.Text = textBoxQuizQuestion.Text;
-                            exams1.SubItems.Add(textBoxQuizChoiceA.Text);
-                            exams1.SubItems.Add(textBoxQuizChoiceB.Text);
-                            exams1.SubItems.Add(textBoxQuizChoiceC.Text);
-                            exams1.SubItems.Add(textBoxQuizChoiceD.Text);
-                            exams1.SubItems.Add(RightAnswer);
+                            ListViewItem exams4 = new ListViewItem();
+                            exams4.Text = textBoxQuizQuestion.Text;
+                            exams4.SubItems.Add(textBoxQuizChoiceA.Text);
+                            exams4.SubItems.Add(textBoxQuizChoiceB.Text);
+                            exams4.SubItems.Add(textBoxQuizChoiceC.Text);
+                            exams4.SubItems.Add(textBoxQuizChoiceD.Text);
+                            exams4.SubItems.Add(RightAnswer);
                             //
-                            exams1.SubItems.Add(pictureBox3.ImageLocation);
+                            exams4.SubItems.Add(pictureBox3.ImageLocation);
                            //
-                            MultipleChoiceLV.Items.Add(exams1);
+                            MultipleChoiceLV.Items.Add(exams4);
                             currentNumOfItems++;
 
                             currentnumMC.Text = currentNumOfItems.ToString();
@@ -592,17 +592,17 @@ namespace TooLearnOfficial
                         else
                         {
       
-                                ListViewItem exams1 = new ListViewItem();
-                                exams1.Text = textBoxQuizQuestion.Text;
-                                exams1.SubItems.Add(textBoxQuizChoiceA.Text);
-                                exams1.SubItems.Add(textBoxQuizChoiceB.Text);
-                                exams1.SubItems.Add(textBoxQuizChoiceC.Text);
-                                exams1.SubItems.Add(textBoxQuizChoiceD.Text);
-                                exams1.SubItems.Add(RightAnswer);
+                                ListViewItem exams4 = new ListViewItem();
+                                exams4.Text = textBoxQuizQuestion.Text;
+                                exams4.SubItems.Add(textBoxQuizChoiceA.Text);
+                                exams4.SubItems.Add(textBoxQuizChoiceB.Text);
+                                exams4.SubItems.Add(textBoxQuizChoiceC.Text);
+                                exams4.SubItems.Add(textBoxQuizChoiceD.Text);
+                                exams4.SubItems.Add(RightAnswer);
                             //
-                            exams1.SubItems.Add(pictureBox3.ImageLocation);
+                            exams4.SubItems.Add(pictureBox3.ImageLocation);
                             //
-                            MultipleChoiceLV.Items.Add(exams1);
+                            MultipleChoiceLV.Items.Add(exams4);
                                 currentNumOfItems++;
 
       
@@ -757,7 +757,7 @@ namespace TooLearnOfficial
                     //
                     exams1.SubItems.Add(pictureBox5.ImageLocation);
                     //
-                    TrueOrFalseLV.Items.Add(exams1);
+                   
                     TrueOrFalseLV.Items.RemoveAt(listPosition);
                     TrueOrFalseLV.Items.Insert(listPosition, exams1);
                     currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
@@ -876,15 +876,15 @@ namespace TooLearnOfficial
                 case "Update":
 
                     int listPosition = int.Parse(NoItems.Text) - 1;
-                    ListViewItem exams1 = new ListViewItem();
-                    exams1.Text = textBox9.Text;
-                    exams1.SubItems.Add(textBox8.Text);
+                    ListViewItem exams3 = new ListViewItem();
+                    exams3.Text = textBox9.Text;
+                    exams3.SubItems.Add(textBox8.Text);
                     //
-                    exams1.SubItems.Add(pictureBox4.ImageLocation);
+                    exams3.SubItems.Add(pictureBox4.ImageLocation);
                     //
-                    ShortAnswerLV.Items.Add(exams1);
+                    
                     ShortAnswerLV.Items.RemoveAt(listPosition);
-                    ShortAnswerLV.Items.Insert(listPosition, exams1);
+                    ShortAnswerLV.Items.Insert(listPosition, exams3);
                     currentnumMC.Text = Convert.ToString(MultipleChoiceLV.Items.Count + 1);
                     CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.Items.Count + 1);
                     CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.Items.Count + 1);
@@ -898,7 +898,7 @@ namespace TooLearnOfficial
 
                     break;
 
-
+                    
             }
 
 
@@ -1063,7 +1063,7 @@ namespace TooLearnOfficial
 
 
 
-                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" + textBox7.Text + "', '" + Program.ID + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" + textBox7.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         sda.SelectCommand.ExecuteNonQuery();
 

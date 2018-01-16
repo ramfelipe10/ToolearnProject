@@ -95,7 +95,7 @@ namespace TooLearnOfficial.User_Control
 
                 //Alternative-End
 
-                SqlCommand cmd = new SqlCommand("Select class_name from classrooms WHERE facilitator_id= '" + Program.ID + "' ", con);
+                SqlCommand cmd = new SqlCommand("Select class_name from classrooms WHERE facilitator_id= '" + Program.user_id + "' ", con);
                
 
                 con.Open();

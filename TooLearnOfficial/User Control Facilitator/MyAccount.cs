@@ -118,7 +118,7 @@ namespace TooLearnOfficial.User_Control
 
 
                             con.Open();
-                            String query = "UPDATE facilitator SET name= '" + fullname.Text + "', username='" + username.Text + "', password = '" + password.Text + "' WHERE facilitator_id= '" + Program.ID + "' ";
+                            String query = "UPDATE facilitator SET name= '" + fullname.Text + "', username='" + username.Text + "', password = '" + password.Text + "' WHERE facilitator_id= '" + Program.user_id + "' ";
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             int n = sda.SelectCommand.ExecuteNonQuery();
 

@@ -25,28 +25,35 @@ namespace TooLearnOfficial
         {
             try
             {
-
+                
                 SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
 
-                    //
-                    SqlDataAdapter adapt = new SqlDataAdapter("Select facilitator_id From facilitator Where username='" + TextboxUsername.Text + "' ", con);
-                    DataTable data = new DataTable();
-                    adapt.Fill(data);
-                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Facilitator
-                    //
 
-                    Program.ID = ID.ToString();
+
+                    SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Program.user_id = Convert.ToInt32(dr["facilitator_id"]);
+
+                    }
+                    dr.Close();
+                    con.Close();
+                                                         
 
                     Program.Session_id = TextboxUsername.Text; //For Session
-                    Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
-                    this.Hide();
+                        Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+                        this.Hide();
 
-                    MainMenu mm = new MainMenu();
-                    mm.Show();
+                        MainMenu mm = new MainMenu();
+                        mm.Show();
+                   
                 }
                 else
                 {
@@ -149,6 +156,19 @@ namespace TooLearnOfficial
                     if (dt.Rows[0][0].ToString() == "1")
                     {
 
+
+                        SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+
+                        con.Open();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            Program.user_id = Convert.ToInt32(dr["facilitator_id"]);
+
+                        }
+                        dr.Close();
+                        con.Close();
+
                         Program.Session_id = TextboxUsername.Text; //For Session
                         Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                         this.Hide();
@@ -191,6 +211,21 @@ namespace TooLearnOfficial
                     sda.Fill(dt);
                     if (dt.Rows[0][0].ToString() == "1")
                     {
+
+
+                        SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+
+                        con.Open();
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            Program.user_id = Convert.ToInt32(dr["facilitator_id"]);
+
+                        }
+                        dr.Close();
+                        con.Close();
+
+
                         Program.Session_id = TextboxUsername.Text; //For Session
 
                         Dialogue.Show("Login Successful!", "", "Ok", "Cancel");

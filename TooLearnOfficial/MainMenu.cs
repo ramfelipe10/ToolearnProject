@@ -25,6 +25,7 @@ namespace TooLearnOfficial
         private void MainMenu_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -67,6 +68,9 @@ namespace TooLearnOfficial
 
             ChooseUser cu = new ChooseUser();
             cu.Show();
+
+           
+            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
