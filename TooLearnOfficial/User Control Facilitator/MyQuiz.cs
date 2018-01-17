@@ -30,14 +30,15 @@ namespace TooLearnOfficial.User_Control
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+            LobbyFacilitator lf = new LobbyFacilitator();
+            lf.Show();
             IPAddress localAddr = IPAddress.Parse(textBoxIPAddress.Text);//("192.168.56.1");
             Int32 port = 13000;
             TcpListener serverSocket = new TcpListener(localAddr, port);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
             serverSocket.Start();
-            LobbyFacilitator lf = new LobbyFacilitator();
-            lf.Show();
+            
 
             while (true)
             {
@@ -47,8 +48,9 @@ namespace TooLearnOfficial.User_Control
                 handleClient client = new handleClient();
                 client.startClient(clientSocket, Convert.ToString(counter));
             }
+            clientSocket.Close();
+            serverSocket.Stop();
 
-          
         }
         public class handleClient //function that handle each client request seperately (multi client)
         {
@@ -81,7 +83,7 @@ namespace TooLearnOfficial.User_Control
                         dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
 
                         rCount = Convert.ToString(requestCount);
-                        serverResponse = "Server to clinet(" + clientNo + ") " + rCount;
+                        serverResponse = clientNo + rCount;
                         sendBytes = Encoding.ASCII.GetBytes(serverResponse);
                         networkStream.Write(sendBytes, 0, sendBytes.Length);
                         networkStream.Flush();
