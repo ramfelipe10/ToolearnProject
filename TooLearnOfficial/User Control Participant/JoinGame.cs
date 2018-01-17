@@ -19,6 +19,14 @@ namespace TooLearnOfficial.User_Control_Participant
         public JoinGame()
         {
             InitializeComponent();
+            var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    bunifuMetroTextbox1.Text = ip.ToString();
+                }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,12 +46,19 @@ namespace TooLearnOfficial.User_Control_Participant
 
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
+            try
+            {
+                IPAddress localAddr = IPAddress.Parse(bunifuMetroTextbox1.Text);
+                Int32 port = 13000;
+                clientSocket.Connect(localAddr, port);
+                LobbyParticipant lp = new LobbyParticipant();
+                lp.Show();
+            }
+            catch
+            {
+                MessageBox.Show("No Server yet");
+            }
             
-            IPAddress localAddr = IPAddress.Parse("192.168.43.144");
-            Int32 port = 13000;
-            clientSocket.Connect(localAddr, port);
-            LobbyParticipant lp = new LobbyParticipant();
-            lp.Show();
         }
     }
 }

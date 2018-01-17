@@ -36,7 +36,6 @@ namespace TooLearnOfficial.User_Control_Participant
         }
         //Alternative 
 
-
         void load_account()
         {
 
@@ -50,14 +49,15 @@ namespace TooLearnOfficial.User_Control_Participant
                 //Alternative-End
 
 
-                SqlDataAdapter sda = new SqlDataAdapter("Select F_name,p_username from participant Where p_username='" + Program.Session_id + "' ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("Select fullname,p_username,p_password from participant Where p_username='" + Program.PSession_id + "' ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
                 {
 
-                    bunifuMetroTextbox1.Text = dt.Rows[0][0].ToString();
-                    accountuname.Text = dt.Rows[0][1].ToString();
+                    fullname.Text = dt.Rows[0][0].ToString();
+                    username.Text = dt.Rows[0][1].ToString();
+                    password.Text = dt.Rows[0][2].ToString();
                 }
                 else { }
 
@@ -65,16 +65,73 @@ namespace TooLearnOfficial.User_Control_Participant
 
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
+  
+        private void AccountParticipant_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MyAccountEdit_Click_1(object sender, EventArgs e)
+        {
+            //Alternative
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Helper.ConnectionString;
+
+            //Alternative-End
 
 
 
 
+            switch (MyAccountEdit.Text)
+            {
+                case "Edit":
+                    {
+                        fullname.Enabled = true;
+                        username.Enabled = true;
+                        password.Enabled = true;
+                        MyAccountEdit.Text = "Save";
+                        password.isPassword = false;
+
+                    }
+                    break;
+
+                case "Save":
+                    {
+
+                        if (fullname.Text != "" && username.Text != "" && password.Text != "")
+                        {
+                            fullname.Enabled = false;
+                            username.Enabled = false;
+                            password.Enabled = false;
+                            MyAccountEdit.Text = "Edit";
 
 
 
+
+                            con.Open();
+                            String query = "UPDATE participant SET fullname= '" + fullname.Text + "', p_username='" + username.Text + "', p_password = '" + password.Text + "' WHERE participant_id= '" + Program.par_id + "' ";
+                            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                            int n = sda.SelectCommand.ExecuteNonQuery();
+
+                            con.Close();
+
+                            password.isPassword = true;
+
+                            load_account();
+                        }
+
+                        else
+                        {
+                            Dialogue.Show("Please Fill all Fields!", "", "Ok", "Cancel");
+                        }
+
+                    }
+                    break;
+            }
+        }
     }
 }

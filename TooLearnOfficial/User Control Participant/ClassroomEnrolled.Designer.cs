@@ -164,6 +164,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "ClassroomEnrolled";
             this.Size = new System.Drawing.Size(794, 506);
+            this.Load += new System.EventHandler(this.ClassroomEnrolled_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

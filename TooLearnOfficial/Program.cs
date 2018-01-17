@@ -12,8 +12,8 @@ namespace TooLearnOfficial
         /// The main entry point for the application.
         /// </summary>
         /// 
-        public static String Session_id;
-        public static int user_id;
+        public static String Session_id, PSession_id;
+        public static int user_id, par_id;
               
 
         [STAThread]

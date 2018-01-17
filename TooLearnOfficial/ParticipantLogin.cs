@@ -45,7 +45,19 @@ namespace TooLearnOfficial
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
-                Program.Session_id = TextboxUsername.Text; //For Session
+                SqlCommand cmd = new SqlCommand("Select participant_id from participant where p_username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and p_password= '" + TextboxPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Program.par_id = Convert.ToInt32(dr["participant_id"]);
+
+                }
+                dr.Close();
+                con.Close();
+
+                Program.PSession_id = TextboxUsername.Text; //For Session
                 Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                 this.Hide();
 
@@ -127,7 +139,19 @@ namespace TooLearnOfficial
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    Program.Session_id = TextboxUsername.Text; //For Session
+                    SqlCommand cmd = new SqlCommand("Select participant_id from participant where p_username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + TextboxPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Program.par_id = Convert.ToInt32(dr["participant_id"]);
+
+                    }
+                    dr.Close();
+                    con.Close();
+
+                    Program.PSession_id = TextboxUsername.Text; //For Session
                     Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                     this.Hide();
 
@@ -156,7 +180,19 @@ namespace TooLearnOfficial
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-                    Program.Session_id = TextboxUsername.Text; //For Session
+                    SqlCommand cmd = new SqlCommand("Select participant_id from participant where p_username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + TextboxPassword.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        Program.par_id = Convert.ToInt32(dr["participant_id"]);
+
+                    }
+                    dr.Close();
+                    con.Close();
+
+                    Program.PSession_id = TextboxUsername.Text; //For Session
                     Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
                     this.Hide();
 

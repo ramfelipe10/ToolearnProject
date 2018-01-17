@@ -18,16 +18,26 @@ namespace TooLearnOfficial.User_Control
         public MyQuiz()
         {
             InitializeComponent();
+            var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    textBoxIPAddress.Text = ip.ToString();
+                }
+            }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            IPAddress localAddr = IPAddress.Parse("192.168.43.144");//("192.168.56.1");
+            IPAddress localAddr = IPAddress.Parse(textBoxIPAddress.Text);//("192.168.56.1");
             Int32 port = 13000;
             TcpListener serverSocket = new TcpListener(localAddr, port);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
             serverSocket.Start();
+            LobbyFacilitator lf = new LobbyFacilitator();
+            lf.Show();
 
             while (true)
             {
@@ -38,8 +48,7 @@ namespace TooLearnOfficial.User_Control
                 client.startClient(clientSocket, Convert.ToString(counter));
             }
 
-            LobbyFacilitator lf = new LobbyFacilitator();
-            lf.Show();
+          
         }
         public class handleClient //function that handle each client request seperately (multi client)
         {
