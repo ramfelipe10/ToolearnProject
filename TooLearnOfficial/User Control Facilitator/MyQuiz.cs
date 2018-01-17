@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial.User_Control
 {
@@ -25,6 +26,73 @@ namespace TooLearnOfficial.User_Control
                 {
                     textBoxIPAddress.Text = ip.ToString();
                 }
+            }
+
+            
+
+            load_quiz();
+        }
+
+
+        //Alternative
+        static class Helper
+        {
+            public static string ConnectionString
+            {
+                get
+                {
+                    string str = System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString;
+                    return str;
+                }
+            }
+        }
+        //Alternative 
+
+
+
+
+        void load_quiz()
+        {
+
+            //Alternative
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Helper.ConnectionString;
+
+            //Alternative-End
+
+            try
+            {
+
+                SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count == 0)
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    bunifuCustomDataGrid1.DataSource = bs;
+                    sda.Update(dt);
+                    bunifuCustomLabel1.Visible = true;
+
+                }
+
+
+                else
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    bunifuCustomDataGrid1.DataSource = bs;
+                    sda.Update(dt);
+                    bunifuCustomLabel1.Visible = false;
+
+                }
+
+            }
+
+
+            catch (Exception ex)
+            {
+                  MessageBox.Show(ex.Message);
             }
         }
 

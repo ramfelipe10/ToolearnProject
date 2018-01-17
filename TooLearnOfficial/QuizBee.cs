@@ -174,6 +174,8 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text =exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text =exams.SubItems[4].Text;
             pictureBox3.ImageLocation = exams.SubItems[6].Text;
+            textBox11.Text= exams.SubItems[7].Text;
+            textBox2.Text= exams.SubItems[8].Text;
             switch (exams.SubItems[5].Text)
             {
 
@@ -225,6 +227,8 @@ namespace TooLearnOfficial
             ListViewItem exams = TrueOrFalseLV.SelectedItems[0];
             textBox13.Text = exams.Text;
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
+            textBox10.Text= exams.SubItems[3].Text;
+            textBox5.Text = exams.SubItems[4].Text;
 
 
         }
@@ -236,6 +240,8 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation= exams.SubItems[2].Text;
+            textBox12.Text = exams.SubItems[3].Text;
+            textBox3.Text= exams.SubItems[4].Text;
 
 
 
@@ -559,7 +565,10 @@ namespace TooLearnOfficial
                             exams4.SubItems.Add(RightAnswer);
                             //
                             exams4.SubItems.Add(pictureBox3.ImageLocation);
-                           //
+
+                            exams4.SubItems.Add(textBox11.Text);
+                            exams4.SubItems.Add(textBox2.Text);
+                            //
                             MultipleChoiceLV.Items.Add(exams4);
                             currentNumOfItems++;
 
@@ -603,6 +612,8 @@ namespace TooLearnOfficial
                                 exams4.SubItems.Add(RightAnswer);
                             //
                             exams4.SubItems.Add(pictureBox3.ImageLocation);
+                            exams4.SubItems.Add(textBox11.Text);
+                            exams4.SubItems.Add(textBox2.Text);
                             //
                             MultipleChoiceLV.Items.Add(exams4);
                                 currentNumOfItems++;
@@ -636,6 +647,8 @@ namespace TooLearnOfficial
                         exams.SubItems.Add(RightAnswer);
                     //
                     exams.SubItems.Add(pictureBox3.ImageLocation);
+                    exams.SubItems.Add(textBox11.Text);
+                    exams.SubItems.Add(textBox2.Text);
                     //
                     MultipleChoiceLV.Items.RemoveAt(listPosition);
                         MultipleChoiceLV.Items.Insert(listPosition, exams);
@@ -686,6 +699,9 @@ namespace TooLearnOfficial
                             exams2.SubItems.Add(bunifuDropdown5.selectedValue);
                             //
                             exams2.SubItems.Add(pictureBox5.ImageLocation);
+                            exams2.SubItems.Add(textBox10.Text);
+                            exams2.SubItems.Add(textBox5.Text);
+
                             //
 
                             TrueOrFalseLV.Items.Add(exams2);
@@ -728,6 +744,8 @@ namespace TooLearnOfficial
                             exams2.SubItems.Add(bunifuDropdown5.selectedValue);
                             //
                             exams2.SubItems.Add(pictureBox5.ImageLocation);
+                            exams2.SubItems.Add(textBox10.Text);
+                            exams2.SubItems.Add(textBox5.Text);
                             //
                             TrueOrFalseLV.Items.Add(exams2);
                             currentNumOfItems++;
@@ -761,8 +779,10 @@ namespace TooLearnOfficial
                     exams1.SubItems.Add(bunifuDropdown5.selectedValue);
                     //
                     exams1.SubItems.Add(pictureBox5.ImageLocation);
+                    exams1.SubItems.Add(textBox10.Text);
+                    exams1.SubItems.Add(textBox5.Text);
                     //
-                   
+
                     TrueOrFalseLV.Items.RemoveAt(listPosition);
                     TrueOrFalseLV.Items.Insert(listPosition, exams1);
                     int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -812,6 +832,9 @@ namespace TooLearnOfficial
                             exams2.SubItems.Add(textBox8.Text);
                             //
                             exams2.SubItems.Add(pictureBox4.ImageLocation);
+
+                            exams2.SubItems.Add(textBox12.Text);
+                            exams2.SubItems.Add(textBox3.Text);
                             //
                             ShortAnswerLV.Items.Add(exams2);
 
@@ -854,6 +877,8 @@ namespace TooLearnOfficial
                             exams2.SubItems.Add(textBox8.Text);
                             //
                             exams2.SubItems.Add(pictureBox4.ImageLocation);
+                            exams2.SubItems.Add(textBox12.Text);
+                            exams2.SubItems.Add(textBox3.Text);
                             //
                             ShortAnswerLV.Items.Add(exams2);
                             currentNumOfItems++;
@@ -888,8 +913,10 @@ namespace TooLearnOfficial
                     exams3.SubItems.Add(textBox8.Text);
                     //
                     exams3.SubItems.Add(pictureBox4.ImageLocation);
+                    exams3.SubItems.Add(textBox12.Text);
+                    exams3.SubItems.Add(textBox3.Text);
                     //
-                    
+
                     ShortAnswerLV.Items.RemoveAt(listPosition);
                     ShortAnswerLV.Items.Insert(listPosition, exams3);
                     int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -1045,7 +1072,7 @@ namespace TooLearnOfficial
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+           
 
             if (textBoxQuizTitle.Text == "")
             {
@@ -1108,18 +1135,61 @@ namespace TooLearnOfficial
                                 ListViewItem exams = MultipleChoiceLV.Items[i];
                                 try
                                 {
-                                    FileStream fileStream = new FileStream(exams.SubItems[6].Text, FileMode.Open, FileAccess.Read);
-                                    BinaryReader binaryReader = new BinaryReader(fileStream);
-                                    imgFile = binaryReader.ReadBytes((int)fileStream.Length);
+                                    if (exams.SubItems[6].Text != "")
+                                    {
+                                        FileStream fileStream = new FileStream(exams.SubItems[6].Text, FileMode.Open, FileAccess.Read);
+                                        BinaryReader binaryReader = new BinaryReader(fileStream);
+                                        imgFile = binaryReader.ReadBytes((int)fileStream.Length);
 
 
-                                    con2.Open();
+                                        con2.Open();
 
-                                    String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + textBox2.Text + "', @IMG,'" + textBox7.Text + "')";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.Parameters.AddWithValue("@IMG",imgFile);
-                                   sda.SelectCommand.ExecuteNonQuery();
-                                   
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "', @IMG,'" + textBox7.Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                            sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+
+                                        else
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "', @IMG,'" + exams.SubItems[7].Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                            sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
+                                            sda.SelectCommand.ExecuteNonQuery();
+
+
+                                        }
+
+                                    }
+
+
+                                    else
+                                    {
+                                        con2.Open();
+
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + textBox7.Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                            
+                                        }
+
+
+                                        else
+                                        {
+                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[7].Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+
+
+                                    }
 
                                 }
 
@@ -1142,21 +1212,67 @@ namespace TooLearnOfficial
                                 ListViewItem exams = ShortAnswerLV.Items[i];
                                 try
                                 {
+                                    if (exams.SubItems[2].Text != "")
+                                    {
+                                        FileStream fileStream = new FileStream(exams.SubItems[2].Text, FileMode.Open, FileAccess.Read);
+                                        BinaryReader binaryReader = new BinaryReader(fileStream);
+                                        imgFile = binaryReader.ReadBytes((int)fileStream.Length);
 
-                                    FileStream fileStream = new FileStream(exams.SubItems[2].Text, FileMode.Open, FileAccess.Read);
-                                    BinaryReader binaryReader = new BinaryReader(fileStream);
-                                    imgFile = binaryReader.ReadBytes((int)fileStream.Length);
+
+
+                                        con2.Open();
+
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + textBox7.Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                            sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
+                                            sda.SelectCommand.ExecuteNonQuery();
+
+                                        }
 
 
 
-                                    con2.Open();
 
-                                    String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + textBox2.Text + "', @IMG,'" + textBox7.Text + "')";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
-                                    sda.SelectCommand.ExecuteNonQuery();
+                                        else
+                                        {
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + exams.SubItems[3].Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                            sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
 
-    
+
+                                    }
+
+
+
+                                    else
+                                    {
+                                        con2.Open();
+
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + textBox7.Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+
+
+                                        else
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+                                    }
+
+
                                 }
 
                                 catch (Exception ex)
@@ -1185,22 +1301,66 @@ namespace TooLearnOfficial
                                 ListViewItem exams = TrueOrFalseLV.Items[i];
                                 try
                                 {
+                                    if (exams.SubItems[2].Text != "")
+                                    {
+                                        FileStream fileStream = new FileStream(exams.SubItems[2].Text, FileMode.Open, FileAccess.Read);
+                                        BinaryReader binaryReader = new BinaryReader(fileStream);
+                                        imgFile = binaryReader.ReadBytes((int)fileStream.Length);
 
-                                    FileStream fileStream = new FileStream(exams.SubItems[2].Text, FileMode.Open, FileAccess.Read);
-                                    BinaryReader binaryReader = new BinaryReader(fileStream);
-                                    imgFile = binaryReader.ReadBytes((int)fileStream.Length);
+
+
+                                        con2.Open();
+
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + textBox7.Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                            sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+
+
+                                        else
+                                        {
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + exams.SubItems[3].Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                            sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+                                    }
 
 
 
-                                    con2.Open();
+                                    else
+                                    {
+                                        con2.Open();
 
-                                    String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + textBox2.Text + "', @IMG,'" + textBox7.Text + "')";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
-                                    sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
-                                    sda.SelectCommand.ExecuteNonQuery();
+                                        if (textBox7.Visible == true)
+                                        {
 
-    
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + textBox7.Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+
+
+
+                                        else
+                                        {
+                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                            sda.SelectCommand.ExecuteNonQuery();
+                                        }
+
+                                    }
+
+
                                 }
 
                                 catch (Exception ex)

@@ -51,7 +51,7 @@ namespace TooLearnOfficial
             }
             catch(Exception)
             {
-                s = "fasfasfa";
+                s = "";
             }
             con.Close();
             return s;

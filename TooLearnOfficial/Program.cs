@@ -21,7 +21,7 @@ namespace TooLearnOfficial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameParticipant());
+            Application.Run(new Splash());
         }
     }
 }

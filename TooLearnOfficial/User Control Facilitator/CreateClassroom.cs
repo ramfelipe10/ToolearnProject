@@ -22,6 +22,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
         {
             InitializeComponent();
             load_class();
+
+        
         }
 
        
@@ -169,9 +171,9 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     Dialogue.Show("Classroom Created!", "", "Ok", "Cancel");
                     label6.Text = "";
 
-                 
 
-                   
+                
+
 
 
                 }
