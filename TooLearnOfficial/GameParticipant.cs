@@ -32,6 +32,7 @@ namespace TooLearnOfficial
     */
             i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
 
+            LabelTimer.Text = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
             LabelQuestion.Text =ScalarReturn ("select question from QuestionAnswers where quiz_id='"+ i + "'");
             bunifuFlatButton1.Text = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
             bunifuFlatButton2.Text = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
