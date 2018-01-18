@@ -51,9 +51,9 @@ namespace TooLearnOfficial.User_Control_Participant
 
                 //Alternative-End
 
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT class_name AS Classroom from classrooms c,classlist cl where c.class_id=cl.class_id AND cl.participant_id=(Select participant_id from participant WHERE p_username= '"+ Program.Session_id+"') ", con);
-        
-              
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT class_name AS Classroom from classrooms c,classlist cl where c.class_id=cl.class_id AND cl.participant_id='" + Program.par_id + "'", con);
+
+
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0)
