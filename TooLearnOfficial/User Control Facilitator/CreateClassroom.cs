@@ -118,6 +118,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 else
                 {
                     label6.Text = "Of " + className + " ";
+                    bunifuCustomLabel1.Visible = false;
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dt;
                     bunifuCustomDataGrid2.DataSource = bs;

@@ -470,6 +470,8 @@ namespace TooLearnOfficial
                 CurrentnumSA.Text= currentNumOfItems.ToString();
                 CurrentNumTF.Text= currentNumOfItems.ToString();
                 MultipleChoiceLV.Enabled = true;
+                ShortAnswerLV.Enabled = true;
+                TrueOrFalseLV.Enabled = true;
 
 
        //     } 
@@ -1084,7 +1086,7 @@ namespace TooLearnOfficial
             }
             else
             {
-                DialogResult result = Dialogue1.Show("Are You Sure You Want To Continue?", "", "Ok", "Cancel");
+                DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
                 if (result == DialogResult.Yes)
                 {
                     try

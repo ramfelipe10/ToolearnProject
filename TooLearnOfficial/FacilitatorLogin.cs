@@ -48,7 +48,7 @@ namespace TooLearnOfficial
                                                          
 
                     Program.Session_id = TextboxUsername.Text; //For Session
-                        Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+                  
                         this.Hide();
 
                         MainMenu mm = new MainMenu();
@@ -59,7 +59,7 @@ namespace TooLearnOfficial
                 {
 
                     Dialogue.Show("Login Failed!   Please Check your Username and Password!", "", "Ok", "Cancel");
-                    //MessageBox.Show("Please Check your Username and Password");
+                   
                 }
 
 
@@ -170,7 +170,7 @@ namespace TooLearnOfficial
                         con.Close();
 
                         Program.Session_id = TextboxUsername.Text; //For Session
-                        Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+
                         this.Hide();
 
                         MainMenu mm = new MainMenu();
@@ -180,7 +180,7 @@ namespace TooLearnOfficial
                     {
 
                         Dialogue.Show("Login Failed!   Please Check your Username and Password!", "", "Ok", "Cancel");
-                        //MessageBox.Show("Please Check your Username and Password");
+    
                     }
 
 
@@ -228,7 +228,7 @@ namespace TooLearnOfficial
 
                         Program.Session_id = TextboxUsername.Text; //For Session
 
-                        Dialogue.Show("Login Successful!", "", "Ok", "Cancel");
+               
                         this.Hide();
 
                         MainMenu mm = new MainMenu();
@@ -238,7 +238,7 @@ namespace TooLearnOfficial
                     {
 
                         Dialogue.Show("Login Failed!   Please Check your Username and Password!", "", "Ok", "Cancel");
-                        //MessageBox.Show("Please Check your Username and Password");
+                      
                     }
 
 
@@ -248,6 +248,7 @@ namespace TooLearnOfficial
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                   
                 }
 
 

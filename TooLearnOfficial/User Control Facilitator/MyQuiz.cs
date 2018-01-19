@@ -19,7 +19,7 @@ namespace TooLearnOfficial.User_Control
         public MyQuiz()
         {
             InitializeComponent();
-            var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
+  /*          var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
             foreach (var ip in host.AddressList)
             {
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
@@ -30,11 +30,11 @@ namespace TooLearnOfficial.User_Control
 
             
 
-            load_quiz();
+            load_quiz();*/
         }
 
-
-        //Alternative
+        
+                //Alternative
         static class Helper
         {
             public static string ConnectionString
@@ -51,54 +51,55 @@ namespace TooLearnOfficial.User_Control
 
 
 
-        void load_quiz()
-        {
-
-            //Alternative
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Helper.ConnectionString;
-
-            //Alternative-End
-
-            try
-            {
-
-                SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if (dt.Rows.Count == 0)
+                void load_quiz()
                 {
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    bunifuCustomDataGrid1.DataSource = bs;
-                    sda.Update(dt);
-                    bunifuCustomLabel1.Visible = true;
 
+                    //Alternative
+                    SqlConnection con = new SqlConnection();
+                    con.ConnectionString = Helper.ConnectionString;
+
+                    //Alternative-End
+
+                    try
+                    {
+
+                        SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        if (dt.Rows.Count == 0)
+                        {
+                            BindingSource bs = new BindingSource();
+                            bs.DataSource = dt;
+                            bunifuCustomDataGrid1.DataSource = bs;
+                            sda.Update(dt);
+                            bunifuCustomLabel1.Visible = true;
+
+                        }
+
+
+                        else
+                        {
+                            BindingSource bs = new BindingSource();
+                            bs.DataSource = dt;
+                            bunifuCustomDataGrid1.DataSource = bs;
+                            sda.Update(dt);
+                            bunifuCustomLabel1.Visible = false;
+
+                        }
+
+                    }
+
+
+                    catch (Exception ex)
+                    {
+                          MessageBox.Show(ex.Message);
+                    }
                 }
 
-
-                else
-                {
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    bunifuCustomDataGrid1.DataSource = bs;
-                    sda.Update(dt);
-                    bunifuCustomLabel1.Visible = false;
-
-                }
-
-            }
-
-
-            catch (Exception ex)
-            {
-                  MessageBox.Show(ex.Message);
-            }
-        }
-
+             
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            LobbyFacilitator lf = new LobbyFacilitator();
+         /*  LobbyFacilitator lf = new LobbyFacilitator();
             lf.Show();
             IPAddress localAddr = IPAddress.Parse(textBoxIPAddress.Text);//("192.168.56.1");
             Int32 port = 13000;
@@ -118,50 +119,58 @@ namespace TooLearnOfficial.User_Control
             }
             clientSocket.Close();
             serverSocket.Stop();
-
+            
+    */
         }
-        public class handleClient //function that handle each client request seperately (multi client)
+
+        private void MyQuiz_Load(object sender, EventArgs e)
         {
-            TcpClient clientSocket;
-            string clientNo;
-            public void startClient(TcpClient inClientSocket, string clientLineNo)
-            {
-                this.clientSocket = inClientSocket;
-                this.clientNo = clientLineNo;
-                Thread ctThread = new Thread(joinLobby);
-                ctThread.Start();
-            }
-            private void joinLobby() //participant join the lobby of facilitator
-            {
-                int requestCount = 0;
-                byte[] bytesFrom = new byte[10025];
-                string dataFromClient = null;
-                Byte[] sendBytes = null;
-                string serverResponse = null;
-                string rCount = null;
-                requestCount = 0;
-                while ((true))
-                {
-                    try
-                    {
-                        requestCount = requestCount + 1;
-                        NetworkStream networkStream = clientSocket.GetStream();
-                        networkStream.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
-                        dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
-                        dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
 
-                        rCount = Convert.ToString(requestCount);
-                        serverResponse = clientNo + rCount;
-                        sendBytes = Encoding.ASCII.GetBytes(serverResponse);
-                        networkStream.Write(sendBytes, 0, sendBytes.Length);
-                        networkStream.Flush();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
-            }
         }
+  /*          public class handleClient //function that handle each client request seperately (multi client)
+     {
+         TcpClient clientSocket;
+         string clientNo;
+         public void startClient(TcpClient inClientSocket, string clientLineNo)
+         {
+             this.clientSocket = inClientSocket;
+             this.clientNo = clientLineNo;
+             Thread ctThread = new Thread(joinLobby);
+             ctThread.Start();
+         }
+         private void joinLobby() //participant join the lobby of facilitator
+         {
+             int requestCount = 0;
+             byte[] bytesFrom = new byte[10025];
+             string dataFromClient = null;
+             Byte[] sendBytes = null;
+             string serverResponse = null;
+             string rCount = null;
+             requestCount = 0;
+             while ((true))
+             {
+                 try
+                 {
+                     requestCount = requestCount + 1;
+                     NetworkStream networkStream = clientSocket.GetStream();
+                     networkStream.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
+                     dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
+                     dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
+
+                     rCount = Convert.ToString(requestCount);
+                     serverResponse = clientNo + rCount;
+                     sendBytes = Encoding.ASCII.GetBytes(serverResponse);
+                     networkStream.Write(sendBytes, 0, sendBytes.Length);
+                     networkStream.Flush();
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show(ex.ToString());
+                 }
+             }
+         }
+     }
+     */
+
     }
 }

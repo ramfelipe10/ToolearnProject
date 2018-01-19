@@ -73,14 +73,20 @@
             this.D = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rightAnswer = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.image = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Point = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ShortAnswerLV = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrueOrFalseLV = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -152,12 +158,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Point = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -461,7 +461,7 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.button3);
+            this.bunifuGradientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton3);
             this.bunifuGradientPanel1.Controls.Add(this.textBox7);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton5);
@@ -487,11 +487,11 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(700, 69);
+            this.button3.Location = new System.Drawing.Point(917, 614);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 34);
+            this.button3.Size = new System.Drawing.Size(103, 34);
             this.button3.TabIndex = 207;
-            this.button3.Text = "Save";
+            this.button3.Text = "Save Quiz";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -500,7 +500,7 @@
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton3.Image = global::TooLearnOfficial.Properties.Resources.Refresh_Black;
             this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(132, 68);
+            this.bunifuImageButton3.Location = new System.Drawing.Point(602, 68);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
             this.bunifuImageButton3.Size = new System.Drawing.Size(41, 35);
             this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -540,7 +540,7 @@
             this.bunifuFlatButton5.IconVisible = true;
             this.bunifuFlatButton5.IconZoom = 90D;
             this.bunifuFlatButton5.IsTab = false;
-            this.bunifuFlatButton5.Location = new System.Drawing.Point(15, 68);
+            this.bunifuFlatButton5.Location = new System.Drawing.Point(658, 68);
             this.bunifuFlatButton5.Name = "bunifuFlatButton5";
             this.bunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -695,6 +695,16 @@
             this.image.Text = "Image";
             this.image.Width = 101;
             // 
+            // time
+            // 
+            this.time.Text = "Time Limit";
+            this.time.Width = 70;
+            // 
+            // Point
+            // 
+            this.Point.Text = "Point/s";
+            this.Point.Width = 121;
+            // 
             // ShortAnswerLV
             // 
             this.ShortAnswerLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -717,17 +727,27 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Questions";
-            this.columnHeader1.Width = 440;
+            this.columnHeader1.Width = 305;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Answer";
-            this.columnHeader2.Width = 298;
+            this.columnHeader2.Width = 151;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Image";
-            this.columnHeader3.Width = 281;
+            this.columnHeader3.Width = 310;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Time";
+            this.columnHeader5.Width = 129;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Point/s";
+            this.columnHeader6.Width = 103;
             // 
             // TrueOrFalseLV
             // 
@@ -756,12 +776,22 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Answer";
-            this.columnHeader8.Width = 297;
+            this.columnHeader8.Width = 193;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Image";
-            this.columnHeader4.Width = 237;
+            this.columnHeader4.Width = 118;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Time Limit";
+            this.columnHeader9.Width = 147;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Point/s";
+            this.columnHeader10.Width = 100;
             // 
             // bunifuElipse9
             // 
@@ -1655,40 +1685,13 @@
             this.bunifuCustomLabel3.TabIndex = 0;
             this.bunifuCustomLabel3.Text = "True/False";
             // 
-            // time
-            // 
-            this.time.Text = "Time Limit";
-            this.time.Width = 70;
-            // 
-            // Point
-            // 
-            this.Point.Text = "Point/s";
-            this.Point.Width = 121;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Time";
-            this.columnHeader5.Width = 102;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Point/s";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Time Limit";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Point/s";
-            this.columnHeader10.Width = 100;
-            // 
             // QuizBee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1045, 615);
+            this.ClientSize = new System.Drawing.Size(1045, 660);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.QuizFormat);
             this.Controls.Add(this.NoItems);
@@ -1705,9 +1708,9 @@
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.MultipleChoiceLV);
-            this.Controls.Add(this.ShortAnswerLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";
