@@ -218,41 +218,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuizMultipleChoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuizMultipleChoice.Designer.cs">
-      <DependentUpon>QuizMultipleChoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuizPicturePuzzle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuizPicturePuzzle.Designer.cs">
       <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QuizTrueOrFalse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuizTrueOrFalse.Designer.cs">
-      <DependentUpon>QuizTrueOrFalse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateMultipleChoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateMultipleChoice.Designer.cs">
-      <DependentUpon>UpdateMultipleChoice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UpdatePicturePuzzle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdatePicturePuzzle.Designer.cs">
-      <DependentUpon>UpdatePicturePuzzle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateTrueOrFalse.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateTrueOrFalse.Designer.cs">
-      <DependentUpon>UpdateTrueOrFalse.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control Facilitator\AboutSystem.cs">
       <SubType>UserControl</SubType>
@@ -411,23 +381,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuizMultipleChoice.resx">
-      <DependentUpon>QuizMultipleChoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="QuizPicturePuzzle.resx">
       <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuizTrueOrFalse.resx">
-      <DependentUpon>QuizTrueOrFalse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateMultipleChoice.resx">
-      <DependentUpon>UpdateMultipleChoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdatePicturePuzzle.resx">
-      <DependentUpon>UpdatePicturePuzzle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateTrueOrFalse.resx">
-      <DependentUpon>UpdateTrueOrFalse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\AboutSystem.resx">
       <DependentUpon>AboutSystem.cs</DependentUpon>
