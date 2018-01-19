@@ -249,54 +249,65 @@ namespace TooLearnOfficial
 
         private void deleteC_Click(object sender, EventArgs e)
         {
-
-
-            if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+            try
             {
 
-                SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "'", con);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
-
-
-                DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
-                if (result == DialogResult.Yes)
+                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
                 {
 
-                    con.Open();
 
-                    String qer = "DELETE FROM classlist WHERE class_id= '" + ID + "' ";
-                    String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id = '" + Program.user_id + "' ";
-                    SqlDataAdapter sad = new SqlDataAdapter(qer, con);
-                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                    int n = sad.SelectCommand.ExecuteNonQuery();
-                    int m = sda.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-                    if (n >= 0 && m > 0)
+
+                    SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
+
+
+                    DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+                    if (result == DialogResult.Yes)
                     {
-                        Load_Class();
-                        Load_Participant();
-                        Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
 
-                    }
-                    
-                    else
-                    {
-                        Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
-                        Load_Class();
-                        Load_Participant();
-                    }
-                }//end if result
+                        con.Open();
 
-                
+                        String qer = "DELETE FROM classlist WHERE class_id= '" + ID + "' ";
+                        String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id = '" + Program.user_id + "' ";
+                        SqlDataAdapter sad = new SqlDataAdapter(qer, con);
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                        int n = sad.SelectCommand.ExecuteNonQuery();
+                        int m = sda.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+                        if (n >= 0 && m > 0)
+                        {
+                            Load_Class();
+                            Load_Participant();
+                            Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
+
+                        }
+
+                        else
+                        {
+                            Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
+                            Load_Class();
+                            Load_Participant();
+                        }
+                    }//end if result
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-
-            else
-            {                
-                Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");                
-            }
-
             
 
         }
