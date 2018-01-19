@@ -62,6 +62,7 @@
             this.label2.Size = new System.Drawing.Size(122, 24);
             this.label2.TabIndex = 68;
             this.label2.Text = "Classroom:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -72,6 +73,7 @@
             this.label1.Size = new System.Drawing.Size(271, 32);
             this.label1.TabIndex = 67;
             this.label1.Text = "Classroom Handled";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -94,6 +96,7 @@
             this.label3.Size = new System.Drawing.Size(191, 24);
             this.label3.TabIndex = 71;
             this.label3.Text = "List of Participants:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // bunifuElipse2
             // 
@@ -143,6 +146,7 @@
             this.bunifuCustomDataGrid1.ShowCellErrors = false;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(657, 255);
             this.bunifuCustomDataGrid1.TabIndex = 143;
+            this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
             // bunifuElipse3
             // 
@@ -160,6 +164,7 @@
             this.bunifuCustomLabel1.TabIndex = 144;
             this.bunifuCustomLabel1.Text = "Empty";
             this.bunifuCustomLabel1.Visible = false;
+            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -205,6 +210,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ClassroomHandle
             // 

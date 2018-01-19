@@ -90,6 +90,12 @@
     <Compile Include="ChooseUser.Designer.cs">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateMyClassroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMyClassroom.Designer.cs">
+      <DependentUpon>CreateMyClassroom.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateFacilitator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     </Compile>
     <Compile Include="CreateParticipant.Designer.cs">
       <DependentUpon>CreateParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateMyQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMyQuiz.Designer.cs">
+      <DependentUpon>CreateMyQuiz.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogue.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,12 @@
     </Compile>
     <Compile Include="FacilitatorLogin.Designer.cs">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditFacilitatorProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditFacilitatorProfile.Designer.cs">
+      <DependentUpon>EditFacilitatorProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="GameFacilitator.cs">
       <SubType>Form</SubType>
@@ -144,11 +162,23 @@
     <Compile Include="LobbyParticipant.Designer.cs">
       <DependentUpon>LobbyParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyClass.Designer.cs">
+      <DependentUpon>MyClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="PicturePuzzle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PicturePuzzle.Designer.cs">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuizBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuizBank.Designer.cs">
+      <DependentUpon>QuizBank.cs</DependentUpon>
     </Compile>
     <Compile Include="QuizBee.cs">
       <SubType>Form</SubType>
@@ -308,17 +338,26 @@
     <EmbeddedResource Include="ChooseUser.resx">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateMyClassroom.resx">
+      <DependentUpon>CreateMyClassroom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateFacilitator.resx">
       <DependentUpon>CreateFacilitator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateParticipant.resx">
       <DependentUpon>CreateParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateMyQuiz.resx">
+      <DependentUpon>CreateMyQuiz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogue.resx">
       <DependentUpon>Dialogue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogue1.resx">
       <DependentUpon>Dialogue1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditFacilitatorProfile.resx">
+      <DependentUpon>EditFacilitatorProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
@@ -335,8 +374,14 @@
     <EmbeddedResource Include="LobbyParticipant.resx">
       <DependentUpon>LobbyParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyClass.resx">
+      <DependentUpon>MyClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PicturePuzzle.resx">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuizBank.resx">
+      <DependentUpon>QuizBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuizBee.resx">
       <DependentUpon>QuizBee.cs</DependentUpon>
@@ -511,6 +556,12 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\Logout Rounded Left_104px.png" />
+    <None Include="TooLearn Pictures\Edit Profile_100px.png" />
+    <None Include="TooLearn Pictures\Report Card_100px.png" />
+    <None Include="TooLearn Pictures\Create_104px.png" />
+    <None Include="TooLearn Pictures\Classroom_100px.png" />
+    <None Include="TooLearn Pictures\Database_104px.png" />
     <None Include="TooLearn Pictures\Refresh_Black.png" />
     <None Include="TooLearn Pictures\Refresh_64px.png" />
     <None Include="TooLearn Pictures\View_48px.png" />

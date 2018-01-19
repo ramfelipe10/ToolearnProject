@@ -173,6 +173,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Classroom_100px {
+            get {
+                object obj = ResourceManager.GetObject("Classroom_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Classroom_50px {
             get {
                 object obj = ResourceManager.GetObject("Classroom_50px", resourceCulture);
@@ -193,6 +203,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Create_104px {
+            get {
+                object obj = ResourceManager.GetObject("Create_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Create_52px {
             get {
                 object obj = ResourceManager.GetObject("Create_52px", resourceCulture);
@@ -203,9 +223,29 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Database_104px {
+            get {
+                object obj = ResourceManager.GetObject("Database_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Database_52px {
             get {
                 object obj = ResourceManager.GetObject("Database_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_Profile_100px {
+            get {
+                object obj = ResourceManager.GetObject("Edit Profile_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +316,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap loaderbookshelf {
             get {
                 object obj = ResourceManager.GetObject("loaderbookshelf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logout_Rounded_Left_104px {
+            get {
+                object obj = ResourceManager.GetObject("Logout Rounded Left_104px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +416,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap Refresh_Black {
             get {
                 object obj = ResourceManager.GetObject("Refresh_Black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Report_Card_100px {
+            get {
+                object obj = ResourceManager.GetObject("Report Card_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
