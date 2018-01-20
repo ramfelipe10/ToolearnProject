@@ -20,7 +20,38 @@ namespace TooLearnOfficial
         public MyClass()
         {
             InitializeComponent();
+            Load_Class();
         }
+
+
+        void Load_Class()
+        {
+
+            try
+            {
+                comboBox1.Items.Clear();
+
+
+                SqlCommand cmd = new SqlCommand("Select class_name from classrooms WHERE facilitator_id= '" + Program.user_id + "' ", con);
+
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    comboBox1.Items.Add(dr["class_name"]);
+                }
+                dr.Close();
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
@@ -32,12 +63,7 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-        private void AddParticipantAccount_Click(object sender, EventArgs e)
-        {
-            AddParticipantAccount pa = new AddParticipantAccount();
-            pa.Show();
-            this.Hide();
-        }
+   
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,25 +104,7 @@ namespace TooLearnOfficial
         private void MyClass_Load(object sender, EventArgs e)
         {
             
-            try
-            {
-                
-                SqlCommand cmd = new SqlCommand("Select class_name from classrooms WHERE facilitator_id= '" + Program.user_id + "' ", con);
-                
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    comboBox1.Items.Add(dr["class_name"]);
-                }
-                dr.Close();
-                con.Close();
-            }
-
-            catch (Exception ex)
-            {
-               MessageBox.Show(ex.Message);
-            }
+          
 
         }
 
@@ -104,6 +112,12 @@ namespace TooLearnOfficial
         {
             CreateMyClassroom Create = new CreateMyClassroom();
             Create.Show();
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+        
+            Load_Class(); 
         }
     }
 }

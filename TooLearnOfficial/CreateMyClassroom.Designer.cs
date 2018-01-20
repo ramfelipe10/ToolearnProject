@@ -37,14 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateMyClassroom));
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.deleteP = new Bunifu.Framework.UI.BunifuImageButton();
-            this.editP = new Bunifu.Framework.UI.BunifuImageButton();
-            this.createP = new Bunifu.Framework.UI.BunifuImageButton();
-            this.deleteC = new Bunifu.Framework.UI.BunifuImageButton();
-            this.editC = new Bunifu.Framework.UI.BunifuImageButton();
-            this.createC = new Bunifu.Framework.UI.BunifuImageButton();
             this.partgrid = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -58,14 +51,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Form = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.deleteP = new Bunifu.Framework.UI.BunifuImageButton();
+            this.editP = new Bunifu.Framework.UI.BunifuImageButton();
+            this.createP = new Bunifu.Framework.UI.BunifuImageButton();
+            this.deleteC = new Bunifu.Framework.UI.BunifuImageButton();
+            this.editC = new Bunifu.Framework.UI.BunifuImageButton();
+            this.createC = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            this.bunifuGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editP)).BeginInit();
@@ -73,13 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deleteC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.createC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.bunifuGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCustomLabel1
@@ -87,24 +87,13 @@
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(651, 397);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(91, 31);
             this.bunifuCustomLabel1.TabIndex = 176;
             this.bunifuCustomLabel1.Text = "Empty";
             this.bunifuCustomLabel1.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.Right_104px;
-            this.pictureBox2.Location = new System.Drawing.Point(438, 377);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 81);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 175;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
             // 
             // label6
             // 
@@ -115,88 +104,6 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(0, 18);
             this.label6.TabIndex = 174;
-            // 
-            // deleteP
-            // 
-            this.deleteP.BackColor = System.Drawing.Color.Transparent;
-            this.deleteP.Image = global::TooLearnOfficial.Properties.Resources.Trash_52px;
-            this.deleteP.ImageActive = null;
-            this.deleteP.Location = new System.Drawing.Point(814, 556);
-            this.deleteP.Name = "deleteP";
-            this.deleteP.Size = new System.Drawing.Size(43, 33);
-            this.deleteP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.deleteP.TabIndex = 172;
-            this.deleteP.TabStop = false;
-            this.deleteP.Zoom = 5;
-            this.deleteP.Click += new System.EventHandler(this.deleteP_Click);
-            // 
-            // editP
-            // 
-            this.editP.BackColor = System.Drawing.Color.Transparent;
-            this.editP.Image = global::TooLearnOfficial.Properties.Resources.Edit_Property_52px;
-            this.editP.ImageActive = null;
-            this.editP.Location = new System.Drawing.Point(772, 556);
-            this.editP.Name = "editP";
-            this.editP.Size = new System.Drawing.Size(43, 33);
-            this.editP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.editP.TabIndex = 171;
-            this.editP.TabStop = false;
-            this.editP.Zoom = 5;
-            // 
-            // createP
-            // 
-            this.createP.BackColor = System.Drawing.Color.Transparent;
-            this.createP.Image = global::TooLearnOfficial.Properties.Resources.Plus_52px;
-            this.createP.ImageActive = null;
-            this.createP.Location = new System.Drawing.Point(819, 199);
-            this.createP.Name = "createP";
-            this.createP.Size = new System.Drawing.Size(43, 33);
-            this.createP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.createP.TabIndex = 170;
-            this.createP.TabStop = false;
-            this.createP.Zoom = 5;
-            this.createP.Click += new System.EventHandler(this.createP_Click);
-            // 
-            // deleteC
-            // 
-            this.deleteC.BackColor = System.Drawing.Color.Transparent;
-            this.deleteC.Image = global::TooLearnOfficial.Properties.Resources.Trash_52px;
-            this.deleteC.ImageActive = null;
-            this.deleteC.Location = new System.Drawing.Point(376, 556);
-            this.deleteC.Name = "deleteC";
-            this.deleteC.Size = new System.Drawing.Size(43, 33);
-            this.deleteC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.deleteC.TabIndex = 169;
-            this.deleteC.TabStop = false;
-            this.deleteC.Zoom = 5;
-            this.deleteC.Click += new System.EventHandler(this.deleteC_Click);
-            // 
-            // editC
-            // 
-            this.editC.BackColor = System.Drawing.Color.Transparent;
-            this.editC.Image = global::TooLearnOfficial.Properties.Resources.Edit_Property_52px;
-            this.editC.ImageActive = null;
-            this.editC.Location = new System.Drawing.Point(334, 556);
-            this.editC.Name = "editC";
-            this.editC.Size = new System.Drawing.Size(43, 33);
-            this.editC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.editC.TabIndex = 168;
-            this.editC.TabStop = false;
-            this.editC.Zoom = 5;
-            // 
-            // createC
-            // 
-            this.createC.BackColor = System.Drawing.Color.Transparent;
-            this.createC.Image = global::TooLearnOfficial.Properties.Resources.Plus_52px;
-            this.createC.ImageActive = null;
-            this.createC.Location = new System.Drawing.Point(376, 163);
-            this.createC.Name = "createC";
-            this.createC.Size = new System.Drawing.Size(43, 33);
-            this.createC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.createC.TabIndex = 167;
-            this.createC.TabStop = false;
-            this.createC.Zoom = 5;
-            this.createC.Click += new System.EventHandler(this.createC_Click);
             // 
             // partgrid
             // 
@@ -225,6 +132,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bunifuCustomDataGrid2.ColumnHeadersVisible = false;
             this.bunifuCustomDataGrid2.DoubleBuffered = true;
             this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.MediumSeaGreen;
@@ -385,20 +293,17 @@
             this.label3.TabIndex = 161;
             this.label3.Text = "Create Classroom";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(671, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 160;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form
             // 
             this.Form.ElipseRadius = 5;
             this.Form.TargetControl = this;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // bunifuGradientPanel1
             // 
@@ -471,12 +376,110 @@
             this.bunifuImageButton5.Zoom = 10;
             this.bunifuImageButton5.Click += new System.EventHandler(this.bunifuImageButton5_Click);
             // 
-            // bunifuDragControl1
+            // pictureBox2
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.Right_104px;
+            this.pictureBox2.Location = new System.Drawing.Point(438, 377);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 81);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 175;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
+            // deleteP
+            // 
+            this.deleteP.BackColor = System.Drawing.Color.Transparent;
+            this.deleteP.Image = global::TooLearnOfficial.Properties.Resources.Trash_52px;
+            this.deleteP.ImageActive = null;
+            this.deleteP.Location = new System.Drawing.Point(814, 556);
+            this.deleteP.Name = "deleteP";
+            this.deleteP.Size = new System.Drawing.Size(43, 33);
+            this.deleteP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deleteP.TabIndex = 172;
+            this.deleteP.TabStop = false;
+            this.deleteP.Zoom = 5;
+            this.deleteP.Click += new System.EventHandler(this.deleteP_Click);
+            // 
+            // editP
+            // 
+            this.editP.BackColor = System.Drawing.Color.Transparent;
+            this.editP.Image = global::TooLearnOfficial.Properties.Resources.Edit_Property_52px;
+            this.editP.ImageActive = null;
+            this.editP.Location = new System.Drawing.Point(772, 556);
+            this.editP.Name = "editP";
+            this.editP.Size = new System.Drawing.Size(43, 33);
+            this.editP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editP.TabIndex = 171;
+            this.editP.TabStop = false;
+            this.editP.Zoom = 5;
+            // 
+            // createP
+            // 
+            this.createP.BackColor = System.Drawing.Color.Transparent;
+            this.createP.Image = global::TooLearnOfficial.Properties.Resources.Plus_52px;
+            this.createP.ImageActive = null;
+            this.createP.Location = new System.Drawing.Point(819, 199);
+            this.createP.Name = "createP";
+            this.createP.Size = new System.Drawing.Size(43, 33);
+            this.createP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.createP.TabIndex = 170;
+            this.createP.TabStop = false;
+            this.createP.Zoom = 5;
+            this.createP.Click += new System.EventHandler(this.createP_Click);
+            // 
+            // deleteC
+            // 
+            this.deleteC.BackColor = System.Drawing.Color.Transparent;
+            this.deleteC.Image = global::TooLearnOfficial.Properties.Resources.Trash_52px;
+            this.deleteC.ImageActive = null;
+            this.deleteC.Location = new System.Drawing.Point(376, 556);
+            this.deleteC.Name = "deleteC";
+            this.deleteC.Size = new System.Drawing.Size(43, 33);
+            this.deleteC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.deleteC.TabIndex = 169;
+            this.deleteC.TabStop = false;
+            this.deleteC.Zoom = 5;
+            this.deleteC.Click += new System.EventHandler(this.deleteC_Click);
+            // 
+            // editC
+            // 
+            this.editC.BackColor = System.Drawing.Color.Transparent;
+            this.editC.Image = global::TooLearnOfficial.Properties.Resources.Edit_Property_52px;
+            this.editC.ImageActive = null;
+            this.editC.Location = new System.Drawing.Point(334, 556);
+            this.editC.Name = "editC";
+            this.editC.Size = new System.Drawing.Size(43, 33);
+            this.editC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.editC.TabIndex = 168;
+            this.editC.TabStop = false;
+            this.editC.Zoom = 5;
+            this.editC.Click += new System.EventHandler(this.editC_Click);
+            // 
+            // createC
+            // 
+            this.createC.BackColor = System.Drawing.Color.Transparent;
+            this.createC.Image = global::TooLearnOfficial.Properties.Resources.Plus_52px;
+            this.createC.ImageActive = null;
+            this.createC.Location = new System.Drawing.Point(376, 163);
+            this.createC.Name = "createC";
+            this.createC.Size = new System.Drawing.Size(43, 33);
+            this.createC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.createC.TabIndex = 167;
+            this.createC.TabStop = false;
+            this.createC.Zoom = 5;
+            this.createC.Click += new System.EventHandler(this.createC_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(671, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 160;
+            this.pictureBox1.TabStop = false;
             // 
             // CreateMyClassroom
             // 
@@ -509,6 +512,13 @@
             this.Name = "CreateMyClassroom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateClassroom";
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editP)).EndInit();
@@ -516,14 +526,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.deleteC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.createC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

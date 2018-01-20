@@ -106,9 +106,10 @@ namespace TooLearnOfficial
 
         }
 
-
-
-
-
+        private void CreateParticipantA_Click(object sender, EventArgs e)
+        {
+            AddParticipantAccount pa = new AddParticipantAccount();
+            pa.Show();
+        }
     }
 }

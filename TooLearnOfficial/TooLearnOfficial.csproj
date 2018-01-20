@@ -126,6 +126,18 @@
     <Compile Include="Dialogue1.Designer.cs">
       <DependentUpon>Dialogue1.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditClassroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClassroom.Designer.cs">
+      <DependentUpon>EditClassroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditParticipant.Designer.cs">
+      <DependentUpon>EditParticipant.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacilitatorLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,8 +338,14 @@
     <EmbeddedResource Include="Dialogue1.resx">
       <DependentUpon>Dialogue1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditClassroom.resx">
+      <DependentUpon>EditClassroom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditFacilitatorProfile.resx">
       <DependentUpon>EditFacilitatorProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditParticipant.resx">
+      <DependentUpon>EditParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>

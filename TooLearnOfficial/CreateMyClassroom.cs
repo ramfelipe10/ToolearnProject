@@ -16,6 +16,8 @@ namespace TooLearnOfficial
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string className, participantName;
+        public static string SetValueForText1 = "";
+      
 
         public CreateMyClassroom()
         {
@@ -24,7 +26,7 @@ namespace TooLearnOfficial
         }
 
 
-        void Load_Class()
+     public void Load_Class()
         {
 
 
@@ -38,6 +40,8 @@ namespace TooLearnOfficial
                 bs.DataSource = dt;
                 bunifuCustomDataGrid1.DataSource = bs;
                 sda.Update(dt);
+
+                bunifuCustomDataGrid1.ClearSelection();
             }
 
             catch (Exception ex)
@@ -52,7 +56,7 @@ namespace TooLearnOfficial
 
 
 
-        void Load_Participant()
+      public void Load_Participant()
         {
 
 
@@ -64,14 +68,14 @@ namespace TooLearnOfficial
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0)
                 {
-                    label6.Text = "";
+                    label6.Text = "Of " + className + " ";
                     bunifuCustomLabel1.Visible = true;                   
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dt;
                     bunifuCustomDataGrid2.DataSource = bs;
                     sda.Update(dt);
                     pictureBox2.Visible = true;
-                    label6.Text = "";
+                   
                 }
                 else
                 {
@@ -135,28 +139,22 @@ namespace TooLearnOfficial
                 if (n > 0)
                 {
                     Dialogue.Show("Classroom Created!", "", "Ok", "Cancel");
-                    label6.Text = "";
-
-
-
-
-
+                    
 
                 }
                 else
                 {
                     Dialogue.Show("Creation Failed!", "", "Ok", "Cancel");
-
-
-
-
+                    
                 }
                 className = " ";
                 Load_Class();
+                bunifuCustomDataGrid1.ClearSelection();
+
                 textBoxCreateClassroom.Text = " ";
 
-                Load_Participant();
-
+               // Load_Participant();
+                bunifuCustomDataGrid2.ClearSelection();
 
             }
 
@@ -206,7 +204,8 @@ namespace TooLearnOfficial
                         Dialogue.Show("Fail to Add!", "", "Ok", "Cancel");
                     }
                     Load_Participant();
-                   
+                    bunifuCustomDataGrid2.ClearSelection();
+
 
                 }
 
@@ -235,6 +234,9 @@ namespace TooLearnOfficial
             editP.Enabled = false;
             deleteP.Enabled = false;
             pictureBox2.Visible = false;
+            label6.Text = "";
+
+
 
             if (this.bunifuCustomDataGrid2.DataSource != null)
             {
@@ -280,6 +282,11 @@ namespace TooLearnOfficial
                         {
                             Load_Class();
                             Load_Participant();
+                            bunifuCustomDataGrid1.ClearSelection();
+                            bunifuCustomDataGrid2.ClearSelection();
+
+
+
                             Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
 
                         }
@@ -289,6 +296,9 @@ namespace TooLearnOfficial
                             Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
                             Load_Class();
                             Load_Participant();
+                            bunifuCustomDataGrid1.ClearSelection();
+                            bunifuCustomDataGrid2.ClearSelection();
+
                         }
                     }//end if result
 
@@ -351,6 +361,9 @@ namespace TooLearnOfficial
 
                         Load_Class();
                         Load_Participant();
+                        bunifuCustomDataGrid1.ClearSelection();
+                        bunifuCustomDataGrid2.ClearSelection();
+
                         Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
 
                     }
@@ -361,6 +374,9 @@ namespace TooLearnOfficial
                         Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
                         Load_Class();
                         Load_Participant();
+                        bunifuCustomDataGrid1.ClearSelection();
+                        bunifuCustomDataGrid2.ClearSelection();
+
                     }
                 }//end if result
 
@@ -383,6 +399,47 @@ namespace TooLearnOfficial
             }
         }
 
+        private void editC_Click(object sender, EventArgs e)
+        {
+             try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                {
+
+
+
+                    SqlDataAdapter adapt = new SqlDataAdapter("select Class_name from classrooms where class_name= '" + className + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+
+                    SetValueForText1 = dt.Rows[0][0].ToString();//Getting the Name of The Classroom
+
+                    EditClassroom EC = new EditClassroom();
+                    EC.Show();
+
+
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                                 
+                        
+        }
+
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -391,6 +448,7 @@ namespace TooLearnOfficial
                 className = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
 
                 Load_Participant();
+                bunifuCustomDataGrid2.ClearSelection();
 
 
                 comboBox1.Enabled = true;
