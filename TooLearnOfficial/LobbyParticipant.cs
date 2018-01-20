@@ -16,7 +16,6 @@ namespace TooLearnOfficial
     public partial class LobbyParticipant : Form
     {
         TcpClient clientSocket = new TcpClient();
-        NetworkStream serverStream;
         public LobbyParticipant()
         {
             InitializeComponent();

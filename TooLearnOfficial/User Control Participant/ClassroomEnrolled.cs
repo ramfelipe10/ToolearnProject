@@ -82,7 +82,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
             catch (Exception ex)
             {
-             //   MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
 

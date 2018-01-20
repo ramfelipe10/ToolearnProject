@@ -236,6 +236,7 @@
     <Compile Include="QuizPicturePuzzle.Designer.cs">
       <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThreadHelper.cs" />
     <Compile Include="User Control Facilitator\AboutSystem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,12 +266,6 @@
     </Compile>
     <Compile Include="User Control Facilitator\MyAccount.Designer.cs">
       <DependentUpon>MyAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Control Facilitator\MyQuiz.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control Facilitator\MyQuiz.Designer.cs">
-      <DependentUpon>MyQuiz.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control Facilitator\Settings.cs">
       <SubType>UserControl</SubType>
@@ -416,9 +411,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Control Facilitator\MyQuiz.resx">
-      <DependentUpon>MyQuiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

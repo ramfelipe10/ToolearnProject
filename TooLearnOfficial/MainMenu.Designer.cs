@@ -60,7 +60,6 @@
             this.createQuiz1 = new TooLearnOfficial.User_Control.CreateQuiz();
             this.classroomHandle1 = new TooLearnOfficial.User_Control.ClassroomHandle();
             this.myAccount1 = new TooLearnOfficial.User_Control.MyAccount();
-            this.myQuiz1 = new TooLearnOfficial.User_Control.MyQuiz();
             this.home1 = new TooLearnOfficial.User_Control_Facilitator.Home();
             this.PanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.LogosTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
@@ -573,17 +572,6 @@
             this.myAccount1.Size = new System.Drawing.Size(794, 506);
             this.myAccount1.TabIndex = 15;
             // 
-            // myQuiz1
-            // 
-            this.myQuiz1.BackColor = System.Drawing.Color.Gray;
-            this.LogosTransition.SetDecoration(this.myQuiz1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.myQuiz1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.myQuiz1, BunifuAnimatorNS.DecorationType.None);
-            this.myQuiz1.Location = new System.Drawing.Point(255, 44);
-            this.myQuiz1.Name = "myQuiz1";
-            this.myQuiz1.Size = new System.Drawing.Size(913, 611);
-            this.myQuiz1.TabIndex = 13;
-            // 
             // home1
             // 
             this.home1.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
@@ -660,7 +648,6 @@
             this.Controls.Add(this.createQuiz1);
             this.Controls.Add(this.classroomHandle1);
             this.Controls.Add(this.myAccount1);
-            this.Controls.Add(this.myQuiz1);
             this.PanelTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogosTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -710,7 +697,6 @@
         private User_Control_Facilitator.Home home1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private User_Control.MyQuiz myQuiz1;
         private User_Control_Facilitator.CreateClassroom createClassroom1;
         private User_Control.MyAccount myAccount1;
         private User_Control.ClassroomHandle classroomHandle1;

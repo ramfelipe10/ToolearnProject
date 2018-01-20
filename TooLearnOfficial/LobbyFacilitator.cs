@@ -15,92 +15,101 @@ namespace TooLearnOfficial
 {
     public partial class LobbyFacilitator : Form
     {
+        // Set Buffer size for the data being sent and recieved
+        private const int buffer_size = 2048;
+        // Set Buffer as holder of data being sent and received
+        private byte[] buffer = new byte[buffer_size];
+        // Set the TCPListeneer on port 13000;
+        private TcpListener listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 13000);
+        // Set a list of client sockets
+        private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
         public LobbyFacilitator()
         {
             InitializeComponent();
-
-            /*
-            var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
-            foreach (var ip in host.AddressList)
+            listener.Start(100);
+            try
             {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    textBoxIPAddress.Text = ip.ToString();
-                }
+                //Accept the connection
+                //This method creates the accepted socket
+                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
 
-
-            IPAddress localAddr = IPAddress.Parse("192.168.43.144");//("192.168.56.1");
-            Int32 port = 13000;
-            TcpListener serverSocket = new TcpListener(localAddr, port);
-            TcpClient clientSocket = default(TcpClient);
-            int counter = 0;
-            serverSocket.Start();
-
-            while (true)
-            {
-                counter += 1;
-                label2.Text = counter + " # of participant ";
-                clientSocket = serverSocket.AcceptTcpClient();
-                handleClient client = new handleClient();
-                client.startClient(clientSocket, Convert.ToString(counter));
-            }
-            
         }
 
-        public class handleClient //function that handle each client request seperately (multi client)
+        private void DoAcceptSocketCallback(IAsyncResult ar)
         {
-            TcpClient clientSocket;
-            string clientNo;
-            public void startClient(TcpClient inClientSocket, string clientLineNo)
+            try
             {
-                this.clientSocket = inClientSocket;
-                this.clientNo = clientLineNo;
-                Thread ctThread = new Thread(joinLobby);
-                ctThread.Start();
-            }
-            private void joinLobby() //participant join the lobby of facilitator
-            {
-                int requestCount = 0;
-                byte[] bytesFrom = new byte[10025];
-                string dataFromClient = null;
-                Byte[] sendBytes = null;
-                string serverResponse = null;
-                string rCount = null;
-                requestCount = 0;
-                while ((true))
-                {
-                    try
-                    {
-                        requestCount = requestCount + 1;
-                        NetworkStream networkStream = clientSocket.GetStream();
-                        networkStream.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
-                        dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
-                        dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
+                // Get the listener that handles the client request
+                TcpListener listener = (TcpListener)ar.AsyncState;
 
-                        rCount = Convert.ToString(requestCount);
-                        serverResponse = "Server to clinet(" + clientNo + ") " + rCount;
-                        sendBytes = Encoding.ASCII.GetBytes(serverResponse);
-                        networkStream.Write(sendBytes, 0, sendBytes.Length);
-                        networkStream.Flush();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
+                //End operation and display the received data on the screen
+                TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
+
+                //Add client to client list
+                clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
+
+                //Acccept another TCPClient connection
+                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
+
+                //Begin recieving data from the client socket
+                Receive(clientSocket);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void Receive(TcpClient clientSocket)
+        {
+            try
+            {
+                clientSocket.Client.BeginReceive(buffer, 0, buffer_size, SocketFlags.None,
+                    new AsyncCallback(BeginReceiveCallback), clientSocket);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BeginReceiveCallback(IAsyncResult ar)
+        {
+            try
+            {
+                //Get the client socket
+                TcpClient clientSocket = (TcpClient)ar.AsyncState;
+                //Get the received bytes from the client
+                int received = clientSocket.Client.EndReceive(ar);
+                // Get the string value of the received buffer
+                string message = System.Text.Encoding.ASCII.GetString(buffer, 0, received);
+
+                //Check if a disconenct flag was received
+                if (!message.Contains("DISCONNECT"))
+                {
+                    Receive(clientSocket);
+                }
+                else
+                {
+                    clientSockets.Remove(clientSocket.Client.RemoteEndPoint.ToString());
                 }
             }
-            */
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
-        
+
         private void LobbyFacilitator_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

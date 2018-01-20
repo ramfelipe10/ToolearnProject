@@ -77,7 +77,7 @@ namespace TooLearnOfficial.User_Control
 
             catch (Exception ex)
             {
-             //   MessageBox.Show(ex.Message);
+              MessageBox.Show(ex.Message);
             }
 
         }
@@ -110,7 +110,7 @@ namespace TooLearnOfficial.User_Control
 
             catch(Exception ex)
             {
-              //  MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
         }

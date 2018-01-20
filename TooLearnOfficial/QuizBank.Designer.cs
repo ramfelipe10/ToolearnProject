@@ -49,7 +49,6 @@
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.textBoxIPAddress = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -289,14 +288,6 @@
             this.bunifuCustomLabel2.Text = "Empty";
             this.bunifuCustomLabel2.Visible = false;
             // 
-            // textBoxIPAddress
-            // 
-            this.textBoxIPAddress.Location = new System.Drawing.Point(728, 412);
-            this.textBoxIPAddress.Name = "textBoxIPAddress";
-            this.textBoxIPAddress.Size = new System.Drawing.Size(100, 20);
-            this.textBoxIPAddress.TabIndex = 155;
-            this.textBoxIPAddress.Visible = false;
-            // 
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -409,7 +400,6 @@
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Controls.Add(this.bunifuFlatButton3);
             this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.textBoxIPAddress);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuImageButton1);
@@ -448,7 +438,6 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private System.Windows.Forms.TextBox textBoxIPAddress;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;

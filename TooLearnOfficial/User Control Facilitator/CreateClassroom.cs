@@ -75,7 +75,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                         catch (Exception ex)
                         {
-                           // MessageBox.Show(ex.Message);
+                           MessageBox.Show(ex.ToString());
                         }
 
          
@@ -134,7 +134,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
         }
@@ -314,7 +314,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             catch (Exception ex)
             {
-                //  MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
 
