@@ -118,10 +118,25 @@ namespace TooLearnOfficial
 
         private void createC_Click(object sender, EventArgs e)
         {
-            if (textBoxCreateClassroom.Text == " ")
+            SqlDataAdapter adapt = new SqlDataAdapter("select count(class_id) from classrooms where class_name= '" + textBoxCreateClassroom.Text + "'", con);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+            int ID = int.Parse(dt.Rows[0][0].ToString());//Counting The Instances of Same Classroom
+
+
+            //if (textBoxCreateClassroom.Text == " ")
+            if (string.IsNullOrWhiteSpace(textBoxCreateClassroom.Text) && textBoxCreateClassroom.Text.Length > 0 || textBoxCreateClassroom.Text == "")
             {
                 Dialogue.Show("Invalid Input or Empty", "", "Ok", "Cancel");
             }
+
+
+            else if (ID != 0)
+            {
+
+                Dialogue.Show("Classroom Already Exist!", "", "Ok", "Cancel");
+            }
+
 
             else
             {
@@ -197,8 +212,36 @@ namespace TooLearnOfficial
                     if (n > 0)
                     {
                         Dialogue.Show("Participant Added!", "", "Ok", "Cancel");
+
+
+                        comboBox1.Items.Clear();
+
+                        try
+                        {
+
+                            SqlCommand cmd = new SqlCommand("Select DISTINCT fullname from participant p left join classlist cl on p.participant_id =cl.participant_id where cl.class_id != '" + ID + "' OR cl.class_id IS NULL", con);
+
+                            con.Open();
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            while (dr.Read())
+                            {
+                                comboBox1.Items.Add(dr["fullname"]);
+
+                            }
+                            dr.Close();
+                            con.Close();
+                        }
+
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+
+
+
                     }
-                    
+
                     else
                     {
                         Dialogue.Show("Fail to Add!", "", "Ok", "Cancel");

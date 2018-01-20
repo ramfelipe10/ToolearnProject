@@ -36,42 +36,39 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.header = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ButtonMinimize = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.timeOras = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.sidemenu = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label2 = new System.Windows.Forms.Label();
+            this.LogoTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.PanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.LogosTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.buttonLogout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMnu = new Bunifu.Framework.UI.BunifuImageButton();
             this.buttonAboutSystem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonSettings = new Bunifu.Framework.UI.BunifuFlatButton();
             this.buttonJoinGame = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.buttonMyQuiz = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.LogoTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.ButtonMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
+            this.settings1 = new TooLearnOfficial.User_Control.Settings();
             this.home1 = new TooLearnOfficial.User_Control_Facilitator.Home();
             this.aboutSystem1 = new TooLearnOfficial.User_Control.AboutSystem();
             this.accountParticipant1 = new TooLearnOfficial.User_Control_Participant.AccountParticipant();
-            this.scoreParticipant1 = new TooLearnOfficial.User_Control_Participant.ScoreParticipant();
-            this.classroomEnrolled1 = new TooLearnOfficial.User_Control_Participant.ClassroomEnrolled();
-            this.joinGame1 = new TooLearnOfficial.User_Control_Participant.JoinGame();
-            this.PanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.LogosTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.joinQuiz1 = new TooLearnOfficial.User_Control_Participant.JoinQuiz();
             this.header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
             this.sidemenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMnu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -109,53 +106,6 @@
             this.bunifuCustomLabel2.TabIndex = 12;
             this.bunifuCustomLabel2.Text = "TooLearn";
             // 
-            // ButtonMinimize
-            // 
-            this.ButtonMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.LogoTransition.SetDecoration(this.ButtonMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.ButtonMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.LogosTransition.SetDecoration(this.ButtonMinimize, BunifuAnimatorNS.DecorationType.None);
-            this.ButtonMinimize.Image = global::TooLearnOfficial.Properties.Resources.Minimize_Window_48px;
-            this.ButtonMinimize.ImageActive = null;
-            this.ButtonMinimize.Location = new System.Drawing.Point(1140, 4);
-            this.ButtonMinimize.Name = "ButtonMinimize";
-            this.ButtonMinimize.Size = new System.Drawing.Size(20, 20);
-            this.ButtonMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ButtonMinimize.TabIndex = 6;
-            this.ButtonMinimize.TabStop = false;
-            this.ButtonMinimize.Zoom = 20;
-            this.ButtonMinimize.Click += new System.EventHandler(this.ButtonMinimize_Click);
-            // 
-            // pictureBox2
-            // 
-            this.LogosTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.toolearn_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.BackColor = System.Drawing.Color.Transparent;
-            this.LogoTransition.SetDecoration(this.buttonExit, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.buttonExit, BunifuAnimatorNS.DecorationType.None);
-            this.LogosTransition.SetDecoration(this.buttonExit, BunifuAnimatorNS.DecorationType.None);
-            this.buttonExit.Image = global::TooLearnOfficial.Properties.Resources.Close_Window_48px;
-            this.buttonExit.ImageActive = null;
-            this.buttonExit.Location = new System.Drawing.Point(1159, 4);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(20, 20);
-            this.buttonExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonExit.TabIndex = 2;
-            this.buttonExit.TabStop = false;
-            this.buttonExit.Zoom = 20;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
-            // 
             // timeOras
             // 
             this.timeOras.AutoSize = true;
@@ -180,7 +130,6 @@
             // sidemenu
             // 
             this.sidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.sidemenu.Controls.Add(this.bunifuFlatButton2);
             this.sidemenu.Controls.Add(this.bunifuCustomLabel4);
             this.sidemenu.Controls.Add(this.bunifuCustomLabel5);
             this.sidemenu.Controls.Add(this.bunifuCustomLabel1);
@@ -191,7 +140,6 @@
             this.sidemenu.Controls.Add(this.buttonAboutSystem);
             this.sidemenu.Controls.Add(this.buttonSettings);
             this.sidemenu.Controls.Add(this.buttonJoinGame);
-            this.sidemenu.Controls.Add(this.buttonMyQuiz);
             this.sidemenu.Controls.Add(this.bunifuFlatButton1);
             this.sidemenu.Controls.Add(this.logo);
             this.LogoTransition.SetDecoration(this.sidemenu, BunifuAnimatorNS.DecorationType.None);
@@ -203,46 +151,6 @@
             this.sidemenu.Name = "sidemenu";
             this.sidemenu.Size = new System.Drawing.Size(239, 655);
             this.sidemenu.TabIndex = 3;
-            this.sidemenu.Paint += new System.Windows.Forms.PaintEventHandler(this.sidemenu_Paint);
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.DodgerBlue;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuFlatButton2.ButtonText = "     Score Record";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogosTransition.SetDecoration(this.bunifuFlatButton2, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.bunifuFlatButton2, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.bunifuFlatButton2, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = global::TooLearnOfficial.Properties.Resources.Report_Card_48px;
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 70D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 262);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.DimGray;
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(239, 45);
-            this.bunifuFlatButton2.TabIndex = 24;
-            this.bunifuFlatButton2.Text = "     Score Record";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // bunifuCustomLabel4
             // 
@@ -252,7 +160,7 @@
             this.LogoTransition.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 333);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 218);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(44, 20);
             this.bunifuCustomLabel4.TabIndex = 23;
@@ -266,7 +174,7 @@
             this.LogoTransition.SetDecoration(this.bunifuCustomLabel5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(3, 405);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(3, 290);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(50, 20);
             this.bunifuCustomLabel5.TabIndex = 22;
@@ -300,6 +208,73 @@
             this.label2.Size = new System.Drawing.Size(49, 18);
             this.label2.TabIndex = 11;
             this.label2.Text = "Time :";
+            // 
+            // LogoTransition
+            // 
+            this.LogoTransition.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.LogoTransition.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.LogoTransition.DefaultAnimation = animation3;
+            // 
+            // PanelTransition
+            // 
+            this.PanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.PanelTransition.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.PanelTransition.DefaultAnimation = animation2;
+            // 
+            // LogosTransition
+            // 
+            this.LogosTransition.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
+            this.LogosTransition.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.LogosTransition.DefaultAnimation = animation1;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // buttonLogout
             // 
@@ -357,7 +332,6 @@
             this.btnMnu.TabStop = false;
             this.btnMnu.Visible = false;
             this.btnMnu.Zoom = 10;
-            this.btnMnu.Click += new System.EventHandler(this.btnMnu_Click);
             // 
             // buttonAboutSystem
             // 
@@ -384,7 +358,7 @@
             this.buttonAboutSystem.IconVisible = true;
             this.buttonAboutSystem.IconZoom = 70D;
             this.buttonAboutSystem.IsTab = false;
-            this.buttonAboutSystem.Location = new System.Drawing.Point(0, 475);
+            this.buttonAboutSystem.Location = new System.Drawing.Point(0, 360);
             this.buttonAboutSystem.Name = "buttonAboutSystem";
             this.buttonAboutSystem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonAboutSystem.OnHovercolor = System.Drawing.Color.DimGray;
@@ -423,7 +397,7 @@
             this.buttonSettings.IconVisible = true;
             this.buttonSettings.IconZoom = 70D;
             this.buttonSettings.IsTab = false;
-            this.buttonSettings.Location = new System.Drawing.Point(0, 428);
+            this.buttonSettings.Location = new System.Drawing.Point(0, 313);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonSettings.OnHovercolor = System.Drawing.Color.DimGray;
@@ -435,6 +409,7 @@
             this.buttonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSettings.Textcolor = System.Drawing.Color.White;
             this.buttonSettings.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonJoinGame
             // 
@@ -461,7 +436,7 @@
             this.buttonJoinGame.IconVisible = true;
             this.buttonJoinGame.IconZoom = 70D;
             this.buttonJoinGame.IsTab = false;
-            this.buttonJoinGame.Location = new System.Drawing.Point(0, 356);
+            this.buttonJoinGame.Location = new System.Drawing.Point(0, 241);
             this.buttonJoinGame.Name = "buttonJoinGame";
             this.buttonJoinGame.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonJoinGame.OnHovercolor = System.Drawing.Color.DimGray;
@@ -474,45 +449,6 @@
             this.buttonJoinGame.Textcolor = System.Drawing.Color.White;
             this.buttonJoinGame.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonJoinGame.Click += new System.EventHandler(this.buttonJoinGame_Click);
-            // 
-            // buttonMyQuiz
-            // 
-            this.buttonMyQuiz.Activecolor = System.Drawing.Color.DodgerBlue;
-            this.buttonMyQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonMyQuiz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonMyQuiz.BorderRadius = 0;
-            this.buttonMyQuiz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buttonMyQuiz.ButtonText = "     Classroom Enrolled";
-            this.buttonMyQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogosTransition.SetDecoration(this.buttonMyQuiz, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.buttonMyQuiz, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.buttonMyQuiz, BunifuAnimatorNS.DecorationType.None);
-            this.buttonMyQuiz.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonMyQuiz.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonMyQuiz.Iconimage = global::TooLearnOfficial.Properties.Resources.Classroom_50px;
-            this.buttonMyQuiz.Iconimage_right = null;
-            this.buttonMyQuiz.Iconimage_right_Selected = null;
-            this.buttonMyQuiz.Iconimage_Selected = null;
-            this.buttonMyQuiz.IconMarginLeft = 0;
-            this.buttonMyQuiz.IconMarginRight = 0;
-            this.buttonMyQuiz.IconRightVisible = true;
-            this.buttonMyQuiz.IconRightZoom = 0D;
-            this.buttonMyQuiz.IconVisible = true;
-            this.buttonMyQuiz.IconZoom = 70D;
-            this.buttonMyQuiz.IsTab = false;
-            this.buttonMyQuiz.Location = new System.Drawing.Point(0, 215);
-            this.buttonMyQuiz.Name = "buttonMyQuiz";
-            this.buttonMyQuiz.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonMyQuiz.OnHovercolor = System.Drawing.Color.DimGray;
-            this.buttonMyQuiz.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonMyQuiz.selected = false;
-            this.buttonMyQuiz.Size = new System.Drawing.Size(239, 45);
-            this.buttonMyQuiz.TabIndex = 4;
-            this.buttonMyQuiz.Text = "     Classroom Enrolled";
-            this.buttonMyQuiz.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMyQuiz.Textcolor = System.Drawing.Color.White;
-            this.buttonMyQuiz.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.buttonMyQuiz.Click += new System.EventHandler(this.buttonMyQuiz_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -566,26 +502,63 @@
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
-            // LogoTransition
+            // ButtonMinimize
             // 
-            this.LogoTransition.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
-            this.LogoTransition.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.LogoTransition.DefaultAnimation = animation3;
+            this.ButtonMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.LogoTransition.SetDecoration(this.ButtonMinimize, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.ButtonMinimize, BunifuAnimatorNS.DecorationType.None);
+            this.LogosTransition.SetDecoration(this.ButtonMinimize, BunifuAnimatorNS.DecorationType.None);
+            this.ButtonMinimize.Image = global::TooLearnOfficial.Properties.Resources.Minimize_Window_48px;
+            this.ButtonMinimize.ImageActive = null;
+            this.ButtonMinimize.Location = new System.Drawing.Point(1140, 4);
+            this.ButtonMinimize.Name = "ButtonMinimize";
+            this.ButtonMinimize.Size = new System.Drawing.Size(20, 20);
+            this.ButtonMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ButtonMinimize.TabIndex = 6;
+            this.ButtonMinimize.TabStop = false;
+            this.ButtonMinimize.Zoom = 20;
+            this.ButtonMinimize.Click += new System.EventHandler(this.ButtonMinimize_Click);
+            // 
+            // pictureBox2
+            // 
+            this.LogosTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources.toolearn_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 25);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.BackColor = System.Drawing.Color.Transparent;
+            this.LogoTransition.SetDecoration(this.buttonExit, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.buttonExit, BunifuAnimatorNS.DecorationType.None);
+            this.LogosTransition.SetDecoration(this.buttonExit, BunifuAnimatorNS.DecorationType.None);
+            this.buttonExit.Image = global::TooLearnOfficial.Properties.Resources.Close_Window_48px;
+            this.buttonExit.ImageActive = null;
+            this.buttonExit.Location = new System.Drawing.Point(1159, 4);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(20, 20);
+            this.buttonExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonExit.TabIndex = 2;
+            this.buttonExit.TabStop = false;
+            this.buttonExit.Zoom = 20;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // settings1
+            // 
+            this.settings1.BackColor = System.Drawing.Color.Gray;
+            this.LogosTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
+            this.settings1.Location = new System.Drawing.Point(360, 124);
+            this.settings1.Name = "settings1";
+            this.settings1.Size = new System.Drawing.Size(685, 370);
+            this.settings1.TabIndex = 8;
             // 
             // home1
             // 
@@ -595,9 +568,9 @@
             this.PanelTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
             this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.home1.Location = new System.Drawing.Point(239, 26);
+            this.home1.Location = new System.Drawing.Point(0, 0);
             this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(945, 655);
+            this.home1.Size = new System.Drawing.Size(1184, 681);
             this.home1.TabIndex = 4;
             // 
             // aboutSystem1
@@ -613,93 +586,25 @@
             // 
             // accountParticipant1
             // 
-            this.accountParticipant1.BackColor = System.Drawing.Color.Gray;
+            this.accountParticipant1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.LogosTransition.SetDecoration(this.accountParticipant1, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.accountParticipant1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.accountParticipant1, BunifuAnimatorNS.DecorationType.None);
-            this.accountParticipant1.Location = new System.Drawing.Point(393, 141);
+            this.accountParticipant1.Location = new System.Drawing.Point(311, 97);
             this.accountParticipant1.Name = "accountParticipant1";
-            this.accountParticipant1.Size = new System.Drawing.Size(685, 370);
+            this.accountParticipant1.Size = new System.Drawing.Size(794, 506);
             this.accountParticipant1.TabIndex = 6;
             // 
-            // scoreParticipant1
+            // joinQuiz1
             // 
-            this.scoreParticipant1.BackColor = System.Drawing.Color.Gray;
-            this.LogosTransition.SetDecoration(this.scoreParticipant1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.scoreParticipant1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.scoreParticipant1, BunifuAnimatorNS.DecorationType.None);
-            this.scoreParticipant1.Location = new System.Drawing.Point(311, 97);
-            this.scoreParticipant1.Name = "scoreParticipant1";
-            this.scoreParticipant1.Size = new System.Drawing.Size(794, 506);
-            this.scoreParticipant1.TabIndex = 7;
-            // 
-            // classroomEnrolled1
-            // 
-            this.classroomEnrolled1.BackColor = System.Drawing.Color.Gray;
-            this.LogosTransition.SetDecoration(this.classroomEnrolled1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.classroomEnrolled1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.classroomEnrolled1, BunifuAnimatorNS.DecorationType.None);
-            this.classroomEnrolled1.Location = new System.Drawing.Point(311, 97);
-            this.classroomEnrolled1.Name = "classroomEnrolled1";
-            this.classroomEnrolled1.Size = new System.Drawing.Size(794, 506);
-            this.classroomEnrolled1.TabIndex = 8;
-            // 
-            // joinGame1
-            // 
-            this.joinGame1.BackColor = System.Drawing.Color.Gray;
-            this.LogosTransition.SetDecoration(this.joinGame1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.joinGame1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.joinGame1, BunifuAnimatorNS.DecorationType.None);
-            this.joinGame1.Location = new System.Drawing.Point(393, 141);
-            this.joinGame1.Name = "joinGame1";
-            this.joinGame1.Size = new System.Drawing.Size(685, 370);
-            this.joinGame1.TabIndex = 9;
-            // 
-            // PanelTransition
-            // 
-            this.PanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
-            this.PanelTransition.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.PanelTransition.DefaultAnimation = animation2;
-            // 
-            // LogosTransition
-            // 
-            this.LogosTransition.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide;
-            this.LogosTransition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.LogosTransition.DefaultAnimation = animation1;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.joinQuiz1.BackColor = System.Drawing.Color.Gray;
+            this.LogosTransition.SetDecoration(this.joinQuiz1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.joinQuiz1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.joinQuiz1, BunifuAnimatorNS.DecorationType.None);
+            this.joinQuiz1.Location = new System.Drawing.Point(360, 124);
+            this.joinQuiz1.Name = "joinQuiz1";
+            this.joinQuiz1.Size = new System.Drawing.Size(685, 370);
+            this.joinQuiz1.TabIndex = 7;
             // 
             // MainMenu2
             // 
@@ -707,14 +612,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1184, 681);
-            this.Controls.Add(this.home1);
             this.Controls.Add(this.sidemenu);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.classroomEnrolled1);
+            this.Controls.Add(this.home1);
             this.Controls.Add(this.aboutSystem1);
             this.Controls.Add(this.accountParticipant1);
-            this.Controls.Add(this.scoreParticipant1);
-            this.Controls.Add(this.joinGame1);
+            this.Controls.Add(this.joinQuiz1);
+            this.Controls.Add(this.settings1);
             this.PanelTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogosTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -727,13 +631,13 @@
             this.Load += new System.EventHandler(this.MainMenu2_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
             this.sidemenu.ResumeLayout(false);
             this.sidemenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMnu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -752,7 +656,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonAboutSystem;
         private Bunifu.Framework.UI.BunifuFlatButton buttonSettings;
         private Bunifu.Framework.UI.BunifuFlatButton buttonJoinGame;
-        private Bunifu.Framework.UI.BunifuFlatButton buttonMyQuiz;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuImageButton btnMnu;
         private System.Windows.Forms.PictureBox logo;
@@ -766,11 +669,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private User_Control.AboutSystem aboutSystem1;
         private User_Control_Participant.AccountParticipant accountParticipant1;
-        private User_Control_Participant.ScoreParticipant scoreParticipant1;
-        private User_Control_Participant.ClassroomEnrolled classroomEnrolled1;
-        private User_Control_Participant.JoinGame joinGame1;
+        private User_Control_Participant.JoinQuiz joinQuiz1;
+        private User_Control.Settings settings1;
     }
 }

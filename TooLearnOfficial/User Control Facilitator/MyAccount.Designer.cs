@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyAccount));
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -44,6 +43,7 @@
             this.myquiz = new Bunifu.Framework.UI.BunifuImageButton();
             this.MyClassroom = new Bunifu.Framework.UI.BunifuImageButton();
             this.CreateQuizButton = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScoreRecord)).BeginInit();
@@ -69,11 +69,6 @@
             // 
             this.bunifuElipse3.ElipseRadius = 5;
             this.bunifuElipse3.TargetControl = this.bunifuGradientPanel2;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 20;
-            this.bunifuElipse1.TargetControl = this;
             // 
             // bunifuGradientPanel2
             // 
@@ -174,6 +169,7 @@
             this.ScoreRecord.TabIndex = 76;
             this.ScoreRecord.TabStop = false;
             this.ScoreRecord.Zoom = 5;
+            this.ScoreRecord.Click += new System.EventHandler(this.ScoreRecord_Click);
             // 
             // EditProfile
             // 
@@ -238,6 +234,11 @@
             this.CreateQuizButton.TabStop = false;
             this.CreateQuizButton.Zoom = 5;
             this.CreateQuizButton.Click += new System.EventHandler(this.CreateQuiz_Click);
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
             // 
             // pictureBox1
             // 

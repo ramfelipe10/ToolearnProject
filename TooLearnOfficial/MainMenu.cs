@@ -13,7 +13,7 @@ namespace TooLearnOfficial
 {
     public partial class MainMenu : Form
     {
-        bool Closing = true;
+        bool closing = true;
 
         public MainMenu()
         {
@@ -91,7 +91,7 @@ namespace TooLearnOfficial
         private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            if (Closing)
+            if (closing)
             {
                 DialogResult result = Dialogue1.Show("Are you sure you want to Exit?", "", "Ok", "Cancel");
                 if (result == DialogResult.Yes)

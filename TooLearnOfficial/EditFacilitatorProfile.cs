@@ -31,7 +31,7 @@ namespace TooLearnOfficial
             {
                           
                 
-                SqlDataAdapter sda = new SqlDataAdapter("Select name,username,password from facilitator Where username='" + Program.Session_id + "' ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("Select name,username,password from facilitator Where facilitator_id='" + Program.user_id + "' ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)

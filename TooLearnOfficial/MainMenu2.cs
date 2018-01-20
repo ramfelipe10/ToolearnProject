@@ -21,32 +21,7 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        private void btnMnu_Click(object sender, EventArgs e)
-        {
-           /* if (sidemenu.Width == 260)
-            {
-                sidemenu.Visible = false;
-                sidemenu.Width = 50;
-                PanelTransition.ShowSync(sidemenu);
-                LogoTransition.ShowSync(logos);
-
-                LogosTransition.HideSync(logo);
-
-            }
-            else
-            {
-                LogoTransition.Hide(logos);
-
-
-                LogoTransition.ShowSync(logo);
-
-                sidemenu.Visible = false;
-                sidemenu.Width = 260;
-                PanelTransition.ShowSync(sidemenu);
-
-            } */
-        }
-
+     
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.timeOras.Text = DateTime.Now.ToString("hh:mm tt");
@@ -63,28 +38,17 @@ namespace TooLearnOfficial
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void sidemenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCreateQuiz_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            //   this.Close();  error nag loloop ning splash kaya unhandled
+           
+                this.Hide();
+                
+                ChooseUser cu = new ChooseUser();
+                cu.Show();
+           
 
-            ChooseUser cu = new ChooseUser();
-            cu.Show();
         }
 
         private void MainMenu2_Load(object sender, EventArgs e)
@@ -95,39 +59,45 @@ namespace TooLearnOfficial
         private void buttonAboutSystem_Click(object sender, EventArgs e)
         {
             aboutSystem1.BringToFront();
-            scoreParticipant1.Visible = false;
-            classroomEnrolled1.Visible = false;
-           
+            aboutSystem1.Visible=true;
+            accountParticipant1.Visible = false;
+            joinQuiz1.Visible = false;
+            settings1.Visible = false;
+
+
+
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             accountParticipant1.BringToFront();
-            scoreParticipant1.Visible = false;
-            classroomEnrolled1.Visible = false;
+            accountParticipant1.Visible = true;
+            joinQuiz1.Visible = false;
+            aboutSystem1.Visible = false;
+            settings1.Visible = false;
 
 
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void buttonSettings_Click(object sender, EventArgs e)
         {
-            scoreParticipant1.BringToFront();
-            scoreParticipant1.Visible = true;
-          
-        }
-
-        private void buttonMyQuiz_Click(object sender, EventArgs e)
-        {
-            classroomEnrolled1.BringToFront();
-            classroomEnrolled1.Visible = true;
+            settings1.BringToFront();
+            settings1.Visible = true;
+            aboutSystem1.Visible = false;
+            accountParticipant1.Visible = false;
+            joinQuiz1.Visible = false;
 
         }
+
+
 
         private void buttonJoinGame_Click(object sender, EventArgs e)
         {
-            joinGame1.BringToFront();
-            scoreParticipant1.Visible = false;
-            classroomEnrolled1.Visible = false;
+            joinQuiz1.BringToFront();
+            joinQuiz1.Visible = true;
+            aboutSystem1.Visible = false;
+            accountParticipant1.Visible = false;
+            settings1.Visible = false;
         }
 
         private void MainMenu2_FormClosing(object sender, FormClosingEventArgs e)
@@ -150,8 +120,6 @@ namespace TooLearnOfficial
 
         }
 
-
-
-
+       
     }
 }

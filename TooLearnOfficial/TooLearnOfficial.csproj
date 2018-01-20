@@ -138,6 +138,12 @@
     <Compile Include="EditParticipant.Designer.cs">
       <DependentUpon>EditParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditParticipantProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditParticipantProfile.Designer.cs">
+      <DependentUpon>EditParticipantProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacilitatorLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,12 @@
     </Compile>
     <Compile Include="MyClass.Designer.cs">
       <DependentUpon>MyClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyClassParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyClassParticipant.Designer.cs">
+      <DependentUpon>MyClassParticipant.cs</DependentUpon>
     </Compile>
     <Compile Include="PicturePuzzle.cs">
       <SubType>Form</SubType>
@@ -291,17 +303,17 @@
     <Compile Include="User Control Participant\ClassroomEnrolled.Designer.cs">
       <DependentUpon>ClassroomEnrolled.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Participant\Join Quiz.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control Participant\Join Quiz.Designer.cs">
-      <DependentUpon>Join Quiz.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Control Participant\JoinGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Control Participant\JoinGame.Designer.cs">
       <DependentUpon>JoinGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Participant\JoinQuiz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Participant\JoinQuiz.Designer.cs">
+      <DependentUpon>JoinQuiz.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control Participant\ScoreParticipant.cs">
       <SubType>UserControl</SubType>
@@ -342,6 +354,9 @@
     <EmbeddedResource Include="EditParticipant.resx">
       <DependentUpon>EditParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditParticipantProfile.resx">
+      <DependentUpon>EditParticipantProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +374,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyClass.resx">
       <DependentUpon>MyClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyClassParticipant.resx">
+      <DependentUpon>MyClassParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PicturePuzzle.resx">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
@@ -424,11 +442,11 @@
     <EmbeddedResource Include="User Control Participant\ClassroomEnrolled.resx">
       <DependentUpon>ClassroomEnrolled.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Participant\Join Quiz.resx">
-      <DependentUpon>Join Quiz.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="User Control Participant\JoinGame.resx">
       <DependentUpon>JoinGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Participant\JoinQuiz.resx">
+      <DependentUpon>JoinQuiz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Participant\ScoreParticipant.resx">
       <DependentUpon>ScoreParticipant.cs</DependentUpon>

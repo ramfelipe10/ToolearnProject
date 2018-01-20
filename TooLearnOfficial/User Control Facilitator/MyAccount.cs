@@ -42,5 +42,10 @@ namespace TooLearnOfficial.User_Control
             MyClass C = new MyClass();
             C.Show();
         }
+
+        private void ScoreRecord_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
