@@ -75,7 +75,7 @@ namespace TooLearnOfficial
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
             }
         }
 
@@ -111,5 +111,9 @@ namespace TooLearnOfficial
 
         }
 
+        private void lsbJoined_SelectedIndexChanged(object sender, EventArgs e) //listbox muna dae ko kapa ang datagridview
+        {
+
+        }
     }
 }
