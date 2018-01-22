@@ -27,6 +27,7 @@ namespace TooLearnOfficial
         {
             InitializeComponent();
             listener.Start(100);
+            lsbJoined.Items.Add("Waiting for connections...");
             try
             {
                 //Accept the connection
@@ -35,9 +36,8 @@ namespace TooLearnOfficial
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                lsbJoined.Items.Add(ex.ToString());
             }
-
         }
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
@@ -53,6 +53,11 @@ namespace TooLearnOfficial
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
 
+                ThreadHelper.lsbAddItem(this, lsbJoined, "Client connected" + clientSocket.Client.RemoteEndPoint.ToString());
+
+                //Send a confirmation message to client
+                Send("You are now connected.", clientSocket);
+
                 //Acccept another TCPClient connection
                 listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
 
@@ -61,10 +66,37 @@ namespace TooLearnOfficial
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
             }
 
         }
+
+        private void Send(string text, TcpClient client)
+        {
+            try
+            {
+                //Set a NetworkStream for sending data
+                NetworkStream stream = client.GetStream();
+                //Store the message into the buffer
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(text);
+                //Begin writing into the stream bufer for sending
+                stream.BeginWrite(buffer, 0, buffer.Length, BeginSendCallback, stream);
+            }
+            catch (Exception ex)
+            {
+                ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
+
+            }
+        }
+
+        private void BeginSendCallback(IAsyncResult ar)
+        {
+            //Get the current asynchronous state of the stream
+            NetworkStream stream = (NetworkStream)ar.AsyncState;
+            //End or complete the sending of stream buffer
+            stream.EndWrite(ar);
+        }
+
 
         private void Receive(TcpClient clientSocket)
         {
@@ -93,25 +125,34 @@ namespace TooLearnOfficial
                 //Check if a disconenct flag was received
                 if (!message.Contains("DISCONNECT"))
                 {
+                    ThreadHelper.lsbAddItem(this, lsbJoined, message + ".");
+
+                    //Begin receiving data from the client socket
                     Receive(clientSocket);
+                    //Send a confirmation message to the client
+                    Send("You sent " + message, clientSocket);
                 }
                 else
                 {
+                    ThreadHelper.lsbAddItem(this, lsbJoined, clientSocket.Client.RemoteEndPoint.ToString() + " has disconnected.");
+                    //send a disconnect flag to the client to complete disconnection
+                    Send("DISCONNECT", clientSocket);
+                    //remove the client socket from the client list
                     clientSockets.Remove(clientSocket.Client.RemoteEndPoint.ToString());
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
             }
         }
 
-        private void LobbyFacilitator_Load(object sender, EventArgs e)
+        private void lsbJoined_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lsbJoined_SelectedIndexChanged(object sender, EventArgs e) //listbox muna dae ko kapa ang datagridview
+        private void LobbyFacilitator_Load(object sender, EventArgs e)
         {
 
         }

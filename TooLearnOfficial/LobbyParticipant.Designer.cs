@@ -42,8 +42,8 @@
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lsbWait = new System.Windows.Forms.ListBox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.btnReady = new System.Windows.Forms.Button();
             this.txtProfile = new System.Windows.Forms.TextBox();
+            this.btnReady = new System.Windows.Forms.Button();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -72,7 +72,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 1;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(561, 26);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(755, 26);
             this.bunifuGradientPanel1.TabIndex = 10;
             // 
             // bunifuCustomLabel1
@@ -118,15 +118,15 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 42);
+            this.label1.Size = new System.Drawing.Size(310, 42);
             this.label1.TabIndex = 148;
-            this.label1.Text = "Participant Joined";
+            this.label1.Text = "Participant Lobby";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(325, 36);
+            this.pictureBox2.Location = new System.Drawing.Point(522, 36);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(221, 113);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,7 +155,9 @@
             // 
             this.lsbWait.FormattingEnabled = true;
             this.lsbWait.Location = new System.Drawing.Point(22, 23);
+            this.lsbWait.MultiColumn = true;
             this.lsbWait.Name = "lsbWait";
+            this.lsbWait.ScrollAlwaysVisible = true;
             this.lsbWait.Size = new System.Drawing.Size(475, 186);
             this.lsbWait.TabIndex = 1;
             this.lsbWait.SelectedIndexChanged += new System.EventHandler(this.lsbWait_SelectedIndexChanged);
@@ -190,32 +192,32 @@
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
-            // btnReady
-            // 
-            this.btnReady.Location = new System.Drawing.Point(19, 110);
-            this.btnReady.Name = "btnReady";
-            this.btnReady.Size = new System.Drawing.Size(75, 23);
-            this.btnReady.TabIndex = 151;
-            this.btnReady.Text = "Ready";
-            this.btnReady.UseVisualStyleBackColor = true;
-            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
-            // 
             // txtProfile
             // 
-            this.txtProfile.Location = new System.Drawing.Point(101, 112);
+            this.txtProfile.Location = new System.Drawing.Point(19, 109);
             this.txtProfile.Name = "txtProfile";
             this.txtProfile.Size = new System.Drawing.Size(100, 20);
             this.txtProfile.TabIndex = 152;
             this.txtProfile.Visible = false;
+            // 
+            // btnReady
+            // 
+            this.btnReady.Location = new System.Drawing.Point(595, 164);
+            this.btnReady.Name = "btnReady";
+            this.btnReady.Size = new System.Drawing.Size(92, 39);
+            this.btnReady.TabIndex = 153;
+            this.btnReady.Text = "I\'M READY!";
+            this.btnReady.UseVisualStyleBackColor = true;
+            this.btnReady.Click += new System.EventHandler(this.btnReady_Click);
             // 
             // LobbyParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(561, 422);
-            this.Controls.Add(this.txtProfile);
+            this.ClientSize = new System.Drawing.Size(755, 422);
             this.Controls.Add(this.btnReady);
+            this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
@@ -248,7 +250,7 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.ListBox lsbWait;
-        private System.Windows.Forms.Button btnReady;
         private System.Windows.Forms.TextBox txtProfile;
+        private System.Windows.Forms.Button btnReady;
     }
 }

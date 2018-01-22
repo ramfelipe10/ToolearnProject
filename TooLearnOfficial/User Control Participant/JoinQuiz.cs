@@ -30,7 +30,6 @@ namespace TooLearnOfficial.User_Control_Participant
 
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
-            //StartConnect();
             LobbyParticipant lobby = new LobbyParticipant();
             lobby.Show();
         }
@@ -38,7 +37,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
 
-        private void StartConnect()
+        public void StartConnect()
         {
             try
             {
@@ -63,6 +62,7 @@ namespace TooLearnOfficial.User_Control_Participant
             {
                 TcpClient _client = (TcpClient)ar.AsyncState;
                 _client.EndConnect(ar);
+                Receive();
             }
             catch (Exception ex)
             {
@@ -70,8 +70,46 @@ namespace TooLearnOfficial.User_Control_Participant
             }
         }
 
+        private void Receive()
+        {
+            try
+            {
+                _client.Client.BeginReceive(_buffer, 0, _buffer_size, SocketFlags.None, BeginReceiveCallback, _client
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
+        private void BeginReceiveCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // get the client socket
+                TcpClient client = (TcpClient)ar.AsyncState;
+                int bytesRead = client.Client.EndReceive(ar);
 
+                string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
+
+                if (message.Contains("DISCONNECT"))
+                {
+                    client.Client.Shutdown(SocketShutdown.Both);
+                    client.Client.Close();
+                }
+                else
+                {
+
+                    Receive();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
     }
 }

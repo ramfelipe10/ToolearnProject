@@ -16,7 +16,6 @@ namespace TooLearnOfficial
 {
     public partial class LobbyParticipant : Form
     {
-        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         private TcpClient _client = new TcpClient();
         private const int _buffer_size = 2048;
         private byte[] _buffer = new byte[_buffer_size];
@@ -25,12 +24,17 @@ namespace TooLearnOfficial
 
         public LobbyParticipant()
         {
-            InitializeComponent();
-            SqlDataAdapter sda = new SqlDataAdapter("Select fullname from participant Where participant_id='" + Program.par_id + "' ", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            //txtProfile.Text = ToString(Program.par_id); ang gusto ko mangyare si current participant fullname maglaog sa textbox na iyan
-           
+           InitializeComponent();
+            
+            if ((Application.OpenForms["LobbyParticipant"] as LobbyParticipant) != null)
+            {
+                var JoinQuiz = (Application.OpenForms["LobbyParticipant"] as LobbyParticipant)
+                                                .Controls.OfType<User_Control_Participant.JoinQuiz>();
+            }
+
+            StartConnect();
+            txtProfile.Text = Convert.ToString(Program.par_id);
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,17 +62,12 @@ namespace TooLearnOfficial
 
         }
 
-        private void btnReady_Click(object sender, EventArgs e)
-        {
-            Send(txtProfile.Text);
-        }
-
         private void Send(string message)
         {
             try
             {
                 //Translate the message into its byte form
-                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message + "is ready!");
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message + " is ready!");
 
                 //Get a client stream for reading and writing
                 NetworkStream stream = _client.GetStream();
@@ -92,6 +91,89 @@ namespace TooLearnOfficial
         private void lsbWait_SelectedIndexChanged(object sender, EventArgs e) //listbox muna dae ko kapa ang DataGridView
         {
 
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            StartConnect();
+        }
+        public void StartConnect()
+        {
+            try
+            {
+                if (_client.Connected == false)
+                {
+                    _client = new TcpClient();
+                }
+                _client.NoDelay = true;
+
+                //Begin connecting to server
+                _client.BeginConnect(IPAddress.Parse(_IPAddress), _PORT, BeginConnectCallBack, _client);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BeginConnectCallBack(IAsyncResult ar)
+        {
+            try
+            {
+                TcpClient _client = (TcpClient)ar.AsyncState;
+                _client.EndConnect(ar);
+                Receive();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Receive()
+        {
+            try
+            {
+                _client.Client.BeginReceive(_buffer, 0, _buffer_size, SocketFlags.None, BeginReceiveCallback, _client
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BeginReceiveCallback(IAsyncResult ar)
+        {
+            try
+            {
+                // get the client socket
+                TcpClient client = (TcpClient)ar.AsyncState;
+                int bytesRead = client.Client.EndReceive(ar);
+
+                string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
+
+                if (message.Contains("DISCONNECT"))
+                {
+                    client.Client.Shutdown(SocketShutdown.Both);
+                    client.Client.Close();
+                }
+                else
+                {
+
+                    Receive();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnReady_Click(object sender, EventArgs e)
+        {
+            Send(txtProfile.Text);
         }
     }
 }

@@ -280,6 +280,7 @@
             this.Name = "EditParticipantProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditParticipantProfile";
+            this.Load += new System.EventHandler(this.EditParticipantProfile_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
