@@ -174,6 +174,7 @@ namespace TooLearnOfficial
         private void btnReady_Click(object sender, EventArgs e)
         {
             Send(txtProfile.Text);
+            ThreadHelper.lsbAddItem(this, lsbWait, Convert.ToString(Program.par_id) + " is ready!");
         }
     }
 }
