@@ -52,7 +52,6 @@
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.button3 = new System.Windows.Forms.Button();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -60,6 +59,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.button3 = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -480,21 +480,6 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(786, 111);
             this.bunifuGradientPanel1.TabIndex = 176;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(917, 614);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 34);
-            this.button3.TabIndex = 207;
-            this.button3.Text = "Save Quiz";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // bunifuImageButton3
             // 
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
@@ -597,6 +582,21 @@
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(206, 29);
             this.bunifuCustomLabel5.TabIndex = 181;
             this.bunifuCustomLabel5.Text = "Step # 1";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button3.Enabled = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(917, 614);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 34);
+            this.button3.TabIndex = 207;
+            this.button3.Text = "Save Quiz";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // bunifuDragControl1
             // 
@@ -1705,12 +1705,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.MultipleChoice);
-            this.Controls.Add(this.shortAnswer);
-            this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.TrueOrFalseLV);
-            this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.MultipleChoice);
+            this.Controls.Add(this.shortAnswer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";

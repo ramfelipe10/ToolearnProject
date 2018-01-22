@@ -49,8 +49,11 @@ namespace TooLearnOfficial
         {
             this.Hide();
 
-            ParticipantLogin pl = new ParticipantLogin();
-            pl.Show();
+            ParticipantSQLConnect con = new ParticipantSQLConnect();
+            con.Show();
+
+          //  ParticipantLogin pl = new ParticipantLogin();
+           // pl.Show();
         }
     }
 }

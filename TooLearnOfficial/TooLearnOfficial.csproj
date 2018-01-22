@@ -192,6 +192,12 @@
     <Compile Include="MyClassParticipant.Designer.cs">
       <DependentUpon>MyClassParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParticipantSQLConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParticipantSQLConnect.Designer.cs">
+      <DependentUpon>ParticipantSQLConnect.cs</DependentUpon>
+    </Compile>
     <Compile Include="PicturePuzzle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyClassParticipant.resx">
       <DependentUpon>MyClassParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticipantSQLConnect.resx">
+      <DependentUpon>ParticipantSQLConnect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PicturePuzzle.resx">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>

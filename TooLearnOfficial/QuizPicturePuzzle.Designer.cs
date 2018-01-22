@@ -274,6 +274,7 @@
             // splitPicture
             // 
             this.splitPicture.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitPicture.Enabled = false;
             this.splitPicture.Location = new System.Drawing.Point(50, 232);
             this.splitPicture.Name = "splitPicture";
             this.splitPicture.Size = new System.Drawing.Size(432, 247);
@@ -290,7 +291,8 @@
             this.bunifuFlatButton1.BorderRadius = 6;
             this.bunifuFlatButton1.ButtonText = "Upload";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.DimGray;
+            this.bunifuFlatButton1.Enabled = false;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = global::TooLearnOfficial.Properties.Resources.Add_Image_50px;
             this.bunifuFlatButton1.Iconimage_right = null;
@@ -426,7 +428,8 @@
             this.bunifuFlatButton2.BorderRadius = 6;
             this.bunifuFlatButton2.ButtonText = "Clear";
             this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.DimGray;
+            this.bunifuFlatButton2.Enabled = false;
             this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.Iconimage = global::TooLearnOfficial.Properties.Resources.Trash_52px;
             this.bunifuFlatButton2.Iconimage_right = null;
@@ -467,6 +470,7 @@
             this.bunifuGradientPanel1.Controls.Add(this.splitPicture8);
             this.bunifuGradientPanel1.Controls.Add(this.splitPicture6);
             this.bunifuGradientPanel1.Controls.Add(this.splitPicture7);
+            this.bunifuGradientPanel1.Enabled = false;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
@@ -593,6 +597,7 @@
             this.bunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton3.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton3.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton3.Click += new System.EventHandler(this.bunifuFlatButton3_Click);
             // 
             // bunifuElipse4
             // 

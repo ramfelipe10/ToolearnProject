@@ -167,14 +167,29 @@ namespace TooLearnOfficial
 
         private void create_Click(object sender, EventArgs e)
         {
+            if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0)
+            {
+                Dialogue.Show("Please Fill All Fields", "", "Ok", "Cancel");
 
-            
+            }
+
+
+            else
+            {
+
                 PicturePuzzle pz = new PicturePuzzle();
                 pz.Show();
-            
+            }
           
 
         }
 
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            splitPicture.Enabled = true;
+            bunifuGradientPanel1.Enabled = true;
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = true;
+        }
     }
 }

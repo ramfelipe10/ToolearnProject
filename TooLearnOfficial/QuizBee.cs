@@ -1149,7 +1149,7 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "', @IMG,'" + textBox7.Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "', @IMG,'" + textBox7.Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1158,7 +1158,7 @@ namespace TooLearnOfficial
                                         else
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "', @IMG,'" + exams.SubItems[7].Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "', @IMG,'" + exams.SubItems[7].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1176,7 +1176,7 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + textBox7.Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + textBox7.Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.ExecuteNonQuery();
                                             
@@ -1185,7 +1185,7 @@ namespace TooLearnOfficial
 
                                         else
                                         {
-                                            String query = "INSERT INTO QuestionAnswers(question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[7].Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[7].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.ExecuteNonQuery();
                                         }
@@ -1227,7 +1227,7 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + textBox7.Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + textBox7.Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1239,7 +1239,7 @@ namespace TooLearnOfficial
 
                                         else
                                         {
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + exams.SubItems[3].Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + exams.SubItems[3].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1257,7 +1257,7 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + textBox7.Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + textBox7.Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1267,7 +1267,7 @@ namespace TooLearnOfficial
                                         else
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1316,7 +1316,7 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + textBox7.Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + textBox7.Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
@@ -1326,7 +1326,7 @@ namespace TooLearnOfficial
 
                                         else
                                         {
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + exams.SubItems[3].Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "', @IMG,'" + exams.SubItems[3].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.Parameters.AddWithValue("@IMG", imgFile);
@@ -1344,7 +1344,7 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + textBox7.Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + textBox7.Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1354,7 +1354,7 @@ namespace TooLearnOfficial
 
                                         else
                                         {
-                                            String query = "INSERT INTO QuestionAnswers(question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1468,6 +1468,8 @@ namespace TooLearnOfficial
 
 
         }
+
+       
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {
