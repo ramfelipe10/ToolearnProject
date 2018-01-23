@@ -13,7 +13,8 @@ namespace TooLearnOfficial
 {
     public partial class CreateParticipant : Form
     {
-        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+       // SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
         public CreateParticipant()
         {
             InitializeComponent();

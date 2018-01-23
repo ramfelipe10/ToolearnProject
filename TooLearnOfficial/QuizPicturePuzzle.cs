@@ -16,6 +16,8 @@ namespace TooLearnOfficial
 
         string imagesrc;
 
+        public static string SetValueForText2 = "";
+
         public QuizPicturePuzzle()
         {
             InitializeComponent();
@@ -167,6 +169,9 @@ namespace TooLearnOfficial
 
         private void create_Click(object sender, EventArgs e)
         {
+
+            SetValueForText2 = textBoxQuizTitle.Text;
+                  
             if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0)
             {
                 Dialogue.Show("Please Fill All Fields", "", "Ok", "Cancel");

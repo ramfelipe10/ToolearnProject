@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyClassParticipant));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -48,12 +48,17 @@
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.buttonCreateClassroom = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.codeme = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bunifuGradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -179,22 +184,22 @@
             this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -206,10 +211,10 @@
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
-            this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
             this.bunifuCustomDataGrid1.RowTemplate.Height = 25;
             this.bunifuCustomDataGrid1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -250,12 +255,90 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // buttonCreateClassroom
+            // 
+            this.buttonCreateClassroom.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.buttonCreateClassroom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonCreateClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCreateClassroom.BorderRadius = 3;
+            this.buttonCreateClassroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buttonCreateClassroom.ButtonText = "Enroll";
+            this.buttonCreateClassroom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCreateClassroom.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonCreateClassroom.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonCreateClassroom.Iconimage = null;
+            this.buttonCreateClassroom.Iconimage_right = null;
+            this.buttonCreateClassroom.Iconimage_right_Selected = null;
+            this.buttonCreateClassroom.Iconimage_Selected = null;
+            this.buttonCreateClassroom.IconMarginLeft = 0;
+            this.buttonCreateClassroom.IconMarginRight = 0;
+            this.buttonCreateClassroom.IconRightVisible = true;
+            this.buttonCreateClassroom.IconRightZoom = 0D;
+            this.buttonCreateClassroom.IconVisible = true;
+            this.buttonCreateClassroom.IconZoom = 60D;
+            this.buttonCreateClassroom.IsTab = false;
+            this.buttonCreateClassroom.Location = new System.Drawing.Point(208, 63);
+            this.buttonCreateClassroom.Name = "buttonCreateClassroom";
+            this.buttonCreateClassroom.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonCreateClassroom.OnHovercolor = System.Drawing.Color.DimGray;
+            this.buttonCreateClassroom.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonCreateClassroom.selected = false;
+            this.buttonCreateClassroom.Size = new System.Drawing.Size(90, 32);
+            this.buttonCreateClassroom.TabIndex = 158;
+            this.buttonCreateClassroom.Text = "Enroll";
+            this.buttonCreateClassroom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonCreateClassroom.Textcolor = System.Drawing.Color.White;
+            this.buttonCreateClassroom.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonCreateClassroom.Click += new System.EventHandler(this.buttonCreateClassroom_Click);
+            // 
+            // bunifuGradientPanel2
+            // 
+            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
+            this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel2.Controls.Add(this.codeme);
+            this.bunifuGradientPanel2.Controls.Add(this.buttonCreateClassroom);
+            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.WhiteSmoke;
+            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.WhiteSmoke;
+            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.WhiteSmoke;
+            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.WhiteSmoke;
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(561, 165);
+            this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
+            this.bunifuGradientPanel2.Quality = 10;
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(301, 98);
+            this.bunifuGradientPanel2.TabIndex = 159;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
+            // 
+            // codeme
+            // 
+            this.codeme.BackColor = System.Drawing.Color.Gray;
+            this.codeme.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.codeme.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.codeme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.codeme.HintForeColor = System.Drawing.Color.Empty;
+            this.codeme.HintText = "";
+            this.codeme.isPassword = false;
+            this.codeme.LineFocusedColor = System.Drawing.Color.Blue;
+            this.codeme.LineIdleColor = System.Drawing.Color.Gray;
+            this.codeme.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.codeme.LineThickness = 3;
+            this.codeme.Location = new System.Drawing.Point(24, 14);
+            this.codeme.Margin = new System.Windows.Forms.Padding(4);
+            this.codeme.Name = "codeme";
+            this.codeme.Size = new System.Drawing.Size(256, 33);
+            this.codeme.TabIndex = 159;
+            this.codeme.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // MyClassParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(913, 611);
+            this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
@@ -275,6 +358,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.bunifuGradientPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +381,9 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
+        private Bunifu.Framework.UI.BunifuFlatButton buttonCreateClassroom;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox codeme;
     }
 }

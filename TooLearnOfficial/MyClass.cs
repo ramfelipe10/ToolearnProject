@@ -15,8 +15,8 @@ namespace TooLearnOfficial
     {
 
 
-        //SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
+       SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+       // SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
         public MyClass()
         {
             InitializeComponent();
@@ -69,18 +69,27 @@ namespace TooLearnOfficial
         {
             try
             {
+                            
+                
 
-                             
                 SqlDataAdapter sda = new SqlDataAdapter("select p_username AS 'Username',p_password AS 'Password',fullname AS 'Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+
+
+                SqlDataAdapter sad = new SqlDataAdapter("Select class_code from classrooms where class_name = '" + comboBox1.SelectedItem + "' ", con);
+                DataTable data = new DataTable();
+                sad.Fill(data);
+                
+                string code = data.Rows[0][0].ToString();
+
                 if (dt.Rows.Count == 0)
                 {
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dt;
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
-                    bunifuCustomLabel1.Visible = true;
+                    bunifuCustomLabel2.Visible = true;
                 }
 
 
@@ -90,7 +99,9 @@ namespace TooLearnOfficial
                     bs.DataSource = dt;
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
-                    bunifuCustomLabel1.Visible = false;
+                    bunifuCustomLabel2.Visible = false;
+                  label5.Text =code;
+
                 }
 
             }
@@ -99,6 +110,8 @@ namespace TooLearnOfficial
             {
                  MessageBox.Show(ex.Message);
             }
+
+           
         }
 
         private void MyClass_Load(object sender, EventArgs e)

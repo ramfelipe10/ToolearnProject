@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyClass));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -121,22 +123,22 @@
             this.bunifuCustomDataGrid1.AllowUserToDeleteRows = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.DoubleBuffered = true;
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
@@ -148,10 +150,10 @@
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Silver;
-            this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
             this.bunifuCustomDataGrid1.RowTemplate.Height = 25;
             this.bunifuCustomDataGrid1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -307,12 +309,35 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(485, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 24);
+            this.label4.TabIndex = 155;
+            this.label4.Text = "Class Code:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(623, 177);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 24);
+            this.label5.TabIndex = 156;
+            // 
             // MyClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(913, 611);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonCreateClassroom);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.label3);
@@ -360,5 +385,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton buttonCreateClassroom;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
