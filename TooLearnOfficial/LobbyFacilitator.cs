@@ -20,7 +20,7 @@ namespace TooLearnOfficial
         // Set Buffer as holder of data being sent and received
         private byte[] buffer = new byte[buffer_size];
         // Set the TCPListeneer on port 13000;
-        private TcpListener listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 13000);
+        private TcpListener listener = new TcpListener(IPAddress.Parse("192.168.43.84"), 13000);
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
         public LobbyFacilitator()

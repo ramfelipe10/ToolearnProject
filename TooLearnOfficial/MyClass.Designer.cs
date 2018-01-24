@@ -124,7 +124,7 @@
             this.bunifuCustomDataGrid1.AllowUserToResizeColumns = false;
             this.bunifuCustomDataGrid1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
@@ -152,6 +152,7 @@
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
             this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
@@ -319,6 +320,7 @@
             this.label4.Size = new System.Drawing.Size(132, 24);
             this.label4.TabIndex = 155;
             this.label4.Text = "Class Code:";
+            this.label4.Visible = false;
             // 
             // label5
             // 

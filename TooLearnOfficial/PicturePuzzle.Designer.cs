@@ -287,7 +287,6 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.Enabled = false;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
@@ -385,7 +384,6 @@
             // 
             // textBox11
             // 
-            this.textBox11.Enabled = false;
             this.textBox11.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.textBox11.Location = new System.Drawing.Point(659, 15);
             this.textBox11.Name = "textBox11";
@@ -419,12 +417,12 @@
             this.bunifuCheckbox4.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox4.Checked = false;
             this.bunifuCheckbox4.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox4.Enabled = false;
             this.bunifuCheckbox4.ForeColor = System.Drawing.Color.White;
             this.bunifuCheckbox4.Location = new System.Drawing.Point(964, 182);
             this.bunifuCheckbox4.Name = "bunifuCheckbox4";
             this.bunifuCheckbox4.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox4.TabIndex = 158;
+            this.bunifuCheckbox4.OnChange += new System.EventHandler(this.bunifuCheckbox4_OnChange);
             // 
             // bunifuCheckbox3
             // 
@@ -432,12 +430,12 @@
             this.bunifuCheckbox3.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox3.Checked = false;
             this.bunifuCheckbox3.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox3.Enabled = false;
             this.bunifuCheckbox3.ForeColor = System.Drawing.Color.White;
             this.bunifuCheckbox3.Location = new System.Drawing.Point(964, 146);
             this.bunifuCheckbox3.Name = "bunifuCheckbox3";
             this.bunifuCheckbox3.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox3.TabIndex = 157;
+            this.bunifuCheckbox3.OnChange += new System.EventHandler(this.bunifuCheckbox3_OnChange);
             // 
             // bunifuCheckbox2
             // 
@@ -445,12 +443,12 @@
             this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox2.Checked = false;
             this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox2.Enabled = false;
             this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
             this.bunifuCheckbox2.Location = new System.Drawing.Point(963, 110);
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
             this.bunifuCheckbox2.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox2.TabIndex = 156;
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // bunifuCheckbox1
             // 
@@ -458,16 +456,15 @@
             this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
             this.bunifuCheckbox1.Checked = false;
             this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.Enabled = false;
             this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
             this.bunifuCheckbox1.Location = new System.Drawing.Point(964, 73);
             this.bunifuCheckbox1.Name = "bunifuCheckbox1";
             this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
             this.bunifuCheckbox1.TabIndex = 155;
+            this.bunifuCheckbox1.OnChange += new System.EventHandler(this.bunifuCheckbox1_OnChange);
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBox2.Location = new System.Drawing.Point(883, 13);
             this.textBox2.Name = "textBox2";
@@ -493,7 +490,6 @@
             this.bunifuFlatButton1.ButtonText = "Upload";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Enabled = false;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = global::TooLearnOfficial.Properties.Resources.Add_Image_50px;
             this.bunifuFlatButton1.Iconimage_right = null;
@@ -523,7 +519,6 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox3.Enabled = false;
             this.pictureBox3.Location = new System.Drawing.Point(132, 67);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(157, 81);
@@ -543,7 +538,6 @@
             // 
             // textBoxQuizChoiceD
             // 
-            this.textBoxQuizChoiceD.Enabled = false;
             this.textBoxQuizChoiceD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuizChoiceD.Location = new System.Drawing.Point(672, 177);
             this.textBoxQuizChoiceD.Name = "textBoxQuizChoiceD";
@@ -552,7 +546,6 @@
             // 
             // textBoxQuizChoiceC
             // 
-            this.textBoxQuizChoiceC.Enabled = false;
             this.textBoxQuizChoiceC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuizChoiceC.Location = new System.Drawing.Point(672, 141);
             this.textBoxQuizChoiceC.Name = "textBoxQuizChoiceC";
@@ -561,7 +554,6 @@
             // 
             // textBoxQuizChoiceB
             // 
-            this.textBoxQuizChoiceB.Enabled = false;
             this.textBoxQuizChoiceB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuizChoiceB.Location = new System.Drawing.Point(672, 104);
             this.textBoxQuizChoiceB.Name = "textBoxQuizChoiceB";
@@ -570,7 +562,6 @@
             // 
             // textBoxQuizChoiceA
             // 
-            this.textBoxQuizChoiceA.Enabled = false;
             this.textBoxQuizChoiceA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuizChoiceA.Location = new System.Drawing.Point(672, 67);
             this.textBoxQuizChoiceA.Name = "textBoxQuizChoiceA";
@@ -620,7 +611,6 @@
             // buttonNextQuestion
             // 
             this.buttonNextQuestion.BackColor = System.Drawing.Color.SeaGreen;
-            this.buttonNextQuestion.Enabled = false;
             this.buttonNextQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonNextQuestion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNextQuestion.ForeColor = System.Drawing.Color.White;
@@ -644,7 +634,6 @@
             // 
             // textBoxQuizQuestion
             // 
-            this.textBoxQuizQuestion.Enabled = false;
             this.textBoxQuizQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuizQuestion.Location = new System.Drawing.Point(128, 154);
             this.textBoxQuizQuestion.Multiline = true;
@@ -1165,6 +1154,7 @@
             this.ShortAnswerLV.TabIndex = 212;
             this.ShortAnswerLV.UseCompatibleStateImageBehavior = false;
             this.ShortAnswerLV.View = System.Windows.Forms.View.Details;
+            this.ShortAnswerLV.SelectedIndexChanged += new System.EventHandler(this.ShortAnswerLV_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -1208,6 +1198,7 @@
             this.TrueOrFalseLV.TabIndex = 213;
             this.TrueOrFalseLV.UseCompatibleStateImageBehavior = false;
             this.TrueOrFalseLV.View = System.Windows.Forms.View.Details;
+            this.TrueOrFalseLV.SelectedIndexChanged += new System.EventHandler(this.TrueOrFalseLV_SelectedIndexChanged);
             // 
             // columnHeader7
             // 
@@ -1246,7 +1237,6 @@
             this.image,
             this.time,
             this.Point});
-            this.MultipleChoiceLV.Enabled = false;
             this.MultipleChoiceLV.FullRowSelect = true;
             this.MultipleChoiceLV.GridLines = true;
             this.MultipleChoiceLV.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -1257,6 +1247,7 @@
             this.MultipleChoiceLV.TabIndex = 211;
             this.MultipleChoiceLV.UseCompatibleStateImageBehavior = false;
             this.MultipleChoiceLV.View = System.Windows.Forms.View.Details;
+            this.MultipleChoiceLV.SelectedIndexChanged += new System.EventHandler(this.MultipleChoiceLV_SelectedIndexChanged);
             // 
             // Question
             // 
@@ -1314,6 +1305,7 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox6.Location = new System.Drawing.Point(438, 75);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(246, 97);
@@ -1338,7 +1330,6 @@
             this.bunifuFlatButton4.ButtonText = "Short Answer";
             this.bunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton4.Enabled = false;
             this.bunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.Iconimage = null;
             this.bunifuFlatButton4.Iconimage_right = null;
@@ -1374,7 +1365,6 @@
             this.bunifuFlatButton3.ButtonText = "True/False";
             this.bunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton3.Enabled = false;
             this.bunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.Iconimage = null;
             this.bunifuFlatButton3.Iconimage_right = null;
@@ -1410,7 +1400,6 @@
             this.bunifuFlatButton2.ButtonText = "Multiple Choice";
             this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Enabled = false;
             this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.Iconimage = null;
             this.bunifuFlatButton2.Iconimage_right = null;
@@ -1481,15 +1470,15 @@
             this.Controls.Add(this.QuizFormat);
             this.Controls.Add(this.NoItems);
             this.Controls.Add(this.NoItemsLBL);
-            this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
-            this.Controls.Add(this.MultipleChoice);
+            this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.ShortAnswerLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PicturePuzzle";

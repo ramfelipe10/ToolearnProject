@@ -46,7 +46,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-               MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
             
 
@@ -93,7 +93,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                 MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
 
@@ -237,7 +237,7 @@ namespace TooLearnOfficial
 
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
                         }
 
 
@@ -258,7 +258,7 @@ namespace TooLearnOfficial
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
                 }
 
             }
@@ -277,7 +277,7 @@ namespace TooLearnOfficial
             comboBox1.Enabled = false;
             createP.Enabled = false;
             bunifuCustomDataGrid2.Enabled = false;
-            editP.Enabled = false;
+           // editP.Enabled = false;
             deleteP.Enabled = false;
             pictureBox2.Visible = false;
             label6.Text = "";
@@ -362,7 +362,7 @@ namespace TooLearnOfficial
 
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
             
 
@@ -480,7 +480,7 @@ namespace TooLearnOfficial
 
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
                                  
                         
@@ -500,7 +500,7 @@ namespace TooLearnOfficial
                 comboBox1.Enabled = true;
                 createP.Enabled = true;
                 bunifuCustomDataGrid2.Enabled = true;
-                editP.Enabled = true;
+              //  editP.Enabled = true;
                 deleteP.Enabled = true;
 
 
@@ -535,7 +535,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-               MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
 

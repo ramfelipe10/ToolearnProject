@@ -28,18 +28,20 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
-            this.Close();
+           Environment.Exit(0);
         }
 
 
         private void load_server()
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             DataTable table = System.Data.Sql.SqlDataSourceEnumerator.Instance.GetDataSources();
             foreach (DataRow server in table.Rows)
             {
                 Server.Items.Add(server[table.Columns["ServerName"]].ToString());
             }
-
+            Cursor.Current = Cursors.Default;
         }
 
         private void bunifuImageButton6_Click(object sender, EventArgs e)
@@ -73,7 +75,9 @@ namespace TooLearnOfficial
                 con = new SqlConnection("Data Source='" + Source + "' ; Initial Catalog='" + DB + "'; User ID='" + ID + "';Password='" + Password + "'");
                 try
                 {
+                    Cursor.Current = Cursors.WaitCursor;
                     con.Open();
+                    Cursor.Current = Cursors.Default;
                     if (con.State == ConnectionState.Open)
                     {
                         DialogResult result= Dialogue1.Show("Connected", "", "Ok", "Cancel");

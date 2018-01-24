@@ -18,7 +18,7 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlDataReader dr;
-        int currentNumOfItems;
+        int currentNumOfItems,numOfItems;
         string RightAnswer, imageLocation,title;
         byte[] imgFile = null;
 
@@ -285,6 +285,8 @@ namespace TooLearnOfficial
         {
 
            title = QuizPicturePuzzle.SetValueForText2;
+            currentNumOfItems = 1;
+            numOfItems = 9;
 
             listPanel.Add(MultipleChoice);
             listPanel.Add(trueORfalse);
@@ -406,59 +408,64 @@ namespace TooLearnOfficial
             {
                 case "Next":
 
+
+
+
+                    if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                    {
+                        Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                    }
+
+                    else
+                    {
+                                           
+                                  ListViewItem exams4 = new ListViewItem();
+                                  exams4.Text = textBoxQuizQuestion.Text;
+                                  exams4.SubItems.Add(textBoxQuizChoiceA.Text);
+                                  exams4.SubItems.Add(textBoxQuizChoiceB.Text);
+                                  exams4.SubItems.Add(textBoxQuizChoiceC.Text);
+                                  exams4.SubItems.Add(textBoxQuizChoiceD.Text);
+                                  exams4.SubItems.Add(RightAnswer);
+                                  //
+                                  exams4.SubItems.Add(pictureBox3.ImageLocation);
+
+                                  exams4.SubItems.Add(textBox11.Text);
+                                  exams4.SubItems.Add(textBox2.Text);
+                                  //
+                                  MultipleChoiceLV.Items.Add(exams4);
+                                  currentNumOfItems++;
+                        
+                        
+
+                                  currentnumMC.Text = currentNumOfItems.ToString();
+                                  CurrentnumSA.Text = currentNumOfItems.ToString();
+                                  CurrentNumTF.Text = currentNumOfItems.ToString();
+                                  rightAnswer = null;
+                                      //
+                                  pictureBox3.ImageLocation = null;
+                                      //
+                                  resetAllMC();
+
+                                  NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+                                  int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
                   
 
 
-                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                            textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
-                        {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                        }
 
-                        else
-                        {
 
-                            ListViewItem exams4 = new ListViewItem();
-                            exams4.Text = textBoxQuizQuestion.Text;
-                            exams4.SubItems.Add(textBoxQuizChoiceA.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceB.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceC.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceD.Text);
-                            exams4.SubItems.Add(RightAnswer);
-                            //
-                            exams4.SubItems.Add(pictureBox3.ImageLocation);
-
-                            exams4.SubItems.Add(textBox11.Text);
-                            exams4.SubItems.Add(textBox2.Text);
-                            //
-                            MultipleChoiceLV.Items.Add(exams4);
-                            currentNumOfItems++;
-
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
-                            rightAnswer = null;
-                            //
-                            pictureBox3.ImageLocation = null;
-                            //
-                            resetAllMC();
-
-                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-                            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-                           
+                    }
 
 
 
-                        } 
 
-               
 
-                 
 
-                    
 
                     break;
-
+         
+        
 
                 case "Update":
 
@@ -669,12 +676,93 @@ namespace TooLearnOfficial
 
         }
 
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+
+            bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+            RightAnswer = "A";
+        }
+
+        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox1.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+            RightAnswer = "B";
+        }
+
+        private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox4.Checked = false;
+            RightAnswer = "C";
+        }
+
+        private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
+        {
+            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
+            RightAnswer = "D";
+        }
+
+        private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MultipleChoiceLV.Items.Count != 0 && MultipleChoiceLV.SelectedItems.Count != 0)
+
+            {
+
+
+
+
+                currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
+                updateMC();
+
+
+            }
+
+        }
+
+        private void ShortAnswerLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ShortAnswerLV.Items.Count != 0 && ShortAnswerLV.SelectedItems.Count != 0)
+
+            {
+
+
+
+
+
+                CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.SelectedItems[0].Index + 1);
+                updateSA();
+
+
+            }
+        }
+
+        private void TrueOrFalseLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TrueOrFalseLV.Items.Count != 0 && TrueOrFalseLV.SelectedItems.Count != 0)
+
+            {
+
+
+
+
+
+                CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.SelectedItems[0].Index + 1);
+                updateTF();
+
+
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
 
           if (MultipleChoiceLV.Items.Count <= 0 && ShortAnswerLV.Items.Count <= 0 && TrueOrFalseLV.Items.Count <= 0)
             {
                 Dialogue.Show("Quiz is Empty", "", "Ok", "Cancel");
+            }
+
+            else if(currentNumOfItems < numOfItems )
+            {
+                Dialogue.Show("Quiz is Incomplete, must be 9 Questions", "", "Ok", "Cancel");
             }
             else
             {
@@ -922,7 +1010,7 @@ namespace TooLearnOfficial
                     }
 
                     clearAllMC();
-                    currentNumOfItems = 0;
+                    currentNumOfItems = 1;
                 
                     Dialogue.Show("Quiz Saved In the Database", "", "Ok", "Cancel");
                     this.Close();
@@ -966,10 +1054,10 @@ namespace TooLearnOfficial
                 NoItems.Text = "0";
                 QuizFormat.Text = "Multiple Choice";
 
-                currentNumOfItems = 0;
-                currentnumMC.Text = null;
-                CurrentnumSA.Text = null;
-                CurrentNumTF.Text = null;
+                currentNumOfItems = 1;
+                currentnumMC.Text = "1"; //null
+                CurrentnumSA.Text = "1";
+                CurrentNumTF.Text = "1";
                
                 MultipleChoiceLV.Items.Clear();
                 ShortAnswerLV.Items.Clear();
@@ -977,10 +1065,10 @@ namespace TooLearnOfficial
                 resetAllMC();
                 resetAllSA();
                 resetAllTF();
-                disable_fieldsMC();
-                MultipleChoiceLV.Enabled = false;
-                ShortAnswerLV.Enabled = false;
-                TrueOrFalseLV.Enabled = false;
+                
+                MultipleChoiceLV.Enabled = true;
+                ShortAnswerLV.Enabled = true;
+                TrueOrFalseLV.Enabled = true;
                 buttonNextQuestion.Text = "Next";
                 MultipleChoice.BringToFront();
                 MultipleChoiceLV.BringToFront();

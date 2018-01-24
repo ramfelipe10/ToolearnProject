@@ -46,7 +46,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
 
@@ -90,6 +90,8 @@ namespace TooLearnOfficial
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
                     bunifuCustomLabel2.Visible = true;
+                    label4.Visible = false;
+
                 }
 
 
@@ -100,7 +102,10 @@ namespace TooLearnOfficial
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
                     bunifuCustomLabel2.Visible = false;
-                  label5.Text =code;
+                    label5.Text =code;
+                    label4.Visible = true;
+
+                    bunifuCustomDataGrid1.ClearSelection();
 
                 }
 
@@ -108,7 +113,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                 MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
            

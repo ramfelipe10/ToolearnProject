@@ -29,41 +29,51 @@ namespace TooLearnOfficial
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
-            if (result == DialogResult.Yes)
+            if (string.IsNullOrWhiteSpace(ClassNameBox.Text) && ClassNameBox.Text.Length > 0 || ClassNameBox.Text == "")
             {
-
-                SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Cname + "'", con);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
-
-
-                con.Open();
-                String query = "UPDATE classrooms SET class_name= '" + ClassNameBox.Text + " '  WHERE facilitator_id= '" + Program.user_id + "' AND class_id= '" + ID + "' ";
-                SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                int n = sda.SelectCommand.ExecuteNonQuery();
-
-                con.Close();
-
-
-                CreateMyClassroom CC = (CreateMyClassroom)Application.OpenForms["CreateMyClassroom"];
+                Dialogue.Show("Invalid Input or Empty", "", "Ok", "Cancel");
                 
-
-                CC.Load_Class();
-                CC.Load_Participant();
+            }//If End
 
 
-
-                this.Close();
-
-            }
 
             else
             {
-                Dialogue.Show("Fail to Update", "", "Ok", "Cancel");
-            }
+                DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+                if (result == DialogResult.Yes)
+                {
 
+                    SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Cname + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
+
+
+                    con.Open();
+                    String query = "UPDATE classrooms SET class_name= '" + ClassNameBox.Text + " '  WHERE facilitator_id= '" + Program.user_id + "' AND class_id= '" + ID + "' ";
+                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                    int n = sda.SelectCommand.ExecuteNonQuery();
+
+                    con.Close();
+
+
+                    CreateMyClassroom CC = (CreateMyClassroom)Application.OpenForms["CreateMyClassroom"];
+
+
+                    CC.Load_Class();
+                    CC.Load_Participant();
+
+
+
+                    this.Close();
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Fail to Update", "", "Ok", "Cancel");
+                }
+            }
 
         }
 

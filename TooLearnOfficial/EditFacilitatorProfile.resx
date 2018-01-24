@@ -364,6 +364,16 @@
   <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="bunifuGradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADjSURBVChTfc5ZqoJgAEDhf/+rEJIkFLNBRW2yLIfKAS2K
+        pMgHt3EuBMklog185whJkuj1evT7fQaDAZqmYRgGk8kEy7JwHIfZbIaQZRlFUVBVFV3XGY1GTKdTbNvG
+        dV3m8zm+7yPeynA4ZDweY5pmpyyXS9brNdvtFvFNWSwWLyUIAsIwJEkSxC8liiL2+z1ZliH+v6xWKzab
+        Taccj0fyPKcsS4Tnea/Up5KmKUVRUFUVl8sF8VZ2ux1xHHM4HDrlfD5zvV6p6xrxTTmdTi/ldrtxv995
+        Pp+IX8rj8aBpGtq25Q+/+kfKxorVeAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIACkUAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAUGtJ
@@ -715,5 +725,8 @@
   </data>
   <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>141, 17</value>
+  </metadata>
+  <metadata name="bunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>301, 17</value>
   </metadata>
 </root>

@@ -17,6 +17,8 @@ namespace TooLearnOfficial
         string imagesrc;
 
         public static string SetValueForText2 = "";
+        
+       
 
         public QuizPicturePuzzle()
         {
@@ -77,6 +79,20 @@ namespace TooLearnOfficial
                 splitPicture7.Image = imgarray[6];
                 splitPicture8.Image = imgarray[7];
                 splitPicture9.Image = imgarray[8];
+
+
+                var image1 = splitPicture1.Image;
+                var image2 = splitPicture2.Image;
+                var image3 = splitPicture3.Image;
+                var image4 = splitPicture4.Image;
+                var image5 = splitPicture5.Image;
+                var image6 = splitPicture6.Image;
+                var image7 = splitPicture7.Image;
+                var image8 = splitPicture8.Image;
+                var image9 = splitPicture9.Image;
+                
+
+               
 
             }
 
