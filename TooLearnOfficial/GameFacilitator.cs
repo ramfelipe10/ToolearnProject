@@ -38,13 +38,7 @@ namespace TooLearnOfficial
             InitializeComponent();
             load_server();
             listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
-            listener.Start(100);
-            try
-            {
-                //Accept the connection
-                //This method creates the accepted socket
-                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
-            }
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
