@@ -174,12 +174,20 @@ namespace TooLearnOfficial
                 }
             }
         }
-    
+
+        private void SendToAllClients(string message)
+        {
+            foreach (KeyValuePair<string, TcpClient> client in clientSockets)
+            {
+                Send(message, client.Value);
+            }
+        }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             GameFacilitator gf = new GameFacilitator();
             gf.Show();
+            SendToAllClients("GAME");
         }
     }
 }

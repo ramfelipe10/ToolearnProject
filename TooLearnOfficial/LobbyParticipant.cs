@@ -93,10 +93,6 @@ namespace TooLearnOfficial
 
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            StartConnect();
-        }
         public void StartConnect()
         {
             try
@@ -157,6 +153,11 @@ namespace TooLearnOfficial
                 {
                     client.Client.Shutdown(SocketShutdown.Both);
                     client.Client.Close();
+                }
+                else if (message.Contains("GAME"))
+                {
+                    GameFacilitator gf = new GameFacilitator();
+                    gf.Show();
                 }
                 else
                 {

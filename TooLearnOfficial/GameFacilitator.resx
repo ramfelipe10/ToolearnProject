@@ -124,6 +124,26 @@
     <value>25</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuCircleProgressbar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7Vk9iBNREE55ZUo7LUXUO7Q4y5SWNvejgpfS
+        0kYQRLxOSI4LCGJ5KIiFSLpTbFKIBFQMB6L5ZctUYnmVxPl0smx2v/d2c+9t7g72YAnZ7M6875uZb+a9
+        K5WKv4KBgoGCgYIBwsBybW3lQm3tzKkn53J9YyzX5N9VW2/JZ+NEgwqCYGk4HG4OBoNt+WzK1fr24+Bj
+        CELBXN29/fVEApGF39CFT+Rz5tr/3Pofich1/+0unmn3+/27AH/soARABQuKLz76/dmHVwkgjfcvQrBi
+        Y4woHgsYsDgajfZsAKa/PWw+TQB582k/ETmkodgtLwwQnMFpFhB4ZuvlowSQL987DAjuBd1u93zuYBRE
+        xwZCUuW3RquK1Luyc+tXtD5WG3f+pL3f6/VWcgOjimSLRAdFH13A2cdbS5DbS/X1IAKmjYWmRFXcBfn0
+        HVtNiPo8yMLgcn2jcnHnZpg6AI4IGiLU9q5oKq+JvJb7h/EoZAEUfUYWe06A/GRghKB789qzPi9OaF0I
+        iOs+HAGMyvAMWbjnLcWg8YtgS9i/xvxISvsZZwxF2fERibgNWfTzOBjUkLMvlVtWGzPq5OxIDSCNUHcE
+        TMXJhxisknAHTkZTXhZ/7+I+ndOLSS7CnzMQRl7bySdjx1Vu0xaEEcV7FjDZhbqkLcbld50gEnXpYrPE
+        tB2a72Q0w8ve/bKOm+tApyBZP3EaV1gP8dXNTYGBBBP5HWcIpPkRplrYjzsZTXkZRJGIuDVgTLXEqJsU
+        pgAxSP6eE3kGKZx4G+Riq0MdsELHvOcEBC9j+0mi0nQ2TAxgbCf1cehlLy+GnzAV8a1eOmexTZYf0iwO
+        sB0t+4iMNkF6rOSVMBZyjZLzEY7taEnq5bUPokIbyhjdjqJpHrXba8+gkcA+JBdR0e0oPSjQvft21lQD
+        MYiy5eBhkmvjxTkV2/hMxWB6poUJmY0UeB97C4MShoOi90MHlp9gysYkUThTStLTxoWAmALTRsn6i+ko
+        NPU+yMk1nSzDXRlpYks11n8M95pHFQxvqoYFZD2ZJyBaeW/U5gaqEr2poEx1gXTEf7KquUjr3Kue4wUo
+        ldOmaA5fxaMFAwUDBQOng4G/X46LYomQbUYAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -405,24 +425,4 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>141, 17</value>
   </metadata>
-  <data name="bunifuCircleProgressbar1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVGhD7Vk9iBNREE55ZUo7LUXUO7Q4y5SWNvejgpfS
-        0kYQRLxOSI4LCGJ5KIiFSLpTbFKIBFQMB6L5ZctUYnmVxPl0smx2v/d2c+9t7g72YAnZ7M6875uZb+a9
-        K5WKv4KBgoGCgYIBwsBybW3lQm3tzKkn53J9YyzX5N9VW2/JZ+NEgwqCYGk4HG4OBoNt+WzK1fr24+Bj
-        CELBXN29/fVEApGF39CFT+Rz5tr/3Pofich1/+0unmn3+/27AH/soARABQuKLz76/dmHVwkgjfcvQrBi
-        Y4woHgsYsDgajfZsAKa/PWw+TQB582k/ETmkodgtLwwQnMFpFhB4ZuvlowSQL987DAjuBd1u93zuYBRE
-        xwZCUuW3RquK1Luyc+tXtD5WG3f+pL3f6/VWcgOjimSLRAdFH13A2cdbS5DbS/X1IAKmjYWmRFXcBfn0
-        HVtNiPo8yMLgcn2jcnHnZpg6AI4IGiLU9q5oKq+JvJb7h/EoZAEUfUYWe06A/GRghKB789qzPi9OaF0I
-        iOs+HAGMyvAMWbjnLcWg8YtgS9i/xvxISvsZZwxF2fERibgNWfTzOBjUkLMvlVtWGzPq5OxIDSCNUHcE
-        TMXJhxisknAHTkZTXhZ/7+I+ndOLSS7CnzMQRl7bySdjx1Vu0xaEEcV7FjDZhbqkLcbld50gEnXpYrPE
-        tB2a72Q0w8ve/bKOm+tApyBZP3EaV1gP8dXNTYGBBBP5HWcIpPkRplrYjzsZTXkZRJGIuDVgTLXEqJsU
-        pgAxSP6eE3kGKZx4G+Riq0MdsELHvOcEBC9j+0mi0nQ2TAxgbCf1cehlLy+GnzAV8a1eOmexTZYf0iwO
-        sB0t+4iMNkF6rOSVMBZyjZLzEY7taEnq5bUPokIbyhjdjqJpHrXba8+gkcA+JBdR0e0oPSjQvft21lQD
-        MYiy5eBhkmvjxTkV2/hMxWB6poUJmY0UeB97C4MShoOi90MHlp9gysYkUThTStLTxoWAmALTRsn6i+ko
-        NPU+yMk1nSzDXRlpYks11n8M95pHFQxvqoYFZD2ZJyBaeW/U5gaqEr2poEx1gXTEf7KquUjr3Kue4wUo
-        ldOmaA5fxaMFAwUDBQOng4G/X46LYomQbUYAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>
