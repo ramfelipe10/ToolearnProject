@@ -29,7 +29,7 @@ namespace TooLearnOfficial
             InitializeComponent();
             
            
-            -
+            
             listener.Start(100);
             lsbJoined.Items.Add("Waiting for connections...");
             try
