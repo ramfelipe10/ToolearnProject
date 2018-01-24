@@ -358,6 +358,7 @@
             this.splitPicture6.Size = new System.Drawing.Size(99, 81);
             this.splitPicture6.TabIndex = 141;
             this.splitPicture6.TabStop = false;
+            this.splitPicture6.Click += new System.EventHandler(this.splitPicture6_Click);
             // 
             // splitPicture5
             // 
@@ -368,6 +369,7 @@
             this.splitPicture5.Size = new System.Drawing.Size(99, 81);
             this.splitPicture5.TabIndex = 140;
             this.splitPicture5.TabStop = false;
+            this.splitPicture5.Click += new System.EventHandler(this.splitPicture5_Click);
             // 
             // splitPicture4
             // 
@@ -378,6 +380,7 @@
             this.splitPicture4.Size = new System.Drawing.Size(99, 81);
             this.splitPicture4.TabIndex = 139;
             this.splitPicture4.TabStop = false;
+            this.splitPicture4.Click += new System.EventHandler(this.splitPicture4_Click);
             // 
             // splitPicture3
             // 
@@ -388,6 +391,7 @@
             this.splitPicture3.Size = new System.Drawing.Size(99, 81);
             this.splitPicture3.TabIndex = 138;
             this.splitPicture3.TabStop = false;
+            this.splitPicture3.Click += new System.EventHandler(this.splitPicture3_Click);
             // 
             // splitPicture2
             // 
@@ -398,6 +402,7 @@
             this.splitPicture2.Size = new System.Drawing.Size(99, 81);
             this.splitPicture2.TabIndex = 137;
             this.splitPicture2.TabStop = false;
+            this.splitPicture2.Click += new System.EventHandler(this.splitPicture2_Click);
             // 
             // splitPicture1
             // 
@@ -585,7 +590,7 @@
             this.bunifuFlatButton3.IconVisible = true;
             this.bunifuFlatButton3.IconZoom = 90D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(26, 69);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(667, 72);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -672,7 +677,6 @@
         private System.Windows.Forms.TextBox textBoxQuizTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox splitPicture;
         private System.Windows.Forms.PictureBox splitPicture9;
         private System.Windows.Forms.PictureBox splitPicture7;
         private System.Windows.Forms.PictureBox splitPicture6;
@@ -704,5 +708,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
+        public System.Windows.Forms.PictureBox splitPicture;
     }
 }

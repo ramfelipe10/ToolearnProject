@@ -16,7 +16,9 @@ namespace TooLearnOfficial
 
         string imagesrc;
 
-        public static string SetValueForText2 = "";
+        public static string SetValueForText2 = "", SetValueForText3 = "";
+        public static int SetWidth, SetHeight;
+        
         
        
 
@@ -32,13 +34,13 @@ namespace TooLearnOfficial
             if (splitPicture.ImageLocation != null)
             {
 
-                var imgarray = new Image[9];
+               var imgarray = new Image[9];
                 // var img = Image.FromFile(@"C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\TooLearn Pictures\After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial.jpg", true); //change code to query image into database
                 var img = Image.FromFile(imagesrc, true); //Use ImageLocation Of Recent Upload
 
-                for (int x = 0; x < 3; x++)
+                for (int x = 0; x < 3; x++) //Row
                 {
-                    for (int y = 0; y < 3; y++)
+                    for (int y = 0; y < 3; y++) //Column
                     {
                         var index = x * 3 + y;
                         imgarray[index] = new Bitmap(splitPicture.Image.Width / 3, splitPicture.Image.Height / 3);
@@ -49,25 +51,13 @@ namespace TooLearnOfficial
                                         splitPicture.Image.Height / 3), GraphicsUnit.Pixel);
                         graphics.Dispose();
 
-
-                        /*
-                        var index = x * 3 + y;
-                        imgarray[index] = new Bitmap(104, 104);
-                        var graphics = Graphics.FromImage(imgarray[index]);
-                        graphics.DrawImage(img, new Rectangle(0, 0, 104, 104), new Rectangle(x * 150, y * 150, 150, 150), GraphicsUnit.Pixel);
-                        graphics.Dispose();
-
-
-
-
-                        Rectangle r = new Rectangle(i * (pictureBox1.Image.Width / 3),
-                                            y * (pictureBox1.Image.Height / 3),
-                                            pictureBox1.Image.Width / 3,
-                                            pictureBox1.Image.Height / 3);       */
-
-
+                                
+                   
                     }
                 }
+
+
+
 
 
                 splitPicture1.Image = imgarray[0];
@@ -81,15 +71,6 @@ namespace TooLearnOfficial
                 splitPicture9.Image = imgarray[8];
 
 
-                var image1 = splitPicture1.Image;
-                var image2 = splitPicture2.Image;
-                var image3 = splitPicture3.Image;
-                var image4 = splitPicture4.Image;
-                var image5 = splitPicture5.Image;
-                var image6 = splitPicture6.Image;
-                var image7 = splitPicture7.Image;
-                var image8 = splitPicture8.Image;
-                var image9 = splitPicture9.Image;
                 
 
                
@@ -114,7 +95,7 @@ namespace TooLearnOfficial
 
         private void splitPicture1_Click(object sender, EventArgs e)
         {
-
+          Image sample1 = splitPicture1.Image.Clone() as Image;
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
@@ -185,8 +166,7 @@ namespace TooLearnOfficial
 
         private void create_Click(object sender, EventArgs e)
         {
-
-            SetValueForText2 = textBoxQuizTitle.Text;
+           
                   
             if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0)
             {
@@ -197,6 +177,12 @@ namespace TooLearnOfficial
 
             else
             {
+                SetValueForText3 = splitPicture.ImageLocation;
+                SetValueForText2 = textBoxQuizTitle.Text;
+                SetWidth=splitPicture.Image.Width;
+                SetHeight=splitPicture.Image.Height;
+
+
 
                 PicturePuzzle pz = new PicturePuzzle();
                 pz.Show();
@@ -211,6 +197,31 @@ namespace TooLearnOfficial
             bunifuGradientPanel1.Enabled = true;
             bunifuFlatButton1.Enabled = true;
             bunifuFlatButton2.Enabled = true;
+        }
+
+        private void splitPicture2_Click(object sender, EventArgs e)
+        {
+            Image sample2 = splitPicture2.Image.Clone() as Image;
+        }
+
+        private void splitPicture3_Click(object sender, EventArgs e)
+        {
+            Image sample3 = splitPicture3.Image.Clone() as Image;
+        }
+
+        private void splitPicture4_Click(object sender, EventArgs e)
+        {
+          Image sample4 = splitPicture4.Image.Clone() as Image;
+        }
+
+        private void splitPicture5_Click(object sender, EventArgs e)
+        {
+            Image sample5 = splitPicture5.Image.Clone() as Image;
+        }
+
+        private void splitPicture6_Click(object sender, EventArgs e)
+        {
+            Image sample6 = splitPicture6.Image.Clone() as Image;
         }
     }
 }

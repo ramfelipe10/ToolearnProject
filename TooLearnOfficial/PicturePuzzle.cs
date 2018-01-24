@@ -19,9 +19,17 @@ namespace TooLearnOfficial
         SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlDataReader dr;
         int currentNumOfItems,numOfItems;
-        string RightAnswer, imageLocation,title;
+        string RightAnswer;
+        string imageLocation;
+        string title = QuizPicturePuzzle.SetValueForText2;
+        string Picture = QuizPicturePuzzle.SetValueForText3;
+        int PictureWidth = QuizPicturePuzzle.SetWidth;
+        int PictureHeight = QuizPicturePuzzle.SetHeight;
         byte[] imgFile = null;
 
+
+
+       
 
         List<Panel> listPanel = new List<Panel>();
 
@@ -31,6 +39,58 @@ namespace TooLearnOfficial
         public PicturePuzzle()
         {
             InitializeComponent();
+            slice_image();
+        }
+
+
+
+        void slice_image()
+        {
+
+            var imgarray = new Image[9];
+           
+            var img = Image.FromFile(Picture, true); //Use ImageLocation Of Recent Upload
+
+            for (int x = 0; x < 3; x++) //Row
+            {
+                for (int y = 0; y < 3; y++) //Column
+                {
+                    var index = x * 3 + y;
+
+                    QuizPicturePuzzle CC = (QuizPicturePuzzle)Application.OpenForms["QuizPicturePuzzle"];
+
+
+
+                    
+
+                                        imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
+                                        var graphics = Graphics.FromImage(imgarray[index]);
+                                        graphics.DrawImage(img, new Rectangle(0, 0, 154, 111), new Rectangle(x * (PictureWidth / 3),
+                                                         y * (PictureHeight / 3),
+                                                         PictureWidth / 3,
+                                                        PictureHeight / 3), GraphicsUnit.Pixel);
+                                        graphics.Dispose(); 
+
+
+                   
+
+                }
+            }
+
+            
+         /*   splitPicture1.Image = imgarray[0];
+            splitPicture2.Image = imgarray[1];
+            splitPicture3.Image = imgarray[2];
+            splitPicture4.Image = imgarray[3];
+            splitPicture5.Image = imgarray[4];
+            splitPicture6.Image = imgarray[5];
+            splitPicture7.Image = imgarray[6];
+            splitPicture8.Image = imgarray[7];
+            splitPicture9.Image = imgarray[8]; */
+
+            pictureBox6.Image = imgarray[0];
+          
+
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
@@ -284,13 +344,22 @@ namespace TooLearnOfficial
         private void PicturePuzzle_Load(object sender, EventArgs e)
         {
 
-           title = QuizPicturePuzzle.SetValueForText2;
+
+
+
+            
+
             currentNumOfItems = 1;
             numOfItems = 9;
 
             listPanel.Add(MultipleChoice);
             listPanel.Add(trueORfalse);
             listPanel.Add(shortAnswer);
+
+            
+
+
+
 
 
         }
