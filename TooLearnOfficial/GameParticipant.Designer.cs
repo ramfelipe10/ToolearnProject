@@ -37,13 +37,17 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LabelTimer = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.LabelQuestion = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblArray0 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblArray1 = new System.Windows.Forms.Label();
+            this.lblArray2 = new System.Windows.Forms.Label();
+            this.lblArray3 = new System.Windows.Forms.Label();
+            this.lblArray4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -157,18 +161,19 @@
             this.LabelTimer.TabIndex = 21;
             this.LabelTimer.Text = "TIMER HERE!";
             // 
-            // LabelQuestion
+            // lblArray0
             // 
-            this.LabelQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.LabelQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelQuestion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelQuestion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LabelQuestion.Location = new System.Drawing.Point(0, 0);
-            this.LabelQuestion.Name = "LabelQuestion";
-            this.LabelQuestion.Size = new System.Drawing.Size(993, 164);
-            this.LabelQuestion.TabIndex = 20;
-            this.LabelQuestion.Text = "QUESTIONS ARE HERE!";
-            this.LabelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblArray0.BackColor = System.Drawing.Color.Transparent;
+            this.lblArray0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblArray0.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArray0.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblArray0.Location = new System.Drawing.Point(0, 0);
+            this.lblArray0.Name = "lblArray0";
+            this.lblArray0.Size = new System.Drawing.Size(993, 164);
+            this.lblArray0.TabIndex = 20;
+            this.lblArray0.Text = "QUESTIONS ARE HERE!";
+            this.lblArray0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblArray0.Visible = false;
             // 
             // bunifuCustomLabel3
             // 
@@ -296,11 +301,59 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.LabelQuestion);
+            this.panel1.Controls.Add(this.lblArray0);
             this.panel1.Location = new System.Drawing.Point(21, 265);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(993, 164);
             this.panel1.TabIndex = 27;
+            // 
+            // lblArray1
+            // 
+            this.lblArray1.AutoSize = true;
+            this.lblArray1.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblArray1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArray1.Location = new System.Drawing.Point(81, 505);
+            this.lblArray1.Name = "lblArray1";
+            this.lblArray1.Size = new System.Drawing.Size(85, 24);
+            this.lblArray1.TabIndex = 28;
+            this.lblArray1.Text = "Choice 1";
+            this.lblArray1.Visible = false;
+            // 
+            // lblArray2
+            // 
+            this.lblArray2.AutoSize = true;
+            this.lblArray2.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblArray2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArray2.Location = new System.Drawing.Point(335, 505);
+            this.lblArray2.Name = "lblArray2";
+            this.lblArray2.Size = new System.Drawing.Size(85, 24);
+            this.lblArray2.TabIndex = 29;
+            this.lblArray2.Text = "Choice 2";
+            this.lblArray2.Visible = false;
+            // 
+            // lblArray3
+            // 
+            this.lblArray3.AutoSize = true;
+            this.lblArray3.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblArray3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArray3.Location = new System.Drawing.Point(594, 505);
+            this.lblArray3.Name = "lblArray3";
+            this.lblArray3.Size = new System.Drawing.Size(85, 24);
+            this.lblArray3.TabIndex = 30;
+            this.lblArray3.Text = "Choice 3";
+            this.lblArray3.Visible = false;
+            // 
+            // lblArray4
+            // 
+            this.lblArray4.AutoSize = true;
+            this.lblArray4.BackColor = System.Drawing.Color.SeaGreen;
+            this.lblArray4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArray4.Location = new System.Drawing.Point(855, 505);
+            this.lblArray4.Name = "lblArray4";
+            this.lblArray4.Size = new System.Drawing.Size(85, 24);
+            this.lblArray4.TabIndex = 31;
+            this.lblArray4.Text = "Choice 4";
+            this.lblArray4.Visible = false;
             // 
             // GameParticipant
             // 
@@ -308,6 +361,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1045, 615);
+            this.Controls.Add(this.lblArray4);
+            this.Controls.Add(this.lblArray3);
+            this.Controls.Add(this.lblArray2);
+            this.Controls.Add(this.lblArray1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuFlatButton4);
@@ -343,10 +400,14 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private Bunifu.Framework.UI.BunifuCustomLabel LabelQuestion;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblArray0;
         private Bunifu.Framework.UI.BunifuCustomLabel LabelTimer;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblArray4;
+        private System.Windows.Forms.Label lblArray3;
+        private System.Windows.Forms.Label lblArray2;
+        private System.Windows.Forms.Label lblArray1;
     }
 }

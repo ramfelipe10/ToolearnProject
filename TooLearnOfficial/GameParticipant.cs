@@ -114,11 +114,19 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
-                var index = 5
-                // imgarray[index]
-
-               // bunifuCustomLabel[1].Text = message;
-
+                int counter = 0;
+                while(message != null)
+                {
+                    Label[] lblArray = new Label[15];
+                    lblArray[counter].Text = message;
+                    counter += 1;
+                    
+                }
+                lblArray0.Visible = true;
+                lblArray1.Visible = true;
+                lblArray2.Visible = true;
+                lblArray3.Visible = true;
+                lblArray4.Visible = true;
 
                 if (message.Contains("DISCONNECT"))
                 {
@@ -156,7 +164,7 @@ namespace TooLearnOfficial
             i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
 
             LabelTimer.Text = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
-            LabelQuestion.Text =ScalarReturn ("select question from QuestionAnswers where quiz_id='"+ i + "'");
+            lblArray0.Text =ScalarReturn ("select question from QuestionAnswers where quiz_id='"+ i + "'");
             bunifuFlatButton1.Text = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
             bunifuFlatButton2.Text = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
             bunifuFlatButton3.Text = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");

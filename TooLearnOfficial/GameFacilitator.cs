@@ -13,6 +13,7 @@ using System.Net.Sockets;
 using System.Threading;
 
 
+
 namespace TooLearnOfficial
 
 {
@@ -193,7 +194,26 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e)
         {
-            
+            SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+            DataTable sad = new DataTable();
+            rad.Fill(sad);
+           string me= sad.Rows[0][0].ToString();
+            LabelQuestion.Text = me;
+            SendToAllClients(me);
+
+            SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+            DataTable dede = new DataTable();
+            dada.Fill(dede);
+            string ma = dede.Rows[0][0].ToString();
+            SendToAllClients(ma);
+
+
+            SqlDataAdapter fad = new SqlDataAdapter(" Select answer_b from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+            DataTable fed = new DataTable();
+            fad.Fill(fed);
+            string mo = fed.Rows[0][0].ToString();
+            SendToAllClients(mo);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
