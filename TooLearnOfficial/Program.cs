@@ -18,17 +18,7 @@ namespace TooLearnOfficial
         public static int user_id, par_id; // For Participant
         public static String serverIP;
         public static String source, db, id, password;// For Participant
-        public static string GetLocalIPAddress()
-        {
-            var host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (var ip in host.AddressList)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    return ip.ToString();
-                }
-            }
-        }
+        
 
 
 [STAThread]
