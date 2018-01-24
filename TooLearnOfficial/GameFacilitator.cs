@@ -228,5 +228,10 @@ namespace TooLearnOfficial
         {
             this.Close();
         }
+
+        private void LabelQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

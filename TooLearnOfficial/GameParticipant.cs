@@ -114,6 +114,12 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
+                var index = 5
+                // imgarray[index]
+
+               // bunifuCustomLabel[1].Text = message;
+
+
                 if (message.Contains("DISCONNECT"))
                 {
                     client.Client.Shutdown(SocketShutdown.Both);
