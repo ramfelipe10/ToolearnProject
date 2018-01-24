@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets;
 using System.Windows.Forms;
 
 namespace TooLearnOfficial
@@ -14,10 +16,22 @@ namespace TooLearnOfficial
         /// 
         public static String Session_id, PSession_id; // For Facilitator
         public static int user_id, par_id; // For Participant
-
+        public static String serverIP;
         public static String source, db, id, password;// For Participant
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+        }
 
-        [STAThread]
+
+[STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net;
+using System.Net.Sockets;
 
 namespace TooLearnOfficial
 {
@@ -57,13 +59,24 @@ namespace TooLearnOfficial
             load_server();
         }
 
+
         private void Connect_Click(object sender, EventArgs e)
         {
 
             String  DB, ID, Password;
             Object Source;
+            string servername = Server.SelectedItem.ToString();
+            IPHostEntry host = Dns.GetHostEntry(servername); //get my IP
+            foreach (IPAddress ip in host.AddressList)
+            {
 
-           
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    Program.serverIP = ip.ToString();
+
+                }
+            }
+
 
             if (Server.SelectedItem != null)
             {

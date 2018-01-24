@@ -20,12 +20,16 @@ namespace TooLearnOfficial
         // Set Buffer as holder of data being sent and received
         private byte[] buffer = new byte[buffer_size];
         // Set the TCPListeneer on port 13000;
-        private TcpListener listener = new TcpListener(IPAddress.Parse("192.168.43.84"), 13000);
+        public static string hostIP;
+        public TcpListener listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
         public LobbyFacilitator()
         {
             InitializeComponent();
+            
+           
+            -
             listener.Start(100);
             lsbJoined.Items.Add("Waiting for connections...");
             try
@@ -154,7 +158,16 @@ namespace TooLearnOfficial
 
         private void LobbyFacilitator_Load(object sender, EventArgs e)
         {
+            var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
+            foreach (var ip in host.AddressList)
+            {
 
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+
+                    hostIP = ip.ToString();
+                }
+            }
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)

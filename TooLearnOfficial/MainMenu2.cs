@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Sockets;
 
 namespace TooLearnOfficial
 {
@@ -14,7 +16,7 @@ namespace TooLearnOfficial
     {
 
         bool closing = true;
-
+        
 
         public MainMenu2()
         {
@@ -54,6 +56,17 @@ namespace TooLearnOfficial
         private void MainMenu2_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            string ram = "ASUS";
+            IPHostEntry host = Dns.GetHostEntry(ram); //get my IP
+            foreach (IPAddress ip in host.AddressList)
+            {
+
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    listBox1.Items.Add(ip.ToString());
+                    
+                }
+            }
         }
 
         private void buttonAboutSystem_Click(object sender, EventArgs e)
@@ -120,6 +133,9 @@ namespace TooLearnOfficial
 
         }
 
-       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

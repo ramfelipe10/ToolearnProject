@@ -19,7 +19,7 @@ namespace TooLearnOfficial
         private TcpClient _client = new TcpClient();
         private const int _buffer_size = 2048;
         private byte[] _buffer = new byte[_buffer_size];
-        private string _IPAddress = "127.0.0.1";
+        private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
 
         public LobbyParticipant()
