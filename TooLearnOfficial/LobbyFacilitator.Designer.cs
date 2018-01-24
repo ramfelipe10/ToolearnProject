@@ -44,7 +44,6 @@
             this.lsbJoined = new System.Windows.Forms.ListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBoxIP = new System.Windows.Forms.TextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -259,21 +258,12 @@
             this.label1.TabIndex = 153;
             this.label1.Text = "Facilitator Lobby";
             // 
-            // txtBoxIP
-            // 
-            this.txtBoxIP.Location = new System.Drawing.Point(22, 100);
-            this.txtBoxIP.Name = "txtBoxIP";
-            this.txtBoxIP.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxIP.TabIndex = 158;
-            this.txtBoxIP.Visible = false;
-            // 
             // LobbyFacilitator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(761, 420);
-            this.Controls.Add(this.txtBoxIP);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuGradientPanel2);
@@ -310,6 +300,5 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lsbJoined;
-        private System.Windows.Forms.TextBox txtBoxIP;
     }
 }

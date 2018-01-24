@@ -56,17 +56,7 @@ namespace TooLearnOfficial
         private void MainMenu2_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            string ram = "ASUS";
-            IPHostEntry host = Dns.GetHostEntry(ram); //get my IP
-            foreach (IPAddress ip in host.AddressList)
-            {
-
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    listBox1.Items.Add(ip.ToString());
-                    
-                }
-            }
+            
         }
 
         private void buttonAboutSystem_Click(object sender, EventArgs e)
