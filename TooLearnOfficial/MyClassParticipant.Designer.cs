@@ -50,8 +50,8 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.buttonCreateClassroom = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.codeme = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -307,11 +307,6 @@
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(301, 98);
             this.bunifuGradientPanel2.TabIndex = 159;
             // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 5;
-            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
-            // 
             // codeme
             // 
             this.codeme.BackColor = System.Drawing.Color.Gray;
@@ -332,6 +327,11 @@
             this.codeme.TabIndex = 159;
             this.codeme.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
+            // 
             // MyClassParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +351,7 @@
             this.Name = "MyClassParticipant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyClassParticipant";
+            this.Load += new System.EventHandler(this.MyClassParticipant_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

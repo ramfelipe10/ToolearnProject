@@ -462,7 +462,7 @@ namespace TooLearnOfficial
                     SetValueForText1 = dt.Rows[0][0].ToString();//Getting the Name of The Classroom
 
                     EditClassroom EC = new EditClassroom();
-                    EC.Show();
+                    EC.ShowDialog();
 
 
 
@@ -484,6 +484,11 @@ namespace TooLearnOfficial
             }
                                  
                         
+        }
+
+        private void CreateMyClassroom_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -81,7 +81,7 @@ namespace TooLearnOfficial
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             LobbyFacilitator lobby = new LobbyFacilitator();
-            lobby.Show();
+            lobby.ShowDialog();
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -162,7 +162,9 @@ namespace TooLearnOfficial
             }
         }
 
+        private void QuizBank_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

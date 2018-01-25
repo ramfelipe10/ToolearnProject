@@ -462,7 +462,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(671, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 160;
             this.pictureBox1.TabStop = false;
             // 
@@ -496,6 +496,7 @@
             this.Name = "CreateMyClassroom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateClassroom";
+            this.Load += new System.EventHandler(this.CreateMyClassroom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);

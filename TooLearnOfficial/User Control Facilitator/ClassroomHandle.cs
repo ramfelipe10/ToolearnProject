@@ -118,7 +118,7 @@ namespace TooLearnOfficial.User_Control
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             AddParticipantAccount pa = new AddParticipantAccount();
-            pa.Show();
+            pa.ShowDialog();
             this.Hide();
         }
 

@@ -189,6 +189,10 @@ namespace TooLearnOfficial
 
         }
 
+        private void MyClassParticipant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

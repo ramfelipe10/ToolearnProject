@@ -303,6 +303,7 @@
             this.Name = "EditFacilitatorProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Profile";
+            this.Load += new System.EventHandler(this.EditFacilitatorProfile_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

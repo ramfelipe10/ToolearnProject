@@ -142,6 +142,9 @@ namespace TooLearnOfficial
             }
         }
 
+        private void ParticipantSQLConnect_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

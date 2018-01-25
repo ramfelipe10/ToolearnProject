@@ -174,5 +174,10 @@ namespace TooLearnOfficial
             Send(txtProfile.Text);
             ThreadHelper.lsbAddItem(this, lsbWait, Convert.ToString(Program.par_id) + " is ready!");
         }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

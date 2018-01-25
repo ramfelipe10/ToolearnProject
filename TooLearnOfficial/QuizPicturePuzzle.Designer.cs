@@ -65,10 +65,10 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.create = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -546,21 +546,6 @@
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(765, 87);
             this.bunifuGradientPanel2.TabIndex = 151;
             // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 7;
-            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
-            // 
-            // bunifuElipse5
-            // 
-            this.bunifuElipse5.ElipseRadius = 7;
-            this.bunifuElipse5.TargetControl = this.textBoxQuizTitle;
-            // 
-            // bunifuElipse6
-            // 
-            this.bunifuElipse6.ElipseRadius = 7;
-            this.bunifuElipse6.TargetControl = this.textBoxQuizTimeLimit;
-            // 
             // bunifuDropdown1
             // 
             this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
@@ -577,6 +562,21 @@
             this.bunifuDropdown1.selectedIndex = 0;
             this.bunifuDropdown1.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown1.TabIndex = 183;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 7;
+            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 7;
+            this.bunifuElipse5.TargetControl = this.textBoxQuizTitle;
+            // 
+            // bunifuElipse6
+            // 
+            this.bunifuElipse6.ElipseRadius = 7;
+            this.bunifuElipse6.TargetControl = this.textBoxQuizTimeLimit;
             // 
             // QuizPicturePuzzle
             // 
@@ -599,6 +599,7 @@
             this.Name = "QuizPicturePuzzle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Picture Puzzle";
+            this.Load += new System.EventHandler(this.QuizPicturePuzzle_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();

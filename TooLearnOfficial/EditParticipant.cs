@@ -16,5 +16,10 @@ namespace TooLearnOfficial
         {
             InitializeComponent();
         }
+
+        private void EditParticipant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,13 +30,13 @@ namespace TooLearnOfficial.User_Control
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             QuizBee qb = new QuizBee();
-            qb.Show();
+            qb.ShowDialog();
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             QuizPicturePuzzle qpp = new QuizPicturePuzzle();
-            qpp.Show();
+            qpp.ShowDialog();
             
         }
     }

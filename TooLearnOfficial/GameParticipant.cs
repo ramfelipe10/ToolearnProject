@@ -189,5 +189,10 @@ namespace TooLearnOfficial
             return s;
 
         }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

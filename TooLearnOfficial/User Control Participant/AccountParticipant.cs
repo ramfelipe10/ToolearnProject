@@ -22,13 +22,13 @@ namespace TooLearnOfficial.User_Control_Participant
         private void EditProfile_Click(object sender, EventArgs e)
         {
             EditParticipantProfile EP = new EditParticipantProfile();
-            EP.Show();
+            EP.ShowDialog();
         }
 
         private void MyClassroom_Click(object sender, EventArgs e)
         {
             MyClassParticipant MP = new MyClassParticipant();
-            MP.Show();
+            MP.ShowDialog();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace TooLearnOfficial.User_Control_Participant
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
             LobbyParticipant lobby = new LobbyParticipant();
-            lobby.Show();
+            lobby.ShowDialog();
         }
 
 

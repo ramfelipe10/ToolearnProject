@@ -129,13 +129,18 @@ namespace TooLearnOfficial
         private void buttonCreateClassroom_Click(object sender, EventArgs e)
         {
             CreateMyClassroom Create = new CreateMyClassroom();
-            Create.Show();
+            Create.ShowDialog();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
         
             Load_Class(); 
+        }
+
+        private void MyClass_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

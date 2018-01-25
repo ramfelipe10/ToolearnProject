@@ -187,8 +187,13 @@ namespace TooLearnOfficial
         {
             SendToAllClients("GAME");
             GameFacilitator gf = new GameFacilitator();
-            gf.Show();
+            gf.ShowDialog();
             
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -29,14 +29,16 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             QuizBee qb = new QuizBee();
-            qb.Show();
+            qb.ShowDialog();
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             QuizPicturePuzzle qpp = new QuizPicturePuzzle();
-            qpp.Show();
+            qpp.ShowDialog();
         }
     }
 }

@@ -41,7 +41,7 @@ namespace TooLearnOfficial.User_Control_Participant
         {
             StartConnect();
             LobbyParticipant lobby = new LobbyParticipant();
-            lobby.Show();
+            lobby.ShowDialog();
         }
         
         private void StartConnect()

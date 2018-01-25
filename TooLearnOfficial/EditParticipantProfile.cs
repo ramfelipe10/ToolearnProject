@@ -120,6 +120,11 @@ namespace TooLearnOfficial
         {
 
         }
+
+        private void bunifuGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

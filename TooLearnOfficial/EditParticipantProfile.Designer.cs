@@ -284,6 +284,7 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(477, 225);
             this.bunifuGradientPanel2.TabIndex = 91;
+            this.bunifuGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel2_Paint);
             // 
             // bunifuElipse2
             // 

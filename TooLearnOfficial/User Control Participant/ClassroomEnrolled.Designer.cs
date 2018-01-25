@@ -133,10 +133,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TooLearnOfficial.Properties.Resources._20916861_1628655903872405_932534712_n;
-            this.pictureBox2.Location = new System.Drawing.Point(543, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(545, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(230, 104);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 145;
             this.pictureBox2.TabStop = false;
             // 
