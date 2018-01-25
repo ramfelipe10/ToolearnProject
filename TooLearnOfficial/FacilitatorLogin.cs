@@ -71,9 +71,10 @@ namespace TooLearnOfficial
            
                  catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
             }
-       
+
 
         }
 
@@ -189,7 +190,8 @@ namespace TooLearnOfficial
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
                 }
 
             }
@@ -247,8 +249,9 @@ namespace TooLearnOfficial
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
-                   
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+
                 }
 
 

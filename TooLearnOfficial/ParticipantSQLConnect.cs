@@ -66,7 +66,7 @@ namespace TooLearnOfficial
             String  DB, ID, Password;
             Object Source;
             string servername = Server.SelectedItem.ToString();
-            IPHostEntry host = Dns.GetHostEntry(servername); //get my IP
+            IPHostEntry host = Dns.GetHostEntry(servername); //get the ServerIP
             foreach (IPAddress ip in host.AddressList)
             {
 
@@ -80,7 +80,7 @@ namespace TooLearnOfficial
 
             if (Server.SelectedItem != null)
             {
-                Source = Server.SelectedItem.ToString();
+                Source = Server.SelectedItem.ToString() + ",1433";
                 DB = "Toolearn";
                 ID = IDbox.Text;
                 Password = Passwordbox.Text;
