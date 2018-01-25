@@ -96,5 +96,73 @@ namespace TooLearnOfficial
             }
 
         }
+
+        private void DeleteQuiz_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                {
+
+                    SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
+
+
+                    DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+                    if (result == DialogResult.Yes)
+                    {
+
+                        con.Open();
+
+                        String qer = "DELETE FROM QuestionAnswers WHERE quiz_id= '" + ID + "' ";
+                        String query = "DELETE FROM quizzes WHERE quiz_id= '" + ID + "' AND facilitator_id = '" + Program.user_id + "' ";
+                        SqlDataAdapter sad = new SqlDataAdapter(qer, con);
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                        int n = sad.SelectCommand.ExecuteNonQuery();
+                        int m = sda.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+                        if (n >= 0 && m > 0)
+                        {
+                            Load_Quiz();
+                            bunifuCustomDataGrid1.ClearSelection();
+                           
+                            Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
+                            
+
+                        }
+
+                        else
+                        {
+                            Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
+                            
+                            bunifuCustomDataGrid1.ClearSelection();
+                           
+
+                        }
+                    }//end if result
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+        }
+
+
+
     }
 }
