@@ -18,6 +18,7 @@ namespace TooLearnOfficial
     {
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        string QuizName;
         public QuizBank()
         {
             InitializeComponent();
@@ -81,6 +82,19 @@ namespace TooLearnOfficial
         {
             LobbyFacilitator lobby = new LobbyFacilitator();
             lobby.Show();
+        }
+
+        private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
+            {
+                QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+
+                label4.Text = QuizName;
+       
+
+            }
+
         }
     }
 }

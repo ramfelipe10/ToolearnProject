@@ -16,7 +16,7 @@ namespace TooLearnOfficial
 
         string imagesrc;
 
-        public static string SetValueForText2 = "", SetValueForText3 = "";
+        public static string SetValueForText2 = "", SetValueForText3 = "", time = "";
         public static int SetWidth, SetHeight;
         
         
@@ -93,10 +93,7 @@ namespace TooLearnOfficial
            
         }
 
-        private void splitPicture1_Click(object sender, EventArgs e)
-        {
-          Image sample1 = splitPicture1.Image.Clone() as Image;
-        }
+       
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
@@ -179,11 +176,12 @@ namespace TooLearnOfficial
             {
                 SetValueForText3 = splitPicture.ImageLocation;
                 SetValueForText2 = textBoxQuizTitle.Text;
+                time = textBoxQuizTimeLimit.Text;
                 SetWidth=splitPicture.Image.Width;
                 SetHeight=splitPicture.Image.Height;
 
 
-
+                this.Hide();
                 PicturePuzzle pz = new PicturePuzzle();
                 pz.Show();
             }
@@ -191,37 +189,7 @@ namespace TooLearnOfficial
 
         }
 
-        private void bunifuFlatButton3_Click(object sender, EventArgs e)
-        {
-            splitPicture.Enabled = true;
-            bunifuGradientPanel1.Enabled = true;
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = true;
-        }
-
-        private void splitPicture2_Click(object sender, EventArgs e)
-        {
-            Image sample2 = splitPicture2.Image.Clone() as Image;
-        }
-
-        private void splitPicture3_Click(object sender, EventArgs e)
-        {
-            Image sample3 = splitPicture3.Image.Clone() as Image;
-        }
-
-        private void splitPicture4_Click(object sender, EventArgs e)
-        {
-          Image sample4 = splitPicture4.Image.Clone() as Image;
-        }
-
-        private void splitPicture5_Click(object sender, EventArgs e)
-        {
-            Image sample5 = splitPicture5.Image.Clone() as Image;
-        }
-
-        private void splitPicture6_Click(object sender, EventArgs e)
-        {
-            Image sample6 = splitPicture6.Image.Clone() as Image;
-        }
+       
+       
     }
 }

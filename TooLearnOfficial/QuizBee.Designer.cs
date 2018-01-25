@@ -57,7 +57,6 @@
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.button3 = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -104,7 +103,6 @@
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.currentnumMC = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -130,7 +128,6 @@
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -148,7 +145,6 @@
             this.CurrentNumTF = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.bunifuDropdown5 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -158,6 +154,10 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.bunifuDropdown4 = new Bunifu.Framework.UI.BunifuDropdown();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -462,13 +462,13 @@
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.bunifuGradientPanel1.Controls.Add(this.bunifuDropdown1);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton3);
             this.bunifuGradientPanel1.Controls.Add(this.textBox7);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuFlatButton5);
             this.bunifuGradientPanel1.Controls.Add(this.textBoxQuizTitle);
             this.bunifuGradientPanel1.Controls.Add(this.label2);
             this.bunifuGradientPanel1.Controls.Add(this.label5);
-            this.bunifuGradientPanel1.Controls.Add(this.label14);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.LightGray;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.LightGray;
@@ -560,17 +560,6 @@
             this.label5.Size = new System.Drawing.Size(111, 24);
             this.label5.TabIndex = 149;
             this.label5.Text = "Time Limit:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(619, 22);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(156, 17);
-            this.label14.TabIndex = 160;
-            this.label14.Text = "(Minutes- Applies to All)";
             // 
             // bunifuCustomLabel5
             // 
@@ -900,12 +889,11 @@
             this.MultipleChoice.BackColor = System.Drawing.Color.Silver;
             this.MultipleChoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultipleChoice.BackgroundImage")));
             this.MultipleChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MultipleChoice.Controls.Add(this.bunifuDropdown2);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel12);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel6);
             this.MultipleChoice.Controls.Add(this.currentnumMC);
             this.MultipleChoice.Controls.Add(this.textBox11);
-            this.MultipleChoice.Controls.Add(this.label29);
-            this.MultipleChoice.Controls.Add(this.label20);
             this.MultipleChoice.Controls.Add(this.bunifuCheckbox4);
             this.MultipleChoice.Controls.Add(this.bunifuCheckbox3);
             this.MultipleChoice.Controls.Add(this.bunifuCheckbox2);
@@ -928,6 +916,7 @@
             this.MultipleChoice.Controls.Add(this.textBoxQuizQuestion);
             this.MultipleChoice.Controls.Add(this.label4);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel1);
+            this.MultipleChoice.Controls.Add(this.label20);
             this.MultipleChoice.GradientBottomLeft = System.Drawing.Color.Silver;
             this.MultipleChoice.GradientBottomRight = System.Drawing.Color.Silver;
             this.MultipleChoice.GradientTopLeft = System.Drawing.Color.Silver;
@@ -974,30 +963,20 @@
             // 
             // textBox11
             // 
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox11.Enabled = false;
             this.textBox11.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.textBox11.Location = new System.Drawing.Point(659, 15);
+            this.textBox11.Location = new System.Drawing.Point(630, 14);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(69, 31);
+            this.textBox11.Size = new System.Drawing.Size(69, 24);
             this.textBox11.TabIndex = 204;
             this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(730, 19);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(65, 17);
-            this.label29.TabIndex = 205;
-            this.label29.Text = "(Minutes)";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(571, 18);
+            this.label20.Location = new System.Drawing.Point(542, 17);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 21);
             this.label20.TabIndex = 178;
@@ -1251,10 +1230,10 @@
             this.shortAnswer.BackColor = System.Drawing.Color.Silver;
             this.shortAnswer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("shortAnswer.BackgroundImage")));
             this.shortAnswer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.shortAnswer.Controls.Add(this.bunifuDropdown3);
             this.shortAnswer.Controls.Add(this.bunifuCustomLabel10);
             this.shortAnswer.Controls.Add(this.bunifuCustomLabel7);
             this.shortAnswer.Controls.Add(this.textBox12);
-            this.shortAnswer.Controls.Add(this.label18);
             this.shortAnswer.Controls.Add(this.label17);
             this.shortAnswer.Controls.Add(this.textBox3);
             this.shortAnswer.Controls.Add(this.label13);
@@ -1305,28 +1284,17 @@
             // 
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(659, 15);
+            this.textBox12.Location = new System.Drawing.Point(630, 14);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(69, 24);
             this.textBox12.TabIndex = 204;
             this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(730, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 17);
-            this.label18.TabIndex = 205;
-            this.label18.Text = "(Minutes)";
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(571, 18);
+            this.label17.Location = new System.Drawing.Point(542, 17);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 21);
             this.label17.TabIndex = 174;
@@ -1464,12 +1432,12 @@
             this.trueORfalse.BackColor = System.Drawing.Color.Silver;
             this.trueORfalse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("trueORfalse.BackgroundImage")));
             this.trueORfalse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.trueORfalse.Controls.Add(this.bunifuDropdown4);
             this.trueORfalse.Controls.Add(this.bunifuCustomLabel11);
             this.trueORfalse.Controls.Add(this.bunifuCustomLabel8);
             this.trueORfalse.Controls.Add(this.CurrentNumTF);
             this.trueORfalse.Controls.Add(this.textBox10);
             this.trueORfalse.Controls.Add(this.bunifuDropdown5);
-            this.trueORfalse.Controls.Add(this.label23);
             this.trueORfalse.Controls.Add(this.label24);
             this.trueORfalse.Controls.Add(this.textBox5);
             this.trueORfalse.Controls.Add(this.label25);
@@ -1528,7 +1496,7 @@
             // 
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(659, 15);
+            this.textBox10.Location = new System.Drawing.Point(630, 14);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(69, 24);
             this.textBox10.TabIndex = 180;
@@ -1556,22 +1524,11 @@
             this.bunifuDropdown5.Size = new System.Drawing.Size(144, 30);
             this.bunifuDropdown5.TabIndex = 204;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(730, 19);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(65, 17);
-            this.label23.TabIndex = 203;
-            this.label23.Text = "(Minutes)";
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(571, 18);
+            this.label24.Location = new System.Drawing.Point(542, 17);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(89, 21);
             this.label24.TabIndex = 201;
@@ -1685,6 +1642,74 @@
             this.bunifuCustomLabel3.TabIndex = 0;
             this.bunifuCustomLabel3.Text = "True/False";
             // 
+            // bunifuDropdown1
+            // 
+            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown1.BorderRadius = 5;
+            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown1.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown1.Location = new System.Drawing.Point(618, 20);
+            this.bunifuDropdown1.Name = "bunifuDropdown1";
+            this.bunifuDropdown1.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown1.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown1.selectedIndex = 0;
+            this.bunifuDropdown1.Size = new System.Drawing.Size(102, 24);
+            this.bunifuDropdown1.TabIndex = 182;
+            // 
+            // bunifuDropdown2
+            // 
+            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown2.BorderRadius = 5;
+            this.bunifuDropdown2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown2.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown2.Location = new System.Drawing.Point(701, 15);
+            this.bunifuDropdown2.Name = "bunifuDropdown2";
+            this.bunifuDropdown2.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown2.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown2.selectedIndex = 0;
+            this.bunifuDropdown2.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown2.TabIndex = 183;
+            // 
+            // bunifuDropdown3
+            // 
+            this.bunifuDropdown3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown3.BorderRadius = 5;
+            this.bunifuDropdown3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown3.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown3.Location = new System.Drawing.Point(701, 15);
+            this.bunifuDropdown3.Name = "bunifuDropdown3";
+            this.bunifuDropdown3.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown3.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown3.selectedIndex = 0;
+            this.bunifuDropdown3.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown3.TabIndex = 213;
+            // 
+            // bunifuDropdown4
+            // 
+            this.bunifuDropdown4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown4.BorderRadius = 5;
+            this.bunifuDropdown4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown4.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown4.Location = new System.Drawing.Point(701, 15);
+            this.bunifuDropdown4.Name = "bunifuDropdown4";
+            this.bunifuDropdown4.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown4.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown4.selectedIndex = 0;
+            this.bunifuDropdown4.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown4.TabIndex = 215;
+            // 
             // QuizBee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1705,12 +1730,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.TrueOrFalseLV);
-            this.Controls.Add(this.MultipleChoice);
-            this.Controls.Add(this.shortAnswer);
-            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.MultipleChoice);
+            this.Controls.Add(this.shortAnswer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";
@@ -1755,7 +1780,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxQuizTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
@@ -1797,7 +1821,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
         private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown5;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label25;
@@ -1839,9 +1862,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse11;
@@ -1872,5 +1893,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown3;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown4;
+        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown2;
     }
 }

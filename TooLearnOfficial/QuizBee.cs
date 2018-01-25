@@ -417,46 +417,46 @@ namespace TooLearnOfficial
                 if (textBox7.Text == "")
                 {
                     label20.Visible = true; //MC
-                    label29.Visible = true;
+                bunifuDropdown2.Visible = true;
                     textBox11.Visible = true;
 
 
                     label17.Visible = true; //SA
-                    label18.Visible = true;
+                bunifuDropdown3.Visible = true;
                     textBox12.Visible = true;
 
 
                     label24.Visible = true; //TF
-                    label23.Visible = true;
+                bunifuDropdown4.Visible = true;
                     textBox10.Visible = true;
 
                     label5.Visible = false; //TimeLimitQuiz
                     textBox7.Visible = false;
-                    label14.Visible = false;
-                                  
+                bunifuDropdown1.Visible = false;
+                  
                 }
 
 
                 else
                 {
                     label20.Visible = false; //MC
-                    label29.Visible = false;
-                    textBox11.Visible = false;
+                bunifuDropdown2.Visible = false;
+                textBox11.Visible = false;
 
 
                     label17.Visible = false; //SA
-                    label18.Visible = false;
-                    textBox12.Visible = false;
+                bunifuDropdown3.Visible = false;
+                textBox12.Visible = false;
 
 
                     label24.Visible = false; //TF
-                    label23.Visible = false;
-                    textBox10.Visible = false;
+                bunifuDropdown4.Visible = false;
+                textBox10.Visible = false;
 
 
                     label5.Visible = true; //TimeLimitQuiz
                     textBox7.Visible = true;
-                    label14.Visible = true;
+               
                     textBox7.Enabled = false;
 
                 }
@@ -486,22 +486,22 @@ namespace TooLearnOfficial
             {
 
                 label20.Visible = true; //MC
-                label29.Visible = true;
+                bunifuDropdown2.Visible = true;
                 textBox11.Visible = true;
 
 
                 label17.Visible = true; //SA
-                label18.Visible = true;
+                bunifuDropdown3.Visible = true;
                 textBox12.Visible = true;
 
 
                 label24.Visible = true; //TF
-                label23.Visible = true;
+                bunifuDropdown4.Visible = true;
                 textBox10.Visible = true;
 
                 label5.Visible = true; //TimeLimitQuiz
                 textBox7.Visible = true;
-                label14.Visible = true;
+                
                 textBox7.Enabled = true;
 
 

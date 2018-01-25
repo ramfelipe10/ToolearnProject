@@ -39,10 +39,7 @@ namespace TooLearnOfficial
             load_server();
             listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
             
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+          
 
         }
 
