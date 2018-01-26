@@ -22,6 +22,9 @@ namespace TooLearnOfficial
         private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
 
+
+        public static string messagethis;
+
         public LobbyParticipant()
         {
            InitializeComponent();
@@ -160,7 +163,22 @@ namespace TooLearnOfficial
                     //client.Client.Shutdown(SocketShutdown.Both);
                     //client.Client.Close();
                 }
-                else
+
+            if (message.Contains("hehe"))
+            {
+
+                messagethis = "hehehehhe";
+                GameParticipant CC = (GameParticipant)Application.OpenForms[" GameParticipant"];
+
+
+                CC.load_mess();
+                
+
+                //client.Client.Shutdown(SocketShutdown.Both);
+                //client.Client.Close();
+            }
+
+            else
                 {
                     ThreadHelper.lsbAddItem(this, lsbWait, message);
                     Receive();

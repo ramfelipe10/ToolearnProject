@@ -22,6 +22,8 @@ namespace TooLearnOfficial
         private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
 
+        string mess = LobbyParticipant.messagethis;
+
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
        string i;
         string correct;
@@ -34,6 +36,16 @@ namespace TooLearnOfficial
                                                 .Controls.OfType<User_Control_Participant.JoinQuiz>();
             }
             
+        }
+
+
+
+       public void load_mess()
+        {
+
+
+            lblArray1.Text = mess;
+
         }
 
 
