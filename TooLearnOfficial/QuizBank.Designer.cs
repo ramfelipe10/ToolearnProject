@@ -43,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.TextBox();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -54,7 +54,6 @@
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -150,6 +149,7 @@
             this.label3.Size = new System.Drawing.Size(136, 24);
             this.label3.TabIndex = 149;
             this.label3.Text = "Search Quiz ";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -173,13 +173,16 @@
             this.label1.TabIndex = 147;
             this.label1.Text = "Quiz Bank";
             // 
-            // textBox1
+            // search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(530, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 33);
-            this.textBox1.TabIndex = 151;
+            this.search.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search.Location = new System.Drawing.Point(530, 178);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(260, 33);
+            this.search.TabIndex = 151;
+            this.search.Visible = false;
+            this.search.Enter += new System.EventHandler(this.search_Enter);
+            this.search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.search_KeyPress);
             // 
             // bunifuElipse3
             // 
@@ -242,7 +245,7 @@
             // bunifuElipse4
             // 
             this.bunifuElipse4.ElipseRadius = 5;
-            this.bunifuElipse4.TargetControl = this.textBox1;
+            this.bunifuElipse4.TargetControl = this.search;
             // 
             // DeleteQuiz
             // 
@@ -371,7 +374,9 @@
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 152;
             this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Visible = false;
             this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // pictureBox1
             // 
@@ -390,27 +395,16 @@
             this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(281, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 159;
-            this.label4.Text = "label4";
-            // 
             // QuizBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(913, 611);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Controls.Add(this.DeleteQuiz);
             this.Controls.Add(this.bunifuCustomLabel2);
@@ -449,7 +443,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox search;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private Bunifu.Framework.UI.BunifuFlatButton DeleteQuiz;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
@@ -460,6 +454,5 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.Label label4;
     }
 }

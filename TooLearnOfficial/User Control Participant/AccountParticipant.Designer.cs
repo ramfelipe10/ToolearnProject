@@ -40,6 +40,9 @@
             this.EditProfile = new Bunifu.Framework.UI.BunifuImageButton();
             this.MyClassroom = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScoreRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditProfile)).BeginInit();
@@ -133,7 +136,7 @@
             this.ScoreRecord.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ScoreRecord.TabIndex = 76;
             this.ScoreRecord.TabStop = false;
-            this.ScoreRecord.Zoom = 5;
+            this.ScoreRecord.Zoom = 1;
             // 
             // EditProfile
             // 
@@ -148,7 +151,7 @@
             this.EditProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.EditProfile.TabIndex = 77;
             this.EditProfile.TabStop = false;
-            this.EditProfile.Zoom = 5;
+            this.EditProfile.Zoom = 1;
             this.EditProfile.Click += new System.EventHandler(this.EditProfile_Click);
             // 
             // MyClassroom
@@ -164,7 +167,7 @@
             this.MyClassroom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.MyClassroom.TabIndex = 74;
             this.MyClassroom.TabStop = false;
-            this.MyClassroom.Zoom = 5;
+            this.MyClassroom.Zoom = 1;
             this.MyClassroom.Click += new System.EventHandler(this.MyClassroom_Click);
             // 
             // pictureBox1
@@ -176,6 +179,21 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 74;
             this.pictureBox1.TabStop = false;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 5;
+            this.bunifuElipse5.TargetControl = this.ScoreRecord;
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.MyClassroom;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.EditProfile;
             // 
             // AccountParticipant
             // 
@@ -210,5 +228,8 @@
         private Bunifu.Framework.UI.BunifuImageButton ScoreRecord;
         private Bunifu.Framework.UI.BunifuImageButton EditProfile;
         private Bunifu.Framework.UI.BunifuImageButton MyClassroom;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
     }
 }

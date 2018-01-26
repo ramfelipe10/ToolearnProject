@@ -25,7 +25,7 @@ namespace TooLearnOfficial
             Load_Quiz();
         }
 
-
+       
 
         void Load_Quiz()
         {
@@ -34,25 +34,30 @@ namespace TooLearnOfficial
             {
 
                 SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if (dt.Rows.Count == 0)
+                DataTable data = new DataTable();
+                sda.Fill(data);
+                if (data.Rows.Count == 0)
                 {
                     BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
+                    bs.DataSource = data;
                     bunifuCustomDataGrid1.DataSource = bs;
-                    sda.Update(dt);
+                    sda.Update(data);
+                    bunifuCustomDataGrid1.ClearSelection();
                     bunifuCustomLabel1.Visible = true;
+                    
 
                 }
                 
                 else
                 {
+
                     BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
+                    bs.DataSource = data;
                     bunifuCustomDataGrid1.DataSource = bs;
-                    sda.Update(dt);
+                    sda.Update(data);
+                    bunifuCustomDataGrid1.ClearSelection();
                     bunifuCustomLabel1.Visible = false;
+                    
 
                 }
 
@@ -61,7 +66,12 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+
+
+
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+
             }
         }
 
@@ -90,12 +100,12 @@ namespace TooLearnOfficial
             {
                 QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
 
-                label4.Text = QuizName;
-       
-
             }
-
+            
         }
+
+       
+     
 
         private void DeleteQuiz_Click(object sender, EventArgs e)
         {
@@ -126,11 +136,13 @@ namespace TooLearnOfficial
                         con.Close();
                         if (n >= 0 && m > 0)
                         {
+
                             Load_Quiz();
                             bunifuCustomDataGrid1.ClearSelection();
+                            Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");                          
                            
-                            Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
-                            
+                           
+
 
                         }
 
@@ -165,6 +177,31 @@ namespace TooLearnOfficial
         private void QuizBank_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          /*  if (e.KeyChar == (char)13)
+            {
+                DataView dv = data.DefaultView;
+                dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
+                bunifuCustomDataGrid1.DataSource = dv.ToTable();
+                bunifuCustomDataGrid1.ClearSelection();
+            } */
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+           /*  DataView dv = data.DefaultView;
+            dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
+            bunifuCustomDataGrid1.DataSource = dv.ToTable();
+            bunifuCustomDataGrid1.ClearSelection(); */
+        }
+
+        private void search_Enter(object sender, EventArgs e)
+        {
+            bunifuCustomDataGrid1.ClearSelection();
         }
     }
 }

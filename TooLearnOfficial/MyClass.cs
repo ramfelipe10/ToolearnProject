@@ -83,6 +83,9 @@ namespace TooLearnOfficial
                 
                 string code = data.Rows[0][0].ToString();
 
+                label5.Text = code;
+                label4.Visible = true;
+
                 if (dt.Rows.Count == 0)
                 {
                     BindingSource bs = new BindingSource();
@@ -90,7 +93,9 @@ namespace TooLearnOfficial
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
                     bunifuCustomLabel2.Visible = true;
-                    label4.Visible = false;
+                    
+
+                  
 
                 }
 
@@ -101,9 +106,7 @@ namespace TooLearnOfficial
                     bs.DataSource = dt;
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
-                    bunifuCustomLabel2.Visible = false;
-                    label5.Text =code;
-                    label4.Visible = true;
+                    bunifuCustomLabel2.Visible = false;                  
 
                     bunifuCustomDataGrid1.ClearSelection();
 

@@ -84,24 +84,32 @@ namespace TooLearnOfficial
 
                         if (fullname.Text != "" && username.Text != "" && password.Text != "")
                         {
-                            fullname.Enabled = false;
-                            username.Enabled = false;
-                            password.Enabled = false;
-                            MyAccountEdit.Text = "Edit";
+
+                            DialogResult result = Dialogue1.Show("Are you sure ?", "", "Ok", "Cancel");
+                            if (result == DialogResult.Yes)
+                            {
+
+                                fullname.Enabled = false;
+                                username.Enabled = false;
+                                password.Enabled = false;
+                                MyAccountEdit.Text = "Edit";
 
 
 
 
-                            con.Open();
-                            String query = "UPDATE participant SET fullname= '" + fullname.Text + "', p_username='" + username.Text + "', p_password = '" + password.Text + "' WHERE participant_id= '" + Program.par_id + "' ";
-                            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                            int n = sda.SelectCommand.ExecuteNonQuery();
+                                con.Open();
+                                String query = "UPDATE participant SET fullname= '" + fullname.Text + "', p_username='" + username.Text + "', p_password = '" + password.Text + "' WHERE participant_id= '" + Program.par_id + "' ";
+                                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                int n = sda.SelectCommand.ExecuteNonQuery();
 
-                            con.Close();
+                                con.Close();
 
-                            password.isPassword = true;
+                                password.isPassword = true;
 
-                            load_account();
+                                load_account();
+
+
+                            }
                         }
 
                         else

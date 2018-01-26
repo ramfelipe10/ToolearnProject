@@ -86,7 +86,10 @@ namespace TooLearnOfficial
 
                         if (fullname.Text != "" && username.Text != "" && password.Text != "")
                         {
-                            fullname.Enabled = false;
+                            DialogResult result = Dialogue1.Show("Are you sure ?", "", "Ok", "Cancel");
+                            if (result == DialogResult.Yes) { 
+
+                                fullname.Enabled = false;
                             username.Enabled = false;
                             password.Enabled = false;
                             MyAccountEdit.Text = "Edit";
@@ -104,6 +107,10 @@ namespace TooLearnOfficial
                             password.isPassword = true;
 
                             load_account();
+
+                        }
+
+
                         }
 
                         else
