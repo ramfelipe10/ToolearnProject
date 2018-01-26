@@ -21,9 +21,9 @@ namespace TooLearnOfficial
         private byte[] _buffer = new byte[_buffer_size];
         private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
+        string Name;
 
-
-        
+        SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
 
         public LobbyParticipant()
         {
@@ -31,9 +31,13 @@ namespace TooLearnOfficial
             
           
             StartConnect();
-            txtProfile.Text = Convert.ToString(Program.par_id);
+           
+            
 
         }
+
+
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -42,7 +46,10 @@ namespace TooLearnOfficial
 
         private void LobbyParticipant_Load(object sender, EventArgs e)
         {
-            
+            SqlDataAdapter sql = new SqlDataAdapter("Select fullname from participant where participant_id='" +Program.par_id+ "'", con);
+            DataTable dt = new DataTable();
+            sql.Fill(dt);
+           Name= dt.Rows[0][0].ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -65,7 +72,7 @@ namespace TooLearnOfficial
             try
             {
                 //Translate the message into its byte form
-                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message + " is ready!");
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message);
 
                 //Get a client stream for reading and writing
                 NetworkStream stream = _client.GetStream();
@@ -186,8 +193,8 @@ namespace TooLearnOfficial
 
         private void btnReady_Click(object sender, EventArgs e)
         {
-            Send(txtProfile.Text);
-            ThreadHelper.lsbAddItem(this, lsbWait, Convert.ToString(Program.par_id) + " is ready!");
+            Send(Name);
+            ThreadHelper.lsbAddItem(this, lsbWait, Name );
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)

@@ -42,7 +42,6 @@
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lsbWait = new System.Windows.Forms.ListBox();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.txtProfile = new System.Windows.Forms.TextBox();
             this.btnReady = new System.Windows.Forms.Button();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -193,14 +192,6 @@
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
-            // txtProfile
-            // 
-            this.txtProfile.Location = new System.Drawing.Point(19, 109);
-            this.txtProfile.Name = "txtProfile";
-            this.txtProfile.Size = new System.Drawing.Size(100, 20);
-            this.txtProfile.TabIndex = 152;
-            this.txtProfile.Visible = false;
-            // 
             // btnReady
             // 
             this.btnReady.Location = new System.Drawing.Point(595, 164);
@@ -218,7 +209,6 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(755, 422);
             this.Controls.Add(this.btnReady);
-            this.Controls.Add(this.txtProfile);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
@@ -251,7 +241,6 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.ListBox lsbWait;
-        private System.Windows.Forms.TextBox txtProfile;
         private System.Windows.Forms.Button btnReady;
     }
 }

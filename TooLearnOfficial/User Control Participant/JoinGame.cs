@@ -39,41 +39,8 @@ namespace TooLearnOfficial.User_Control_Participant
 
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
-            StartConnect();
             LobbyParticipant lobby = new LobbyParticipant();
             lobby.ShowDialog();
-        }
-        
-        private void StartConnect()
-        {
-            try
-            {
-                if (_client.Connected == false)
-                {
-                    _client = new TcpClient();
-                }
-                _client.NoDelay = true;
-
-                //Begin connecting to server
-                _client.BeginConnect(IPAddress.Parse(_IPAddress), _PORT, BeginConnectCallBack, _client);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void BeginConnectCallBack(IAsyncResult ar)
-        {
-            try
-            {
-                TcpClient _client = (TcpClient)ar.AsyncState;
-                _client.EndConnect(ar);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
         
     }

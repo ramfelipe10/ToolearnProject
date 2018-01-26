@@ -25,8 +25,8 @@ namespace TooLearnOfficial
        
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-      // string i;
-      //  string correct;
+        // string i;
+        //  string correct;
         public GameParticipant()
         {
             InitializeComponent();
@@ -35,16 +35,6 @@ namespace TooLearnOfficial
             StartConnect();
 
         }
-
-
-
-       public void load_mess()
-        {
-          
-
-        }
-
-
         private void Send(string message)
         {
             try
@@ -65,7 +55,7 @@ namespace TooLearnOfficial
             }
         }
 
-
+        
         /*                                   */
 
         public void StartConnect()
@@ -130,7 +120,7 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
-                lblArray1.Text = message;
+                //lblArray1.Text = message;
 /*
                 int counter = 0;
                 while(message != null)
@@ -156,7 +146,7 @@ namespace TooLearnOfficial
                 }
                 else
                 {
-
+                    ThreadHelper.lsbAddItem(this, listBox1, message);
                     Receive();
 
                 }
@@ -214,6 +204,16 @@ namespace TooLearnOfficial
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Send(textBox1.Text);
         }
     }
 }
