@@ -31,8 +31,8 @@ namespace TooLearnOfficial
         private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        string i;
-        int time;
+       // string i;
+       // int time;
         public GameFacilitator()
         {
             InitializeComponent();
@@ -193,23 +193,23 @@ namespace TooLearnOfficial
             rad.Fill(sad);
             string me = sad.Rows[0][0].ToString();
             LabelQuestion.Text = me;
-            textBox1.Text = me;
-            SendToAllClients(textBox1.Text);
+          
+            SendToAllClients(me);
 
             SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable dede = new DataTable();
             dada.Fill(dede);
             string ma = dede.Rows[0][0].ToString();
-            textBox2.Text = ma;
-            SendToAllClients(textBox2.Text);
+           
+            SendToAllClients(ma);
 
 
             SqlDataAdapter fad = new SqlDataAdapter(" Select answer_b from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable fed = new DataTable();
             fad.Fill(fed);
             string mo = fed.Rows[0][0].ToString();
-            textBox3.Text = mo;
-            SendToAllClients(textBox3.Text);
+          
+            SendToAllClients(mo);
 
 
             SqlDataAdapter fet = new SqlDataAdapter(" Select answer_c from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);

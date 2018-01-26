@@ -10,9 +10,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
+
     public partial class LobbyFacilitator : Form
     {
         // Set Buffer size for the data being sent and recieved
@@ -25,6 +27,11 @@ namespace TooLearnOfficial
         private TcpListener listener;
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
+
+
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        string i;
+      string correct;
         public LobbyFacilitator()
         {
             InitializeComponent();
@@ -190,8 +197,58 @@ namespace TooLearnOfficial
 
             GameFacilitator gf = new GameFacilitator();
             gf.Show();
-            listener.Stop();
+
+            SqlDataAdapter sda = new SqlDataAdapter("Select min(quiz_id) from QuestionAnswers", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            i = dt.Rows[0][0].ToString();
+
+            i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
+
+            string p = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
+            string q = ScalarReturn("select question from QuestionAnswers where quiz_id='" + i + "'");
+            string w = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
+            string e = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
+            string r = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
+            string t = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
+            string y = ("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
+
+
+            SendToAllClients(p);
+            SendToAllClients(q);
+            SendToAllClients(w);
+            SendToAllClients(e);
+            SendToAllClients(r);
+            SendToAllClients(t);
+            SendToAllClients(y);
+
         }
+
+
+        private string ScalarReturn(string q)
+        {
+            string s;
+            con.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(q, con);
+
+                s = cmd.ExecuteScalar().ToString();
+            }
+            catch (Exception)
+            {
+                s = "";
+            }
+            con.Close();
+            return s;
+
+        }
+
+
+
+
+    }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
