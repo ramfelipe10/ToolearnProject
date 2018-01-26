@@ -141,20 +141,20 @@ namespace TooLearnOfficial
 
         private void BeginReceiveCallback(IAsyncResult ar)
         {
-            try
-            {
+            
+           
                 // get the client socket
                 TcpClient client = (TcpClient)ar.AsyncState;
                 int bytesRead = client.Client.EndReceive(ar);
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
-                
+                Receive();
 
                 if (message.Contains("GAME"))
                 {
                     
-                    GameFacilitator gf = new GameFacilitator();
+                    GameParticipant gf = new GameParticipant();
                     gf.ShowDialog();
                     
                     //client.Client.Shutdown(SocketShutdown.Both);
@@ -166,11 +166,8 @@ namespace TooLearnOfficial
                     Receive();
 
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            
+             
         }
 
         private void btnReady_Click(object sender, EventArgs e)

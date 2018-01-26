@@ -33,8 +33,7 @@ namespace TooLearnOfficial
                 var JoinQuiz = (Application.OpenForms["GameParticipant"] as GameParticipant)
                                                 .Controls.OfType<User_Control_Participant.JoinQuiz>();
             }
-
-            StartConnect();
+            
         }
 
 
@@ -58,39 +57,7 @@ namespace TooLearnOfficial
             }
         }
 
-        public void StartConnect()
-        {
-            try
-            {
-                if (_client.Connected == false)
-                {
-                    _client = new TcpClient();
-                }
-                _client.NoDelay = true;
-
-                //Begin connecting to server
-                _client.BeginConnect(IPAddress.Parse(_IPAddress), _PORT, BeginConnectCallBack, _client);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void BeginConnectCallBack(IAsyncResult ar)
-        {
-            try
-            {
-                TcpClient _client = (TcpClient)ar.AsyncState;
-                _client.EndConnect(ar);
-                Receive();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
+        
         private void Receive()
         {
             try

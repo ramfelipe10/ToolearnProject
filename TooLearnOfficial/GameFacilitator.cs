@@ -204,6 +204,7 @@ namespace TooLearnOfficial
 
         }
 
+        /*
         private void timer1_Tick(object sender, EventArgs e)
         {
             
@@ -231,6 +232,7 @@ namespace TooLearnOfficial
                 timer1.Stop();
             }
         }
+        */
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
