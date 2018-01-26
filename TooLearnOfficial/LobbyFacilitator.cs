@@ -133,8 +133,6 @@ namespace TooLearnOfficial
 
                     //Begin receiving data from the client socket
                     Receive(clientSocket);
-                    //Send a confirmation message to the client
-                    Send("You sent " + message, clientSocket);
                 }
                 else
                 {
@@ -143,6 +141,7 @@ namespace TooLearnOfficial
                     Send("DISCONNECT", clientSocket);
                     //remove the client socket from the client list
                     clientSockets.Remove(clientSocket.Client.RemoteEndPoint.ToString());
+
                 }
             }
             catch (Exception ex)

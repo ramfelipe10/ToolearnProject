@@ -28,12 +28,9 @@ namespace TooLearnOfficial
         public LobbyParticipant()
         {
            InitializeComponent();
-            
-          
             StartConnect();
+            Send(Name);
            
-            
-
         }
 
 
@@ -156,50 +153,30 @@ namespace TooLearnOfficial
 
                 Receive();
 
-                if (message.Contains("GAME"))
-                {
-                    
-                    GameParticipant gf = new GameParticipant();
-                    gf.ShowDialog();
-                    
-                    //client.Client.Shutdown(SocketShutdown.Both);
-                    //client.Client.Close();
-                }
-
-            else if (message.Contains("DISCONNECT"))
+            if (message.Contains("GAME"))
             {
 
-
                 GameParticipant gf = new GameParticipant();
-                gf.Close();
-
-
-                
-                
+                gf.ShowDialog();
 
                 //client.Client.Shutdown(SocketShutdown.Both);
                 //client.Client.Close();
             }
 
             else
-                {
-                    ThreadHelper.lsbAddItem(this, lsbWait, message);
-                    Receive();
+            {
+                ThreadHelper.lsbAddItem(this, lsbWait, message);
+                Receive();
 
-                }
+            }
             
              
-        }
-
-        private void btnReady_Click(object sender, EventArgs e)
-        {
-            Send(Name);
-            ThreadHelper.lsbAddItem(this, lsbWait, Name );
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+            Send("DISCONNECT");
         }
     }
 }

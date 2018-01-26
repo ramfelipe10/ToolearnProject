@@ -30,8 +30,6 @@ namespace TooLearnOfficial
         public GameParticipant()
         {
             InitializeComponent();
-
-
             StartConnect();
 
         }
@@ -118,23 +116,16 @@ namespace TooLearnOfficial
                 TcpClient client = (TcpClient)ar.AsyncState;
                 int bytesRead = client.Client.EndReceive(ar);
 
-                string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
+                string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead); //ini si may laman kang message
 
                 //lblArray1.Text = message;
-/*
-                int counter = 0;
-                while(message != null)
-                {
-                    Label[] lblArray = new Label[15];
-                    lblArray[counter].Text = message;
-                    counter += 1;
-                    
-                }
+                lblArray0.Text = message;
+
                 lblArray0.Visible = true;
                 lblArray1.Visible = true;
                 lblArray2.Visible = true;
                 lblArray3.Visible = true;
-                lblArray4.Visible = true; */
+                lblArray4.Visible = true;
 
                 if (message.Contains("DISCONNECT"))
                 {
@@ -146,7 +137,6 @@ namespace TooLearnOfficial
                 }
                 else
                 {
-                    ThreadHelper.lsbAddItem(this, listBox1, message);
                     Receive();
 
                 }
@@ -204,16 +194,6 @@ namespace TooLearnOfficial
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-      
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Send(textBox1.Text);
         }
     }
 }

@@ -182,6 +182,8 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e)
         {
+
+
             SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable sad = new DataTable();
             rad.Fill(sad);
@@ -201,6 +203,27 @@ namespace TooLearnOfficial
             fad.Fill(fed);
             string mo = fed.Rows[0][0].ToString();
             SendToAllClients(mo);
+
+
+            SqlDataAdapter fet = new SqlDataAdapter(" Select answer_c from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+            DataTable fey = new DataTable();
+            fet.Fill(fey);
+            string mi = fed.Rows[0][0].ToString();
+            SendToAllClients(mi);
+
+
+            SqlDataAdapter fat = new SqlDataAdapter(" Select answer_d from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+            DataTable fab = new DataTable();
+            fat.Fill(fab);
+            string mp = fed.Rows[0][0].ToString();
+            SendToAllClients(mp);
+
+            SqlDataAdapter fs = new SqlDataAdapter(" Select correct_answer from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+            DataTable fd = new DataTable();
+            fs.Fill(fd);
+            string mt = fed.Rows[0][0].ToString();
+            SendToAllClients(mt);
+
 
 
 
