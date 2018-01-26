@@ -155,13 +155,14 @@ namespace TooLearnOfficial
                 {
                     
                     GameFacilitator gf = new GameFacilitator();
-                    gf.Show();
+                    gf.ShowDialog();
+                    
                     //client.Client.Shutdown(SocketShutdown.Both);
                     //client.Client.Close();
                 }
                 else
                 {
-
+                    ThreadHelper.lsbAddItem(this, lsbWait, message);
                     Receive();
 
                 }

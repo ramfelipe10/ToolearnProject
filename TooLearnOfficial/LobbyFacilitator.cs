@@ -201,5 +201,10 @@ namespace TooLearnOfficial
         {
             SendToAllClients(textBox1.Text);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
