@@ -132,11 +132,25 @@ namespace TooLearnOfficial
                 }
                 else
                 {
+                   
+
+
+                   string Message=message.Substring(message.Length - 1,1);
+                  if ( Message=="1")
+                        {
+                        ThreadHelper.lblAddLabel(this, label1, message);
+                    }
+                   if(Message == "2")
+                    { ThreadHelper.SetText(this, button1, message); }
+                   if (Message == "3")
+                    { ThreadHelper.SetText(this, button2, message); }
+                  if (Message == "4")
+                    { ThreadHelper.SetText(this, button3, message); }
+                   if (Message == "5")
+                    { ThreadHelper.SetText(this, button4, message); }
+
                   
-                    ThreadHelper.lblAddLabel(this, label1, message);
-                    ThreadHelper.SetText(this, button1, message);
-                    ThreadHelper.SetText(this, button2, message);
-                    ThreadHelper.SetText(this, button3, message);
+                   
                     Receive();
 
                 }

@@ -209,19 +209,19 @@ namespace TooLearnOfficial
             string p = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
             string q = ScalarReturn("select question from QuestionAnswers where quiz_id='" + i + "'");
             string w = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
-            string e = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
+            string x = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
             string r = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
             string t = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
-            string y = ("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
+            string y = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
 
 
-            SendToAllClients(p);
-            SendToAllClients(q);
-            SendToAllClients(w);
-            SendToAllClients(e);
-            SendToAllClients(r);
-            SendToAllClients(t);
-            SendToAllClients(y);
+            SendToAllClients(p+1);
+            SendToAllClients(q+2);
+            SendToAllClients(w+3);
+            SendToAllClients(x+4);
+            SendToAllClients(r+5);
+            SendToAllClients(t+6);
+            SendToAllClients(y+7); 
 
         }
 
@@ -245,12 +245,13 @@ namespace TooLearnOfficial
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SendToAllClients(textBox1.Text);
+        }
+   
 
-
-
-    }
-
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
+    private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -265,9 +266,6 @@ namespace TooLearnOfficial
 
      
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }
