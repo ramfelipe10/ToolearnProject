@@ -25,26 +25,38 @@ namespace TooLearnOfficial
         string mess = LobbyParticipant.messagethis;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-       string i;
-        string correct;
+      // string i;
+      //  string correct;
         public GameParticipant()
         {
             InitializeComponent();
-            if ((Application.OpenForms["GameParticipant"] as GameParticipant) != null)
-            {
-                var JoinQuiz = (Application.OpenForms["GameParticipant"] as GameParticipant)
-                                                .Controls.OfType<User_Control_Participant.JoinQuiz>();
-            }
-            
+
+
+            StartConnect();
+
         }
 
 
 
        public void load_mess()
         {
+            try
+            {
 
+                
+                if (lblArray1.InvokeRequired)
+                {
+                    lblArray1.Invoke(new MethodInvoker(delegate { lblArray1.Text; }));
+                }
+                
+                lblArray1.Text = mess;
 
-            lblArray1.Text = mess;
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -69,7 +81,48 @@ namespace TooLearnOfficial
             }
         }
 
-        
+
+        /*                                   */
+
+        public void StartConnect()
+        {
+            try
+            {
+                if (_client.Connected == false)
+                {
+                    _client = new TcpClient();
+                }
+                _client.NoDelay = true;
+
+                //Begin connecting to server
+                _client.BeginConnect(IPAddress.Parse(_IPAddress), _PORT, BeginConnectCallBack, _client);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void BeginConnectCallBack(IAsyncResult ar)
+        {
+            try
+            {
+                TcpClient _client = (TcpClient)ar.AsyncState;
+                _client.EndConnect(ar);
+                Receive();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+
+        /*                                             */
+       
+
         private void Receive()
         {
             try
@@ -109,6 +162,9 @@ namespace TooLearnOfficial
 
                 if (message.Contains("DISCONNECT"))
                 {
+
+
+                    this.Close();
                     client.Client.Shutdown(SocketShutdown.Both);
                     client.Client.Close();
                 }
@@ -139,7 +195,7 @@ namespace TooLearnOfficial
                sda.Fill(dt);
 
                i = Convert.ToInt32(dt.Rows[0][0].ToString());
-    */
+   
             i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
 
             LabelTimer.Text = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
@@ -148,7 +204,7 @@ namespace TooLearnOfficial
             bunifuFlatButton2.Text = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
             bunifuFlatButton3.Text = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
             bunifuFlatButton4.Text = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
-            correct = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
+            correct = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");  */
         }
         private string ScalarReturn(string q)
         {

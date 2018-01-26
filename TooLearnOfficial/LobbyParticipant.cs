@@ -29,12 +29,7 @@ namespace TooLearnOfficial
         {
            InitializeComponent();
             
-            if ((Application.OpenForms["LobbyParticipant"] as LobbyParticipant) != null)
-            {
-                var JoinQuiz = (Application.OpenForms["LobbyParticipant"] as LobbyParticipant)
-                                                .Controls.OfType<User_Control_Participant.JoinQuiz>();
-            }
-
+          
             StartConnect();
             txtProfile.Text = Convert.ToString(Program.par_id);
 
@@ -164,11 +159,11 @@ namespace TooLearnOfficial
                     //client.Client.Close();
                 }
 
-            if (message.Contains("hehe"))
+            else if (message.Contains("hehe"))
             {
 
                 messagethis = "hehehehhe";
-                GameParticipant CC = (GameParticipant)Application.OpenForms[" GameParticipant"];
+                GameParticipant CC =(GameParticipant)Application.OpenForms["GameParticipant"];
 
 
                 CC.load_mess();
