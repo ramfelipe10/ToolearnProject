@@ -40,23 +40,7 @@ namespace TooLearnOfficial
 
        public void load_mess()
         {
-            try
-            {
-
-                
-                if (lblArray1.InvokeRequired)
-                {
-                    lblArray1.Invoke(new MethodInvoker(delegate { lblArray1.Text; }));
-                }
-                
-                lblArray1.Text = mess;
-
-            }
-
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+          
 
         }
 

@@ -163,7 +163,7 @@ namespace TooLearnOfficial
             {
 
                 messagethis = "hehehehhe";
-                GameParticipant CC =(GameParticipant)Application.OpenForms["GameParticipant"];
+                GameParticipant CC =(GameParticipant)Application.OpenForms[" GameParticipant"];
 
 
                 CC.load_mess();
