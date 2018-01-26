@@ -186,14 +186,20 @@ namespace TooLearnOfficial
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             SendToAllClients("GAME");
+
             GameFacilitator gf = new GameFacilitator();
-            gf.ShowDialog();
+            gf.Show();
             
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SendToAllClients(textBox1.Text);
         }
     }
 }

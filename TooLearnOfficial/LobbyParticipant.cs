@@ -149,8 +149,11 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
+                
+
                 if (message.Contains("GAME"))
                 {
+                    
                     GameFacilitator gf = new GameFacilitator();
                     gf.Show();
                     //client.Client.Shutdown(SocketShutdown.Both);
