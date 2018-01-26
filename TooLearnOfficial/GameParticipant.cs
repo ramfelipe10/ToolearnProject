@@ -22,7 +22,7 @@ namespace TooLearnOfficial
         private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
 
-        string mess = LobbyParticipant.messagethis;
+       
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
       // string i;
@@ -130,6 +130,8 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
+                lblArray1.Text = message;
+/*
                 int counter = 0;
                 while(message != null)
                 {
@@ -142,7 +144,7 @@ namespace TooLearnOfficial
                 lblArray1.Visible = true;
                 lblArray2.Visible = true;
                 lblArray3.Visible = true;
-                lblArray4.Visible = true;
+                lblArray4.Visible = true; */
 
                 if (message.Contains("DISCONNECT"))
                 {

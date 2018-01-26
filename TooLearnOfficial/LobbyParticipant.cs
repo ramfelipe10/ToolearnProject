@@ -23,7 +23,7 @@ namespace TooLearnOfficial
         private const int _PORT = 13000;
 
 
-        public static string messagethis;
+        
 
         public LobbyParticipant()
         {
@@ -159,14 +159,15 @@ namespace TooLearnOfficial
                     //client.Client.Close();
                 }
 
-            else if (message.Contains("hehe"))
+            else if (message.Contains("DISCONNECT"))
             {
 
-                messagethis = "hehehehhe";
-                GameParticipant CC =(GameParticipant)Application.OpenForms[" GameParticipant"];
+
+                GameParticipant gf = new GameParticipant();
+                gf.Close();
 
 
-                CC.load_mess();
+                
                 
 
                 //client.Client.Shutdown(SocketShutdown.Both);
