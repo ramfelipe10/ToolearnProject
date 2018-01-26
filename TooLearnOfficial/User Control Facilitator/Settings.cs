@@ -39,5 +39,11 @@ namespace TooLearnOfficial.User_Control
         {
             MessageBox.Show(GetLocalIPAddress());
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GameCode GC = new GameCode();
+            GC.Show();
+        }
     }
 }

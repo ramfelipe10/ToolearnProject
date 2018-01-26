@@ -156,6 +156,12 @@
     <Compile Include="EditFacilitatorProfile.Designer.cs">
       <DependentUpon>EditFacilitatorProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameCode.Designer.cs">
+      <DependentUpon>GameCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameFacilitator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameCode.resx">
+      <DependentUpon>GameCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameFacilitator.resx">
       <DependentUpon>GameFacilitator.cs</DependentUpon>
