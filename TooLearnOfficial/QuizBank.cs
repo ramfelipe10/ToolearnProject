@@ -91,7 +91,8 @@ namespace TooLearnOfficial
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             LobbyFacilitator lobby = new LobbyFacilitator();
-            lobby.ShowDialog();
+            // lobby.ShowDialog();
+            lobby.Show();
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)

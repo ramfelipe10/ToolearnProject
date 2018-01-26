@@ -23,24 +23,29 @@ namespace TooLearnOfficial.User_Control
         {
             EditFacilitatorProfile EP = new EditFacilitatorProfile();
             EP.ShowDialog();
+         
         }
 
         private void myquiz_Click(object sender, EventArgs e)
         {
             QuizBank QB = new QuizBank();
-            QB.ShowDialog();
+           QB.ShowDialog();
+           
         }
 
         private void CreateQuiz_Click(object sender, EventArgs e)
         {
             CreateMyQuiz MQ = new CreateMyQuiz();
-            MQ.ShowDialog();
+           MQ.ShowDialog();
+          
         }
 
         private void MyClassroom_Click(object sender, EventArgs e)
         {
             MyClass C = new MyClass();
             C.ShowDialog();
+           
+           
         }
 
         private void ScoreRecord_Click(object sender, EventArgs e)

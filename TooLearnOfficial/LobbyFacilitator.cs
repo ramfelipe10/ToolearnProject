@@ -20,7 +20,8 @@ namespace TooLearnOfficial
         // Set Buffer as holder of data being sent and received
         private byte[] buffer = new byte[buffer_size];
         // Set the TCPListeneer on port 13000;
-        public static string hostIP;
+       public static string hostIP;
+      
         private TcpListener listener;
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
@@ -31,7 +32,7 @@ namespace TooLearnOfficial
             load_server();
             listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
             listener.Start(100);
-            //lsbJoined.Items.Add("Waiting for connections...");
+           
             try
             {
                 //Accept the connection
@@ -157,10 +158,10 @@ namespace TooLearnOfficial
 
         private void LobbyFacilitator_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        void load_server()
+           void load_server()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName()); //get my IP
             foreach (var ip in host.AddressList)
@@ -186,9 +187,10 @@ namespace TooLearnOfficial
         {
             SendToAllClients("GAME");
 
+
             GameFacilitator gf = new GameFacilitator();
             gf.Show();
-            
+            listener.Stop();
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
@@ -196,12 +198,17 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SendToAllClients(textBox1.Text);
-        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+     
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

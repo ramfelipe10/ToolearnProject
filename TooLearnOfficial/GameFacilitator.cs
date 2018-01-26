@@ -37,8 +37,9 @@ namespace TooLearnOfficial
         {
             InitializeComponent();
             load_server();
-            listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
-            listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
+            
+           
+
         }
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
@@ -142,9 +143,11 @@ namespace TooLearnOfficial
 
         private void SendToAllClients(string message)
         {
+
+            
             foreach (KeyValuePair<string, TcpClient> client in clientSockets)
             {
-                Send(message, client.Value);
+                Send(message, client.Value);                              
             }
         }
 
@@ -188,22 +191,25 @@ namespace TooLearnOfficial
             SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable sad = new DataTable();
             rad.Fill(sad);
-           string me= sad.Rows[0][0].ToString();
+            string me = sad.Rows[0][0].ToString();
             LabelQuestion.Text = me;
-            SendToAllClients(me);
+            textBox1.Text = me;
+            SendToAllClients(textBox1.Text);
 
             SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable dede = new DataTable();
             dada.Fill(dede);
             string ma = dede.Rows[0][0].ToString();
-            SendToAllClients(ma);
+            textBox2.Text = ma;
+            SendToAllClients(textBox2.Text);
 
 
             SqlDataAdapter fad = new SqlDataAdapter(" Select answer_b from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable fed = new DataTable();
             fad.Fill(fed);
             string mo = fed.Rows[0][0].ToString();
-            SendToAllClients(mo);
+            textBox3.Text = mo;
+            SendToAllClients(textBox3.Text);
 
 
             SqlDataAdapter fet = new SqlDataAdapter(" Select answer_c from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
@@ -224,8 +230,6 @@ namespace TooLearnOfficial
             fs.Fill(fd);
             string mt = fed.Rows[0][0].ToString();
             SendToAllClients(mt);
-
-
 
 
 
@@ -269,6 +273,20 @@ namespace TooLearnOfficial
         private void LabelQuestion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameFacilitator));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameFacilitator));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -42,13 +41,12 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.LabelTimer = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.LabelQuestion = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.btnNext = new System.Windows.Forms.Button();
+            this.LabelQuestion = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
@@ -64,7 +62,6 @@
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton5);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton2);
@@ -76,22 +73,8 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 1;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(855, 26);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(845, 26);
             this.bunifuGradientPanel1.TabIndex = 9;
-            // 
-            // bunifuImageButton5
-            // 
-            this.bunifuImageButton5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton5.Image = global::TooLearnOfficial.Properties.Resources.Close_Window_48px;
-            this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(777, 3);
-            this.bunifuImageButton5.Name = "bunifuImageButton5";
-            this.bunifuImageButton5.Size = new System.Drawing.Size(20, 20);
-            this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton5.TabIndex = 24;
-            this.bunifuImageButton5.TabStop = false;
-            this.bunifuImageButton5.Zoom = 10;
-            this.bunifuImageButton5.Click += new System.EventHandler(this.bunifuImageButton5_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -122,13 +105,14 @@
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Image = global::TooLearnOfficial.Properties.Resources.Close_Window_48px;
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(802, 2);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(822, 6);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(20, 20);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 14;
             this.bunifuImageButton2.TabStop = false;
             this.bunifuImageButton2.Zoom = 10;
+            this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
             // bunifuCustomDataGrid1
             // 
@@ -156,7 +140,7 @@
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(698, 156);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(747, 156);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             // 
             // bunifuCustomLabel2
@@ -195,6 +179,20 @@
             this.LabelTimer.TabIndex = 14;
             this.LabelTimer.Text = "TIMER HERE!";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.LabelQuestion);
+            this.panel1.Location = new System.Drawing.Point(50, 263);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(747, 150);
+            this.panel1.TabIndex = 21;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
+            // 
             // LabelQuestion
             // 
             this.LabelQuestion.BackColor = System.Drawing.Color.Transparent;
@@ -203,65 +201,28 @@
             this.LabelQuestion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LabelQuestion.Location = new System.Drawing.Point(0, 0);
             this.LabelQuestion.Name = "LabelQuestion";
-            this.LabelQuestion.Size = new System.Drawing.Size(698, 150);
+            this.LabelQuestion.Size = new System.Drawing.Size(747, 150);
             this.LabelQuestion.TabIndex = 20;
             this.LabelQuestion.Text = "QUESTIONS ARE HERE!";
             this.LabelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LabelQuestion.Click += new System.EventHandler(this.LabelQuestion_Click);
             // 
-            // panel1
+            // bunifuElipse2
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.LabelQuestion);
-            this.panel1.Location = new System.Drawing.Point(50, 263);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(698, 150);
-            this.panel1.TabIndex = 21;
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.panel1;
             // 
-            // timer1
+            // bunifuElipse3
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.LabelVisible = true;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(487, 209);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(50, 50);
-            this.bunifuCircleProgressbar1.TabIndex = 22;
-            this.bunifuCircleProgressbar1.Value = 5;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(768, 390);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 23;
-            this.btnNext.Text = "NEXT";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.bunifuCustomDataGrid1;
             // 
             // GameFacilitator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(855, 428);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.bunifuCircleProgressbar1);
+            this.ClientSize = new System.Drawing.Size(845, 428);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LabelTimer);
             this.Controls.Add(this.bunifuCustomLabel3);
@@ -274,7 +235,6 @@
             this.Load += new System.EventHandler(this.GameFacilitator_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
@@ -295,11 +255,10 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private Bunifu.Framework.UI.BunifuCustomLabel LabelTimer;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel LabelQuestion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
-        private System.Windows.Forms.Button btnNext;
+        private Bunifu.Framework.UI.BunifuCustomLabel LabelQuestion;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
     }
 }

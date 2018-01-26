@@ -132,8 +132,11 @@ namespace TooLearnOfficial
                 }
                 else
                 {
-                    ThreadHelper.lsbAddItem(this, listBox1, message);
-                    ThreadHelper.lblAddLabel(this, lblArray0, message);
+                  
+                    ThreadHelper.lblAddLabel(this, label1, message);
+                    ThreadHelper.SetText(this, button1, message);
+                    ThreadHelper.SetText(this, button2, message);
+                    ThreadHelper.SetText(this, button3, message);
                     Receive();
 
                 }
@@ -193,9 +196,6 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Send(textBox1.Text);
-        }
+      
     }
 }

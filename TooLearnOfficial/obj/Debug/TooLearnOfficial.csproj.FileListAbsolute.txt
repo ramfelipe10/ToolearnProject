@@ -166,7 +166,6 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLe
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.EditParticipantProfile.resources
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.MyClassParticipant.resources
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.JoinQuiz.resources
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ParticipantSQLConnect.resources
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ParticipantSQLConnect.resources
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
@@ -193,3 +192,4 @@ C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debu
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.ScoreParticipant.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameCode.resources
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameCode.resources
+C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
