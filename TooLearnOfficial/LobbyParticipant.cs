@@ -29,7 +29,6 @@ namespace TooLearnOfficial
         {
            InitializeComponent();
             StartConnect();
-            Send(Name);
            
         }
 
@@ -47,6 +46,8 @@ namespace TooLearnOfficial
             DataTable dt = new DataTable();
             sql.Fill(dt);
            Name= dt.Rows[0][0].ToString();
+
+            Send(Name);
         }
 
         private void label2_Click(object sender, EventArgs e)

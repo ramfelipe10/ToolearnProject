@@ -31,7 +31,7 @@ namespace TooLearnOfficial
             load_server();
             listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
             listener.Start(100);
-            lsbJoined.Items.Add("Waiting for connections...");
+            //lsbJoined.Items.Add("Waiting for connections...");
             try
             {
                 //Accept the connection
@@ -57,10 +57,10 @@ namespace TooLearnOfficial
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
 
-                ThreadHelper.lsbAddItem(this, lsbJoined, "Client connected" + clientSocket.Client.RemoteEndPoint.ToString());
+                //ThreadHelper.lsbAddItem(this, lsbJoined, "Client connected" + clientSocket.Client.RemoteEndPoint.ToString());
 
                 //Send a confirmation message to client
-                Send("You are now connected.", clientSocket);
+                //Send("You are now connected.", clientSocket);
 
                 //Acccept another TCPClient connection
                 listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);

@@ -43,16 +43,17 @@
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblArray1 = new System.Windows.Forms.Label();
             this.lblArray2 = new System.Windows.Forms.Label();
             this.lblArray3 = new System.Windows.Forms.Label();
             this.lblArray4 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -165,10 +166,9 @@
             // lblArray0
             // 
             this.lblArray0.BackColor = System.Drawing.Color.Transparent;
-            this.lblArray0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblArray0.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArray0.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblArray0.Location = new System.Drawing.Point(0, 0);
+            this.lblArray0.Location = new System.Drawing.Point(90, 284);
             this.lblArray0.Name = "lblArray0";
             this.lblArray0.Size = new System.Drawing.Size(993, 164);
             this.lblArray0.TabIndex = 20;
@@ -299,15 +299,6 @@
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.lblArray0);
-            this.panel1.Location = new System.Drawing.Point(21, 265);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(993, 164);
-            this.panel1.TabIndex = 27;
-            // 
             // lblArray1
             // 
             this.lblArray1.AutoSize = true;
@@ -356,17 +347,46 @@
             this.lblArray4.Text = "Choice 4";
             this.lblArray4.Visible = false;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(235, 257);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(331, 186);
+            this.listBox1.TabIndex = 32;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(603, 284);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(721, 284);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 34;
+            this.textBox1.Text = "test mic";
+            // 
             // GameParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1045, 615);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lblArray0);
             this.Controls.Add(this.lblArray4);
             this.Controls.Add(this.lblArray3);
             this.Controls.Add(this.lblArray2);
             this.Controls.Add(this.lblArray1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.bunifuFlatButton3);
@@ -384,7 +404,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,10 +424,12 @@
         private Bunifu.Framework.UI.BunifuCustomLabel LabelTimer;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblArray4;
         private System.Windows.Forms.Label lblArray3;
         private System.Windows.Forms.Label lblArray2;
         private System.Windows.Forms.Label lblArray1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

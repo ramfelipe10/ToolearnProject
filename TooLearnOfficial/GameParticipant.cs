@@ -118,14 +118,9 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead); //ini si may laman kang message
 
-                //lblArray1.Text = message;
-                lblArray0.Text = message;
-
-                lblArray0.Visible = true;
-                lblArray1.Visible = true;
-                lblArray2.Visible = true;
-                lblArray3.Visible = true;
-                lblArray4.Visible = true;
+                
+                
+                
 
                 if (message.Contains("DISCONNECT"))
                 {
@@ -137,6 +132,8 @@ namespace TooLearnOfficial
                 }
                 else
                 {
+                    ThreadHelper.lsbAddItem(this, listBox1, message);
+                    ThreadHelper.lblAddLabel(this, lblArray0, message);
                     Receive();
 
                 }
@@ -194,6 +191,11 @@ namespace TooLearnOfficial
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Send(textBox1.Text);
         }
     }
 }
