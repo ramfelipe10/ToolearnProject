@@ -162,7 +162,7 @@
             this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
             this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.bunifuCircleProgressbar1.LabelVisible = false;
             this.bunifuCircleProgressbar1.LineProgressThickness = 4;
             this.bunifuCircleProgressbar1.LineThickness = 4;

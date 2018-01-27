@@ -19,7 +19,19 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
+        }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ParticipantSQLConnect pp = new ParticipantSQLConnect();
+            pp.Show();
         }
     }
 }

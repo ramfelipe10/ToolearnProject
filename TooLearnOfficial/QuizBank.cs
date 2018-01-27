@@ -183,26 +183,36 @@ namespace TooLearnOfficial
 
         private void search_KeyPress(object sender, KeyPressEventArgs e)
         {
-          /*  if (e.KeyChar == (char)13)
-            {
-                DataView dv = data.DefaultView;
-                dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
-                bunifuCustomDataGrid1.DataSource = dv.ToTable();
-                bunifuCustomDataGrid1.ClearSelection();
-            } */
+            //if (e.KeyChar == (char)13)
+            //{
+            //    DataView dv = data.DefaultView;
+            //    dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
+            //    bunifuCustomDataGrid1.DataSource = dv.ToTable();
+            //    bunifuCustomDataGrid1.ClearSelection();
+            //} 
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-           /*  DataView dv = data.DefaultView;
-            dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
-            bunifuCustomDataGrid1.DataSource = dv.ToTable();
-            bunifuCustomDataGrid1.ClearSelection(); */
+            //DataView dv = data.DefaultView;
+            //dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
+            //bunifuCustomDataGrid1.DataSource = dv.ToTable();
+            //bunifuCustomDataGrid1.ClearSelection(); 
+            DataTable dt = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM quizzes where id like" + search.Text, con);
+            SDA.Fill(dt);
+            bunifuCustomDataGrid1.DataSource = dt;
+
         }
 
         private void search_Enter(object sender, EventArgs e)
         {
             bunifuCustomDataGrid1.ClearSelection();
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
