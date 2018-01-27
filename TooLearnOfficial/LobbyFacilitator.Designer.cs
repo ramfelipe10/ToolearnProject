@@ -301,6 +301,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LobbyFacilitator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LobbyFacilitator";
             this.Load += new System.EventHandler(this.LobbyFacilitator_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);

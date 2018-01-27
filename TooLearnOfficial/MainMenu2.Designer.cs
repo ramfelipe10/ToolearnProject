@@ -205,11 +205,11 @@
             this.LogosTransition.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.bunifuCustomLabel4, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuCustomLabel4.Location = new System.Drawing.Point(3, 218);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(44, 20);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(43, 18);
             this.bunifuCustomLabel4.TabIndex = 23;
             this.bunifuCustomLabel4.Text = "Quiz:";
             // 
@@ -219,11 +219,11 @@
             this.LogosTransition.SetDecoration(this.bunifuCustomLabel5, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.bunifuCustomLabel5, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.bunifuCustomLabel5, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuCustomLabel5.Location = new System.Drawing.Point(3, 290);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(50, 20);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(49, 18);
             this.bunifuCustomLabel5.TabIndex = 22;
             this.bunifuCustomLabel5.Text = "Other:";
             // 
@@ -233,11 +233,11 @@
             this.LogosTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.bunifuCustomLabel1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Arial Unicode MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 98);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(54, 20);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(54, 18);
             this.bunifuCustomLabel1.TabIndex = 19;
             this.bunifuCustomLabel1.Text = "Profile:";
             // 
@@ -320,7 +320,7 @@
             this.buttonAboutSystem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAboutSystem.BorderRadius = 0;
             this.buttonAboutSystem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buttonAboutSystem.ButtonText = "     About System";
+            this.buttonAboutSystem.ButtonText = "     About";
             this.buttonAboutSystem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogosTransition.SetDecoration(this.buttonAboutSystem, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.buttonAboutSystem, BunifuAnimatorNS.DecorationType.None);
@@ -346,7 +346,7 @@
             this.buttonAboutSystem.selected = false;
             this.buttonAboutSystem.Size = new System.Drawing.Size(239, 45);
             this.buttonAboutSystem.TabIndex = 7;
-            this.buttonAboutSystem.Text = "     About System";
+            this.buttonAboutSystem.Text = "     About";
             this.buttonAboutSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAboutSystem.Textcolor = System.Drawing.Color.White;
             this.buttonAboutSystem.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);

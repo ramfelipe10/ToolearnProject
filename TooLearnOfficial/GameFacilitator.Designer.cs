@@ -42,8 +42,8 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.LabelTimer = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LabelQuestion = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
@@ -140,7 +140,7 @@
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(747, 156);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(747, 182);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             // 
             // bunifuCustomLabel2
@@ -161,7 +161,7 @@
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(45, 229);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(45, 247);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(138, 30);
             this.bunifuCustomLabel3.TabIndex = 12;
@@ -173,7 +173,7 @@
             this.LabelTimer.BackColor = System.Drawing.Color.Transparent;
             this.LabelTimer.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTimer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LabelTimer.Location = new System.Drawing.Point(610, 229);
+            this.LabelTimer.Location = new System.Drawing.Point(644, 247);
             this.LabelTimer.Name = "LabelTimer";
             this.LabelTimer.Size = new System.Drawing.Size(153, 30);
             this.LabelTimer.TabIndex = 14;
@@ -183,15 +183,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.LabelQuestion);
-            this.panel1.Location = new System.Drawing.Point(50, 263);
+            this.panel1.Location = new System.Drawing.Point(50, 291);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 150);
+            this.panel1.Size = new System.Drawing.Size(747, 207);
             this.panel1.TabIndex = 21;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1;
             // 
             // LabelQuestion
             // 
@@ -201,11 +196,16 @@
             this.LabelQuestion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.LabelQuestion.Location = new System.Drawing.Point(0, 0);
             this.LabelQuestion.Name = "LabelQuestion";
-            this.LabelQuestion.Size = new System.Drawing.Size(747, 150);
+            this.LabelQuestion.Size = new System.Drawing.Size(747, 207);
             this.LabelQuestion.TabIndex = 20;
             this.LabelQuestion.Text = "QUESTIONS ARE HERE!";
             this.LabelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LabelQuestion.Click += new System.EventHandler(this.LabelQuestion_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1;
             // 
             // bunifuElipse2
             // 
@@ -222,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(845, 428);
+            this.ClientSize = new System.Drawing.Size(845, 510);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LabelTimer);
             this.Controls.Add(this.bunifuCustomLabel3);
@@ -231,6 +231,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GameFacilitator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameFacilitator";
             this.Load += new System.EventHandler(this.GameFacilitator_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);

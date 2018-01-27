@@ -211,6 +211,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LobbyParticipant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LobbyParticipant";
             this.Load += new System.EventHandler(this.LobbyParticipant_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
