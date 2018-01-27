@@ -210,6 +210,12 @@
     <Compile Include="PicturePuzzle.Designer.cs">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
     </Compile>
+    <Compile Include="PublicPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicPlay.Designer.cs">
+      <DependentUpon>PublicPlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuizBank.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PicturePuzzle.resx">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicPlay.resx">
+      <DependentUpon>PublicPlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuizBank.resx">
       <DependentUpon>QuizBank.cs</DependentUpon>

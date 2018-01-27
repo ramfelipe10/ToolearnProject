@@ -146,5 +146,12 @@ namespace TooLearnOfficial
         {
 
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PublicPlay pp = new PublicPlay();
+            pp.ShowDialog();
+        }
     }
 }

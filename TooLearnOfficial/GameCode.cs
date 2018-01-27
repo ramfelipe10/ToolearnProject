@@ -54,5 +54,12 @@ namespace TooLearnOfficial
             LobbyFacilitator LF = new LobbyFacilitator();
             LF.Show();
         }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ParticipantSQLConnect pc = new ParticipantSQLConnect();
+            pc.Show();
+        }
     }
 }
