@@ -199,7 +199,7 @@ namespace TooLearnOfficial
             //bunifuCustomDataGrid1.DataSource = dv.ToTable();
             //bunifuCustomDataGrid1.ClearSelection(); 
             DataTable dt = new DataTable();
-            SqlDataAdapter SDA = new SqlDataAdapter("SELECT * FROM quizzes where id like" + search.Text, con);
+            SqlDataAdapter SDA = new SqlDataAdapter("SELECT quiz_title, date_created FROM quizzes where quiz_title like '" + search.Text + "' ", con);
             SDA.Fill(dt);
             bunifuCustomDataGrid1.DataSource = dt;
 
