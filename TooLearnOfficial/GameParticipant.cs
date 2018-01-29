@@ -136,21 +136,34 @@ namespace TooLearnOfficial
 
 
                    string Message=message.Substring(message.Length - 1,1);
+                    if (Message.Contains("1"))
+                    {
+                        ThreadHelper.lblAddLabel(this, label1, message);
+                    }
+                    if (Message.Contains("2"))
+                    { ThreadHelper.btnAddTxtButton(this, button1, message); }
+                    if (Message.Contains("3"))
+                    { ThreadHelper.btnAddTxtButton(this, button2, message); }
+                    if(Message.Contains("4"))
+                    { ThreadHelper.btnAddTxtButton(this, button3, message); }
+                    if (Message.Contains("5"))
+                    { ThreadHelper.btnAddTxtButton(this, button4, message); }
+                    /*
                   if ( Message=="1")
                         {
                         ThreadHelper.lblAddLabel(this, label1, message);
                     }
                    if(Message == "2")
-                    { ThreadHelper.SetText(this, button1, message); }
+                    { ThreadHelper.btnAddTxtButton(this, button1, message); }
                    if (Message == "3")
-                    { ThreadHelper.SetText(this, button2, message); }
+                    { ThreadHelper.btnAddTxtButton(this, button2, message); }
                   if (Message == "4")
-                    { ThreadHelper.SetText(this, button3, message); }
+                    { ThreadHelper.btnAddTxtButton(this, button3, message); }
                    if (Message == "5")
-                    { ThreadHelper.SetText(this, button4, message); }
+                    { ThreadHelper.btnAddTxtButton(this, button4, message); }
+                    */
 
-                  
-                   
+
                     Receive();
 
                 }
@@ -210,6 +223,31 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-      
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Send(button1.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Send(button2.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Send(button3.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Send(button4.Text);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

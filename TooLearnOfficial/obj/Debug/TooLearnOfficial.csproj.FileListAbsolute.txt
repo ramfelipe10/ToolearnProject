@@ -195,3 +195,4 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLear
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameCode.resources
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.PublicPlay.resources
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.PublicPlay.resources

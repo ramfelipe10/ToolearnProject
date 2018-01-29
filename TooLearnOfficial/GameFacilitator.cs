@@ -184,7 +184,7 @@ namespace TooLearnOfficial
 
         }
 
-        private void GameFacilitator_Load(object sender, EventArgs e)
+        private async void GameFacilitator_Load(object sender, EventArgs e)
         {
 
 
@@ -193,14 +193,13 @@ namespace TooLearnOfficial
             rad.Fill(sad);
             string me = sad.Rows[0][0].ToString();
             LabelQuestion.Text = me;
-          
             SendToAllClients(me);
 
             SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable dede = new DataTable();
             dada.Fill(dede);
             string ma = dede.Rows[0][0].ToString();
-           
+            await Task.Delay(500);
             SendToAllClients(ma);
 
 
@@ -208,7 +207,7 @@ namespace TooLearnOfficial
             DataTable fed = new DataTable();
             fad.Fill(fed);
             string mo = fed.Rows[0][0].ToString();
-          
+            await Task.Delay(500);
             SendToAllClients(mo);
 
 
@@ -216,6 +215,7 @@ namespace TooLearnOfficial
             DataTable fey = new DataTable();
             fet.Fill(fey);
             string mi = fed.Rows[0][0].ToString();
+            await Task.Delay(500);
             SendToAllClients(mi);
 
 
@@ -223,12 +223,14 @@ namespace TooLearnOfficial
             DataTable fab = new DataTable();
             fat.Fill(fab);
             string mp = fed.Rows[0][0].ToString();
+            await Task.Delay(500);
             SendToAllClients(mp);
 
             SqlDataAdapter fs = new SqlDataAdapter(" Select correct_answer from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable fd = new DataTable();
             fs.Fill(fd);
             string mt = fed.Rows[0][0].ToString();
+            await Task.Delay(500);
             SendToAllClients(mt);
 
 

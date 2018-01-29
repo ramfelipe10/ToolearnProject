@@ -12,6 +12,7 @@ namespace TooLearnOfficial
         delegate void SetTextCallback(Form frm, Control ctrl, string text);
         delegate void AddItemCallback(Form frm, ListBox lsb, string text);
         delegate void AddLabelCallback(Form frm, Label lbl, string text);
+        delegate void AddTxtBtnCallback(Form frm, Button btn, string text);
 
         public static void SetText(Form frm, Control ctrl, string text)
         {
@@ -51,6 +52,20 @@ namespace TooLearnOfficial
                 lbl.Text = text;
             }
         }
+
+        public static void btnAddTxtButton(Form frm, Button btn, string text)
+        {
+            if (btn.InvokeRequired)
+            {
+                AddTxtBtnCallback d = new AddTxtBtnCallback(btnAddTxtButton);
+                frm.Invoke(d, new object[] { frm, btn, text });
+            }
+            else
+            {
+                btn.Text = text;
+            }
+        }
+
 
     }
 }
