@@ -22,7 +22,7 @@ namespace TooLearnOfficial
         // Set Buffer as holder of data being sent and received
         private byte[] buffer = new byte[buffer_size];
         // Set the TCPListeneer on port 13000;
-       public static string hostIP;
+       private static string hostIP;
       
         private TcpListener listener;
         // Set a list of client sockets
@@ -190,7 +190,7 @@ namespace TooLearnOfficial
             }
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private async void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             SendToAllClients("GAME");
 
@@ -216,12 +216,20 @@ namespace TooLearnOfficial
 
 
             SendToAllClients(p+1);
+            await Task.Delay(500);
             SendToAllClients(q+2);
+            await Task.Delay(500);
             SendToAllClients(w+3);
+            await Task.Delay(500);
             SendToAllClients(x+4);
+            await Task.Delay(500);
             SendToAllClients(r+5);
+            await Task.Delay(500);
             SendToAllClients(t+6);
-            SendToAllClients(y+7); 
+            await Task.Delay(500);
+            SendToAllClients(y+7);
+         
+         
 
         }
 

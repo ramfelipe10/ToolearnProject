@@ -21,7 +21,8 @@ namespace TooLearnOfficial
         
 
 
-[STAThread]
+
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

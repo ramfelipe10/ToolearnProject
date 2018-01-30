@@ -108,9 +108,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(26, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 33);
+            this.label1.Size = new System.Drawing.Size(209, 33);
             this.label1.TabIndex = 146;
-            this.label1.Text = "Classroom Handled";
+            this.label1.Text = "My Classroom";
             // 
             // bunifuElipse2
             // 

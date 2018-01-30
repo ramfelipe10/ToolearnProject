@@ -93,10 +93,9 @@ namespace TooLearnOfficial
                     Cursor.Current = Cursors.Default;
                     if (con.State == ConnectionState.Open)
                     {
-                        DialogResult result= Dialogue1.Show("Connected", "", "Ok", "Cancel");
+                       
                         con.Close();
-                        if (result == DialogResult.Yes)
-                        {
+                      
                             Program.source = Source.ToString();
                             Program.db = DB;
                             Program.id = ID;
@@ -105,17 +104,9 @@ namespace TooLearnOfficial
                             this.Hide();
                             ParticipantLogin PL = new ParticipantLogin();
                             PL.Show();
-                           
-                        }
-
-                        else
-                        {
-                            IDbox.Text = "";
-                            Passwordbox.Text = "";
-                            Server.SelectedItem = null;
-                        }
-                      
-
+                                           
+                                         
+                    
                            
                     }
 

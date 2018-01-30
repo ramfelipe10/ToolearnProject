@@ -21,7 +21,7 @@ namespace TooLearnOfficial
         private byte[] _buffer = new byte[_buffer_size];
         private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
-        string Name;
+        string name;
 
         SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
 
@@ -45,9 +45,9 @@ namespace TooLearnOfficial
             SqlDataAdapter sql = new SqlDataAdapter("Select fullname from participant where participant_id='" +Program.par_id+ "'", con);
             DataTable dt = new DataTable();
             sql.Fill(dt);
-           Name= dt.Rows[0][0].ToString();
+           name= dt.Rows[0][0].ToString();
 
-            Send(Name);
+            Send(name);
         }
 
         private void label2_Click(object sender, EventArgs e)

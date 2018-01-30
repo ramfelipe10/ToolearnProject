@@ -35,7 +35,7 @@ namespace TooLearnOfficial
        // int time;
         public GameFacilitator()
         {
-            InitializeComponent();
+            InitializeComponent();            
             load_server();
             
            
@@ -184,10 +184,10 @@ namespace TooLearnOfficial
 
         }
 
-        private async void GameFacilitator_Load(object sender, EventArgs e)
+        private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
 
-
+/* 
             SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
             DataTable sad = new DataTable();
             rad.Fill(sad);
@@ -233,7 +233,7 @@ namespace TooLearnOfficial
             await Task.Delay(500);
             SendToAllClients(mt);
 
-
+*/
 
         }
 
@@ -289,6 +289,24 @@ namespace TooLearnOfficial
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            SendToAllClients("p" + 1);      //Dae nagana ang Sending sa ibang form pag server....
+            await Task.Delay(500);
+            SendToAllClients("q" + 2);
+            await Task.Delay(500);
+            SendToAllClients("w" + 3);
+            await Task.Delay(500);
+            SendToAllClients("x" + 4);
+            await Task.Delay(500);
+            SendToAllClients("r" + 5);
+            await Task.Delay(500);
+            SendToAllClients("t" + 6);
+            await Task.Delay(500);
+            SendToAllClients("y" + 7);
+
         }
     }
 }

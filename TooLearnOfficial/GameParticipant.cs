@@ -118,9 +118,9 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead); //ini si may laman kang message
 
-                
-                
-                
+                //Receive();
+
+
 
                 if (message.Contains("DISCONNECT"))
                 {
@@ -132,37 +132,50 @@ namespace TooLearnOfficial
                 }
                 else
                 {
-                   
+                    string Message = message.Substring(message.Length - 1, 1);
 
 
-                   string Message=message.Substring(message.Length - 1,1);
-                    if (Message.Contains("1"))
+                    switch (Message)
                     {
-                        ThreadHelper.lblAddLabel(this, label1, message);
-                    }
-                    if (Message.Contains("2"))
-                    { ThreadHelper.btnAddTxtButton(this, button1, message); }
-                    if (Message.Contains("3"))
-                    { ThreadHelper.btnAddTxtButton(this, button2, message); }
-                    if(Message.Contains("4"))
-                    { ThreadHelper.btnAddTxtButton(this, button3, message); }
-                    if (Message.Contains("5"))
-                    { ThreadHelper.btnAddTxtButton(this, button4, message); }
-                    /*
-                  if ( Message=="1")
-                        {
-                        ThreadHelper.lblAddLabel(this, label1, message);
-                    }
-                   if(Message == "2")
-                    { ThreadHelper.btnAddTxtButton(this, button1, message); }
-                   if (Message == "3")
-                    { ThreadHelper.btnAddTxtButton(this, button2, message); }
-                  if (Message == "4")
-                    { ThreadHelper.btnAddTxtButton(this, button3, message); }
-                   if (Message == "5")
-                    { ThreadHelper.btnAddTxtButton(this, button4, message); }
-                    */
+                        case "1":
 
+                            ThreadHelper.lblAddLabel(this, label1, message);
+
+                            break;
+
+
+                        case "2":
+
+                            ThreadHelper.btnAddTxtButton(this, button1, message);
+                            break;
+
+
+                        case "3":
+                            ThreadHelper.btnAddTxtButton(this, button2, message);
+                            break;
+
+
+                        case "4":
+
+                            ThreadHelper.btnAddTxtButton(this, button3, message);
+
+                            break;
+
+
+                        case "5":
+
+                               ThreadHelper.btnAddTxtButton(this, button4, message);
+
+                         
+
+                            break;
+
+                   
+                    }
+
+                           
+                  
+                                          
 
                     Receive();
 
@@ -198,7 +211,7 @@ namespace TooLearnOfficial
             bunifuFlatButton3.Text = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
             bunifuFlatButton4.Text = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
             correct = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");  */
-        }
+        }  
         private string ScalarReturn(string q)
         {
             string s;
