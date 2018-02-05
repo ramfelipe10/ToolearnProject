@@ -186,6 +186,12 @@
     <Compile Include="LobbyParticipant.Designer.cs">
       <DependentUpon>LobbyParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manual.Designer.cs">
+      <DependentUpon>Manual.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LobbyParticipant.resx">
       <DependentUpon>LobbyParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual.resx">
+      <DependentUpon>Manual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyClass.resx">
       <DependentUpon>MyClass.cs</DependentUpon>
