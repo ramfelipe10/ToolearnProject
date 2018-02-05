@@ -152,8 +152,9 @@
             this.bunifuCustomDataGrid1.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.bunifuCustomDataGrid1.RowTemplate.DividerHeight = 1;
             this.bunifuCustomDataGrid1.RowTemplate.Height = 25;
@@ -188,7 +189,7 @@
             // 
             // buttonCreateClassroom
             // 
-            this.buttonCreateClassroom.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.buttonCreateClassroom.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonCreateClassroom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonCreateClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCreateClassroom.BorderRadius = 0;

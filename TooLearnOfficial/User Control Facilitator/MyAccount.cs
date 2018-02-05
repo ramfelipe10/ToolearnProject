@@ -50,7 +50,14 @@ namespace TooLearnOfficial.User_Control
 
         private void ScoreRecord_Click(object sender, EventArgs e)
         {
+            ScoreRecordFacilitator SRF = new ScoreRecordFacilitator();
+            SRF.ShowDialog();
+        }
 
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            ClassGroup CG = new ClassGroup();
+            CG.ShowDialog();
         }
     }
 }

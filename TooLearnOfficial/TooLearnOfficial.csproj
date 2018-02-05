@@ -90,6 +90,12 @@
     <Compile Include="ChooseUser.Designer.cs">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassGroup.Designer.cs">
+      <DependentUpon>ClassGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateMyClassroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,12 @@
     <Compile Include="QuizBee.Designer.cs">
       <DependentUpon>QuizBee.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScoreRecordFacilitator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreRecordFacilitator.Designer.cs">
+      <DependentUpon>ScoreRecordFacilitator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +363,9 @@
     <EmbeddedResource Include="ChooseUser.resx">
       <DependentUpon>ChooseUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClassGroup.resx">
+      <DependentUpon>ClassGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateMyClassroom.resx">
       <DependentUpon>CreateMyClassroom.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,6 +437,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuizBee.resx">
       <DependentUpon>QuizBee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreRecordFacilitator.resx">
+      <DependentUpon>ScoreRecordFacilitator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -575,6 +593,8 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\Group_96px.png" />
+    <None Include="TooLearn Pictures\User Manual_64px.png" />
     <None Include="Manual Pictures\my_classroom.png" />
     <None Include="Manual Pictures\my_account.png" />
     <None Include="Manual Pictures\menu_facilitator.png" />

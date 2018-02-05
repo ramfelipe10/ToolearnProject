@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
     public partial class GameCode : Form
     {
+
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         public GameCode()
         {
             InitializeComponent();
@@ -44,13 +47,20 @@ namespace TooLearnOfficial
             }
 
             code.Text=randomString;
-            MessageBox.Show(randomString);
+
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Insert into Pincode(Game_Pin) Values('" + code.Text + "')", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
         }
 
      
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             LobbyFacilitator LF = new LobbyFacilitator();
             LF.Show();
         }

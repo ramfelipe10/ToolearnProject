@@ -43,7 +43,7 @@ namespace TooLearnOfficial
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(data);
                     bunifuCustomDataGrid1.ClearSelection();
-                    bunifuCustomLabel1.Visible = true;
+                    bunifuCustomLabel2.Visible = true;
                     
 
                 }
@@ -56,7 +56,7 @@ namespace TooLearnOfficial
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(data);
                     bunifuCustomDataGrid1.ClearSelection();
-                    bunifuCustomLabel1.Visible = false;
+                    bunifuCustomLabel2.Visible = false;
                     
 
                 }
@@ -90,9 +90,11 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            LobbyFacilitator lobby = new LobbyFacilitator();
-            lobby.ShowDialog();
-           
+         //   LobbyFacilitator lobby = new LobbyFacilitator();
+          //  lobby.ShowDialog();
+            GameCode GC = new GameCode();
+            GC.ShowDialog();
+
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)

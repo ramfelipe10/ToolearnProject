@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.classG = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -44,13 +46,15 @@
             this.MyClassroom = new Bunifu.Framework.UI.BunifuImageButton();
             this.CreateQuizButton = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScoreRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditProfile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myquiz)).BeginInit();
@@ -80,6 +84,8 @@
             this.bunifuGradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomLabel6);
+            this.bunifuGradientPanel2.Controls.Add(this.classG);
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomLabel4);
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomLabel3);
@@ -100,6 +106,35 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(756, 346);
             this.bunifuGradientPanel2.TabIndex = 78;
+            // 
+            // bunifuCustomLabel6
+            // 
+            this.bunifuCustomLabel6.AutoSize = true;
+            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(233, 316);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(99, 20);
+            this.bunifuCustomLabel6.TabIndex = 84;
+            this.bunifuCustomLabel6.Text = "Class Group";
+            // 
+            // classG
+            // 
+            this.classG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(67)))), ((int)(((byte)(154)))));
+            this.classG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.classG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.classG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.classG.Image = global::TooLearnOfficial.Properties.Resources.Group_96px;
+            this.classG.ImageActive = null;
+            this.classG.Location = new System.Drawing.Point(201, 181);
+            this.classG.Name = "classG";
+            this.classG.Size = new System.Drawing.Size(166, 126);
+            this.classG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.classG.TabIndex = 83;
+            this.classG.TabStop = false;
+            this.classG.Zoom = 1;
+            this.classG.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // bunifuCustomLabel5
             // 
@@ -251,16 +286,6 @@
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(546, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 67;
-            this.pictureBox1.TabStop = false;
-            // 
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 5;
@@ -286,6 +311,21 @@
             this.bunifuElipse7.ElipseRadius = 5;
             this.bunifuElipse7.TargetControl = this.CreateQuizButton;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(546, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bunifuElipse8
+            // 
+            this.bunifuElipse8.ElipseRadius = 5;
+            this.bunifuElipse8.TargetControl = this.classG;
+            // 
             // MyAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,6 +338,7 @@
             this.Size = new System.Drawing.Size(794, 506);
             this.bunifuGradientPanel2.ResumeLayout(false);
             this.bunifuGradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScoreRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myquiz)).EndInit();
@@ -330,5 +371,8 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuImageButton classG;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
     }
 }

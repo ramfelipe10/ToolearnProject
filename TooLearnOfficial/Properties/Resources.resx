@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Picture_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Picture_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Logout Rounded Left_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Logout Rounded Left_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +144,9 @@
   </data>
   <data name="Eye_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Eye_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Error_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="newparti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\newparti.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +178,8 @@
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Error_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Error_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Picture_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Picture_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OLS6A90" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\OLS6A90.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,9 +193,6 @@
   <data name="set-of-beautiful-children-characters_23-2147575063" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\set-of-beautiful-children-characters_23-2147575063.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Manual Pictures\my_account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="newfaci" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\newfaci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,6 +205,9 @@
   <data name="AdNU-Seal-LATEST-PROTOTYPE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\AdNU-Seal-LATEST-PROTOTYPE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="User Manual_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\User Manual_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="User_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\User_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -219,6 +219,9 @@
   </data>
   <data name="Create_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Create_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Handshake_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Handshake_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="loaderbookshelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\loaderbookshelf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,8 +265,8 @@
   <data name="About_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\About_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Handshake_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Handshake_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="my_account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manual Pictures\my_account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,10 +277,13 @@
   <data name="Create_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Create_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="my_classroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manual Pictures\my_classroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Back Arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Back Arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my_classroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Manual Pictures\my_classroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Group_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Group_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
