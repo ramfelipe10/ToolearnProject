@@ -575,6 +575,9 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Manual Pictures\my_classroom.png" />
+    <None Include="Manual Pictures\my_account.png" />
+    <None Include="Manual Pictures\menu_facilitator.png" />
     <None Include="Manual Pictures\login.png" />
     <None Include="Manual Pictures\create.png" />
     <None Include="Manual Pictures\user.png" />

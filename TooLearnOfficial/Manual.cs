@@ -44,6 +44,36 @@ namespace TooLearnOfficial
 
         private void btnNext1_Click(object sender, EventArgs e)
         {
+            panelMenuFacilitator2.Visible = true;
+        }
+
+        private void btnPrevious2_Click(object sender, EventArgs e)
+        {
+            panelMenuFacilitator2.Visible = false;
+        }
+
+        private void btnNext2_Click(object sender, EventArgs e)
+        {
+            panelFacilitatorAccount.Visible = true;
+        }
+
+        private void btnPrevious3_Click(object sender, EventArgs e)
+        {
+            panelFacilitatorAccount.Visible = false;
+        }
+
+        private void btnNext3_Click(object sender, EventArgs e)
+        {
+            panelFacilitatorClassroom.Visible = true;
+        }
+
+        private void btnPrevious4_Click(object sender, EventArgs e)
+        {
+            panelFacilitatorClassroom.Visible = false;
+        }
+
+        private void btnNext4_Click(object sender, EventArgs e)
+        {
 
         }
     }
