@@ -34,6 +34,16 @@ namespace TooLearnOfficial
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            panelUserCreateLogin1.Visible = true;
+        }
+
+        private void btnPrevious1_Click(object sender, EventArgs e)
+        {
+            panelUserCreateLogin1.Visible = false;
+        }
+
+        private void btnNext1_Click(object sender, EventArgs e)
+        {
 
         }
     }
