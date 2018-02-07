@@ -14,6 +14,8 @@ namespace TooLearnOfficial
     public partial class ClassGroup : Form
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        public static string SetValueForText1 = "";
+        string Class;
 
         public ClassGroup()
         {
@@ -69,18 +71,15 @@ namespace TooLearnOfficial
 
 
 
-                SqlDataAdapter sda = new SqlDataAdapter("select p_username AS 'Username',p_password AS 'Password',fullname AS 'Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select group_name,g_username,g_password from groups g,classrooms c where g.class_id=c.class_id AND c.class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
 
-                SqlDataAdapter sad = new SqlDataAdapter("Select class_code from classrooms where class_name = '" + comboBox1.SelectedItem + "' ", con);
-                DataTable data = new DataTable();
-                sad.Fill(data);
-
-                string code = data.Rows[0][0].ToString();
-
                
+               
+
+               Class = comboBox1.SelectedItem.ToString();
 
                 if (dt.Rows.Count == 0)
                 {
@@ -88,7 +87,7 @@ namespace TooLearnOfficial
                     bs.DataSource = dt;
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
-                    bunifuCustomLabel2.Visible = true;
+                    bunifuCustomLabel1.Visible = true;
 
 
 
@@ -102,7 +101,7 @@ namespace TooLearnOfficial
                     bs.DataSource = dt;
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(dt);
-                    bunifuCustomLabel2.Visible = false;
+                    bunifuCustomLabel1.Visible = false;
 
                     bunifuCustomDataGrid1.ClearSelection();
 
@@ -115,6 +114,22 @@ namespace TooLearnOfficial
                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                Dialogue.Show("Classroom Not Specified", "", "Ok", "Cancel");
+            }
+
+            else
+            {
+                SetValueForText1 = Class;
+                AddGroup AG = new AddGroup();
+                AG.ShowDialog();
+            }
+            
         }
     }
 }

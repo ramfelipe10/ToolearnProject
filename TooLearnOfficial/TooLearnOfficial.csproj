@@ -78,6 +78,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGroup.Designer.cs">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddParticipantAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     <Compile Include="User Control Participant\ScoreParticipant.Designer.cs">
       <DependentUpon>ScoreParticipant.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddGroup.resx">
+      <DependentUpon>AddGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddParticipantAccount.resx">
       <DependentUpon>AddParticipantAccount.cs</DependentUpon>
     </EmbeddedResource>
