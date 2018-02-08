@@ -39,28 +39,59 @@ namespace TooLearnOfficial
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter sd = new SqlDataAdapter("select class_id from classrooms where class_name= '" + classroom + "' ", con);
-            DataTable dt = new DataTable();
-            sd.Fill(dt);
-           int ID= Convert.ToInt32(dt.Rows[0][0]);
+            SqlDataAdapter adapt = new SqlDataAdapter("select count(group_id) from groups where group_name= '" + GroupNameBox.Text + "'", con);
+            DataTable dat = new DataTable();
+            adapt.Fill(dat);
+            int Count = int.Parse(dat.Rows[0][0].ToString());
 
-            con.Open();
-            String query = "INSERT INTO groups (group_name,g_username,g_password,class_id) VALUES ('" + GroupNameBox.Text + "','haha','hhehe',' " + ID + " ')";
-            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-            int n = sda.SelectCommand.ExecuteNonQuery();
-
-            con.Close();
-
-            if (n > 0)
+            if (string.IsNullOrWhiteSpace(GroupNameBox.Text) && GroupNameBox.Text.Length > 0 || GroupNameBox.Text == "")
             {
-                Dialogue.Show("Created","","Ok","Cancel");
-                this.Close();
+                Dialogue.Show("Invalid Input or Empty", "", "Ok", "Cancel");
             }
+
+
+            else if (Count != 0)
+            {
+
+                Dialogue.Show("Group Already Exist!", "", "Ok", "Cancel");
+            }
+
+
             else
             {
-                Dialogue.Show("Failed", "", "Ok", "Cancel");
-                this.Close();
+
+
+                SqlDataAdapter sd = new SqlDataAdapter("select class_id from classrooms where class_name= '" + classroom + "' ", con);
+                DataTable dt = new DataTable();
+                sd.Fill(dt);
+                int ID = Convert.ToInt32(dt.Rows[0][0]);
+
+                con.Open();
+                String query = "INSERT INTO groups (group_name,g_username,g_password,class_id) VALUES ('" + GroupNameBox.Text + "','haha','hhehe',' " + ID + " ')";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                int n = sda.SelectCommand.ExecuteNonQuery();
+
+                con.Close();
+
+                if (n > 0)
+                {
+
+                    ClassGroup CC = (ClassGroup)Application.OpenForms["ClassGroup"];
+                    CC.Load_Group();
+
+                    Dialogue.Show("Created", "", "Ok", "Cancel");
+                    this.Close();
+                }
+                else
+                {
+                    Dialogue.Show("Failed", "", "Ok", "Cancel");
+                    this.Close();
+                }
+
+
             }
         }
+
+
     }
 }

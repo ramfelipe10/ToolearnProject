@@ -14,8 +14,8 @@ namespace TooLearnOfficial
     public partial class ClassGroup : Form
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        public static string SetValueForText1 = "";
-        string Class;
+        public static string SetValueForText1 = "", SetValueForText2 = "", SetValueForText3 = "";
+        string Class,GroupName;
 
         public ClassGroup()
         {
@@ -24,8 +24,54 @@ namespace TooLearnOfficial
         }
 
 
+        public void Load_Group()
+        {
+            try
+            {
+                
 
-        void Load_Class()
+                SqlDataAdapter sda = new SqlDataAdapter("select group_name,g_username,g_password from groups g,classrooms c where g.class_id=c.class_id AND c.class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+
+
+                if (dt.Rows.Count == 0)
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    bunifuCustomDataGrid1.DataSource = bs;
+                    sda.Update(dt);
+                    bunifuCustomLabel1.Visible = true;
+
+
+
+
+                }
+
+
+                else
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    bunifuCustomDataGrid1.DataSource = bs;
+                    sda.Update(dt);
+                    bunifuCustomLabel1.Visible = false;
+
+                    bunifuCustomDataGrid1.ClearSelection();
+
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+        }
+
+      void Load_Class()
         {
 
             try
@@ -131,5 +177,113 @@ namespace TooLearnOfficial
             }
             
         }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
+                {
+
+
+
+                  
+
+                    DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+                    if (result == DialogResult.Yes)
+                    {
+
+                        con.Open();
+
+                        String q = "DELETE FROM grouplist WHERE group_id=(select group_id from groups where group_name= '" + GroupName + "')";
+                        SqlDataAdapter s = new SqlDataAdapter(q, con);
+                        int n = s.SelectCommand.ExecuteNonQuery();
+
+
+                        String query = "DELETE FROM groups WHERE group_name= '" + GroupName + "' ";
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                       int m = sda.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+                        if (n > 0 && m > 0)
+                        {
+                            Load_Group();
+                            bunifuCustomDataGrid1.ClearSelection();
+                 
+                            Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
+
+                        }
+
+                        else
+                        {
+                            Load_Group();
+                            Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");                          
+                            bunifuCustomDataGrid1.ClearSelection();                    
+
+                        }
+                    }//end if result
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+
+
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+
+            
+
+                if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
+                {
+
+                SetValueForText2 = GroupName;
+                SetValueForText3 = Class;
+
+                ViewGroupParticipant VGP = new ViewGroupParticipant();
+                VGP.ShowDialog();
+                
+
+
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+          
+
+
+        }
+
+        private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
+            {
+                GroupName = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
+
+                
+            }
+
+        }
+
     }
 }

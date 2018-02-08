@@ -363,6 +363,12 @@
     <Compile Include="User Control Participant\ScoreParticipant.Designer.cs">
       <DependentUpon>ScoreParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewGroupParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewGroupParticipant.Designer.cs">
+      <DependentUpon>ViewGroupParticipant.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Participant\ScoreParticipant.resx">
       <DependentUpon>ScoreParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewGroupParticipant.resx">
+      <DependentUpon>ViewGroupParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

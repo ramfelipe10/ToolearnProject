@@ -487,7 +487,6 @@
             this.Controls.Add(this.createC);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.bunifuCustomDataGrid2);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -495,6 +494,7 @@
             this.Controls.Add(this.textBoxCreateClassroom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.bunifuCustomDataGrid1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateMyClassroom";
