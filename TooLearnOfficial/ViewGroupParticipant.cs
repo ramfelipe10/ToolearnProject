@@ -16,16 +16,15 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string group = ClassGroup.SetValueForText2;
         string Class = ClassGroup.SetValueForText3;
+        string ParticipantName;
         int ID;
         public ViewGroupParticipant()
         {
-            InitializeComponent();
+           InitializeComponent();        
+           Load_Participant();
+           Load_List();        
+           
         
-            Load_Participant();
-           Load_List();
-           
-           
-
         }
 
 
@@ -34,27 +33,46 @@ namespace TooLearnOfficial
 
             try
             {
+                              
+
+
+
                 SqlDataAdapter sad = new SqlDataAdapter("select class_id from classrooms where class_name = '" + Class + "' ", con);
                 DataTable data = new DataTable();
                 sad.Fill(data);
 
-
                 int ClassID = Convert.ToInt32(data.Rows[0][0]);
 
-                SqlCommand cmd = new SqlCommand("Select DISTINCT l_name from participant p left join classlist cl on p.participant_id =cl.participant_id where cl.class_id != '" + ClassID + "' ", con);
+                SqlDataAdapter s = new SqlDataAdapter("Select count(l_name) from participant p left join classlist cl on p.participant_id = cl.participant_id where cl.class_id = '" + ClassID + "' ", con);
+                DataTable dt = new DataTable();
+                s.Fill(dt);
 
-                con.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                if (dt.Rows[0][0].ToString() == "0")
                 {
-                    comboBox1.Items.Add(dr["l_name"]);
+                    bunifuFlatButton1.Visible = false;
+                    bunifuFlatButton2.Visible = false;
+                    Dialogue.Show("No Classroom Participant Found", "", "Ok", "Cancel");
+                }
+
+                else
+                {
+
+                    SqlCommand cmd = new SqlCommand("Select DISTINCT l_name from participant p left join classlist cl on p.participant_id =cl.participant_id where cl.class_id = '" + ClassID + "' ", con);
+
+                    con.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        comboBox1.Items.Add(dr["l_name"]);
+
+                    }
+                    dr.Close();
+                    con.Close();
+
+                    grouptext.Text = group;
+                    classtext.Text = Class;
 
                 }
-                dr.Close();
-                con.Close();
-
-                grouptext.Text = group;
-                classtext.Text = Class;
 
             }
 
@@ -166,5 +184,77 @@ namespace TooLearnOfficial
 
         }
 
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
+                {
+
+
+
+
+
+                    DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+                    if (result == DialogResult.Yes)
+                    {
+
+                        con.Open();
+
+                        String q = "DELETE FROM grouplist WHERE participant_id=(select participant_id from participant where fullname= '" + ParticipantName + "')";
+                        SqlDataAdapter s = new SqlDataAdapter(q, con);
+                        int n = s.SelectCommand.ExecuteNonQuery();
+
+                       
+                        con.Close();
+                        if (n > 0 )
+                        {
+                            Load_Participant();
+                            bunifuCustomDataGrid1.ClearSelection();
+
+                            Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");
+
+                        }
+
+                        else
+                        {
+                            
+                            Dialogue.Show("Fail to Delete!", "", "Ok", "Cancel");
+                            bunifuCustomDataGrid1.ClearSelection();
+
+                        }
+                    }//end if result
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+            
+
+        }
+
+        private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
+            {
+                ParticipantName = bunifuCustomDataGrid1.CurrentRow.Cells[0].Value.ToString();
+
+
+            }
+        }
     }
 }

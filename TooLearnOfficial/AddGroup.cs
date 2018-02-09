@@ -39,7 +39,12 @@ namespace TooLearnOfficial
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapt = new SqlDataAdapter("select count(group_id) from groups where group_name= '" + GroupNameBox.Text + "'", con);
+            SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + classroom + "' ", con);
+            DataTable det = new DataTable();
+            sed.Fill(det);
+            int id = Convert.ToInt32(det.Rows[0][0]);
+
+            SqlDataAdapter adapt = new SqlDataAdapter("select count(group_id) from groups where group_name= '" + GroupNameBox.Text + "' AND class_id= '" + id + "' ", con);
             DataTable dat = new DataTable();
             adapt.Fill(dat);
             int Count = int.Parse(dat.Rows[0][0].ToString());

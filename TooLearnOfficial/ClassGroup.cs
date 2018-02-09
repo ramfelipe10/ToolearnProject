@@ -205,7 +205,7 @@ namespace TooLearnOfficial
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                        int m = sda.SelectCommand.ExecuteNonQuery();
                         con.Close();
-                        if (n > 0 && m > 0)
+                        if (m > 0)
                         {
                             Load_Group();
                             bunifuCustomDataGrid1.ClearSelection();
