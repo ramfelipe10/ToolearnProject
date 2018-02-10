@@ -29,12 +29,23 @@ namespace TooLearnOfficial
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+
+            SqlDataAdapter adapter = new SqlDataAdapter("select count(class_id) from classrooms where class_name= '" + ClassNameBox.Text + "' ", con);
+            DataTable dat = new DataTable();
+            adapter.Fill(dat);
+            int Count = int.Parse(dat.Rows[0][0].ToString());
+
             if (string.IsNullOrWhiteSpace(ClassNameBox.Text) && ClassNameBox.Text.Length > 0 || ClassNameBox.Text == "")
             {
                 Dialogue.Show("Invalid Input or Empty", "", "Ok", "Cancel");
                 
             }//If End
 
+            else if (Count != 0)
+            {
+
+                Dialogue.Show("Classroom Already Exist! Please use Other Name", "", "Ok", "Cancel");
+            }
 
 
             else

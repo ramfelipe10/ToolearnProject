@@ -14,7 +14,7 @@ namespace TooLearnOfficial
     public partial class ClassGroup : Form
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        public static string SetValueForText1 = "", SetValueForText2 = "", SetValueForText3 = "";
+        public static string SetValueForText1 = "", SetValueForText2 = "", SetValueForText3 = "", SetValueForText4 = "";
         string Class,GroupName;
 
         public ClassGroup()
@@ -178,6 +178,46 @@ namespace TooLearnOfficial
             
         }
 
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                {
+
+
+
+                    SqlDataAdapter adapt = new SqlDataAdapter("select group_name from groups where group_name= '" + GroupName + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+
+                    SetValueForText4 = dt.Rows[0][0].ToString();//Getting the Name of The group
+                    SetValueForText3 = Class;//Getting ClassName
+
+                    EditGroup EG = new EditGroup();
+                    EG.ShowDialog();
+
+
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+        }
+
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
             try
@@ -186,9 +226,12 @@ namespace TooLearnOfficial
                 if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
                 {
 
+                    SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
+                    DataTable det = new DataTable();
+                    sed.Fill(det);
+                    int id = Convert.ToInt32(det.Rows[0][0]);
 
 
-                  
 
                     DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
                     if (result == DialogResult.Yes)
@@ -196,12 +239,12 @@ namespace TooLearnOfficial
 
                         con.Open();
 
-                        String q = "DELETE FROM grouplist WHERE group_id=(select group_id from groups where group_name= '" + GroupName + "')";
+                        String q = "DELETE FROM grouplist WHERE group_id IN (select group_id from groups where group_name= '" + GroupName + "')";
                         SqlDataAdapter s = new SqlDataAdapter(q, con);
                         int n = s.SelectCommand.ExecuteNonQuery();
 
 
-                        String query = "DELETE FROM groups WHERE group_name= '" + GroupName + "' ";
+                        String query = "DELETE FROM groups WHERE group_name= '" + GroupName + "' AND class_id= '" +id+ "' ";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                        int m = sda.SelectCommand.ExecuteNonQuery();
                         con.Close();
