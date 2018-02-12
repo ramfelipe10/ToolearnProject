@@ -121,31 +121,9 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>99</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuGradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAUSURBVChTY/hPJBhViBdQW+H//wAj+46A3TfWvAAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="ButtonFacilitatorCreateAccount.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAQ8AAAAmCAYAAADa+x50AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVHhe7d2vjsIwAIDxe3QEAoFAIBAIBAKB4AFIEDwA
-        AoFAIBAIBAKBQPTylXUHgW2k8vb9kiYX7o/bl7bbej9BkjIYD0lZjIekLMZDUhbjISmL8ZCUpTYe9/s9
-        bLfbMJ/Pw2QyCYPBIHQ6HYfD8U8H1zjX+mw2C5vNJtxut6IG7yrjsd/v4x8iHATkcDiEy+VSfFfSf8Q1
-        zrW+2+3CYrGIDSAin7zFg9LwS9PpNFyv1+JTSW1U14OXePCDo9GosjSS2omVyHg8fll9vMSDwhgOSZ+w
-        nGE/JCnjQVmYmkhSleVyGdbrdfw6xoO7KmyMuMchqQ6tYGvjfD4/4sFShSWLJDVh5sEMJMaDe7rcmpGk
-        JqfTKc4+YjyGw2GchkhSE5Yu3W73EY9er1f7JJkkPeNp1BgPvpCkbxkPSVmMh6QsxkNSFuMhKUsZD267
-        cPtFkr5RxoNH0z2rQ9K3ynjwQhwvxklSEx4o5cHSGI/0rLokNUnvwsV4sGShJO57SGqS3oWL8cBqtYpD
-        kqqkA9FRxoNZB6cEHY/H4hNJ+sN5P6xQ0ntwZTzARkg66EOSEsLB5IKjCJOXeICZBwFJR41Jajf2N5hx
-        PIcDb/EASxjuvlAadlY9nlBqF5YmaX+DDdJPR3Z8jEdCabgl0+/340MhDoejHYMzftI/fKtSGw9JqmI8
-        JGUxHpKyGA9JWYyHpAwh/AIuIgVbPSS2GwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAApQAAAFUCAYAAACaz6wVAAAABGdBTUEAALGPC/xhBQAARlVJREFUeF7t
@@ -693,6 +671,28 @@
         QBaPRvoiK1QoRE6g9M6VH3zco8wOYPhgADEr0t48oghUKERJTCEibgCDAHdRLzME59aBwtcoX1QBFQpR
         E6YwkVUElxFSHzFLqHnNAWYwcOdA2cOIKUdfVAsVCtECplwxU3CGAUDxgtRuJBgg3AfGCPfFQjg8h1w5
         oiHOHvj/w2e56WvSVlYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="bunifuGradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAUSURBVChTY/hPJBhViBdQW+H//wAj+46A3TfWvAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="ButtonFacilitatorCreateAccount.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAQ8AAAAmCAYAAADa+x50AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAISSURBVHhe7d2vjsIwAIDxe3QEAoFAIBAIBAKB4AFIEDwA
+        AoFAIBAIBAKBQPTylXUHgW2k8vb9kiYX7o/bl7bbej9BkjIYD0lZjIekLMZDUhbjISmL8ZCUpTYe9/s9
+        bLfbMJ/Pw2QyCYPBIHQ6HYfD8U8H1zjX+mw2C5vNJtxut6IG7yrjsd/v4x8iHATkcDiEy+VSfFfSf8Q1
+        zrW+2+3CYrGIDSAin7zFg9LwS9PpNFyv1+JTSW1U14OXePCDo9GosjSS2omVyHg8fll9vMSDwhgOSZ+w
+        nGE/JCnjQVmYmkhSleVyGdbrdfw6xoO7KmyMuMchqQ6tYGvjfD4/4sFShSWLJDVh5sEMJMaDe7rcmpGk
+        JqfTKc4+YjyGw2GchkhSE5Yu3W73EY9er1f7JJkkPeNp1BgPvpCkbxkPSVmMh6QsxkNSFuMhKUsZD267
+        cPtFkr5RxoNH0z2rQ9K3ynjwQhwvxklSEx4o5cHSGI/0rLokNUnvwsV4sGShJO57SGqS3oWL8cBqtYpD
+        kqqkA9FRxoNZB6cEHY/H4hNJ+sN5P6xQ0ntwZTzARkg66EOSEsLB5IKjCJOXeICZBwFJR41Jajf2N5hx
+        PIcDb/EASxjuvlAadlY9nlBqF5YmaX+DDdJPR3Z8jEdCabgl0+/340MhDoejHYMzftI/fKtSGw9JqmI8
+        JGUxHpKyGA9JWYyHpAwh/AIuIgVbPSS2GwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

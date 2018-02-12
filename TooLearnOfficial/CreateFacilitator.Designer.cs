@@ -422,10 +422,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(850, 485);
-            this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuImageButton6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.bunifuGradientPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateFacilitator";
