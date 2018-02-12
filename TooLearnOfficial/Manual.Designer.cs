@@ -115,7 +115,7 @@
             // 
             // panelUserCreateLogin1
             // 
-            this.panelUserCreateLogin1.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
+            this.panelUserCreateLogin1.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panelUserCreateLogin1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelUserCreateLogin1.Controls.Add(this.panelMenuFacilitator2);
             this.panelUserCreateLogin1.Controls.Add(this.pictureBox3);
@@ -131,7 +131,7 @@
             // 
             // panelMenuFacilitator2
             // 
-            this.panelMenuFacilitator2.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
+            this.panelMenuFacilitator2.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panelMenuFacilitator2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMenuFacilitator2.Controls.Add(this.panelFacilitatorAccount);
             this.panelMenuFacilitator2.Controls.Add(this.pictureBox4);
@@ -145,7 +145,7 @@
             // 
             // panelFacilitatorAccount
             // 
-            this.panelFacilitatorAccount.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
+            this.panelFacilitatorAccount.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panelFacilitatorAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelFacilitatorAccount.Controls.Add(this.panelFacilitatorClassroom);
             this.panelFacilitatorAccount.Controls.Add(this.pictureBox5);
@@ -159,7 +159,7 @@
             // 
             // panelFacilitatorClassroom
             // 
-            this.panelFacilitatorClassroom.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
+            this.panelFacilitatorClassroom.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panelFacilitatorClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelFacilitatorClassroom.Controls.Add(this.pictureBox6);
             this.panelFacilitatorClassroom.Controls.Add(this.btnNext4);
@@ -584,8 +584,8 @@
             // 
             // pictureBoxBackground
             // 
+            this.pictureBoxBackground.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.pictureBoxBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxBackground.Image = global::TooLearnOfficial.Properties.Resources.bg;
             this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxBackground.Name = "pictureBoxBackground";
             this.pictureBoxBackground.Size = new System.Drawing.Size(850, 500);
