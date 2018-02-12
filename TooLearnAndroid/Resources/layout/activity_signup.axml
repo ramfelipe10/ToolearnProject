@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout1">
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView1"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="3dp"
+        android:layout_margin="wrap_content"
+        android:layout_gravity="center" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView1"
+        android:id="@+id/editText1"
+        android:hint="First Name" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/editText1"
+        android:id="@+id/editText2"
+        android:layout_below="@id/imageView1"
+        android:hint="Middle Name" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/editText2"
+        android:id="@+id/editText3"
+        android:layout_below="@id/imageView1"
+        android:hint="Last Name" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText1"
+        android:id="@+id/editText4"
+        android:layout_above="@id/textView1"
+        android:hint="Username" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:id="@+id/editText5"
+        android:layout_above="@id/textView1"
+        android:layout_alignBottom="@id/textView1"
+        android:hint="Password" />
+</RelativeLayout>

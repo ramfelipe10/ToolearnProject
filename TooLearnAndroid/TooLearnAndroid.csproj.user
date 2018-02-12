@@ -4,5 +4,6 @@
     <SelectedDevice>Emulator</SelectedDevice>
     <DefaultDevice>Emulator</DefaultDevice>
     <ProjectView>ShowAllFiles</ProjectView>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>

@@ -4,53 +4,20 @@
     android:showDividers="middle"
     android:divider="@drawable/divider"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:src="@drawable/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView1"
-        android:adjustViewBounds="true"
-        android:maxWidth="100dp"
-        android:maxHeight="100dp"
-        android:scaleType="fitCenter"
-        android:layout_marginLeft="3dp"
-        android:layout_margin="wrap_content"
-        android:layout_gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_edittext"
-        android:id="@+id/editText1" />
-    <TextView
-        android:text="Username"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:gravity="center" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_edittext"
-        android:id="@+id/editText2" />
-    <TextView
-        android:text="Password"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:gravity="center" />
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:gravity="center">
     <Button
-        android:text="Sign In"
+        android:text="Classroom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
-    <TextView
-        android:text="Create Account"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/button1"
+        android:background="@drawable/classroom_button" />
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:gravity="center" />
+        android:id="@+id/button2"
+        android:text="Public"
+        android:background="@drawable/public_button" />
 </LinearLayout>

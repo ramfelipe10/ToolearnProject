@@ -32,10 +32,22 @@ namespace TooLearnAndroid
 		{
 			
 			// aapt resource value: 0
+			public static int classroom_button = 0;
+			
+			// aapt resource value: 0
+			public static int divider = 0;
+			
+			// aapt resource value: 0
+			public static int freeplay_button = 0;
+			
+			// aapt resource value: 0
 			public static int icon = 0;
 			
 			// aapt resource value: 0
 			public static int logo = 0;
+			
+			// aapt resource value: 0
+			public static int rounded_edittext = 0;
 			
 			static Drawable()
 			{
@@ -47,8 +59,54 @@ namespace TooLearnAndroid
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0
+			public static int button1 = 0;
+			
+			// aapt resource value: 0
+			public static int button2 = 0;
+			
+			// aapt resource value: 0
+			public static int editText1 = 0;
+			
+			// aapt resource value: 0
+			public static int editText2 = 0;
+			
+			// aapt resource value: 0
+			public static int imageView1 = 0;
+			
+			// aapt resource value: 0
+			public static int relativeLayout1 = 0;
+			
+			// aapt resource value: 0
+			public static int textView1 = 0;
+			
+			// aapt resource value: 0
+			public static int textView2 = 0;
+			
+			// aapt resource value: 0
+			public static int textView3 = 0;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
+			
+			// aapt resource value: 0
+			public static int activity_signin = 0;
+			
+			// aapt resource value: 0
+			public static int activity_signup = 0;
 			
 			// aapt resource value: 0
 			public static int Main = 0;

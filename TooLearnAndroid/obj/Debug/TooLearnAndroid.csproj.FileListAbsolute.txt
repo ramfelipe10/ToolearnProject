@@ -39,3 +39,8 @@ obj\Debug\designtime\Resource.Designer.cs
 obj\Debug\designtime\Resource.Designer.cs
 obj\Debug\designtime\Resource.Designer.cs
 obj\Debug\designtime\Resource.Designer.cs
+obj\Debug\designtime\Resource.Designer.cs
+obj\Debug\designtime\Resource.Designer.cs
+obj\Debug\designtime\Resource.Designer.cs
+obj\Debug\designtime\Resource.Designer.cs
+obj\Debug\designtime\Resource.Designer.cs
