@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace TooLearnAndroid
 {
-    [Activity(Label = "TooLearnAndroid", MainLauncher = true)]
+    [Activity(Label = "TooLearnAndroid")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
