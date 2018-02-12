@@ -86,14 +86,7 @@ namespace TooLearnOfficial
             
 
 
-        }
-
-        private void button1_Click(object sender, EventArgs e) 
-        {
-           
-        }
-
-       
+        }   
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {

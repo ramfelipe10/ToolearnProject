@@ -124,15 +124,6 @@ namespace TooLearnOfficial
 
         }
 
-        private void EditParticipantProfile_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 
 

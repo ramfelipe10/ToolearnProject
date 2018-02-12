@@ -33,8 +33,6 @@ namespace TooLearnOfficial
 
             try
             {
-                              
-
 
 
                 SqlDataAdapter sad = new SqlDataAdapter("select class_id from classrooms where class_name = '" + Class + "' ", con);
@@ -116,10 +114,6 @@ namespace TooLearnOfficial
                    {
                        Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
                    }
-       
-
-   
-
 
         }
 

@@ -20,10 +20,6 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {

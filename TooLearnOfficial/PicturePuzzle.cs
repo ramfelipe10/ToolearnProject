@@ -30,13 +30,7 @@ namespace TooLearnOfficial
         byte[] imgFile = null;
        
 
-
-
-       
-
         List<Panel> listPanel = new List<Panel>();
-
-
 
 
         public PicturePuzzle()
@@ -81,10 +75,7 @@ namespace TooLearnOfficial
                     var index = x * 3 + y;
 
                     QuizPicturePuzzle CC = (QuizPicturePuzzle)Application.OpenForms["QuizPicturePuzzle"];
-
-
-
-                    
+                   
 
                                         imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
                                         var graphics = Graphics.FromImage(imgarray[index]);
@@ -92,10 +83,7 @@ namespace TooLearnOfficial
                                                          y * (PictureHeight / 3),
                                                          PictureWidth / 3,
                                                         PictureHeight / 3), GraphicsUnit.Pixel);
-                                        graphics.Dispose(); 
-
-
-                   
+                                        graphics.Dispose();                    
 
                 }
             }
@@ -273,8 +261,6 @@ namespace TooLearnOfficial
 
 
         }
-
-
 
 
 

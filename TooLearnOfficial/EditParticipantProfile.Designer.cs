@@ -284,7 +284,6 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(477, 225);
             this.bunifuGradientPanel2.TabIndex = 91;
-            this.bunifuGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel2_Paint);
             // 
             // bunifuElipse2
             // 
@@ -304,7 +303,6 @@
             this.Name = "EditParticipantProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditParticipantProfile";
-            this.Load += new System.EventHandler(this.EditParticipantProfile_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

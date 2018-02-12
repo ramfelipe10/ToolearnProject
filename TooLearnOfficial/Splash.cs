@@ -17,8 +17,6 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-
-
         private void progressBar1_Click(object sender, EventArgs e)
         {
             //  timer1.Start();
@@ -43,26 +41,9 @@ namespace TooLearnOfficial
                 ChooseUser cu = new ChooseUser();
                 cu.Show();
 
-
-
             }
-
-           
+         
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

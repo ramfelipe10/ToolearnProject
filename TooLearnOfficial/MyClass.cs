@@ -141,9 +141,6 @@ namespace TooLearnOfficial
             Load_Class(); 
         }
 
-        private void MyClass_Load_1(object sender, EventArgs e)
-        {
 
-        }
     }
 }

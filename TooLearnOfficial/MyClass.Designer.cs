@@ -356,7 +356,6 @@
             this.Name = "MyClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyClass";
-            this.Load += new System.EventHandler(this.MyClass_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
