@@ -75,7 +75,6 @@
             this.label1.Size = new System.Drawing.Size(92, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -88,7 +87,6 @@
             this.label4.Size = new System.Drawing.Size(149, 19);
             this.label4.TabIndex = 12;
             this.label4.Text = "Re-Type Password:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // TextboxReTypePassword
             // 
@@ -110,7 +108,6 @@
             this.TextboxReTypePassword.Size = new System.Drawing.Size(379, 33);
             this.TextboxReTypePassword.TabIndex = 19;
             this.TextboxReTypePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxReTypePassword.OnValueChanged += new System.EventHandler(this.TextboxReTypePassword_OnValueChanged);
             // 
             // TextboxName
             // 
@@ -132,7 +129,6 @@
             this.TextboxName.Size = new System.Drawing.Size(379, 33);
             this.TextboxName.TabIndex = 16;
             this.TextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxName.OnValueChanged += new System.EventHandler(this.TextboxName_OnValueChanged);
             // 
             // label2
             // 
@@ -145,7 +141,6 @@
             this.label2.Size = new System.Drawing.Size(86, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // TextboxPassword
             // 
@@ -167,7 +162,6 @@
             this.TextboxPassword.Size = new System.Drawing.Size(379, 33);
             this.TextboxPassword.TabIndex = 18;
             this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxPassword.OnValueChanged += new System.EventHandler(this.TextboxPassword_OnValueChanged);
             // 
             // TextboxUsername
             // 
@@ -202,7 +196,6 @@
             this.label3.Size = new System.Drawing.Size(62, 21);
             this.label3.TabIndex = 12;
             this.label3.Text = "Name:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // bunifuElipse1
             // 
@@ -234,7 +227,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ErrorImage
             // 
@@ -248,7 +240,6 @@
             this.ErrorImage.TabIndex = 21;
             this.ErrorImage.TabStop = false;
             this.ErrorImage.Visible = false;
-            this.ErrorImage.Click += new System.EventHandler(this.ErrorImage_Click);
             // 
             // CheckImage
             // 
@@ -262,7 +253,6 @@
             this.CheckImage.TabIndex = 20;
             this.CheckImage.TabStop = false;
             this.CheckImage.Visible = false;
-            this.CheckImage.Click += new System.EventHandler(this.CheckImage_Click);
             // 
             // ButtonFacilitatorCreateAccount
             // 
@@ -309,7 +299,6 @@
             this.bunifuGradientPanel1.Quality = 1;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(850, 26);
             this.bunifuGradientPanel1.TabIndex = 12;
-            this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
             // pictureBox2
             // 
@@ -322,7 +311,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -335,7 +323,6 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(68, 21);
             this.bunifuCustomLabel1.TabIndex = 14;
             this.bunifuCustomLabel1.Text = "Sign Up";
-            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
             // 
             // bunifuImageButton4
             // 
@@ -391,7 +378,6 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(408, 334);
             this.bunifuGradientPanel2.TabIndex = 30;
-            this.bunifuGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel2_Paint);
             // 
             // labelAvailableUsername
             // 
@@ -402,7 +388,6 @@
             this.labelAvailableUsername.Name = "labelAvailableUsername";
             this.labelAvailableUsername.Size = new System.Drawing.Size(0, 18);
             this.labelAvailableUsername.TabIndex = 22;
-            this.labelAvailableUsername.Click += new System.EventHandler(this.labelAvailableUsername_Click);
             // 
             // bunifuDragControl1
             // 

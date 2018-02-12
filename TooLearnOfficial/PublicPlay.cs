@@ -31,7 +31,7 @@ namespace TooLearnOfficial
         {
             this.Hide();
             ParticipantSQLConnect pp = new ParticipantSQLConnect();
-            pp.Show();
+            pp.ShowDialog();
         }
     }
 }

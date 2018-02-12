@@ -52,10 +52,6 @@ namespace TooLearnOfficial
 
         }
 
-
-
-
-
       public void Load_Participant()
         {
 
@@ -98,13 +94,6 @@ namespace TooLearnOfficial
 
 
         }
-
-
-
-
-
-
-
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
@@ -240,9 +229,6 @@ namespace TooLearnOfficial
                             Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
                         }
 
-
-
-
                     }
 
                     else
@@ -263,13 +249,10 @@ namespace TooLearnOfficial
 
             }
 
-
         }
 
         private void textBoxCreateClassroom_Enter(object sender, EventArgs e)
         {
-
-
             bunifuCustomDataGrid1.ClearSelection();
 
 
@@ -365,7 +348,6 @@ namespace TooLearnOfficial
                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
             
-
         }
 
         private void deleteP_Click(object sender, EventArgs e)
@@ -464,9 +446,6 @@ namespace TooLearnOfficial
                     EditClassroom EC = new EditClassroom();
                     EC.ShowDialog();
 
-
-
-
                 }
 
                 else
@@ -513,7 +492,6 @@ namespace TooLearnOfficial
 
             }
 
-
             try
             {
                              
@@ -521,9 +499,6 @@ namespace TooLearnOfficial
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
                 int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
-
-
-
 
                 SqlCommand cmd = new SqlCommand("Select DISTINCT fullname from participant p left join classlist cl on p.participant_id =cl.participant_id where cl.class_id != '" + ID + "' OR cl.class_id IS NULL", con);
 
@@ -543,14 +518,7 @@ namespace TooLearnOfficial
                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
-
-
-
         }
-
-
-
-
 
     }
 }

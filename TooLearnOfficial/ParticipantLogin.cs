@@ -33,11 +33,6 @@ namespace TooLearnOfficial
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonParticipantSignIn_Click(object sender, EventArgs e)
         {
             
@@ -69,16 +64,6 @@ namespace TooLearnOfficial
             {
                 Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
             }
-        }
-
-        private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)

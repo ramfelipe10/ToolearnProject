@@ -23,9 +23,6 @@ namespace TooLearnOfficial
 
         private void ButtonFacilitatorCreateAccount_Click(object sender, EventArgs e)
         {
-            
-
-
 
             if (FName.Text == "" || Mname.Text == "" || Lname.Text == "")
             {
@@ -85,9 +82,6 @@ namespace TooLearnOfficial
                     Dialogue.Show("Failed! Please Retry", "", "Ok", "Cancel");
                 }
 
-
-
-
             }
 
         }
@@ -102,15 +96,7 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-       
-
-
-
         ////
-
-
-
-
 
     }
 }

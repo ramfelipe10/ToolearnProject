@@ -20,28 +20,6 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-       
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextboxName_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextboxName_OnValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void bunifuImageButton6_Click(object sender, EventArgs e)
         {
             ParticipantLogin pl = new ParticipantLogin();
@@ -153,29 +131,5 @@ namespace TooLearnOfficial
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextboxPassword_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextboxReTypePassword_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextboxMName_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextboxLName_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -24,9 +24,7 @@ namespace TooLearnOfficial
             InitializeComponent();
             Load_Quiz();
         }
-
-       
-
+      
         void Load_Quiz()
         {
                       
@@ -107,9 +105,6 @@ namespace TooLearnOfficial
             
         }
 
-       
-     
-
         private void DeleteQuiz_Click(object sender, EventArgs e)
         {
             try
@@ -143,9 +138,7 @@ namespace TooLearnOfficial
                             Load_Quiz();
                             bunifuCustomDataGrid1.ClearSelection();
                             Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");                          
-                           
-                           
-
+                                                    
 
                         }
 
@@ -181,7 +174,6 @@ namespace TooLearnOfficial
         {
 
         }
-
 
         private void search_KeyPress(object sender, KeyPressEventArgs e)
         {

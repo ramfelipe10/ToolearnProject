@@ -104,7 +104,6 @@
             this.TextboxUsername.Size = new System.Drawing.Size(288, 38);
             this.TextboxUsername.TabIndex = 3;
             this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextboxUsername.OnValueChanged += new System.EventHandler(this.TextboxUsername_OnValueChanged);
             this.TextboxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxUsername_KeyDown);
             // 
             // label1

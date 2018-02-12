@@ -55,9 +55,6 @@ namespace TooLearnOfficial
         }
 
 
-
-
-
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -150,30 +147,20 @@ namespace TooLearnOfficial
                     {
                         Dialogue.Show("Enrolled!", "", "Ok", "Cancel");
 
-
-
-
-
-
-
                     }
                     else
                     {
                         Dialogue.Show("Enroll Failed!", "", "Ok", "Cancel");
 
-
                     }
 
                 }
-
-
 
                 else
                 {
 
                     Dialogue.Show("Class Code doesn't Exist", "", "Ok", "Cancel");
                 }
-
 
 
             }
@@ -184,8 +171,6 @@ namespace TooLearnOfficial
                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ","","Ok","Cancel");
 
             }
-
-
 
         }
 

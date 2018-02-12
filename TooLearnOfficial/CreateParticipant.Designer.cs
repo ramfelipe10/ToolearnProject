@@ -138,7 +138,6 @@
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "First Name:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // TextboxUsername
             // 
@@ -209,7 +208,6 @@
             this.TextboxPassword.Size = new System.Drawing.Size(379, 33);
             this.TextboxPassword.TabIndex = 18;
             this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxPassword.OnValueChanged += new System.EventHandler(this.TextboxPassword_OnValueChanged);
             // 
             // label1
             // 
@@ -255,7 +253,6 @@
             this.TextboxName.Size = new System.Drawing.Size(122, 33);
             this.TextboxName.TabIndex = 16;
             this.TextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxName.OnValueChanged += new System.EventHandler(this.TextboxName_OnValueChanged_1);
             // 
             // label4
             // 
@@ -289,7 +286,6 @@
             this.TextboxReTypePassword.Size = new System.Drawing.Size(379, 33);
             this.TextboxReTypePassword.TabIndex = 19;
             this.TextboxReTypePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxReTypePassword.OnValueChanged += new System.EventHandler(this.TextboxReTypePassword_OnValueChanged);
             // 
             // CheckImage
             // 
@@ -445,7 +441,6 @@
             this.TextboxMName.Size = new System.Drawing.Size(122, 33);
             this.TextboxMName.TabIndex = 24;
             this.TextboxMName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxMName.OnValueChanged += new System.EventHandler(this.TextboxMName_OnValueChanged);
             // 
             // label6
             // 
@@ -479,7 +474,6 @@
             this.TextboxLName.Size = new System.Drawing.Size(122, 33);
             this.TextboxLName.TabIndex = 26;
             this.TextboxLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxLName.OnValueChanged += new System.EventHandler(this.TextboxLName_OnValueChanged);
             // 
             // CreateParticipant
             // 

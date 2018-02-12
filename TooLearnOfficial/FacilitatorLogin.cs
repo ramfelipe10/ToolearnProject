@@ -19,8 +19,6 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
-        
-
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             try
@@ -31,8 +29,6 @@ namespace TooLearnOfficial
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
-
-
 
                     SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
 
@@ -63,10 +59,7 @@ namespace TooLearnOfficial
                 }
 
 
-
             }
-
-
 
            
                  catch (Exception ex)
@@ -89,12 +82,7 @@ namespace TooLearnOfficial
 
             CreateFacilitator cf = new CreateFacilitator();
             cf.Show();
-        }
-
-        private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        }   
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
