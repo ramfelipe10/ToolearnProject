@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
 namespace TooLearnOfficial
 {
     public partial class ScoreRecordFacilitator : Form
@@ -18,12 +17,10 @@ namespace TooLearnOfficial
 
         public ScoreRecordFacilitator()
         {
-                            
-                InitializeComponent();
-                Load_Class();
-            
+            InitializeComponent();
+            Load_Class();
         }
-             
+
 
         void Load_Class()
         {

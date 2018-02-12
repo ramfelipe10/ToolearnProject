@@ -327,12 +327,6 @@
     <Compile Include="User Control Facilitator\MyAccount.Designer.cs">
       <DependentUpon>MyAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Facilitator\Score.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Control Facilitator\Score.Designer.cs">
-      <DependentUpon>Score.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Control Facilitator\Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -513,9 +507,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\MyAccount.resx">
       <DependentUpon>MyAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Control Facilitator\Score.resx">
-      <DependentUpon>Score.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
