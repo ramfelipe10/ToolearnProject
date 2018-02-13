@@ -18,7 +18,7 @@ namespace TooLearnOfficial
         public ScoreRecordFacilitator()
         {
             InitializeComponent();
-            Load_Class();
+           
         }
 
 

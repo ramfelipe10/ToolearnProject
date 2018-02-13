@@ -301,10 +301,16 @@ namespace TooLearnOfficial
                         con.Open();
 
                         String qer = "DELETE FROM classlist WHERE class_id= '" + ID + "' ";
+                        String qe = "DELETE FROM grouplist WHERE group_id=(Select group_id from groups where class_id= '" + ID + "') ";
+                        String que= "DELETE FROM groups WHERE class_id= '" + ID + "' ";
                         String query = "DELETE FROM classrooms WHERE class_name= '" + className + "' AND facilitator_id = '" + Program.user_id + "' ";
                         SqlDataAdapter sad = new SqlDataAdapter(qer, con);
+                        SqlDataAdapter s = new SqlDataAdapter(qe, con);
+                        SqlDataAdapter d = new SqlDataAdapter(que, con);
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sad.SelectCommand.ExecuteNonQuery();
+                        int o = s.SelectCommand.ExecuteNonQuery();
+                        int p = d.SelectCommand.ExecuteNonQuery();
                         int m = sda.SelectCommand.ExecuteNonQuery();
                         con.Close();
                         if (n >= 0 && m > 0)

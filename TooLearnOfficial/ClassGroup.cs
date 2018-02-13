@@ -30,7 +30,7 @@ namespace TooLearnOfficial
             {
                 
 
-                SqlDataAdapter sda = new SqlDataAdapter("select group_name,g_username,g_password from groups g,classrooms c where g.class_id=c.class_id AND c.class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
+               SqlDataAdapter sda = new SqlDataAdapter("select group_name AS 'Name',g_username AS 'Username',g_password AS 'Password' from groups g,classrooms c where g.class_id=c.class_id AND c.class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);               
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
@@ -116,8 +116,7 @@ namespace TooLearnOfficial
             {
 
 
-
-                SqlDataAdapter sda = new SqlDataAdapter("select group_name,g_username,g_password from groups g,classrooms c where g.class_id=c.class_id AND c.class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);
+               SqlDataAdapter sda = new SqlDataAdapter("select group_name AS 'Name',g_username AS 'Username',g_password AS 'Password' from groups g,classrooms c where g.class_id=c.class_id AND c.class_id=(select class_id from classrooms where class_name = '" + comboBox1.SelectedItem + "') ", con);                          
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 

@@ -64,7 +64,16 @@ namespace TooLearnOfficial
 
             else
             {
+                char[] letters = "q1we2rty3uio4pas5dfgh6jklz7x8cv9bnm0".ToCharArray();
+                Random r = new Random();
+                string Pass = "";
+                for (int i = 0; i < 4; i++) //i < # depends how long the password
+                {
+                    Pass += letters[r.Next(0, 34)].ToString();
+                }
 
+
+                string usernameFormat = String.Format("{0}", GroupNameBox.Text.ToLower());
 
                 SqlDataAdapter sd = new SqlDataAdapter("select class_id from classrooms where class_name= '" + classroom + "' ", con);
                 DataTable dt = new DataTable();
@@ -72,7 +81,7 @@ namespace TooLearnOfficial
                 int ID = Convert.ToInt32(dt.Rows[0][0]);
 
                 con.Open();
-                String query = "INSERT INTO groups (group_name,g_username,g_password,class_id) VALUES ('" + GroupNameBox.Text + "','haha','hhehe',' " + ID + " ')";
+                String query = "INSERT INTO groups (group_name,g_username,g_password,class_id) VALUES ('" + GroupNameBox.Text + "','" +usernameFormat+ "','" +Pass+ "',' " + ID + " ')";
                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
                 int n = sda.SelectCommand.ExecuteNonQuery();
 

@@ -41,7 +41,7 @@ namespace TooLearnOfficial
                     bunifuCustomDataGrid1.DataSource = bs;
                     sda.Update(data);
                     bunifuCustomDataGrid1.ClearSelection();
-                    bunifuCustomLabel2.Visible = true;
+                    bunifuCustomLabel2.Visible = true;                  
                     
 
                 }
@@ -97,11 +97,13 @@ namespace TooLearnOfficial
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
-            {
+          
+           {
                 QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
 
-            }
+           }
             
         }
 
@@ -137,6 +139,7 @@ namespace TooLearnOfficial
 
                             Load_Quiz();
                             bunifuCustomDataGrid1.ClearSelection();
+                            search.Text = "";
                             Dialogue.Show("Successfully Deleted!", "", "Ok", "Cancel");                          
                                                     
 
@@ -177,25 +180,45 @@ namespace TooLearnOfficial
 
         private void search_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (e.KeyChar == (char)13)
-            //{
-            //    DataView dv = data.DefaultView;
-            //    dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
-            //    bunifuCustomDataGrid1.DataSource = dv.ToTable();
-            //    bunifuCustomDataGrid1.ClearSelection();
-            //} 
+            SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+
+          
+
+            if (e.KeyChar == (char)13)
+            {
+               DataView dv = data.DefaultView;
+               dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);               
+                bunifuCustomDataGrid1.DataSource = dv.ToTable();
+                if (dv.Count == 0)
+                {
+                    Dialogue.Show("No Result Found", "", "Ok", "Cancel");
+                }
+                bunifuCustomDataGrid1.ClearSelection();
+            } 
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            //DataView dv = data.DefaultView;
-            //dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);
-            //bunifuCustomDataGrid1.DataSource = dv.ToTable();
-            //bunifuCustomDataGrid1.ClearSelection(); 
-            DataTable dt = new DataTable();
-            SqlDataAdapter SDA = new SqlDataAdapter("SELECT quiz_title, date_created FROM quizzes where quiz_title like '" + search.Text + "' ", con);
-            SDA.Fill(dt);
-            bunifuCustomDataGrid1.DataSource = dt;
+            SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+            DataTable data = new DataTable();
+            sda.Fill(data);
+
+          
+
+            DataView dv = data.DefaultView;
+            dv.RowFilter = String.Format("Title LIKE '{0}%'", search.Text);        
+            bunifuCustomDataGrid1.DataSource = dv.ToTable();
+            if (dv.Count == 0)
+            {
+                Dialogue.Show("No Result Found", "", "Ok", "Cancel");
+            }
+            bunifuCustomDataGrid1.ClearSelection(); 
+           // DataTable dt = new DataTable();
+           // SqlDataAdapter SDA = new SqlDataAdapter("SELECT quiz_title, date_created FROM quizzes where quiz_title like '" + search.Text + "' ", con);
+           // SDA.Fill(dt);
+          //  bunifuCustomDataGrid1.DataSource = dt;
 
         }
 
@@ -206,7 +229,57 @@ namespace TooLearnOfficial
 
         private void search_TextChanged(object sender, EventArgs e)
         {
+            if (search.Text == "")
+            {
+                try
+                {
 
-        }
+                    SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+                    DataTable data = new DataTable();
+                    sda.Fill(data);
+                    if (data.Rows.Count == 0)
+                    {
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = data;
+                        bunifuCustomDataGrid1.DataSource = bs;
+                        sda.Update(data);
+                        bunifuCustomDataGrid1.ClearSelection();
+                        bunifuCustomLabel2.Visible = true;
+
+
+                    }
+
+                    else
+                    {
+
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = data;
+                        bunifuCustomDataGrid1.DataSource = bs;
+                        sda.Update(data);
+                        bunifuCustomDataGrid1.ClearSelection();
+                        bunifuCustomLabel2.Visible = false;
+
+
+                    }
+
+                }
+
+
+                catch (Exception ex)
+                {
+
+
+
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+
+                }
+            }
+
+        }//end if
+
+
+        
+
     }
 }
