@@ -32,17 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateParticipant));
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.labelAvailableUsername = new System.Windows.Forms.Label();
             this.ErrorImage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TextboxUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.ButtonFacilitatorCreateAccount = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.TextboxPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TextboxName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label4 = new System.Windows.Forms.Label();
-            this.TextboxReTypePassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.CheckImage = new System.Windows.Forms.PictureBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -53,10 +51,18 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TextboxMName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TextboxLName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.TextboxName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TextboxMName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TextboxLName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TextboxUsername = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TextboxPassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.TextboxReTypePassword = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CheckImage)).BeginInit();
@@ -78,31 +84,55 @@
             this.bunifuGradientPanel2.BackColor = System.Drawing.Color.White;
             this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel2.Controls.Add(this.label6);
+            this.bunifuGradientPanel2.Controls.Add(this.TextboxReTypePassword);
+            this.bunifuGradientPanel2.Controls.Add(this.TextboxPassword);
+            this.bunifuGradientPanel2.Controls.Add(this.TextboxUsername);
             this.bunifuGradientPanel2.Controls.Add(this.TextboxLName);
-            this.bunifuGradientPanel2.Controls.Add(this.label5);
             this.bunifuGradientPanel2.Controls.Add(this.TextboxMName);
+            this.bunifuGradientPanel2.Controls.Add(this.TextboxName);
+            this.bunifuGradientPanel2.Controls.Add(this.label6);
+            this.bunifuGradientPanel2.Controls.Add(this.label5);
             this.bunifuGradientPanel2.Controls.Add(this.labelAvailableUsername);
             this.bunifuGradientPanel2.Controls.Add(this.ErrorImage);
             this.bunifuGradientPanel2.Controls.Add(this.label3);
-            this.bunifuGradientPanel2.Controls.Add(this.TextboxUsername);
             this.bunifuGradientPanel2.Controls.Add(this.ButtonFacilitatorCreateAccount);
-            this.bunifuGradientPanel2.Controls.Add(this.TextboxPassword);
             this.bunifuGradientPanel2.Controls.Add(this.label1);
             this.bunifuGradientPanel2.Controls.Add(this.label2);
-            this.bunifuGradientPanel2.Controls.Add(this.TextboxName);
             this.bunifuGradientPanel2.Controls.Add(this.label4);
-            this.bunifuGradientPanel2.Controls.Add(this.TextboxReTypePassword);
             this.bunifuGradientPanel2.Controls.Add(this.CheckImage);
             this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(229, 132);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(229, 151);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(408, 334);
             this.bunifuGradientPanel2.TabIndex = 34;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(272, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Last Name:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(139, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 20);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Middle Name:";
             // 
             // labelAvailableUsername
             // 
@@ -139,28 +169,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "First Name:";
             // 
-            // TextboxUsername
-            // 
-            this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxUsername.BackColor = System.Drawing.Color.White;
-            this.TextboxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxUsername.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxUsername.HintText = "";
-            this.TextboxUsername.isPassword = false;
-            this.TextboxUsername.LineFocusedColor = System.Drawing.Color.Black;
-            this.TextboxUsername.LineIdleColor = System.Drawing.Color.Gray;
-            this.TextboxUsername.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.TextboxUsername.LineThickness = 3;
-            this.TextboxUsername.Location = new System.Drawing.Point(15, 108);
-            this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxUsername.Name = "TextboxUsername";
-            this.TextboxUsername.Size = new System.Drawing.Size(379, 33);
-            this.TextboxUsername.TabIndex = 17;
-            this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TextboxUsername.OnValueChanged += new System.EventHandler(this.TextboxUsername_OnValueChanged_1);
-            // 
             // ButtonFacilitatorCreateAccount
             // 
             this.ButtonFacilitatorCreateAccount.ActiveBorderThickness = 1;
@@ -180,34 +188,13 @@
             this.ButtonFacilitatorCreateAccount.IdleFillColor = System.Drawing.Color.White;
             this.ButtonFacilitatorCreateAccount.IdleForecolor = System.Drawing.Color.DodgerBlue;
             this.ButtonFacilitatorCreateAccount.IdleLineColor = System.Drawing.Color.Gray;
-            this.ButtonFacilitatorCreateAccount.Location = new System.Drawing.Point(75, 278);
+            this.ButtonFacilitatorCreateAccount.Location = new System.Drawing.Point(75, 287);
             this.ButtonFacilitatorCreateAccount.Margin = new System.Windows.Forms.Padding(5);
             this.ButtonFacilitatorCreateAccount.Name = "ButtonFacilitatorCreateAccount";
             this.ButtonFacilitatorCreateAccount.Size = new System.Drawing.Size(271, 38);
-            this.ButtonFacilitatorCreateAccount.TabIndex = 7;
+            this.ButtonFacilitatorCreateAccount.TabIndex = 42;
             this.ButtonFacilitatorCreateAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ButtonFacilitatorCreateAccount.Click += new System.EventHandler(this.ButtonFacilitatorCreateAccount_Click);
-            // 
-            // TextboxPassword
-            // 
-            this.TextboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxPassword.BackColor = System.Drawing.Color.White;
-            this.TextboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxPassword.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxPassword.HintText = "";
-            this.TextboxPassword.isPassword = true;
-            this.TextboxPassword.LineFocusedColor = System.Drawing.Color.Black;
-            this.TextboxPassword.LineIdleColor = System.Drawing.Color.Gray;
-            this.TextboxPassword.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.TextboxPassword.LineThickness = 3;
-            this.TextboxPassword.Location = new System.Drawing.Point(15, 175);
-            this.TextboxPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxPassword.Name = "TextboxPassword";
-            this.TextboxPassword.Size = new System.Drawing.Size(379, 33);
-            this.TextboxPassword.TabIndex = 18;
-            this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -233,27 +220,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
             // 
-            // TextboxName
-            // 
-            this.TextboxName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxName.BackColor = System.Drawing.Color.White;
-            this.TextboxName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxName.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxName.HintText = "";
-            this.TextboxName.isPassword = false;
-            this.TextboxName.LineFocusedColor = System.Drawing.Color.Black;
-            this.TextboxName.LineIdleColor = System.Drawing.Color.Gray;
-            this.TextboxName.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.TextboxName.LineThickness = 3;
-            this.TextboxName.Location = new System.Drawing.Point(15, 41);
-            this.TextboxName.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxName.Name = "TextboxName";
-            this.TextboxName.Size = new System.Drawing.Size(122, 33);
-            this.TextboxName.TabIndex = 16;
-            this.TextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -265,27 +231,6 @@
             this.label4.Size = new System.Drawing.Size(149, 19);
             this.label4.TabIndex = 12;
             this.label4.Text = "Re-Type Password:";
-            // 
-            // TextboxReTypePassword
-            // 
-            this.TextboxReTypePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxReTypePassword.BackColor = System.Drawing.Color.White;
-            this.TextboxReTypePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxReTypePassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxReTypePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxReTypePassword.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxReTypePassword.HintText = "";
-            this.TextboxReTypePassword.isPassword = true;
-            this.TextboxReTypePassword.LineFocusedColor = System.Drawing.Color.Black;
-            this.TextboxReTypePassword.LineIdleColor = System.Drawing.Color.Gray;
-            this.TextboxReTypePassword.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.TextboxReTypePassword.LineThickness = 3;
-            this.TextboxReTypePassword.Location = new System.Drawing.Point(15, 242);
-            this.TextboxReTypePassword.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxReTypePassword.Name = "TextboxReTypePassword";
-            this.TextboxReTypePassword.Size = new System.Drawing.Size(379, 33);
-            this.TextboxReTypePassword.TabIndex = 19;
-            this.TextboxReTypePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // CheckImage
             // 
@@ -402,85 +347,164 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(268, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(268, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(335, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
-            // label5
+            // TextboxName
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(139, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 20);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Middle Name:";
+            this.TextboxName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxName.BackColor = System.Drawing.Color.White;
+            this.TextboxName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxName.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TextboxName.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxName.BorderThickness = 2;
+            this.TextboxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TextboxName.isPassword = false;
+            this.TextboxName.Location = new System.Drawing.Point(7, 36);
+            this.TextboxName.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxName.Name = "TextboxName";
+            this.TextboxName.Size = new System.Drawing.Size(123, 38);
+            this.TextboxName.TabIndex = 36;
+            this.TextboxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // TextboxMName
             // 
             this.TextboxMName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TextboxMName.BackColor = System.Drawing.Color.White;
+            this.TextboxMName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxMName.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TextboxMName.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxMName.BorderThickness = 2;
             this.TextboxMName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextboxMName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxMName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxMName.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxMName.HintText = "";
+            this.TextboxMName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TextboxMName.isPassword = false;
-            this.TextboxMName.LineFocusedColor = System.Drawing.Color.Black;
-            this.TextboxMName.LineIdleColor = System.Drawing.Color.Gray;
-            this.TextboxMName.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.TextboxMName.LineThickness = 3;
-            this.TextboxMName.Location = new System.Drawing.Point(144, 41);
+            this.TextboxMName.Location = new System.Drawing.Point(142, 36);
             this.TextboxMName.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxMName.Name = "TextboxMName";
-            this.TextboxMName.Size = new System.Drawing.Size(122, 33);
-            this.TextboxMName.TabIndex = 24;
+            this.TextboxMName.Size = new System.Drawing.Size(123, 38);
+            this.TextboxMName.TabIndex = 37;
             this.TextboxMName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(272, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 20);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Last Name:";
             // 
             // TextboxLName
             // 
             this.TextboxLName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TextboxLName.BackColor = System.Drawing.Color.White;
+            this.TextboxLName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxLName.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TextboxLName.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxLName.BorderThickness = 2;
             this.TextboxLName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TextboxLName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxLName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxLName.HintForeColor = System.Drawing.Color.Empty;
-            this.TextboxLName.HintText = "";
+            this.TextboxLName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TextboxLName.isPassword = false;
-            this.TextboxLName.LineFocusedColor = System.Drawing.Color.Black;
-            this.TextboxLName.LineIdleColor = System.Drawing.Color.Gray;
-            this.TextboxLName.LineMouseHoverColor = System.Drawing.Color.Black;
-            this.TextboxLName.LineThickness = 3;
-            this.TextboxLName.Location = new System.Drawing.Point(277, 41);
+            this.TextboxLName.Location = new System.Drawing.Point(276, 36);
             this.TextboxLName.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxLName.Name = "TextboxLName";
-            this.TextboxLName.Size = new System.Drawing.Size(122, 33);
-            this.TextboxLName.TabIndex = 26;
+            this.TextboxLName.Size = new System.Drawing.Size(123, 38);
+            this.TextboxLName.TabIndex = 38;
             this.TextboxLName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // TextboxUsername
+            // 
+            this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxUsername.BackColor = System.Drawing.Color.White;
+            this.TextboxUsername.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxUsername.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TextboxUsername.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxUsername.BorderThickness = 2;
+            this.TextboxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxUsername.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TextboxUsername.isPassword = false;
+            this.TextboxUsername.Location = new System.Drawing.Point(15, 108);
+            this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxUsername.Name = "TextboxUsername";
+            this.TextboxUsername.Size = new System.Drawing.Size(379, 38);
+            this.TextboxUsername.TabIndex = 39;
+            this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TextboxUsername.OnValueChanged += new System.EventHandler(this.TextboxUsername_OnValueChanged);
+            // 
+            // TextboxPassword
+            // 
+            this.TextboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxPassword.BackColor = System.Drawing.Color.White;
+            this.TextboxPassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxPassword.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TextboxPassword.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxPassword.BorderThickness = 2;
+            this.TextboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxPassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TextboxPassword.isPassword = true;
+            this.TextboxPassword.Location = new System.Drawing.Point(15, 175);
+            this.TextboxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxPassword.Name = "TextboxPassword";
+            this.TextboxPassword.Size = new System.Drawing.Size(379, 38);
+            this.TextboxPassword.TabIndex = 40;
+            this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // TextboxReTypePassword
+            // 
+            this.TextboxReTypePassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxReTypePassword.BackColor = System.Drawing.Color.White;
+            this.TextboxReTypePassword.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TextboxReTypePassword.BorderColorIdle = System.Drawing.Color.Gray;
+            this.TextboxReTypePassword.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxReTypePassword.BorderThickness = 2;
+            this.TextboxReTypePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextboxReTypePassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxReTypePassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TextboxReTypePassword.isPassword = true;
+            this.TextboxReTypePassword.Location = new System.Drawing.Point(15, 240);
+            this.TextboxReTypePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxReTypePassword.Name = "TextboxReTypePassword";
+            this.TextboxReTypePassword.Size = new System.Drawing.Size(379, 38);
+            this.TextboxReTypePassword.TabIndex = 41;
+            this.TextboxReTypePassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.TextboxName;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this.TextboxMName;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 5;
+            this.bunifuElipse5.TargetControl = this.TextboxLName;
+            // 
+            // bunifuElipse6
+            // 
+            this.bunifuElipse6.ElipseRadius = 5;
+            this.bunifuElipse6.TargetControl = this.TextboxUsername;
+            // 
+            // bunifuElipse7
+            // 
+            this.bunifuElipse7.ElipseRadius = 5;
+            this.bunifuElipse7.TargetControl = this.TextboxPassword;
+            // 
+            // bunifuElipse8
+            // 
+            this.bunifuElipse8.ElipseRadius = 5;
+            this.bunifuElipse8.TargetControl = this.TextboxReTypePassword;
             // 
             // CreateParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(850, 485);
+            this.ClientSize = new System.Drawing.Size(850, 511);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuImageButton6);
             this.Controls.Add(this.pictureBox1);
@@ -513,14 +537,10 @@
         private System.Windows.Forms.Label labelAvailableUsername;
         private System.Windows.Forms.PictureBox ErrorImage;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxUsername;
         private Bunifu.Framework.UI.BunifuThinButton2 ButtonFacilitatorCreateAccount;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxName;
         private System.Windows.Forms.Label label4;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxReTypePassword;
         private System.Windows.Forms.PictureBox CheckImage;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
@@ -532,8 +552,18 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxLName;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox TextboxMName;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxReTypePassword;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxPassword;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxUsername;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxLName;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxMName;
+        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxName;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
     }
 }

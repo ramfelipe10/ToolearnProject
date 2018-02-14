@@ -37,45 +37,7 @@ namespace TooLearnOfficial
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void TextboxUsername_OnValueChanged_1(object sender, EventArgs e)
-        {
-            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' ", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-
-
-            if (String.IsNullOrWhiteSpace(TextboxUsername.Text))
-            {
-                labelAvailableUsername.Text = null;
-                ErrorImage.Visible = false;
-                CheckImage.Visible = false;
-            }
-
-
-            else if (int.Parse(dt.Rows[0][0].ToString()) == 0)
-            {
-                labelAvailableUsername.Text = TextboxUsername.Text + " is Available";
-                this.labelAvailableUsername.ForeColor = System.Drawing.Color.Green;
-                ErrorImage.Visible = false;
-                CheckImage.Visible = true;
-
-            }
-
-
-
-
-            else if (int.Parse(dt.Rows[0][0].ToString()) > 0)
-            {
-                labelAvailableUsername.Text = TextboxUsername.Text + " is Not Available";
-                this.labelAvailableUsername.ForeColor = System.Drawing.Color.Red;
-                CheckImage.Visible = false;
-                ErrorImage.Visible = true;
-            }
-
-
-            else { }
-
-        }
+      
 
         private void CreateParticipant_Load(object sender, EventArgs e)
         {
@@ -130,6 +92,49 @@ namespace TooLearnOfficial
 
             }
         }
+
+        private void TextboxUsername_OnValueChanged(object sender, EventArgs e)
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From participant Where p_username='" + TextboxUsername.Text + "' ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+
+            if (String.IsNullOrWhiteSpace(TextboxUsername.Text))
+            {
+                labelAvailableUsername.Text = null;
+                ErrorImage.Visible = false;
+                CheckImage.Visible = false;
+            }
+
+
+            else if (int.Parse(dt.Rows[0][0].ToString()) == 0)
+            {
+                labelAvailableUsername.Text = TextboxUsername.Text + " is Available";
+                this.labelAvailableUsername.ForeColor = System.Drawing.Color.Green;
+                ErrorImage.Visible = false;
+                CheckImage.Visible = true;
+
+            }
+
+
+
+
+            else if (int.Parse(dt.Rows[0][0].ToString()) > 0)
+            {
+                labelAvailableUsername.Text = TextboxUsername.Text + " is Not Available";
+                this.labelAvailableUsername.ForeColor = System.Drawing.Color.Red;
+                CheckImage.Visible = false;
+                ErrorImage.Visible = true;
+            }
+
+
+            else { }
+
+
+
+        }
+
 
     }
 }

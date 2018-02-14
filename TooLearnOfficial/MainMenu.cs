@@ -109,13 +109,13 @@ namespace TooLearnOfficial
         private void CreateParticipantA_Click(object sender, EventArgs e)
         {
             AddParticipantAccount pa = new AddParticipantAccount();
-            pa.Show();
+            pa.ShowDialog();
         }
 
         private void buttonManual_Click(object sender, EventArgs e)
         {
             Manual m = new Manual();
-            m.Show();
+            m.ShowDialog();
         }
     }
 }

@@ -47,11 +47,11 @@
             this.Passwordbox = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -236,6 +236,8 @@
             this.IDbox.Name = "IDbox";
             this.IDbox.Size = new System.Drawing.Size(223, 21);
             this.IDbox.TabIndex = 35;
+            this.IDbox.Text = "Toolearn";
+            this.IDbox.Visible = false;
             // 
             // bunifuCustomLabel3
             // 
@@ -248,6 +250,7 @@
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(52, 18);
             this.bunifuCustomLabel3.TabIndex = 36;
             this.bunifuCustomLabel3.Text = "Login:";
+            this.bunifuCustomLabel3.Visible = false;
             // 
             // Passwordbox
             // 
@@ -256,7 +259,9 @@
             this.Passwordbox.Name = "Passwordbox";
             this.Passwordbox.Size = new System.Drawing.Size(224, 21);
             this.Passwordbox.TabIndex = 37;
+            this.Passwordbox.Text = "Toolearn";
             this.Passwordbox.UseSystemPasswordChar = true;
+            this.Passwordbox.Visible = false;
             // 
             // bunifuCustomLabel4
             // 
@@ -269,6 +274,7 @@
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(80, 18);
             this.bunifuCustomLabel4.TabIndex = 38;
             this.bunifuCustomLabel4.Text = "Password:";
+            this.bunifuCustomLabel4.Visible = false;
             // 
             // bunifuGradientPanel2
             // 
@@ -292,26 +298,6 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(512, 184);
             this.bunifuGradientPanel2.TabIndex = 39;
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 5;
-            this.bunifuElipse2.TargetControl = this.bunifuGradientPanel2;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 5;
-            this.bunifuElipse3.TargetControl = this.Server;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 5;
-            this.bunifuElipse4.TargetControl = this.IDbox;
-            // 
-            // bunifuElipse5
-            // 
-            this.bunifuElipse5.ElipseRadius = 5;
-            this.bunifuElipse5.TargetControl = this.Passwordbox;
             // 
             // bunifuFlatButton1
             // 
@@ -347,6 +333,26 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this.bunifuGradientPanel2;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this.Server;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this.IDbox;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 5;
+            this.bunifuElipse5.TargetControl = this.Passwordbox;
             // 
             // ParticipantSQLConnect
             // 
