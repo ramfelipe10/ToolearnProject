@@ -15,7 +15,6 @@
         android:maxHeight="100dp"
         android:scaleType="fitCenter"
         android:layout_marginLeft="3dp"
-        android:layout_margin="wrap_content"
         android:layout_gravity="center" />
     <EditText
         android:layout_width="match_parent"
