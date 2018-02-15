@@ -57,8 +57,10 @@ namespace TooLearnOfficial
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LobbyFacilitator LF = new LobbyFacilitator();
-            LF.Show();
+            // LobbyFacilitator LF = new LobbyFacilitator();
+            // LF.ShowDialog();
+            GameSettings GS = new GameSettings();
+            GS.ShowDialog();
         }
 
         private void bunifuImageButton6_Click(object sender, EventArgs e)

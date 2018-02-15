@@ -22,6 +22,8 @@ namespace TooLearnOfficial
     public partial class GameFacilitator : Form
     {
 
+       
+
         WindowsMediaPlayer player = new WindowsMediaPlayer();
 
         // Set Buffer size for the data being sent and recieved
@@ -41,9 +43,11 @@ namespace TooLearnOfficial
         {
             InitializeComponent();            
             load_server();
+            string Music = GameSettings.Music;
 
-            player.URL = "Family Feud Theme Song.mp3";
-           
+           // player.URL = "Family Feud Theme Song.mp3";
+           player.URL = Music;
+
 
         }
 
@@ -191,6 +195,7 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
+           
             player.controls.play();
             /* 
                         SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
@@ -316,15 +321,16 @@ namespace TooLearnOfficial
             bunifuImageButton1.Visible = false;
             bunifuImageButton2.Visible = true;
             //player.controls.play();
-            player.settings.mute = false;
+            player.settings.mute = true;
+
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             bunifuImageButton2.Visible = false;
             bunifuImageButton1.Visible = true;
-           // player.controls.stop();
-            player.settings.mute = true;
+            // player.controls.stop();
+            player.settings.mute = false;         
 
         }
     }

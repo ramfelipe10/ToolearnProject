@@ -51,16 +51,17 @@
             // 
             // bunifuCustomLabel2
             // 
-            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(373, 26);
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(362, 29);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(186, 30);
             this.bunifuCustomLabel2.TabIndex = 11;
             this.bunifuCustomLabel2.Text = "SCORE BOARD";
+            this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCustomLabel3
             // 
@@ -69,7 +70,7 @@
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(78, 259);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(67, 259);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(138, 30);
             this.bunifuCustomLabel3.TabIndex = 12;
@@ -82,7 +83,7 @@
             this.LabelTimer.BackColor = System.Drawing.Color.Transparent;
             this.LabelTimer.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelTimer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LabelTimer.Location = new System.Drawing.Point(673, 259);
+            this.LabelTimer.Location = new System.Drawing.Point(660, 259);
             this.LabelTimer.Name = "LabelTimer";
             this.LabelTimer.Size = new System.Drawing.Size(153, 30);
             this.LabelTimer.TabIndex = 14;
@@ -94,9 +95,9 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.LabelQuestion);
-            this.panel1.Location = new System.Drawing.Point(75, 292);
+            this.panel1.Location = new System.Drawing.Point(69, 292);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 207);
+            this.panel1.Size = new System.Drawing.Size(749, 207);
             this.panel1.TabIndex = 21;
             // 
             // LabelQuestion
@@ -105,9 +106,9 @@
             this.LabelQuestion.BackColor = System.Drawing.Color.Transparent;
             this.LabelQuestion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelQuestion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LabelQuestion.Location = new System.Drawing.Point(3, 0);
+            this.LabelQuestion.Location = new System.Drawing.Point(0, 0);
             this.LabelQuestion.Name = "LabelQuestion";
-            this.LabelQuestion.Size = new System.Drawing.Size(751, 207);
+            this.LabelQuestion.Size = new System.Drawing.Size(749, 207);
             this.LabelQuestion.TabIndex = 20;
             this.LabelQuestion.Text = "QUESTIONS ARE HERE!";
             this.LabelQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,12 +154,12 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(78, 62);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(67, 62);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(751, 182);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(749, 182);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             // 
             // bunifuImageButton2
@@ -167,12 +168,13 @@
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Image = global::TooLearnOfficial.Properties.Resources.No_Audio_52px;
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(827, 12);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(825, 12);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(39, 44);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 25;
             this.bunifuImageButton2.TabStop = false;
+            this.bunifuImageButton2.Visible = false;
             this.bunifuImageButton2.Zoom = 10;
             this.bunifuImageButton2.Click += new System.EventHandler(this.bunifuImageButton2_Click);
             // 
@@ -182,13 +184,12 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = global::TooLearnOfficial.Properties.Resources.Audio_52px;
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(827, 12);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(825, 12);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(39, 44);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 24;
             this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Visible = false;
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
@@ -197,14 +198,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(888, 523);
-            this.Controls.Add(this.bunifuImageButton2);
+            this.ClientSize = new System.Drawing.Size(886, 523);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LabelTimer);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.bunifuImageButton2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameFacilitator";
