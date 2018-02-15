@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using WMPLib;
 
 
 
@@ -20,6 +21,9 @@ namespace TooLearnOfficial
 
     public partial class GameFacilitator : Form
     {
+
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
+
         // Set Buffer size for the data being sent and recieved
         private const int buffer_size = 2048;
         // Set Buffer as holder of data being sent and received
@@ -37,7 +41,8 @@ namespace TooLearnOfficial
         {
             InitializeComponent();            
             load_server();
-            
+
+            player.URL = "Family Feud Theme Song.mp3";
            
 
         }
@@ -186,54 +191,54 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
+            player.controls.play();
+            /* 
+                        SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+                        DataTable sad = new DataTable();
+                        rad.Fill(sad);
+                        string me = sad.Rows[0][0].ToString();
+                        LabelQuestion.Text = me;
+                        SendToAllClients(me);
 
-/* 
-            SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-            DataTable sad = new DataTable();
-            rad.Fill(sad);
-            string me = sad.Rows[0][0].ToString();
-            LabelQuestion.Text = me;
-            SendToAllClients(me);
-
-            SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-            DataTable dede = new DataTable();
-            dada.Fill(dede);
-            string ma = dede.Rows[0][0].ToString();
-            await Task.Delay(500);
-            SendToAllClients(ma);
-
-
-            SqlDataAdapter fad = new SqlDataAdapter(" Select answer_b from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-            DataTable fed = new DataTable();
-            fad.Fill(fed);
-            string mo = fed.Rows[0][0].ToString();
-            await Task.Delay(500);
-            SendToAllClients(mo);
+                        SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+                        DataTable dede = new DataTable();
+                        dada.Fill(dede);
+                        string ma = dede.Rows[0][0].ToString();
+                        await Task.Delay(500);
+                        SendToAllClients(ma);
 
 
-            SqlDataAdapter fet = new SqlDataAdapter(" Select answer_c from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-            DataTable fey = new DataTable();
-            fet.Fill(fey);
-            string mi = fed.Rows[0][0].ToString();
-            await Task.Delay(500);
-            SendToAllClients(mi);
+                        SqlDataAdapter fad = new SqlDataAdapter(" Select answer_b from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+                        DataTable fed = new DataTable();
+                        fad.Fill(fed);
+                        string mo = fed.Rows[0][0].ToString();
+                        await Task.Delay(500);
+                        SendToAllClients(mo);
 
 
-            SqlDataAdapter fat = new SqlDataAdapter(" Select answer_d from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-            DataTable fab = new DataTable();
-            fat.Fill(fab);
-            string mp = fed.Rows[0][0].ToString();
-            await Task.Delay(500);
-            SendToAllClients(mp);
+                        SqlDataAdapter fet = new SqlDataAdapter(" Select answer_c from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+                        DataTable fey = new DataTable();
+                        fet.Fill(fey);
+                        string mi = fed.Rows[0][0].ToString();
+                        await Task.Delay(500);
+                        SendToAllClients(mi);
 
-            SqlDataAdapter fs = new SqlDataAdapter(" Select correct_answer from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-            DataTable fd = new DataTable();
-            fs.Fill(fd);
-            string mt = fed.Rows[0][0].ToString();
-            await Task.Delay(500);
-            SendToAllClients(mt);
 
-*/
+                        SqlDataAdapter fat = new SqlDataAdapter(" Select answer_d from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+                        DataTable fab = new DataTable();
+                        fat.Fill(fab);
+                        string mp = fed.Rows[0][0].ToString();
+                        await Task.Delay(500);
+                        SendToAllClients(mp);
+
+                        SqlDataAdapter fs = new SqlDataAdapter(" Select correct_answer from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
+                        DataTable fd = new DataTable();
+                        fs.Fill(fd);
+                        string mt = fed.Rows[0][0].ToString();
+                        await Task.Delay(500);
+                        SendToAllClients(mt);
+
+            */
 
         }
 
@@ -286,10 +291,7 @@ namespace TooLearnOfficial
 
         }
 
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+      
 
         private async void button1_Click(object sender, EventArgs e)
         {
@@ -306,6 +308,23 @@ namespace TooLearnOfficial
             SendToAllClients("t" + 6);
             await Task.Delay(500);
             SendToAllClients("y" + 7);
+
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            bunifuImageButton1.Visible = false;
+            bunifuImageButton2.Visible = true;
+            //player.controls.play();
+            player.settings.mute = false;
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            bunifuImageButton2.Visible = false;
+            bunifuImageButton1.Visible = true;
+           // player.controls.stop();
+            player.settings.mute = true;
 
         }
     }

@@ -143,6 +143,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Audio_52px {
+            get {
+                object obj = ResourceManager.GetObject("Audio_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Back_Arrow_64px {
             get {
                 object obj = ResourceManager.GetObject("Back Arrow_64px", resourceCulture);
@@ -426,6 +436,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap newparti {
             get {
                 object obj = ResourceManager.GetObject("newparti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap No_Audio_52px {
+            get {
+                object obj = ResourceManager.GetObject("No Audio_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

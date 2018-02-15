@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace TooLearnOfficial
 {
     public partial class ChooseUser : Form
@@ -19,7 +21,7 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;           
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
@@ -45,5 +47,7 @@ namespace TooLearnOfficial
           //  ParticipantLogin pl = new ParticipantLogin();
            // pl.Show();
         }
+
+      
     }
 }
