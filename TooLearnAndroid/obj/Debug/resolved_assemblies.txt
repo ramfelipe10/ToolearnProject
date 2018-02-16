@@ -1,4 +1,5 @@
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\TooLearnAndroid.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\EDMTDev.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Java.Interop.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Mono.Android.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\mscorlib.dll
@@ -6,6 +7,18 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\System.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\System.Runtime.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\System.Xml.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Arch.Core.Common.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Arch.Lifecycle.Common.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Arch.Lifecycle.Runtime.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Annotations.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Compat.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Core.UI.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Core.Utils.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Fragment.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Media.Compat.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\Xamarin.Android.Support.Vector.Drawable.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\System.Threading.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\System.Collections.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\System.Collections.Concurrent.dll
