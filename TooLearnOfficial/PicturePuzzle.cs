@@ -28,6 +28,8 @@ namespace TooLearnOfficial
         int PictureHeight = QuizPicturePuzzle.SetHeight;
         public static int Total;
         byte[] imgFile = null;
+
+        int counter=0;
        
 
         List<Panel> listPanel = new List<Panel>();
@@ -36,7 +38,7 @@ namespace TooLearnOfficial
         public PicturePuzzle()
         {
             InitializeComponent();
-            slice_image();
+            slice_image(counter);
         }
        
         void load_total()
@@ -61,7 +63,7 @@ namespace TooLearnOfficial
                       
         }
 
-        void slice_image()
+        void slice_image(int counter)
         {
 
             var imgarray = new Image[9];
@@ -99,7 +101,7 @@ namespace TooLearnOfficial
             splitPicture8.Image = imgarray[7];
             splitPicture9.Image = imgarray[8]; */
 
-            pictureBox6.Image = imgarray[0];
+            pictureBox6.Image = imgarray[counter];
           
 
         }
@@ -360,10 +362,10 @@ namespace TooLearnOfficial
 
         private void PicturePuzzle_Load(object sender, EventArgs e)
         {
+            
 
-
-
-
+          
+           
             
 
             currentNumOfItems = 1;
@@ -1351,6 +1353,18 @@ namespace TooLearnOfficial
             this.Close();
             QuizPicturePuzzle QP = new QuizPicturePuzzle();
             QP.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            int me = Convert.ToInt32(bunifuCustomLabel6.Text);
+            me++;
+            bunifuCustomLabel6.Text = me.ToString();
+            counter++;
+            slice_image(counter);
+            
+            
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
