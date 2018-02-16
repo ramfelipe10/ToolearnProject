@@ -222,3 +222,6 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\Interop
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Facilitator.Score.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameSettings.resources
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameSettings.resources
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ViewScoreRecord.resources

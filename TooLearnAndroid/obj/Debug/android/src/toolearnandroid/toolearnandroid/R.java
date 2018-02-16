@@ -21,12 +21,13 @@ public final class R {
     }
     public static final class id {
         public static final int button1=0x7f060005;
-        public static final int button2=0x7f06000b;
+        public static final int button2=0x7f06000c;
         public static final int editText1=0x7f060001;
         public static final int editText2=0x7f060003;
         public static final int editText3=0x7f060008;
         public static final int editText4=0x7f060009;
         public static final int editText5=0x7f06000a;
+        public static final int editText6=0x7f06000b;
         public static final int imageView1=0x7f060000;
         public static final int relativeLayout1=0x7f060007;
         public static final int textView1=0x7f060002;
