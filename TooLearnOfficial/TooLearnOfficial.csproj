@@ -162,6 +162,12 @@
     <Compile Include="EditParticipantProfile.Designer.cs">
       <DependentUpon>EditParticipantProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditQuizBEE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditQuizBEE.Designer.cs">
+      <DependentUpon>EditQuizBEE.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacilitatorLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditParticipantProfile.resx">
       <DependentUpon>EditParticipantProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditQuizBEE.resx">
+      <DependentUpon>EditQuizBEE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacilitatorLogin.resx">
       <DependentUpon>FacilitatorLogin.cs</DependentUpon>

@@ -278,8 +278,11 @@ namespace TooLearnOfficial
 
         }//end if
 
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            EditQuizBEE EQB = new EditQuizBEE();
+            EQB.ShowDialog();
 
-        
-
+        }
     }
 }
