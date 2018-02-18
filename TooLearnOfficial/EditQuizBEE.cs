@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace TooLearnOfficial
 {
@@ -172,9 +173,9 @@ namespace TooLearnOfficial
             textBoxQuizChoiceB.Text = exams.SubItems[2].Text;
             textBoxQuizChoiceC.Text = exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text = exams.SubItems[4].Text;
-           // pictureBox3.ImageLocation = exams.SubItems[6].Text;
-           // textBox11.Text = exams.SubItems[7].Text;
-           // textBox2.Text = exams.SubItems[8].Text;
+            pictureBox3.ImageLocation = exams.SubItems[6].Text;
+           textBox11.Text = exams.SubItems[7].Text;
+           textBox2.Text = exams.SubItems[8].Text;
             switch (exams.SubItems[5].Text)
             {
 
@@ -314,21 +315,18 @@ namespace TooLearnOfficial
                         if ((string)d[("item_format")] == "Multiple Choice") {
 
                             ListViewItem exams = new ListViewItem();
-                            exams.Text = (string)d[("question")];
-                            // exams.SubItems.Add(Convert.ToString((int)dr[("quiz_time_limit")]));
-                          exams.SubItems.Add((string)d[("answer_a")]);
-                       exams.SubItems.Add((string)d[("answer_b")]);
+                            exams.Text = (string)d[("question")];                           
+                            exams.SubItems.Add((string)d[("answer_a")]);
+                            exams.SubItems.Add((string)d[("answer_b")]);
                             exams.SubItems.Add((string)d[("answer_c")]);
-                        exams.SubItems.Add((string)d[("answer_d")]);
+                            exams.SubItems.Add((string)d[("answer_d")]);
                             exams.SubItems.Add((string)d[("correct_answer")]);
-                            
-                           // exams.SubItems.Add("hahahahaha");
-                           // exams.SubItems.Add("hahahahaha");
-                           // exams.SubItems.Add("hahahahaha");
+                            exams.SubItems.Add((string)d[("image")]);
+                            exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            exams.SubItems.Add(Convert.ToString((int)d[("points")]));
 
-                            //  exams.SubItems.Add(textBox11.Text);
-                            //   exams.SubItems.Add(textBox2.Text);
-                            //
+
+
                             MultipleChoiceLV.Items.Add(exams);
 
 
@@ -338,56 +336,41 @@ namespace TooLearnOfficial
                         {
 
                             ListViewItem exams = new ListViewItem();
-                            exams.Text = (string)d[("question")];
-                            // exams.SubItems.Add(Convert.ToString((int)dr[("quiz_time_limit")]));
-                            //  exams.SubItems.Add((string)d[("answer_a")]);
-                            //  exams.SubItems.Add((string)d[("answer_b")]);
-                            // exams.SubItems.Add((string)d[("answer_c")]);
-                            //  exams.SubItems.Add((string)d[("answer_d")]);
-                            exams.SubItems.Add((string)d[("correct_answer")]);
+                            exams.Text = (string)d[("question")];                           
+                            exams.SubItems.Add((string)d[("correct_answer")]);                            
+                            exams.SubItems.Add((string)d[("image")]);
+                            exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            exams.SubItems.Add(Convert.ToString((int)d[("points")]));
 
-                            // exams.SubItems.Add("hahahahaha");
-                            // exams.SubItems.Add("hahahahaha");
-                            // exams.SubItems.Add("hahahahaha");
-
-                            //  exams.SubItems.Add(textBox11.Text);
-                            //   exams.SubItems.Add(textBox2.Text);
-                            //
+                           
                             ShortAnswerLV.Items.Add(exams);
 
 
                         }//end MC
 
-                        if ((string)d[("item_format")] == "True/False")
+                        else if ((string)d[("item_format")] == "True/False")
                         {
 
                             ListViewItem exams = new ListViewItem();
-                            exams.Text = (string)d[("question")];
-                            // exams.SubItems.Add(Convert.ToString((int)dr[("quiz_time_limit")]));
-                            //  exams.SubItems.Add((string)d[("answer_a")]);
-                            //  exams.SubItems.Add((string)d[("answer_b")]);
-                            // exams.SubItems.Add((string)d[("answer_c")]);
-                            //  exams.SubItems.Add((string)d[("answer_d")]);
-                            exams.SubItems.Add((string)d[("correct_answer")]);
+                            exams.Text = (string)d[("question")];                            
+                            exams.SubItems.Add((string)d[("correct_answer")]);                            
+                            exams.SubItems.Add((string)d[("image")]);
+                            exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            exams.SubItems.Add(Convert.ToString((int)d[("points")]));
 
-                            // exams.SubItems.Add("hahahahaha");
-                            // exams.SubItems.Add("hahahahaha");
-                            // exams.SubItems.Add("hahahahaha");
 
-                            //  exams.SubItems.Add(textBox11.Text);
-                            //   exams.SubItems.Add(textBox2.Text);
-                            //
                             TrueOrFalseLV.Items.Add(exams);
 
 
                         }//end MC
 
 
+                        
 
 
 
-                    }
-                }
+                    }//End While
+                }// End try
 
 
                 catch(Exception ex)
