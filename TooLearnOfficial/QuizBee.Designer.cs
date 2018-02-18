@@ -52,6 +52,7 @@
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -99,11 +100,11 @@
             this.Total = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MultipleChoice = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.currentnumMC = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.bunifuCheckbox4 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCheckbox3 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -124,7 +125,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.label20 = new System.Windows.Forms.Label();
             this.shortAnswer = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -140,6 +143,7 @@
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CurrentnumSA = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.trueORfalse = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuDropdown4 = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CurrentNumTF = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -154,10 +158,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown3 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.bunifuDropdown4 = new Bunifu.Framework.UI.BunifuDropdown();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -479,6 +479,23 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(786, 111);
             this.bunifuGradientPanel1.TabIndex = 176;
+            // 
+            // bunifuDropdown1
+            // 
+            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown1.BorderRadius = 5;
+            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown1.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown1.Location = new System.Drawing.Point(618, 20);
+            this.bunifuDropdown1.Name = "bunifuDropdown1";
+            this.bunifuDropdown1.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown1.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown1.selectedIndex = 0;
+            this.bunifuDropdown1.Size = new System.Drawing.Size(102, 24);
+            this.bunifuDropdown1.TabIndex = 182;
             // 
             // bunifuImageButton3
             // 
@@ -927,6 +944,23 @@
             this.MultipleChoice.Size = new System.Drawing.Size(1002, 268);
             this.MultipleChoice.TabIndex = 3;
             // 
+            // bunifuDropdown2
+            // 
+            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown2.BorderRadius = 5;
+            this.bunifuDropdown2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown2.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown2.Location = new System.Drawing.Point(701, 15);
+            this.bunifuDropdown2.Name = "bunifuDropdown2";
+            this.bunifuDropdown2.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown2.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown2.selectedIndex = 0;
+            this.bunifuDropdown2.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown2.TabIndex = 183;
+            // 
             // bunifuCustomLabel12
             // 
             this.bunifuCustomLabel12.AutoSize = true;
@@ -971,16 +1005,6 @@
             this.textBox11.Size = new System.Drawing.Size(69, 24);
             this.textBox11.TabIndex = 204;
             this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(542, 17);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 21);
-            this.label20.TabIndex = 178;
-            this.label20.Text = "Time Limit:";
             // 
             // bunifuCheckbox4
             // 
@@ -1225,6 +1249,16 @@
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Multiple Choice";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(542, 17);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(89, 21);
+            this.label20.TabIndex = 178;
+            this.label20.Text = "Time Limit:";
+            // 
             // shortAnswer
             // 
             this.shortAnswer.BackColor = System.Drawing.Color.Silver;
@@ -1256,6 +1290,23 @@
             this.shortAnswer.Quality = 10;
             this.shortAnswer.Size = new System.Drawing.Size(1002, 268);
             this.shortAnswer.TabIndex = 4;
+            // 
+            // bunifuDropdown3
+            // 
+            this.bunifuDropdown3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown3.BorderRadius = 5;
+            this.bunifuDropdown3.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown3.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown3.Location = new System.Drawing.Point(701, 15);
+            this.bunifuDropdown3.Name = "bunifuDropdown3";
+            this.bunifuDropdown3.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown3.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown3.selectedIndex = 0;
+            this.bunifuDropdown3.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown3.TabIndex = 213;
             // 
             // bunifuCustomLabel10
             // 
@@ -1459,6 +1510,23 @@
             this.trueORfalse.Size = new System.Drawing.Size(1002, 268);
             this.trueORfalse.TabIndex = 4;
             // 
+            // bunifuDropdown4
+            // 
+            this.bunifuDropdown4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuDropdown4.BorderRadius = 5;
+            this.bunifuDropdown4.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bunifuDropdown4.Items = new string[] {
+        "Minute",
+        "Second"};
+            this.bunifuDropdown4.Location = new System.Drawing.Point(701, 15);
+            this.bunifuDropdown4.Name = "bunifuDropdown4";
+            this.bunifuDropdown4.NomalColor = System.Drawing.SystemColors.AppWorkspace;
+            this.bunifuDropdown4.onHoverColor = System.Drawing.SystemColors.Window;
+            this.bunifuDropdown4.selectedIndex = 0;
+            this.bunifuDropdown4.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown4.TabIndex = 215;
+            // 
             // bunifuCustomLabel11
             // 
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1642,74 +1710,6 @@
             this.bunifuCustomLabel3.TabIndex = 0;
             this.bunifuCustomLabel3.Text = "True/False";
             // 
-            // bunifuDropdown1
-            // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.BorderRadius = 5;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuDropdown1.Items = new string[] {
-        "Minute",
-        "Second"};
-            this.bunifuDropdown1.Location = new System.Drawing.Point(618, 20);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuDropdown1.onHoverColor = System.Drawing.SystemColors.Window;
-            this.bunifuDropdown1.selectedIndex = 0;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(102, 24);
-            this.bunifuDropdown1.TabIndex = 182;
-            // 
-            // bunifuDropdown2
-            // 
-            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown2.BorderRadius = 5;
-            this.bunifuDropdown2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuDropdown2.Items = new string[] {
-        "Minute",
-        "Second"};
-            this.bunifuDropdown2.Location = new System.Drawing.Point(701, 15);
-            this.bunifuDropdown2.Name = "bunifuDropdown2";
-            this.bunifuDropdown2.NomalColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuDropdown2.onHoverColor = System.Drawing.SystemColors.Window;
-            this.bunifuDropdown2.selectedIndex = 0;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(86, 24);
-            this.bunifuDropdown2.TabIndex = 183;
-            // 
-            // bunifuDropdown3
-            // 
-            this.bunifuDropdown3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown3.BorderRadius = 5;
-            this.bunifuDropdown3.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuDropdown3.Items = new string[] {
-        "Minute",
-        "Second"};
-            this.bunifuDropdown3.Location = new System.Drawing.Point(701, 15);
-            this.bunifuDropdown3.Name = "bunifuDropdown3";
-            this.bunifuDropdown3.NomalColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuDropdown3.onHoverColor = System.Drawing.SystemColors.Window;
-            this.bunifuDropdown3.selectedIndex = 0;
-            this.bunifuDropdown3.Size = new System.Drawing.Size(86, 24);
-            this.bunifuDropdown3.TabIndex = 213;
-            // 
-            // bunifuDropdown4
-            // 
-            this.bunifuDropdown4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown4.BorderRadius = 5;
-            this.bunifuDropdown4.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuDropdown4.Items = new string[] {
-        "Minute",
-        "Second"};
-            this.bunifuDropdown4.Location = new System.Drawing.Point(701, 15);
-            this.bunifuDropdown4.Name = "bunifuDropdown4";
-            this.bunifuDropdown4.NomalColor = System.Drawing.SystemColors.AppWorkspace;
-            this.bunifuDropdown4.onHoverColor = System.Drawing.SystemColors.Window;
-            this.bunifuDropdown4.selectedIndex = 0;
-            this.bunifuDropdown4.Size = new System.Drawing.Size(86, 24);
-            this.bunifuDropdown4.TabIndex = 215;
-            // 
             // QuizBee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1730,12 +1730,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.MultipleChoiceLV);
-            this.Controls.Add(this.ShortAnswerLV);
-            this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
+            this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.MultipleChoiceLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";

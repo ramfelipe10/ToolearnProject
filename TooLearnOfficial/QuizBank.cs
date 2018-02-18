@@ -19,6 +19,7 @@ namespace TooLearnOfficial
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string QuizName;
+        public static string SetValueForText1 = "";
         public QuizBank()
         {
             InitializeComponent();
@@ -280,8 +281,43 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            EditQuizBEE EQB = new EditQuizBEE();
-            EQB.ShowDialog();
+
+            try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                {
+
+                    SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
+                    SetValueForText1 = ID.ToString();
+                    EditQuizBEE EQB = new EditQuizBEE();
+                    EQB.ShowDialog();
+
+
+                }
+
+                else
+                {
+                    Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+            }//try
+
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+
+
+
+
+
+
 
         }
     }
