@@ -166,6 +166,8 @@ namespace TooLearnOfficial
 
         private void updateMC()
         {
+            buttonNextQuestion.Visible = true;
+
          buttonNextQuestion.Text = "Update";
             ListViewItem exams = MultipleChoiceLV.SelectedItems[0];
             textBoxQuizQuestion.Text = exams.Text;
@@ -223,6 +225,8 @@ namespace TooLearnOfficial
 
         private void updateTF()
         {
+            button2.Visible = true;
+
             button2.Text = "Update";
             ListViewItem exams = TrueOrFalseLV.SelectedItems[0];
             textBox13.Text = exams.Text;
@@ -235,6 +239,8 @@ namespace TooLearnOfficial
 
         private void updateSA()
         {
+            button1.Visible = true;
+
             button1.Text = "Update";
             ListViewItem exams = ShortAnswerLV.SelectedItems[0];
             textBox9.Text = exams.Text;
@@ -665,7 +671,8 @@ namespace TooLearnOfficial
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
                     RightAnswer = null;
                     resetAllMC(); ;
-                    buttonNextQuestion.Text = "Next";
+                    //  buttonNextQuestion.Text = "Next";
+                    buttonNextQuestion.Visible = false;
 
                     NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -794,7 +801,8 @@ namespace TooLearnOfficial
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
                     resetAllTF(); ;
-                    button2.Text = "Next";
+                    // button2.Text = "Next";
+                    button2.Visible = false;
 
                     NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -924,7 +932,8 @@ namespace TooLearnOfficial
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
                     resetAllSA(); ;
-                    button1.Text = "Next";
+                    //  button1.Text = "Next";
+                    button1.Visible = false;
 
                     NoItems.Text = ShortAnswerLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -1067,6 +1076,14 @@ namespace TooLearnOfficial
                updateMC();
 
 
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(buttonNextQuestion.Visible==true ||button2.Visible==true || button1.Visible == true)
+            {
+                Dialogue.Show("Update all Items First", "", "Ok", "Cancel");
             }
         }
 

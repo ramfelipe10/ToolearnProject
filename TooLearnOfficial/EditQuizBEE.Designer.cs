@@ -410,6 +410,7 @@
             this.bunifuCustomLabel12.TabIndex = 213;
             this.bunifuCustomLabel12.Text = "#";
             this.bunifuCustomLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuCustomLabel12.Visible = false;
             // 
             // bunifuCustomLabel6
             // 
@@ -433,6 +434,7 @@
             this.currentnumMC.TabIndex = 206;
             this.currentnumMC.Text = "1";
             this.currentnumMC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.currentnumMC.Visible = false;
             // 
             // textBox11
             // 
@@ -638,6 +640,7 @@
             this.button2.TabIndex = 185;
             this.button2.Text = "Next";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label32
@@ -873,6 +876,7 @@
             this.button1.TabIndex = 158;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // bunifuFlatButton3
@@ -1130,6 +1134,7 @@
             this.buttonNextQuestion.TabIndex = 139;
             this.buttonNextQuestion.Text = "Next";
             this.buttonNextQuestion.UseVisualStyleBackColor = false;
+            this.buttonNextQuestion.Visible = false;
             this.buttonNextQuestion.Click += new System.EventHandler(this.buttonNextQuestion_Click);
             // 
             // label7
@@ -1196,6 +1201,7 @@
             this.button3.TabIndex = 227;
             this.button3.Text = "Save Quiz";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBoxQuizChoiceB
             // 
@@ -1726,11 +1732,11 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.header);
             this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
-            this.Controls.Add(this.TrueOrFalseLV);
-            this.Controls.Add(this.ShortAnswerLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditQuizBEE";
