@@ -290,7 +290,7 @@ namespace TooLearnOfficial
 
         private void EditQuizBEE_Load(object sender, EventArgs e)
         {
-
+            
 
             listPanel.Add(MultipleChoice);
             listPanel.Add(trueORfalse);
@@ -386,6 +386,78 @@ namespace TooLearnOfficial
 
 
             }
+
+
+
+
+
+            ///// Button OK
+
+            if (textBox7.Text == "")
+            {
+                label20.Visible = true; //MC
+                bunifuDropdown2.Visible = true;
+                textBox11.Visible = true;
+
+
+                label17.Visible = true; //SA
+                bunifuDropdown3.Visible = true;
+                textBox12.Visible = true;
+
+
+                label24.Visible = true; //TF
+                bunifuDropdown4.Visible = true;
+                textBox10.Visible = true;
+
+                label5.Visible = false; //TimeLimitQuiz
+                textBox7.Visible = false;
+                bunifuDropdown1.Visible = false;
+
+            }
+
+
+            else
+            {
+                label20.Visible = false; //MC
+                bunifuDropdown2.Visible = false;
+                textBox11.Visible = false;
+
+
+                label17.Visible = false; //SA
+                bunifuDropdown3.Visible = false;
+                textBox12.Visible = false;
+
+
+                label24.Visible = false; //TF
+                bunifuDropdown4.Visible = false;
+                textBox10.Visible = false;
+
+
+                label5.Visible = true; //TimeLimitQuiz
+                textBox7.Visible = true;
+
+                textBox7.Enabled = false;
+
+            }
+            /*  numOfItems = int.Parse(bunifuDropdown6.selectedValue); */
+
+            currentNumOfItems = 1;
+
+            bunifuFlatButton5.Enabled = false;
+            enable_fieldsMC();
+            currentnumMC.Text = currentNumOfItems.ToString();
+            CurrentnumSA.Text = currentNumOfItems.ToString();
+            CurrentNumTF.Text = currentNumOfItems.ToString();
+            MultipleChoiceLV.Enabled = true;
+            ShortAnswerLV.Enabled = true;
+            TrueOrFalseLV.Enabled = true;
+
+
+
+
+
+            ///Button Ok
+
 
         }
 
