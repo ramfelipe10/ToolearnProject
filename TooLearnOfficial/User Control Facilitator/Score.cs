@@ -217,5 +217,26 @@ namespace TooLearnOfficial.User_Control_Facilitator
         {
             comboBox2.SelectedItem = "No";
         }
+
+        private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
+
+            {
+            string    QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+
+            }
+
+            ViewScoreRecord VSR = new ViewScoreRecord();
+            VSR.ShowDialog();
+
+
+        }
+
+
+
+
     }
 }

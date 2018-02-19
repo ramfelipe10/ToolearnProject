@@ -55,7 +55,8 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.buttonMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelUserCreateLogin1.SuspendLayout();
             this.panelMenuFacilitator2.SuspendLayout();
             this.panelFacilitatorAccount.SuspendLayout();
@@ -70,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -142,6 +142,7 @@
             this.panelMenuFacilitator2.Name = "panelMenuFacilitator2";
             this.panelMenuFacilitator2.Size = new System.Drawing.Size(850, 474);
             this.panelMenuFacilitator2.TabIndex = 159;
+            this.panelMenuFacilitator2.Visible = false;
             // 
             // panelFacilitatorAccount
             // 
@@ -156,11 +157,13 @@
             this.panelFacilitatorAccount.Name = "panelFacilitatorAccount";
             this.panelFacilitatorAccount.Size = new System.Drawing.Size(850, 474);
             this.panelFacilitatorAccount.TabIndex = 159;
+            this.panelFacilitatorAccount.Visible = false;
             // 
             // panelFacilitatorClassroom
             // 
             this.panelFacilitatorClassroom.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panelFacilitatorClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelFacilitatorClassroom.Controls.Add(this.bunifuGradientPanel2);
             this.panelFacilitatorClassroom.Controls.Add(this.pictureBox6);
             this.panelFacilitatorClassroom.Controls.Add(this.btnNext4);
             this.panelFacilitatorClassroom.Controls.Add(this.btnPrevious4);
@@ -169,6 +172,7 @@
             this.panelFacilitatorClassroom.Name = "panelFacilitatorClassroom";
             this.panelFacilitatorClassroom.Size = new System.Drawing.Size(850, 474);
             this.panelFacilitatorClassroom.TabIndex = 161;
+            this.panelFacilitatorClassroom.Visible = false;
             // 
             // pictureBox6
             // 
@@ -582,28 +586,39 @@
             this.buttonExit.Zoom = 10;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // pictureBoxBackground
+            // bunifuDragControl1
             // 
-            this.pictureBoxBackground.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.pictureBoxBackground.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxBackground.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxBackground.Name = "pictureBoxBackground";
-            this.pictureBoxBackground.Size = new System.Drawing.Size(850, 500);
-            this.pictureBoxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBackground.TabIndex = 39;
-            this.pictureBoxBackground.TabStop = false;
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuGradientPanel2
+            // 
+            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
+            this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.White;
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
+            this.bunifuGradientPanel2.Quality = 10;
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(850, 474);
+            this.bunifuGradientPanel2.TabIndex = 161;
+            this.bunifuGradientPanel2.Visible = false;
             // 
             // Manual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(850, 500);
             this.Controls.Add(this.panelUserCreateLogin1);
             this.Controls.Add(this.pictureBoxSelectUser);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.pictureBoxBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manual";
@@ -625,7 +640,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,7 +653,6 @@
         private Bunifu.Framework.UI.BunifuImageButton buttonMinimize;
         private Bunifu.Framework.UI.BunifuImageButton buttonExit;
         private System.Windows.Forms.Panel panelUserCreateLogin1;
-        private System.Windows.Forms.PictureBox pictureBoxBackground;
         private System.Windows.Forms.PictureBox pictureBoxSelectUser;
         private Bunifu.Framework.UI.BunifuFlatButton btnNext;
         private Bunifu.Framework.UI.BunifuFlatButton btnPrevious1;
@@ -658,5 +671,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnNext4;
         private Bunifu.Framework.UI.BunifuFlatButton btnPrevious4;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
     }
 }

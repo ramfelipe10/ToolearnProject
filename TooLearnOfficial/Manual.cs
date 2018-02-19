@@ -22,6 +22,9 @@ namespace TooLearnOfficial
 
         }
 
+
+
+
         private void buttonMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -35,6 +38,8 @@ namespace TooLearnOfficial
         private void btnNext_Click(object sender, EventArgs e)
         {
             panelUserCreateLogin1.Visible = true;
+
+         
         }
 
         private void btnPrevious1_Click(object sender, EventArgs e)
@@ -64,7 +69,11 @@ namespace TooLearnOfficial
 
         private void btnNext3_Click(object sender, EventArgs e)
         {
+            
+
             panelFacilitatorClassroom.Visible = true;
+
+      
         }
 
         private void btnPrevious4_Click(object sender, EventArgs e)
@@ -74,7 +83,7 @@ namespace TooLearnOfficial
 
         private void btnNext4_Click(object sender, EventArgs e)
         {
-
+            bunifuGradientPanel2.Visible = true;
         }
     }
 }
