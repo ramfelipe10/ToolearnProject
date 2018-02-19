@@ -59,7 +59,7 @@ namespace TooLearnOfficial
             try
             {                           
                  
-                SqlDataAdapter sda = new SqlDataAdapter("select fullname AS 'Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + className + "') ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select fullname AS 'Name' from participant p,classlist cl where p.participant_id=cl.participant_id AND class_id=(select class_id from classrooms where class_name = '" + className + "' AND facilitator_id='" +Program.user_id+ "') ", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0)
@@ -107,7 +107,7 @@ namespace TooLearnOfficial
 
         private void createC_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter adapt = new SqlDataAdapter("select count(class_id) from classrooms where class_name= '" + textBoxCreateClassroom.Text + "'", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("select count(class_id) from classrooms where class_name= '" + textBoxCreateClassroom.Text + "' AND facilitator_id= '" + Program.user_id + "' ", con);
             DataTable dt = new DataTable();
             adapt.Fill(dt);
             int ID = int.Parse(dt.Rows[0][0].ToString());//Counting The Instances of Same Classroom
@@ -181,7 +181,7 @@ namespace TooLearnOfficial
 
             else
             {
-                SqlDataAdapter adapt = new SqlDataAdapter("Select class_id from classrooms WHERE class_name = '" + className + "' ", con);
+                SqlDataAdapter adapt = new SqlDataAdapter("Select class_id from classrooms WHERE class_name = '" + className + "' AND facilitator_id='" +Program.user_id+ "' ", con);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
                 int ID = int.Parse(dt.Rows[0][0].ToString()); //Getting the ID of The Classroom
@@ -288,7 +288,7 @@ namespace TooLearnOfficial
 
 
 
-                    SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "'", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "' AND facilitator_id='" +Program.user_id+ "' ", con);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
                     int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
@@ -362,7 +362,7 @@ namespace TooLearnOfficial
             if (bunifuCustomDataGrid2.SelectedCells.Count > 0)
             {
 
-                SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "'", con);
+                SqlDataAdapter adapt = new SqlDataAdapter("select class_id from classrooms where class_name= '" + className + "' AND facilitator_id='" +Program.user_id+ "' ", con);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
                 int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Classroom
@@ -443,7 +443,7 @@ namespace TooLearnOfficial
 
 
 
-                    SqlDataAdapter adapt = new SqlDataAdapter("select Class_name from classrooms where class_name= '" + className + "'", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter("select Class_name from classrooms where class_name= '" + className + "' AND facilitator_id='" +Program.user_id+ "' ", con);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
 
