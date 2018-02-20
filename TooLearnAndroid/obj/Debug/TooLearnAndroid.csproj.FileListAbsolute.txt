@@ -39,8 +39,6 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\layo
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\layout\activity_mainmenu.xml
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\layout\content_menu_left.xml
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\layout\content_menu_right.xml
-C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\TooLearnAndroid.dll.mdb
-C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\TooLearnAndroid.dll.mdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\TooLearnAndroid.dll
 bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb

@@ -15,7 +15,7 @@
         android:background="@drawable/rounded_edittext"
         android:layout_marginBottom="20dp" />
     <Button
-        android:text="Button"
+        android:text="ENTER"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button1"

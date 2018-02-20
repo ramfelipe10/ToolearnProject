@@ -1861,8 +1861,8 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a0028
 			public const int SYM = 2131361832;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int action0 = 2131361912;
+			// aapt resource value: 0x7f0a007c
+			public const int action0 = 2131361916;
 			
 			// aapt resource value: 0x7f0a0059
 			public const int action_bar = 2131361881;
@@ -1885,17 +1885,17 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a0037
 			public const int action_bar_title = 2131361847;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int action_container = 2131361909;
+			// aapt resource value: 0x7f0a0079
+			public const int action_container = 2131361913;
 			
 			// aapt resource value: 0x7f0a005a
 			public const int action_context_bar = 2131361882;
 			
-			// aapt resource value: 0x7f0a007c
-			public const int action_divider = 2131361916;
+			// aapt resource value: 0x7f0a0080
+			public const int action_divider = 2131361920;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int action_image = 2131361910;
+			// aapt resource value: 0x7f0a007a
+			public const int action_image = 2131361914;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int action_menu_divider = 2131361794;
@@ -1912,11 +1912,11 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a0039
 			public const int action_mode_close_button = 2131361849;
 			
-			// aapt resource value: 0x7f0a0077
-			public const int action_text = 2131361911;
+			// aapt resource value: 0x7f0a007b
+			public const int action_text = 2131361915;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int actions = 2131361925;
+			// aapt resource value: 0x7f0a0089
+			public const int actions = 2131361929;
 			
 			// aapt resource value: 0x7f0a003a
 			public const int activity_chooser_view_content = 2131361850;
@@ -1951,17 +1951,29 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a006f
 			public const int button2 = 2131361903;
 			
+			// aapt resource value: 0x7f0a0075
+			public const int button3 = 2131361909;
+			
+			// aapt resource value: 0x7f0a0076
+			public const int button4 = 2131361910;
+			
+			// aapt resource value: 0x7f0a0077
+			public const int button5 = 2131361911;
+			
+			// aapt resource value: 0x7f0a0078
+			public const int button6 = 2131361912;
+			
 			// aapt resource value: 0x7f0a0040
 			public const int buttonPanel = 2131361856;
 			
-			// aapt resource value: 0x7f0a0079
-			public const int cancel_action = 2131361913;
+			// aapt resource value: 0x7f0a007d
+			public const int cancel_action = 2131361917;
 			
 			// aapt resource value: 0x7f0a0050
 			public const int checkbox = 2131361872;
 			
-			// aapt resource value: 0x7f0a0081
-			public const int chronometer = 2131361921;
+			// aapt resource value: 0x7f0a0085
+			public const int chronometer = 2131361925;
 			
 			// aapt resource value: 0x7f0a002a
 			public const int collapseActionView = 2131361834;
@@ -2008,8 +2020,8 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a0021
 			public const int end = 2131361825;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int end_padder = 2131361927;
+			// aapt resource value: 0x7f0a008b
+			public const int end_padder = 2131361931;
 			
 			// aapt resource value: 0x7f0a003b
 			public const int expand_activities_button = 2131361851;
@@ -2029,8 +2041,8 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a003f
 			public const int icon = 2131361855;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int icon_group = 2131361926;
+			// aapt resource value: 0x7f0a008a
+			public const int icon_group = 2131361930;
 			
 			// aapt resource value: 0x7f0a002b
 			public const int ifRoom = 2131361835;
@@ -2041,8 +2053,8 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a006b
 			public const int imageView1 = 2131361899;
 			
-			// aapt resource value: 0x7f0a0082
-			public const int info = 2131361922;
+			// aapt resource value: 0x7f0a0086
+			public const int info = 2131361926;
 			
 			// aapt resource value: 0x7f0a0033
 			public const int italic = 2131361843;
@@ -2065,11 +2077,11 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a006a
 			public const int mainSlideMenu = 2131361898;
 			
-			// aapt resource value: 0x7f0a007b
-			public const int media_actions = 2131361915;
+			// aapt resource value: 0x7f0a007f
+			public const int media_actions = 2131361919;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int message = 2131361928;
+			// aapt resource value: 0x7f0a008c
+			public const int message = 2131361932;
 			
 			// aapt resource value: 0x7f0a0022
 			public const int middle = 2131361826;
@@ -2086,14 +2098,14 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a000f
 			public const int normal = 2131361807;
 			
-			// aapt resource value: 0x7f0a0084
-			public const int notification_background = 2131361924;
+			// aapt resource value: 0x7f0a0088
+			public const int notification_background = 2131361928;
 			
-			// aapt resource value: 0x7f0a007e
-			public const int notification_main_column = 2131361918;
+			// aapt resource value: 0x7f0a0082
+			public const int notification_main_column = 2131361922;
 			
-			// aapt resource value: 0x7f0a007d
-			public const int notification_main_column_container = 2131361917;
+			// aapt resource value: 0x7f0a0081
+			public const int notification_main_column_container = 2131361921;
 			
 			// aapt resource value: 0x7f0a0042
 			public const int parentPanel = 2131361858;
@@ -2113,11 +2125,11 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a0036
 			public const int right = 2131361846;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int right_icon = 2131361923;
+			// aapt resource value: 0x7f0a0087
+			public const int right_icon = 2131361927;
 			
-			// aapt resource value: 0x7f0a007f
-			public const int right_side = 2131361919;
+			// aapt resource value: 0x7f0a0083
+			public const int right_side = 2131361923;
 			
 			// aapt resource value: 0x7f0a0019
 			public const int screen = 2131361817;
@@ -2191,8 +2203,8 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a001c
 			public const int src_over = 2131361820;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int status_bar_latest_event_content = 2131361914;
+			// aapt resource value: 0x7f0a007e
+			public const int status_bar_latest_event_content = 2131361918;
 			
 			// aapt resource value: 0x7f0a0053
 			public const int submenuarrow = 2131361875;
@@ -2221,8 +2233,8 @@ namespace TooLearnAndroid
 			// aapt resource value: 0x7f0a006e
 			public const int textView2 = 2131361902;
 			
-			// aapt resource value: 0x7f0a0080
-			public const int time = 2131361920;
+			// aapt resource value: 0x7f0a0084
+			public const int time = 2131361924;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int title = 2131361805;

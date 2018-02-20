@@ -5,6 +5,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <application android:allowBackup="true" android:label="@string/app_name" android:icon="@drawable/icon" android:name="android.app.Application" android:debuggable="true">
     <activity android:label="GamepinActivity" android:name="md5163273af215e7232b37cf76ea257f312.GamepinActivity" />
+    <activity android:label="LeftMenuActivity" android:name="md5163273af215e7232b37cf76ea257f312.LeftMenuActivity" />
     <activity android:label="TooLearnAndroid" android:name="md5163273af215e7232b37cf76ea257f312.MainActivity" />
     <activity android:label="MainmenuActivity" android:name="md5163273af215e7232b37cf76ea257f312.MainmenuActivity" />
     <activity android:label="NicknameActivity" android:name="md5163273af215e7232b37cf76ea257f312.NicknameActivity" />

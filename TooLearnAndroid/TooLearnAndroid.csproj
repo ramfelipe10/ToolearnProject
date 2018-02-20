@@ -110,8 +110,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GamepinActivity.cs" />
+    <Compile Include="LeftMenuActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainmenuActivity.cs" />
+    <Compile Include="MyAccountFragment.cs" />
     <Compile Include="NicknameActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
