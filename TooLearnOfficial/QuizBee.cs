@@ -1176,7 +1176,20 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + textBox7.Text + "')";
+                                        string Time;
+
+                                      if (bunifuDropdown1.selectedIndex == 0)
+                                      {
+                                            Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                      }
+
+                                        else
+                                        {
+                                            Time = textBox7.Text;
+                                        }
+
+
+                                            String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + Time + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.ExecuteNonQuery();
                                             
@@ -1257,7 +1270,21 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + textBox7.Text + "')";
+                                        string Time;
+
+                                        if (bunifuDropdown1.selectedIndex == 0)
+                                        {
+                                            Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                        }
+
+                                        else
+                                        {
+                                            Time = textBox7.Text;
+                                        }
+
+
+
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + Time + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1344,7 +1371,21 @@ namespace TooLearnOfficial
                                         if (textBox7.Visible == true)
                                         {
 
-                                            String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('True/False','Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + textBox7.Text + "')";
+                                        string Time;
+
+                                        if (bunifuDropdown1.selectedIndex == 0)
+                                        {
+                                            Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                        }
+
+                                        else
+                                        {
+                                            Time = textBox7.Text;
+                                        }
+
+
+
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('True/False','Quiz Bee','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + Time + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                             sda.SelectCommand.ExecuteNonQuery();
@@ -1469,7 +1510,7 @@ namespace TooLearnOfficial
 
         }
 
-       
+        
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {

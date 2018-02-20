@@ -24,12 +24,13 @@ namespace TooLearnOfficial
         string title = QuizPicturePuzzle.SetValueForText2;        
         string Picture = QuizPicturePuzzle.SetValueForText3;
         string time_limit = QuizPicturePuzzle.time;
+        string FormatTime = QuizPicturePuzzle.timeformat;
         int PictureWidth = QuizPicturePuzzle.SetWidth;
         int PictureHeight = QuizPicturePuzzle.SetHeight;
         public static int Total;
         byte[] imgFile = null;
 
-        int counter=0;
+       
        
 
         List<Panel> listPanel = new List<Panel>();
@@ -38,7 +39,7 @@ namespace TooLearnOfficial
         public PicturePuzzle()
         {
             InitializeComponent();
-            slice_image(counter);
+            slice_image();
         }
        
         void load_total()
@@ -63,7 +64,7 @@ namespace TooLearnOfficial
                       
         }
 
-        void slice_image(int counter)
+        void slice_image()
         {
 
             var imgarray = new Image[9];
@@ -81,7 +82,7 @@ namespace TooLearnOfficial
 
                                         imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
                                         var graphics = Graphics.FromImage(imgarray[index]);
-                                        graphics.DrawImage(img, new Rectangle(0, 0, 196, 111), new Rectangle(x * (PictureWidth / 3),
+                                        graphics.DrawImage(img, new Rectangle(0, 0, 67, 44), new Rectangle(x * (PictureWidth / 3),
                                                          y * (PictureHeight / 3),
                                                          PictureWidth / 3,
                                                         PictureHeight / 3), GraphicsUnit.Pixel);
@@ -101,8 +102,15 @@ namespace TooLearnOfficial
             splitPicture8.Image = imgarray[7];
             splitPicture9.Image = imgarray[8]; */
 
-            pictureBox6.Image = imgarray[counter];
-          
+            pictureBox6.Image = imgarray[0];
+            pictureBox7.Image = imgarray[1];
+            pictureBox8.Image = imgarray[2];
+            pictureBox9.Image = imgarray[3];
+            pictureBox10.Image = imgarray[4];
+            pictureBox11.Image = imgarray[5];
+            pictureBox12.Image = imgarray[6];
+            pictureBox13.Image = imgarray[7];
+            pictureBox14.Image = imgarray[8];
 
         }
 
@@ -565,7 +573,7 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
 
-                            picNo.Text = currentNumOfItems.ToString();
+                            
 
                             rightAnswer = null;
                             //
@@ -617,7 +625,7 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
 
-                            picNo.Text = currentNumOfItems.ToString();
+                           
 
                             rightAnswer = null;
                             //
@@ -714,7 +722,7 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
 
-                            picNo.Text = currentNumOfItems.ToString();
+                          
                             //
                             pictureBox5.ImageLocation = null;
                             //
@@ -756,7 +764,7 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
 
-                            picNo.Text = currentNumOfItems.ToString();
+                           
                             //
                             pictureBox5.ImageLocation = null;
                             //
@@ -845,7 +853,7 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
 
-                            picNo.Text = currentNumOfItems.ToString(); // Label Picture
+                            
                                                                        //
                             pictureBox4.ImageLocation = null;
                             //
@@ -891,7 +899,7 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
 
-                            picNo.Text = currentNumOfItems.ToString(); // Label Picture
+                           
                                                                        //
                             pictureBox4.ImageLocation = null;
                             //
@@ -1050,7 +1058,7 @@ namespace TooLearnOfficial
 
 
 
-                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + title + "','', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + title + "','" +time_limit+ "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         sda.SelectCommand.ExecuteNonQuery();
 
@@ -1087,7 +1095,7 @@ namespace TooLearnOfficial
                                 ListViewItem exams = MultipleChoiceLV.Items[i];
                                 try
                                 {
-                                    if (exams.SubItems[6].Text != "")
+                                  /* if (exams.SubItems[6].Text != "")
                                     {
                                         FileStream fileStream = new FileStream(exams.SubItems[6].Text, FileMode.Open, FileAccess.Read);
                                         BinaryReader binaryReader = new BinaryReader(fileStream);
@@ -1109,18 +1117,43 @@ namespace TooLearnOfficial
 
 
                                     else
-                                    {
+                                    { */
                                         con2.Open();
 
-                                       
+                                       if(time_limit != null || time_limit != "")
+                                    {
 
-                                     
-                                            String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[7].Text + "')";
+
+                                        string Time;
+
+                                        if (FormatTime == "Minutes")
+                                        {
+                                            Time = (Convert.ToInt32(time_limit) * 60).ToString();
+                                        }
+
+                                        else
+                                        {
+                                            Time = time_limit;
+                                        }
+
+
+                                        String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + Time + "')";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                        sda.SelectCommand.ExecuteNonQuery();
+
+                                    }
+
+                                    else { 
+
+                                    String query = "INSERT INTO QuestionAnswers(game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[7].Text + "')";
                                             SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                             sda.SelectCommand.ExecuteNonQuery();
                                        
 
                                     }
+
+
+
 
                                 }
 
@@ -1144,7 +1177,7 @@ namespace TooLearnOfficial
                                 ListViewItem exams = ShortAnswerLV.Items[i];
                                 try
                                 {
-                                    if (exams.SubItems[2].Text != "")
+                                 /*   if (exams.SubItems[2].Text != "")
                                     {
                                         FileStream fileStream = new FileStream(exams.SubItems[2].Text, FileMode.Open, FileAccess.Read);
                                         BinaryReader binaryReader = new BinaryReader(fileStream);
@@ -1167,16 +1200,40 @@ namespace TooLearnOfficial
 
 
                                     else
-                                    {
+                                    { */
                                         con2.Open();
 
-                                      
+                                    if (time_limit != null || time_limit != "")
+                                    {
 
-                                            String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
-                                            SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
-                                            sda.SelectCommand.ExecuteNonQuery();
-                                      
+                                        string Time;
+
+                                        if (FormatTime == "Minutes")
+                                        {
+                                            Time = (Convert.ToInt32(time_limit) * 60).ToString();
+                                        }
+
+                                        else
+                                        {
+                                            Time = time_limit;
+                                        }
+
+                                        String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + Time + "')";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                        sda.SelectCommand.ExecuteNonQuery();
+                                    }
+
+
+
+                                    else {
+
+                                        String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                        sda.SelectCommand.ExecuteNonQuery();
+
                                     }
 
 
@@ -1209,7 +1266,7 @@ namespace TooLearnOfficial
                                 ListViewItem exams = TrueOrFalseLV.Items[i];
                                 try
                                 {
-                                    if (exams.SubItems[2].Text != "")
+                                 /*   if (exams.SubItems[2].Text != "")
                                     {
                                         FileStream fileStream = new FileStream(exams.SubItems[2].Text, FileMode.Open, FileAccess.Read);
                                         BinaryReader binaryReader = new BinaryReader(fileStream);
@@ -1231,18 +1288,42 @@ namespace TooLearnOfficial
 
 
                                     else
-                                    {
+                                    { */
                                         con2.Open();
 
 
+                                    if (time_limit != null || time_limit != "")
+                                    {
 
-                                        String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+
+                                        string Time;
+
+                                        if (FormatTime == "Minutes")
+                                        {
+                                            Time = (Convert.ToInt32(time_limit) * 60).ToString();
+                                        }
+
+                                        else
+                                        {
+                                            Time = time_limit;
+                                        }
+
+
+                                        String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + Time + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                         sda.SelectCommand.ExecuteNonQuery();
 
 
+                                    }
 
+
+                                    else {
+
+                                        String query = "INSERT INTO QuestionAnswers(game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+
+                                        sda.SelectCommand.ExecuteNonQuery();
 
 
                                     }
@@ -1355,17 +1436,6 @@ namespace TooLearnOfficial
             QP.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-            int me = Convert.ToInt32(bunifuCustomLabel6.Text);
-            me++;
-            bunifuCustomLabel6.Text = me.ToString();
-            counter++;
-            slice_image(counter);
-            
-            
-        }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
@@ -1413,7 +1483,51 @@ namespace TooLearnOfficial
                 buttonNextQuestion.Text = "Next";
                 MultipleChoice.BringToFront();
                 MultipleChoiceLV.BringToFront();
-               
+
+
+
+
+
+
+                if (time_limit == "")//For the Time Limit
+                {
+                    label17.Visible = true;
+                    bunifuDropdown1.Visible = true;
+                    textBox12.Visible = true;
+
+
+                    label24.Visible = true;
+                    bunifuDropdown2.Visible = true;
+                    textBox10.Visible = true;
+
+
+                    label20.Visible = true;
+                    bunifuDropdown3.Visible = true;
+                    textBox11.Visible = true;
+
+                }
+
+                else
+                {
+                    label17.Visible = false;
+                    bunifuDropdown1.Visible = false;
+                    textBox12.Visible = false;
+
+
+                    label24.Visible = false;
+                    bunifuDropdown2.Visible = false;
+                    textBox10.Visible = false;
+
+
+                    label20.Visible = false;
+                    bunifuDropdown3.Visible = false;
+                    textBox11.Visible = false;
+                }
+
+
+
+
+
 
 
             }

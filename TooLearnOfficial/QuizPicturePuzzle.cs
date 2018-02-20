@@ -16,10 +16,9 @@ namespace TooLearnOfficial
 
         string imagesrc;
 
-        public static string SetValueForText2 = "", SetValueForText3 = "", time = "";
+        public static string SetValueForText2 = "", SetValueForText3 = "", time = "", timeformat = "";
         public static int SetWidth, SetHeight;
-        
-        
+     
        
 
         public QuizPicturePuzzle()
@@ -178,7 +177,15 @@ namespace TooLearnOfficial
                 SetWidth=splitPicture.Image.Width;
                 SetHeight=splitPicture.Image.Height;
 
+                if (bunifuDropdown1.selectedIndex == 0) // Time Format
+                {
+                    timeformat = "Minutes";
+                }
 
+                else
+                {
+                    timeformat = "Seconds";
+                }
                 this.Hide();
                 PicturePuzzle pz = new PicturePuzzle();
                 pz.Show();
