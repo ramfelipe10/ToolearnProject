@@ -15,7 +15,8 @@
         android:maxHeight="100dp"
         android:scaleType="fitCenter"
         android:layout_marginLeft="3dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,11 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button1" />
-    <TextView
-        android:text="Create Account"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+    <Button
+        android:text="No Account? Create Account here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:gravity="center" />
+        android:id="@+id/button2" />
 </LinearLayout>

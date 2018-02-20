@@ -21,6 +21,19 @@ namespace TooLearnAndroid
 
             // Create your application here
             SetContentView(Resource.Layout.activity_signin);
+
+            Button signup_button = FindViewById<Button>(Resource.Id.button2);
+            Button signin_button = FindViewById<Button>(Resource.Id.button1);
+
+            signin_button.Click += delegate
+            {
+                StartActivity(typeof(MainmenuActivity));
+            };
+
+            signup_button.Click += delegate
+            {
+                StartActivity(typeof(SignUpActivity));
+            };
         }
     }
 }

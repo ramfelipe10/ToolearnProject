@@ -227,3 +227,4 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLear
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ViewScoreRecord.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ViewScoreRecord.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.EditQuizBEE.resources
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.EditQuizBEE.resources
