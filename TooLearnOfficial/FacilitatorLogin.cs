@@ -182,6 +182,7 @@ namespace TooLearnOfficial
 
                 }
 
+                e.SuppressKeyPress = true;
             }
 
 
@@ -242,6 +243,7 @@ namespace TooLearnOfficial
 
                 }
 
+                e.SuppressKeyPress = true;
 
             }
 

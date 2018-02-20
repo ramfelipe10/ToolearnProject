@@ -197,7 +197,13 @@ namespace TooLearnOfficial
                     Dialogue.Show("No Result Found", "", "Ok", "Cancel");
                 }
                 bunifuCustomDataGrid1.ClearSelection();
-            } 
+
+                e.Handled = true;
+            }
+
+
+           
+
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)

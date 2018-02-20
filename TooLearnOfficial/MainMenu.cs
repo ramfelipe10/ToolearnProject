@@ -106,16 +106,48 @@ namespace TooLearnOfficial
 
         }
 
+        private Form AddParticipantAccount;
+
         private void CreateParticipantA_Click(object sender, EventArgs e)
         {
-            AddParticipantAccount pa = new AddParticipantAccount();
-            pa.ShowDialog();
-        }
+           // AddParticipantAccount pa = new AddParticipantAccount();
+          //  pa.ShowDialog();
 
+
+            if ((AddParticipantAccount == null) || (AddParticipantAccount.IsDisposed))
+            {
+                AddParticipantAccount = new AddParticipantAccount();
+
+                AddParticipantAccount.Show();
+            }
+            else
+            {
+                Dialogue.Show("One Instance of this Form is Allowed", "", "Ok", "Cancel");
+                AddParticipantAccount.BringToFront();
+            }
+
+        }
+        private Form Manual;
         private void buttonManual_Click(object sender, EventArgs e)
         {
-            Manual m = new Manual();
-            m.ShowDialog();
+          //Manual m = new Manual();
+         // m.ShowDialog();
+
+
+
+            if ((Manual == null) || (Manual.IsDisposed))
+            {
+                Manual = new Manual();
+
+                Manual.Show();
+            }
+            else
+            {
+                Dialogue.Show("One Instance of this Form is Allowed", "", "Ok", "Cancel");
+                Manual.BringToFront();
+            }
+
+
         }
     }
 }

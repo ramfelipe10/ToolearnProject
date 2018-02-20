@@ -149,7 +149,7 @@ namespace TooLearnOfficial
                     Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
                 }
 
-
+                e.SuppressKeyPress = true;
             }
 
 
@@ -190,7 +190,7 @@ namespace TooLearnOfficial
                     Dialogue.Show("Login Failed! \r\n Please Check your Username and Password!", "", "Ok", "Cancel");
                 }
 
-
+                e.SuppressKeyPress = true;
             }
         }
 
