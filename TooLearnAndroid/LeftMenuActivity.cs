@@ -28,6 +28,33 @@ namespace TooLearnAndroid
             Button settings_button = FindViewById<Button>(Resource.Id.button4);
             Button manual_button = FindViewById<Button>(Resource.Id.button5);
             Button about_button = FindViewById<Button>(Resource.Id.button6);
+            
+            myaccount_button.Click += delegate
+            {
+                MyAccountFragment fragment = new MyAccountFragment();
+                FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction();
+                fragmentTx.Replace(Resource.Id.fragment_container, fragment);
+                fragmentTx.Commit();
+            };
+
+            logout_button.Click += delegate
+            {
+                LogOutFragment fragment = new LogOutFragment();
+                FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction();
+                fragmentTx.Replace(Resource.Id.fragment_container, fragment);
+                fragmentTx.Commit();
+            };
+
+            joinquiz_button.Click += delegate
+            {
+                JoinQuizFragment fragment = new JoinQuizFragment();
+                FragmentTransaction fragmentTx = this.FragmentManager.BeginTransaction();
+                fragmentTx.Replace(Resource.Id.fragment_container, fragment);
+                fragmentTx.Commit();
+            };
+            
+
+
         }
     }
 }
