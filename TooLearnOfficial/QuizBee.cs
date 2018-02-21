@@ -700,8 +700,33 @@ namespace TooLearnOfficial
                             exams4.SubItems.Add(textBoxQuizChoiceB.Text);
                             exams4.SubItems.Add(textBoxQuizChoiceC.Text);
                             exams4.SubItems.Add(textBoxQuizChoiceD.Text);
-                            exams4.SubItems.Add(RightAnswer);
-                            //
+
+
+
+                            /*    string s = "";
+                                foreach(Control cc in this.Controls)
+                                {
+                                    if (cc is CheckBox)
+                                    {
+                                        CheckBox b = (CheckBox)cc;
+                                        if (b.Checked)
+                                        {
+                                            s = b.Text + ", " + s;
+                                        }
+                                    }
+                                } */
+
+                            string s = RightAnswer;
+                            if (s.StartsWith(","))
+                            {
+                                s = s.Substring(1);
+                            }
+
+                            exams4.SubItems.Add(s);
+                            //  
+
+                           // exams4.SubItems.Add(RightAnswer);
+
                             exams4.SubItems.Add(pictureBox3.ImageLocation);
 
                             
@@ -724,7 +749,7 @@ namespace TooLearnOfficial
                             currentnumMC.Text = currentNumOfItems.ToString();
                             CurrentnumSA.Text = currentNumOfItems.ToString();
                             CurrentNumTF.Text = currentNumOfItems.ToString();
-                            rightAnswer = null;
+                            RightAnswer = null;///rightanswer
                             //
                             pictureBox3.ImageLocation = null;
                             //
@@ -1232,29 +1257,35 @@ namespace TooLearnOfficial
 
         }
 
-        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+       private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
-            RightAnswer = "A";
+            /*  bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+              RightAnswer = "A";  */
+
+            RightAnswer = RightAnswer + ", A";
+
         }
 
         private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox1.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
-            RightAnswer = "B";
+            /*  bunifuCheckbox1.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
+              RightAnswer = "B"; */
+            RightAnswer = RightAnswer + ", B";
         }
 
         private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox4.Checked = false;
-            RightAnswer = "C";
+            /*  bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox4.Checked = false;
+              RightAnswer = "C"; */
+            RightAnswer = RightAnswer + ", C";
         }
 
         private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
-            RightAnswer = "D";
-        }
+            /*  bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
+              RightAnswer = "D"; */
+            RightAnswer = RightAnswer + ", D";
+        } 
 
         private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
         {
