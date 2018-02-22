@@ -16,6 +16,7 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\Xamarin.
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\Xamarin.Android.Support.Media.Compat.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\Xamarin.Android.Support.Vector.Drawable.dll
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\TooLearnAndroid.csprojResolveAssemblyReference.cache
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\TooLearnAndroid.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\TooLearnAndroid.pdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\bin\TooLearnAndroid.TooLearnAndroid.apk
@@ -44,7 +45,6 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\draw
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\drawable\edittext_design.xml
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\R.cs.flag
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\uploadflags.txt
-C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\TooLearnAndroid.csprojResolveAssemblyReference.cache
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\TooLearnAndroid.dll.mdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\TooLearnAndroid.dll.mdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\TooLearnAndroid.dll

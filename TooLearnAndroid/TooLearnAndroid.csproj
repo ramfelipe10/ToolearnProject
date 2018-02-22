@@ -112,7 +112,6 @@
     <Compile Include="AboutFragment.cs" />
     <Compile Include="GamepinActivity.cs" />
     <Compile Include="JoinQuizFragment.cs" />
-    <Compile Include="LeftMenuActivity.cs" />
     <Compile Include="LogOutFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainmenuActivity.cs" />

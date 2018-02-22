@@ -21,7 +21,6 @@ namespace TooLearnAndroid
 
             // Create your application here
             SetContentView(Resource.Layout.activity_mainmenu);
-            /*
             Button myaccount_button = FindViewById<Button>(Resource.Id.button1);
             Button logout_button = FindViewById<Button>(Resource.Id.button2);
             Button joinquiz_button = FindViewById<Button>(Resource.Id.button3);
@@ -52,7 +51,6 @@ namespace TooLearnAndroid
                 fragmentTx.Replace(Resource.Id.fragment_container, fragment);
                 fragmentTx.Commit();
             };
-            */
         }
     }
 }
