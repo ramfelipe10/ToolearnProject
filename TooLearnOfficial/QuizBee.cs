@@ -714,18 +714,18 @@ namespace TooLearnOfficial
                                             s = b.Text + ", " + s;
                                         }
                                     }
-                                } */
+                                } 
 
                             string s = RightAnswer;
                             if (s.StartsWith(","))
                             {
                                 s = s.Substring(1);
-                            }
+                            }  
 
-                            exams4.SubItems.Add(s);
+                            exams4.SubItems.Add(s); */
                             //  
-
-                           // exams4.SubItems.Add(RightAnswer);
+                            RightAnswer=RightAnswer.TrimStart(',');
+                            exams4.SubItems.Add(RightAnswer);
 
                             exams4.SubItems.Add(pictureBox3.ImageLocation);
 
@@ -783,7 +783,8 @@ namespace TooLearnOfficial
                                 exams4.SubItems.Add(textBoxQuizChoiceB.Text);
                                 exams4.SubItems.Add(textBoxQuizChoiceC.Text);
                                 exams4.SubItems.Add(textBoxQuizChoiceD.Text);
-                                exams4.SubItems.Add(RightAnswer);
+                            RightAnswer = RightAnswer.TrimStart(',');
+                            exams4.SubItems.Add(RightAnswer);
                             //
                             exams4.SubItems.Add(pictureBox3.ImageLocation);
                             exams4.SubItems.Add(textBox11.Text);
@@ -796,8 +797,8 @@ namespace TooLearnOfficial
                                     currentnumMC.Text = currentNumOfItems.ToString();
                                     CurrentnumSA.Text = currentNumOfItems.ToString();
                                     CurrentNumTF.Text = currentNumOfItems.ToString();
-                                    rightAnswer = null;
-                                    resetAllMC();
+                            RightAnswer = null;///rightanswer
+                            resetAllMC();
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -810,7 +811,17 @@ namespace TooLearnOfficial
 
 
                 case "Update":
-               
+
+
+                    if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                            textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                    {
+                        Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                    }
+
+                    else
+                    {
+
                         int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
                         ListViewItem exams = new ListViewItem();
                         exams.Text = textBoxQuizQuestion.Text;
@@ -818,28 +829,29 @@ namespace TooLearnOfficial
                         exams.SubItems.Add(textBoxQuizChoiceB.Text);
                         exams.SubItems.Add(textBoxQuizChoiceC.Text);
                         exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                        RightAnswer = RightAnswer.TrimStart(',');
                         exams.SubItems.Add(RightAnswer);
-                    //
-                    exams.SubItems.Add(pictureBox3.ImageLocation);
+                        //
+                        exams.SubItems.Add(pictureBox3.ImageLocation);
 
 
-                    if (bunifuDropdown2.selectedIndex == 0)//Minutes
-                    {
-                        TimeF = textBox11.Text + "(Minutes)";
-                    }
+                        if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                        {
+                            TimeF = textBox11.Text + "(Minutes)";
+                        }
 
-                    else
-                    {
-                        TimeF = textBox11.Text + "(Seconds)";
-                    }
+                        else
+                        {
+                            TimeF = textBox11.Text + "(Seconds)";
+                        }
 
-                    exams.SubItems.Add(TimeF);
-                    exams.SubItems.Add(textBox2.Text);
-                    //
-                    MultipleChoiceLV.Items.RemoveAt(listPosition);
+                        exams.SubItems.Add(TimeF);
+                        exams.SubItems.Add(textBox2.Text);
+                        //
+                        MultipleChoiceLV.Items.RemoveAt(listPosition);
                         MultipleChoiceLV.Items.Insert(listPosition, exams);
 
-                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                        int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
 
                         currentnumMC.Text = Convert.ToString(Sum1 + 1);
                         CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
@@ -848,9 +860,12 @@ namespace TooLearnOfficial
                         resetAllMC(); ;
                         buttonNextQuestion.Text = "Next";
 
-                    NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-                    int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-                    Total.Text = Sum.ToString();
+                        NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+                        int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                        Total.Text = Sum.ToString();
+
+
+                    }
 
                     break;
 
@@ -1339,7 +1354,7 @@ namespace TooLearnOfficial
 
 
 
-                        String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "','" + textBox7.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                        String query = "INSERT INTO quizzes (quiz_title,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         sda.SelectCommand.ExecuteNonQuery();
 
@@ -1418,12 +1433,14 @@ namespace TooLearnOfficial
 
                                       if (bunifuDropdown1.selectedIndex == 0)
                                       {
-                                            Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
-                                      }
+                                            // Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            Time = textBox7.Text + "(Minutes)";
+                                            
+                                        }
 
                                         else
                                         {
-                                            Time = textBox7.Text;
+                                            Time = textBox7.Text + "(Seconds)";
                                         }
 
 
@@ -1520,12 +1537,14 @@ namespace TooLearnOfficial
 
                                         if (bunifuDropdown1.selectedIndex == 0)
                                         {
-                                            Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            // Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            Time = textBox7.Text + "(Minutes)";
+
                                         }
 
                                         else
                                         {
-                                            Time = textBox7.Text;
+                                            Time = textBox7.Text + "(Seconds)";
                                         }
 
 
@@ -1621,12 +1640,14 @@ namespace TooLearnOfficial
 
                                         if (bunifuDropdown1.selectedIndex == 0)
                                         {
-                                            Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            // Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            Time = textBox7.Text + "(Minutes)";
+
                                         }
 
                                         else
                                         {
-                                            Time = textBox7.Text;
+                                            Time = textBox7.Text + "(Seconds)";
                                         }
 
 
