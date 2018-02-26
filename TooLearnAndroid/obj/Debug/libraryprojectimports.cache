@@ -1,35 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <Jars>
-    <Jar>obj\Debug\lp\2\jl\arch-core-common.jar</Jar>
-    <Jar>obj\Debug\lp\3\jl\arch-lifecycle-common.jar</Jar>
-    <Jar>obj\Debug\lp\6\jl\support-annotations.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\0\jl\jars\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\10\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\11\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\12\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\13\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\2\jl\arch-core-common.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\3\jl\arch-lifecycle-common.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\4\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\5\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\6\jl\support-annotations.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\7\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\8\jl\bin\classes.jar</Jar>
-    <Jar>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\9\jl\bin\classes.jar</Jar>
-  </Jars>
-  <ResolvedResourceDirectories>
-    <ResolvedResourceDirectory>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\0\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\7\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\11\jl\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\12\jl\res</ResolvedResourceDirectory>
-  </ResolvedResourceDirectories>
+  <Jars />
+  <ResolvedResourceDirectories />
   <ResolvedAssetDirectories />
   <ResolvedEnvironmentFiles />
-  <ResolvedResourceDirectoryStamps>
-    <ResolvedResourceDirectoryStamp>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\0.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\7.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\11.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\lp\12.stamp</ResolvedResourceDirectoryStamp>
-  </ResolvedResourceDirectoryStamps>
+  <ResolvedResourceDirectoryStamps />
 </Paths>
