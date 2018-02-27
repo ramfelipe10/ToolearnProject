@@ -273,6 +273,16 @@ namespace TooLearnOfficial
             button2.Text = "Update";
             ListViewItem exams = TrueOrFalseLV.SelectedItems[0];
             textBox13.Text = exams.Text;
+            if (exams.SubItems[1].Text == "True")
+            {
+                bunifuDropdown5.selectedIndex = 0;
+            }
+
+            else
+            {
+                bunifuDropdown5.selectedIndex = 1;
+            }
+
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
             string str = exams.SubItems[3].Text;
             int index = str.IndexOf('(');
