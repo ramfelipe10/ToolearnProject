@@ -166,7 +166,6 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLear
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\MaterialSkin.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\Interop.WMPLib.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\Interop.WMPLib.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csproj.ResolveComReference.cache
@@ -227,3 +226,4 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLear
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csproj.GenerateResource.Cache
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.exe
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.pdb
+C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache

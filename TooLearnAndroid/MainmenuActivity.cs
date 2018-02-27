@@ -9,10 +9,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Support.V7.App;
+using Android.Support.V4.Widget;
+using V7Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.Design.Widget;
 
 namespace TooLearnAndroid
 {
-    [Activity(Label = "MainmenuActivity")]
+    [Activity(Label = "MainmenuActivity", Theme = "@style/Theme.DesignDemo")]
     public class MainmenuActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -21,6 +25,17 @@ namespace TooLearnAndroid
 
             // Create your application here
             SetContentView(Resource.Layout.activity_mainmenu);
+            DrawerLayout drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            // Create ActionBarDrawerToggle button and add it to the toolbar  
+            var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
+            var drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, Resource.String.drawer_open, Resource.String.drawer_close);
+            drawerLayout.SetDrawerListener(drawerToggle);
+            drawerToggle.SyncState();
+            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            setupDrawerContent(navigationView); //Calling Function  
+
+            /*
             Button myaccount_button = FindViewById<Button>(Resource.Id.button1);
             Button logout_button = FindViewById<Button>(Resource.Id.button2);
             Button joinquiz_button = FindViewById<Button>(Resource.Id.button3);
@@ -51,6 +66,20 @@ namespace TooLearnAndroid
                 fragmentTx.Replace(Resource.Id.fragment_container, fragment);
                 fragmentTx.Commit();
             };
+            */
+        }
+        void setupDrawerContent(NavigationView navigationView)
+        {
+            navigationView.NavigationItemSelected += (sender, e) =>
+            {
+                e.MenuItem.SetChecked(true);
+                drawerLayout.CloseDrawers();
+            };
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            navigationView.InflateMenu(Resource.Menu.nav_menu); //Navigation Drawer Layout Menu Creation  
+            return true;
         }
     }
 }
