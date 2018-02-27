@@ -958,7 +958,7 @@
             this.bunifuDropdown2.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown2.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown2.selectedIndex = 0;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown2.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown2.TabIndex = 183;
             // 
             // bunifuCustomLabel12
@@ -1305,7 +1305,7 @@
             this.bunifuDropdown3.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown3.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown3.selectedIndex = 0;
-            this.bunifuDropdown3.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown3.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown3.TabIndex = 213;
             // 
             // bunifuCustomLabel10
@@ -1524,7 +1524,7 @@
             this.bunifuDropdown4.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown4.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown4.selectedIndex = 0;
-            this.bunifuDropdown4.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown4.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown4.TabIndex = 215;
             // 
             // bunifuCustomLabel11
@@ -1733,9 +1733,9 @@
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
-            this.Controls.Add(this.trueORfalse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";

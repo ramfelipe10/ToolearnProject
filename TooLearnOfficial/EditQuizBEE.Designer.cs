@@ -399,7 +399,7 @@
             this.bunifuDropdown2.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown2.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown2.selectedIndex = 0;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown2.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown2.TabIndex = 183;
             // 
             // bunifuCustomLabel12
@@ -766,7 +766,7 @@
             this.bunifuDropdown3.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown3.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown3.selectedIndex = 0;
-            this.bunifuDropdown3.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown3.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown3.TabIndex = 213;
             // 
             // bunifuCustomLabel10
@@ -779,6 +779,7 @@
             this.bunifuCustomLabel10.TabIndex = 212;
             this.bunifuCustomLabel10.Text = "#";
             this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuCustomLabel10.Visible = false;
             // 
             // bunifuCustomLabel7
             // 
@@ -1064,6 +1065,7 @@
             this.CurrentnumSA.TabIndex = 208;
             this.CurrentnumSA.Text = "1";
             this.CurrentnumSA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CurrentnumSA.Visible = false;
             // 
             // textBoxQuizChoiceC
             // 
@@ -1565,7 +1567,7 @@
             this.bunifuDropdown4.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown4.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown4.selectedIndex = 0;
-            this.bunifuDropdown4.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown4.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown4.TabIndex = 215;
             // 
             // bunifuCustomLabel11
@@ -1577,6 +1579,7 @@
             this.bunifuCustomLabel11.TabIndex = 214;
             this.bunifuCustomLabel11.Text = "#";
             this.bunifuCustomLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuCustomLabel11.Visible = false;
             // 
             // bunifuCustomLabel8
             // 
@@ -1600,6 +1603,7 @@
             this.CurrentNumTF.TabIndex = 208;
             this.CurrentNumTF.Text = "1";
             this.CurrentNumTF.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CurrentNumTF.Visible = false;
             // 
             // textBox10
             // 

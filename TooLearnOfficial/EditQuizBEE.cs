@@ -20,7 +20,7 @@ namespace TooLearnOfficial
 
         int currentNumOfItems;
         string RightAnswer, imageLocation;
-        byte[] imgFile = null;
+        //byte[] imgFile = null;
 
 
         List<Panel> listPanel = new List<Panel>();
@@ -176,8 +176,51 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text = exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text = exams.SubItems[4].Text;
             pictureBox3.ImageLocation = exams.SubItems[6].Text;
-           textBox11.Text = exams.SubItems[7].Text;
-           textBox2.Text = exams.SubItems[8].Text;
+            string str = exams.SubItems[7].Text;
+            int index = str.IndexOf('(');
+            string sub;
+            if (index >= 0)
+            {
+                sub = str.Substring(0, index);
+
+
+
+            }
+            else
+            {
+
+                sub = str;
+            }
+
+            textBox11.Text = sub;
+            textBox2.Text = exams.SubItems[8].Text;
+
+            string cut = exams.SubItems[7].Text;
+            int ind = cut.IndexOf('(');
+            string form;
+            if (ind >= 0)
+            {
+                form = cut.Substring(ind + 1, 7);
+
+
+
+            }
+            else
+            {
+
+                form = cut.Substring(ind + 1, 7);
+            }
+
+
+            if (form == "Minutes")
+            {
+                bunifuDropdown2.selectedIndex = 0;
+            }
+
+            else
+            {
+                bunifuDropdown2.selectedIndex = 1;
+            }
             switch (exams.SubItems[5].Text)
             {
 
@@ -231,8 +274,51 @@ namespace TooLearnOfficial
             ListViewItem exams = TrueOrFalseLV.SelectedItems[0];
             textBox13.Text = exams.Text;
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
-            textBox10.Text = exams.SubItems[3].Text;
+            string str = exams.SubItems[3].Text;
+            int index = str.IndexOf('(');
+            string sub;
+            if (index >= 0)
+            {
+                sub = str.Substring(0, index);
+
+
+
+            }
+            else
+            {
+
+                sub = str;
+            }
+            textBox10.Text= sub;
             textBox5.Text = exams.SubItems[4].Text;
+
+
+            string cut = exams.SubItems[3].Text;
+            int ind = cut.IndexOf('(');
+            string form;
+            if (ind >= 0)
+            {
+                form = cut.Substring(ind + 1, 7);
+
+
+
+            }
+            else
+            {
+
+                form = cut.Substring(ind + 1, 7);
+            }
+
+
+            if (form == "Minutes")
+            {
+                bunifuDropdown4.selectedIndex = 0;
+            }
+
+            else
+            {
+                bunifuDropdown4.selectedIndex = 1;
+            }
 
 
         }
@@ -246,8 +332,53 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation = exams.SubItems[2].Text;
-            textBox12.Text = exams.SubItems[3].Text;
+            string str = exams.SubItems[3].Text;
+            int index = str.IndexOf('(');
+            string sub;
+            if (index >= 0)
+            {
+                sub = str.Substring(0, index);
+
+
+
+            }
+            else
+            {
+
+                sub = str;
+            }
+
+            textBox12.Text = sub;
             textBox3.Text = exams.SubItems[4].Text;
+
+
+            string cut = exams.SubItems[3].Text;
+            int ind = cut.IndexOf('(');
+            string form;
+            if (ind >= 0)
+            {
+                form = cut.Substring(ind + 1, 7);
+
+
+
+            }
+            else
+            {
+
+                form = cut.Substring(ind + 1, 7);
+            }
+
+
+            if (form == "Minutes")
+            {
+                bunifuDropdown3.selectedIndex = 0;
+            }
+
+            else
+            {
+                bunifuDropdown3.selectedIndex = 1;
+            }
+
 
 
 
@@ -309,7 +440,67 @@ namespace TooLearnOfficial
             {
 
                 textBoxQuizTitle.Text = (string)dr[("quiz_title")];
-                textBox7.Text = Convert.ToString((int)dr[("quiz_time_limit")]);
+
+                if(!dr.IsDBNull(4))
+
+
+               // if ((string)dr[("quiz_time_limit")] != null)
+                {
+
+                    string cut = (string)dr[("quiz_time_limit")];
+                    int ind = cut.IndexOf('(');
+                    string form;
+                    if (ind >= 0)
+                    {
+                        form = cut.Substring(ind + 1, 7);
+
+
+
+                    }
+                    else
+                    {
+
+                        form = cut.Substring(ind + 1, 7);
+                    }
+
+
+                    if (form == "Minutes")
+                    {
+                        bunifuDropdown1.selectedIndex = 0;
+                    }
+
+                    else
+                    {
+                        bunifuDropdown1.selectedIndex = 1;
+                    }
+
+
+                    string str = (string)dr[("quiz_time_limit")];
+                    int index = str.IndexOf('(');
+                    string sub;
+                    if (index >= 0)
+                    {
+                        sub = str.Substring(0, index);
+
+
+
+                    }
+                    else
+                    {
+
+                        sub = str;
+                    }
+
+                    textBox7.Text = sub;
+
+                }
+
+                else
+                {
+                    textBox7.Visible = false;
+                    bunifuDropdown1.Visible = false;
+                }
+                    
 
                 try
                 {
@@ -328,7 +519,8 @@ namespace TooLearnOfficial
                             exams.SubItems.Add((string)d[("answer_d")]);
                             exams.SubItems.Add((string)d[("correct_answer")]);
                             exams.SubItems.Add((string)d[("image")]);
-                            exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            // exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
 
 
@@ -345,7 +537,8 @@ namespace TooLearnOfficial
                             exams.Text = (string)d[("question")];                           
                             exams.SubItems.Add((string)d[("correct_answer")]);                            
                             exams.SubItems.Add((string)d[("image")]);
-                            exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            //  exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
 
                            
@@ -361,7 +554,8 @@ namespace TooLearnOfficial
                             exams.Text = (string)d[("question")];                            
                             exams.SubItems.Add((string)d[("correct_answer")]);                            
                             exams.SubItems.Add((string)d[("image")]);
-                            exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            //   exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                            exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
 
 
@@ -720,6 +914,8 @@ namespace TooLearnOfficial
 
                 case "Update":
 
+                    string TimeF;
+
                     int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
                     ListViewItem exams = new ListViewItem();
                     exams.Text = textBoxQuizQuestion.Text;
@@ -730,7 +926,17 @@ namespace TooLearnOfficial
                     exams.SubItems.Add(RightAnswer);
                     //
                     exams.SubItems.Add(pictureBox3.ImageLocation);
-                    exams.SubItems.Add(textBox11.Text);
+                    if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                    {
+                        TimeF = textBox11.Text + "(Minutes)";
+                    }
+
+                    else
+                    {
+                        TimeF = textBox11.Text + "(Seconds)";
+                    }
+
+                    exams.SubItems.Add(TimeF);
                     exams.SubItems.Add(textBox2.Text);
                     //
                     MultipleChoiceLV.Items.RemoveAt(listPosition);
@@ -853,6 +1059,7 @@ namespace TooLearnOfficial
 
 
                 case "Update":
+                    string TimeF;
 
                     int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
                     ListViewItem exams1 = new ListViewItem();
@@ -860,7 +1067,17 @@ namespace TooLearnOfficial
                     exams1.SubItems.Add(bunifuDropdown5.selectedValue);
                     //
                     exams1.SubItems.Add(pictureBox5.ImageLocation);
-                    exams1.SubItems.Add(textBox10.Text);
+                    if (bunifuDropdown4.selectedIndex == 0)//Minutes
+                    {
+                        TimeF = textBox10.Text + "(Minutes)";
+                    }
+
+                    else
+                    {
+                        TimeF = textBox10.Text + "(Seconds)";
+                    }
+
+                    exams1.SubItems.Add(TimeF);
                     exams1.SubItems.Add(textBox5.Text);
                     //
 
@@ -985,13 +1202,26 @@ namespace TooLearnOfficial
 
                 case "Update":
 
+                    string TimeF;
+
                     int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
                     ListViewItem exams3 = new ListViewItem();
                     exams3.Text = textBox9.Text;
                     exams3.SubItems.Add(textBox8.Text);
                     //
                     exams3.SubItems.Add(pictureBox4.ImageLocation);
-                    exams3.SubItems.Add(textBox12.Text);
+                    if (bunifuDropdown3.selectedIndex == 0)//Minutes
+                    {
+                        TimeF = textBox12.Text + "(Minutes)";
+                    }
+
+                    else
+                    {
+                        TimeF = textBox12.Text + "(Seconds)";
+                    }
+
+
+                    exams3.SubItems.Add(TimeF);
                     exams3.SubItems.Add(textBox3.Text);
                     //
 

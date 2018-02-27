@@ -1349,17 +1349,43 @@ namespace TooLearnOfficial
 
 
 
+                        if (textBox7.Visible == true)
+                        {
+
+                            string Time;
+
+                            if (bunifuDropdown1.selectedIndex == 0)
+                            {
+                               
+                                Time = textBox7.Text + "(Minutes)";
+
+                            }
+
+                            else
+                            {
+                                Time = textBox7.Text + "(Seconds)";
+                            }
+
+
+
+                            String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "', '" + Time + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                            sda.SelectCommand.ExecuteNonQuery();
+
+
+                        }
 
 
 
 
+                        else
+                        {
 
-                        String query = "INSERT INTO quizzes (quiz_title,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
-                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                        sda.SelectCommand.ExecuteNonQuery();
+                            String query = "INSERT INTO quizzes (quiz_title,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                            sda.SelectCommand.ExecuteNonQuery();
 
-
-                       
+                        }
 
 
                     }
