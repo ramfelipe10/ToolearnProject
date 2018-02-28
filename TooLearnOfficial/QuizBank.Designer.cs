@@ -176,6 +176,8 @@
             // 
             // search
             // 
+            this.search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.search.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.Location = new System.Drawing.Point(530, 178);
             this.search.Name = "search";

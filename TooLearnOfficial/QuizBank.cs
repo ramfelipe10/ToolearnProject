@@ -176,7 +176,17 @@ namespace TooLearnOfficial
 
         private void QuizBank_Load(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("select quiz_title from quizzes", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
+            while (dr.Read())
+            {
+                auto.Add(dr.GetString(0));
+            }
+            search.AutoCompleteCustomSource = auto;
+            con.Close();
         }
 
         private void search_KeyPress(object sender, KeyPressEventArgs e)

@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>54</value>
+    <value>25</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonFacilitatorCreateAccount.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -135,14 +135,14 @@
   <data name="bunifuThinButton21.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIkAAAAjCAYAAACgoylBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGXSURBVHhe7dpJS8NAGIdxP4cgFJRKpe6KUlRcqVQKBQ/i
-        gheRSt13KRT6zUf+UxIa87bjOfMcftDD21zykEwmmZgslR0wDpEgiEgQRCQIIhIEEQmC/hXJ3OKaW93c
-        cruHx67ZOkUB6FzqnM6vbJjnfNjYSOqNpnt5fXP9fh8F9v7x6cOZmq6YHZiR6MrRuX8wD4ji0gVhab2W
-        6yEXiS5DvV7PPAji0Gi2Mk1kItEVhEAgWq+YkXCLQeLr+8eVytVsJFqkWsOI18XVdTYSrXCtQcRLSw9d
-        TXwkela2hoDazv4gku29I3MA0JOOj4T1CEbRJpuPRD+sAYBIEJRGovuONQCkkWgr3hoA0kj0UscaAPTk
-        6yPRK+Jut2sOIW6z1eVBJHJ2fmkOIV6PT8/ZbfmZyoJ/qWMNIz7akk++WksjEW3BWn9AfIa/KclEItx2
-        cHPbzjSRi0T0SMxCNj66xfz9Kk3MSERrlPZdxzwYimfU960yMpKEHoEO6id+UwXFo5e7+mzVOveJYCQA
-        kSCISBBEJAgiEgSU3S/Gpe/Kn949BAAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGhSURBVHhe7dq9SgNBFEBhnyOTWayCGERCBIOoQW0WCxGD
+        yKJEGxurVFa+go3PYGNlZWNlZWWTyscZ9475G3OTsd45xQcW1232MDuz2ZXaasMByxAJoogEUUSCKCJB
+        FJEg6l+RmL1NZ062nLnddfWHI1SA3Et/Tw9b6j2ftTSS+qDr7PuFy75vUGH2o/Dh1BpragdqJLJy2Nee
+        ekFUlywIJm/P9TAXiSxD2bCvXgRpqN8fBE0EkcgKQiAQsl9RI+ERgzH7eelqzfUwEtmkasNIl306DiOR
+        Ha42iISVWw9ZTXwkclZWh5A8U3RGkVzvqAOAnHR8JOxHsIi8ZPuNpPxDGwCIBFHTSMrnjjYATCLxr+KV
+        AWAaSd5WBwA5+fpI5Cfi7OtKHULazPbGKJKSfczVIaTLvp2Hr+VNq+l/1NGGkaBhf/LV2iQSH0rR0f8B
+        yZn9piSIRPDYgX0+DZqYi0T4IzEb2fSUj5i/X6UJNRIhe5Ts5Uy/GCpn0fetYmEkY3IEMnf7/qUKKmjQ
+        9Z+tavd+LBoJQCSIIhJEEQmiiAQRDfcDkI311ZWOsTQAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="LoginHeader.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

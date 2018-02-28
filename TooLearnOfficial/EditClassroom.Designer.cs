@@ -39,6 +39,7 @@
             this.ClassNameBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -124,7 +125,7 @@
             // ClassNameBox
             // 
             this.ClassNameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ClassNameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.ClassNameBox.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ClassNameBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClassNameBox.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClassNameBox.HintText = "";
@@ -132,8 +133,8 @@
             this.ClassNameBox.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClassNameBox.LineIdleColor = System.Drawing.Color.Gray;
             this.ClassNameBox.LineMouseHoverColor = System.Drawing.SystemColors.Control;
-            this.ClassNameBox.LineThickness = 3;
-            this.ClassNameBox.Location = new System.Drawing.Point(80, 120);
+            this.ClassNameBox.LineThickness = 4;
+            this.ClassNameBox.Location = new System.Drawing.Point(76, 108);
             this.ClassNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.ClassNameBox.Name = "ClassNameBox";
             this.ClassNameBox.Size = new System.Drawing.Size(329, 33);
@@ -144,11 +145,11 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century", 12F);
             this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(193, 157);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(175, 145);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(110, 16);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(134, 20);
             this.bunifuCustomLabel1.TabIndex = 183;
             this.bunifuCustomLabel1.Text = "Classroom Name";
             // 
@@ -170,13 +171,24 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(293, 217);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(340, 217);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton21.Size = new System.Drawing.Size(134, 41);
             this.bunifuThinButton21.TabIndex = 184;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century", 12F);
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(175, 65);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(134, 20);
+            this.bunifuCustomLabel3.TabIndex = 189;
+            this.bunifuCustomLabel3.Text = "Classroom Name";
             // 
             // EditClassroom
             // 
@@ -184,6 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(488, 272);
+            this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.ClassNameBox);
@@ -215,5 +228,6 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox ClassNameBox;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

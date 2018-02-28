@@ -42,6 +42,7 @@
             this.timeOras = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.sidemenu = new System.Windows.Forms.Panel();
+            this.buttonManual = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -62,7 +63,6 @@
             this.PanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.LogosTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buttonManual = new Bunifu.Framework.UI.BunifuFlatButton();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -201,6 +201,45 @@
             this.sidemenu.Size = new System.Drawing.Size(239, 655);
             this.sidemenu.TabIndex = 3;
             // 
+            // buttonManual
+            // 
+            this.buttonManual.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.buttonManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonManual.BorderRadius = 0;
+            this.buttonManual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.buttonManual.ButtonText = "     Manual";
+            this.buttonManual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogosTransition.SetDecoration(this.buttonManual, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.buttonManual, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.buttonManual, BunifuAnimatorNS.DecorationType.None);
+            this.buttonManual.DisabledColor = System.Drawing.Color.Gray;
+            this.buttonManual.Iconcolor = System.Drawing.Color.Transparent;
+            this.buttonManual.Iconimage = global::TooLearnOfficial.Properties.Resources.User_Manual_64px;
+            this.buttonManual.Iconimage_right = null;
+            this.buttonManual.Iconimage_right_Selected = null;
+            this.buttonManual.Iconimage_Selected = null;
+            this.buttonManual.IconMarginLeft = 0;
+            this.buttonManual.IconMarginRight = 0;
+            this.buttonManual.IconRightVisible = true;
+            this.buttonManual.IconRightZoom = 0D;
+            this.buttonManual.IconVisible = true;
+            this.buttonManual.IconZoom = 70D;
+            this.buttonManual.IsTab = true;
+            this.buttonManual.Location = new System.Drawing.Point(0, 360);
+            this.buttonManual.Name = "buttonManual";
+            this.buttonManual.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonManual.OnHovercolor = System.Drawing.Color.DimGray;
+            this.buttonManual.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonManual.selected = false;
+            this.buttonManual.Size = new System.Drawing.Size(239, 45);
+            this.buttonManual.TabIndex = 24;
+            this.buttonManual.Text = "     Manual";
+            this.buttonManual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonManual.Textcolor = System.Drawing.Color.White;
+            this.buttonManual.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonManual.Click += new System.EventHandler(this.buttonManual_Click);
+            // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
@@ -306,7 +345,7 @@
             this.LogosTransition.SetDecoration(this.btnMnu, BunifuAnimatorNS.DecorationType.None);
             this.btnMnu.Image = ((System.Drawing.Image)(resources.GetObject("btnMnu.Image")));
             this.btnMnu.ImageActive = null;
-            this.btnMnu.Location = new System.Drawing.Point(201, 6);
+            this.btnMnu.Location = new System.Drawing.Point(201, 23);
             this.btnMnu.Name = "btnMnu";
             this.btnMnu.Size = new System.Drawing.Size(35, 35);
             this.btnMnu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -477,7 +516,7 @@
             this.PanelTransition.SetDecoration(this.logo, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.logo, BunifuAnimatorNS.DecorationType.None);
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(17, 14);
+            this.logo.Location = new System.Drawing.Point(17, 8);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(204, 67);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -607,45 +646,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // buttonManual
-            // 
-            this.buttonManual.Activecolor = System.Drawing.Color.DodgerBlue;
-            this.buttonManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonManual.BorderRadius = 0;
-            this.buttonManual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.buttonManual.ButtonText = "     Manual";
-            this.buttonManual.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogosTransition.SetDecoration(this.buttonManual, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.buttonManual, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.buttonManual, BunifuAnimatorNS.DecorationType.None);
-            this.buttonManual.DisabledColor = System.Drawing.Color.Gray;
-            this.buttonManual.Iconcolor = System.Drawing.Color.Transparent;
-            this.buttonManual.Iconimage = global::TooLearnOfficial.Properties.Resources.User_Manual_64px;
-            this.buttonManual.Iconimage_right = null;
-            this.buttonManual.Iconimage_right_Selected = null;
-            this.buttonManual.Iconimage_Selected = null;
-            this.buttonManual.IconMarginLeft = 0;
-            this.buttonManual.IconMarginRight = 0;
-            this.buttonManual.IconRightVisible = true;
-            this.buttonManual.IconRightZoom = 0D;
-            this.buttonManual.IconVisible = true;
-            this.buttonManual.IconZoom = 70D;
-            this.buttonManual.IsTab = true;
-            this.buttonManual.Location = new System.Drawing.Point(0, 360);
-            this.buttonManual.Name = "buttonManual";
-            this.buttonManual.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buttonManual.OnHovercolor = System.Drawing.Color.DimGray;
-            this.buttonManual.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonManual.selected = false;
-            this.buttonManual.Size = new System.Drawing.Size(239, 45);
-            this.buttonManual.TabIndex = 24;
-            this.buttonManual.Text = "     Manual";
-            this.buttonManual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonManual.Textcolor = System.Drawing.Color.White;
-            this.buttonManual.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.buttonManual.Click += new System.EventHandler(this.buttonManual_Click);
             // 
             // MainMenu2
             // 

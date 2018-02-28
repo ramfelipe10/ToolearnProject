@@ -259,9 +259,25 @@ namespace TooLearnOfficial
 
         }
 
+        private void TextboxUsername1_Enter(object sender, EventArgs e)
+        {
+            //if (TextboxUsername1.Text == "user_toolearn")
+            //{
+            //    TextboxUsername1.Text = "";
 
+            //    TextboxUsername1.ForeColor = Color.White;
+            //}
+        }
 
+        private void TextboxUsername1_Leave(object sender, EventArgs e)
+        {
+            //if (TextboxUsername1.Text == "")
+            //{
+            //    TextboxUsername1.Text = "user_toolearn";
 
+            //    TextboxUsername1.ForeColor = Color.DimGray;
+            //}
+        }
     }
     }
 

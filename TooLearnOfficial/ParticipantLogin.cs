@@ -30,7 +30,17 @@ namespace TooLearnOfficial
 
         private void ParticipantLogin_Load(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("select p_username from participant", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
+            while (dr.Read())
+            {
+                auto.Add(dr.GetString(0));
+            }
+            TextboxUsername.AutoCompleteCustomSource = auto;
+            con.Close();
         }
 
         private void ButtonParticipantSignIn_Click(object sender, EventArgs e)

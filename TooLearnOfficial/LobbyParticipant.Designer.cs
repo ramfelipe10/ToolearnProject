@@ -39,10 +39,10 @@
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.lsbWait = new System.Windows.Forms.ListBox();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lsbWait = new System.Windows.Forms.ListBox();
+            this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -71,7 +71,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 1;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(755, 26);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(761, 26);
             this.bunifuGradientPanel1.TabIndex = 10;
             // 
             // bunifuCustomLabel1
@@ -126,12 +126,30 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(522, 36);
+            this.pictureBox2.Location = new System.Drawing.Point(527, 32);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(221, 113);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 149;
             this.pictureBox2.TabStop = false;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // lsbWait
+            // 
+            this.lsbWait.FormattingEnabled = true;
+            this.lsbWait.Location = new System.Drawing.Point(22, 23);
+            this.lsbWait.MultiColumn = true;
+            this.lsbWait.Name = "lsbWait";
+            this.lsbWait.ScrollAlwaysVisible = true;
+            this.lsbWait.Size = new System.Drawing.Size(485, 199);
+            this.lsbWait.TabIndex = 1;
+            this.lsbWait.SelectedIndexChanged += new System.EventHandler(this.lsbWait_SelectedIndexChanged);
             // 
             // bunifuGradientPanel2
             // 
@@ -150,17 +168,6 @@
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(527, 248);
             this.bunifuGradientPanel2.TabIndex = 150;
             this.bunifuGradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel2_Paint);
-            // 
-            // lsbWait
-            // 
-            this.lsbWait.FormattingEnabled = true;
-            this.lsbWait.Location = new System.Drawing.Point(22, 23);
-            this.lsbWait.MultiColumn = true;
-            this.lsbWait.Name = "lsbWait";
-            this.lsbWait.ScrollAlwaysVisible = true;
-            this.lsbWait.Size = new System.Drawing.Size(485, 199);
-            this.lsbWait.TabIndex = 1;
-            this.lsbWait.SelectedIndexChanged += new System.EventHandler(this.lsbWait_SelectedIndexChanged);
             // 
             // bunifuCustomDataGrid1
             // 
@@ -192,19 +199,12 @@
             this.bunifuCustomDataGrid1.TabIndex = 0;
             this.bunifuCustomDataGrid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellContentClick);
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
             // LobbyParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(755, 422);
+            this.ClientSize = new System.Drawing.Size(761, 420);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
@@ -235,9 +235,9 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
-        private System.Windows.Forms.ListBox lsbWait;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
+        private System.Windows.Forms.ListBox lsbWait;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
     }
 }

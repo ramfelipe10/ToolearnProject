@@ -140,10 +140,10 @@
             this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
             this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(293, 217);
+            this.bunifuThinButton21.Location = new System.Drawing.Point(340, 217);
             this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton21.Size = new System.Drawing.Size(134, 41);
             this.bunifuThinButton21.TabIndex = 187;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
@@ -151,11 +151,11 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century", 12F);
             this.bunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(198, 145);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(85, 16);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(103, 20);
             this.bunifuCustomLabel1.TabIndex = 186;
             this.bunifuCustomLabel1.Text = "Group Name";
             // 
@@ -181,11 +181,11 @@
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century", 12F);
             this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(198, 66);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(85, 16);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(103, 20);
             this.bunifuCustomLabel3.TabIndex = 188;
             this.bunifuCustomLabel3.Text = "Group Name";
             // 
