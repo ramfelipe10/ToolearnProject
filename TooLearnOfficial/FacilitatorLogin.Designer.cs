@@ -30,9 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacilitatorLogin));
-            this.passbox = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.TextboxUsername = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -48,6 +46,8 @@
             this.ButtonFacilitatorCreateAccount = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TextboxUsername1 = new System.Windows.Forms.TextBox();
+            this.passbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.LoginHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -59,52 +59,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // passbox
-            // 
-            this.passbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.passbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.passbox.BorderColorFocused = System.Drawing.SystemColors.Control;
-            this.passbox.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.passbox.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.passbox.BorderThickness = 2;
-            this.passbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.passbox.ForeColor = System.Drawing.Color.White;
-            this.passbox.isPassword = true;
-            this.passbox.Location = new System.Drawing.Point(38, 242);
-            this.passbox.Margin = new System.Windows.Forms.Padding(4);
-            this.passbox.Name = "passbox";
-            this.passbox.Size = new System.Drawing.Size(288, 38);
-            this.passbox.TabIndex = 4;
-            this.passbox.Tag = "";
-            this.passbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.passbox.OnValueChanged += new System.EventHandler(this.passbox_OnValueChanged);
-            this.passbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passbox_KeyDown);
-            // 
             // bunifuElipse1
             // 
             this.bunifuElipse1.ElipseRadius = 5;
             this.bunifuElipse1.TargetControl = this;
-            // 
-            // TextboxUsername
-            // 
-            this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.TextboxUsername.BorderColorFocused = System.Drawing.SystemColors.Control;
-            this.TextboxUsername.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxUsername.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TextboxUsername.BorderThickness = 2;
-            this.TextboxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.TextboxUsername.ForeColor = System.Drawing.Color.White;
-            this.TextboxUsername.isPassword = false;
-            this.TextboxUsername.Location = new System.Drawing.Point(38, 170);
-            this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxUsername.Name = "TextboxUsername";
-            this.TextboxUsername.Size = new System.Drawing.Size(288, 38);
-            this.TextboxUsername.TabIndex = 3;
-            this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextboxUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextboxUsername_KeyDown);
             // 
             // label1
             // 
@@ -253,7 +211,7 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = global::TooLearnOfficial.Properties.Resources.Eye_52px;
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(289, 248);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(291, 251);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(30, 27);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,22 +287,58 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // TextboxUsername1
+            // 
+            this.TextboxUsername1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxUsername1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TextboxUsername1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TextboxUsername1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.TextboxUsername1.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.TextboxUsername1.ForeColor = System.Drawing.Color.White;
+            this.TextboxUsername1.Location = new System.Drawing.Point(38, 171);
+            this.TextboxUsername1.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxUsername1.Name = "TextboxUsername1";
+            this.TextboxUsername1.Size = new System.Drawing.Size(288, 32);
+            this.TextboxUsername1.TabIndex = 24;
+            // 
+            // passbox1
+            // 
+            this.passbox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.passbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.passbox1.BorderColorFocused = System.Drawing.SystemColors.Control;
+            this.passbox1.BorderColorIdle = System.Drawing.Color.White;
+            this.passbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.passbox1.BorderThickness = 2;
+            this.passbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.passbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.passbox1.ForeColor = System.Drawing.Color.White;
+            this.passbox1.isPassword = true;
+            this.passbox1.Location = new System.Drawing.Point(38, 249);
+            this.passbox1.Margin = new System.Windows.Forms.Padding(4);
+            this.passbox1.Name = "passbox1";
+            this.passbox1.Size = new System.Drawing.Size(288, 32);
+            this.passbox1.TabIndex = 4;
+            this.passbox1.Tag = "";
+            this.passbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passbox1.OnValueChanged += new System.EventHandler(this.passbox_OnValueChanged);
+            this.passbox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passbox_KeyDown);
+            // 
             // FacilitatorLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(355, 446);
+            this.Controls.Add(this.TextboxUsername1);
             this.Controls.Add(this.bunifuImageButton6);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.ButtonFacilitatorCreateAccount);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TextboxUsername);
             this.Controls.Add(this.LoginHeader);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.passbox);
+            this.Controls.Add(this.passbox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -370,7 +364,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox passbox;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuGradientPanel LoginHeader;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -381,11 +374,12 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuThinButton2 ButtonFacilitatorCreateAccount;
-        private Bunifu.Framework.UI.BunifuMetroTextbox TextboxUsername;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton5;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton6;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
+        private System.Windows.Forms.TextBox TextboxUsername1;
+        private Bunifu.Framework.UI.BunifuMetroTextbox passbox1;
     }
 }

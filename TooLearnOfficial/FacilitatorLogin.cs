@@ -24,13 +24,13 @@ namespace TooLearnOfficial
             try
             {
                 
-                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows[0][0].ToString() == "1")
                 {
 
-                    SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                    SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
 
                     con.Open();
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -43,7 +43,7 @@ namespace TooLearnOfficial
                     con.Close();
                                                          
 
-                    Program.Session_id = TextboxUsername.Text; //For Session
+                    Program.Session_id = TextboxUsername1.Text; //For Session
                   
                         this.Hide();
 
@@ -73,7 +73,17 @@ namespace TooLearnOfficial
 
         private void FacilitatorLogin_Load(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("select username from facilitator", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
+            while(dr.Read())
+            {
+                auto.Add(dr.GetString(0));
+            }
+            TextboxUsername1.AutoCompleteCustomSource = auto;
+            con.Close();
         }
 
         private void ButtonFacilitatorCreateAccount_Click(object sender, EventArgs e)
@@ -86,16 +96,16 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            if (passbox.isPassword == true)
+            if (passbox1.isPassword == true)
             {
-                passbox.isPassword = false;
+                passbox1.isPassword = false;
 
             }
 
             else
             {
 
-                passbox.isPassword = true;
+                passbox1.isPassword = true;
 
             }
 
@@ -103,7 +113,7 @@ namespace TooLearnOfficial
 
         private void passbox_OnValueChanged(object sender, EventArgs e)
         {
-            if (passbox.Text.Length <= 0)
+            if (passbox1.Text.Length <= 0)
             {
                 bunifuImageButton1.Visible = false;
             }
@@ -139,14 +149,14 @@ namespace TooLearnOfficial
                 try
                 {
 
-                    SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows[0][0].ToString() == "1")
                     {
 
 
-                        SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                        SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
 
                         con.Open();
                         SqlDataReader dr = cmd.ExecuteReader();
@@ -158,7 +168,7 @@ namespace TooLearnOfficial
                         dr.Close();
                         con.Close();
 
-                        Program.Session_id = TextboxUsername.Text; //For Session
+                        Program.Session_id = TextboxUsername1.Text; //For Session
 
                         this.Hide();
 
@@ -197,14 +207,14 @@ namespace TooLearnOfficial
                 try
                 {
 
-                    SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows[0][0].ToString() == "1")
                     {
 
 
-                        SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                        SqlCommand cmd = new SqlCommand("Select facilitator_id from facilitator where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
 
                         con.Open();
                         SqlDataReader dr = cmd.ExecuteReader();
@@ -217,7 +227,7 @@ namespace TooLearnOfficial
                         con.Close();
 
 
-                        Program.Session_id = TextboxUsername.Text; //For Session
+                        Program.Session_id = TextboxUsername1.Text; //For Session
 
                
                         this.Hide();
