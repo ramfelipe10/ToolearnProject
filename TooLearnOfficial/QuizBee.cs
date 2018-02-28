@@ -97,6 +97,8 @@ namespace TooLearnOfficial
             buttonNextQuestion.Enabled = true;
             button3.Enabled = true;
 
+            bunifuDropdown2.Enabled = true;
+
             //For Short Answer
             bunifuFlatButton7.Enabled = true;
             textBox3.Enabled = true;
@@ -633,6 +635,7 @@ namespace TooLearnOfficial
                 ShortAnswerLV.Enabled = true;
                 TrueOrFalseLV.Enabled = true;
 
+            bunifuFlatButton2.selected = true;
 
        //     } 
             
@@ -1398,6 +1401,12 @@ namespace TooLearnOfficial
             {
                 Dialogue.Show("Quiz is Empty", "", "Ok", "Cancel");
             }
+            else if (button1.Text == "Update" || button2.Text == "Update" || buttonNextQuestion.Text == "Update")
+            {
+
+                Dialogue.Show("Update All Item First", "", "Ok", "Cancel");
+            }
+
             else
             {
                 DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
@@ -1429,7 +1438,7 @@ namespace TooLearnOfficial
 
 
 
-                            String query = "INSERT INTO quizzes (quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "', '" + Time + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('Quiz Bee','" + textBoxQuizTitle.Text + "', '" + Time + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
 
@@ -1442,7 +1451,7 @@ namespace TooLearnOfficial
                         else
                         {
 
-                            String query = "INSERT INTO quizzes (quiz_title,facilitator_id,date_created) VALUES ('" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (game_type,quiz_title,facilitator_id,date_created) VALUES ('Quiz Bee','" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
 

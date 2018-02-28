@@ -16,7 +16,7 @@ namespace TooLearnOfficial
 
         string imagesrc;
 
-        public static string SetValueForText2 = "", SetValueForText3 = "", time = "", timeformat = "";
+        public static string SetValueForText2 = "", SetValueForText3 = "", time = "";
         public static int SetWidth, SetHeight;
      
        
@@ -173,19 +173,27 @@ namespace TooLearnOfficial
             {
                 SetValueForText3 = splitPicture.ImageLocation;
                 SetValueForText2 = textBoxQuizTitle.Text;
-                time = textBoxQuizTimeLimit.Text;
-                SetWidth=splitPicture.Image.Width;
-                SetHeight=splitPicture.Image.Height;
-
-                if (bunifuDropdown1.selectedIndex == 0) // Time Format
+                if (textBoxQuizTimeLimit.Text != "" || textBoxQuizTimeLimit.Text != null)
                 {
-                    timeformat = "Minutes";
-                }
+                    if (bunifuDropdown1.selectedIndex == 0)//Minutes
+                    {
+                        time = textBoxQuizTimeLimit.Text + "(Minutes)";
+                    }
 
+                    else
+                    {
+                        time = textBoxQuizTimeLimit.Text + "(Seconds)";
+                    }
+                }
                 else
                 {
-                    timeformat = "Seconds";
+                    time = textBoxQuizTimeLimit.Text;
                 }
+
+                SetWidth =splitPicture.Image.Width;
+                SetHeight=splitPicture.Image.Height;
+
+              
                 this.Hide();
                 PicturePuzzle pz = new PicturePuzzle();
                 pz.Show();

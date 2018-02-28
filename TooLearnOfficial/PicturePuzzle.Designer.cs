@@ -389,7 +389,7 @@
             this.bunifuDropdown3.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown3.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown3.selectedIndex = 0;
-            this.bunifuDropdown3.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown3.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown3.TabIndex = 214;
             // 
             // bunifuCustomLabel12
@@ -731,7 +731,7 @@
             this.bunifuDropdown1.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown1.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown1.selectedIndex = 0;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown1.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown1.TabIndex = 214;
             // 
             // bunifuCustomLabel10
@@ -957,7 +957,7 @@
             this.bunifuDropdown2.NomalColor = System.Drawing.SystemColors.AppWorkspace;
             this.bunifuDropdown2.onHoverColor = System.Drawing.SystemColors.Window;
             this.bunifuDropdown2.selectedIndex = 0;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(86, 24);
+            this.bunifuDropdown2.Size = new System.Drawing.Size(102, 24);
             this.bunifuDropdown2.TabIndex = 215;
             // 
             // bunifuCustomLabel11
@@ -1409,7 +1409,7 @@
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.Firebrick;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.Firebrick;
             this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton2.BorderRadius = 0;
             this.bunifuFlatButton2.ButtonText = "Multiple Choice";
@@ -1432,7 +1432,7 @@
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.selected = true;
             this.bunifuFlatButton2.Size = new System.Drawing.Size(154, 32);
             this.bunifuFlatButton2.TabIndex = 222;
             this.bunifuFlatButton2.Text = "Multiple Choice";
@@ -1587,9 +1587,9 @@
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
-            this.Controls.Add(this.MultipleChoice);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PicturePuzzle";

@@ -949,6 +949,7 @@
             this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuDropdown2.BorderRadius = 5;
             this.bunifuDropdown2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown2.Enabled = false;
             this.bunifuDropdown2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bunifuDropdown2.Items = new string[] {
         "Minute",
@@ -1730,12 +1731,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.MultipleChoice);
-            this.Controls.Add(this.shortAnswer);
-            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.MultipleChoice);
+            this.Controls.Add(this.shortAnswer);
+            this.Controls.Add(this.trueORfalse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuizBee";
