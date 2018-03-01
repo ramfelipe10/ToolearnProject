@@ -14,6 +14,8 @@ namespace TooLearnOfficial
         delegate void AddLabelCallback(Form frm, Label lbl, string text);
         delegate void AddTxtBtnCallback(Form frm, Button btn, string text);
 
+        
+
         public static void SetText(Form frm, Control ctrl, string text)
         {
             if (ctrl.InvokeRequired)

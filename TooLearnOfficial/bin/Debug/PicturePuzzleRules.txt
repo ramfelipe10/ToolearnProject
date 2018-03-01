@@ -1,0 +1,17 @@
+ 1. A particular picture is divided into nine equal parts. Puzzle parts will remain blurred unless the question for that part is already answered. 
+
+ 2. Each piece of the puzzle has a a corresponding point/s. Players can gain point/s if they able to provide the correct/best answer.	
+
+ 3. The first player to solve the whole picture will be given 'bonus point'. 
+
+ 4. For a Multiple Choice Format,there will be four choices for each question given. Users should choose the best answer which  corresponds to the question.
+
+ 5. For a True/False Format, there will only two choices it will be Correct or Incorrect answer.
+
+ 6. For a Short Answer Format, participants are provided with a text box to input their answer to the question. Misspelled answers will be marked incorrect.
+
+ 7. Additional point/s will be given to participants who can give the correct/best answer for each question first. Automatic merits depends on the facilitator's preference.
+
+ 8. A certain time limit is given for every question. Failure to respond to a question within the given time frame will result to a zero-point mark for that specific question.
+
+ 9. Feedbacks regarding the correctness of answers are presented after answering each question. Once a player answers a question incorrectly or not the best, the correct/best answer will be flashed on the screen.

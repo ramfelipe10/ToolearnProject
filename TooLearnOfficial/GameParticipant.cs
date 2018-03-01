@@ -147,6 +147,7 @@ namespace TooLearnOfficial
                         case "2":
 
                             ThreadHelper.btnAddTxtButton(this, button1, message);
+                           
                             break;
 
 

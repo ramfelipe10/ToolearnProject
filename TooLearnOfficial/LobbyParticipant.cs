@@ -23,6 +23,8 @@ namespace TooLearnOfficial
         private const int _PORT = 13000;
         string name;
 
+        public static string GameType = "";
+
         SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
 
         public LobbyParticipant()
@@ -156,9 +158,20 @@ namespace TooLearnOfficial
 
             if (message.Contains("GAME"))
             {
+               // string type = message;
+                //  GameParticipant gf = new GameParticipant();
+                //  gf.ShowDialog();
+              //  if(type=="Game")
+              //  {
+                    GameType = "QB";
+             //   }
+             //   else if (message.Contains(" Picture Puzzle"))
+            //    {
+            //        GameType = "PZ";
+             //   }
 
-                GameParticipant gf = new GameParticipant();
-                gf.ShowDialog();
+                GameRules GR = new GameRules();
+                GR.ShowDialog();
 
                 //client.Client.Shutdown(SocketShutdown.Both);
                 //client.Client.Close();

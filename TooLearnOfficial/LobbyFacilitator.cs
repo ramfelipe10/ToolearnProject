@@ -193,43 +193,44 @@ namespace TooLearnOfficial
         private async void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             SendToAllClients("GAME");
-
-
-            GameFacilitator gf = new GameFacilitator();
-            gf.Show();
-
-            SqlDataAdapter sda = new SqlDataAdapter("Select min(quiz_id) from QuestionAnswers", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-
-            i = dt.Rows[0][0].ToString();
-
-            i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
-
-            string p = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
-            string q = ScalarReturn("select question from QuestionAnswers where quiz_id='" + i + "'");
-            string w = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
-            string x = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
-            string r = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
-            string t = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
-            string y = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
-
-
-            SendToAllClients(p+1);
             await Task.Delay(500);
-            SendToAllClients(q+2);
-            await Task.Delay(500);
-            SendToAllClients(w+3);
-            await Task.Delay(500);
-            SendToAllClients(x+4);
-            await Task.Delay(500);
-            SendToAllClients(r+5);
-            await Task.Delay(500);
-            SendToAllClients(t+6);
-            await Task.Delay(500);
-            SendToAllClients(y+7);
-         
-         
+
+
+            // GameFacilitator gf = new GameFacilitator();
+            // gf.Show();
+
+            /*     SqlDataAdapter sda = new SqlDataAdapter("Select min(quiz_id) from QuestionAnswers", con);
+                 DataTable dt = new DataTable();
+                 sda.Fill(dt);
+
+                 i = dt.Rows[0][0].ToString();
+
+                 i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
+
+                 string p = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
+                 string q = ScalarReturn("select question from QuestionAnswers where quiz_id='" + i + "'");
+                 string w = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
+                 string x = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
+                 string r = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
+                 string t = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
+                 string y = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
+
+
+                 SendToAllClients(p+1);
+                 await Task.Delay(500);
+                 SendToAllClients(q+2);
+                 await Task.Delay(500);
+                 SendToAllClients(w+3);
+                 await Task.Delay(500);
+                 SendToAllClients(x+4);
+                 await Task.Delay(500);
+                 SendToAllClients(r+5);
+                 await Task.Delay(500);
+                 SendToAllClients(t+6);
+                 await Task.Delay(500);
+                 SendToAllClients(y+7); */
+
+
 
         }
 

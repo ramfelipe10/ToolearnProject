@@ -1,0 +1,11 @@
+ 1. A certain time limit is given for every question. Failure to respond to a question within the given time frame will result to a zero-point mark for that specific question.
+
+ 2. For a Multiple Choice Format,there will be four choices for each question given. Users should choose the best answer which  corresponds to the question.
+ 
+ 3. For a True/False Format, there will only two choices it will be Correct or Incorrect answer.
+
+ 4. For a Short Answer Format, participants are provided with a text box to input their answer to the question. Misspelled answers will be marked incorrect.
+
+ 5. Feedbacks regarding the correctness of answers are presented after answering each question. Once a player answers a question incorrectly or not the best, the correct or best answer will be flashed on the screen.
+
+ 6. Additional point/s will be given to participants who can give the correct answer for each question first. Automatic merits depend on the facilitator's preference.

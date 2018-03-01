@@ -117,18 +117,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutFragment.cs" />
+    <Compile Include="AboutActivity.cs" />
     <Compile Include="GamepinActivity.cs" />
-    <Compile Include="JoinQuizFragment.cs" />
-    <Compile Include="LogOutFragment.cs" />
+    <Compile Include="JoinQuizActivity.cs" />
+    <Compile Include="LogoutActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainmenuActivity.cs" />
-    <Compile Include="ManualFragment.cs" />
-    <Compile Include="MyAccountFragment.cs" />
+    <Compile Include="ManualActivity.cs" />
+    <Compile Include="MyAccountActivity.cs" />
     <Compile Include="NicknameActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsFragment.cs" />
+    <Compile Include="SettingsActivity.cs" />
     <Compile Include="SignInActivity.cs" />
     <Compile Include="SignUpActivity.cs" />
     <Compile Include="SplashActivity.cs" />

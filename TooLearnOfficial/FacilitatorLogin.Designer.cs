@@ -299,8 +299,7 @@
             this.TextboxUsername1.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxUsername1.Name = "TextboxUsername1";
             this.TextboxUsername1.Size = new System.Drawing.Size(288, 38);
-            this.TextboxUsername1.TabIndex = 24;
-            this.TextboxUsername1.Text = "user_toolearn";
+            this.TextboxUsername1.TabIndex = 3;
             this.TextboxUsername1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextboxUsername1.Enter += new System.EventHandler(this.TextboxUsername1_Enter);
             this.TextboxUsername1.Leave += new System.EventHandler(this.TextboxUsername1_Leave);

@@ -288,7 +288,7 @@
             this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxUsername.Name = "TextboxUsername";
             this.TextboxUsername.Size = new System.Drawing.Size(288, 38);
-            this.TextboxUsername.TabIndex = 30;
+            this.TextboxUsername.TabIndex = 3;
             this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ParticipantLogin

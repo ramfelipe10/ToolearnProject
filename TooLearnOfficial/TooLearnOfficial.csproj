@@ -198,6 +198,12 @@
     <Compile Include="GameParticipant.Designer.cs">
       <DependentUpon>GameParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameRules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameRules.Designer.cs">
+      <DependentUpon>GameRules.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameParticipant.resx">
       <DependentUpon>GameParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameRules.resx">
+      <DependentUpon>GameRules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameSettings.resx">
       <DependentUpon>GameSettings.cs</DependentUpon>
