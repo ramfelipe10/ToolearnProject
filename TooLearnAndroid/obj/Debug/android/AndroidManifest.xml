@@ -3,10 +3,16 @@
   <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="26" />
   <uses-permission android:name="android.permission.INTERNET" />
   <application android:allowBackup="true" android:label="@string/app_name" android:icon="@drawable/icon" android:name="android.app.Application" android:debuggable="true">
+    <activity android:label="AboutActivity" android:name="md5163273af215e7232b37cf76ea257f312.AboutActivity" />
     <activity android:label="GamepinActivity" android:name="md5163273af215e7232b37cf76ea257f312.GamepinActivity" />
+    <activity android:label="JoinQuizActivity" android:name="md5163273af215e7232b37cf76ea257f312.JoinQuizActivity" />
+    <activity android:label="LogoutActivity" android:name="md5163273af215e7232b37cf76ea257f312.LogoutActivity" />
     <activity android:label="TooLearnAndroid" android:name="md5163273af215e7232b37cf76ea257f312.MainActivity" />
     <activity android:label="MainmenuActivity" android:theme="@style/Theme.DesignDemo" android:name="md5163273af215e7232b37cf76ea257f312.MainmenuActivity" />
+    <activity android:label="ManualActivity" android:name="md5163273af215e7232b37cf76ea257f312.ManualActivity" />
+    <activity android:label="MyAccountActivity" android:name="md5163273af215e7232b37cf76ea257f312.MyAccountActivity" />
     <activity android:label="NicknameActivity" android:name="md5163273af215e7232b37cf76ea257f312.NicknameActivity" />
+    <activity android:label="SettingsActivity" android:name="md5163273af215e7232b37cf76ea257f312.SettingsActivity" />
     <activity android:label="SignInActivity" android:name="md5163273af215e7232b37cf76ea257f312.SignInActivity" />
     <activity android:label="SignUpActivity" android:name="md5163273af215e7232b37cf76ea257f312.SignUpActivity" />
     <activity android:noHistory="true" android:theme="@style/Theme.Splash" android:name="md5163273af215e7232b37cf76ea257f312.SplashActivity">

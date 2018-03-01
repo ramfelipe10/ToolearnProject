@@ -33,15 +33,8 @@ namespace TooLearnAndroid
             drawerLayout.AddDrawerListener(drawerToggle);
             drawerToggle.SyncState();
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            setupDrawerContent(navigationView); //Calling Function  
-
+            setupDrawerContent(navigationView); //Calling Function 
             /*
-            Button myaccount_button = FindViewById<Button>(Resource.Id.button1);
-            Button logout_button = FindViewById<Button>(Resource.Id.button2);
-            Button joinquiz_button = FindViewById<Button>(Resource.Id.button3);
-            Button settings_button = FindViewById<Button>(Resource.Id.button4);
-            Button manual_button = FindViewById<Button>(Resource.Id.button5);
-            Button about_button = FindViewById<Button>(Resource.Id.button6);
 
             myaccount_button.Click += delegate
             {
@@ -68,6 +61,39 @@ namespace TooLearnAndroid
             };
             */
         }
+        private void HomeNavigationView_NavigationItemSelected(object sender, NavigationView.NavigationItemSelectedEventArgs e)
+        {
+            var menuItem = e.MenuItem;
+            menuItem.SetChecked(!menuItem.IsChecked);
+            Intent intent;
+            switch (menuItem.ItemId)
+            {
+                case Resource.Id.nav_myaccount:
+                    intent = new Intent(this, typeof(MyAccountActivity));
+                    StartActivity(intent); break;
+
+                case Resource.Id.nav_logout:
+                    intent = new Intent(this, typeof(LogoutActivity));
+                    StartActivity(intent); break;
+
+                case Resource.Id.nav_joinquiz:
+                    intent = new Intent(this, typeof(JoinQuizActivity));
+                    StartActivity(intent); break;
+
+                case Resource.Id.nav_settings:
+                    intent = new Intent(this, typeof(SettingsActivity));
+                    StartActivity(intent); break;
+
+                case Resource.Id.nav_manual:
+                    intent = new Intent(this, typeof(ManualActivity));
+                    StartActivity(intent); break;
+
+                case Resource.Id.nav_about:
+                    intent = new Intent(this, typeof(AboutActivity));
+                    StartActivity(intent); break;
+            }
+        }
+
         void setupDrawerContent(NavigationView navigationView)
         {
             navigationView.NavigationItemSelected += (sender, e) =>
