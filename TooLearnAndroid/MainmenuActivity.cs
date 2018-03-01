@@ -34,6 +34,9 @@ namespace TooLearnAndroid
             drawerToggle.SyncState();
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             setupDrawerContent(navigationView); //Calling Function 
+
+            navigationView.NavigationItemSelected += HomeNavigationView_NavigationItemSelected;
+
             /*
 
             myaccount_button.Click += delegate
@@ -92,7 +95,7 @@ namespace TooLearnAndroid
                     intent = new Intent(this, typeof(AboutActivity));
                     StartActivity(intent); break;
             }
-        }
+        } 
 
         void setupDrawerContent(NavigationView navigationView)
         {
@@ -105,7 +108,7 @@ namespace TooLearnAndroid
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+          NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.InflateMenu(Resource.Menu.nav_menu); //Navigation Drawer Layout Menu Creation  
             return true;
         }

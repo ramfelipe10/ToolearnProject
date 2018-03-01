@@ -82,10 +82,10 @@ C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\res\valu
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\R.cs.flag
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\uploadflags.txt
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\TooLearnAndroid.csprojResolveAssemblyReference.cache
-bin\Debug\Mono.Android.pdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\TooLearnAndroid.dll.mdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\obj\Debug\android\assets\TooLearnAndroid.dll.mdb
 C:\Users\BOC\Documents\GitHub\ToolearnProject\TooLearnAndroid\bin\Debug\TooLearnAndroid.dll
+bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb
 bin\Debug\System.Core.pdb
 bin\Debug\System.pdb
