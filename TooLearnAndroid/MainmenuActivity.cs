@@ -11,13 +11,13 @@ using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
 using Android.Support.V4.Widget;
-using V7Toolbar = Android.Support.V7.Widget.Toolbar;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.Design.Widget;
 
 namespace TooLearnAndroid
 {
     [Activity(Label = "MainmenuActivity", Theme = "@style/Theme.DesignDemo")]
-    public class MainmenuActivity : Activity
+    public class MainmenuActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -27,10 +27,10 @@ namespace TooLearnAndroid
             SetContentView(Resource.Layout.activity_mainmenu);
             DrawerLayout drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             // Create ActionBarDrawerToggle button and add it to the toolbar  
-            var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             var drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, Resource.String.drawer_open, Resource.String.drawer_close);
-            drawerLayout.SetDrawerListener(drawerToggle);
+            drawerLayout.AddDrawerListener(drawerToggle);
             drawerToggle.SyncState();
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             setupDrawerContent(navigationView); //Calling Function  
