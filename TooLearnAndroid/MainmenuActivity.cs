@@ -72,12 +72,14 @@ namespace TooLearnAndroid
         {
             navigationView.NavigationItemSelected += (sender, e) =>
             {
+                DrawerLayout drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
                 e.MenuItem.SetChecked(true);
                 drawerLayout.CloseDrawers();
             };
         }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
+            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.InflateMenu(Resource.Menu.nav_menu); //Navigation Drawer Layout Menu Creation  
             return true;
         }
