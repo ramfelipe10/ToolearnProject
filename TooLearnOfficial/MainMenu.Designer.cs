@@ -55,13 +55,13 @@
             this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.LogoTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.aboutSystem1 = new TooLearnOfficial.User_Control.AboutSystem();
-            this.settings1 = new TooLearnOfficial.User_Control.Settings();
-            this.myAccount1 = new TooLearnOfficial.User_Control.MyAccount();
-            this.home1 = new TooLearnOfficial.User_Control_Facilitator.Home();
             this.PanelTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.LogosTransition = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.home1 = new TooLearnOfficial.User_Control_Facilitator.Home();
+            this.aboutSystem1 = new TooLearnOfficial.User_Control.AboutSystem();
+            this.settings1 = new TooLearnOfficial.User_Control.Settings();
+            this.myAccount1 = new TooLearnOfficial.User_Control.MyAccount();
             this.sidemenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMnu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -238,7 +238,7 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Activecolor = System.Drawing.Color.DodgerBlue;
+            this.buttonLogout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLogout.BorderRadius = 0;
@@ -260,7 +260,7 @@
             this.buttonLogout.IconRightZoom = 0D;
             this.buttonLogout.IconVisible = true;
             this.buttonLogout.IconZoom = 70D;
-            this.buttonLogout.IsTab = true;
+            this.buttonLogout.IsTab = false;
             this.buttonLogout.Location = new System.Drawing.Point(0, 159);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -544,52 +544,6 @@
             animation3.TransparencyCoeff = 0F;
             this.LogoTransition.DefaultAnimation = animation3;
             // 
-            // aboutSystem1
-            // 
-            this.aboutSystem1.BackColor = System.Drawing.Color.Gray;
-            this.LogosTransition.SetDecoration(this.aboutSystem1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.aboutSystem1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.aboutSystem1, BunifuAnimatorNS.DecorationType.None);
-            this.aboutSystem1.Location = new System.Drawing.Point(393, 141);
-            this.aboutSystem1.Name = "aboutSystem1";
-            this.aboutSystem1.Size = new System.Drawing.Size(685, 370);
-            this.aboutSystem1.TabIndex = 17;
-            // 
-            // settings1
-            // 
-            this.settings1.BackColor = System.Drawing.Color.Gray;
-            this.LogosTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
-            this.settings1.Location = new System.Drawing.Point(393, 141);
-            this.settings1.Name = "settings1";
-            this.settings1.Size = new System.Drawing.Size(685, 370);
-            this.settings1.TabIndex = 3;
-            // 
-            // myAccount1
-            // 
-            this.myAccount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.LogosTransition.SetDecoration(this.myAccount1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.myAccount1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.myAccount1, BunifuAnimatorNS.DecorationType.None);
-            this.myAccount1.Location = new System.Drawing.Point(311, 97);
-            this.myAccount1.Name = "myAccount1";
-            this.myAccount1.Size = new System.Drawing.Size(794, 506);
-            this.myAccount1.TabIndex = 15;
-            // 
-            // home1
-            // 
-            this.home1.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
-            this.home1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LogosTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
-            this.PanelTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
-            this.LogoTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
-            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.home1.Location = new System.Drawing.Point(0, 0);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(1184, 681);
-            this.home1.TabIndex = 4;
-            // 
             // PanelTransition
             // 
             this.PanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
@@ -636,6 +590,52 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // home1
+            // 
+            this.home1.BackgroundImage = global::TooLearnOfficial.Properties.Resources.bg;
+            this.home1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogosTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.home1, BunifuAnimatorNS.DecorationType.None);
+            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home1.Location = new System.Drawing.Point(0, 0);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(1184, 681);
+            this.home1.TabIndex = 4;
+            // 
+            // aboutSystem1
+            // 
+            this.aboutSystem1.BackColor = System.Drawing.Color.Gray;
+            this.LogosTransition.SetDecoration(this.aboutSystem1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.aboutSystem1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.aboutSystem1, BunifuAnimatorNS.DecorationType.None);
+            this.aboutSystem1.Location = new System.Drawing.Point(393, 141);
+            this.aboutSystem1.Name = "aboutSystem1";
+            this.aboutSystem1.Size = new System.Drawing.Size(685, 370);
+            this.aboutSystem1.TabIndex = 17;
+            // 
+            // settings1
+            // 
+            this.settings1.BackColor = System.Drawing.Color.Gray;
+            this.LogosTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
+            this.settings1.Location = new System.Drawing.Point(393, 141);
+            this.settings1.Name = "settings1";
+            this.settings1.Size = new System.Drawing.Size(685, 370);
+            this.settings1.TabIndex = 3;
+            // 
+            // myAccount1
+            // 
+            this.myAccount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.LogosTransition.SetDecoration(this.myAccount1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.myAccount1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.myAccount1, BunifuAnimatorNS.DecorationType.None);
+            this.myAccount1.Location = new System.Drawing.Point(311, 97);
+            this.myAccount1.Name = "myAccount1";
+            this.myAccount1.Size = new System.Drawing.Size(794, 506);
+            this.myAccount1.TabIndex = 15;
             // 
             // MainMenu
             // 

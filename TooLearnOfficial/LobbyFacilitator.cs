@@ -32,6 +32,9 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string i;
       string correct;
+
+       
+        
         public LobbyFacilitator()
         {
             InitializeComponent();
@@ -137,7 +140,7 @@ namespace TooLearnOfficial
                 //Check if a disconenct flag was received
                 if (!message.Contains("DISCONNECT"))
                 {
-                    ThreadHelper.lsbAddItem(this, lsbJoined, message + ".");
+                    ThreadHelper.lsbAddItem(this, lsbJoined, message + " has joined the Lobby...");
 
                     //Begin receiving data from the client socket
                     Receive(clientSocket);
@@ -165,6 +168,21 @@ namespace TooLearnOfficial
 
         private void LobbyFacilitator_Load(object sender, EventArgs e)
         {
+            char[] letters = "q1we2rty3uio4pas5dfgh6jklz7x8cv9bnm0".ToCharArray();
+            Random r = new Random();
+            string randomString = "";
+            for (int i = 0; i < 9; i++) //i < # depends how long the password
+            {
+                randomString += letters[r.Next(0, 34)].ToString();
+            }
+
+            label3.Text = randomString;
+
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Insert into Pincode(Game_Pin) Values('" + label3.Text + "')", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
 
         }
 
@@ -192,7 +210,26 @@ namespace TooLearnOfficial
 
         private async void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            SendToAllClients("GAME");
+            int ID = QuizBank.QUIZID;
+            string GameType;
+
+            SqlDataAdapter adapt = new SqlDataAdapter("select game_type from quizzes where quiz_id= '" + ID + "'", con);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+            string Type = dt.Rows[0][0].ToString();
+
+            if(Type=="Quiz Bee")
+            {
+                 GameType = "QB";
+            }
+
+            else
+            {
+                GameType = "PZ";
+            }
+
+
+            SendToAllClients("GAME" +  "" +GameType+ "" );
             await Task.Delay(500);
 
 
@@ -230,6 +267,10 @@ namespace TooLearnOfficial
                  await Task.Delay(500);
                  SendToAllClients(y+7); */
 
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
 
 
         }

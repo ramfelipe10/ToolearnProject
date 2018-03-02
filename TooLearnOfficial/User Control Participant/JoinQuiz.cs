@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial.User_Control_Participant
 {
@@ -28,10 +29,65 @@ namespace TooLearnOfficial.User_Control_Participant
             InitializeComponent();
         }
 
-        private void buttonEnterGame_Click(object sender, EventArgs e)
+
+
+        //Alternative
+        static class Helper
         {
-            LobbyParticipant lobby = new LobbyParticipant();
-            lobby.ShowDialog();
+            public static string ConnectionString
+            {
+                get
+                {
+                    string str = "Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'";
+                    return str;
+                }
+            }
+        }
+        //Alternative  
+
+
+
+      
+
+           
+
+
+            private void buttonEnterGame_Click(object sender, EventArgs e)
+        {
+
+            //Alternative
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Helper.ConnectionString;
+
+            //Alternative-End 
+
+           SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin From Pincode", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            string code=dt.Rows[0][0].ToString();
+
+
+            if (code == bunifuMetroTextbox1.Text)
+            {
+
+                LobbyParticipant lobby = new LobbyParticipant();
+                lobby.ShowDialog();
+            }
+
+            else if(bunifuMetroTextbox1.Text==null || bunifuMetroTextbox1.Text == "")
+            {
+                bunifuCustomLabel1.Text = "* Please Enter Code";
+                
+            }
+            else
+            {
+                bunifuCustomLabel1.Text = "* Code is Invalid!";
+               
+            }
+                    
+
+            
         }
 
 

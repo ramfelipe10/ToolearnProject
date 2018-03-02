@@ -218,7 +218,7 @@
             this.bunifuImageButton1.TabIndex = 22;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Visible = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Zoom = 3;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // ButtonFacilitatorCreateAccount
@@ -289,6 +289,8 @@
             // 
             // TextboxUsername1
             // 
+            this.TextboxUsername1.AcceptsReturn = true;
+            this.TextboxUsername1.AcceptsTab = true;
             this.TextboxUsername1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TextboxUsername1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.TextboxUsername1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
@@ -310,7 +312,7 @@
             this.passbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.passbox1.BorderColorFocused = System.Drawing.SystemColors.Control;
             this.passbox1.BorderColorIdle = System.Drawing.Color.White;
-            this.passbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.passbox1.BorderColorMouseHover = System.Drawing.Color.White;
             this.passbox1.BorderThickness = 2;
             this.passbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passbox1.Font = new System.Drawing.Font("Century Gothic", 16F);

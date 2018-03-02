@@ -94,7 +94,7 @@
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(908, 319);
             this.bunifuCustomLabel2.TabIndex = 12;
-            this.bunifuCustomLabel2.Text = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Text = "Rules";
             // 
             // bunifuCustomLabel3
             // 
@@ -119,6 +119,7 @@
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameRules";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameRules";

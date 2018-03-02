@@ -156,26 +156,36 @@ namespace TooLearnOfficial
 
                 Receive();
 
-            if (message.Contains("GAME"))
+            if (message.Contains("GAMEQB"))
             {
+                GameType = "QB";
+                GameRules GR = new GameRules();
+                GR.ShowDialog();
+            }
+
+            else if(message.Contains("GAMEPZ"))
+            {
+                GameType = "PZ";
+                GameRules GR = new GameRules();
+                GR.ShowDialog();
+            }
                // string type = message;
                 //  GameParticipant gf = new GameParticipant();
                 //  gf.ShowDialog();
               //  if(type=="Game")
               //  {
-                    GameType = "QB";
+                  //  GameType = "QB";
              //   }
              //   else if (message.Contains(" Picture Puzzle"))
             //    {
             //        GameType = "PZ";
              //   }
 
-                GameRules GR = new GameRules();
-                GR.ShowDialog();
+               
 
                 //client.Client.Shutdown(SocketShutdown.Both);
                 //client.Client.Close();
-            }
+            
 
             else
             {

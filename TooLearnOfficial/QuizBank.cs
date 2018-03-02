@@ -20,6 +20,7 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string QuizName;
         public static string SetValueForText1 = "";
+        public static int QUIZID;
         public QuizBank()
         {
             InitializeComponent();
@@ -89,10 +90,50 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-         //   LobbyFacilitator lobby = new LobbyFacilitator();
-          //  lobby.ShowDialog();
-            GameCode GC = new GameCode();
-            GC.ShowDialog();
+           
+
+            try
+            {
+
+                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                {
+
+                    SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    QUIZID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
+
+                    GameSettings GS = new GameSettings();
+                    GS.ShowDialog();
+
+                    //  GameCode GC = new GameCode();
+                    //  GC.ShowDialog();
+
+                    //   LobbyFacilitator lobby = new LobbyFacilitator();
+                    //  lobby.ShowDialog();
+
+                }//end if result
+
+
+
+
+                else
+                {
+                Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                }
+
+
+        }//try
+
+
+            catch (Exception ex)
+            {
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+            }
+
+
+
+
 
         }
 

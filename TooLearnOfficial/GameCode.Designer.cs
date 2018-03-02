@@ -181,6 +181,7 @@
             this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bunifuImageButton6.TabIndex = 27;
             this.bunifuImageButton6.TabStop = false;
+            this.bunifuImageButton6.Visible = false;
             this.bunifuImageButton6.Zoom = 10;
             this.bunifuImageButton6.Click += new System.EventHandler(this.bunifuImageButton6_Click);
             // 

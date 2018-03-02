@@ -59,12 +59,12 @@
             // 
             this.TextboxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TextboxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.TextboxPassword.BorderColorFocused = System.Drawing.Color.Black;
+            this.TextboxPassword.BorderColorFocused = System.Drawing.SystemColors.Control;
             this.TextboxPassword.BorderColorIdle = System.Drawing.Color.White;
-            this.TextboxPassword.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.TextboxPassword.BorderColorMouseHover = System.Drawing.Color.White;
             this.TextboxPassword.BorderThickness = 2;
             this.TextboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.TextboxPassword.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.TextboxPassword.ForeColor = System.Drawing.Color.White;
             this.TextboxPassword.isPassword = true;
             this.TextboxPassword.Location = new System.Drawing.Point(38, 249);
@@ -273,11 +273,13 @@
             this.bunifuImageButton1.TabIndex = 29;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Visible = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Zoom = 3;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // TextboxUsername
             // 
+            this.TextboxUsername.AcceptsReturn = true;
+            this.TextboxUsername.AcceptsTab = true;
             this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TextboxUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.TextboxUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;

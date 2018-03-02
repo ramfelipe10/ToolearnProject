@@ -71,11 +71,20 @@ namespace TooLearnOfficial
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            //   this.Close();  error nag loloop ning splash kaya unhandled
 
-            ChooseUser cu = new ChooseUser();
-            cu.Show();
+            DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                //   this.Close();  error nag loloop ning splash kaya unhandled
+
+                ChooseUser cu = new ChooseUser();
+                cu.Show();
+            }
+                   
+
+            
+            
             
         }
 
