@@ -70,7 +70,7 @@
             this.TextboxPassword.Location = new System.Drawing.Point(38, 249);
             this.TextboxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxPassword.Name = "TextboxPassword";
-            this.TextboxPassword.Size = new System.Drawing.Size(288, 38);
+            this.TextboxPassword.Size = new System.Drawing.Size(288, 34);
             this.TextboxPassword.TabIndex = 4;
             this.TextboxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TextboxPassword.OnValueChanged += new System.EventHandler(this.TextboxPassword_OnValueChanged);
@@ -266,7 +266,7 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = global::TooLearnOfficial.Properties.Resources.Eye_52px;
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(291, 254);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(291, 252);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(30, 27);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -282,12 +282,12 @@
             this.TextboxUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.TextboxUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.TextboxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 18.5F);
+            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.TextboxUsername.ForeColor = System.Drawing.Color.White;
             this.TextboxUsername.Location = new System.Drawing.Point(38, 168);
             this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.TextboxUsername.Name = "TextboxUsername";
-            this.TextboxUsername.Size = new System.Drawing.Size(288, 38);
+            this.TextboxUsername.Size = new System.Drawing.Size(288, 34);
             this.TextboxUsername.TabIndex = 3;
             this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

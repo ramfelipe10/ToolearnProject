@@ -243,3 +243,4 @@ C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debu
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\Interop.WMPLib.dll
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameRules.resources
+C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameRules.resources
