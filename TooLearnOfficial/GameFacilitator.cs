@@ -34,25 +34,46 @@ namespace TooLearnOfficial
         public static string hostIP;
         private TcpListener listener;
         // Set a list of client sockets
-        private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
+        private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-       // string i;
-       // int time;
+        // string i;
+        // int time;
+
+
+        int counter = 0;
+        int QuizID = QuizBank.QUIZID;
+        int NoOfITems;
+       
+
         public GameFacilitator()
         {
             InitializeComponent();            
             load_server();
-            string Music = GameSettings.Music;
+          load_game(counter);
+            string Music = GameSettings.Music;          
+            player.URL = Music;
 
-           // player.URL = "Family Feud Theme Song.mp3";
-           player.URL = Music;
+         /*   listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
+
+            try
+            {
+                //Accept the connection
+                //This method creates the accepted socket
+                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
+            }
+            catch (Exception ex)
+            {
+                
+            }  */
+
 
 
         }
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
         {
+            
             try
             {
                 // Get the listener that handles the client request
@@ -197,56 +218,44 @@ namespace TooLearnOfficial
         {
            
             player.controls.play();
-            /* 
-                        SqlDataAdapter rad = new SqlDataAdapter(" Select question from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-                        DataTable sad = new DataTable();
-                        rad.Fill(sad);
-                        string me = sad.Rows[0][0].ToString();
-                        LabelQuestion.Text = me;
-                        SendToAllClients(me);
 
-                        SqlDataAdapter dada = new SqlDataAdapter(" Select answer_a from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-                        DataTable dede = new DataTable();
-                        dada.Fill(dede);
-                        string ma = dede.Rows[0][0].ToString();
-                        await Task.Delay(500);
-                        SendToAllClients(ma);
+             
 
+          
 
-                        SqlDataAdapter fad = new SqlDataAdapter(" Select answer_b from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-                        DataTable fed = new DataTable();
-                        fad.Fill(fed);
-                        string mo = fed.Rows[0][0].ToString();
-                        await Task.Delay(500);
-                        SendToAllClients(mo);
-
-
-                        SqlDataAdapter fet = new SqlDataAdapter(" Select answer_c from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-                        DataTable fey = new DataTable();
-                        fet.Fill(fey);
-                        string mi = fed.Rows[0][0].ToString();
-                        await Task.Delay(500);
-                        SendToAllClients(mi);
-
-
-                        SqlDataAdapter fat = new SqlDataAdapter(" Select answer_d from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-                        DataTable fab = new DataTable();
-                        fat.Fill(fab);
-                        string mp = fed.Rows[0][0].ToString();
-                        await Task.Delay(500);
-                        SendToAllClients(mp);
-
-                        SqlDataAdapter fs = new SqlDataAdapter(" Select correct_answer from QuestionAnswers where answer_id=( select min(answer_id) from QuestionAnswers) ", con);
-                        DataTable fd = new DataTable();
-                        fs.Fill(fd);
-                        string mt = fed.Rows[0][0].ToString();
-                        await Task.Delay(500);
-                        SendToAllClients(mt);
-
-            */
 
         }
 
+
+        private void load_game(int counter)
+        {
+
+
+           SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+            NoOfITems = dt.Rows.Count;//6 rows
+           
+            LabelQuestion.Text = dt.Rows[counter][0].ToString();
+
+            string QuizContent= dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString();
+
+            SendToAllClients(QuizContent);
+
+            NoOfITems--;
+
+            if (NoOfITems == 0)
+            {
+                bunifuFlatButton1.Visible = false;
+            }
+
+            else
+            {
+                bunifuFlatButton1.Visible = true;
+            }
+           
+
+        }
         /*
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -282,39 +291,9 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-        private void LabelQuestion_Click(object sender, EventArgs e)
-        {
+            
 
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-
-
-
-
-
-        }
-
-      
-
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            SendToAllClients("p" + 1);      //Dae nagana ang Sending sa ibang form pag server....
-            await Task.Delay(500);
-            SendToAllClients("q" + 2);
-            await Task.Delay(500);
-            SendToAllClients("w" + 3);
-            await Task.Delay(500);
-            SendToAllClients("x" + 4);
-            await Task.Delay(500);
-            SendToAllClients("r" + 5);
-            await Task.Delay(500);
-            SendToAllClients("t" + 6);
-            await Task.Delay(500);
-            SendToAllClients("y" + 7);
-
-        }
+       
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
@@ -332,6 +311,12 @@ namespace TooLearnOfficial
             // player.controls.stop();
             player.settings.mute = false;         
 
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            counter++;
+            load_game(counter);
         }
     }
 }

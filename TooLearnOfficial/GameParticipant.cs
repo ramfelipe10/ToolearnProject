@@ -132,51 +132,62 @@ namespace TooLearnOfficial
                 }
                 else
                 {
-                    string Message = message.Substring(message.Length - 1, 1);
+                    /* string Message = message.Substring(message.Length - 1, 1);
 
 
-                    switch (Message)
-                    {
-                        case "1":
+                     switch (Message)
+                     {
+                         case "1":
 
-                            ThreadHelper.lblAddLabel(this, label1, message);
+                             ThreadHelper.lblAddLabel(this, label1, message);
 
-                            break;
-
-
-                        case "2":
-
-                            ThreadHelper.btnAddTxtButton(this, button1, message);
-                           
-                            break;
+                             break;
 
 
-                        case "3":
-                            ThreadHelper.btnAddTxtButton(this, button2, message);
-                            break;
+                         case "2":
+
+                             ThreadHelper.btnAddTxtButton(this, button1, message);
+
+                             break;
 
 
-                        case "4":
-
-                            ThreadHelper.btnAddTxtButton(this, button3, message);
-
-                            break;
+                         case "3":
+                             ThreadHelper.btnAddTxtButton(this, button2, message);
+                             break;
 
 
-                        case "5":
+                         case "4":
 
-                               ThreadHelper.btnAddTxtButton(this, button4, message);
+                             ThreadHelper.btnAddTxtButton(this, button3, message);
 
-                         
+                             break;
 
-                            break;
 
+                         case "5":
+
+                                ThreadHelper.btnAddTxtButton(this, button4, message);
+
+
+
+                             break; 
+
+                                
+                                     
+
+                    
+                }*/
+
+
+                   var array = message.Split('\n');
+                   // ThreadHelper.lblAddLabel(this, label1, array[0].ToString());
+                    ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());
+                    ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());
+                    ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());
+                    ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());
                    
-                    }
+                    string correctanswer = array[5];
 
-                           
-                  
-                                          
+
 
                     Receive();
 

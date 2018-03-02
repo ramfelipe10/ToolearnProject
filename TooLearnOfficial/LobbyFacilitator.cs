@@ -17,21 +17,17 @@ namespace TooLearnOfficial
 
     public partial class LobbyFacilitator : Form
     {
-        // Set Buffer size for the data being sent and recieved
-        private const int buffer_size = 2048;
-        // Set Buffer as holder of data being sent and received
-        private byte[] buffer = new byte[buffer_size];
-        // Set the TCPListeneer on port 13000;
-       private static string hostIP;
-      
-        private TcpListener listener;
-        // Set a list of client sockets
-        private Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();
-
+       
+        private const int buffer_size = 2048;        
+        private byte[] buffer = new byte[buffer_size];       
+        private static string hostIP;
+        private TcpListener listener;      
+        public static Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();// Tg set to Public ko para ma access sa ibang form
+        public static string GameType;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string i;
-      string correct;
+        string correct;
 
        
         
@@ -67,7 +63,8 @@ namespace TooLearnOfficial
 
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
-
+                
+                
                 //ThreadHelper.lsbAddItem(this, lsbJoined, "Client connected" + clientSocket.Client.RemoteEndPoint.ToString());
 
                 //Send a confirmation message to client
@@ -208,10 +205,10 @@ namespace TooLearnOfficial
             }
         }
 
-        private async void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             int ID = QuizBank.QUIZID;
-            string GameType;
+            
 
             SqlDataAdapter adapt = new SqlDataAdapter("select game_type from quizzes where quiz_id= '" + ID + "'", con);
             DataTable dt = new DataTable();
@@ -230,11 +227,13 @@ namespace TooLearnOfficial
 
 
             SendToAllClients("GAME" +  "" +GameType+ "" );
-            await Task.Delay(500);
+            //await Task.Delay(500);
+            this.Hide();
+            GameRulesFacilitator GRF = new GameRulesFacilitator();
+            GRF.Show();
 
-
-            // GameFacilitator gf = new GameFacilitator();
-            // gf.Show();
+           // GameFacilitator gf = new GameFacilitator();
+           //gf.Show();
 
             /*     SqlDataAdapter sda = new SqlDataAdapter("Select min(quiz_id) from QuestionAnswers", con);
                  DataTable dt = new DataTable();
@@ -295,10 +294,7 @@ namespace TooLearnOfficial
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SendToAllClients(textBox1.Text);
-        }
+     
    
 
     private void bunifuImageButton2_Click(object sender, EventArgs e)
