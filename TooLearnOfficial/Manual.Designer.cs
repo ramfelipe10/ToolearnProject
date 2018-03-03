@@ -36,31 +36,42 @@
             this.panelMenuFacilitator2 = new System.Windows.Forms.Panel();
             this.panelFacilitatorAccount = new System.Windows.Forms.Panel();
             this.panelFacilitatorClassroom = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnNext4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPrevious4 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnNext3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPrevious3 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnPrevious2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNext2 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPrevious1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNext1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panelFacilitatorQuiz = new System.Windows.Forms.Panel();
+            this.btnPrevious5 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnNext5 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panelFacilitatorQuizBee = new System.Windows.Forms.Panel();
+            this.btnNext6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnPrevious6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSelectUser = new System.Windows.Forms.PictureBox();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.buttonMinimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panelUserCreateLogin1.SuspendLayout();
             this.panelMenuFacilitator2.SuspendLayout();
             this.panelFacilitatorAccount.SuspendLayout();
             this.panelFacilitatorClassroom.SuspendLayout();
+            this.panelFacilitatorQuiz.SuspendLayout();
+            this.panelFacilitatorQuizBee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -163,7 +174,7 @@
             // 
             this.panelFacilitatorClassroom.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.panelFacilitatorClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelFacilitatorClassroom.Controls.Add(this.bunifuGradientPanel2);
+            this.panelFacilitatorClassroom.Controls.Add(this.panelFacilitatorQuiz);
             this.panelFacilitatorClassroom.Controls.Add(this.pictureBox6);
             this.panelFacilitatorClassroom.Controls.Add(this.btnNext4);
             this.panelFacilitatorClassroom.Controls.Add(this.btnPrevious4);
@@ -173,16 +184,6 @@
             this.panelFacilitatorClassroom.Size = new System.Drawing.Size(850, 474);
             this.panelFacilitatorClassroom.TabIndex = 161;
             this.panelFacilitatorClassroom.Visible = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::TooLearnOfficial.Properties.Resources.my_classroom;
-            this.pictureBox6.Location = new System.Drawing.Point(36, 34);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(778, 369);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 160;
-            this.pictureBox6.TabStop = false;
             // 
             // btnNext4
             // 
@@ -254,16 +255,6 @@
             this.btnPrevious4.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious4.Click += new System.EventHandler(this.btnPrevious4_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::TooLearnOfficial.Properties.Resources.my_account;
-            this.pictureBox5.Location = new System.Drawing.Point(36, 25);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(780, 379);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 160;
-            this.pictureBox5.TabStop = false;
-            // 
             // btnNext3
             // 
             this.btnNext3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -333,16 +324,6 @@
             this.btnPrevious3.Textcolor = System.Drawing.Color.White;
             this.btnPrevious3.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious3.Click += new System.EventHandler(this.btnPrevious3_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::TooLearnOfficial.Properties.Resources.menu_facilitator;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 34);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(790, 369);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 158;
-            this.pictureBox4.TabStop = false;
             // 
             // btnPrevious2
             // 
@@ -414,26 +395,6 @@
             this.btnNext2.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext2.Click += new System.EventHandler(this.btnNext2_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::TooLearnOfficial.Properties.Resources.login;
-            this.pictureBox3.Location = new System.Drawing.Point(509, 15);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(305, 398);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 158;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TooLearnOfficial.Properties.Resources.create;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 48);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(491, 330);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 157;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnPrevious1
             // 
             this.btnPrevious1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -503,6 +464,248 @@
             this.btnNext1.Textcolor = System.Drawing.Color.White;
             this.btnNext1.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext1.Click += new System.EventHandler(this.btnNext1_Click);
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // panelFacilitatorQuiz
+            // 
+            this.panelFacilitatorQuiz.Controls.Add(this.panelFacilitatorQuizBee);
+            this.panelFacilitatorQuiz.Controls.Add(this.pictureBox7);
+            this.panelFacilitatorQuiz.Controls.Add(this.btnNext5);
+            this.panelFacilitatorQuiz.Controls.Add(this.btnPrevious5);
+            this.panelFacilitatorQuiz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFacilitatorQuiz.Location = new System.Drawing.Point(0, 0);
+            this.panelFacilitatorQuiz.Name = "panelFacilitatorQuiz";
+            this.panelFacilitatorQuiz.Size = new System.Drawing.Size(850, 474);
+            this.panelFacilitatorQuiz.TabIndex = 161;
+            this.panelFacilitatorQuiz.Visible = false;
+            // 
+            // btnPrevious5
+            // 
+            this.btnPrevious5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious5.BorderRadius = 3;
+            this.btnPrevious5.ButtonText = "PREVIOUS";
+            this.btnPrevious5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious5.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPrevious5.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPrevious5.Iconimage = null;
+            this.btnPrevious5.Iconimage_right = null;
+            this.btnPrevious5.Iconimage_right_Selected = null;
+            this.btnPrevious5.Iconimage_Selected = null;
+            this.btnPrevious5.IconMarginLeft = 0;
+            this.btnPrevious5.IconMarginRight = 0;
+            this.btnPrevious5.IconRightVisible = true;
+            this.btnPrevious5.IconRightZoom = 0D;
+            this.btnPrevious5.IconVisible = true;
+            this.btnPrevious5.IconZoom = 90D;
+            this.btnPrevious5.IsTab = false;
+            this.btnPrevious5.Location = new System.Drawing.Point(12, 419);
+            this.btnPrevious5.Name = "btnPrevious5";
+            this.btnPrevious5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPrevious5.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPrevious5.selected = false;
+            this.btnPrevious5.Size = new System.Drawing.Size(76, 43);
+            this.btnPrevious5.TabIndex = 159;
+            this.btnPrevious5.Text = "PREVIOUS";
+            this.btnPrevious5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrevious5.Textcolor = System.Drawing.Color.White;
+            this.btnPrevious5.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious5.Click += new System.EventHandler(this.btnPrevious5_Click);
+            // 
+            // btnNext5
+            // 
+            this.btnNext5.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext5.BorderRadius = 3;
+            this.btnNext5.ButtonText = "NEXT";
+            this.btnNext5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext5.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNext5.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNext5.Iconimage = null;
+            this.btnNext5.Iconimage_right = null;
+            this.btnNext5.Iconimage_right_Selected = null;
+            this.btnNext5.Iconimage_Selected = null;
+            this.btnNext5.IconMarginLeft = 0;
+            this.btnNext5.IconMarginRight = 0;
+            this.btnNext5.IconRightVisible = true;
+            this.btnNext5.IconRightZoom = 0D;
+            this.btnNext5.IconVisible = true;
+            this.btnNext5.IconZoom = 90D;
+            this.btnNext5.IsTab = false;
+            this.btnNext5.Location = new System.Drawing.Point(762, 419);
+            this.btnNext5.Name = "btnNext5";
+            this.btnNext5.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext5.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnNext5.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNext5.selected = false;
+            this.btnNext5.Size = new System.Drawing.Size(76, 43);
+            this.btnNext5.TabIndex = 160;
+            this.btnNext5.Text = "NEXT";
+            this.btnNext5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext5.Textcolor = System.Drawing.Color.White;
+            this.btnNext5.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext5.Click += new System.EventHandler(this.btnNext5_Click);
+            // 
+            // panelFacilitatorQuizBee
+            // 
+            this.panelFacilitatorQuizBee.Controls.Add(this.pictureBox8);
+            this.panelFacilitatorQuizBee.Controls.Add(this.btnNext6);
+            this.panelFacilitatorQuizBee.Controls.Add(this.btnPrevious6);
+            this.panelFacilitatorQuizBee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFacilitatorQuizBee.Location = new System.Drawing.Point(0, 0);
+            this.panelFacilitatorQuizBee.Name = "panelFacilitatorQuizBee";
+            this.panelFacilitatorQuizBee.Size = new System.Drawing.Size(850, 474);
+            this.panelFacilitatorQuizBee.TabIndex = 162;
+            this.panelFacilitatorQuizBee.Visible = false;
+            // 
+            // btnNext6
+            // 
+            this.btnNext6.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext6.BorderRadius = 3;
+            this.btnNext6.ButtonText = "NEXT";
+            this.btnNext6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext6.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNext6.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNext6.Iconimage = null;
+            this.btnNext6.Iconimage_right = null;
+            this.btnNext6.Iconimage_right_Selected = null;
+            this.btnNext6.Iconimage_Selected = null;
+            this.btnNext6.IconMarginLeft = 0;
+            this.btnNext6.IconMarginRight = 0;
+            this.btnNext6.IconRightVisible = true;
+            this.btnNext6.IconRightZoom = 0D;
+            this.btnNext6.IconVisible = true;
+            this.btnNext6.IconZoom = 90D;
+            this.btnNext6.IsTab = false;
+            this.btnNext6.Location = new System.Drawing.Point(762, 419);
+            this.btnNext6.Name = "btnNext6";
+            this.btnNext6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnNext6.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNext6.selected = false;
+            this.btnNext6.Size = new System.Drawing.Size(76, 43);
+            this.btnNext6.TabIndex = 160;
+            this.btnNext6.Text = "NEXT";
+            this.btnNext6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext6.Textcolor = System.Drawing.Color.White;
+            this.btnNext6.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext6.Click += new System.EventHandler(this.btnNext6_Click);
+            // 
+            // btnPrevious6
+            // 
+            this.btnPrevious6.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious6.BorderRadius = 3;
+            this.btnPrevious6.ButtonText = "PREVIOUS";
+            this.btnPrevious6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious6.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPrevious6.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPrevious6.Iconimage = null;
+            this.btnPrevious6.Iconimage_right = null;
+            this.btnPrevious6.Iconimage_right_Selected = null;
+            this.btnPrevious6.Iconimage_Selected = null;
+            this.btnPrevious6.IconMarginLeft = 0;
+            this.btnPrevious6.IconMarginRight = 0;
+            this.btnPrevious6.IconRightVisible = true;
+            this.btnPrevious6.IconRightZoom = 0D;
+            this.btnPrevious6.IconVisible = true;
+            this.btnPrevious6.IconZoom = 90D;
+            this.btnPrevious6.IsTab = false;
+            this.btnPrevious6.Location = new System.Drawing.Point(12, 419);
+            this.btnPrevious6.Name = "btnPrevious6";
+            this.btnPrevious6.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious6.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPrevious6.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPrevious6.selected = false;
+            this.btnPrevious6.Size = new System.Drawing.Size(76, 43);
+            this.btnPrevious6.TabIndex = 159;
+            this.btnPrevious6.Text = "PREVIOUS";
+            this.btnPrevious6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrevious6.Textcolor = System.Drawing.Color.White;
+            this.btnPrevious6.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious6.Click += new System.EventHandler(this.btnPrevious6_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::TooLearnOfficial.Properties.Resources.quiz_bee;
+            this.pictureBox8.Location = new System.Drawing.Point(0, 25);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(850, 378);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 161;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::TooLearnOfficial.Properties.Resources.create_quiz;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 25);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(850, 378);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 161;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::TooLearnOfficial.Properties.Resources.my_classroom;
+            this.pictureBox6.Location = new System.Drawing.Point(36, 34);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(778, 369);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 160;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::TooLearnOfficial.Properties.Resources.my_account;
+            this.pictureBox5.Location = new System.Drawing.Point(36, 25);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(780, 379);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 160;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::TooLearnOfficial.Properties.Resources.menu_facilitator;
+            this.pictureBox4.Location = new System.Drawing.Point(26, 34);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(790, 369);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 158;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::TooLearnOfficial.Properties.Resources.login;
+            this.pictureBox3.Location = new System.Drawing.Point(509, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(305, 398);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 158;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TooLearnOfficial.Properties.Resources.create;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 48);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(491, 330);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 157;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBoxSelectUser
             // 
@@ -586,29 +789,6 @@
             this.buttonExit.Zoom = 10;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuGradientPanel2
-            // 
-            this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
-            this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.White;
-            this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
-            this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(850, 474);
-            this.bunifuGradientPanel2.TabIndex = 161;
-            this.bunifuGradientPanel2.Visible = false;
-            // 
             // Manual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,6 +809,10 @@
             this.panelMenuFacilitator2.ResumeLayout(false);
             this.panelFacilitatorAccount.ResumeLayout(false);
             this.panelFacilitatorClassroom.ResumeLayout(false);
+            this.panelFacilitatorQuiz.ResumeLayout(false);
+            this.panelFacilitatorQuizBee.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -672,6 +856,13 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnPrevious4;
         private System.Windows.Forms.PictureBox pictureBox6;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel2;
+        private System.Windows.Forms.Panel panelFacilitatorQuiz;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNext5;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPrevious5;
+        private System.Windows.Forms.Panel panelFacilitatorQuizBee;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNext6;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPrevious6;
     }
 }

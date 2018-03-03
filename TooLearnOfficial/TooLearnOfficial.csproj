@@ -665,6 +665,8 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Manual Pictures\quiz_bee.png" />
+    <None Include="Manual Pictures\create_quiz.png" />
     <None Include="TooLearn Pictures\No Audio_52px.png" />
     <None Include="TooLearn Pictures\Audio_52px.png" />
     <None Include="TooLearn Pictures\Group_96px.png" />

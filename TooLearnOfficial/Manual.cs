@@ -38,8 +38,6 @@ namespace TooLearnOfficial
         private void btnNext_Click(object sender, EventArgs e)
         {
             panelUserCreateLogin1.Visible = true;
-
-         
         }
 
         private void btnPrevious1_Click(object sender, EventArgs e)
@@ -69,11 +67,7 @@ namespace TooLearnOfficial
 
         private void btnNext3_Click(object sender, EventArgs e)
         {
-            
-
-            panelFacilitatorClassroom.Visible = true;
-
-      
+            panelFacilitatorClassroom.Visible = true;            
         }
 
         private void btnPrevious4_Click(object sender, EventArgs e)
@@ -83,7 +77,27 @@ namespace TooLearnOfficial
 
         private void btnNext4_Click(object sender, EventArgs e)
         {
-            bunifuGradientPanel2.Visible = true;
+            panelFacilitatorQuiz.Visible = true;
+        }
+
+        private void btnPrevious5_Click(object sender, EventArgs e)
+        {
+            panelFacilitatorQuiz.Visible = false;
+        }
+
+        private void btnNext5_Click(object sender, EventArgs e)
+        {
+            panelFacilitatorQuizBee.Visible = true;
+        }
+
+        private void btnPrevious6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNext6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
