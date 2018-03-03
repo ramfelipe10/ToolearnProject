@@ -123,12 +123,15 @@ namespace TooLearnOfficial
                 }
                 else if (message.Contains("StartGame"))
                 {
-                   // this.Hide();
+
+                   
+
+                    // this.Hide();
                     GameParticipant GP = new GameParticipant();
                     GP.Show();
 
 
-                   // Receive();
+                   Receive();
 
                 }
             }

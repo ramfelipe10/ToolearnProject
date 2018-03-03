@@ -230,7 +230,8 @@ namespace TooLearnOfficial
             //await Task.Delay(500);
             this.Hide();
             GameRulesFacilitator GRF = new GameRulesFacilitator();
-            GRF.Show();
+            GRF.ShowDialog();
+           
 
            // GameFacilitator gf = new GameFacilitator();
            //gf.Show();

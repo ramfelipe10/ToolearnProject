@@ -64,30 +64,38 @@ namespace TooLearnOfficial.User_Control_Participant
            SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin From Pincode", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-
-            string code=dt.Rows[0][0].ToString();
-
-
-            if (code == bunifuMetroTextbox1.Text)
+            if (dt.Rows.Count == 0)
             {
+                Dialogue.Show("No Host Server Detected! Please Wait for the Host to Start.", "", "Ok", "Cancel");
 
-                LobbyParticipant lobby = new LobbyParticipant();
-                lobby.ShowDialog();
             }
 
-            else if(bunifuMetroTextbox1.Text==null || bunifuMetroTextbox1.Text == "")
-            {
-                bunifuCustomLabel1.Text = "* Please Enter Code";
-                
-            }
             else
             {
-                bunifuCustomLabel1.Text = "* Code is Invalid!";
-               
-            }
-                    
 
-            
+                string code = dt.Rows[0][0].ToString();
+
+
+                if (code == bunifuMetroTextbox1.Text)
+                {
+
+                    LobbyParticipant lobby = new LobbyParticipant();
+                    lobby.ShowDialog();
+                }
+
+                else if (bunifuMetroTextbox1.Text == null || bunifuMetroTextbox1.Text == "")
+                {
+                    bunifuCustomLabel1.Text = "* Please Enter Code";
+
+                }
+                else
+                {
+                    bunifuCustomLabel1.Text = "* Code is Invalid!";
+
+                }
+
+
+            }//end else
         }
 
 

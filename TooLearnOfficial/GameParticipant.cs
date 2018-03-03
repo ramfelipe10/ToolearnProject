@@ -91,8 +91,7 @@ namespace TooLearnOfficial
 
 
 
-
-        /*                                             */
+        
        
 
         private void Receive()
@@ -118,7 +117,7 @@ namespace TooLearnOfficial
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead); //ini si may laman kang message
 
-                //Receive();
+               
 
 
 
@@ -165,29 +164,28 @@ namespace TooLearnOfficial
 
                          case "5":
 
-                                ThreadHelper.btnAddTxtButton(this, button4, message);
+                             ThreadHelper.btnAddTxtButton(this, button4, message);
 
 
 
-                             break; 
+                             break;
 
-                                
-                                     
 
+                      
                     
-                }*/
+                     }  */
 
 
-                   var array = message.Split('\n');
-                   // ThreadHelper.lblAddLabel(this, label1, array[0].ToString());
+
+                    var array = message.Split('\n');
+                    ThreadHelper.lblAddLabel(this, label1, array[0].ToString());
                     ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());
                     ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());
                     ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());
                     ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());
-                   
-                    string correctanswer = array[5];
 
 
+                    string Correct = array[5].ToString();
 
                     Receive();
 

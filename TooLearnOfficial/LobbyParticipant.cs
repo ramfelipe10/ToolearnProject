@@ -174,7 +174,7 @@ namespace TooLearnOfficial
                // this.Hide();//kaipuhn muna ithread
                 GameType = "PZ";
                 GameRules GR = new GameRules();
-                GR.ShowDialog();
+                GR.Show();
 
 
                 

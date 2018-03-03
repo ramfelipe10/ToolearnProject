@@ -327,6 +327,12 @@
     <Compile Include="User Control Facilitator\AboutSystem.Designer.cs">
       <DependentUpon>AboutSystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control Facilitator\AddPAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Facilitator\AddPAccount.Designer.cs">
+      <DependentUpon>AddPAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control Facilitator\CreateClassroom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -537,6 +543,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\AboutSystem.resx">
       <DependentUpon>AboutSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Facilitator\AddPAccount.resx">
+      <DependentUpon>AddPAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\CreateClassroom.resx">
       <DependentUpon>CreateClassroom.cs</DependentUpon>

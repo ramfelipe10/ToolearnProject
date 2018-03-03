@@ -49,13 +49,14 @@
             // 
             // bunifuCustomLabel2
             // 
-            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 122);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 198);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(830, 296);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(41, 16);
             this.bunifuCustomLabel2.TabIndex = 15;
             this.bunifuCustomLabel2.Text = "Rules";
             // 
@@ -91,6 +92,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.GameRulesFacilitator_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

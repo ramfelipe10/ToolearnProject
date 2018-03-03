@@ -55,6 +55,7 @@ namespace TooLearnOfficial
         {
             settings1.BringToFront();
             myAccount1.Visible = false;
+            addPAccount1.Visible = false;
 
         }
 
@@ -64,6 +65,7 @@ namespace TooLearnOfficial
         {
             myAccount1.BringToFront();
             myAccount1.Visible = true;
+            addPAccount1.Visible = false;
 
         }
 
@@ -93,6 +95,7 @@ namespace TooLearnOfficial
         {
             aboutSystem1.BringToFront();
             myAccount1.Visible = false;
+            addPAccount1.Visible = false;
         }
 
              
@@ -115,25 +118,33 @@ namespace TooLearnOfficial
 
         }
 
-        private Form AddParticipantAccount;
+       // private Form AddParticipantAccount;
 
         private void CreateParticipantA_Click(object sender, EventArgs e)
         {
-           // AddParticipantAccount pa = new AddParticipantAccount();
-          //  pa.ShowDialog();
+            // AddParticipantAccount pa = new AddParticipantAccount();
+            //  pa.ShowDialog();
 
 
-            if ((AddParticipantAccount == null) || (AddParticipantAccount.IsDisposed))
-            {
-                AddParticipantAccount = new AddParticipantAccount();
+            /*  if ((AddParticipantAccount == null) || (AddParticipantAccount.IsDisposed))
+              {
+                  AddParticipantAccount = new AddParticipantAccount();
 
-                AddParticipantAccount.Show();
-            }
-            else
-            {
-                Dialogue.Show("One Instance of this Form is Allowed", "", "Ok", "Cancel");
-                AddParticipantAccount.BringToFront();
-            }
+                  AddParticipantAccount.Show();
+              }
+              else
+              {
+                  Dialogue.Show("One Instance of this Form is Allowed", "", "Ok", "Cancel");
+                  AddParticipantAccount.BringToFront();
+              } */
+
+
+            addPAccount1.BringToFront();
+            myAccount1.Visible = false;
+            addPAccount1.Visible = true;
+
+
+
 
         }
         private Form Manual;

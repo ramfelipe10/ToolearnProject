@@ -62,6 +62,7 @@
             this.aboutSystem1 = new TooLearnOfficial.User_Control.AboutSystem();
             this.settings1 = new TooLearnOfficial.User_Control.Settings();
             this.myAccount1 = new TooLearnOfficial.User_Control.MyAccount();
+            this.addPAccount1 = new TooLearnOfficial.User_Control_Facilitator.AddPAccount();
             this.sidemenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMnu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -637,6 +638,17 @@
             this.myAccount1.Size = new System.Drawing.Size(794, 506);
             this.myAccount1.TabIndex = 15;
             // 
+            // addPAccount1
+            // 
+            this.addPAccount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.LogosTransition.SetDecoration(this.addPAccount1, BunifuAnimatorNS.DecorationType.None);
+            this.PanelTransition.SetDecoration(this.addPAccount1, BunifuAnimatorNS.DecorationType.None);
+            this.LogoTransition.SetDecoration(this.addPAccount1, BunifuAnimatorNS.DecorationType.None);
+            this.addPAccount1.Location = new System.Drawing.Point(311, 97);
+            this.addPAccount1.Name = "addPAccount1";
+            this.addPAccount1.Size = new System.Drawing.Size(794, 506);
+            this.addPAccount1.TabIndex = 18;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -650,6 +662,7 @@
             this.Controls.Add(this.aboutSystem1);
             this.Controls.Add(this.settings1);
             this.Controls.Add(this.myAccount1);
+            this.Controls.Add(this.addPAccount1);
             this.PanelTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.LogosTransition.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -704,5 +717,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton CreateParticipantA;
         private Bunifu.Framework.UI.BunifuFlatButton buttonManual;
+        private User_Control_Facilitator.AddPAccount addPAccount1;
     }
 }
