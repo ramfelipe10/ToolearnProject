@@ -140,12 +140,14 @@
             // 
             // lsbWait
             // 
+            this.lsbWait.Font = new System.Drawing.Font("Century", 11.25F);
+            this.lsbWait.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lsbWait.FormattingEnabled = true;
+            this.lsbWait.ItemHeight = 18;
             this.lsbWait.Location = new System.Drawing.Point(22, 23);
             this.lsbWait.Name = "lsbWait";
-            this.lsbWait.ScrollAlwaysVisible = true;
             this.lsbWait.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lsbWait.Size = new System.Drawing.Size(485, 199);
+            this.lsbWait.Size = new System.Drawing.Size(485, 184);
             this.lsbWait.TabIndex = 1;
             this.lsbWait.SelectedIndexChanged += new System.EventHandler(this.lsbWait_SelectedIndexChanged);
             // 

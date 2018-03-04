@@ -124,10 +124,11 @@ namespace TooLearnOfficial
                 else if (message.Contains("StartGame"))
                 {
 
-                   
+
 
                     // this.Hide();
-                    GameParticipant GP = new GameParticipant();
+                    // GameParticipant GP = new GameParticipant();
+                    testing GP = new testing();
                     GP.Show();
 
 

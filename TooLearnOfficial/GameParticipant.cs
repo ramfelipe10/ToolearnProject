@@ -22,7 +22,9 @@ namespace TooLearnOfficial
         private string _IPAddress = Program.serverIP;
         private const int _PORT = 13000;
 
-       
+        string GameType = LobbyParticipant.GameType;
+
+
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
@@ -128,8 +130,20 @@ namespace TooLearnOfficial
                     this.Close();
                     client.Client.Shutdown(SocketShutdown.Both);
                     client.Client.Close();
+                    
                 }
-                else
+
+
+
+                else if (message.Contains("StartGame"))
+                {
+
+                    ThreadHelper.PanelOut(this, panel1, false);
+                    Receive();
+
+                }
+
+                else //else if start game visible false
                 {
                     /* string Message = message.Substring(message.Length - 1, 1);
 
@@ -175,6 +189,7 @@ namespace TooLearnOfficial
                     
                      }  */
 
+                
 
 
                     var array = message.Split('\n');
@@ -206,40 +221,23 @@ namespace TooLearnOfficial
         private void GameParticipant_Load(object sender, EventArgs e)
         {
 
-            /*   SqlDataAdapter sda = new SqlDataAdapter("Select min(quiz_id) from QuestionAnswers", con);
-               DataTable dt = new DataTable();
-               sda.Fill(dt);
+            if (GameType == "QB")
+            {
+                label2.Text = "Quiz Bee";
+                label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
 
-               i = Convert.ToInt32(dt.Rows[0][0].ToString());
-   
-            i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
+            }
 
-            LabelTimer.Text = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
-            lblArray0.Text =ScalarReturn ("select question from QuestionAnswers where quiz_id='"+ i + "'");
-            bunifuFlatButton1.Text = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
-            bunifuFlatButton2.Text = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
-            bunifuFlatButton3.Text = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
-            bunifuFlatButton4.Text = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
-            correct = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");  */
+            else if (GameType == "PZ")
+            {
+                label2.Text = "Picture Puzzle";
+                label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
+            }
+
+
+
         }  
-        private string ScalarReturn(string q)
-        {
-            string s;
-            con.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand(q, con);
-
-                s = cmd.ExecuteScalar().ToString();
-            }
-            catch(Exception)
-            {
-                s = "";
-            }
-            con.Close();
-            return s;
-
-        }
+       
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
@@ -268,9 +266,6 @@ namespace TooLearnOfficial
             Send(button4.Text);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

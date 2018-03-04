@@ -14,7 +14,41 @@ namespace TooLearnOfficial
         delegate void AddLabelCallback(Form frm, Label lbl, string text);
         delegate void AddTxtBtnCallback(Form frm, Button btn, string text);
 
-        
+        delegate void PanelOutCallback(Form frm, Control ctrl, bool text);
+
+
+        delegate void FormCloseCallback(Form frm);
+
+
+
+
+        public static void Hide(Form frm)
+        {
+            if (frm.InvokeRequired)
+            {
+                FormCloseCallback d = new FormCloseCallback(Hide);
+                frm.Invoke(d, new object[] { frm });
+            }
+            else
+            {
+                frm.Hide();
+            }
+        }
+
+
+        public static void PanelOut(Form frm, Control ctrl, bool text)
+        {
+            if (ctrl.InvokeRequired)
+            {
+                PanelOutCallback d = new PanelOutCallback(PanelOut);
+                frm.Invoke(d, new object[] { frm, ctrl, text });
+            }
+            else
+            {
+                ctrl.Visible = text;
+            }
+        }
+
 
         public static void SetText(Form frm, Control ctrl, string text)
         {

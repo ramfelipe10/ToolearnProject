@@ -26,10 +26,9 @@ namespace TooLearnOfficial
         public static string GameType;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        string i;
-        string correct;
+      
 
-       
+      
         
         public LobbyFacilitator()
         {
@@ -60,6 +59,7 @@ namespace TooLearnOfficial
 
                 //End operation and display the received data on the screen
                 TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
+             
 
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
@@ -128,7 +128,7 @@ namespace TooLearnOfficial
             try
             {
                 //Get the client socket
-                TcpClient clientSocket = (TcpClient)ar.AsyncState;
+                TcpClient clientSocket = (TcpClient)ar.AsyncState;                
                 //Get the received bytes from the client
                 int received = clientSocket.Client.EndReceive(ar);
                 // Get the string value of the received buffer
@@ -137,10 +137,13 @@ namespace TooLearnOfficial
                 //Check if a disconenct flag was received
                 if (!message.Contains("DISCONNECT"))
                 {
-                    ThreadHelper.lsbAddItem(this, lsbJoined, message + " has joined the Lobby...");
+                    ThreadHelper.lsbAddItem(this, lsbJoined, message + " has joined the Lobby.");
 
+                    Send("You ("+message+ ") are now connected! Please Wait",clientSocket);
+
+                    
                     //Begin receiving data from the client socket
-                    Receive(clientSocket);
+                    Receive(clientSocket);  
                 }
                 else
                 {
@@ -154,17 +157,18 @@ namespace TooLearnOfficial
             }
             catch (Exception ex)
             {
-                ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
+                // ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
+                ThreadHelper.lsbAddItem(this, lsbJoined, "Error Detected!,Please Close this Lobby and Reconnect.");
             }
         }
 
-        private void lsbJoined_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void LobbyFacilitator_Load(object sender, EventArgs e)
         {
+
+            lsbJoined.Items.Add("Waiting for Participants.....");
+
             char[] letters = "q1we2rty3uio4pas5dfgh6jklz7x8cv9bnm0".ToCharArray();
             Random r = new Random();
             string randomString = "";
@@ -227,45 +231,14 @@ namespace TooLearnOfficial
 
 
             SendToAllClients("GAME" +  "" +GameType+ "" );
-            //await Task.Delay(500);
+            
+
             this.Hide();
             GameRulesFacilitator GRF = new GameRulesFacilitator();
             GRF.ShowDialog();
            
 
-           // GameFacilitator gf = new GameFacilitator();
-           //gf.Show();
-
-            /*     SqlDataAdapter sda = new SqlDataAdapter("Select min(quiz_id) from QuestionAnswers", con);
-                 DataTable dt = new DataTable();
-                 sda.Fill(dt);
-
-                 i = dt.Rows[0][0].ToString();
-
-                 i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
-
-                 string p = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
-                 string q = ScalarReturn("select question from QuestionAnswers where quiz_id='" + i + "'");
-                 string w = ScalarReturn("select answer_a from QuestionAnswers where quiz_id='" + i + "'");
-                 string x = ScalarReturn("select answer_b from QuestionAnswers where quiz_id='" + i + "'");
-                 string r = ScalarReturn("select answer_c from QuestionAnswers where quiz_id='" + i + "'");
-                 string t = ScalarReturn("select answer_d from QuestionAnswers where quiz_id='" + i + "'");
-                 string y = ScalarReturn("select correct_answer from QuestionAnswers where quiz_id='" + i + "'");
-
-
-                 SendToAllClients(p+1);
-                 await Task.Delay(500);
-                 SendToAllClients(q+2);
-                 await Task.Delay(500);
-                 SendToAllClients(w+3);
-                 await Task.Delay(500);
-                 SendToAllClients(x+4);
-                 await Task.Delay(500);
-                 SendToAllClients(r+5);
-                 await Task.Delay(500);
-                 SendToAllClients(t+6);
-                 await Task.Delay(500);
-                 SendToAllClients(y+7); */
+           
 
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
@@ -276,24 +249,7 @@ namespace TooLearnOfficial
         }
 
 
-        private string ScalarReturn(string q)
-        {
-            string s;
-            con.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand(q, con);
-
-                s = cmd.ExecuteScalar().ToString();
-            }
-            catch (Exception)
-            {
-                s = "";
-            }
-            con.Close();
-            return s;
-
-        }
+      
 
      
    
@@ -312,6 +268,8 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton2_Click_1(object sender, EventArgs e)
         {
+            lsbJoined.Dispose();
+            listener.Stop();
             this.Close();
         }
     }

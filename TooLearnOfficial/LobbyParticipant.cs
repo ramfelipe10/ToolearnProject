@@ -158,35 +158,43 @@ namespace TooLearnOfficial
 
             if (message.Contains("GAMEQB"))
             {
-
-               // this.Hide();//kaipuhn muna ithread
+                ThreadHelper.Hide(this);
+                //this.Hide();//kaipuhn muna ithread
                 GameType = "QB";
-                GameRules GR = new GameRules();
+                // GameRules GR = new GameRules();
+                //  GR.ShowDialog();
+
+                //  testing GR = new testing();
+                GameParticipant GR = new GameParticipant();
                 GR.ShowDialog();
 
 
-                
+
             }
 
             else if(message.Contains("GAMEPZ"))
             {
+                ThreadHelper.Hide(this);
 
-               // this.Hide();//kaipuhn muna ithread
+                //this.Hide();//kaipuhn muna ithread
                 GameType = "PZ";
-                GameRules GR = new GameRules();
-                GR.Show();
+                //  GameRules GR = new GameRules();
+                // GR.Show();
 
 
-                
+                GameParticipant GR = new GameParticipant();
+                GR.ShowDialog();
+
+
             }
 
-                   
-   
 
 
 
-                //client.Client.Shutdown(SocketShutdown.Both);
-                //client.Client.Close();
+
+
+            //client.Client.Shutdown(SocketShutdown.Both);
+            //client.Client.Close();
 
 
             else

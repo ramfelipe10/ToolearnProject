@@ -32,9 +32,12 @@ namespace TooLearnOfficial
         private byte[] buffer = new byte[buffer_size];
         // Set the TCPListeneer on port 13000;
         public static string hostIP;
-        private TcpListener listener;
+       
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
+
+
+      
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
@@ -44,31 +47,19 @@ namespace TooLearnOfficial
         int counter = 0;
         int QuizID = QuizBank.QUIZID;
         int NoOfITems;
-       
+
+        DataTable dt = new DataTable();
+
 
         public GameFacilitator()
         {
             InitializeComponent();            
             load_server();
-          load_game(counter);
+            load_QA();
+            load_game(counter);
             string Music = GameSettings.Music;          
             player.URL = Music;
-
-         /*   listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
-
-            try
-            {
-                //Accept the connection
-                //This method creates the accepted socket
-                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
-            }
-            catch (Exception ex)
-            {
-                
-            }  */
-
-
-
+            
         }
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
@@ -82,6 +73,7 @@ namespace TooLearnOfficial
                 //End operation and display the received data on the screen
                 TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
 
+               
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
 
@@ -146,7 +138,8 @@ namespace TooLearnOfficial
             try
             {
                 //Get the client socket
-                TcpClient clientSocket = (TcpClient)ar.AsyncState;
+               TcpClient clientSocket = (TcpClient)ar.AsyncState;         
+
                 //Get the received bytes from the client
                 int received = clientSocket.Client.EndReceive(ar);
                 // Get the string value of the received buffer
@@ -155,14 +148,20 @@ namespace TooLearnOfficial
                 //Check if a disconenct flag was received
                 if (!message.Contains("DISCONNECT"))
                 {
+
+                  
+
                     //Begin receiving data from the client socket
                     Receive(clientSocket);
                     //Send a confirmation message to the client
-                    Send("You sent " + message, clientSocket);
+                  //  Send("You sent " + message, clientSocket);
                 }
                 else
                 {
                     clientSockets.Remove(clientSocket.Client.RemoteEndPoint.ToString());
+
+
+
                 }
             }
             catch (Exception ex)
@@ -214,45 +213,60 @@ namespace TooLearnOfficial
 
         }
 
+        
+
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
            
             player.controls.play();
 
-             
+           
 
-          
+
 
 
         }
 
+        private void load_QA()
+        {
+            SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
+            adapt.Fill(dt);
+            NoOfITems = dt.Rows.Count;//6 rows
+        }
 
         private void load_game(int counter)
         {
 
 
-           SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
-            DataTable dt = new DataTable();
-            adapt.Fill(dt);
-            NoOfITems = dt.Rows.Count;//6 rows
-           
-            LabelQuestion.Text = dt.Rows[counter][0].ToString();
+          
 
-            string QuizContent= dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString();
 
-            SendToAllClients(QuizContent);
-
-            NoOfITems--;
+            
 
             if (NoOfITems == 0)
             {
                 bunifuFlatButton1.Visible = false;
+                bunifuFlatButton2.Visible = true;
             }
 
             else
             {
                 bunifuFlatButton1.Visible = true;
+
+
+                LabelQuestion.Text = dt.Rows[counter][0].ToString();
+
+                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString();
+
+                SendToAllClients(QuizContent);
+
+
             }
+
+
+            
+
+           
            
 
         }
@@ -316,7 +330,13 @@ namespace TooLearnOfficial
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             counter++;
+            NoOfITems--;
             load_game(counter);
+        }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -61,7 +61,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
             //Alternative-End 
 
-           SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin From Pincode", con);
+         SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin From Pincode", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 0)
@@ -77,7 +77,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
                 if (code == bunifuMetroTextbox1.Text)
-                {
+                {   
 
                     LobbyParticipant lobby = new LobbyParticipant();
                     lobby.ShowDialog();
@@ -95,7 +95,7 @@ namespace TooLearnOfficial.User_Control_Participant
                 }
 
 
-            }//end else
+            }//end else */
         }
 
 
