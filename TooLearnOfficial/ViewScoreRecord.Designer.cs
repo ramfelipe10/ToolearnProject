@@ -41,7 +41,7 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuCircleProgressbar2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.DataGridViewGrade = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -50,11 +50,12 @@
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.label_average = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewGrade)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -184,13 +185,13 @@
             this.bunifuCircleProgressbar2.TabIndex = 18;
             this.bunifuCircleProgressbar2.Value = 0;
             // 
-            // bunifuCustomDataGrid1
+            // DataGridViewGrade
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridViewGrade.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DataGridViewGrade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridViewGrade.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,22 +199,22 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(84, 65);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(649, 135);
-            this.bunifuCustomDataGrid1.TabIndex = 19;
+            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridViewGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewGrade.DoubleBuffered = true;
+            this.DataGridViewGrade.EnableHeadersVisualStyles = false;
+            this.DataGridViewGrade.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.DataGridViewGrade.HeaderForeColor = System.Drawing.Color.SeaGreen;
+            this.DataGridViewGrade.Location = new System.Drawing.Point(84, 65);
+            this.DataGridViewGrade.Name = "DataGridViewGrade";
+            this.DataGridViewGrade.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewGrade.Size = new System.Drawing.Size(649, 135);
+            this.DataGridViewGrade.TabIndex = 19;
             // 
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 5;
-            this.bunifuElipse2.TargetControl = this.bunifuCustomDataGrid1;
+            this.bunifuElipse2.TargetControl = this.DataGridViewGrade;
             // 
             // bunifuCustomLabel2
             // 
@@ -292,12 +293,24 @@
             this.bunifuCustomLabel8.TabIndex = 26;
             this.bunifuCustomLabel8.Text = "Failed:";
             // 
+            // label_average
+            // 
+            this.label_average.AutoSize = true;
+            this.label_average.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_average.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label_average.Location = new System.Drawing.Point(643, 44);
+            this.label_average.Name = "label_average";
+            this.label_average.Size = new System.Drawing.Size(90, 18);
+            this.label_average.TabIndex = 27;
+            this.label_average.Text = "Letter Grade";
+            // 
             // ViewScoreRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(809, 428);
+            this.Controls.Add(this.label_average);
             this.Controls.Add(this.bunifuCustomLabel8);
             this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.bunifuCustomLabel6);
@@ -305,7 +318,7 @@
             this.Controls.Add(this.bunifuCustomLabel4);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.Controls.Add(this.DataGridViewGrade);
             this.Controls.Add(this.bunifuCircleProgressbar2);
             this.Controls.Add(this.bunifuCircleProgressbar1);
             this.Controls.Add(this.bunifuGradientPanel1);
@@ -314,12 +327,13 @@
             this.Name = "ViewScoreRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewScoreRecord";
+            this.Load += new System.EventHandler(this.ViewScoreRecord_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewGrade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,12 +352,13 @@
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridViewGrade;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
+        private Bunifu.Framework.UI.BunifuCustomLabel label_average;
     }
 }
