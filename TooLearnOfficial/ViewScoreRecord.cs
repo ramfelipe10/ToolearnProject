@@ -32,12 +32,12 @@ namespace TooLearnOfficial
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
             int TotalNumberofQuiz;
-            int TotalScoreonQuiz;
+            int TotalScoreonQuiz = 0;
             float average;
 
             for(int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
             {
-                TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[0].Value);
+                TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[0].Value);  
             }
             //label_average.Text += TotalScoreonQuiz.ToString();
 
