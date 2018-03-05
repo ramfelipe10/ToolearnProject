@@ -13,11 +13,42 @@ namespace TooLearnOfficial
         delegate void AddItemCallback(Form frm, ListBox lsb, string text);
         delegate void AddLabelCallback(Form frm, Label lbl, string text);
         delegate void AddTxtBtnCallback(Form frm, Button btn, string text);
-
         delegate void PanelOutCallback(Form frm, Control ctrl, bool text);
-
-
         delegate void FormCloseCallback(Form frm);
+        delegate void BunifuBox(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, bool text);
+        delegate void ControlOUt(Form frm, Control ctrl, bool text);
+
+
+
+
+
+        public static void ControlHide(Form frm, Control ctrl, bool text)
+        {
+            if (frm.InvokeRequired)
+            {
+                ControlOUt d = new ControlOUt(ControlHide);
+                frm.Invoke(d, new object[] { frm, ctrl, text });
+            }
+            else
+            {
+                ctrl.Visible = text;
+            }
+        }
+
+
+        public static void BunifuBoxHide(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, bool text)
+        {
+            if (frm.InvokeRequired)
+            {
+                BunifuBox d = new BunifuBox(BunifuBoxHide);
+                frm.Invoke(d, new object[] { frm, ctrl, text });
+            }
+            else
+            {
+                ctrl.Visible = text;
+            }
+        }
+
 
 
 

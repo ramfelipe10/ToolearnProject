@@ -31,6 +31,12 @@ namespace TooLearnOfficial
 
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
+
+            /*SqlDataAdapter adapt = new SqlDataAdapter("Select quiz_title,", con);
+            adapt.Fill(dt);
+            NoOfITems = dt.Rows.Count;//6 rows  */
+
+
             int TotalNumberofQuiz;
             int TotalScoreonQuiz = 0;
             float average;

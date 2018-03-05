@@ -229,7 +229,7 @@ namespace TooLearnOfficial
 
         private void load_QA()
         {
-            SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer,image,QA_time_limit,points,game_type,item_format from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
             adapt.Fill(dt);
             NoOfITems = dt.Rows.Count;//6 rows
         }
@@ -256,7 +256,7 @@ namespace TooLearnOfficial
 
                 LabelQuestion.Text = dt.Rows[counter][0].ToString();
 
-                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString();
+                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
 
                 SendToAllClients(QuizContent);
 

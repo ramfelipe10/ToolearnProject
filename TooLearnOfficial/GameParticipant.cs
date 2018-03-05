@@ -182,10 +182,7 @@ namespace TooLearnOfficial
 
 
 
-                             break;
-
-
-                      
+                             break;                      
                     
                      }  */
 
@@ -193,14 +190,71 @@ namespace TooLearnOfficial
 
 
                     var array = message.Split('\n');
-                    ThreadHelper.lblAddLabel(this, label1, array[0].ToString());
-                    ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());
-                    ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());
-                    ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());
-                    ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());
+
+                   if(array[10].ToString() =="Multiple Choice")//Item Format
+                    {
+
+                        ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
+                        ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());  //A
+                        ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());  //B
+                        ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());  //C
+                        ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());  //D
+                        string Correct = array[5].ToString();  //CorrectAnswer
+
+                        ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
+                        ThreadHelper.ControlHide(this, button5, false);
+                        ThreadHelper.ControlHide(this, button6, false);
+                       
+
+                    }
+                   else if(array[10].ToString() == "True/False")
+                    {
+                        ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
+                        string Correct = array[5].ToString();  //CorrectAnswer
 
 
-                    string Correct = array[5].ToString();
+                        ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
+                        ThreadHelper.ControlHide(this, button1, false);
+                        ThreadHelper.ControlHide(this, button2, false);
+                        ThreadHelper.ControlHide(this, button3, false);
+                        ThreadHelper.ControlHide(this, button4, false);
+                        ThreadHelper.ControlHide(this, button5, true);
+                        ThreadHelper.ControlHide(this, button6, true);
+
+
+                    }
+
+                    else
+                    {
+                        ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
+                        string Correct = array[5].ToString();  //CorrectAnswer
+
+                        ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, true);
+                        ThreadHelper.ControlHide(this, button1, false);
+                        ThreadHelper.ControlHide(this, button2, false);
+                        ThreadHelper.ControlHide(this, button3, false);
+                        ThreadHelper.ControlHide(this, button4, false);
+                        ThreadHelper.ControlHide(this, button5, false);
+                        ThreadHelper.ControlHide(this, button6, false);
+
+                    }
+
+                /*    ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
+                    ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());  //A
+                    ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());  //B
+                    ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());  //C
+                    ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());  //D
+                    string Correct = array[5].ToString();  //CorrectAnswer
+                    */
+
+
+                    
+
+                   // array[6].ToString());  //Image
+                  //  array[7].ToString()); //TimeLimit
+                  //  array[8].ToString()); //Points
+                  //  array[9].ToString()); //Game Type
+                  //  array[10].ToString()); //Item Format
 
                     Receive();
 
@@ -211,6 +265,13 @@ namespace TooLearnOfficial
                 MessageBox.Show(ex.ToString());
             }
         }
+
+
+        private void Timer()
+        {
+
+        }
+
 
         private void BeginWriteCallback(IAsyncResult ar)
         {
