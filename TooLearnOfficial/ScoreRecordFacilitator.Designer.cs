@@ -124,10 +124,12 @@
             // bunifuElipse3
             // 
             this.bunifuElipse3.ElipseRadius = 5;
+            this.bunifuElipse3.TargetControl = this;
             // 
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 5;
+            this.bunifuElipse2.TargetControl = this;
             // 
             // label1
             // 
@@ -160,6 +162,7 @@
             // bunifuElipse4
             // 
             this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this;
             // 
             // bunifuElipse1
             // 
@@ -169,6 +172,7 @@
             // score1
             // 
             this.score1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.score1.Data = null;
             this.score1.Location = new System.Drawing.Point(16, 138);
             this.score1.Name = "score1";
             this.score1.Size = new System.Drawing.Size(909, 512);
@@ -189,6 +193,7 @@
             this.Name = "ScoreRecordFacilitator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScoreRecordFacilitator";
+            this.Load += new System.EventHandler(this.ScoreRecordFacilitator_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

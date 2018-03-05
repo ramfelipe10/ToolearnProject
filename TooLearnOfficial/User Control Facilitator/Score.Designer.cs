@@ -386,6 +386,7 @@
             this.bunifuCustomDataGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(819, 331);
             this.bunifuCustomDataGrid2.TabIndex = 182;
+            this.bunifuCustomDataGrid2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid2_CellClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -446,9 +447,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
+            this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.dgpp);
-            this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "Score";
             this.Size = new System.Drawing.Size(916, 525);
             this.Load += new System.EventHandler(this.Score_Load);

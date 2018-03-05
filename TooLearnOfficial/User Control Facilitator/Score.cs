@@ -11,9 +11,12 @@ using System.Data.SqlClient;
 
 namespace TooLearnOfficial.User_Control_Facilitator
 {
+    
     public partial class Score : UserControl
     {
-        string Class;
+        string Class="";
+        
+
 
         public Score()
         {
@@ -21,8 +24,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
             if (!this.DesignMode)
             {
                 InitializeComponent();
-                Load_Class();
-                Trigger_Combo();
+             Load_Class();
+             Trigger_Combo();
                 
             }
 
@@ -44,7 +47,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 }
             }
         }
-        //Alternative  
+        //Alternative    
         
 
 
@@ -143,7 +146,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select user_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -182,7 +185,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select user_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NOT NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NOT NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -226,12 +229,12 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                  
 
-        }
+        }   
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          Class=comboBox1.SelectedItem.ToString();
-          Trigger_Combo();
+        Class=comboBox1.SelectedItem.ToString();
+       Trigger_Combo();
 
         }
 
@@ -240,20 +243,33 @@ namespace TooLearnOfficial.User_Control_Facilitator
             
         }
 
+
+
+      
+
+        public string PN;
+        public string Data
+        {
+            get { return PN; }
+            set { PN = value; }
+        }
+
+
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-   
+  
             if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
 
             {
-            string    QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                PN = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                
 
             }
+           
 
             ViewScoreRecord VSR = new ViewScoreRecord();
             VSR.ShowDialog(); 
-
 
         }
 
@@ -269,8 +285,26 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Class = comboBox3.SelectedItem.ToString();
-            Trigger_Combo();
+          Class = comboBox3.SelectedItem.ToString();
+           Trigger_Combo();
+        }
+
+        private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
+
+            {
+                PN = bunifuCustomDataGrid2.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+               
+
+            }
+
+           
+
+            ViewScoreRecord VSR = new ViewScoreRecord();
+            VSR.ShowDialog();  
+
         }
     }
 }

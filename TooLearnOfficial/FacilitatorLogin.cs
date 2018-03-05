@@ -73,17 +73,29 @@ namespace TooLearnOfficial
 
         private void FacilitatorLogin_Load(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("select username from facilitator", con);
-            con.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
 
-            while(dr.Read())
+            try
             {
-                auto.Add(dr.GetString(0));
+                SqlCommand cmd = new SqlCommand("select username from facilitator", con);
+                con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+
+                while (dr.Read())
+                {
+                    auto.Add(dr.GetString(0));
+                }
+                TextboxUsername1.AutoCompleteCustomSource = auto;
+                con.Close();
+
+
             }
-            TextboxUsername1.AutoCompleteCustomSource = auto;
-            con.Close();
+
+
+            catch(Exception ex)
+            {
+                Dialogue.Show(ex.ToString(), "", "Ok", "Cancel");
+            }
         }
 
         private void ButtonFacilitatorCreateAccount_Click(object sender, EventArgs e)

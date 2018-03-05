@@ -15,10 +15,16 @@ namespace TooLearnOfficial
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
+
+
+        public static string PN;
+
         public ScoreRecordFacilitator()
         {
             InitializeComponent();
-           
+
+
+            
         }
 
 
@@ -29,6 +35,9 @@ namespace TooLearnOfficial
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+
+            PN = score1.Data.ToString();
+
         }
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
@@ -36,7 +45,13 @@ namespace TooLearnOfficial
             this.Close();
         }
 
-      
+        private void ScoreRecordFacilitator_Load(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        
 
     }
 }
