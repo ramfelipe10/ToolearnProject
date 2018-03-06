@@ -48,6 +48,11 @@ namespace TooLearnOfficial
         int QuizID = QuizBank.QUIZID;
         int NoOfITems;
 
+        string time;
+        string convertedtime;
+        int timerstamp;
+        
+
         DataTable dt = new DataTable();
 
 
@@ -59,7 +64,9 @@ namespace TooLearnOfficial
             load_game(counter);
             string Music = GameSettings.Music;          
             player.URL = Music;
-            
+
+           
+
         }
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
@@ -217,7 +224,8 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
-           
+            
+
             player.controls.play();
 
            
@@ -256,6 +264,29 @@ namespace TooLearnOfficial
 
                 LabelQuestion.Text = dt.Rows[counter][0].ToString();
 
+                time=dt.Rows[counter][7].ToString();
+
+
+
+                string str = time;
+                int index = str.IndexOf('(');
+
+                if (index >= 0)
+                {
+                    convertedtime = str.Substring(0, index);
+
+
+
+                }
+                else
+                {
+
+                    convertedtime = str;
+                }
+
+                timerstamp = Convert.ToInt32(convertedtime);
+                TimerLabel.Text = timerstamp.ToString();
+
                 string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
 
                 SendToAllClients(QuizContent);
@@ -270,8 +301,8 @@ namespace TooLearnOfficial
            
 
         }
-        /*
-        private void timer1_Tick(object sender, EventArgs e)
+        
+    /*    private void timer1_Tick(object sender, EventArgs e)
         {
             
             i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
@@ -297,8 +328,8 @@ namespace TooLearnOfficial
 
                 timer1.Stop();
             }
-        }
-        */
+        } */
+        
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
@@ -329,14 +360,44 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+          
+
             counter++;
             NoOfITems--;
             load_game(counter);
+            timer1.Start();// For Next Question
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+
+
+           
+            
+
+             
+            timerstamp--;
+            if (timerstamp == 0)
+            {
+                timer1.Stop();
+                bunifuCustomLabel1.Visible = true;
+                TimerLabel.Visible = false;
+            }
+            else
+            {
+                TimerLabel.Text = timerstamp.ToString();
+                bunifuCustomLabel1.Visible = false;
+                TimerLabel.Visible = true;
+            }
+        }
+
+        
     }
 }

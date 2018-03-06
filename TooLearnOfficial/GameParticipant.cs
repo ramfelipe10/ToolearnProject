@@ -24,8 +24,8 @@ namespace TooLearnOfficial
 
         string GameType = LobbyParticipant.GameType;
 
-
-
+        string time;
+        int convertedtime;
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
         //  string correct;
@@ -204,7 +204,30 @@ namespace TooLearnOfficial
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton5, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton6, false);
-                       
+
+                        string str = array[7].ToString();
+                        int index = str.IndexOf('(');
+
+                        if (index >= 0)
+                        {
+                            time = str.Substring(0, index);
+
+
+
+                        }
+                        else
+                        {
+
+                            time = str;
+                        }
+
+
+                        convertedtime = Convert.ToInt32(time);//timer
+
+
+                        timer1.Start(); /// dae nagana after mag stop dae na na start to be fixed
+
+
 
                     }
                    else if(array[10].ToString() == "True/False")
@@ -221,7 +244,31 @@ namespace TooLearnOfficial
                         ThreadHelper.ControlHide(this, bunifuFlatButton5, true);
                         ThreadHelper.ControlHide(this, bunifuFlatButton6, true);
 
+                        
+                       
 
+                        string str = array[7].ToString(); 
+                        int index = str.IndexOf('(');
+
+                        if (index >= 0)
+                        {
+                            time = str.Substring(0, index);
+
+
+
+                        }
+                        else
+                        {
+
+                            time = str;
+                        }
+
+
+                       convertedtime = Convert.ToInt32(time);//timer
+
+
+
+                        timer1.Start();
                     }
 
                     else
@@ -239,6 +286,31 @@ namespace TooLearnOfficial
                         ThreadHelper.ControlHide(this, bunifuFlatButton4, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton5, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton6, false);
+
+                        string str = array[7].ToString();
+                        int index = str.IndexOf('(');
+
+                        if (index >= 0)
+                        {
+                            time = str.Substring(0, index);
+
+
+
+                        }
+                        else
+                        {
+
+                            time = str;
+                        }
+
+
+                        convertedtime = Convert.ToInt32(time);//timer
+
+
+
+                       
+                            timer1.Start();
+                     
 
                     }
 
@@ -285,6 +357,8 @@ namespace TooLearnOfficial
         private void GameParticipant_Load(object sender, EventArgs e)
         {
 
+          
+
             if (GameType == "QB")
             {
                 label2.Text = "Quiz Bee";
@@ -330,6 +404,24 @@ namespace TooLearnOfficial
             Send(bunifuFlatButton4.Text);
         }
 
-      
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            convertedtime--;
+
+            if (convertedtime == 0)
+            {
+                timer1.Stop();
+                bunifuCustomLabel2.Visible = true;
+                bunifuCustomLabel3.Visible = false;
+            }
+            else
+            {
+                bunifuCustomLabel3.Text = convertedtime.ToString();
+                bunifuCustomLabel2.Visible = false;
+                bunifuCustomLabel3.Visible = true;
+            }
+
+
+        }
     }
 }
