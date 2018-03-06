@@ -92,7 +92,7 @@ namespace TooLearnOfficial
 
         private void btnPrevious6_Click(object sender, EventArgs e)
         {
-
+            panelFacilitatorQuizBee.Visible = false;
         }
 
         private void btnNext6_Click(object sender, EventArgs e)
