@@ -12,17 +12,17 @@ namespace TooLearnOfficial
         delegate void SetTextCallback(Form frm, Control ctrl, string text);
         delegate void AddItemCallback(Form frm, ListBox lsb, string text);
         delegate void AddLabelCallback(Form frm, Label lbl, string text);
-        delegate void AddTxtBtnCallback(Form frm, Button btn, string text);
+        delegate void AddTxtBtnCallback(Form frm, Bunifu.Framework.UI.BunifuFlatButton btn, string text);
         delegate void PanelOutCallback(Form frm, Control ctrl, bool text);
         delegate void FormCloseCallback(Form frm);
         delegate void BunifuBox(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, bool text);
-        delegate void ControlOUt(Form frm, Control ctrl, bool text);
+        delegate void ControlOUt(Form frm, Bunifu.Framework.UI.BunifuFlatButton ctrl, bool text);
 
 
 
 
 
-        public static void ControlHide(Form frm, Control ctrl, bool text)
+        public static void ControlHide(Form frm, Bunifu.Framework.UI.BunifuFlatButton ctrl, bool text)
         {
             if (frm.InvokeRequired)
             {
@@ -120,7 +120,7 @@ namespace TooLearnOfficial
             }
         }
 
-        public static void btnAddTxtButton(Form frm, Button btn, string text)
+        public static void btnAddTxtButton(Form frm, Bunifu.Framework.UI.BunifuFlatButton btn, string text)
         {
             if (btn.InvokeRequired)
             {

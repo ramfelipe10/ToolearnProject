@@ -195,15 +195,15 @@ namespace TooLearnOfficial
                     {
 
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
-                        ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());  //A
-                        ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());  //B
-                        ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());  //C
-                        ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());  //D
+                        ThreadHelper.btnAddTxtButton(this, bunifuFlatButton1, array[1].ToString());  //A
+                        ThreadHelper.btnAddTxtButton(this, bunifuFlatButton2, array[2].ToString());  //B
+                        ThreadHelper.btnAddTxtButton(this, bunifuFlatButton3, array[3].ToString());  //C
+                        ThreadHelper.btnAddTxtButton(this, bunifuFlatButton4, array[4].ToString());  //D
                         string Correct = array[5].ToString();  //CorrectAnswer
 
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
-                        ThreadHelper.ControlHide(this, button5, false);
-                        ThreadHelper.ControlHide(this, button6, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton5, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton6, false);
                        
 
                     }
@@ -214,12 +214,12 @@ namespace TooLearnOfficial
 
 
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
-                        ThreadHelper.ControlHide(this, button1, false);
-                        ThreadHelper.ControlHide(this, button2, false);
-                        ThreadHelper.ControlHide(this, button3, false);
-                        ThreadHelper.ControlHide(this, button4, false);
-                        ThreadHelper.ControlHide(this, button5, true);
-                        ThreadHelper.ControlHide(this, button6, true);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton1, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton2, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton3, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton4, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton5, true);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton6, true);
 
 
                     }
@@ -229,13 +229,16 @@ namespace TooLearnOfficial
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
                         string Correct = array[5].ToString();  //CorrectAnswer
 
+
+
+
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, true);
-                        ThreadHelper.ControlHide(this, button1, false);
-                        ThreadHelper.ControlHide(this, button2, false);
-                        ThreadHelper.ControlHide(this, button3, false);
-                        ThreadHelper.ControlHide(this, button4, false);
-                        ThreadHelper.ControlHide(this, button5, false);
-                        ThreadHelper.ControlHide(this, button6, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton1, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton2, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton3, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton4, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton5, false);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton6, false);
 
                     }
 
@@ -309,22 +312,22 @@ namespace TooLearnOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Send(button1.Text);
+            Send(bunifuFlatButton1.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Send(button2.Text);
+            Send(bunifuFlatButton2.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Send(button3.Text);
+            Send(bunifuFlatButton3.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Send(button4.Text);
+            Send(bunifuFlatButton4.Text);
         }
 
       

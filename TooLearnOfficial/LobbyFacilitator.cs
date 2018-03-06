@@ -270,6 +270,13 @@ namespace TooLearnOfficial
         {
             lsbJoined.Dispose();
             listener.Stop();
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+
             this.Close();
         }
     }
