@@ -112,63 +112,78 @@ namespace TooLearnOfficial
         {
             try
             {
+                SqlDataAdapter ser = new SqlDataAdapter("Select count(cl.participant_id) from classlist cl , classrooms c where cl.class_id=c.class_id AND cl.participant_id='" + Program.par_id + "' AND class_code= '" + codeme.Text + "' ", con);
+                DataTable der = new DataTable();
+                ser.Fill(der);
+                string idr = der.Rows[0][0].ToString();
+                int count = Convert.ToInt32(idr);
 
-
-                SqlDataAdapter sad = new SqlDataAdapter("Select count(class_id) from classrooms where class_code = '" + codeme.Text + "' ", con);
-                DataTable data = new DataTable();
-                sad.Fill(data);
-
-
-
-
-                if (data.Rows[0][0].ToString() == "1")
+                if (count >= 1)
                 {
-                    SqlDataAdapter s = new SqlDataAdapter("Select class_id from classrooms where class_code = '" + codeme.Text + "' ", con);
-                    DataTable d = new DataTable();
-                    s.Fill(d);
-                    string ID = d.Rows[0][0].ToString();
-
-
-                    SqlDataAdapter se = new SqlDataAdapter("Select facilitator_id from classrooms where class_id = '" + ID + "' ", con);
-                    DataTable de = new DataTable();
-                    se.Fill(de);
-                    string id = de.Rows[0][0].ToString();
-
-
-
-                    con.Open();
-                    String query = "INSERT INTO classlist (participant_id,class_id,facilitator_id) VALUES ('" + Program.par_id + "','" + ID + "','" + id + "')";
-                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                    int n = sda.SelectCommand.ExecuteNonQuery();
-                    con.Close();
-
-
-                    if (n > 0)
-                    {
-                        Dialogue.Show("Enrolled!", "", "Ok", "Cancel");
-
-                    }
-                    else
-                    {
-                        Dialogue.Show("Enroll Failed!", "", "Ok", "Cancel");
-
-                    }
-
+                    Dialogue.Show("You are already Part of the Class!", "", "Ok", "Cancel");
                 }
 
                 else
                 {
 
-                    Dialogue.Show("Class Code doesn't Exist", "", "Ok", "Cancel");
+                    SqlDataAdapter sad = new SqlDataAdapter("Select count(class_id) from classrooms where class_code = '" + codeme.Text + "' ", con);
+                    DataTable data = new DataTable();
+                    sad.Fill(data);
+
+
+
+
+                    if (data.Rows[0][0].ToString() == "1")
+                    {
+                        SqlDataAdapter s = new SqlDataAdapter("Select class_id from classrooms where class_code = '" + codeme.Text + "' ", con);
+                        DataTable d = new DataTable();
+                        s.Fill(d);
+                        string ID = d.Rows[0][0].ToString();
+
+
+                        SqlDataAdapter se = new SqlDataAdapter("Select facilitator_id from classrooms where class_id = '" + ID + "' ", con);
+                        DataTable de = new DataTable();
+                        se.Fill(de);
+                        string id = de.Rows[0][0].ToString();
+
+
+
+                        con.Open();
+                        String query = "INSERT INTO classlist (participant_id,class_id,facilitator_id) VALUES ('" + Program.par_id + "','" + ID + "','" + id + "')";
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                        int n = sda.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+
+
+                        if (n > 0)
+                        {
+                            codeme.Text = "";
+                            Dialogue.Show("Enrolled!", "", "Ok", "Cancel");
+
+                        }
+                        else
+                        {
+                            Dialogue.Show("Enroll Failed!", "", "Ok", "Cancel");
+
+                        }
+
+                    }
+
+                    else
+                    {
+
+                        Dialogue.Show("Class Code doesn't Exist", "", "Ok", "Cancel");
+                    }
+
+
                 }
 
-
-            }
+            }//end first IF
 
             catch (Exception ex)
             {
 
-                Dialogue.Show(" ' " + ex.Message.ToString() + "' ","","Ok","Cancel");
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
             }
 

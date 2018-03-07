@@ -12,6 +12,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using WMPLib;
+using System.IO;
 
 
 
@@ -118,6 +119,43 @@ namespace TooLearnOfficial
             }
         }
 
+
+
+        private void SendImage(byte[] text, TcpClient client)
+        {
+            try
+            {
+
+
+
+                Bitmap bmp = new Bitmap(dt.Rows[counter][6].ToString());
+                MemoryStream ms = new MemoryStream();
+                // Save to memory using the Jpeg format
+                bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                // read to end
+                byte[] bmpBytes = ms.GetBuffer();
+                bmp.Dispose();
+                ms.Close();
+
+                //Set a NetworkStream for sending data
+                NetworkStream stream = client.GetStream();
+                //Store the message into the buffer
+              
+                //Begin writing into the stream bufer for sending
+                stream.BeginWrite(bmpBytes, 0, bmpBytes.Length, BeginSendCallback, stream);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+
+
         private void BeginSendCallback(IAsyncResult ar)
         {
             //Get the current asynchronous state of the stream
@@ -184,6 +222,17 @@ namespace TooLearnOfficial
             foreach (KeyValuePair<string, TcpClient> client in clientSockets)
             {
                 Send(message, client.Value);                              
+            }
+        }
+
+
+        private void SendToAllClientsImage(byte[] message)
+        {
+
+
+            foreach (KeyValuePair<string, TcpClient> client in clientSockets)
+            {
+                SendImage(message, client.Value);
             }
         }
 
@@ -286,6 +335,26 @@ namespace TooLearnOfficial
 
                 timerstamp = Convert.ToInt32(convertedtime);
                 TimerLabel.Text = timerstamp.ToString();
+
+
+
+                /***********************************/
+
+                if (dt.Rows[counter][6].ToString() != null || dt.Rows[counter][6].ToString() != "")
+                {
+                    Bitmap bmp = new Bitmap(dt.Rows[counter][6].ToString());
+                    MemoryStream ms = new MemoryStream();
+                    // Save to memory using the Jpeg format
+                    bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    // read to end
+                    byte[] bmpBytes = ms.GetBuffer();
+                    bmp.Dispose();
+                    ms.Close();
+
+                }
+
+                /****************************************/
 
                 string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
 

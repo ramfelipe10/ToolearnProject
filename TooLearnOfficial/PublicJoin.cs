@@ -12,6 +12,7 @@ namespace TooLearnOfficial
 {
     public partial class PublicJoin : Form
     {
+        int Time = 2;
         public PublicJoin()
         {
             InitializeComponent();
@@ -32,6 +33,45 @@ namespace TooLearnOfficial
             this.Hide();
             ChooseUser CU = new ChooseUser();
             CU.Show();
+        }
+
+        private void buttonEnterGame_Click(object sender, EventArgs e)
+        {
+
+            timer1.Start();
+           
+
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+            bunifuMetroTextbox1.Text = "";
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true;
+            bunifuImageButton6.Visible = false;
+            label3.Visible = false;
+            IPBox.Visible = false;
+            label1.Visible = false;
+            buttonEnterGame.Visible = false;
+            IPBox.Text = "";
+            Time--;
+            if (Time == 0)
+            {
+                timer1.Stop();
+                pictureBox1.Visible = false;                
+                panel1.Visible = true;
+                bunifuImageButton6.Visible = true;
+                label3.Visible = true;
+                IPBox.Visible = true;
+                label1.Visible = true;
+                buttonEnterGame.Visible = true;
+                Time = 2;
+            }
+
         }
     }
 }

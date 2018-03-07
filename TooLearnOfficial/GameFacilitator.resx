@@ -130,11 +130,8 @@
   <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADFSURBVChTbdDtBsJgGMbx+wCTpPcXSTJJOouIiCIiShER
-        pYjoQ0fRe6u12tbLOVw929r2TPv+878vN5UrG5SqWxRrOxTqBwjNI/KtE3LtM7KdCzLdK9IDCeSgPYQG
-        j0QT9SUkhzeQjVylH2IlHcVHMsg4Z5dE55xRkhm6Izp+gP429fiSicJTBeR1LsVQgp2LMRSZKAjNVZDX
-        cBeaqQguNBD/AmuTU9IYeiKwfIH4krXJKZnIv3qD+BdYw/VN+jkL+dYffAFheR+Bq78/qgAAAABJRU5E
-        rkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA5SURBVChTY3AJrvvv4Ff638Yz57+Fc/J/Y7vo//qWQf+1
+        TTz/q+s7/FfSMv8vp6r/f1QhXRXq/wcASYOv3f4sMl0AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
