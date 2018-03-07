@@ -633,6 +633,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Unlock_104px {
+            get {
+                object obj = ResourceManager.GetObject("Unlock_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
@@ -646,6 +656,26 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap User_48px {
             get {
                 object obj = ResourceManager.GetObject("User_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_96px {
+            get {
+                object obj = ResourceManager.GetObject("User_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap User_Groups_96px {
+            get {
+                object obj = ResourceManager.GetObject("User Groups_96px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

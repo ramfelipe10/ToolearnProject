@@ -131,14 +131,14 @@ namespace TooLearnOfficial
             {
 
                 Random random = new Random();
-                int randomNumber = random.Next(101010, 999999 + 1);
+                int randomNumber = random.Next(101010, 999999);
                string code = Convert.ToString(randomNumber);
 
 
 
 
                 con.Open();
-                String query = "INSERT INTO classrooms (class_name,facilitator_id,class_code) VALUES ('" + textBoxCreateClassroom.Text + "','" + Program.user_id + "',' " + code + " ')";
+                String query = "INSERT INTO classrooms (class_name,facilitator_id,class_code) VALUES ('" + textBoxCreateClassroom.Text + "','" + Program.user_id + "','" + code + "')";
                 SqlDataAdapter sda = new SqlDataAdapter(query, con);
                 int n = sda.SelectCommand.ExecuteNonQuery();
 

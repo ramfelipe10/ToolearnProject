@@ -128,8 +128,8 @@ namespace TooLearnOfficial
 
                     // this.Hide();
                     // GameParticipant GP = new GameParticipant();
-                    testing GP = new testing();
-                    GP.Show();
+                //    testing GP = new testing();
+               //     GP.Show();
 
 
                    Receive();

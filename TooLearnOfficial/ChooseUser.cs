@@ -12,8 +12,11 @@ using System.Windows.Forms;
 
 namespace TooLearnOfficial
 {
+    
     public partial class ChooseUser : Form
     {
+
+        public static string Role;
         public ChooseUser()
         {
             InitializeComponent();
@@ -39,15 +42,52 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //  this.Hide();
 
-            ParticipantSQLConnect con = new ParticipantSQLConnect();
-            con.Show();
+            //   ParticipantSQLConnect con = new ParticipantSQLConnect();
+            //  con.Show();
+
+
+            panel1.Visible = true;
+
 
           //  ParticipantLogin pl = new ParticipantLogin();
            // pl.Show();
         }
 
-      
+       
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void bunifuImageButton7_Click(object sender, EventArgs e)
+        {
+            Role = "Individual";
+
+            this.Hide();
+
+             ParticipantSQLConnect con = new ParticipantSQLConnect();
+            con.Show();
+        }
+
+        private void bunifuImageButton8_Click(object sender, EventArgs e)
+        {
+
+            Role = "Group";
+
+            this.Hide();
+
+            ParticipantSQLConnect con = new ParticipantSQLConnect();
+            con.Show();
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PublicJoin PJ = new PublicJoin();
+            PJ.Show();
+        }
     }
 }

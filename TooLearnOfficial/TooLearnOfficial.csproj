@@ -216,6 +216,24 @@
     <Compile Include="GameSettings.Designer.cs">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupLobby.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupLobby.Designer.cs">
+      <DependentUpon>GroupLobby.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupLogin.Designer.cs">
+      <DependentUpon>GroupLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupMain.Designer.cs">
+      <DependentUpon>GroupMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="LobbyFacilitator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +275,12 @@
     </Compile>
     <Compile Include="PicturePuzzle.Designer.cs">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublicJoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublicJoin.Designer.cs">
+      <DependentUpon>PublicJoin.cs</DependentUpon>
     </Compile>
     <Compile Include="PublicPlay.cs">
       <SubType>Form</SubType>
@@ -319,12 +343,6 @@
     </Compile>
     <Compile Include="QuizPicturePuzzle.Designer.cs">
       <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="testing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="testing.Designer.cs">
-      <DependentUpon>testing.cs</DependentUpon>
     </Compile>
     <Compile Include="ThreadHelper.cs" />
     <Compile Include="User Control Facilitator\AboutSystem.cs">
@@ -486,6 +504,15 @@
     <EmbeddedResource Include="GameSettings.resx">
       <DependentUpon>GameSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupLobby.resx">
+      <DependentUpon>GroupLobby.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupLogin.resx">
+      <DependentUpon>GroupLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupMain.resx">
+      <DependentUpon>GroupMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LobbyFacilitator.resx">
       <DependentUpon>LobbyFacilitator.cs</DependentUpon>
     </EmbeddedResource>
@@ -506,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PicturePuzzle.resx">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublicJoin.resx">
+      <DependentUpon>PublicJoin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PublicPlay.resx">
       <DependentUpon>PublicPlay.cs</DependentUpon>
@@ -546,9 +576,6 @@
     </Compile>
     <EmbeddedResource Include="QuizPicturePuzzle.resx">
       <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testing.resx">
-      <DependentUpon>testing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Facilitator\AboutSystem.resx">
       <DependentUpon>AboutSystem.cs</DependentUpon>
@@ -683,6 +710,9 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\User Groups_96px.png" />
+    <None Include="TooLearn Pictures\User_96px.png" />
+    <None Include="TooLearn Pictures\Unlock_104px.png" />
     <None Include="Resources\444.jpg" />
     <None Include="Manual Pictures\quiz_bee.png" />
     <None Include="Manual Pictures\create_quiz.png" />

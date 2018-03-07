@@ -35,24 +35,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.TextboxUsername = new System.Windows.Forms.TextBox();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.LoginHeader = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuImageButton6 = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ButtonParticipantCreateAccount = new Bunifu.Framework.UI.BunifuThinButton2();
             this.ButtonParticipantSignIn = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.TextboxUsername = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
             this.LoginHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // TextboxPassword
@@ -109,6 +109,52 @@
             this.bunifuDragControl1.Horizontal = true;
             this.bunifuDragControl1.TargetControl = this.LoginHeader;
             this.bunifuDragControl1.Vertical = true;
+            // 
+            // TextboxUsername
+            // 
+            this.TextboxUsername.AcceptsReturn = true;
+            this.TextboxUsername.AcceptsTab = true;
+            this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TextboxUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.TextboxUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.TextboxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.TextboxUsername.ForeColor = System.Drawing.Color.White;
+            this.TextboxUsername.Location = new System.Drawing.Point(38, 168);
+            this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.TextboxUsername.Name = "TextboxUsername";
+            this.TextboxUsername.Size = new System.Drawing.Size(288, 34);
+            this.TextboxUsername.TabIndex = 3;
+            this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = global::TooLearnOfficial.Properties.Resources.Eye_52px;
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(291, 252);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 27);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 29;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Visible = false;
+            this.bunifuImageButton1.Zoom = 3;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            // 
+            // bunifuImageButton6
+            // 
+            this.bunifuImageButton6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton6.Image = global::TooLearnOfficial.Properties.Resources.Back_Arrow_64px;
+            this.bunifuImageButton6.ImageActive = null;
+            this.bunifuImageButton6.Location = new System.Drawing.Point(12, 32);
+            this.bunifuImageButton6.Name = "bunifuImageButton6";
+            this.bunifuImageButton6.Size = new System.Drawing.Size(38, 36);
+            this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton6.TabIndex = 26;
+            this.bunifuImageButton6.TabStop = false;
+            this.bunifuImageButton6.Zoom = 10;
+            this.bunifuImageButton6.Click += new System.EventHandler(this.bunifuImageButton6_Click);
             // 
             // LoginHeader
             // 
@@ -181,20 +227,6 @@
             this.bunifuCustomLabel1.TabIndex = 12;
             this.bunifuCustomLabel1.Text = "Login";
             // 
-            // bunifuImageButton6
-            // 
-            this.bunifuImageButton6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton6.Image = global::TooLearnOfficial.Properties.Resources.Back_Arrow_64px;
-            this.bunifuImageButton6.ImageActive = null;
-            this.bunifuImageButton6.Location = new System.Drawing.Point(12, 32);
-            this.bunifuImageButton6.Name = "bunifuImageButton6";
-            this.bunifuImageButton6.Size = new System.Drawing.Size(38, 36);
-            this.bunifuImageButton6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton6.TabIndex = 26;
-            this.bunifuImageButton6.TabStop = false;
-            this.bunifuImageButton6.Zoom = 10;
-            this.bunifuImageButton6.Click += new System.EventHandler(this.bunifuImageButton6_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -261,38 +293,6 @@
             this.ButtonParticipantSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ButtonParticipantSignIn.Click += new System.EventHandler(this.ButtonParticipantSignIn_Click);
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::TooLearnOfficial.Properties.Resources.Eye_52px;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(291, 252);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 27);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 29;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Visible = false;
-            this.bunifuImageButton1.Zoom = 3;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // TextboxUsername
-            // 
-            this.TextboxUsername.AcceptsReturn = true;
-            this.TextboxUsername.AcceptsTab = true;
-            this.TextboxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TextboxUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.TextboxUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.TextboxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.TextboxUsername.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.TextboxUsername.ForeColor = System.Drawing.Color.White;
-            this.TextboxUsername.Location = new System.Drawing.Point(38, 168);
-            this.TextboxUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.TextboxUsername.Name = "TextboxUsername";
-            this.TextboxUsername.Size = new System.Drawing.Size(288, 34);
-            this.TextboxUsername.TabIndex = 3;
-            this.TextboxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // ParticipantLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,14 +316,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.ParticipantLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
             this.LoginHeader.ResumeLayout(false);
             this.LoginHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

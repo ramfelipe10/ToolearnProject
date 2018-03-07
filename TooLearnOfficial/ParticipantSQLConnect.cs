@@ -17,9 +17,11 @@ namespace TooLearnOfficial
     {
         SqlConnection con;
 
+        string Role = ChooseUser.Role;
+
         public ParticipantSQLConnect()
         {
-            InitializeComponent();
+            InitializeComponent();            
             load_server();
         }
 
@@ -34,15 +36,21 @@ namespace TooLearnOfficial
         }
 
 
+      
+
+
         private void load_server()
         {
-            Cursor.Current = Cursors.WaitCursor;
+            
 
+            Cursor.Current = Cursors.WaitCursor;        
+            
             DataTable table = System.Data.Sql.SqlDataSourceEnumerator.Instance.GetDataSources();
             foreach (DataRow server in table.Rows)
             {
                 Server.Items.Add(server[table.Columns["ServerName"]].ToString());
             }
+            
             Cursor.Current = Cursors.Default;
         }
 
@@ -66,15 +74,24 @@ namespace TooLearnOfficial
             String  DB, ID, Password;
             Object Source;
             string servername = Server.SelectedItem.ToString();
-            IPHostEntry host = Dns.GetHostEntry(servername); //get the ServerIP
-            foreach (IPAddress ip in host.AddressList)
+            try
+            {
+                IPHostEntry host = Dns.GetHostEntry(servername); //get the ServerIP
+                foreach (IPAddress ip in host.AddressList)
+                {
+
+                    if (ip.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        Program.serverIP = ip.ToString();
+
+                    }
+                }
+            }//end try
+
+            catch(SocketException ex)
             {
 
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    Program.serverIP = ip.ToString();
-
-                }
+                Dialogue.Show(" " + ex.Message.ToString() + " ", "", "Ok", "Cancel");
             }
 
 
@@ -101,11 +118,22 @@ namespace TooLearnOfficial
                             Program.id = ID;
                             Program.password = Password;
 
+
+                        if (Role == "Individual")
+                        {
+
                             this.Hide();
                             ParticipantLogin PL = new ParticipantLogin();
                             PL.Show();
-                                           
-                                         
+
+                        }
+
+                        else
+                        {
+                            this.Hide();
+                            GroupLogin GL = new GroupLogin();
+                            GL.Show();
+                        }
                     
                            
                     }
@@ -138,11 +166,6 @@ namespace TooLearnOfficial
 
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            PublicPlay pp = new PublicPlay();
-            pp.ShowDialog();
-        }
+       
     }
 }
