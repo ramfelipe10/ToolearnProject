@@ -37,8 +37,8 @@ namespace TooLearnOfficial
         {
 
         
-
             /*
+            
                        SqlDataAdapter adapt = new SqlDataAdapter("Select participant_id from participant where fullname='" +Name+ "' ", con);
                        DataTable dt = new DataTable();
                        adapt.Fill(dt);
@@ -68,11 +68,11 @@ namespace TooLearnOfficial
                         DataGridViewGrade.DataSource = bs;
                         adaptersd.Update(dt);
 
-
-            */
+    */
+            
             label_average.Text = PG;
-
 /*
+
             int TotalNumberofQuiz;
             int TotalScoreonQuiz = 0;
             float average;
@@ -86,7 +86,9 @@ namespace TooLearnOfficial
             TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
             average = TotalScoreonQuiz / TotalNumberofQuiz;
 
-            label_average.Text += TotalScoreonQuiz.ToString();  */
+            label_average.Text += TotalScoreonQuiz.ToString();  
+
+*/
 
             //if(average >= 90)
             //{
