@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 namespace TooLearnOfficial
 {
     public partial class MyClass : Form
@@ -124,7 +128,7 @@ namespace TooLearnOfficial
 
         private void MyClass_Load(object sender, EventArgs e)
         {
-            
+              
           
 
         }
@@ -141,6 +145,40 @@ namespace TooLearnOfficial
             Load_Class(); 
         }
 
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Classroom.pdf", FileMode.Create));
+            doc.Open();
 
+            //Paragraph par = new Paragraph("First Line Using Paragraph");
+
+            //doc.Add(par);
+
+            PdfPTable table = new PdfPTable(bunifuCustomDataGrid1.Columns.Count);
+
+            //add the headers from the DGV to the table
+            for(int j = 0; j < bunifuCustomDataGrid1.Columns.Count; j++)
+            {
+                table.AddCell(new Phrase(bunifuCustomDataGrid1.Columns[j].HeaderText));
+            }
+
+            //flag the first row as a header
+            table.HeaderRows = 1;
+
+            //add the actual rows from the DGV to the table
+            for(int i = 0; i < bunifuCustomDataGrid1.Rows.Count; i++)
+            {
+                for(int k = 0; k < bunifuCustomDataGrid1.Columns.Count; k++)
+                {
+                    if(bunifuCustomDataGrid1[k, i].Value != null)
+                    {
+                        table.AddCell(new Phrase(bunifuCustomDataGrid1[k, i].Value.ToString()));
+                    }
+                }
+            }
+            doc.Add(table);
+            doc.Close();
+        }
     }
 }

@@ -53,12 +53,14 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btn_print = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_print)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -333,12 +335,27 @@
             this.label5.Size = new System.Drawing.Size(0, 24);
             this.label5.TabIndex = 156;
             // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.Transparent;
+            this.btn_print.Image = global::TooLearnOfficial.Properties.Resources.Plus_52px;
+            this.btn_print.ImageActive = null;
+            this.btn_print.Location = new System.Drawing.Point(781, 257);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(43, 33);
+            this.btn_print.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_print.TabIndex = 168;
+            this.btn_print.TabStop = false;
+            this.btn_print.Zoom = 5;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // MyClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(913, 611);
+            this.Controls.Add(this.btn_print);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonCreateClassroom);
@@ -363,6 +380,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_print)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +408,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuImageButton btn_print;
     }
 }
