@@ -51,9 +51,9 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.buttonCreateClassroom = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.codeme = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label4 = new System.Windows.Forms.Label();
+            this.codeme = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -151,7 +151,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 165);
+            this.comboBox1.Location = new System.Drawing.Point(164, 169);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(256, 29);
             this.comboBox1.TabIndex = 155;
@@ -270,8 +270,8 @@
             // 
             // buttonCreateClassroom
             // 
-            this.buttonCreateClassroom.Activecolor = System.Drawing.Color.SeaGreen;
-            this.buttonCreateClassroom.BackColor = System.Drawing.Color.SeaGreen;
+            this.buttonCreateClassroom.Activecolor = System.Drawing.Color.ForestGreen;
+            this.buttonCreateClassroom.BackColor = System.Drawing.Color.ForestGreen;
             this.buttonCreateClassroom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCreateClassroom.BorderRadius = 3;
             this.buttonCreateClassroom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -290,10 +290,10 @@
             this.buttonCreateClassroom.IconVisible = true;
             this.buttonCreateClassroom.IconZoom = 60D;
             this.buttonCreateClassroom.IsTab = false;
-            this.buttonCreateClassroom.Location = new System.Drawing.Point(113, 65);
+            this.buttonCreateClassroom.Location = new System.Drawing.Point(110, 69);
             this.buttonCreateClassroom.Name = "buttonCreateClassroom";
-            this.buttonCreateClassroom.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.buttonCreateClassroom.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.buttonCreateClassroom.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.buttonCreateClassroom.OnHovercolor = System.Drawing.Color.ForestGreen;
             this.buttonCreateClassroom.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonCreateClassroom.selected = false;
             this.buttonCreateClassroom.Size = new System.Drawing.Size(90, 32);
@@ -321,14 +321,21 @@
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(301, 106);
             this.bunifuGradientPanel2.TabIndex = 159;
             // 
-            // bunifuElipse4
+            // label4
             // 
-            this.bunifuElipse4.ElipseRadius = 5;
-            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(95, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 24);
+            this.label4.TabIndex = 160;
+            this.label4.Text = "Class Code";
             // 
             // codeme
             // 
-            this.codeme.BackColor = System.Drawing.Color.LightGray;
+            this.codeme.BackColor = System.Drawing.Color.Gainsboro;
             this.codeme.BorderColorFocused = System.Drawing.Color.Gray;
             this.codeme.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.codeme.BorderColorMouseHover = System.Drawing.Color.Gray;
@@ -337,24 +344,17 @@
             this.codeme.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codeme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.codeme.isPassword = false;
-            this.codeme.Location = new System.Drawing.Point(23, 25);
+            this.codeme.Location = new System.Drawing.Point(23, 31);
             this.codeme.Margin = new System.Windows.Forms.Padding(4);
             this.codeme.Name = "codeme";
             this.codeme.Size = new System.Drawing.Size(256, 33);
             this.codeme.TabIndex = 160;
             this.codeme.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label4
+            // bunifuElipse4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(95, 1);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 24);
-            this.label4.TabIndex = 160;
-            this.label4.Text = "Class Code";
+            this.bunifuElipse4.ElipseRadius = 5;
+            this.bunifuElipse4.TargetControl = this.bunifuGradientPanel2;
             // 
             // MyClassParticipant
             // 
