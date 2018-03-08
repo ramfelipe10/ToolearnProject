@@ -250,9 +250,6 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLe
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.PublicJoin.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GroupMain.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GroupLobby.resources
-C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\itextsharp.dll
-C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\itextsharp.pdfa.dll
-C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\itextsharp.xtra.dll
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\itextsharp.xml
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GroupLobby.resources
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GroupLogin.resources

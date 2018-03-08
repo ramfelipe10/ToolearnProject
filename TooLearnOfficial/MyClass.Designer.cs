@@ -338,7 +338,7 @@
             // btn_print
             // 
             this.btn_print.BackColor = System.Drawing.Color.Transparent;
-            this.btn_print.Image = global::TooLearnOfficial.Properties.Resources.Plus_52px;
+            this.btn_print.Image = global::TooLearnOfficial.Properties.Resources.Print_52px;
             this.btn_print.ImageActive = null;
             this.btn_print.Location = new System.Drawing.Point(781, 257);
             this.btn_print.Name = "btn_print";
