@@ -16,7 +16,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
     {
         string Class="";
         
-
+        SqlConnection con= new SqlConnection("Data Source=Localhost,1433;Initial Catalog=TooLearn;User ID=TOOLEARN;Password=Toolearn");
 
         public Score()
         {
@@ -24,8 +24,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
             if (!this.DesignMode)
             {
                 InitializeComponent();
-             Load_Class();
-             Trigger_Combo();
+            Load_Class();
+            Trigger_Combo();
                 
             }
 
@@ -35,7 +35,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
 
-        //Alternative
+    /*    //Alternative
         static class Helper
         {
             public static string ConnectionString
@@ -47,18 +47,18 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 }
             }
         }
-        //Alternative    
+        //Alternative    */
         
 
 
         public void Load_Class()
         {
-
-         //Alternative
+            /*
+      //Alternative
             SqlConnection con = new SqlConnection();
             con.ConnectionString = Helper.ConnectionString;
 
-            //Alternative-End 
+            //Alternative-End  */
 
             try
             {
@@ -100,7 +100,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
                }
-
+               
                public Image generate_Progress(double pass)
                {
                        double dg = double.Parse(dgpp.Width.ToString());
@@ -133,11 +133,11 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
         void Trigger_Combo()
         {
-             //Alternative
+         /*  //Alternative
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = Helper.ConnectionString;
 
-                //Alternative-End
+                //Alternative-End  */
                 try {
                 if (bunifuFlatButton2.selected == true)
                 {
@@ -146,7 +146,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NULL ", con);
+                   // SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participants p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -175,6 +176,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
                         R++;
                         C++;
                     }
+                    bunifuCustomDataGrid1.Refresh();
+                    bunifuCustomDataGrid1.Update();
 
                 }//end IF
 
@@ -185,7 +188,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NOT NULL ", con);
+                    //SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NOT NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participants p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NOT NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -218,7 +222,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 }//end Else
 
 
-
+                bunifuCustomDataGrid2.Refresh();
+                bunifuCustomDataGrid2.Update();
 
                 }
 
@@ -228,13 +233,13 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 }
 
                  
-
-        }   
+   
+        }    
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
         Class=comboBox1.SelectedItem.ToString();
-       Trigger_Combo();
+        Trigger_Combo();
 
         }
 
@@ -245,7 +250,17 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
 
-      
+        public event EventHandler StatusUpdated;
+
+        private void FunctionThatRaisesEvent()
+        {
+            //Null check makes sure the main page is attached to the event
+            if (this.StatusUpdated != null)
+                this.StatusUpdated(this, new EventArgs());
+        }
+
+
+
 
         public string PN;
         public string Data
@@ -266,8 +281,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 
 
             }
-           
 
+            FunctionThatRaisesEvent();
             ViewScoreRecord VSR = new ViewScoreRecord();
             VSR.ShowDialog(); 
 
@@ -286,7 +301,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
           Class = comboBox3.SelectedItem.ToString();
-           Trigger_Combo();
+          Trigger_Combo();
         }
 
         private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -300,8 +315,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             }
 
-           
 
+            FunctionThatRaisesEvent();
             ViewScoreRecord VSR = new ViewScoreRecord();
             VSR.ShowDialog();  
 
