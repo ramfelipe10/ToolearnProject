@@ -147,38 +147,88 @@ namespace TooLearnOfficial
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Classroom.pdf", FileMode.Create));
-            doc.Open();
 
-            //Paragraph par = new Paragraph("First Line Using Paragraph");
+            //Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            //PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Classroom.pdf", FileMode.Create));
+            //doc.Open();
 
-            //doc.Add(par);
+            ////Paragraph par = new Paragraph("First Line Using Paragraph");
 
-            PdfPTable table = new PdfPTable(bunifuCustomDataGrid1.Columns.Count);
+            ////doc.Add(par);
 
-            //add the headers from the DGV to the table
-            for(int j = 0; j < bunifuCustomDataGrid1.Columns.Count; j++)
+            //PdfPTable table = new PdfPTable(bunifuCustomDataGrid1.Columns.Count);
+
+            ////add the headers from the DGV to the table
+            //for(int j = 0; j < bunifuCustomDataGrid1.Columns.Count; j++)
+            //{
+            //    table.AddCell(new Phrase(bunifuCustomDataGrid1.Columns[j].HeaderText));
+            //}
+
+            ////flag the first row as a header
+            //table.HeaderRows = 1;
+
+            ////add the actual rows from the DGV to the table
+            //for(int i = 0; i < bunifuCustomDataGrid1.Rows.Count; i++)
+            //{
+            //    for(int k = 0; k < bunifuCustomDataGrid1.Columns.Count; k++)
+            //    {
+            //        if(bunifuCustomDataGrid1[k, i].Value != null)
+            //        {
+            //            table.AddCell(new Phrase(bunifuCustomDataGrid1[k, i].Value.ToString()));
+            //        }
+            //    }
+            //}
+            //doc.Add(table);
+            //doc.Close();
+
+            exporttopdf(bunifuCustomDataGrid1, "test");
+
+        }
+        public void exporttopdf(DataGridView dgv, string filename)
+        {
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
+            PdfPTable pdftable = new PdfPTable(dgv.Columns.Count);
+            pdftable.DefaultCell.Padding = 3;
+            pdftable.WidthPercentage = 100;
+            pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdftable.DefaultCell.BorderWidth = 1;
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+            //Add Header
+            foreach(DataGridViewColumn column in dgv.Columns)
             {
-                table.AddCell(new Phrase(bunifuCustomDataGrid1.Columns[j].HeaderText));
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdftable.AddCell(cell);
             }
 
-            //flag the first row as a header
-            table.HeaderRows = 1;
+            //Add Datarow
 
-            //add the actual rows from the DGV to the table
-            for(int i = 0; i < bunifuCustomDataGrid1.Rows.Count; i++)
+            foreach (DataGridViewRow row in dgv.Rows)
             {
-                for(int k = 0; k < bunifuCustomDataGrid1.Columns.Count; k++)
+                foreach (DataGridViewCell cell in row.Cells)
                 {
-                    if(bunifuCustomDataGrid1[k, i].Value != null)
-                    {
-                        table.AddCell(new Phrase(bunifuCustomDataGrid1[k, i].Value.ToString()));
-                    }
+                    pdftable.AddCell(new Phrase(cell.Value.ToString()));
                 }
             }
-            doc.Add(table);
-            doc.Close();
+            var sfd = new SaveFileDialog();
+            sfd.FileName = filename;
+            sfd.DefaultExt = ".pdf";
+
+            if(sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(sfd.FileName,FileMode.Create))
+                {
+                    Document pdfdoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
+                    PdfWriter.GetInstance(pdfdoc, stream);
+                    pdfdoc.Open();
+                    pdfdoc.Add(pdftable);
+                    pdfdoc.Close();
+                    stream.Close();
+                }
+            }
+
         }
     }
 }
