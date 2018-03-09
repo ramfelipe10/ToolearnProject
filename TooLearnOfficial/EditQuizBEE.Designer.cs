@@ -1321,7 +1321,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Time";
+            this.columnHeader5.Text = "Time Limit";
             this.columnHeader5.Width = 129;
             // 
             // columnHeader2
@@ -1737,12 +1737,12 @@
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.MultipleChoiceLV);
-            this.Controls.Add(this.TrueOrFalseLV);
-            this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.ShortAnswerLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditQuizBEE";

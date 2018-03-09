@@ -33,7 +33,7 @@ namespace TooLearnOfficial
             try
             {
 
-                SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created',game_type from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
                 DataTable data = new DataTable();
                 sda.Fill(data);
                 if (data.Rows.Count == 0)
@@ -232,7 +232,7 @@ namespace TooLearnOfficial
 
         private void search_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created', game_type from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
             DataTable data = new DataTable();
             sda.Fill(data);
 
@@ -259,7 +259,7 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created', game_type from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
             DataTable data = new DataTable();
             sda.Fill(data);
 
@@ -292,7 +292,7 @@ namespace TooLearnOfficial
                 try
                 {
 
-                    SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created' from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("Select quiz_title AS 'Title' ,date_created AS 'Created', game_type from quizzes where facilitator_id= '" + Program.user_id + "' ", con);
                     DataTable data = new DataTable();
                     sda.Fill(data);
                     if (data.Rows.Count == 0)

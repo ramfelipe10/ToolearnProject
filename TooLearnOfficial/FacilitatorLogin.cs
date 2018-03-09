@@ -216,8 +216,7 @@ namespace TooLearnOfficial
 
             if (e.KeyCode == Keys.Enter)
             {
-                try
-                {
+                
 
                     SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From facilitator Where username='" + TextboxUsername1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS and password= '" + passbox1.Text + "' COLLATE SQL_Latin1_General_CP1_CS_AS", con);
                     DataTable dt = new DataTable();
@@ -256,15 +255,9 @@ namespace TooLearnOfficial
 
 
 
-                }
-
-                catch (Exception ex)
-                {
-                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
 
-                }
-
+                e.Handled = true;
                 e.SuppressKeyPress = true;
 
             }
