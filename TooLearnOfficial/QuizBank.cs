@@ -95,7 +95,7 @@ namespace TooLearnOfficial
             try
             {
 
-                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
                 {
 
                     SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
@@ -154,9 +154,9 @@ namespace TooLearnOfficial
             try
             {
 
-                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
                 {
-
+                    
                     SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
@@ -342,9 +342,9 @@ namespace TooLearnOfficial
             try
             {
 
-                if (bunifuCustomDataGrid1.SelectedCells.Count > 0)
+                if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
                 {
-
+                    
                     SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);

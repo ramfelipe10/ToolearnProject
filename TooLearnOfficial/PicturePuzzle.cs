@@ -23,7 +23,7 @@ namespace TooLearnOfficial
         string imageLocation;
         string title = QuizPicturePuzzle.SetValueForText2;        
         string Picture = QuizPicturePuzzle.SetValueForText3;
-        string time_limit = QuizPicturePuzzle.time;       
+        string time_limit = QuizPicturePuzzle.time;           
         int PictureWidth = QuizPicturePuzzle.SetWidth;
         int PictureHeight = QuizPicturePuzzle.SetHeight;
         public static int Total;
@@ -91,15 +91,7 @@ namespace TooLearnOfficial
             }
 
             
-         /*   splitPicture1.Image = imgarray[0];
-            splitPicture2.Image = imgarray[1];
-            splitPicture3.Image = imgarray[2];
-            splitPicture4.Image = imgarray[3];
-            splitPicture5.Image = imgarray[4];
-            splitPicture6.Image = imgarray[5];
-            splitPicture7.Image = imgarray[6];
-            splitPicture8.Image = imgarray[7];
-            splitPicture9.Image = imgarray[8]; */
+                   
 
             pictureBox6.Image = imgarray[0];
             pictureBox7.Image = imgarray[1];
@@ -272,7 +264,23 @@ namespace TooLearnOfficial
         }
 
 
+        private string get(string answer)
+        {
+            string RA = answer;
+            string value = "";
 
+            char[] answerchar = RA.ToArray();
+            for (int i = 0; i < RA.Count(); i++)
+            {
+                if ((i % 2) == 0)
+                {
+                    value += answerchar[i].ToString();
+                }
+
+            }
+
+            return value;
+        }
         private void updateMC()
         {
             buttonNextQuestion.Visible = true;
@@ -286,6 +294,43 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text = exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text = exams.SubItems[4].Text;
             pictureBox3.ImageLocation = exams.SubItems[6].Text;
+
+
+            string plain = get(exams.SubItems[5].Text);
+
+            for (int i = 0; i < plain.Length; i++)
+            {
+                string each = plain[i].ToString();
+                if (each == "A")
+                {
+                    RightAnswer = RightAnswer + ",A";
+                    bunifuCheckbox1.Checked = true;
+
+                }
+                else if (each == "B")
+                {
+                    RightAnswer = RightAnswer + ",B";
+                    bunifuCheckbox2.Checked = true;
+                }
+
+                else if (each == "C")
+                {
+                    RightAnswer = RightAnswer + ",C";
+                    bunifuCheckbox3.Checked = true;
+
+                }
+                else
+                {
+                    RightAnswer = RightAnswer + ",D";
+
+                    bunifuCheckbox4.Checked = true;
+                }
+
+            }
+
+
+           
+
             if (textBox11.Visible == true)
             {
 
@@ -338,46 +383,7 @@ namespace TooLearnOfficial
 
             }//end if
                 textBox2.Text = exams.SubItems[8].Text;
-            switch (exams.SubItems[5].Text)
-            {
-
-                case "A":
-                    RightAnswer = "A";
-                    bunifuCheckbox1.Checked = true;
-                    bunifuCheckbox2.Checked = false;
-                    bunifuCheckbox3.Checked = false;
-                    bunifuCheckbox4.Checked = false;
-                    break;
-
-                case "B":
-                    RightAnswer = "B";
-                    bunifuCheckbox1.Checked = false;
-                    bunifuCheckbox2.Checked = true;
-                    bunifuCheckbox3.Checked = false;
-                    bunifuCheckbox4.Checked = false;
-                    break;
-
-                case "C":
-
-                    RightAnswer = "C";
-                    bunifuCheckbox1.Checked = false;
-                    bunifuCheckbox2.Checked = false;
-                    bunifuCheckbox3.Checked = true;
-                    bunifuCheckbox4.Checked = false;
-                    break;
-
-                case "D":
-
-                    RightAnswer = "D";
-                    bunifuCheckbox1.Checked = false;
-                    bunifuCheckbox2.Checked = false;
-                    bunifuCheckbox3.Checked = false;
-                    bunifuCheckbox4.Checked = true;
-                    break;
-
-                default:
-                    break;
-            }
+       
 
 
 
@@ -527,11 +533,10 @@ namespace TooLearnOfficial
 
         private void PicturePuzzle_Load(object sender, EventArgs e)
         {
-            
+            this.BringToFront();
 
-          
            
-            
+
 
             currentNumOfItems = 1;
             numOfItems = 9;
@@ -541,7 +546,7 @@ namespace TooLearnOfficial
             listPanel.Add(shortAnswer);
 
 
-            if (time_limit == "")
+            if (time_limit == ""||time_limit==null)
             {
                 label17.Visible = true;
                 bunifuDropdown1.Visible = true;
@@ -561,7 +566,7 @@ namespace TooLearnOfficial
 
             else
             {
-                label17.Visible = false;
+               label17.Visible = false;
                 bunifuDropdown1.Visible = false;
                 textBox12.Visible = false;
 
@@ -573,7 +578,7 @@ namespace TooLearnOfficial
 
                 label20.Visible = false;
                 bunifuDropdown3.Visible = false;
-                textBox11.Visible = false;
+                textBox11.Visible = false; 
             }
 
 
@@ -705,7 +710,7 @@ namespace TooLearnOfficial
                     {
 
                         if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == "")
                         {
                             Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
                         }
@@ -755,11 +760,13 @@ namespace TooLearnOfficial
                         }
                     }
 
-                    if (textBox11.Visible == true)
+                   // if (textBox11.Visible == true)
+
+                    else
                     {
 
                         if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == "")
                         {
                             Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
                         }
@@ -825,70 +832,146 @@ namespace TooLearnOfficial
 
                 case "Update":
 
-                    if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                           textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
-                    {
-                        Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                    }
 
-                    else
+                    if (textBox11.Visible == false)
+
                     {
 
-                        int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
-                        ListViewItem exams = new ListViewItem();
-                        exams.Text = textBoxQuizQuestion.Text;
-                        exams.SubItems.Add(textBoxQuizChoiceA.Text);
-                        exams.SubItems.Add(textBoxQuizChoiceB.Text);
-                        exams.SubItems.Add(textBoxQuizChoiceC.Text);
-                        exams.SubItems.Add(textBoxQuizChoiceD.Text);
-                        RightAnswer = RightAnswer.TrimStart(',');
-                        exams.SubItems.Add(RightAnswer);
-                        //
-                        exams.SubItems.Add(pictureBox3.ImageLocation);
-
-
-                        if (textBox11.Visible == true)
+                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == "")
                         {
-                            if (bunifuDropdown3.selectedIndex == 0)//Minutes
-                            {
-                                TimeF = textBox11.Text + "(Minutes)";
-                            }
-
-                            else
-                            {
-                                TimeF = textBox11.Text + "(Seconds)";
-                            }
-
-                            exams.SubItems.Add(TimeF);
-
-
+                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
                         }
-
-
 
                         else
                         {
-                            exams.SubItems.Add(textBox11.Text);
+
+                            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = textBoxQuizQuestion.Text;
+                            exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                            RightAnswer = RightAnswer.TrimStart(',');
+                            exams.SubItems.Add(RightAnswer);
+                            //
+                            exams.SubItems.Add(pictureBox3.ImageLocation);
+
+
+                            if (textBox11.Visible == true)
+                            {
+                                if (bunifuDropdown3.selectedIndex == 0)//Minutes
+                                {
+                                    TimeF = textBox11.Text + "(Minutes)";
+                                }
+
+                                else
+                                {
+                                    TimeF = textBox11.Text + "(Seconds)";
+                                }
+
+                                exams.SubItems.Add(TimeF);
+
+
+                            }
+
+
+
+                            else
+                            {
+                                exams.SubItems.Add(textBox11.Text);
+
+                            }
+                            exams.SubItems.Add(textBox2.Text);
+                            //
+                            MultipleChoiceLV.Items.RemoveAt(listPosition);
+                            MultipleChoiceLV.Items.Insert(listPosition, exams);
+
+                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+                            RightAnswer = null;
+                            resetAllMC(); ;
+                            buttonNextQuestion.Text = "Next";
+
+                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+
+                            load_total();
 
                         }
-                        exams.SubItems.Add(textBox2.Text);
-                        //
-                        MultipleChoiceLV.Items.RemoveAt(listPosition);
-                        MultipleChoiceLV.Items.Insert(listPosition, exams);
 
-                        int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                    }
+                    else
+                    {   //else
+                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                       textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
+                        {
+                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                        }
 
-                        currentnumMC.Text = Convert.ToString(Sum1 + 1);
-                        CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
-                        CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
-                        RightAnswer = null;
-                        resetAllMC(); ;
-                        buttonNextQuestion.Text = "Next";
+                        else
+                        {
 
-                        NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+                            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = textBoxQuizQuestion.Text;
+                            exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                            RightAnswer = RightAnswer.TrimStart(',');
+                            exams.SubItems.Add(RightAnswer);
+                            //
+                            exams.SubItems.Add(pictureBox3.ImageLocation);
 
-                        load_total();
 
+                            if (textBox11.Visible == true)
+                            {
+                                if (bunifuDropdown3.selectedIndex == 0)//Minutes
+                                {
+                                    TimeF = textBox11.Text + "(Minutes)";
+                                }
+
+                                else
+                                {
+                                    TimeF = textBox11.Text + "(Seconds)";
+                                }
+
+                                exams.SubItems.Add(TimeF);
+
+
+                            }
+
+
+
+                            else
+                            {
+                                exams.SubItems.Add(textBox11.Text);
+
+                            }
+                            exams.SubItems.Add(textBox2.Text);
+                            //
+                            MultipleChoiceLV.Items.RemoveAt(listPosition);
+                            MultipleChoiceLV.Items.Insert(listPosition, exams);
+
+                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+                            RightAnswer = null;
+                            resetAllMC(); ;
+                            buttonNextQuestion.Text = "Next";
+
+                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+
+                            load_total();
+
+
+                        }
 
                     }
                         break;
@@ -1237,29 +1320,58 @@ namespace TooLearnOfficial
             /*  bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
               RightAnswer = "A";  */
 
-            RightAnswer = RightAnswer + ", A";
+            if (bunifuCheckbox1.Checked == true)
+            {
+
+                RightAnswer = RightAnswer + ",A";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",A", "");
+            }
         }
 
         private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
         {
             /*  bunifuCheckbox1.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
              RightAnswer = "B"; */
-            RightAnswer = RightAnswer + ", B";
+            if (bunifuCheckbox2.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",B";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",B", "");
+            }
         }
 
         private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
         {
             /*  bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox4.Checked = false;
              RightAnswer = "C"; */
-            RightAnswer = RightAnswer + ", C";
-        
+            if (bunifuCheckbox3.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",C";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",C", "");
+            }
+
         }
 
         private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
         {
             /*  bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
              RightAnswer = "D"; */
-            RightAnswer = RightAnswer + ", D";
+            if (bunifuCheckbox4.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",D";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",D", "");
+            }
         }
 
         private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
@@ -1698,6 +1810,7 @@ namespace TooLearnOfficial
             this.Close();
             QuizPicturePuzzle QP = new QuizPicturePuzzle();
             QP.Show();
+            
         }
 
 
@@ -1749,7 +1862,9 @@ namespace TooLearnOfficial
                 MultipleChoiceLV.BringToFront();
 
 
-
+                bunifuFlatButton2.selected=true;
+                bunifuFlatButton3.selected = false;
+                bunifuFlatButton4.selected = false;
 
 
 

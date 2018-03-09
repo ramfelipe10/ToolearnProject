@@ -44,7 +44,7 @@ namespace TooLearnOfficial
         {
        
            QuizPicturePuzzle qpp = new QuizPicturePuzzle();
-            qpp.ShowDialog();
+            qpp.Show();
 
 
  

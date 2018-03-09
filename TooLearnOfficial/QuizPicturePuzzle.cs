@@ -125,7 +125,7 @@ namespace TooLearnOfficial
 
         private void QuizPicturePuzzle_Load(object sender, EventArgs e)
         {
-
+            this.BringToFront();
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -173,7 +173,12 @@ namespace TooLearnOfficial
             {
                 SetValueForText3 = splitPicture.ImageLocation;
                 SetValueForText2 = textBoxQuizTitle.Text;
-                if (textBoxQuizTimeLimit.Text != "" || textBoxQuizTimeLimit.Text != null)
+                if (textBoxQuizTimeLimit.Text == "" || string.IsNullOrWhiteSpace(textBoxQuizTimeLimit.Text) && textBoxQuizTimeLimit.Text.Length > 0)
+                {
+                    time = "";
+                    
+                }
+                else
                 {
                     if (bunifuDropdown1.selectedIndex == 0)//Minutes
                     {
@@ -185,10 +190,6 @@ namespace TooLearnOfficial
                         time = textBoxQuizTimeLimit.Text + "(Seconds)";
                     }
                 }
-                else
-                {
-                    time = textBoxQuizTimeLimit.Text;
-                }
 
                 SetWidth =splitPicture.Image.Width;
                 SetHeight=splitPicture.Image.Height;
@@ -196,7 +197,8 @@ namespace TooLearnOfficial
               
                 this.Hide();
                 PicturePuzzle pz = new PicturePuzzle();
-                pz.Show();
+                pz.ShowDialog();
+
             }
           
 

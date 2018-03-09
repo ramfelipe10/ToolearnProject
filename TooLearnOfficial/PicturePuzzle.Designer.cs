@@ -1187,7 +1187,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Time";
+            this.columnHeader5.Text = "Time Limit";
             this.columnHeader5.Width = 129;
             // 
             // columnHeader6

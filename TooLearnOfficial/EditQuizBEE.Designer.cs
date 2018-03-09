@@ -270,6 +270,7 @@
             this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuDropdown1.BorderRadius = 5;
             this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuDropdown1.Enabled = false;
             this.bunifuDropdown1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bunifuDropdown1.Items = new string[] {
         "Minute",
@@ -346,6 +347,7 @@
             // textBoxQuizTitle
             // 
             this.textBoxQuizTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxQuizTitle.Enabled = false;
             this.textBoxQuizTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxQuizTitle.Location = new System.Drawing.Point(65, 25);
             this.textBoxQuizTitle.Name = "textBoxQuizTitle";
@@ -1740,9 +1742,9 @@
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
-            this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.MultipleChoiceLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditQuizBEE";

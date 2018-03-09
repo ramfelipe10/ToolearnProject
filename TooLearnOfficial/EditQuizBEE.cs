@@ -17,6 +17,7 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         SqlConnection con2 = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string C_ID;
+        SqlDataReader dr;
 
         int currentNumOfItems;
         string RightAnswer, imageLocation;
@@ -532,6 +533,7 @@ namespace TooLearnOfficial
                             // exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
                             exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                            exams.Tag= (int)d[("answer_id")];
 
 
 
@@ -550,8 +552,8 @@ namespace TooLearnOfficial
                             //  exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
                             exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                            exams.Tag = (int)d[("answer_id")];
 
-                           
                             ShortAnswerLV.Items.Add(exams);
 
 
@@ -567,7 +569,7 @@ namespace TooLearnOfficial
                             //   exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
                             exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
-
+                            exams.Tag = (int)d[("answer_id")];
 
                             TrueOrFalseLV.Items.Add(exams);
 
@@ -1393,10 +1395,240 @@ namespace TooLearnOfficial
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(buttonNextQuestion.Visible==true ||button2.Visible==true || button1.Visible == true)
+            if (buttonNextQuestion.Visible == true || button2.Visible == true || button1.Visible == true)
             {
                 Dialogue.Show("Update all Items First", "", "Ok", "Cancel");
             }
+
+            else { //big
+            
+             try
+                       {
+
+
+                           con.Open();
+
+                           SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_title = '" + textBoxQuizTitle.Text + "' AND facilitator_id = '" + Program.user_id + "' ", con);
+
+
+                           dr = cmd.ExecuteReader();
+
+
+                           if (dr.Read() == true)
+                           {
+                               int examID = (int)dr[("quiz_id")];
+                               for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
+                               {
+                                   ListViewItem exams = MultipleChoiceLV.Items[i];
+                                   try
+                                   {                                    
+                         con2.Open();
+
+                   if (textBox7.Visible == true)
+               {
+
+                string Time;
+
+                if (bunifuDropdown1.selectedIndex == 0)
+                {
+                 
+                    Time = textBox7.Text + "(Minutes)";
+
+                }
+
+                else
+                {
+                    Time = textBox7.Text + "(Seconds)";
+                }
+
+
+                                    String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Quiz Bee',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.Tag + "' ";
+                SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                sda.SelectCommand.ExecuteNonQuery();
+
+                       }
+
+
+                           else
+                          {
+                            
+
+
+                      String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Quiz Bee',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + exams.SubItems[7].Text + "' WHERE answer_id='" + exams.Tag + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                    sda.SelectCommand.ExecuteNonQuery();
+
+
+
+
+                                }
+
+
+
+
+
+
+                         }
+
+                                catch (Exception ex)
+                                {
+                                   MessageBox.Show(ex.Message);
+                                }
+                                con2.Close();
+
+                            }
+
+
+
+
+
+                            // // // // // // // // 
+
+                            for (int i = 0; i<ShortAnswerLV.Items.Count; i++) //For Short Answers
+                            {
+                                ListViewItem exams = ShortAnswerLV.Items[i];
+                                try
+                                {
+                                 
+                                        con2.Open();
+
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                        string Time;
+
+                                        if (bunifuDropdown1.selectedIndex == 0)
+                                        {
+                                            // Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            Time = textBox7.Text + "(Minutes)";
+
+                                        }
+
+                                        else
+                                        {
+                                            Time = textBox7.Text + "(Seconds)";
+                                        }
+
+                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.Tag + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                    sda.SelectCommand.ExecuteNonQuery();
+
+                                   
+                                        }
+
+
+                                        else
+                                        {
+                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.Tag + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                    sda.SelectCommand.ExecuteNonQuery();
+
+                                }
+
+
+
+                            }
+
+                                catch (Exception ex)
+                                {
+                                   MessageBox.Show(ex.Message);
+                                }
+                                con2.Close();
+
+                            }
+
+
+                            // /// // // // // // // 
+
+
+
+
+
+
+
+                            // // // / // // / // / // 
+
+
+
+                            for (int i = 0; i<TrueOrFalseLV.Items.Count; i++) //For True Or False
+                            {
+                                ListViewItem exams = TrueOrFalseLV.Items[i];
+                                try
+                                {
+                                
+                                        con2.Open();
+
+
+                                        if (textBox7.Visible == true)
+                                        {
+
+                                        string Time;
+
+                                        if (bunifuDropdown1.selectedIndex == 0)
+                                        {
+                                            // Time = (Convert.ToInt32(textBox7.Text) * 60).ToString();
+                                            Time = textBox7.Text + "(Minutes)";
+
+                                        }
+
+                                        else
+                                        {
+                                            Time = textBox7.Text + "(Seconds)";
+                                        }
+
+
+                                    String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.Tag + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                }
+
+
+
+                                        else
+                                        {
+                                    String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.Tag + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                }
+                               
+
+
+                                }
+
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
+                                con2.Close();
+
+                            }
+
+
+
+                            // / // // / /// / // / // / // / / / / //
+
+                        }
+
+
+
+                    }
+
+
+
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+
+                        if (dr != null) dr.Close();
+                        if (con != null) con.Close();
+                    }
+
+
+            }//end else big
         }
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
