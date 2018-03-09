@@ -147,7 +147,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     string ID = data.Rows[0][0].ToString();
 
                    // SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NULL ", con);
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participants p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -176,8 +176,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                         R++;
                         C++;
                     }
-                    bunifuCustomDataGrid1.Refresh();
-                    bunifuCustomDataGrid1.Update();
+                   
 
                 }//end IF
 
@@ -189,7 +188,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     string ID = data.Rows[0][0].ToString();
 
                     //SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NOT NULL ", con);
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participants p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NOT NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NOT NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -238,8 +237,10 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-        Class=comboBox1.SelectedItem.ToString();
+            Cursor.Current = Cursors.WaitCursor;
+            Class =comboBox1.SelectedItem.ToString();
         Trigger_Combo();
+            Cursor.Current = Cursors.Default;
 
         }
 
@@ -300,8 +301,10 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-          Class = comboBox3.SelectedItem.ToString();
+            Cursor.Current = Cursors.WaitCursor;
+            Class = comboBox3.SelectedItem.ToString();
           Trigger_Combo();
+            Cursor.Current = Cursors.Default;
         }
 
         private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
