@@ -1418,7 +1418,7 @@ namespace TooLearnOfficial
                                       
 
 
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + time_limit + "')";
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + time_limit + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                         sda.SelectCommand.ExecuteNonQuery();
 
@@ -1427,7 +1427,7 @@ namespace TooLearnOfficial
                                     else
                                     {
 
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[7].Text + "')";
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + exams.SubItems[7].Text + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
                                         sda.SelectCommand.ExecuteNonQuery();
 
@@ -1491,7 +1491,7 @@ namespace TooLearnOfficial
 
                                         
 
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + time_limit + "')";
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + time_limit + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                         sda.SelectCommand.ExecuteNonQuery();
@@ -1502,7 +1502,7 @@ namespace TooLearnOfficial
                                     else
                                     {
 
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                         sda.SelectCommand.ExecuteNonQuery();
@@ -1572,7 +1572,7 @@ namespace TooLearnOfficial
                                       
 
 
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('True/False','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + time_limit + "')";
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('True/False','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + time_limit + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                         sda.SelectCommand.ExecuteNonQuery();
@@ -1584,7 +1584,7 @@ namespace TooLearnOfficial
                                     else
                                     {
 
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,QA_time_limit) VALUES ('True/False','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[3].Text + "')";
+                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('True/False','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "')";
                                         SqlDataAdapter sda = new SqlDataAdapter(query, con2);
 
                                         sda.SelectCommand.ExecuteNonQuery();

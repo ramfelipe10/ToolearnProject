@@ -505,7 +505,7 @@ namespace TooLearnOfficial
 
                 }
 
-                else
+                else//else-if
                 {
                     textBox7.Visible = false;
                     bunifuDropdown1.Visible = false;
