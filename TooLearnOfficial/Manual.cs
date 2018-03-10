@@ -127,7 +127,52 @@ namespace TooLearnOfficial
 
         private void btnNext9_Click(object sender, EventArgs e)
         {
+            panelClassGroup.Visible = true;
+        }
 
+        private void btnPrevious10_Click(object sender, EventArgs e)
+        {
+            panelClassGroup.Visible = false;
+        }
+
+        private void btnNext10_Click(object sender, EventArgs e)
+        {
+            panelEditProfile.Visible = true;
+        }
+
+        private void btnPrevious11_Click(object sender, EventArgs e)
+        {
+            panelEditProfile.Visible = false;
+        }
+
+        private void btnNext11_Click(object sender, EventArgs e)
+        {
+            panelScoreRecord.Visible = true;
+        }
+
+        private void btnPrevious12_Click(object sender, EventArgs e)
+        {
+            panelScoreRecord.Visible = false;
+        }
+
+        private void btnNext12_Click(object sender, EventArgs e)
+        {
+            panelScoreRanks.Visible = true;
+        }
+
+        private void btnPrevious13_Click(object sender, EventArgs e)
+        {
+            panelScoreRanks.Visible = false;
+        }
+
+        private void btnNext13_Click(object sender, EventArgs e)
+        {
+            panelAddParticipant.Visible = true;
+        }
+
+        private void btnPrevious14_Click(object sender, EventArgs e)
+        {
+            panelAddParticipant.Visible = false;
         }
     }
 }

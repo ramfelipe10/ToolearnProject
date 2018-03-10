@@ -133,6 +133,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addparticipant {
+            get {
+                object obj = ResourceManager.GetObject("addparticipant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AdNU_Seal_LATEST_PROTOTYPE {
             get {
                 object obj = ResourceManager.GetObject("AdNU-Seal-LATEST-PROTOTYPE", resourceCulture);
@@ -313,6 +323,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Edit_Profile_100px {
             get {
                 object obj = ResourceManager.GetObject("Edit Profile_100px", resourceCulture);
@@ -356,6 +376,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap Group_96px {
             get {
                 object obj = ResourceManager.GetObject("Group_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap groups {
+            get {
+                object obj = ResourceManager.GetObject("groups", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -636,6 +666,26 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap Right_104px {
             get {
                 object obj = ResourceManager.GetObject("Right_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap score_ranks {
+            get {
+                object obj = ResourceManager.GetObject("score_ranks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap score_records {
+            get {
+                object obj = ResourceManager.GetObject("score_records", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -719,6 +719,11 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Manual Pictures\addparticipant.png" />
+    <None Include="Manual Pictures\score_ranks.png" />
+    <None Include="Manual Pictures\score_records.png" />
+    <None Include="Manual Pictures\edit.png" />
+    <None Include="Manual Pictures\groups.png" />
     <None Include="Manual Pictures\quiz_bank.png" />
     <None Include="Manual Pictures\picture_puzzle.png" />
     <None Include="Manual Pictures\Print_52px.png" />
