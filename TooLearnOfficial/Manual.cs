@@ -73,29 +73,59 @@ namespace TooLearnOfficial
         private void btnPrevious4_Click(object sender, EventArgs e)
         {
             panelFacilitatorClassroom.Visible = false;
-        }
+        }       
 
-        private void btnNext4_Click(object sender, EventArgs e)
+        private void btnNext4_Click_1(object sender, EventArgs e)
         {
-            panelFacilitatorQuiz.Visible = true;
+            panelCreateClassroom.Visible = true;
         }
 
         private void btnPrevious5_Click(object sender, EventArgs e)
         {
-            panelFacilitatorQuiz.Visible = false;
+            panelCreateClassroom.Visible = false;
         }
 
         private void btnNext5_Click(object sender, EventArgs e)
         {
-            panelFacilitatorQuizBee.Visible = true;
+            panelChooseQuiz.Visible = true;
         }
 
-        private void btnPrevious6_Click(object sender, EventArgs e)
+        private void btnPreviious6_Click(object sender, EventArgs e)
         {
-            panelFacilitatorQuizBee.Visible = false;
+            panelChooseQuiz.Visible = false;
         }
 
         private void btnNext6_Click(object sender, EventArgs e)
+        {
+            panelPicturePuzzle.Visible = true;
+        }
+
+        private void btnPrevious7_Click(object sender, EventArgs e)
+        {
+            panelPicturePuzzle.Visible = false;
+        }
+
+        private void btnNext7_Click(object sender, EventArgs e)
+        {
+            panelQuizBee.Visible = true;
+        }
+
+        private void btnPrevious8_Click(object sender, EventArgs e)
+        {
+            panelQuizBee.Visible = false;
+        }
+
+        private void btnNext8_Click(object sender, EventArgs e)
+        {
+            panelQuizBank.Visible = true;
+        }
+
+        private void btnPrevious9_Click(object sender, EventArgs e)
+        {
+            panelQuizBank.Visible = false;
+        }
+
+        private void btnNext9_Click(object sender, EventArgs e)
         {
 
         }

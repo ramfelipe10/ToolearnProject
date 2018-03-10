@@ -719,6 +719,8 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Manual Pictures\quiz_bank.png" />
+    <None Include="Manual Pictures\picture_puzzle.png" />
     <None Include="Manual Pictures\Print_52px.png" />
     <None Include="Resources\circle-loading-gif.gif" />
     <None Include="TooLearn Pictures\User Groups_96px.png" />
