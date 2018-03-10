@@ -19,33 +19,83 @@ namespace TooLearnOfficial
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            panelAddParticipant.Visible = true;
+            panelMode.Visible = true;
         }    
 
         private void btnPrevious1_Click_1(object sender, EventArgs e)
         {
-            panelAddParticipant.Visible = false;
+            panelMode.Visible = false;
         }
         private void btnNext1_Click(object sender, EventArgs e)
         {
-            panelMainMenu.Visible = true;
+            panelConfig.Visible = true;
         }
         private void btnPrevious2_Click(object sender, EventArgs e)
         {
-            panelMainMenu.Visible = false;
+            panelConfig.Visible = false;
         }
 
         private void btnNext2_Click(object sender, EventArgs e)
         {
-            panelMyAccount.Visible = true;
+            panelLogin.Visible = true;
         }
 
         private void btnPrevious3_Click(object sender, EventArgs e)
         {
-            panelMyAccount.Visible = false;
+            panelLogin.Visible = false;
         }
 
         private void btnNext3_Click(object sender, EventArgs e)
+        {
+            panelMainMenu.Visible = true;
+        }
+
+        private void btnPrevious4_Click(object sender, EventArgs e)
+        {
+            panelMainMenu.Visible = false;
+        }
+
+        private void btnNext4_Click(object sender, EventArgs e)
+        {
+            panelMyAccount.Visible = true;
+        }
+
+        private void btnPrevious5_Click(object sender, EventArgs e)
+        {
+            panelMyAccount.Visible = false;
+        }
+
+        private void btnNext5_Click(object sender, EventArgs e)
+        {
+            panelClassroomEnrolled.Visible = true;
+        }
+
+        private void btnPrevious6_Click(object sender, EventArgs e)
+        {
+            panelClassroomEnrolled.Visible = false;
+        }
+
+        private void btnNext6_Click(object sender, EventArgs e)
+        {
+            panelEditProfile.Visible = true;
+        }
+
+        private void btnPrevious7_Click(object sender, EventArgs e)
+        {
+            panelEditProfile.Visible = false;
+        }
+
+        private void btnNext7_Click(object sender, EventArgs e)
+        {
+            panelJoinQuiz.Visible = true;
+        }
+
+        private void btnPrevious8_Click(object sender, EventArgs e)
+        {
+            panelJoinQuiz.Visible = false;
+        }
+
+        private void panelNext8_Click(object sender, EventArgs e)
         {
 
         }
