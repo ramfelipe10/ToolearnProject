@@ -347,16 +347,13 @@ namespace TooLearnOfficial
 
                 if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
                 {
-                    if (QuizName != null)
-                    {
-                        con.Open();
+                    
                         SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
                         DataTable dt = new DataTable();
                         adapt.Fill(dt);
-                        int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
+                        int ID = Convert.ToInt32(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
                         SetValueForText1 = ID.ToString();
-                        con.Close();
-                        if (GameType == "Quiz Bee")
+                         if (GameType == "Quiz Bee")
                          {
                             EditQuizBEE EQB = new EditQuizBEE();
                            EQB.ShowDialog();
@@ -367,12 +364,7 @@ namespace TooLearnOfficial
                         EP.ShowDialog();
                          }
 
-                    }
-
-                    else
-                    {
-                        Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
-                    }
+                    
                 }
 
                 else
