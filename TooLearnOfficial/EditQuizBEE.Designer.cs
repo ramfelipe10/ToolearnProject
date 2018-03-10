@@ -158,6 +158,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrueOrFalseLV = new System.Windows.Forms.ListView();
+            this.label6 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1622,6 +1623,7 @@
             this.MultipleChoice.BackColor = System.Drawing.Color.Silver;
             this.MultipleChoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultipleChoice.BackgroundImage")));
             this.MultipleChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MultipleChoice.Controls.Add(this.label6);
             this.MultipleChoice.Controls.Add(this.bunifuDropdown2);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel12);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel6);
@@ -1719,6 +1721,16 @@
             this.TrueOrFalseLV.View = System.Windows.Forms.View.Details;
             this.TrueOrFalseLV.SelectedIndexChanged += new System.EventHandler(this.TrueOrFalseLV_SelectedIndexChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(407, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 24);
+            this.label6.TabIndex = 214;
+            this.label6.Text = "Answer:";
+            // 
             // EditQuizBEE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1739,12 +1751,12 @@
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.header);
+            this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.ShortAnswerLV);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
-            this.Controls.Add(this.TrueOrFalseLV);
-            this.Controls.Add(this.ShortAnswerLV);
-            this.Controls.Add(this.MultipleChoiceLV);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditQuizBEE";
@@ -1906,5 +1918,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse11;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
+        private System.Windows.Forms.Label label6;
     }
 }

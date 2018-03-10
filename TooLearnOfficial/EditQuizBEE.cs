@@ -165,6 +165,24 @@ namespace TooLearnOfficial
 
         }
 
+        private string get(string answer)
+        {
+            string RA = answer;
+            string value = "";
+
+            char[] answerchar = RA.ToArray();
+            for (int i = 0; i < RA.Count(); i++)
+            {
+                if ((i % 2) == 0)
+                {
+                    value += answerchar[i].ToString();
+                }
+
+            }
+
+            return value;
+        }
+
         private void updateMC()
         {
             buttonNextQuestion.Visible = true;
@@ -177,92 +195,94 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text = exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text = exams.SubItems[4].Text;
             pictureBox3.ImageLocation = exams.SubItems[6].Text;
-            string str = exams.SubItems[7].Text;
-            int index = str.IndexOf('(');
-            string sub;
-            if (index >= 0)
+            string plain = get(exams.SubItems[5].Text);
+
+            for (int i = 0; i < plain.Length; i++)
             {
-                sub = str.Substring(0, index);
-
-
-
-            }
-            else
-            {
-
-                sub = str;
-            }
-
-            textBox11.Text = sub;
-            textBox2.Text = exams.SubItems[8].Text;
-
-            string cut = exams.SubItems[7].Text;
-            int ind = cut.IndexOf('(');
-            string form;
-            if (ind >= 0)
-            {
-                form = cut.Substring(ind + 1, 7);
-
-
-
-            }
-            else
-            {
-
-                form = cut.Substring(ind + 1, 7);
-            }
-
-
-            if (form == "Minutes")
-            {
-                bunifuDropdown2.selectedIndex = 0;
-            }
-
-            else
-            {
-                bunifuDropdown2.selectedIndex = 1;
-            }
-            switch (exams.SubItems[5].Text)
-            {
-
-                case "A":
-                    RightAnswer = "A";
+                string each = plain[i].ToString();
+                if (each == "A")
+                {
+                    RightAnswer = RightAnswer + ",A";
                     bunifuCheckbox1.Checked = true;
-                    bunifuCheckbox2.Checked = false;
-                    bunifuCheckbox3.Checked = false;
-                    bunifuCheckbox4.Checked = false;
-                    break;
 
-                case "B":
-                    RightAnswer = "B";
-                    bunifuCheckbox1.Checked = false;
+                }
+                else if (each == "B")
+                {
+                    RightAnswer = RightAnswer + ",B";
                     bunifuCheckbox2.Checked = true;
-                    bunifuCheckbox3.Checked = false;
-                    bunifuCheckbox4.Checked = false;
-                    break;
+                }
 
-                case "C":
-
-                    RightAnswer = "C";
-                    bunifuCheckbox1.Checked = false;
-                    bunifuCheckbox2.Checked = false;
+                else if (each == "C")
+                {
+                    RightAnswer = RightAnswer + ",C";
                     bunifuCheckbox3.Checked = true;
-                    bunifuCheckbox4.Checked = false;
-                    break;
 
-                case "D":
+                }
+                else
+                {
+                    RightAnswer = RightAnswer + ",D";
 
-                    RightAnswer = "D";
-                    bunifuCheckbox1.Checked = false;
-                    bunifuCheckbox2.Checked = false;
-                    bunifuCheckbox3.Checked = false;
                     bunifuCheckbox4.Checked = true;
-                    break;
+                }
 
-                default:
-                    break;
             }
-           
+
+
+            if (textBox7.Visible == false)
+            {
+
+                string str = exams.SubItems[7].Text;
+                int index = str.IndexOf('(');
+                string sub;
+                if (index >= 0)
+                {
+                    sub = str.Substring(0, index);
+
+
+
+                }
+                else
+                {
+
+                    sub = str;
+                }
+
+                textBox11.Text = sub;
+
+
+                string cut = exams.SubItems[7].Text;
+                int ind = cut.IndexOf('(');
+                string form;
+                if (ind >= 0)
+                {
+                    form = cut.Substring(ind + 1, 7);
+
+
+
+                }
+                else
+                {
+
+                    form = cut;
+                }
+
+
+                if (form == "Minutes")
+                {
+                    bunifuDropdown2.selectedIndex = 0;
+                }
+
+                else
+                {
+                    bunifuDropdown2.selectedIndex = 1;
+                }
+
+
+
+            }//end IF
+
+
+            textBox2.Text = exams.SubItems[8].Text;
 
 
         }
@@ -274,6 +294,7 @@ namespace TooLearnOfficial
             button2.Text = "Update";
             ListViewItem exams = TrueOrFalseLV.SelectedItems[0];
             textBox13.Text = exams.Text;
+
             if (exams.SubItems[1].Text == "True")
             {
                 bunifuDropdown5.selectedIndex = 0;
@@ -283,53 +304,61 @@ namespace TooLearnOfficial
             {
                 bunifuDropdown5.selectedIndex = 1;
             }
-
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
-            string str = exams.SubItems[3].Text;
-            int index = str.IndexOf('(');
-            string sub;
-            if (index >= 0)
+
+
+            if (textBox7.Visible == false)
             {
-                sub = str.Substring(0, index);
+                string str = exams.SubItems[3].Text;
+                int index = str.IndexOf('(');
+                string sub;
+                if (index >= 0)
+                {
+                    sub = str.Substring(0, index);
 
 
 
-            }
-            else
-            {
+                }
+                else
+                {
 
-                sub = str;
-            }
-            textBox10.Text= sub;
+                    sub = str;
+                }
+                textBox10.Text = sub;
+
+
+
+                string cut = exams.SubItems[3].Text;
+                int ind = cut.IndexOf('(');
+                string form;
+                if (ind >= 0)
+                {
+                    form = cut.Substring(ind + 1, 7);
+
+
+
+                }
+                else
+                {
+
+                    form = cut;
+                }
+
+
+                if (form == "Minutes")
+                {
+                    bunifuDropdown4.selectedIndex = 0;
+                }
+
+                else
+                {
+                    bunifuDropdown4.selectedIndex = 1;
+                }
+
+
+            }//end IF
+
             textBox5.Text = exams.SubItems[4].Text;
-
-
-            string cut = exams.SubItems[3].Text;
-            int ind = cut.IndexOf('(');
-            string form;
-            if (ind >= 0)
-            {
-                form = cut.Substring(ind + 1, 7);
-
-
-
-            }
-            else
-            {
-
-                form = cut.Substring(ind + 1, 7);
-            }
-
-
-            if (form == "Minutes")
-            {
-                bunifuDropdown4.selectedIndex = 0;
-            }
-
-            else
-            {
-                bunifuDropdown4.selectedIndex = 1;
-            }
 
 
         }
@@ -343,57 +372,58 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation = exams.SubItems[2].Text;
-            string str = exams.SubItems[3].Text;
-            int index = str.IndexOf('(');
-            string sub;
-            if (index >= 0)
+            if (textBox7.Visible == false)
             {
-                sub = str.Substring(0, index);
+                string str = exams.SubItems[3].Text;
+                int index = str.IndexOf('(');
+                string sub;
+                if (index >= 0)
+                {
+                    sub = str.Substring(0, index);
 
 
 
-            }
-            else
-            {
+                }
+                else
+                {
 
-                sub = str;
-            }
+                    sub = str;
+                }
 
-            textBox12.Text = sub;
+                textBox12.Text = sub;
+
+
+
+                string cut = exams.SubItems[3].Text;
+                int ind = cut.IndexOf('(');
+                string form;
+                if (ind >= 0)
+                {
+                    form = cut.Substring(ind + 1, 7);
+
+
+
+                }
+                else
+                {
+
+                    form = cut;
+                }
+
+
+                if (form == "Minutes")
+                {
+                    bunifuDropdown3.selectedIndex = 0;
+                }
+
+                else
+                {
+                    bunifuDropdown3.selectedIndex = 1;
+                }
+
+            }// end IF
+
             textBox3.Text = exams.SubItems[4].Text;
-
-
-            string cut = exams.SubItems[3].Text;
-            int ind = cut.IndexOf('(');
-            string form;
-            if (ind >= 0)
-            {
-                form = cut.Substring(ind + 1, 7);
-
-
-
-            }
-            else
-            {
-
-                form = cut.Substring(ind + 1, 7);
-            }
-
-
-            if (form == "Minutes")
-            {
-                bunifuDropdown3.selectedIndex = 0;
-            }
-
-            else
-            {
-                bunifuDropdown3.selectedIndex = 1;
-            }
-
-
-
-
-
 
 
         }
@@ -533,7 +563,7 @@ namespace TooLearnOfficial
                             // exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
                             exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
-                            exams.Tag= (int)d[("answer_id")];
+                            exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
 
 
 
@@ -552,7 +582,7 @@ namespace TooLearnOfficial
                             //  exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
                             exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
-                            exams.Tag = (int)d[("answer_id")];
+                            exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
 
                             ShortAnswerLV.Items.Add(exams);
 
@@ -569,7 +599,7 @@ namespace TooLearnOfficial
                             //   exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
                             exams.SubItems.Add((string)d[("QA_time_limit")]);
                             exams.SubItems.Add(Convert.ToString((int)d[("points")]));
-                            exams.Tag = (int)d[("answer_id")];
+                            exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
 
                             TrueOrFalseLV.Items.Add(exams);
 
@@ -928,47 +958,131 @@ namespace TooLearnOfficial
 
                     string TimeF;
 
-                    int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
-                    ListViewItem exams = new ListViewItem();
-                    exams.Text = textBoxQuizQuestion.Text;
-                    exams.SubItems.Add(textBoxQuizChoiceA.Text);
-                    exams.SubItems.Add(textBoxQuizChoiceB.Text);
-                    exams.SubItems.Add(textBoxQuizChoiceC.Text);
-                    exams.SubItems.Add(textBoxQuizChoiceD.Text);
-                    exams.SubItems.Add(RightAnswer);
-                    //
-                    exams.SubItems.Add(pictureBox3.ImageLocation);
-                    if (bunifuDropdown2.selectedIndex == 0)//Minutes
+
+                    if (textBox7.Visible == false)
                     {
-                        TimeF = textBox11.Text + "(Minutes)";
-                    }
+
+
+                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                                textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == "")
+                        {
+                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                        }
+
+                        else
+                        {
+
+                            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = textBoxQuizQuestion.Text;
+                            exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                            RightAnswer = RightAnswer.TrimStart(',');
+                            exams.SubItems.Add(RightAnswer);
+                            //
+                            exams.SubItems.Add(pictureBox3.ImageLocation);
+                            if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                            {
+                                TimeF = textBox11.Text + "(Minutes)";
+                            }
+
+                            else
+                            {
+                                TimeF = textBox11.Text + "(Seconds)";
+                            }
+
+                            exams.SubItems.Add(TimeF);
+                            exams.SubItems.Add(textBox2.Text);
+
+                            exams.SubItems.Add(MultipleChoiceLV.Items[listPosition].SubItems[9].Text);
+                            //
+                            MultipleChoiceLV.Items.RemoveAt(listPosition);
+                            MultipleChoiceLV.Items.Insert(listPosition, exams);
+
+                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+                            RightAnswer = null;
+                            resetAllMC(); ;
+                            //  buttonNextQuestion.Text = "Next";
+                            buttonNextQuestion.Visible = false;
+
+                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+                            int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                            Total.Text = Sum.ToString();
+
+
+                        }//end else
+
+
+                    }//end if
 
                     else
                     {
-                        TimeF = textBox11.Text + "(Seconds)";
+
+                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBoxQuizChoiceA.Text == "" ||
+                               textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == " ")
+                        {
+                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                        }
+
+                        else
+                        {
+
+                            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = textBoxQuizQuestion.Text;
+                            exams.SubItems.Add(textBoxQuizChoiceA.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceB.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceC.Text);
+                            exams.SubItems.Add(textBoxQuizChoiceD.Text);
+                            RightAnswer = RightAnswer.TrimStart(',');
+                            exams.SubItems.Add(RightAnswer);
+                            //
+                            exams.SubItems.Add(pictureBox3.ImageLocation);
+                            if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                            {
+                                TimeF = textBox11.Text + "(Minutes)";
+                            }
+
+                            else
+                            {
+                                TimeF = textBox11.Text + "(Seconds)";
+                            }
+
+                            exams.SubItems.Add(TimeF);
+                            exams.SubItems.Add(textBox2.Text);
+
+                            exams.SubItems.Add(MultipleChoiceLV.Items[listPosition].SubItems[9].Text);
+                            //
+                            MultipleChoiceLV.Items.RemoveAt(listPosition);
+                            MultipleChoiceLV.Items.Insert(listPosition, exams);
+
+                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+                            RightAnswer = null;
+                            resetAllMC(); ;
+                            //  buttonNextQuestion.Text = "Next";
+                            buttonNextQuestion.Visible = false;
+
+                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+                            int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                            Total.Text = Sum.ToString();
+
+                        }
                     }
 
-                    exams.SubItems.Add(TimeF);
-                    exams.SubItems.Add(textBox2.Text);
-                    //
-                    MultipleChoiceLV.Items.RemoveAt(listPosition);
-                    MultipleChoiceLV.Items.Insert(listPosition, exams);
 
-                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
 
-                    currentnumMC.Text = Convert.ToString(Sum1 + 1);
-                    CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
-                    CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
-                    RightAnswer = null;
-                    resetAllMC(); ;
-                    //  buttonNextQuestion.Text = "Next";
-                    buttonNextQuestion.Visible = false;
 
-                    NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-                    int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-                    Total.Text = Sum.ToString();
-
-                    break;
+                            break;
 
 
 
@@ -1091,6 +1205,7 @@ namespace TooLearnOfficial
 
                     exams1.SubItems.Add(TimeF);
                     exams1.SubItems.Add(textBox5.Text);
+                    exams1.SubItems.Add(TrueOrFalseLV.Items[listPosition].SubItems[5].Text);
                     //
 
                     TrueOrFalseLV.Items.RemoveAt(listPosition);
@@ -1235,6 +1350,7 @@ namespace TooLearnOfficial
 
                     exams3.SubItems.Add(TimeF);
                     exams3.SubItems.Add(textBox3.Text);
+                    exams3.SubItems.Add(ShortAnswerLV.Items[listPosition].SubItems[5].Text);
                     //
 
                     ShortAnswerLV.Items.RemoveAt(listPosition);
@@ -1320,26 +1436,55 @@ namespace TooLearnOfficial
 
         private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
-            RightAnswer = "A";
+            if (bunifuCheckbox1.Checked == true)
+            {
+
+                RightAnswer = RightAnswer + ",A";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",A", "");
+            }
+            label6.Text = RightAnswer;
         }
 
         private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox1.Checked = false; bunifuCheckbox3.Checked = false; bunifuCheckbox4.Checked = false;
-            RightAnswer = "B";
+            if (bunifuCheckbox2.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",B";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",B", "");
+            }
+            label6.Text = RightAnswer;
         }
 
         private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox4.Checked = false;
-            RightAnswer = "C";
+            if (bunifuCheckbox3.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",C";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",C", "");
+            }
+            label6.Text = RightAnswer;
         }
 
         private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
         {
-            bunifuCheckbox1.Checked = false; bunifuCheckbox2.Checked = false; bunifuCheckbox3.Checked = false;
-            RightAnswer = "D";
+            if (bunifuCheckbox4.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",D";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",D", "");
+            }
+            label6.Text = RightAnswer;
         }
 
         private void TrueOrFalseLV_SelectedIndexChanged(object sender, EventArgs e)
@@ -1400,100 +1545,107 @@ namespace TooLearnOfficial
                 Dialogue.Show("Update all Items First", "", "Ok", "Cancel");
             }
 
-            else { //big
-            
-             try
-                       {
-
-
-                           con.Open();
-
-                           SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_title = '" + textBoxQuizTitle.Text + "' AND facilitator_id = '" + Program.user_id + "' ", con);
-
-
-                           dr = cmd.ExecuteReader();
-
-
-                           if (dr.Read() == true)
-                           {
-                               int examID = (int)dr[("quiz_id")];
-                               for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
-                               {
-                                   ListViewItem exams = MultipleChoiceLV.Items[i];
-                                   try
-                                   {                                    
-                         con2.Open();
-
-                   if (textBox7.Visible == true)
-               {
-
-                string Time;
-
-                if (bunifuDropdown1.selectedIndex == 0)
+            else
+            {
+                DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
+                if (result == DialogResult.Yes)
                 {
-                 
-                    Time = textBox7.Text + "(Minutes)";
-
-                }
-
-                else
-                {
-                    Time = textBox7.Text + "(Seconds)";
-                }
-
-
-                                    String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Quiz Bee',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.Tag + "' ";
-                SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                sda.SelectCommand.ExecuteNonQuery();
-
-                       }
-
-
-                           else
-                          {
-                            
-
-
-                      String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Quiz Bee',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + exams.SubItems[7].Text + "' WHERE answer_id='" + exams.Tag + "' ";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.ExecuteNonQuery();
+                       try
+                      {
 
 
 
+                    con.Close();// close muna
+                              SqlDataAdapter cmd = new SqlDataAdapter("select quiz_id from quizzes where quiz_title = '" + textBoxQuizTitle.Text + "' AND facilitator_id = '" + Program.user_id + "' ", con);
+                            DataTable dt = new DataTable();
+                            cmd.Fill(dt);
+                            int examID=Convert.ToInt32(dt.Rows[0][0].ToString());
 
-                                }
+                    
+                    for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
+                            {
+                                ListViewItem exams = MultipleChoiceLV.Items[i];
 
-
-
-
-
-
-                         }
-
-                                catch (Exception ex)
+                            try
                                 {
-                                   MessageBox.Show(ex.Message);
-                                }
-                                con2.Close();
+
+                               
+
+                                if (textBox7.Visible == true)
+                                    {
+
+                                        string Time;
+
+                                        if (bunifuDropdown1.selectedIndex == 0)
+                                        {
+
+                                            Time = textBox7.Text + "(Minutes)";
+
+                                        }
+
+                                        else
+                                        {
+                                            Time = textBox7.Text + "(Seconds)";
+                                        }
+
+                                con.Open();
+                                String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Quiz Bee',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.SubItems[9].Text + "' ";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                        sda.SelectCommand.ExecuteNonQuery();
+                                con.Close();
+                            }
+
+
+                                    else
+                                    {
+
+
+                                con.Open();
+                                String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Quiz Bee',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + exams.SubItems[7].Text + "' WHERE answer_id='" + exams.SubItems[9].Text + "' ";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                        sda.SelectCommand.ExecuteNonQuery();
+
+                                con.Close();
+
 
                             }
 
 
 
 
+                                }
+
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                            
+                            
+
+                        }
+
+                      
+
+
+                    }
+             
+
+
+
 
                             // // // // // // // // 
 
-                            for (int i = 0; i<ShortAnswerLV.Items.Count; i++) //For Short Answers
+                            for (int i = 0; i < ShortAnswerLV.Items.Count; i++) //For Short Answers
                             {
                                 ListViewItem exams = ShortAnswerLV.Items[i];
-                                try
+                           
+                            try
                                 {
-                                 
-                                        con2.Open();
 
-                                        if (textBox7.Visible == true)
-                                        {
+                                
+                               
+
+                                if (textBox7.Visible == true)
+                                    {
 
                                         string Time;
 
@@ -1509,33 +1661,37 @@ namespace TooLearnOfficial
                                             Time = textBox7.Text + "(Seconds)";
                                         }
 
-                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.Tag + "' ";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.ExecuteNonQuery();
-
-                                   
-                                        }
-
-
-                                        else
-                                        {
-                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.Tag + "' ";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Open();
+                                        String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                        sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
 
                                 }
 
 
+                                    else
+                                    {
+                                    con.Open();
+                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                        sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+                                }
 
-                            }
+
+
+                                }
 
                                 catch (Exception ex)
                                 {
-                                   MessageBox.Show(ex.Message);
-                                }
-                                con2.Close();
+                            MessageBox.Show(ex.Message);
+                           
+                        }
 
-                            }
+                      
+
+                    }
 
 
                             // /// // // // // // // 
@@ -1550,17 +1706,18 @@ namespace TooLearnOfficial
 
 
 
-                            for (int i = 0; i<TrueOrFalseLV.Items.Count; i++) //For True Or False
+                            for (int i = 0; i < TrueOrFalseLV.Items.Count; i++) //For True Or False
                             {
                                 ListViewItem exams = TrueOrFalseLV.Items[i];
-                                try
+                            
+                           
+                            try
                                 {
-                                
-                                        con2.Open();
 
+                               
 
-                                        if (textBox7.Visible == true)
-                                        {
+                                if (textBox7.Visible == true)
+                                    {
 
                                         string Time;
 
@@ -1575,61 +1732,66 @@ namespace TooLearnOfficial
                                         {
                                             Time = textBox7.Text + "(Seconds)";
                                         }
+                                    con.Open();
 
-
-                                    String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.Tag + "' ";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.ExecuteNonQuery();
+                                        String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                        sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
                                 }
 
 
 
-                                        else
-                                        {
-                                    String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.Tag + "' ";
-                                    SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                    sda.SelectCommand.ExecuteNonQuery();
-                                }
-                               
+                                    else
+                                    {
+                                    con.Open();
+                                        String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Quiz Bee',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                        sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+                                    }
+
 
 
                                 }
 
                                 catch (Exception ex)
                                 {
-                                    MessageBox.Show(ex.Message);
-                                }
-                                con2.Close();
-
-                            }
+                            MessageBox.Show(ex.Message);
+                           
+                        }
 
 
+                    }
 
-                            // / // // / /// / // / // / // / / / / //
-
+                         
                         }
 
 
 
+
+
+
+
+
+                     catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                     
                     }
 
 
+                    Dialogue.Show("Successfully Updated", "", "Ok", "Cancel");
+                    this.Hide();
+
+                }
+            }
 
 
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-
-                        if (dr != null) dr.Close();
-                        if (con != null) con.Close();
-                    }
-
-
-            }//end else big
-        }
+        }            
+  
+                
+        
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
@@ -1693,7 +1855,9 @@ namespace TooLearnOfficial
             TrueOrFalseLV.Enabled = true;
 
 
-            //     } 
+            
         }
+
     }
 }
+

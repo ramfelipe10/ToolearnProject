@@ -199,7 +199,7 @@ namespace TooLearnOfficial
             foreach(DataGridViewColumn column in dgv.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);                
                 pdftable.AddCell(cell);
             }
 
