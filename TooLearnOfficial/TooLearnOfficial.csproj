@@ -171,6 +171,12 @@
     <Compile Include="EditParticipantProfile.Designer.cs">
       <DependentUpon>EditParticipantProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditPuzzle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPuzzle.Designer.cs">
+      <DependentUpon>EditPuzzle.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditQuizBEE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditParticipantProfile.resx">
       <DependentUpon>EditParticipantProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPuzzle.resx">
+      <DependentUpon>EditPuzzle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditQuizBEE.resx">
       <DependentUpon>EditQuizBEE.cs</DependentUpon>

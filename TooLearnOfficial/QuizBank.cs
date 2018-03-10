@@ -19,6 +19,7 @@ namespace TooLearnOfficial
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string QuizName;
+        string GameType;
         public static string SetValueForText1 = "";
         public static int QUIZID;
         public QuizBank()
@@ -144,8 +145,10 @@ namespace TooLearnOfficial
           
            {
                 QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                GameType = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                
 
-           }
+            }
             
         }
 
@@ -344,16 +347,32 @@ namespace TooLearnOfficial
 
                 if (bunifuCustomDataGrid1.SelectedRows.Count > 0)
                 {
-                    
-                    SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
-                    DataTable dt = new DataTable();
-                    adapt.Fill(dt);
-                    int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
-                    SetValueForText1 = ID.ToString();
-                    EditQuizBEE EQB = new EditQuizBEE();
-                    EQB.ShowDialog();
+                    if (QuizName != null)
+                    {
+                        con.Open();
+                        SqlDataAdapter adapt = new SqlDataAdapter("select quiz_id from quizzes where quiz_title= '" + QuizName + "'", con);
+                        DataTable dt = new DataTable();
+                        adapt.Fill(dt);
+                        int ID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
+                        SetValueForText1 = ID.ToString();
+                        con.Close();
+                        if (GameType == "Quiz Bee")
+                         {
+                            EditQuizBEE EQB = new EditQuizBEE();
+                           EQB.ShowDialog();
+                        }
+                       else
+                         {
+                        EditPuzzle EP = new EditPuzzle();
+                        EP.ShowDialog();
+                         }
 
+                    }
 
+                    else
+                    {
+                        Dialogue.Show("Nothing Selected", "", "Ok", "Cancel");
+                    }
                 }
 
                 else
@@ -367,7 +386,8 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+                Dialogue.Show(" ' " + ex.Message.ToString() + "'", "", "Ok", "Cancel");
+                MessageBox.Show(SetValueForText1);
             }
 
 

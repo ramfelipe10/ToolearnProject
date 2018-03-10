@@ -149,6 +149,7 @@
             this.CurrentNumTF = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.MultipleChoice = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.bunifuElipse11 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -158,7 +159,6 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrueOrFalseLV = new System.Windows.Forms.ListView();
-            this.label6 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1206,7 +1206,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 34);
             this.button3.TabIndex = 227;
-            this.button3.Text = "Save Quiz";
+            this.button3.Text = "Update Quiz";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -1662,6 +1662,16 @@
             this.MultipleChoice.Size = new System.Drawing.Size(1002, 268);
             this.MultipleChoice.TabIndex = 211;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(407, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 24);
+            this.label6.TabIndex = 214;
+            this.label6.Text = "Answer:";
+            // 
             // bunifuElipse11
             // 
             this.bunifuElipse11.ElipseRadius = 5;
@@ -1720,16 +1730,6 @@
             this.TrueOrFalseLV.UseCompatibleStateImageBehavior = false;
             this.TrueOrFalseLV.View = System.Windows.Forms.View.Details;
             this.TrueOrFalseLV.SelectedIndexChanged += new System.EventHandler(this.TrueOrFalseLV_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(407, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 24);
-            this.label6.TabIndex = 214;
-            this.label6.Text = "Answer:";
             // 
             // EditQuizBEE
             // 
