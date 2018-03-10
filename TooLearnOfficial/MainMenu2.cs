@@ -134,7 +134,7 @@ namespace TooLearnOfficial
 
         private void buttonManual_Click(object sender, EventArgs e)
         {
-            Manual m = new Manual();
+            Manual2 m = new Manual2();
             m.Show();
         }
     }

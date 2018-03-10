@@ -453,6 +453,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login1 {
+            get {
+                object obj = ResourceManager.GetObject("login1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logout_Rounded_Left_104px {
             get {
                 object obj = ResourceManager.GetObject("Logout Rounded Left_104px", resourceCulture);
@@ -483,6 +493,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu_participant {
+            get {
+                object obj = ResourceManager.GetObject("menu_participant", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Minimize_Window_48px {
             get {
                 object obj = ResourceManager.GetObject("Minimize Window_48px", resourceCulture);
@@ -496,6 +516,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap my_account {
             get {
                 object obj = ResourceManager.GetObject("my_account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap my_account2 {
+            get {
+                object obj = ResourceManager.GetObject("my_account2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

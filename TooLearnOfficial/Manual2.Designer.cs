@@ -32,10 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manual2));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panelChooseUser = new System.Windows.Forms.Panel();
-            this.btnNext = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelAddParticipant = new System.Windows.Forms.Panel();
-            this.btnNext14 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnPrevious14 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panelMainMenu = new System.Windows.Forms.Panel();
+            this.btnNext2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnPrevious2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnNext1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnPrevious1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnNext = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panelMyAccount = new System.Windows.Forms.Panel();
+            this.btnNext3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnPrevious3 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
@@ -45,6 +54,11 @@
             this.buttonExit = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelChooseUser.SuspendLayout();
             this.panelAddParticipant.SuspendLayout();
+            this.panelMainMenu.SuspendLayout();
+            this.panelMyAccount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -71,6 +85,177 @@
             this.panelChooseUser.Size = new System.Drawing.Size(850, 474);
             this.panelChooseUser.TabIndex = 172;
             this.panelChooseUser.Visible = false;
+            // 
+            // panelAddParticipant
+            // 
+            this.panelAddParticipant.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panelAddParticipant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelAddParticipant.Controls.Add(this.panelMainMenu);
+            this.panelAddParticipant.Controls.Add(this.pictureBox3);
+            this.panelAddParticipant.Controls.Add(this.pictureBox1);
+            this.panelAddParticipant.Controls.Add(this.btnNext1);
+            this.panelAddParticipant.Controls.Add(this.btnPrevious1);
+            this.panelAddParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAddParticipant.Location = new System.Drawing.Point(0, 0);
+            this.panelAddParticipant.Name = "panelAddParticipant";
+            this.panelAddParticipant.Size = new System.Drawing.Size(850, 474);
+            this.panelAddParticipant.TabIndex = 172;
+            this.panelAddParticipant.Visible = false;
+            // 
+            // panelMainMenu
+            // 
+            this.panelMainMenu.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panelMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMainMenu.Controls.Add(this.panelMyAccount);
+            this.panelMainMenu.Controls.Add(this.pictureBox4);
+            this.panelMainMenu.Controls.Add(this.btnNext2);
+            this.panelMainMenu.Controls.Add(this.btnPrevious2);
+            this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMainMenu.Name = "panelMainMenu";
+            this.panelMainMenu.Size = new System.Drawing.Size(850, 474);
+            this.panelMainMenu.TabIndex = 172;
+            this.panelMainMenu.Visible = false;
+            // 
+            // btnNext2
+            // 
+            this.btnNext2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext2.BorderRadius = 3;
+            this.btnNext2.ButtonText = "NEXT";
+            this.btnNext2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext2.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNext2.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNext2.Iconimage = null;
+            this.btnNext2.Iconimage_right = null;
+            this.btnNext2.Iconimage_right_Selected = null;
+            this.btnNext2.Iconimage_Selected = null;
+            this.btnNext2.IconMarginLeft = 0;
+            this.btnNext2.IconMarginRight = 0;
+            this.btnNext2.IconRightVisible = true;
+            this.btnNext2.IconRightZoom = 0D;
+            this.btnNext2.IconVisible = true;
+            this.btnNext2.IconZoom = 90D;
+            this.btnNext2.IsTab = false;
+            this.btnNext2.Location = new System.Drawing.Point(762, 419);
+            this.btnNext2.Name = "btnNext2";
+            this.btnNext2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnNext2.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNext2.selected = false;
+            this.btnNext2.Size = new System.Drawing.Size(76, 43);
+            this.btnNext2.TabIndex = 159;
+            this.btnNext2.Text = "NEXT";
+            this.btnNext2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext2.Textcolor = System.Drawing.Color.White;
+            this.btnNext2.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext2.Click += new System.EventHandler(this.btnNext2_Click);
+            // 
+            // btnPrevious2
+            // 
+            this.btnPrevious2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious2.BorderRadius = 3;
+            this.btnPrevious2.ButtonText = "PREVIOUS";
+            this.btnPrevious2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious2.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPrevious2.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPrevious2.Iconimage = null;
+            this.btnPrevious2.Iconimage_right = null;
+            this.btnPrevious2.Iconimage_right_Selected = null;
+            this.btnPrevious2.Iconimage_Selected = null;
+            this.btnPrevious2.IconMarginLeft = 0;
+            this.btnPrevious2.IconMarginRight = 0;
+            this.btnPrevious2.IconRightVisible = true;
+            this.btnPrevious2.IconRightZoom = 0D;
+            this.btnPrevious2.IconVisible = true;
+            this.btnPrevious2.IconZoom = 90D;
+            this.btnPrevious2.IsTab = false;
+            this.btnPrevious2.Location = new System.Drawing.Point(12, 419);
+            this.btnPrevious2.Name = "btnPrevious2";
+            this.btnPrevious2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPrevious2.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPrevious2.selected = false;
+            this.btnPrevious2.Size = new System.Drawing.Size(76, 43);
+            this.btnPrevious2.TabIndex = 158;
+            this.btnPrevious2.Text = "PREVIOUS";
+            this.btnPrevious2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrevious2.Textcolor = System.Drawing.Color.White;
+            this.btnPrevious2.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious2.Click += new System.EventHandler(this.btnPrevious2_Click);
+            // 
+            // btnNext1
+            // 
+            this.btnNext1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext1.BorderRadius = 3;
+            this.btnNext1.ButtonText = "NEXT";
+            this.btnNext1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext1.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNext1.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNext1.Iconimage = null;
+            this.btnNext1.Iconimage_right = null;
+            this.btnNext1.Iconimage_right_Selected = null;
+            this.btnNext1.Iconimage_Selected = null;
+            this.btnNext1.IconMarginLeft = 0;
+            this.btnNext1.IconMarginRight = 0;
+            this.btnNext1.IconRightVisible = true;
+            this.btnNext1.IconRightZoom = 0D;
+            this.btnNext1.IconVisible = true;
+            this.btnNext1.IconZoom = 90D;
+            this.btnNext1.IsTab = false;
+            this.btnNext1.Location = new System.Drawing.Point(762, 419);
+            this.btnNext1.Name = "btnNext1";
+            this.btnNext1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnNext1.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNext1.selected = false;
+            this.btnNext1.Size = new System.Drawing.Size(76, 43);
+            this.btnNext1.TabIndex = 159;
+            this.btnNext1.Text = "NEXT";
+            this.btnNext1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext1.Textcolor = System.Drawing.Color.White;
+            this.btnNext1.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext1.Click += new System.EventHandler(this.btnNext1_Click);
+            // 
+            // btnPrevious1
+            // 
+            this.btnPrevious1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious1.BorderRadius = 3;
+            this.btnPrevious1.ButtonText = "PREVIOUS";
+            this.btnPrevious1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious1.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPrevious1.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPrevious1.Iconimage = null;
+            this.btnPrevious1.Iconimage_right = null;
+            this.btnPrevious1.Iconimage_right_Selected = null;
+            this.btnPrevious1.Iconimage_Selected = null;
+            this.btnPrevious1.IconMarginLeft = 0;
+            this.btnPrevious1.IconMarginRight = 0;
+            this.btnPrevious1.IconRightVisible = true;
+            this.btnPrevious1.IconRightZoom = 0D;
+            this.btnPrevious1.IconVisible = true;
+            this.btnPrevious1.IconZoom = 90D;
+            this.btnPrevious1.IsTab = false;
+            this.btnPrevious1.Location = new System.Drawing.Point(12, 419);
+            this.btnPrevious1.Name = "btnPrevious1";
+            this.btnPrevious1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPrevious1.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPrevious1.selected = false;
+            this.btnPrevious1.Size = new System.Drawing.Size(76, 43);
+            this.btnPrevious1.TabIndex = 158;
+            this.btnPrevious1.Text = "PREVIOUS";
+            this.btnPrevious1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrevious1.Textcolor = System.Drawing.Color.White;
+            this.btnPrevious1.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious1.Click += new System.EventHandler(this.btnPrevious1_Click_1);
             // 
             // btnNext
             // 
@@ -107,94 +292,126 @@
             this.btnNext.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // panelAddParticipant
+            // panelMyAccount
             // 
-            this.panelAddParticipant.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.panelAddParticipant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelAddParticipant.Controls.Add(this.pictureBox1);
-            this.panelAddParticipant.Controls.Add(this.btnNext14);
-            this.panelAddParticipant.Controls.Add(this.btnPrevious14);
-            this.panelAddParticipant.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAddParticipant.Location = new System.Drawing.Point(0, 0);
-            this.panelAddParticipant.Name = "panelAddParticipant";
-            this.panelAddParticipant.Size = new System.Drawing.Size(850, 474);
-            this.panelAddParticipant.TabIndex = 172;
-            this.panelAddParticipant.Visible = false;
+            this.panelMyAccount.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panelMyAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMyAccount.Controls.Add(this.pictureBox5);
+            this.panelMyAccount.Controls.Add(this.btnNext3);
+            this.panelMyAccount.Controls.Add(this.btnPrevious3);
+            this.panelMyAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMyAccount.Location = new System.Drawing.Point(0, 0);
+            this.panelMyAccount.Name = "panelMyAccount";
+            this.panelMyAccount.Size = new System.Drawing.Size(850, 474);
+            this.panelMyAccount.TabIndex = 173;
+            this.panelMyAccount.Visible = false;
             // 
-            // btnNext14
+            // btnNext3
             // 
-            this.btnNext14.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnNext14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnNext14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNext14.BorderRadius = 3;
-            this.btnNext14.ButtonText = "NEXT";
-            this.btnNext14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext14.DisabledColor = System.Drawing.Color.Gray;
-            this.btnNext14.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnNext14.Iconimage = null;
-            this.btnNext14.Iconimage_right = null;
-            this.btnNext14.Iconimage_right_Selected = null;
-            this.btnNext14.Iconimage_Selected = null;
-            this.btnNext14.IconMarginLeft = 0;
-            this.btnNext14.IconMarginRight = 0;
-            this.btnNext14.IconRightVisible = true;
-            this.btnNext14.IconRightZoom = 0D;
-            this.btnNext14.IconVisible = true;
-            this.btnNext14.IconZoom = 90D;
-            this.btnNext14.IsTab = false;
-            this.btnNext14.Location = new System.Drawing.Point(762, 419);
-            this.btnNext14.Name = "btnNext14";
-            this.btnNext14.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnNext14.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnNext14.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnNext14.selected = false;
-            this.btnNext14.Size = new System.Drawing.Size(76, 43);
-            this.btnNext14.TabIndex = 159;
-            this.btnNext14.Text = "NEXT";
-            this.btnNext14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNext14.Textcolor = System.Drawing.Color.White;
-            this.btnNext14.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNext3.BorderRadius = 3;
+            this.btnNext3.ButtonText = "NEXT";
+            this.btnNext3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext3.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNext3.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNext3.Iconimage = null;
+            this.btnNext3.Iconimage_right = null;
+            this.btnNext3.Iconimage_right_Selected = null;
+            this.btnNext3.Iconimage_Selected = null;
+            this.btnNext3.IconMarginLeft = 0;
+            this.btnNext3.IconMarginRight = 0;
+            this.btnNext3.IconRightVisible = true;
+            this.btnNext3.IconRightZoom = 0D;
+            this.btnNext3.IconVisible = true;
+            this.btnNext3.IconZoom = 90D;
+            this.btnNext3.IsTab = false;
+            this.btnNext3.Location = new System.Drawing.Point(762, 419);
+            this.btnNext3.Name = "btnNext3";
+            this.btnNext3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnNext3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnNext3.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnNext3.selected = false;
+            this.btnNext3.Size = new System.Drawing.Size(76, 43);
+            this.btnNext3.TabIndex = 159;
+            this.btnNext3.Text = "NEXT";
+            this.btnNext3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNext3.Textcolor = System.Drawing.Color.White;
+            this.btnNext3.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext3.Click += new System.EventHandler(this.btnNext3_Click);
             // 
-            // btnPrevious14
+            // btnPrevious3
             // 
-            this.btnPrevious14.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPrevious14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPrevious14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrevious14.BorderRadius = 3;
-            this.btnPrevious14.ButtonText = "PREVIOUS";
-            this.btnPrevious14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrevious14.DisabledColor = System.Drawing.Color.Gray;
-            this.btnPrevious14.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnPrevious14.Iconimage = null;
-            this.btnPrevious14.Iconimage_right = null;
-            this.btnPrevious14.Iconimage_right_Selected = null;
-            this.btnPrevious14.Iconimage_Selected = null;
-            this.btnPrevious14.IconMarginLeft = 0;
-            this.btnPrevious14.IconMarginRight = 0;
-            this.btnPrevious14.IconRightVisible = true;
-            this.btnPrevious14.IconRightZoom = 0D;
-            this.btnPrevious14.IconVisible = true;
-            this.btnPrevious14.IconZoom = 90D;
-            this.btnPrevious14.IsTab = false;
-            this.btnPrevious14.Location = new System.Drawing.Point(12, 419);
-            this.btnPrevious14.Name = "btnPrevious14";
-            this.btnPrevious14.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPrevious14.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnPrevious14.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnPrevious14.selected = false;
-            this.btnPrevious14.Size = new System.Drawing.Size(76, 43);
-            this.btnPrevious14.TabIndex = 158;
-            this.btnPrevious14.Text = "PREVIOUS";
-            this.btnPrevious14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPrevious14.Textcolor = System.Drawing.Color.White;
-            this.btnPrevious14.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious3.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrevious3.BorderRadius = 3;
+            this.btnPrevious3.ButtonText = "PREVIOUS";
+            this.btnPrevious3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious3.DisabledColor = System.Drawing.Color.Gray;
+            this.btnPrevious3.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnPrevious3.Iconimage = null;
+            this.btnPrevious3.Iconimage_right = null;
+            this.btnPrevious3.Iconimage_right_Selected = null;
+            this.btnPrevious3.Iconimage_Selected = null;
+            this.btnPrevious3.IconMarginLeft = 0;
+            this.btnPrevious3.IconMarginRight = 0;
+            this.btnPrevious3.IconRightVisible = true;
+            this.btnPrevious3.IconRightZoom = 0D;
+            this.btnPrevious3.IconVisible = true;
+            this.btnPrevious3.IconZoom = 90D;
+            this.btnPrevious3.IsTab = false;
+            this.btnPrevious3.Location = new System.Drawing.Point(12, 419);
+            this.btnPrevious3.Name = "btnPrevious3";
+            this.btnPrevious3.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnPrevious3.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnPrevious3.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPrevious3.selected = false;
+            this.btnPrevious3.Size = new System.Drawing.Size(76, 43);
+            this.btnPrevious3.TabIndex = 158;
+            this.btnPrevious3.Text = "PREVIOUS";
+            this.btnPrevious3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnPrevious3.Textcolor = System.Drawing.Color.White;
+            this.btnPrevious3.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious3.Click += new System.EventHandler(this.btnPrevious3_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::TooLearnOfficial.Properties.Resources.my_account2;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 34);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(850, 369);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 160;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::TooLearnOfficial.Properties.Resources.menu_participant;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 6);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(850, 397);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 160;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::TooLearnOfficial.Properties.Resources.login1;
+            this.pictureBox3.Location = new System.Drawing.Point(469, 34);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(378, 369);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 161;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TooLearnOfficial.Properties.Resources.create1;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(416, 369);
+            this.pictureBox1.Size = new System.Drawing.Size(436, 336);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 160;
             this.pictureBox1.TabStop = false;
@@ -291,6 +508,11 @@
             this.Text = "Manual2";
             this.panelChooseUser.ResumeLayout(false);
             this.panelAddParticipant.ResumeLayout(false);
+            this.panelMainMenu.ResumeLayout(false);
+            this.panelMyAccount.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
@@ -315,7 +537,16 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnNext;
         private System.Windows.Forms.Panel panelAddParticipant;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnNext14;
-        private Bunifu.Framework.UI.BunifuFlatButton btnPrevious14;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNext1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPrevious1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panelMainMenu;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNext2;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPrevious2;
+        private System.Windows.Forms.Panel panelMyAccount;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private Bunifu.Framework.UI.BunifuFlatButton btnNext3;
+        private Bunifu.Framework.UI.BunifuFlatButton btnPrevious3;
     }
 }
