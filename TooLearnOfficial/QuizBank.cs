@@ -379,7 +379,7 @@ namespace TooLearnOfficial
             catch (Exception ex)
             {
                 Dialogue.Show(" ' " + ex.Message.ToString() + "'", "", "Ok", "Cancel");
-                MessageBox.Show(SetValueForText1);
+                
             }
 
 

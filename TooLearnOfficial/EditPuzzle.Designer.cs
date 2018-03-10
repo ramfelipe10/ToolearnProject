@@ -145,6 +145,7 @@
             this.CurrentnumSA = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.shortAnswer = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.splitPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -169,6 +170,7 @@
             this.trueORfalse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.shortAnswer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label24
@@ -1553,12 +1555,24 @@
             this.shortAnswer.Size = new System.Drawing.Size(1002, 268);
             this.shortAnswer.TabIndex = 239;
             // 
+            // splitPicture
+            // 
+            this.splitPicture.BackColor = System.Drawing.Color.Transparent;
+            this.splitPicture.Location = new System.Drawing.Point(418, 95);
+            this.splitPicture.Name = "splitPicture";
+            this.splitPicture.Size = new System.Drawing.Size(57, 39);
+            this.splitPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.splitPicture.TabIndex = 263;
+            this.splitPicture.TabStop = false;
+            this.splitPicture.Visible = false;
+            // 
             // EditPuzzle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1045, 652);
+            this.Controls.Add(this.splitPicture);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
@@ -1584,9 +1598,9 @@
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
-            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.MultipleChoice);
+            this.Controls.Add(this.trueORfalse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditPuzzle";
@@ -1621,6 +1635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.shortAnswer.ResumeLayout(false);
             this.shortAnswer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1743,5 +1758,6 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private Bunifu.Framework.UI.BunifuGradientPanel shortAnswer;
         private Bunifu.Framework.UI.BunifuCustomLabel CurrentnumSA;
+        public System.Windows.Forms.PictureBox splitPicture;
     }
 }

@@ -180,12 +180,24 @@ namespace TooLearnOfficial
             //}
             //doc.Add(table);
             //doc.Close();
-
-            exporttopdf(bunifuCustomDataGrid1, "test");
+            if (comboBox1.SelectedItem == null)
+            {
+                Dialogue.Show("Please Select Class First", "", "Ok", "Cancel");
+            }
+            else
+            {
+                exporttopdf(bunifuCustomDataGrid1, comboBox1.SelectedItem.ToString());
+            }
 
         }
         public void exporttopdf(DataGridView dgv, string filename)
         {
+
+       
+         
+
+
+
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable pdftable = new PdfPTable(dgv.Columns.Count);
             pdftable.DefaultCell.Padding = 3;
@@ -193,13 +205,17 @@ namespace TooLearnOfficial
             pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
             pdftable.DefaultCell.BorderWidth = 1;
 
-            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 10, iTextSharp.text.Font.NORMAL);
+
+      
+
+            iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 15, iTextSharp.text.Font.BOLD);
 
             //Add Header
             foreach(DataGridViewColumn column in dgv.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
-                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);                
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);  
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;                
                 pdftable.AddCell(cell);
             }
 
@@ -214,7 +230,8 @@ namespace TooLearnOfficial
             }
             var sfd = new SaveFileDialog();
             sfd.FileName = filename;
-            sfd.DefaultExt = ".pdf";
+            sfd.Filter = "Pdf File |*.pdf";
+            //sfd.DefaultExt = "pdf";
 
             if(sfd.ShowDialog() == DialogResult.OK)
             {
@@ -227,6 +244,7 @@ namespace TooLearnOfficial
                     pdfdoc.Close();
                     stream.Close();
                 }
+                Dialogue.Show("PDF SAVED", "", "Ok", "Cancel");
             }
 
         }

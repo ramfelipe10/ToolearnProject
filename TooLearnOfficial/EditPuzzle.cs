@@ -23,11 +23,11 @@ namespace TooLearnOfficial
         string imageLocation;
         string title = QuizPicturePuzzle.SetValueForText2;
         string Picture;
-        string time_limit = QuizPicturePuzzle.time;
-        int PictureWidth = QuizPicturePuzzle.SetWidth;
-        int PictureHeight = QuizPicturePuzzle.SetHeight;
+        string time_limit;       
+        int PictureWidth;
+        int PictureHeight;
         public static int Total;
-        byte[] imgFile = null;
+       
 
 
 
@@ -37,7 +37,8 @@ namespace TooLearnOfficial
 
         public EditPuzzle()
         {
-            InitializeComponent();
+            InitializeComponent();            
+            load_picture();
             slice_image();
         }
 
@@ -73,15 +74,33 @@ namespace TooLearnOfficial
 
         }
 
+        void load_picture()
+        {
+            string QID = QuizBank.SetValueForText1;
+
+            SqlDataAdapter adapt = new SqlDataAdapter("select puzzle_image from quizzes where quiz_id= '" + QID + "'", con);
+            DataTable dt = new DataTable();
+            adapt.Fill(dt);
+            Picture = dt.Rows[0][0].ToString();          
+
+            splitPicture.Image = Image.FromFile(Picture);
+
+            PictureWidth = splitPicture.Image.Width;
+            PictureHeight = splitPicture.Image.Height;
+
+
+        }
         void slice_image()
         {
             string QID = QuizBank.SetValueForText1;
 
-            SqlDataAdapter adapt = new SqlDataAdapter("select puzzle_image from quizzes where quiz_title= '" + QID + "'", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("select puzzle_image from quizzes where quiz_id= '" + QID + "'", con);
             DataTable dt = new DataTable();
             adapt.Fill(dt);
            Picture= dt.Rows[0][0].ToString();
+         
 
+           
 
             var imgarray = new Image[9];
 
@@ -472,11 +491,8 @@ namespace TooLearnOfficial
 
         private void EditPuzzle_Load(object sender, EventArgs e)
         {
-            this.BringToFront();
-
-
-
-
+                  
+            
             currentNumOfItems = 1;
             numOfItems = 9;
 
@@ -485,41 +501,130 @@ namespace TooLearnOfficial
             listPanel.Add(shortAnswer);
 
 
-            if (time_limit == "" || time_limit == null)
+
+            string C_ID = QuizBank.SetValueForText1;
+
+
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM quizzes WHERE quiz_id = '" + C_ID + "' ", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read() == true)
             {
-                label17.Visible = true;
-                bunifuDropdown1.Visible = true;
-                textBox12.Visible = true;
+                if (!dr.IsDBNull(4))
+               
+                {
+
+                    label17.Visible = false;
+                    bunifuDropdown1.Visible = false;
+                    textBox12.Visible = false;
 
 
-                label24.Visible = true;
-                bunifuDropdown2.Visible = true;
-                textBox10.Visible = true;
+                    label24.Visible = false;
+                    bunifuDropdown2.Visible = false;
+                    textBox10.Visible = false;
 
 
-                label20.Visible = true;
-                bunifuDropdown3.Visible = true;
-                textBox11.Visible = true;
+                    label20.Visible = false;
+                    bunifuDropdown3.Visible = false;
+                    textBox11.Visible = false;
+
+                }
+
+                else//else-if
+                {
+                    label17.Visible = true;
+                    bunifuDropdown1.Visible = true;
+                    textBox12.Visible = true;
+
+
+                    label24.Visible = true;
+                    bunifuDropdown2.Visible = true;
+                    textBox10.Visible = true;
+
+
+                    label20.Visible = true;
+                    bunifuDropdown3.Visible = true;
+                    textBox11.Visible = true;
+                }
+
+
+                try
+                {
+                    con2.Open();
+                    SqlCommand cd = new SqlCommand("SELECT * FROM QuestionAnswers WHERE quiz_id = '" + C_ID + "' ", con2);
+                    SqlDataReader d = cd.ExecuteReader();
+                    while (d.Read() == true)
+                    {
+                        if ((string)d[("item_format")] == "Multiple Choice")
+                        {
+
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = (string)d[("question")];
+                            exams.SubItems.Add((string)d[("answer_a")]);
+                            exams.SubItems.Add((string)d[("answer_b")]);
+                            exams.SubItems.Add((string)d[("answer_c")]);
+                            exams.SubItems.Add((string)d[("answer_d")]);
+                            exams.SubItems.Add((string)d[("correct_answer")]);
+                            exams.SubItems.Add((string)d[("image")]);                            
+                            exams.SubItems.Add((string)d[("QA_time_limit")]);
+                            exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                            exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+                            MultipleChoiceLV.Items.Add(exams);
+
+
+                        }//end MC
+
+                        else if ((string)d[("item_format")] == "Short Answer")
+                        {
+
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = (string)d[("question")];
+                            exams.SubItems.Add((string)d[("correct_answer")]);
+                            exams.SubItems.Add((string)d[("image")]);                           
+                            exams.SubItems.Add((string)d[("QA_time_limit")]);
+                            exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                            exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+                            ShortAnswerLV.Items.Add(exams);
+
+
+                        }//end MC
+
+                        else if ((string)d[("item_format")] == "True/False")
+                        {
+
+                            ListViewItem exams = new ListViewItem();
+                            exams.Text = (string)d[("question")];
+                            exams.SubItems.Add((string)d[("correct_answer")]);
+                            exams.SubItems.Add((string)d[("image")]);                            
+                            exams.SubItems.Add((string)d[("QA_time_limit")]);
+                            exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                            exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+                            TrueOrFalseLV.Items.Add(exams);
+
+
+                        }//end MC
+
+
+
+
+
+
+                    }//End While
+                }// End try
+
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
 
             }
 
-            else
-            {
-                label17.Visible = false;
-                bunifuDropdown1.Visible = false;
-                textBox12.Visible = false;
 
 
-                label24.Visible = false;
-                bunifuDropdown2.Visible = false;
-                textBox10.Visible = false;
-
-
-                label20.Visible = false;
-                bunifuDropdown3.Visible = false;
-                textBox11.Visible = false;
-            }
-
+         
 
 
         }
