@@ -42,7 +42,6 @@ C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debu
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLearnOfficial.exe
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLearnOfficial.pdb
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\MaterialSkin.dll
-C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.AddParticipantAccount.resources
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ChooseUser.resources
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.CreateFacilitator.resources
@@ -254,3 +253,4 @@ C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debu
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GroupMain.resources
 C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.PublicJoin.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
+C:\Users\Stephen_Kent\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.Manual2.resources
