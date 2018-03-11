@@ -71,44 +71,56 @@ namespace TooLearnOfficial
     */
             
             label_average.Text = PG;
-/*
+            
+            /*
+                        int TotalNumberofQuiz;
+                        int TotalScoreonQuiz = 0;
+                        float average;
 
-            int TotalNumberofQuiz;
-            int TotalScoreonQuiz = 0;
-            float average;
+                        for(int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
+                        {
+                            TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[1].Value);  
+                        }
+                        //label_average.Text += TotalScoreonQuiz.ToString();
 
-            for(int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
-            {
-                TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[1].Value);  
-            }
-            //label_average.Text += TotalScoreonQuiz.ToString();
+                        TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
+                        average = TotalScoreonQuiz / TotalNumberofQuiz;
 
-            TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
-            average = TotalScoreonQuiz / TotalNumberofQuiz;
+                        label_average.Text += TotalScoreonQuiz.ToString();  
 
-            label_average.Text += TotalScoreonQuiz.ToString();  
+            */
 
-*/
-
-            //if(average >= 90)
+            //if (average >= 95 && average <= 100)
             //{
-            //    label_pass_or_fail.Text = "A";
+            //    labelLetterGrade.Text = "A"; // Excellent
             //}
-            //else if(average >= 90)
+            //else if (average >= 89 && average <= 94)
             //{
-            //    label_pass_or_fail.Text = "B";
+            //    labelLetterGrade.Text = "B+"; // Very Good
             //}
-            //else if (average >= 70)
+            //else if (average >= 83 && average <= 88)
             //{
-            //    label_pass_or_fail.Text = "C";
+            //    labelLetterGrade.Text = "B";  // Very Good
             //}
-            //else if (average <= 74)
+            //else if (average >= 77 && average <= 82)
             //{
-            //    label_pass_or_fail.Text = "F";
+            //    labelLetterGrade.Text = "C+";  // Good
             //}
+            //else if (average >= 71 && average <= 76)
+            //{
+            //    labelLetterGrade.Text = "C";  // Satisfaction
+            //}
+            //else if (average >= 65 && average <= 70)
+            //{
+            //    labelLetterGrade.Text = "D+";  // Satisfaction
+            //}
+            //else if (average >= 60 && average <= 64)
+            //{
+            //    labelLetterGrade.Text = "D";  // Passed
+            //}            
             //else
             //{
-
+            //    labelLetterGrade.Text = "F"; // Failed
             //}
         }
     }

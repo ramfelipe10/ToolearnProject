@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewScoreRecord));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -51,6 +51,7 @@
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label_average = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelLetterGrade = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -187,19 +188,19 @@
             // 
             // DataGridViewGrade
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewGrade.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DataGridViewGrade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewGrade.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridViewGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridViewGrade.DoubleBuffered = true;
             this.DataGridViewGrade.EnableHeadersVisualStyles = false;
@@ -298,11 +299,22 @@
             this.label_average.AutoSize = true;
             this.label_average.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_average.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_average.Location = new System.Drawing.Point(643, 44);
+            this.label_average.Location = new System.Drawing.Point(627, 44);
             this.label_average.Name = "label_average";
-            this.label_average.Size = new System.Drawing.Size(90, 18);
+            this.label_average.Size = new System.Drawing.Size(106, 18);
             this.label_average.TabIndex = 27;
-            this.label_average.Text = "Letter Grade";
+            this.label_average.Text = "Average Grade";
+            // 
+            // labelLetterGrade
+            // 
+            this.labelLetterGrade.AutoSize = true;
+            this.labelLetterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLetterGrade.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelLetterGrade.Location = new System.Drawing.Point(456, 44);
+            this.labelLetterGrade.Name = "labelLetterGrade";
+            this.labelLetterGrade.Size = new System.Drawing.Size(90, 18);
+            this.labelLetterGrade.TabIndex = 28;
+            this.labelLetterGrade.Text = "Letter Grade";
             // 
             // ViewScoreRecord
             // 
@@ -310,6 +322,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(809, 428);
+            this.Controls.Add(this.labelLetterGrade);
             this.Controls.Add(this.label_average);
             this.Controls.Add(this.bunifuCustomLabel8);
             this.Controls.Add(this.bunifuCustomLabel7);
@@ -360,5 +373,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuCustomLabel label_average;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelLetterGrade;
     }
 }
