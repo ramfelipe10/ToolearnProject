@@ -203,8 +203,13 @@ namespace TooLearnOfficial
             PNG.BorderColor = iTextSharp.text.BaseColor.GRAY;
             PNG.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
             PNG.BorderWidth = 5f;
+
+            //Chunk c1 = new Chunk("TOOLEARN APPLICATION", FontFactory.GetFont("Times New Roman"));
+            //c1.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
+            //c1.Font.SetStyle(0);
+            //c1.Font.Size = 14;
             
-            
+
 
 
 
@@ -254,6 +259,7 @@ namespace TooLearnOfficial
                     PdfWriter.GetInstance(pdfdoc, stream);
                     pdfdoc.Open();
                     pdfdoc.Add(PNG);
+                    pdfdoc.Add(c1);
                     pdfdoc.Add(pdftable);                    
                     pdfdoc.Close();
                     stream.Close();
