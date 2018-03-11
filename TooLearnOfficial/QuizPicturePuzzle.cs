@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+    
 namespace TooLearnOfficial
 {
     public partial class QuizPicturePuzzle : Form
     {
 
-
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string imagesrc;
 
         public static string SetValueForText2 = "", SetValueForText3 = "", time = "";
@@ -160,11 +161,24 @@ namespace TooLearnOfficial
 
         private void create_Click(object sender, EventArgs e)
         {
-           
-                  
-            if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0)
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From quizzes Where quiz_title ='" + textBoxQuizTitle.Text + "' ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            int check = Convert.ToInt32(dt.Rows[0][0].ToString());
+
+
+
+
+
+                if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0)
             {
                 Dialogue.Show("Please Fill All Fields", "", "Ok", "Cancel");
+
+            }
+
+            else if (check >=1 )
+            {
+                Dialogue.Show("Quiz already exist, please use other Title", "", "Ok", "Cancel");
 
             }
 

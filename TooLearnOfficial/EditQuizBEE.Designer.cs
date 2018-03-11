@@ -149,7 +149,6 @@
             this.CurrentNumTF = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.MultipleChoice = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.bunifuElipse11 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -1018,7 +1017,7 @@
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.Firebrick;
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.Firebrick;
             this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton2.BorderRadius = 0;
             this.bunifuFlatButton2.ButtonText = "Multiple Choice";
@@ -1041,7 +1040,7 @@
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.selected = true;
             this.bunifuFlatButton2.Size = new System.Drawing.Size(154, 32);
             this.bunifuFlatButton2.TabIndex = 208;
             this.bunifuFlatButton2.Text = "Multiple Choice";
@@ -1623,7 +1622,6 @@
             this.MultipleChoice.BackColor = System.Drawing.Color.Silver;
             this.MultipleChoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MultipleChoice.BackgroundImage")));
             this.MultipleChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MultipleChoice.Controls.Add(this.label6);
             this.MultipleChoice.Controls.Add(this.bunifuDropdown2);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel12);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel6);
@@ -1661,16 +1659,6 @@
             this.MultipleChoice.Quality = 10;
             this.MultipleChoice.Size = new System.Drawing.Size(1002, 268);
             this.MultipleChoice.TabIndex = 211;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(407, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 24);
-            this.label6.TabIndex = 214;
-            this.label6.Text = "Answer:";
             // 
             // bunifuElipse11
             // 
@@ -1754,9 +1742,9 @@
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.ShortAnswerLV);
-            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
+            this.Controls.Add(this.trueORfalse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditQuizBEE";
@@ -1918,6 +1906,5 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse11;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
-        private System.Windows.Forms.Label label6;
     }
 }

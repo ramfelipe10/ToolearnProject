@@ -581,7 +581,7 @@ namespace TooLearnOfficial
                 textBox11.Visible = false; 
             }
 
-            label2.Text = time_limit;
+           
 
 
         }

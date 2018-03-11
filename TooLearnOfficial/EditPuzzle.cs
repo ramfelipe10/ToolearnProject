@@ -726,8 +726,7 @@ namespace TooLearnOfficial
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)
         {
-            string TimeF;
-          
+            string TimeF;        
 
                
 
@@ -881,8 +880,7 @@ namespace TooLearnOfficial
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string TimeF;
-           
+            string TimeF;           
 
 
                     if (textBox10.Visible == false)
@@ -1420,117 +1418,19 @@ namespace TooLearnOfficial
         private void button1_Click(object sender, EventArgs e)
         {
             string TimeF;
-            switch (button1.Text)
+
+
+
+            if (textBox12.Visible == false)
+
             {
-                case "Next":
 
-
-                    if (textBox12.Visible == false)
-
-                    {
-
-                        if (textBox9.Text == "" || textBox8.Text == "" || textBox3.Text == "")
-                        {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                        }
-
-                        else
-                        {
-
-                            ListViewItem exams2 = new ListViewItem();
-                            exams2.Text = textBox9.Text;
-                            exams2.SubItems.Add(textBox8.Text);
-                            //
-                            exams2.SubItems.Add(pictureBox4.ImageLocation);
-
-                            exams2.SubItems.Add(textBox12.Text);
-                            exams2.SubItems.Add(textBox3.Text);
-                            //
-                            ShortAnswerLV.Items.Add(exams2);
-
-                            currentNumOfItems++;
-
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
-
-
-                            //
-                            pictureBox4.ImageLocation = null;
-                            //
-
-                            resetAllSA();
-
-                            NoItems.Text = ShortAnswerLV.Items.Count.ToString();
-
-
-
-                            load_total();
-
-                        }
-
-                    }
-
-
-                    if (textBox12.Visible == true)
-                    {
-
-                        if (textBox9.Text == "" || textBox8.Text == "" || textBox3.Text == "" || textBox12.Text == "")
-                        {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-
-                        }
-
-                        else
-                        {
-
-                            ListViewItem exams2 = new ListViewItem();
-                            exams2.Text = textBox9.Text;
-                            exams2.SubItems.Add(textBox8.Text);
-                            //
-                            exams2.SubItems.Add(pictureBox4.ImageLocation);
-
-                            if (bunifuDropdown1.selectedIndex == 0)//Minutes
-                            {
-                                TimeF = textBox12.Text + "(Minutes)";
-                            }
-
-                            else
-                            {
-                                TimeF = textBox12.Text + "(Seconds)";
-                            }
-
-                            exams2.SubItems.Add(TimeF);
-                            exams2.SubItems.Add(textBox3.Text);
-                            //
-                            ShortAnswerLV.Items.Add(exams2);
-
-                            currentNumOfItems++;
-
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
-
-
-                            //
-                            pictureBox4.ImageLocation = null;
-                            //
-
-                            resetAllSA();
-
-                            NoItems.Text = ShortAnswerLV.Items.Count.ToString();
-
-
-
-                            load_total();
-
-                        }
-                    }
-
-                    break;
-
-
-                case "Update":
+                if (textBox9.Text == "" || textBox8.Text == "" || textBox3.Text == "")
+                {
+                    Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                }
+                else
+                {
 
                     int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
                     ListViewItem exams3 = new ListViewItem();
@@ -1538,23 +1438,23 @@ namespace TooLearnOfficial
                     exams3.SubItems.Add(textBox8.Text);
                     //
                     exams3.SubItems.Add(pictureBox4.ImageLocation);
-                   
-
-                        if (bunifuDropdown1.selectedIndex == 0)//Minutes
-                        {
-                            TimeF = textBox12.Text + "(Minutes)";
-                        }
-
-                        else
-                        {
-                            TimeF = textBox12.Text + "(Seconds)";
-                        }
 
 
-                        exams3.SubItems.Add(TimeF);
+                    if (bunifuDropdown1.selectedIndex == 0)//Minutes
+                    {
+                        TimeF = textBox12.Text + "(Minutes)";
+                    }
+
+                    else
+                    {
+                        TimeF = textBox12.Text + "(Seconds)";
+                    }
 
 
-                   
+                    exams3.SubItems.Add(TimeF);
+
+
+
                     exams3.SubItems.Add(textBox3.Text);
                     //
 
@@ -1573,10 +1473,69 @@ namespace TooLearnOfficial
 
                     load_total();
 
-                    break;
+                }
+            }
+
+            else
+            {
+
+                if (textBox9.Text == "" || textBox8.Text == "" || textBox3.Text == "" || textBox12.Text == "")
+                {
+                    Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                }
+
+                else
+                {
+
+                    int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
+                    ListViewItem exams3 = new ListViewItem();
+                    exams3.Text = textBox9.Text;
+                    exams3.SubItems.Add(textBox8.Text);
+                    //
+                    exams3.SubItems.Add(pictureBox4.ImageLocation);
+
+
+                    if (bunifuDropdown1.selectedIndex == 0)//Minutes
+                    {
+                        TimeF = textBox12.Text + "(Minutes)";
+                    }
+
+                    else
+                    {
+                        TimeF = textBox12.Text + "(Seconds)";
+                    }
+
+
+                    exams3.SubItems.Add(TimeF);
+
+
+
+                    exams3.SubItems.Add(textBox3.Text);
+                    //
+
+                    ShortAnswerLV.Items.RemoveAt(listPosition);
+                    ShortAnswerLV.Items.Insert(listPosition, exams3);
+                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                    currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                    CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                    CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+                    resetAllSA(); ;
+                    button1.Text = "Next";
+
+                    NoItems.Text = ShortAnswerLV.Items.Count.ToString();
+
+                    load_total();
+
+                }
 
 
             }
+
+
+
+
         }
 
         private void updateSA()

@@ -580,77 +580,83 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
-        /*    
-            if (bunifuDropdown6.selectedIndex == -1)
+
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From quizzes Where quiz_title ='" + textBoxQuizTitle.Text + "' ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            int check = Convert.ToInt32(dt.Rows[0][0].ToString());
+
+            if (check >= 1)
             {
-                Dialogue.Show("Please Indicate Number Of Items", "", "Ok", "Cancel");
+
+                Dialogue.Show("Quiz already exist, please use other Title", "", "Ok", "Cancel");
             }
 
             else
-            { */
+            {
 
                 if (textBox7.Text == "")
                 {
                     label20.Visible = true; //MC
-                bunifuDropdown2.Visible = true;
+                    bunifuDropdown2.Visible = true;
                     textBox11.Visible = true;
 
 
                     label17.Visible = true; //SA
-                bunifuDropdown3.Visible = true;
+                    bunifuDropdown3.Visible = true;
                     textBox12.Visible = true;
 
 
                     label24.Visible = true; //TF
-                bunifuDropdown4.Visible = true;
+                    bunifuDropdown4.Visible = true;
                     textBox10.Visible = true;
 
                     label5.Visible = false; //TimeLimitQuiz
                     textBox7.Visible = false;
-                bunifuDropdown1.Visible = false;
-                  
+                    bunifuDropdown1.Visible = false;
+
                 }
 
 
                 else
                 {
                     label20.Visible = false; //MC
-                bunifuDropdown2.Visible = false;
-                textBox11.Visible = false;
+                    bunifuDropdown2.Visible = false;
+                    textBox11.Visible = false;
 
 
                     label17.Visible = false; //SA
-                bunifuDropdown3.Visible = false;
-                textBox12.Visible = false;
+                    bunifuDropdown3.Visible = false;
+                    textBox12.Visible = false;
 
 
                     label24.Visible = false; //TF
-                bunifuDropdown4.Visible = false;
-                textBox10.Visible = false;
+                    bunifuDropdown4.Visible = false;
+                    textBox10.Visible = false;
 
 
                     label5.Visible = true; //TimeLimitQuiz
                     textBox7.Visible = true;
-               
+
                     textBox7.Enabled = false;
 
                 }
-            /*  numOfItems = int.Parse(bunifuDropdown6.selectedValue); */
 
-                currentNumOfItems = 1;   
-            
+
+                currentNumOfItems = 1;
+
                 bunifuFlatButton5.Enabled = false;
                 enable_fieldsMC();
-                currentnumMC.Text= currentNumOfItems.ToString();
-                CurrentnumSA.Text= currentNumOfItems.ToString();
-                CurrentNumTF.Text= currentNumOfItems.ToString();
+                currentnumMC.Text = currentNumOfItems.ToString();
+                CurrentnumSA.Text = currentNumOfItems.ToString();
+                CurrentNumTF.Text = currentNumOfItems.ToString();
                 MultipleChoiceLV.Enabled = true;
                 ShortAnswerLV.Enabled = true;
                 TrueOrFalseLV.Enabled = true;
 
-            bunifuFlatButton2.selected = true;
+                bunifuFlatButton2.selected = true;
 
-       //     } 
+            }
             
         }
 
