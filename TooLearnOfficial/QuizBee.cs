@@ -31,6 +31,27 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
+
+        private int totalitems()
+        {
+            int sum = 0;
+            foreach (ListViewItem li in MultipleChoiceLV.Items)
+            {
+                sum += int.Parse(li.SubItems[8].Text);
+            }
+            foreach (ListViewItem li in TrueOrFalseLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+            foreach (ListViewItem li in ShortAnswerLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+
+            return sum;
+        }
+
+
         private void resetAllMC()
         {
             textBox11.Text = null;
@@ -1540,8 +1561,14 @@ namespace TooLearnOfficial
                 DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
                 if (result == DialogResult.Yes)
                 {
+                    int item = totalitems();
+                    string totalscore = item.ToString();
+
                     try
                     {
+
+                       
+
 
                         con.Open();
 
@@ -1566,7 +1593,7 @@ namespace TooLearnOfficial
 
 
 
-                            String query = "INSERT INTO quizzes (game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('Quiz Bee','" + textBoxQuizTitle.Text + "', '" + Time + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (total_score,game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + totalscore + "','Quiz Bee','" + textBoxQuizTitle.Text + "', '" + Time + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
 
@@ -1579,7 +1606,7 @@ namespace TooLearnOfficial
                         else
                         {
 
-                            String query = "INSERT INTO quizzes (game_type,quiz_title,facilitator_id,date_created) VALUES ('Quiz Bee','" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (total_score,game_type,quiz_title,facilitator_id,date_created) VALUES ('" + totalscore + "','Quiz Bee','" + textBoxQuizTitle.Text + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
 

@@ -42,6 +42,26 @@ namespace TooLearnOfficial
             slice_image();
         }
 
+
+        private int totalitems()
+        {
+            int sum = 0;
+            foreach (ListViewItem li in MultipleChoiceLV.Items)
+            {
+                sum += int.Parse(li.SubItems[8].Text);
+            }
+            foreach (ListViewItem li in TrueOrFalseLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+            foreach (ListViewItem li in ShortAnswerLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+
+            return sum;
+        }
+
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -781,6 +801,7 @@ namespace TooLearnOfficial
 
                             }
                             exams.SubItems.Add(textBox2.Text);
+                            exams.SubItems.Add(MultipleChoiceLV.Items[listPosition].SubItems[9].Text);
                             //
                             MultipleChoiceLV.Items.RemoveAt(listPosition);
                             MultipleChoiceLV.Items.Insert(listPosition, exams);
@@ -850,6 +871,7 @@ namespace TooLearnOfficial
 
                             }
                             exams.SubItems.Add(textBox2.Text);
+                            exams.SubItems.Add(MultipleChoiceLV.Items[listPosition].SubItems[9].Text);
                             //
                             MultipleChoiceLV.Items.RemoveAt(listPosition);
                             MultipleChoiceLV.Items.Insert(listPosition, exams);
@@ -925,6 +947,7 @@ namespace TooLearnOfficial
                             }
 
                             exams1.SubItems.Add(textBox5.Text);
+                            exams1.SubItems.Add(TrueOrFalseLV.Items[listPosition].SubItems[5].Text);
                             //
 
                             TrueOrFalseLV.Items.RemoveAt(listPosition);
@@ -990,6 +1013,7 @@ namespace TooLearnOfficial
                     }
 
                     exams1.SubItems.Add(textBox5.Text);
+                    exams1.SubItems.Add(TrueOrFalseLV.Items[listPosition].SubItems[5].Text);
                     //
 
                     TrueOrFalseLV.Items.RemoveAt(listPosition);
@@ -1137,14 +1161,15 @@ namespace TooLearnOfficial
 
             else
             {
-                DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
+                DialogResult result = Dialogue1.Show("Quiz will be Updated. Do you Wish to Continue?", "", "Ok", "Cancel");
                 if (result == DialogResult.Yes)
                 {
+                    int item = totalitems();
+                    string totalscore = item.ToString();
 
 
-
-                    try
-                    {
+                   try
+                  {
 
 
                    
@@ -1154,6 +1179,14 @@ namespace TooLearnOfficial
                         con.Close();// close muna
 
                         int examID = Convert.ToInt32(QuizBank.SetValueForText1);// ID OF QUIZ
+
+
+                        con.Open();
+                        String set = "UPDATE quizzes SET total_score='" + totalscore + "' WHERE quiz_id='" + examID + "' ";
+                        SqlDataAdapter sd = new SqlDataAdapter(set, con);
+                        sd.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+
 
                         SqlDataAdapter cmd = new SqlDataAdapter("select quiz_time_limit from quizzes where quiz_id = '" + examID + "' AND facilitator_id = '" + Program.user_id + "' ", con);
                         DataTable dt = new DataTable();
@@ -1180,7 +1213,7 @@ namespace TooLearnOfficial
                             try
                             {
 
-                                con2.Open();
+                                
 
                                 if (Time_limit_status == "Null")
                                 {
@@ -1219,7 +1252,7 @@ namespace TooLearnOfficial
                                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
                             }
-                            con2.Close();
+                            
 
                         }
 
@@ -1235,7 +1268,7 @@ namespace TooLearnOfficial
                             try
                             {
 
-                                con2.Open();
+                              
 
                                 if (Time_limit_status == "Null")
                                 {
@@ -1271,7 +1304,7 @@ namespace TooLearnOfficial
                                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
                             }
-                            con2.Close();
+                         
 
                         }
 
@@ -1294,7 +1327,7 @@ namespace TooLearnOfficial
                             try
                             {
 
-                                con2.Open();
+                             
 
 
                                 if (Time_limit_status == "Null")
@@ -1334,7 +1367,7 @@ namespace TooLearnOfficial
                                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
                             }
-                            con2.Close();
+                            
 
                         }
 
@@ -1342,7 +1375,7 @@ namespace TooLearnOfficial
 
                         // / // // / /// / // / // / // / / / / //
 
-                    }
+                   }
 
 
 
@@ -1350,9 +1383,9 @@ namespace TooLearnOfficial
 
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
-                    }
+                    } 
 
 
 
@@ -1456,6 +1489,7 @@ namespace TooLearnOfficial
 
 
                     exams3.SubItems.Add(textBox3.Text);
+                    exams3.SubItems.Add(ShortAnswerLV.Items[listPosition].SubItems[5].Text);
                     //
 
                     ShortAnswerLV.Items.RemoveAt(listPosition);
@@ -1511,6 +1545,7 @@ namespace TooLearnOfficial
 
 
                     exams3.SubItems.Add(textBox3.Text);
+                    exams3.SubItems.Add(ShortAnswerLV.Items[listPosition].SubItems[5].Text);
                     //
 
                     ShortAnswerLV.Items.RemoveAt(listPosition);

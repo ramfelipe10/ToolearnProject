@@ -129,7 +129,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+               // Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
 
 
@@ -141,9 +141,10 @@ namespace TooLearnOfficial
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
-          
-           {
+        //    if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
+                if (bunifuCustomDataGrid1.CurrentRow.Selected)
+
+                {
                 QuizName = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 GameType = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 
@@ -214,7 +215,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+              //  Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
         }
 
@@ -378,7 +379,7 @@ namespace TooLearnOfficial
 
             catch (Exception ex)
             {
-                Dialogue.Show(" ' " + ex.Message.ToString() + "'", "", "Ok", "Cancel");
+              //  Dialogue.Show(" ' " + ex.Message.ToString() + "'", "", "Ok", "Cancel");
                 
             }
 

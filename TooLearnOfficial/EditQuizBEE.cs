@@ -31,6 +31,26 @@ namespace TooLearnOfficial
             InitializeComponent();
         }
 
+
+        private int totalitems()
+        {
+            int sum = 0;
+            foreach (ListViewItem li in MultipleChoiceLV.Items)
+            {
+                sum += int.Parse(li.SubItems[8].Text);
+            }
+            foreach (ListViewItem li in TrueOrFalseLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+            foreach (ListViewItem li in ShortAnswerLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+
+            return sum;
+        }
+
         private void resetAllMC()
         {
             textBox11.Text = null;
@@ -1394,10 +1414,13 @@ namespace TooLearnOfficial
 
             else
             {
-                DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
+                DialogResult result = Dialogue1.Show("Quiz will be Updated. Do you Wish to Continue?", "", "Ok", "Cancel");
                 if (result == DialogResult.Yes)
                 {
-                       try
+                    int item = totalitems();
+                    string totalscore = item.ToString();
+
+                    try
                       {
 
 
@@ -1408,8 +1431,17 @@ namespace TooLearnOfficial
                             cmd.Fill(dt);
                             int examID=Convert.ToInt32(dt.Rows[0][0].ToString());
 
-                    
-                    for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
+                        con.Open();
+                        String set = "UPDATE quizzes SET total_score='" + totalscore + "' WHERE quiz_id='" + examID + "' ";
+                        SqlDataAdapter sd = new SqlDataAdapter(set, con);
+                        sd.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+
+
+
+
+
+                        for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
                             {
                                 ListViewItem exams = MultipleChoiceLV.Items[i];
 
@@ -1464,11 +1496,11 @@ namespace TooLearnOfficial
 
                                 catch (Exception ex)
                                 {
-                                    MessageBox.Show(ex.Message);
-                            
-                            
+                                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
-                        }
+
+
+                            }
 
                       
 
@@ -1532,9 +1564,9 @@ namespace TooLearnOfficial
 
                                 catch (Exception ex)
                                 {
-                            MessageBox.Show(ex.Message);
-                           
-                        }
+                                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+                            }
 
                       
 
@@ -1604,9 +1636,9 @@ namespace TooLearnOfficial
 
                                 catch (Exception ex)
                                 {
-                            MessageBox.Show(ex.Message);
-                           
-                        }
+                                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+                            }
 
 
                     }
@@ -1623,8 +1655,8 @@ namespace TooLearnOfficial
 
                      catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
-                     
+                        Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
                     }
 
 

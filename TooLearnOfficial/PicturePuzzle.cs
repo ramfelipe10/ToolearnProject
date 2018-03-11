@@ -40,7 +40,27 @@ namespace TooLearnOfficial
             InitializeComponent();
             slice_image();
         }
-       
+
+
+        private int totalitems()
+        {
+            int sum = 0;
+            foreach (ListViewItem li in MultipleChoiceLV.Items)
+            {
+                sum += int.Parse(li.SubItems[8].Text);
+            }
+            foreach (ListViewItem li in TrueOrFalseLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+            foreach (ListViewItem li in ShortAnswerLV.Items)
+            {
+                sum += int.Parse(li.SubItems[4].Text);
+            }
+
+            return sum;
+        }
+
         void load_total()
         {
 
@@ -1449,6 +1469,9 @@ namespace TooLearnOfficial
                 DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
                 if (result == DialogResult.Yes)
                 {
+                    int item = totalitems();
+                    string totalscore = item.ToString();
+
                     try
                     {
 
@@ -1458,7 +1481,7 @@ namespace TooLearnOfficial
 
                         if(time_limit==null || time_limit == "") {
 
-                            String query = "INSERT INTO quizzes (puzzle_image,game_type,quiz_title,facilitator_id,date_created) VALUES ('" + Picture + "','Picture Puzzle','" + title + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (total_score,puzzle_image,game_type,quiz_title,facilitator_id,date_created) VALUES ('" + totalscore + "','" + Picture + "','Picture Puzzle','" + title + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
                         }
@@ -1471,7 +1494,7 @@ namespace TooLearnOfficial
 
 
 
-                            String query = "INSERT INTO quizzes (puzzle_image,game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + Picture + "','Picture Puzzle','" + title + "','" + time_limit + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (total_score,puzzle_image,game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + totalscore + "','" + Picture + "','Picture Puzzle','" + title + "','" + time_limit + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
                         }

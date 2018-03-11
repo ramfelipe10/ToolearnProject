@@ -169,6 +169,7 @@
             this.lsbJoined.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbJoined.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lsbJoined.FormattingEnabled = true;
+            this.lsbJoined.HorizontalScrollbar = true;
             this.lsbJoined.ItemHeight = 18;
             this.lsbJoined.Location = new System.Drawing.Point(23, 24);
             this.lsbJoined.Name = "lsbJoined";
