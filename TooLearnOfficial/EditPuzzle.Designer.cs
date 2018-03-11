@@ -69,7 +69,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -156,7 +155,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -215,6 +213,7 @@
             this.button2.TabIndex = 185;
             this.button2.Text = "Next";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label32
@@ -394,6 +393,8 @@
             this.button1.TabIndex = 158;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label21
             // 
@@ -613,19 +614,6 @@
             this.bunifuImageButton4.TabIndex = 254;
             this.bunifuImageButton4.TabStop = false;
             this.bunifuImageButton4.Zoom = 10;
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.Image = global::TooLearnOfficial.Properties.Resources.Refresh_Black;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(775, 165);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(80, 57);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 253;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
             // 
             // bunifuFlatButton4
             // 
@@ -1372,6 +1360,7 @@
             this.buttonNextQuestion.TabIndex = 139;
             this.buttonNextQuestion.Text = "Next";
             this.buttonNextQuestion.UseVisualStyleBackColor = false;
+            this.buttonNextQuestion.Visible = false;
             this.buttonNextQuestion.Click += new System.EventHandler(this.buttonNextQuestion_Click);
             // 
             // label7
@@ -1581,14 +1570,12 @@
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.bunifuImageButton4);
-            this.Controls.Add(this.bunifuImageButton3);
             this.Controls.Add(this.bunifuFlatButton4);
             this.Controls.Add(this.bunifuFlatButton3);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.NoItemsLBL);
             this.Controls.Add(this.Format);
-            this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.QuizFormat);
             this.Controls.Add(this.NoItems);
@@ -1598,9 +1585,10 @@
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.MultipleChoiceLV);
             this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.TrueOrFalseLV);
+            this.Controls.Add(this.trueORfalse);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.MultipleChoice);
-            this.Controls.Add(this.trueORfalse);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditPuzzle";
@@ -1617,7 +1605,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
@@ -1682,7 +1669,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;

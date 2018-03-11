@@ -358,8 +358,7 @@ namespace TooLearnOfficial
 
 
 
-            if (textBox11.Visible == true)
-            {
+          
 
                 string str = exams.SubItems[7].Text;
                 int index = str.IndexOf('(');
@@ -408,7 +407,7 @@ namespace TooLearnOfficial
                 }
 
 
-            }//end if
+          
             textBox2.Text = exams.SubItems[8].Text;
 
 
@@ -434,8 +433,7 @@ namespace TooLearnOfficial
             }
 
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
-            if (textBox10.Visible == true)
-            {
+           
                 string str = exams.SubItems[3].Text;
                 int index = str.IndexOf('(');
                 string sub;
@@ -483,7 +481,7 @@ namespace TooLearnOfficial
                 }
 
 
-            }//end IF
+          
             textBox5.Text = exams.SubItems[4].Text;
 
 
@@ -622,8 +620,7 @@ namespace TooLearnOfficial
 
             }
 
-
-
+           
          
 
 
@@ -730,138 +727,9 @@ namespace TooLearnOfficial
         private void buttonNextQuestion_Click(object sender, EventArgs e)
         {
             string TimeF;
-            switch (buttonNextQuestion.Text)
-            {
-                case "Next":
+          
 
-
-                    if (textBox11.Visible == false)
-
-                    {
-
-                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == "")
-                        {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                        }
-
-                        else
-                        {
-
-                            ListViewItem exams4 = new ListViewItem();
-                            exams4.Text = textBoxQuizQuestion.Text;
-                            exams4.SubItems.Add(textBoxQuizChoiceA.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceB.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceC.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceD.Text);
-                            RightAnswer = RightAnswer.TrimStart(',');
-                            exams4.SubItems.Add(RightAnswer);
-                            //
-                            exams4.SubItems.Add(pictureBox3.ImageLocation);
-
-                            exams4.SubItems.Add(textBox11.Text);
-                            exams4.SubItems.Add(textBox2.Text);
-                            //
-                            MultipleChoiceLV.Items.Add(exams4);
-                            currentNumOfItems++;
-
-
-
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
-
-
-
-                            RightAnswer = null;///rightanswer
-                            //
-                            pictureBox3.ImageLocation = null;
-                            //
-                            resetAllMC();
-
-                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-
-
-
-                            load_total();
-
-
-
-                        }
-                    }
-
-                    // if (textBox11.Visible == true)
-
-                    else
-                    {
-
-                        if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
-                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null || RightAnswer == "")
-                        {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                        }
-
-                        else
-                        {
-                            ListViewItem exams4 = new ListViewItem();
-                            exams4.Text = textBoxQuizQuestion.Text;
-                            exams4.SubItems.Add(textBoxQuizChoiceA.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceB.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceC.Text);
-                            exams4.SubItems.Add(textBoxQuizChoiceD.Text);
-                            RightAnswer = RightAnswer.TrimStart(',');
-                            exams4.SubItems.Add(RightAnswer);
-                            //
-                            exams4.SubItems.Add(pictureBox3.ImageLocation);
-
-                            if (bunifuDropdown3.selectedIndex == 0)//Minutes
-                            {
-                                TimeF = textBox11.Text + "(Minutes)";
-                            }
-
-                            else
-                            {
-                                TimeF = textBox11.Text + "(Seconds)";
-                            }
-                            exams4.SubItems.Add(TimeF);//TimeLimit
-
-                            exams4.SubItems.Add(textBox2.Text);
-                            //
-                            MultipleChoiceLV.Items.Add(exams4);
-                            currentNumOfItems++;
-
-
-
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
-
-
-
-                            RightAnswer = null;///rightanswer
-                            //
-                            pictureBox3.ImageLocation = null;
-                            //
-                            resetAllMC();
-
-                            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-
-
-
-                            load_total();
-
-                        }
-
-
-                    }
-
-
-                    break;
-
-
-
-                case "Update":
-
+               
 
                     if (textBox11.Visible == false)
 
@@ -889,7 +757,7 @@ namespace TooLearnOfficial
                             exams.SubItems.Add(pictureBox3.ImageLocation);
 
 
-                            if (textBox11.Visible == true)
+                            if (textBox11.Visible == false)
                             {
                                 if (bunifuDropdown3.selectedIndex == 0)//Minutes
                                 {
@@ -1004,117 +872,95 @@ namespace TooLearnOfficial
                         }
 
                     }
-                    break;
+                   
 
 
-            }
+          
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             string TimeF;
-            switch (button2.Text)
-            {
-                case "Next":
+           
+
 
                     if (textBox10.Visible == false)
 
                     {
 
-                        if (textBox13.Text == "" || textBox5.Text == "")
+                if (textBox13.Text == "" || textBox5.Text == "")
+                {
+                    Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                }
+
+                else
                         {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                        }
 
-                        else
-                        {
-
-                            ListViewItem exams2 = new ListViewItem();
-                            exams2.Text = textBox13.Text;
-                            exams2.SubItems.Add(bunifuDropdown5.selectedValue);
+                            int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
+                            ListViewItem exams1 = new ListViewItem();
+                            exams1.Text = textBox13.Text;
+                            exams1.SubItems.Add(bunifuDropdown5.selectedValue);
                             //
-                            exams2.SubItems.Add(pictureBox5.ImageLocation);
-                            exams2.SubItems.Add(textBox10.Text);
-                            exams2.SubItems.Add(textBox5.Text);
-
-                            //
-
-                            TrueOrFalseLV.Items.Add(exams2);
-                            currentNumOfItems++;
-
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
-
-
-                            //
-                            pictureBox5.ImageLocation = null;
-                            //
-
-                            resetAllTF();
-
-                            NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
-
-                            load_total();
-
-                        }
-                    }
-
-
-                    if (textBox10.Visible == true)
-
-                    {
-
-                        if (textBox10.Text == "" || textBox13.Text == "" || textBox5.Text == "")
-                        {
-                            Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
-                        }
-                        else
-                        {
-                            ListViewItem exams2 = new ListViewItem();
-                            exams2.Text = textBox13.Text;
-                            exams2.SubItems.Add(bunifuDropdown5.selectedValue);
-                            //
-                            exams2.SubItems.Add(pictureBox5.ImageLocation);
-                            if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                            exams1.SubItems.Add(pictureBox5.ImageLocation);
+                            if (textBox10.Visible == false)
                             {
-                                TimeF = textBox10.Text + "(Minutes)";
+
+                                if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                                {
+                                    TimeF = textBox10.Text + "(Minutes)";
+                                }
+
+                                else
+                                {
+                                    TimeF = textBox10.Text + "(Seconds)";
+                                }
+
+                                exams1.SubItems.Add(TimeF);
+
+
                             }
 
                             else
                             {
-                                TimeF = textBox10.Text + "(Seconds)";
+                                exams1.SubItems.Add(textBox10.Text);
                             }
 
-                            exams2.SubItems.Add(TimeF);//TimeLimit
-                            exams2.SubItems.Add(textBox5.Text);
+                            exams1.SubItems.Add(textBox5.Text);
                             //
 
-                            TrueOrFalseLV.Items.Add(exams2);
-                            currentNumOfItems++;
+                            TrueOrFalseLV.Items.RemoveAt(listPosition);
+                            TrueOrFalseLV.Items.Insert(listPosition, exams1);
+                            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
 
-                            currentnumMC.Text = currentNumOfItems.ToString();
-                            CurrentnumSA.Text = currentNumOfItems.ToString();
-                            CurrentNumTF.Text = currentNumOfItems.ToString();
+                            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
-
-                            //
-                            pictureBox5.ImageLocation = null;
-                            //
-
-                            resetAllTF();
+                            resetAllTF(); ;
+                            button2.Text = "Next";
 
                             NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
 
+
                             load_total();
 
+                            
                         }
                     }
-                    break;
 
 
-                case "Update":
+                    else 
+                    {
+
+
+                if (textBox10.Text == "" || textBox13.Text == "" || textBox5.Text == "")
+                {
+                    Dialogue.Show("Please Fill out Blank Fields", "", "Ok", "Cancel");
+                }
+
+                else
+                {
 
                     int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
                     ListViewItem exams1 = new ListViewItem();
@@ -1164,12 +1010,411 @@ namespace TooLearnOfficial
 
                     load_total();
 
-                    break;
 
-
+                }
             }
 
 
+
+
+        }
+
+        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        {
+            if (bunifuCheckbox1.Checked == true)
+            {
+
+                RightAnswer = RightAnswer + ",A";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",A", "");
+            }
+        }
+
+        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
+        {
+            if (bunifuCheckbox2.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",B";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",B", "");
+            }
+        }
+
+        private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
+        {
+            if (bunifuCheckbox3.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",C";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",C", "");
+            }
+
+        }
+
+        private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
+        {
+            if (bunifuCheckbox4.Checked == true)
+            {
+                RightAnswer = RightAnswer + ",D";
+            }
+            else
+            {
+                RightAnswer = RightAnswer.Replace(",D", "");
+            }
+        }
+
+        private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MultipleChoiceLV.Items.Count != 0 && MultipleChoiceLV.SelectedItems.Count != 0)
+
+            {
+
+
+
+
+                currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
+                updateMC();
+
+
+            }
+        }
+
+        private void ShortAnswerLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ShortAnswerLV.Items.Count != 0 && ShortAnswerLV.SelectedItems.Count != 0)
+
+            {
+
+
+
+
+
+                CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.SelectedItems[0].Index + 1);
+                updateSA();
+
+
+            }
+        }
+
+        private void TrueOrFalseLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TrueOrFalseLV.Items.Count != 0 && TrueOrFalseLV.SelectedItems.Count != 0)
+
+            {
+
+
+
+
+
+                CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.SelectedItems[0].Index + 1);
+                updateTF();
+
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            /*  if (MultipleChoiceLV.Items.Count <= 0 && ShortAnswerLV.Items.Count <= 0 && TrueOrFalseLV.Items.Count <= 0)
+              {
+                  Dialogue.Show("Quiz is Empty", "", "Ok", "Cancel");
+              }
+
+              else if (currentNumOfItems < numOfItems)
+              {
+                  Dialogue.Show("Quiz is Incomplete, must be 9 Questions", "", "Ok", "Cancel");
+              } */
+
+            if (button1.Text == "Update" || button2.Text == "Update" || buttonNextQuestion.Text == "Update")
+            {
+
+                Dialogue.Show("Update All Item First", "", "Ok", "Cancel");
+            }
+
+            else
+            {
+                DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
+                if (result == DialogResult.Yes)
+                {
+
+
+
+                    try
+                    {
+
+
+                   
+
+
+
+                        con.Close();// close muna
+
+                        int examID = Convert.ToInt32(QuizBank.SetValueForText1);// ID OF QUIZ
+
+                        SqlDataAdapter cmd = new SqlDataAdapter("select quiz_time_limit from quizzes where quiz_id = '" + examID + "' AND facilitator_id = '" + Program.user_id + "' ", con);
+                        DataTable dt = new DataTable();
+                        cmd.Fill(dt);
+                        string Time = dt.Rows[0][0].ToString();
+
+                        string Time_limit_status;
+
+                        if (Time == null || Time == "")
+                        {
+                            Time_limit_status = "Null";
+                        }
+                        else
+                        {
+                            Time_limit_status = "Active";
+                        }
+
+
+
+
+                        for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
+                        {
+                            ListViewItem exams = MultipleChoiceLV.Items[i];
+                            try
+                            {
+
+                                con2.Open();
+
+                                if (Time_limit_status == "Null")
+                                {
+
+
+
+
+
+                                    con.Open();
+                                    String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Picture Puzzle',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + exams.SubItems[7].Text + "' WHERE answer_id='" + exams.SubItems[9].Text + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+
+                                }
+
+                                else
+                                {
+
+                                    con.Open();
+                                    String query = "UPDATE QuestionAnswers SET item_format='Multiple Choice' ,game_type='Picture Puzzle',question='" + exams.Text + "',answer_a='" + exams.SubItems[1].Text + "',answer_b='" + exams.SubItems[2].Text + "',answer_c='" + exams.SubItems[3].Text + "',answer_d='" + exams.SubItems[4].Text + "',correct_answer='" + exams.SubItems[5].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[8].Text + "',image='" + exams.SubItems[6].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.SubItems[9].Text + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+
+
+                                }
+
+
+
+
+                            }
+
+                            catch (Exception ex)
+                            {
+                                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+                            }
+                            con2.Close();
+
+                        }
+
+
+
+
+
+                        // // // // // // // // 
+
+                        for (int i = 0; i < ShortAnswerLV.Items.Count; i++) //For Short Answers
+                        {
+                            ListViewItem exams = ShortAnswerLV.Items[i];
+                            try
+                            {
+
+                                con2.Open();
+
+                                if (Time_limit_status == "Null")
+                                {
+
+
+
+
+                                    con.Open();
+                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Picture Puzzle',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+                                }
+
+
+
+                                else
+                                {
+
+                                    con.Open();
+                                    String query = "UPDATE QuestionAnswers SET item_format='Short Answer' ,game_type='Picture Puzzle',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+
+                                }
+
+
+                            }
+
+                            catch (Exception ex)
+                            {
+                                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+                            }
+                            con2.Close();
+
+                        }
+
+
+                        // /// // // // // // // 
+
+
+
+
+
+
+
+                        // // // / // // / // / // 
+
+
+
+                        for (int i = 0; i < TrueOrFalseLV.Items.Count; i++) //For True Or False
+                        {
+                            ListViewItem exams = TrueOrFalseLV.Items[i];
+                            try
+                            {
+
+                                con2.Open();
+
+
+                                if (Time_limit_status == "Null")
+                                {
+
+
+
+
+
+                                    con.Open();
+
+                                    String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Picture Puzzle',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + exams.SubItems[3].Text + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+
+                                }
+
+
+                                else
+                                {
+
+                                    con.Open();
+
+                                    String query = "UPDATE QuestionAnswers SET item_format='True/False' ,game_type='Picture Puzzle',question='" + exams.Text + "',correct_answer='" + exams.SubItems[1].Text + "',quiz_id='" + examID + "',points='" + exams.SubItems[4].Text + "',image='" + exams.SubItems[2].Text + "',QA_time_limit='" + Time + "' WHERE answer_id='" + exams.SubItems[5].Text + "' ";
+                                    SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                                    sda.SelectCommand.ExecuteNonQuery();
+                                    con.Close();
+
+
+                                }
+
+
+                            }
+                            catch (Exception ex)
+                            {
+                                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+                            }
+                            con2.Close();
+
+                        }
+
+
+
+                        // / // // / /// / // / // / // / / / / //
+
+                    }
+
+
+
+
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+
+                    }
+
+
+
+                    Dialogue.Show("Successfully Updated", "", "Ok", "Cancel");
+                    this.Hide();
+
+                }
+
+            }
+
+        }
+
+        
+
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1293,8 +1538,7 @@ namespace TooLearnOfficial
                     exams3.SubItems.Add(textBox8.Text);
                     //
                     exams3.SubItems.Add(pictureBox4.ImageLocation);
-                    if (textBox12.Visible == true)
-                    {
+                   
 
                         if (bunifuDropdown1.selectedIndex == 0)//Minutes
                         {
@@ -1310,14 +1554,7 @@ namespace TooLearnOfficial
                         exams3.SubItems.Add(TimeF);
 
 
-                    }
-
-
-
-                    else
-                    {
-                        exams3.SubItems.Add(textBox12.Text);
-                    }
+                   
                     exams3.SubItems.Add(textBox3.Text);
                     //
 
@@ -1340,417 +1577,6 @@ namespace TooLearnOfficial
 
 
             }
-
-        }
-
-        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
-        {
-            if (bunifuCheckbox1.Checked == true)
-            {
-
-                RightAnswer = RightAnswer + ",A";
-            }
-            else
-            {
-                RightAnswer = RightAnswer.Replace(",A", "");
-            }
-        }
-
-        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
-        {
-            if (bunifuCheckbox2.Checked == true)
-            {
-                RightAnswer = RightAnswer + ",B";
-            }
-            else
-            {
-                RightAnswer = RightAnswer.Replace(",B", "");
-            }
-        }
-
-        private void bunifuCheckbox3_OnChange(object sender, EventArgs e)
-        {
-            if (bunifuCheckbox3.Checked == true)
-            {
-                RightAnswer = RightAnswer + ",C";
-            }
-            else
-            {
-                RightAnswer = RightAnswer.Replace(",C", "");
-            }
-
-        }
-
-        private void bunifuCheckbox4_OnChange(object sender, EventArgs e)
-        {
-            if (bunifuCheckbox4.Checked == true)
-            {
-                RightAnswer = RightAnswer + ",D";
-            }
-            else
-            {
-                RightAnswer = RightAnswer.Replace(",D", "");
-            }
-        }
-
-        private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (MultipleChoiceLV.Items.Count != 0 && MultipleChoiceLV.SelectedItems.Count != 0)
-
-            {
-
-
-
-
-                currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
-                updateMC();
-
-
-            }
-        }
-
-        private void ShortAnswerLV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ShortAnswerLV.Items.Count != 0 && ShortAnswerLV.SelectedItems.Count != 0)
-
-            {
-
-
-
-
-
-                CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.SelectedItems[0].Index + 1);
-                updateSA();
-
-
-            }
-        }
-
-        private void TrueOrFalseLV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (TrueOrFalseLV.Items.Count != 0 && TrueOrFalseLV.SelectedItems.Count != 0)
-
-            {
-
-
-
-
-
-                CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.SelectedItems[0].Index + 1);
-                updateTF();
-
-
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (MultipleChoiceLV.Items.Count <= 0 && ShortAnswerLV.Items.Count <= 0 && TrueOrFalseLV.Items.Count <= 0)
-            {
-                Dialogue.Show("Quiz is Empty", "", "Ok", "Cancel");
-            }
-
-            else if (currentNumOfItems < numOfItems)
-            {
-                Dialogue.Show("Quiz is Incomplete, must be 9 Questions", "", "Ok", "Cancel");
-            }
-
-            else if (button1.Text == "Update" || button2.Text == "Update" || buttonNextQuestion.Text == "Update")
-            {
-
-                Dialogue.Show("Update All Item First", "", "Ok", "Cancel");
-            }
-
-            else
-            {
-                DialogResult result = Dialogue1.Show("Saving This Quiz Means You are Done. Do you Wish to Continue?", "", "Ok", "Cancel");
-                if (result == DialogResult.Yes)
-                {
-                    try
-                    {
-
-                        con.Open();
-
-
-
-
-
-
-
-
-                        String query = "INSERT INTO quizzes (puzzle_image,game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + Picture + "','Picture Puzzle','" + title + "','" + time_limit + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
-                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
-                        sda.SelectCommand.ExecuteNonQuery();
-
-
-
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-
-                    }
-                    con.Close();
-
-
-                    try
-                    {
-
-
-                        con.Open();
-
-                        SqlCommand cmd = new SqlCommand("select * from quizzes where quiz_title = '" + title + "' AND facilitator_id = '" + Program.user_id + "' ", con);
-
-
-                        dr = cmd.ExecuteReader();
-
-
-                        if (dr.Read() == true)
-                        {
-                            int examID = (int)dr[("quiz_id")];
-                            for (int i = 0; i < MultipleChoiceLV.Items.Count; i++) // For Multiple Choice
-                            {
-                                ListViewItem exams = MultipleChoiceLV.Items[i];
-                                try
-                                {
-                                 
-                                    con2.Open();
-
-                                    if (time_limit != null || time_limit != "")
-                                    {
-
-
-
-
-
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + time_limit + "')";
-                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                        sda.SelectCommand.ExecuteNonQuery();
-
-                                    }
-
-                                    else
-                                    {
-
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + exams.SubItems[7].Text + "')";
-                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-                                        sda.SelectCommand.ExecuteNonQuery();
-
-
-                                    }
-
-
-
-
-                                }
-
-                                catch (Exception ex)
-                                {
-                                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-
-                                }
-                                con2.Close();
-
-                            }
-
-
-
-
-
-                            // // // // // // // // 
-
-                            for (int i = 0; i < ShortAnswerLV.Items.Count; i++) //For Short Answers
-                            {
-                                ListViewItem exams = ShortAnswerLV.Items[i];
-                                try
-                                {
-                                   
-                                    con2.Open();
-
-                                    if (time_limit != null || time_limit != "")
-                                    {
-
-
-
-
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + time_limit + "')";
-                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-
-                                        sda.SelectCommand.ExecuteNonQuery();
-                                    }
-
-
-
-                                    else
-                                    {
-
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "')";
-                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-
-                                        sda.SelectCommand.ExecuteNonQuery();
-
-                                    }
-
-
-                                }
-
-                                catch (Exception ex)
-                                {
-                                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-
-                                }
-                                con2.Close();
-
-                            }
-
-
-                            // /// // // // // // // 
-
-
-
-
-
-
-
-                            // // // / // // / // / // 
-
-
-
-                            for (int i = 0; i < TrueOrFalseLV.Items.Count; i++) //For True Or False
-                            {
-                                ListViewItem exams = TrueOrFalseLV.Items[i];
-                                try
-                                {
-                                  
-                                    con2.Open();
-
-
-                                    if (time_limit != null || time_limit != "")
-                                    {
-
-
-
-
-
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('True/False','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + time_limit + "')";
-                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-
-                                        sda.SelectCommand.ExecuteNonQuery();
-
-
-                                    }
-
-
-                                    else
-                                    {
-
-                                        String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('True/False','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "')";
-                                        SqlDataAdapter sda = new SqlDataAdapter(query, con2);
-
-                                        sda.SelectCommand.ExecuteNonQuery();
-
-
-                                    }
-
-
-                                }
-                                catch (Exception ex)
-                                {
-                                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-
-                                }
-                                con2.Close();
-
-                            }
-
-
-
-                            // / // // / /// / // / // / // / / / / //
-
-                        }
-
-
-
-                    }
-
-
-
-
-                    catch (Exception ex)
-                    {
-                        Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-
-                    }
-                    finally
-                    {
-
-                        if (dr != null) dr.Close();
-                        if (con != null) con.Close();
-                    }
-
-                    clearAllMC();
-                    currentNumOfItems = 1;
-
-                    Dialogue.Show("Quiz Saved In the Database", "", "Ok", "Cancel");
-                    this.Close();
-                    //popop new form to launch or go to home and this.close
-
-
-                }
-            }
-
-
-
-        }
-
-        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
 
         private void updateSA()
@@ -1763,8 +1589,7 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation = exams.SubItems[2].Text;
-            if (textBox12.Visible == true)
-            {
+          
                 string str = exams.SubItems[3].Text;
                 int index = str.IndexOf('(');
                 string sub;
@@ -1812,7 +1637,7 @@ namespace TooLearnOfficial
                     bunifuDropdown1.selectedIndex = 1;
                 }
 
-            }// end IF
+          
             textBox3.Text = exams.SubItems[4].Text;
 
         }

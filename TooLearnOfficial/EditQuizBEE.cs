@@ -228,8 +228,8 @@ namespace TooLearnOfficial
             }
 
 
-            if (textBox7.Visible == false)
-            {
+       //     if (textBox7.Visible == false)// PARA NA SA GBUS
+         //   {
 
                 string str = exams.SubItems[7].Text;
                 int index = str.IndexOf('(');
@@ -279,7 +279,11 @@ namespace TooLearnOfficial
 
 
 
-            }//end IF
+         //   }//end IF
+
+
+
+            
 
 
             textBox2.Text = exams.SubItems[8].Text;
@@ -307,8 +311,8 @@ namespace TooLearnOfficial
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
 
 
-            if (textBox7.Visible == false)
-            {
+     //       if (textBox7.Visible == false)
+       //     {
                 string str = exams.SubItems[3].Text;
                 int index = str.IndexOf('(');
                 string sub;
@@ -356,7 +360,7 @@ namespace TooLearnOfficial
                 }
 
 
-            }//end IF
+      //      }//end IF
 
             textBox5.Text = exams.SubItems[4].Text;
 
@@ -372,8 +376,8 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation = exams.SubItems[2].Text;
-            if (textBox7.Visible == false)
-            {
+       //     if (textBox7.Visible == false)
+         //   {
                 string str = exams.SubItems[3].Text;
                 int index = str.IndexOf('(');
                 string sub;
@@ -421,7 +425,7 @@ namespace TooLearnOfficial
                     bunifuDropdown3.selectedIndex = 1;
                 }
 
-            }// end IF
+       //     }// end IF
 
             textBox3.Text = exams.SubItems[4].Text;
 

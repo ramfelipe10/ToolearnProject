@@ -259,7 +259,7 @@ namespace TooLearnOfficial
                     PdfWriter.GetInstance(pdfdoc, stream);
                     pdfdoc.Open();
                     pdfdoc.Add(PNG);
-                    pdfdoc.Add(c1);
+                   // pdfdoc.Add(c1);
                     pdfdoc.Add(pdftable);                    
                     pdfdoc.Close();
                     stream.Close();
