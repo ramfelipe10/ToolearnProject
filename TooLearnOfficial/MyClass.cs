@@ -192,12 +192,16 @@ namespace TooLearnOfficial
         }
         public void exporttopdf(DataGridView dgv, string filename)
         {
+
+            // IMAGE
             iTextSharp.text.Image PNG = iTextSharp.text.Image.GetInstance("toolearn.png");
             //
-            PNG.ScaleToFit(250f, 250f);
+            PNG.ScaleToFit(150f, 150f);
+            PNG.Alignment = Element.ALIGN_CENTER;
             //
             PNG.Border = iTextSharp.text.Rectangle.BOX;
             PNG.BorderColor = iTextSharp.text.BaseColor.GRAY;
+            PNG.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
             PNG.BorderWidth = 5f;
             
             
