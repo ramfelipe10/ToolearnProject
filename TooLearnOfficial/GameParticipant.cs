@@ -436,7 +436,8 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            string WHAT=validate(bunifuMetroTextbox1.Text);
+           string box= bunifuMetroTextbox1.Text;
+            string WHAT=validate(box);
             if (WHAT == "Correct")
             {
                int score=Convert.ToInt32(bunifuCustomLabel5.Text);
@@ -445,19 +446,24 @@ namespace TooLearnOfficial
                 
                 bunifuCustomLabel5.Text = score.ToString();
 
+                MessageBox.Show("tama ka");
+
             }
             else if(WHAT == "Wrong")
             {
-
+                MessageBox.Show("sala ka");
             }
+            label4.Text = correctanswer;
+            label5.Text = WHAT;
         }
 
 
         private string validate(string answer)
         {
             string score;
+            string check=answer;
 
-            if (answer == correctanswer)
+            if (check == correctanswer)
             {
                 score = "Correct";
 
