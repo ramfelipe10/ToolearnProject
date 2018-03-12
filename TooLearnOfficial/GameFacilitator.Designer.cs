@@ -248,7 +248,7 @@
             // 
             // bunifuGradientPanel1
             // 
-            this.bunifuGradientPanel1.BackgroundImage = global::TooLearnOfficial.Properties.Resources._444;
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel2);
             this.bunifuGradientPanel1.Controls.Add(this.bunifuImageButton1);

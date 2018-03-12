@@ -340,7 +340,7 @@ namespace TooLearnOfficial
 
                 /***********************************/
 
-                if (dt.Rows[counter][6].ToString() != null || dt.Rows[counter][6].ToString() != "")
+         /*       if (dt.Rows[counter][6].ToString() != null || dt.Rows[counter][6].ToString() != "")
                 {
                     Bitmap bmp = new Bitmap(dt.Rows[counter][6].ToString());
                     MemoryStream ms = new MemoryStream();
@@ -352,7 +352,7 @@ namespace TooLearnOfficial
                     bmp.Dispose();
                     ms.Close();
 
-                }
+                } */
 
                 /****************************************/
 
