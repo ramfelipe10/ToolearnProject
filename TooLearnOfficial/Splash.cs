@@ -45,5 +45,9 @@ namespace TooLearnOfficial
          
         }
 
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

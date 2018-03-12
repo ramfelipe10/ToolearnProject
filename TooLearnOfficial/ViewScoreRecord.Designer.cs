@@ -43,8 +43,6 @@
             this.bunifuCircleProgressbar2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.DataGridViewGrade = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -53,6 +51,11 @@
             this.label_average = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.labelLetterGrade = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.labelRemarks = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -76,7 +79,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 1;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(809, 26);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(868, 26);
             this.bunifuGradientPanel1.TabIndex = 16;
             // 
             // pictureBox2
@@ -108,7 +111,7 @@
             this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton4.Image = global::TooLearnOfficial.Properties.Resources.Minimize_Window_48px;
             this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(767, 3);
+            this.bunifuImageButton4.Location = new System.Drawing.Point(824, 3);
             this.bunifuImageButton4.Name = "bunifuImageButton4";
             this.bunifuImageButton4.Size = new System.Drawing.Size(20, 20);
             this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,7 +125,7 @@
             this.bunifuImageButton5.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton5.Image = global::TooLearnOfficial.Properties.Resources.Close_Window_48px;
             this.bunifuImageButton5.ImageActive = null;
-            this.bunifuImageButton5.Location = new System.Drawing.Point(787, 3);
+            this.bunifuImageButton5.Location = new System.Drawing.Point(844, 3);
             this.bunifuImageButton5.Name = "bunifuImageButton5";
             this.bunifuImageButton5.Size = new System.Drawing.Size(20, 20);
             this.bunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,11 +158,11 @@
             this.bunifuCircleProgressbar1.LabelVisible = true;
             this.bunifuCircleProgressbar1.LineProgressThickness = 8;
             this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(124, 234);
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(82, 243);
             this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.bunifuCircleProgressbar1.MaxValue = 100;
             this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.White;
             this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(142, 142);
             this.bunifuCircleProgressbar1.TabIndex = 17;
@@ -177,7 +180,7 @@
             this.bunifuCircleProgressbar2.LabelVisible = true;
             this.bunifuCircleProgressbar2.LineProgressThickness = 8;
             this.bunifuCircleProgressbar2.LineThickness = 5;
-            this.bunifuCircleProgressbar2.Location = new System.Drawing.Point(578, 234);
+            this.bunifuCircleProgressbar2.Location = new System.Drawing.Point(645, 243);
             this.bunifuCircleProgressbar2.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.bunifuCircleProgressbar2.MaxValue = 100;
             this.bunifuCircleProgressbar2.Name = "bunifuCircleProgressbar2";
@@ -207,10 +210,10 @@
             this.DataGridViewGrade.EnableHeadersVisualStyles = false;
             this.DataGridViewGrade.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.DataGridViewGrade.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.DataGridViewGrade.Location = new System.Drawing.Point(84, 65);
+            this.DataGridViewGrade.Location = new System.Drawing.Point(81, 47);
             this.DataGridViewGrade.Name = "DataGridViewGrade";
             this.DataGridViewGrade.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DataGridViewGrade.Size = new System.Drawing.Size(649, 135);
+            this.DataGridViewGrade.Size = new System.Drawing.Size(706, 135);
             this.DataGridViewGrade.TabIndex = 19;
             // 
             // bunifuElipse2
@@ -218,36 +221,14 @@
             this.bunifuElipse2.ElipseRadius = 5;
             this.bunifuElipse2.TargetControl = this.DataGridViewGrade;
             // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(163, 385);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(69, 18);
-            this.bunifuCustomLabel2.TabIndex = 20;
-            this.bunifuCustomLabel2.Text = "Progress";
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(623, 385);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(69, 18);
-            this.bunifuCustomLabel3.TabIndex = 21;
-            this.bunifuCustomLabel3.Text = "Progress";
-            // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(381, 224);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(366, 215);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(85, 18);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(122, 25);
             this.bunifuCustomLabel4.TabIndex = 22;
             this.bunifuCustomLabel4.Text = "Class Rank";
             // 
@@ -256,7 +237,7 @@
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(387, 242);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(383, 243);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(79, 57);
             this.bunifuCustomLabel5.TabIndex = 23;
@@ -265,75 +246,127 @@
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(279, 325);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(251, 351);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(133, 18);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(167, 24);
             this.bunifuCustomLabel6.TabIndex = 24;
             this.bunifuCustomLabel6.Text = "No. of Taken Quiz:";
             // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(311, 358);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(267, 378);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(62, 18);
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(77, 24);
             this.bunifuCustomLabel7.TabIndex = 25;
             this.bunifuCustomLabel7.Text = "Passed:";
             // 
             // bunifuCustomLabel8
             // 
             this.bunifuCustomLabel8.AutoSize = true;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(311, 385);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(267, 405);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(51, 18);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(67, 24);
             this.bunifuCustomLabel8.TabIndex = 26;
             this.bunifuCustomLabel8.Text = "Failed:";
             // 
             // label_average
             // 
             this.label_average.AutoSize = true;
-            this.label_average.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_average.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_average.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_average.Location = new System.Drawing.Point(627, 44);
+            this.label_average.Location = new System.Drawing.Point(86, 394);
             this.label_average.Name = "label_average";
-            this.label_average.Size = new System.Drawing.Size(114, 18);
+            this.label_average.Size = new System.Drawing.Size(138, 24);
             this.label_average.TabIndex = 27;
-            this.label_average.Text = "Average Grade: ";
+            this.label_average.Text = "Average Grade";
             // 
             // labelLetterGrade
             // 
             this.labelLetterGrade.AutoSize = true;
-            this.labelLetterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLetterGrade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLetterGrade.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelLetterGrade.Location = new System.Drawing.Point(456, 44);
+            this.labelLetterGrade.Location = new System.Drawing.Point(458, 378);
             this.labelLetterGrade.Name = "labelLetterGrade";
-            this.labelLetterGrade.Size = new System.Drawing.Size(98, 18);
+            this.labelLetterGrade.Size = new System.Drawing.Size(123, 24);
             this.labelLetterGrade.TabIndex = 28;
             this.labelLetterGrade.Text = "Letter Grade: ";
             // 
             // labelRemarks
             // 
             this.labelRemarks.AutoSize = true;
-            this.labelRemarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRemarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRemarks.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelRemarks.Location = new System.Drawing.Point(259, 44);
+            this.labelRemarks.Location = new System.Drawing.Point(458, 407);
             this.labelRemarks.Name = "labelRemarks";
-            this.labelRemarks.Size = new System.Drawing.Size(77, 18);
+            this.labelRemarks.Size = new System.Drawing.Size(94, 24);
             this.labelRemarks.TabIndex = 29;
             this.labelRemarks.Text = "Remarks: ";
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelTotal.Location = new System.Drawing.Point(458, 351);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(116, 24);
+            this.labelTotal.TabIndex = 30;
+            this.labelTotal.Text = "Total Score: ";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(110, 216);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(89, 24);
+            this.bunifuCustomLabel2.TabIndex = 31;
+            this.bunifuCustomLabel2.Text = "Individual";
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(688, 216);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(63, 24);
+            this.bunifuCustomLabel9.TabIndex = 32;
+            this.bunifuCustomLabel9.Text = "Group";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(649, 390);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(138, 24);
+            this.bunifuCustomLabel3.TabIndex = 33;
+            this.bunifuCustomLabel3.Text = "Average Grade";
             // 
             // ViewScoreRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(809, 428);
+            this.ClientSize = new System.Drawing.Size(868, 490);
+            this.Controls.Add(this.bunifuCustomLabel3);
+            this.Controls.Add(this.bunifuCustomLabel9);
+            this.Controls.Add(this.bunifuCustomLabel2);
+            this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.labelRemarks);
             this.Controls.Add(this.labelLetterGrade);
             this.Controls.Add(this.label_average);
@@ -342,8 +375,6 @@
             this.Controls.Add(this.bunifuCustomLabel6);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.bunifuCustomLabel4);
-            this.Controls.Add(this.bunifuCustomLabel3);
-            this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.DataGridViewGrade);
             this.Controls.Add(this.bunifuCircleProgressbar2);
             this.Controls.Add(this.bunifuCircleProgressbar1);
@@ -376,8 +407,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar2;
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid DataGridViewGrade;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
@@ -388,5 +417,10 @@
         private Bunifu.Framework.UI.BunifuCustomLabel label_average;
         private Bunifu.Framework.UI.BunifuCustomLabel labelLetterGrade;
         private Bunifu.Framework.UI.BunifuCustomLabel labelRemarks;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelTotal;
+        private System.Windows.Forms.Timer timer1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
     }
 }

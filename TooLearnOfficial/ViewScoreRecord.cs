@@ -36,7 +36,7 @@ namespace TooLearnOfficial
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
 
-        
+
             /*
             
                        SqlDataAdapter adapt = new SqlDataAdapter("Select participant_id from participant where fullname='" +Name+ "' ", con);
@@ -62,31 +62,48 @@ namespace TooLearnOfficial
 
                         SqlDataAdapter adaptersd = new SqlDataAdapter("Q.quiz_title,quiz_score from scoreRecords SR,quizzes Q where SR.participant_id='"+ID+"' AND Q.quiz_id= '" +Qid + "' ", con);
                         DataTable datasd = new DataTable();
-                        adapt.Fill(datasd);
+                        adaptersd.Fill(datasd);
                         BindingSource bs = new BindingSource();
                         bs.DataSource = datasd;
                         DataGridViewGrade.DataSource = bs;
                         adaptersd.Update(dt);
 
-    */
-            
-            //label_average.Text = PG;
-            
-            
-                        int TotalNumberofQuiz;
-                        int TotalScoreonQuiz = 0;
-                        float average;
 
-                        for(int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
+
+
+    */
+           
+
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select * from scoreRecords ", con);
+            DataTable datasd = new DataTable();
+            adaptersd.Fill(datasd);
+            BindingSource bs = new BindingSource();
+            bs.DataSource = datasd;
+            DataGridViewGrade.DataSource = bs;
+
+            //label_average.Text = PG;
+
+
+            int TotalNumberofQuiz;
+                        int TotalScoreonQuiz = 0;
+                        double average;
+            bunifuCircleProgressbar1.Value = 0;
+
+                        for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
                         {
                             TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[1].Value);  
                         }
-                        //label_average.Text += TotalScoreonQuiz.ToString();
+                        labelTotal.Text += TotalScoreonQuiz.ToString();
 
                         TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
                         average = TotalScoreonQuiz / TotalNumberofQuiz;
 
-                        label_average.Text += average.ToString();
+                        //label_average.Text += average.ToString();
+
+
+            bunifuCircleProgressbar1.Value = Convert.ToInt32(average);
+            
+            
 
 
 
