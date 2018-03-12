@@ -181,9 +181,9 @@ namespace TooLearnOfficial
         {
             SendToAllClients("StartGame");
 
-           // this.Hide();
+            this.Hide();
             GameFacilitator GF = new GameFacilitator();
-            GF.Show();
+            GF.ShowDialog();
         }
     }
 }

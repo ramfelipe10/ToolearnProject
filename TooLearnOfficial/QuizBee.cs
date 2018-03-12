@@ -217,6 +217,15 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text =exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text =exams.SubItems[4].Text;
             pictureBox3.ImageLocation = exams.SubItems[6].Text;
+            if (pictureBox3.ImageLocation == "")
+            {
+                bunifuFlatButton1.Visible = true;
+            }
+
+            else
+            {
+                bunifuFlatButton1.Visible = false;
+            }
 
             string plain = get(exams.SubItems[5].Text);
 
@@ -326,9 +335,18 @@ namespace TooLearnOfficial
                 bunifuDropdown5.selectedIndex = 1;
             }
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
+            if (pictureBox5.ImageLocation == "")
+            {
+                bunifuFlatButton8.Visible = true;
+            }
+
+            else
+            {
+                bunifuFlatButton8.Visible = false;
+            }
 
 
-             if (textBox7.Visible == false)
+            if (textBox7.Visible == false)
             {
             string str = exams.SubItems[3].Text;
             int index = str.IndexOf('(');
@@ -390,6 +408,15 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation= exams.SubItems[2].Text;
+            if (pictureBox4.ImageLocation == "")
+            {
+                bunifuFlatButton7.Visible = true;
+            }
+
+            else
+            {
+                bunifuFlatButton7.Visible = false;
+            }
 
             if (textBox7.Visible == false)
             {
@@ -533,6 +560,9 @@ namespace TooLearnOfficial
                     pictureBox3.ImageLocation = imageLocation;
                     pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
 
+                    bunifuFlatButton1.Visible = false;
+                    bunifuFlatButton6.Visible = true;
+
 
                 }
 
@@ -560,6 +590,8 @@ namespace TooLearnOfficial
                     pictureBox4.ImageLocation = imageLocation;
                     pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
 
+                    bunifuFlatButton7.Visible = false;
+                    bunifuFlatButton9.Visible = true;
 
                 }
 
@@ -585,6 +617,9 @@ namespace TooLearnOfficial
                     imageLocation = dialog.FileName;
                     pictureBox5.ImageLocation = imageLocation;
                     pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    bunifuFlatButton8.Visible = false;
+                    bunifuFlatButton10.Visible = true;
 
 
                 }
@@ -677,6 +712,8 @@ namespace TooLearnOfficial
 
                 bunifuFlatButton2.selected = true;
 
+                textBoxQuizTitle.Enabled = false;
+
             }
             
         }
@@ -733,6 +770,14 @@ namespace TooLearnOfficial
                 textBox7.Text = null;
 
 
+
+
+                
+                bunifuFlatButton8.Visible = true;
+                bunifuFlatButton1.Visible = true;
+                bunifuFlatButton7.Visible = true;
+
+                textBoxQuizTitle.Enabled = true;
 
             }
 
@@ -827,7 +872,7 @@ namespace TooLearnOfficial
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum2.ToString();
 
-
+                            bunifuFlatButton1.Visible = true;
 
                         } //If TB 7=False
 
@@ -872,6 +917,9 @@ namespace TooLearnOfficial
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum2.ToString();
+
+
+                            bunifuFlatButton1.Visible = true;
                         }
 
                     }
@@ -948,7 +996,7 @@ namespace TooLearnOfficial
                             int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum.ToString();
 
-
+                            bunifuFlatButton1.Visible = true;
                         }//end else
 
 
@@ -1021,7 +1069,7 @@ namespace TooLearnOfficial
                             int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum.ToString();
 
-
+                            bunifuFlatButton1.Visible = true;
                         }//end else
 
 
@@ -1095,6 +1143,8 @@ namespace TooLearnOfficial
                             NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum2.ToString();
+
+                            bunifuFlatButton8.Visible = true;
                         }
 
 
@@ -1137,6 +1187,9 @@ namespace TooLearnOfficial
                             NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum2.ToString();
+
+
+                            bunifuFlatButton8.Visible = true;
 
                         }
 
@@ -1195,6 +1248,9 @@ namespace TooLearnOfficial
                     NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                     Total.Text = Sum.ToString();
+
+
+                    bunifuFlatButton8.Visible = true;
 
                     break;
 
@@ -1263,6 +1319,9 @@ namespace TooLearnOfficial
                             NoItems.Text = ShortAnswerLV.Items.Count.ToString();
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum2.ToString();
+
+
+                            bunifuFlatButton7.Visible = true;
                         }
 
 
@@ -1307,6 +1366,7 @@ namespace TooLearnOfficial
                             int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                             Total.Text = Sum2.ToString();
 
+                            bunifuFlatButton7.Visible = true;
                         }
 
                     }
@@ -1365,6 +1425,8 @@ namespace TooLearnOfficial
                     NoItems.Text = ShortAnswerLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
                     Total.Text = Sum.ToString();
+
+                    bunifuFlatButton7.Visible = true;
 
                     break;
 
@@ -2027,7 +2089,23 @@ namespace TooLearnOfficial
 
         }
 
-        
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            pictureBox3.ImageLocation = "";
+            bunifuFlatButton1.Visible = true;
+        }
+
+        private void bunifuFlatButton9_Click(object sender, EventArgs e)
+        {
+            pictureBox4.ImageLocation = "";
+            bunifuFlatButton7.Visible = true;
+        }
+
+        private void bunifuFlatButton10_Click(object sender, EventArgs e)
+        {
+            pictureBox5.ImageLocation = "";
+            bunifuFlatButton8.Visible = true;
+        }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {
