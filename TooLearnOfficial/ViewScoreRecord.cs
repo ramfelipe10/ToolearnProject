@@ -70,9 +70,9 @@ namespace TooLearnOfficial
 
     */
             
-            label_average.Text = PG;
+            //label_average.Text = PG;
             
-            /*
+            
                         int TotalNumberofQuiz;
                         int TotalScoreonQuiz = 0;
                         float average;
@@ -86,42 +86,50 @@ namespace TooLearnOfficial
                         TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
                         average = TotalScoreonQuiz / TotalNumberofQuiz;
 
-                        label_average.Text += TotalScoreonQuiz.ToString();  
+                        label_average.Text += average.ToString();
 
-            */
 
-            //if (average >= 95 && average <= 100)
-            //{
-            //    labelLetterGrade.Text = "A"; // Excellent
-            //}
-            //else if (average >= 89 && average <= 94)
-            //{
-            //    labelLetterGrade.Text = "B+"; // Very Good
-            //}
-            //else if (average >= 83 && average <= 88)
-            //{
-            //    labelLetterGrade.Text = "B";  // Very Good
-            //}
-            //else if (average >= 77 && average <= 82)
-            //{
-            //    labelLetterGrade.Text = "C+";  // Good
-            //}
-            //else if (average >= 71 && average <= 76)
-            //{
-            //    labelLetterGrade.Text = "C";  // Satisfaction
-            //}
-            //else if (average >= 65 && average <= 70)
-            //{
-            //    labelLetterGrade.Text = "D+";  // Satisfaction
-            //}
-            //else if (average >= 60 && average <= 64)
-            //{
-            //    labelLetterGrade.Text = "D";  // Passed
-            //}            
-            //else
-            //{
-            //    labelLetterGrade.Text = "F"; // Failed
-            //}
+
+            if (average >= 95 && average <= 100)
+            {
+                labelLetterGrade.Text = "A"; // Excellent
+                labelRemarks.Text = "Excelent";
+            }
+            else if (average >= 89 && average <= 94)
+            {
+                labelLetterGrade.Text = "B+"; // Very Good
+                labelRemarks.Text = "Very Good";
+            }
+            else if (average >= 83 && average <= 88)
+            {
+                labelLetterGrade.Text = "B";  // Very Good
+                labelRemarks.Text = "Very Good";
+            }
+            else if (average >= 77 && average <= 82)
+            {
+                labelLetterGrade.Text = "C+";  // Good
+                labelRemarks.Text = "Good";
+            }
+            else if (average >= 71 && average <= 76)
+            {
+                labelLetterGrade.Text = "C";  // Satisfaction
+                labelRemarks.Text = "Satisfaction";
+            }
+            else if (average >= 65 && average <= 70)
+            {
+                labelLetterGrade.Text = "D+";  // Satisfaction
+                labelRemarks.Text = "Satisfaction";
+            }
+            else if (average >= 60 && average <= 64)
+            {
+                labelLetterGrade.Text = "D";  // Passed
+                labelRemarks.Text = "Passed";
+            }
+            else
+            {
+                labelLetterGrade.Text = "F"; // Failed
+                labelRemarks.Text = "Failed";
+            }
         }
     }
 }

@@ -201,7 +201,7 @@ namespace TooLearnOfficial
             //
             PNG.Border = iTextSharp.text.Rectangle.BOX;
             PNG.BorderColor = iTextSharp.text.BaseColor.GRAY;
-            PNG.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
+            //PNG.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
             PNG.BorderWidth = 5f;
 
             //Chunk c1 = new Chunk("TOOLEARN APPLICATION", FontFactory.GetFont("Times New Roman"));
