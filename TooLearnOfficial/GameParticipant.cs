@@ -24,6 +24,8 @@ namespace TooLearnOfficial
 
         string GameType = LobbyParticipant.GameType;
 
+        string correctanswer,points;
+
         string time;
         int convertedtime;
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
@@ -191,7 +193,14 @@ namespace TooLearnOfficial
 
                     var array = message.Split('\n');
 
-                   if(array[10].ToString() =="Multiple Choice")//Item Format
+
+                    correctanswer=array[5].ToString();
+
+                    points= array[8].ToString();
+
+
+
+                    if (array[10].ToString() =="Multiple Choice")//Item Format
                     {
 
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
@@ -278,7 +287,7 @@ namespace TooLearnOfficial
 
 
 
-
+                        ThreadHelper.imgbtnIN(this, bunifuImageButton1, true);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, true);
                         ThreadHelper.ControlHide(this, bunifuFlatButton1, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton2, false);
@@ -423,5 +432,42 @@ namespace TooLearnOfficial
 
 
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            string WHAT=validate(bunifuMetroTextbox1.Text);
+            if (WHAT == "Correct")
+            {
+               int score=Convert.ToInt32(bunifuCustomLabel5.Text);
+               int itempoints= Convert.ToInt32(points);
+                score = score + itempoints;
+                
+                bunifuCustomLabel5.Text = score.ToString();
+
+            }
+            else if(WHAT == "Wrong")
+            {
+
+            }
+        }
+
+
+        private string validate(string answer)
+        {
+            string score;
+
+            if (answer == correctanswer)
+            {
+                score = "Correct";
+
+            }
+            else
+            {
+                score = "Wrong";
+            }
+
+            return score;
+        }
+
     }
 }

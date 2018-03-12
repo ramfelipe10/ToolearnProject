@@ -158,6 +158,9 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TrueOrFalseLV = new System.Windows.Forms.ListView();
+            this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton9 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1417,6 +1420,7 @@
             this.shortAnswer.Controls.Add(this.label22);
             this.shortAnswer.Controls.Add(this.bunifuCustomLabel4);
             this.shortAnswer.Controls.Add(this.CurrentnumSA);
+            this.shortAnswer.Controls.Add(this.bunifuFlatButton9);
             this.shortAnswer.GradientBottomLeft = System.Drawing.Color.Silver;
             this.shortAnswer.GradientBottomRight = System.Drawing.Color.Silver;
             this.shortAnswer.GradientTopLeft = System.Drawing.Color.Silver;
@@ -1545,6 +1549,7 @@
             this.trueORfalse.Controls.Add(this.textBox13);
             this.trueORfalse.Controls.Add(this.label33);
             this.trueORfalse.Controls.Add(this.bunifuCustomLabel3);
+            this.trueORfalse.Controls.Add(this.bunifuFlatButton10);
             this.trueORfalse.GradientBottomLeft = System.Drawing.Color.Silver;
             this.trueORfalse.GradientBottomRight = System.Drawing.Color.Silver;
             this.trueORfalse.GradientTopLeft = System.Drawing.Color.Silver;
@@ -1650,6 +1655,7 @@
             this.MultipleChoice.Controls.Add(this.label4);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel1);
             this.MultipleChoice.Controls.Add(this.label20);
+            this.MultipleChoice.Controls.Add(this.bunifuFlatButton6);
             this.MultipleChoice.GradientBottomLeft = System.Drawing.Color.Silver;
             this.MultipleChoice.GradientBottomRight = System.Drawing.Color.Silver;
             this.MultipleChoice.GradientTopLeft = System.Drawing.Color.Silver;
@@ -1718,6 +1724,111 @@
             this.TrueOrFalseLV.UseCompatibleStateImageBehavior = false;
             this.TrueOrFalseLV.View = System.Windows.Forms.View.Details;
             this.TrueOrFalseLV.SelectedIndexChanged += new System.EventHandler(this.TrueOrFalseLV_SelectedIndexChanged);
+            // 
+            // bunifuFlatButton6
+            // 
+            this.bunifuFlatButton6.Activecolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton6.BackColor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton6.BorderRadius = 6;
+            this.bunifuFlatButton6.ButtonText = "Clear";
+            this.bunifuFlatButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton6.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton6.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton6.Iconimage = global::TooLearnOfficial.Properties.Resources.clear;
+            this.bunifuFlatButton6.Iconimage_right = null;
+            this.bunifuFlatButton6.Iconimage_right_Selected = null;
+            this.bunifuFlatButton6.Iconimage_Selected = null;
+            this.bunifuFlatButton6.IconMarginLeft = 0;
+            this.bunifuFlatButton6.IconMarginRight = 0;
+            this.bunifuFlatButton6.IconRightVisible = true;
+            this.bunifuFlatButton6.IconRightZoom = 0D;
+            this.bunifuFlatButton6.IconVisible = true;
+            this.bunifuFlatButton6.IconZoom = 40D;
+            this.bunifuFlatButton6.IsTab = false;
+            this.bunifuFlatButton6.Location = new System.Drawing.Point(293, 88);
+            this.bunifuFlatButton6.Name = "bunifuFlatButton6";
+            this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton6.selected = false;
+            this.bunifuFlatButton6.Size = new System.Drawing.Size(145, 31);
+            this.bunifuFlatButton6.TabIndex = 215;
+            this.bunifuFlatButton6.Text = "Clear";
+            this.bunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton6.Visible = false;
+            // 
+            // bunifuFlatButton9
+            // 
+            this.bunifuFlatButton9.Activecolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton9.BackColor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton9.BorderRadius = 6;
+            this.bunifuFlatButton9.ButtonText = "Clear";
+            this.bunifuFlatButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton9.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton9.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton9.Iconimage = global::TooLearnOfficial.Properties.Resources.clear;
+            this.bunifuFlatButton9.Iconimage_right = null;
+            this.bunifuFlatButton9.Iconimage_right_Selected = null;
+            this.bunifuFlatButton9.Iconimage_Selected = null;
+            this.bunifuFlatButton9.IconMarginLeft = 0;
+            this.bunifuFlatButton9.IconMarginRight = 0;
+            this.bunifuFlatButton9.IconRightVisible = true;
+            this.bunifuFlatButton9.IconRightZoom = 0D;
+            this.bunifuFlatButton9.IconVisible = true;
+            this.bunifuFlatButton9.IconZoom = 40D;
+            this.bunifuFlatButton9.IsTab = false;
+            this.bunifuFlatButton9.Location = new System.Drawing.Point(293, 88);
+            this.bunifuFlatButton9.Name = "bunifuFlatButton9";
+            this.bunifuFlatButton9.Normalcolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton9.OnHovercolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton9.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton9.selected = false;
+            this.bunifuFlatButton9.Size = new System.Drawing.Size(145, 31);
+            this.bunifuFlatButton9.TabIndex = 215;
+            this.bunifuFlatButton9.Text = "Clear";
+            this.bunifuFlatButton9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton9.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton9.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton9.Visible = false;
+            // 
+            // bunifuFlatButton10
+            // 
+            this.bunifuFlatButton10.Activecolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton10.BackColor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton10.BorderRadius = 6;
+            this.bunifuFlatButton10.ButtonText = "Clear";
+            this.bunifuFlatButton10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton10.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton10.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton10.Iconimage = global::TooLearnOfficial.Properties.Resources.clear;
+            this.bunifuFlatButton10.Iconimage_right = null;
+            this.bunifuFlatButton10.Iconimage_right_Selected = null;
+            this.bunifuFlatButton10.Iconimage_Selected = null;
+            this.bunifuFlatButton10.IconMarginLeft = 0;
+            this.bunifuFlatButton10.IconMarginRight = 0;
+            this.bunifuFlatButton10.IconRightVisible = true;
+            this.bunifuFlatButton10.IconRightZoom = 0D;
+            this.bunifuFlatButton10.IconVisible = true;
+            this.bunifuFlatButton10.IconZoom = 40D;
+            this.bunifuFlatButton10.IsTab = false;
+            this.bunifuFlatButton10.Location = new System.Drawing.Point(293, 88);
+            this.bunifuFlatButton10.Name = "bunifuFlatButton10";
+            this.bunifuFlatButton10.Normalcolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton10.OnHovercolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton10.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton10.selected = false;
+            this.bunifuFlatButton10.Size = new System.Drawing.Size(145, 31);
+            this.bunifuFlatButton10.TabIndex = 216;
+            this.bunifuFlatButton10.Text = "Clear";
+            this.bunifuFlatButton10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuFlatButton10.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton10.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton10.Visible = false;
             // 
             // EditQuizBEE
             // 
@@ -1906,5 +2017,8 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse11;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton9;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton10;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
     }
 }

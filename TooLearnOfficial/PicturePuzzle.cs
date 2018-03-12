@@ -314,6 +314,15 @@ namespace TooLearnOfficial
             textBoxQuizChoiceC.Text = exams.SubItems[3].Text;
             textBoxQuizChoiceD.Text = exams.SubItems[4].Text;
             pictureBox3.ImageLocation = exams.SubItems[6].Text;
+            if (pictureBox3.ImageLocation == "")
+            {
+                bunifuFlatButton1.Visible = true;
+            }
+
+            else
+            {
+                bunifuFlatButton1.Visible = false;
+            }
 
 
             string plain = get(exams.SubItems[5].Text);
@@ -427,6 +436,16 @@ namespace TooLearnOfficial
             }
 
             pictureBox5.ImageLocation = exams.SubItems[2].Text;
+            if (pictureBox5.ImageLocation == "")
+            {
+                bunifuFlatButton8.Visible = true;
+            }
+
+            else
+            {
+                bunifuFlatButton8.Visible = false;
+            }
+
             if (textBox10.Visible == true)
             {
                 string str = exams.SubItems[3].Text;
@@ -492,6 +511,16 @@ namespace TooLearnOfficial
             textBox9.Text = exams.Text;
             textBox8.Text = exams.SubItems[1].Text;
             pictureBox4.ImageLocation = exams.SubItems[2].Text;
+            if (pictureBox4.ImageLocation == "")
+            {
+                bunifuFlatButton7.Visible = true;
+            }
+
+            else
+            {
+                bunifuFlatButton7.Visible = false;
+            }
+
             if (textBox12.Visible == true)
             {
                 string str = exams.SubItems[3].Text;
@@ -655,7 +684,8 @@ namespace TooLearnOfficial
                     pictureBox3.ImageLocation = imageLocation;
                     pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
 
-
+                    bunifuFlatButton1.Visible = false;
+                    bunifuFlatButton6.Visible = true;
                 }
 
 
@@ -679,6 +709,8 @@ namespace TooLearnOfficial
                     pictureBox4.ImageLocation = imageLocation;
                     pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
 
+                    bunifuFlatButton7.Visible = false;
+                    bunifuFlatButton5.Visible = true;
 
                 }
 
@@ -705,7 +737,8 @@ namespace TooLearnOfficial
                     pictureBox5.ImageLocation = imageLocation;
                     pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
 
-
+                    bunifuFlatButton8.Visible = false;
+                    bunifuFlatButton9.Visible = true;
                 }
 
 
@@ -775,7 +808,7 @@ namespace TooLearnOfficial
 
                             load_total();
 
-
+                            bunifuFlatButton1.Visible = true;
 
                         }
                     }
@@ -839,6 +872,7 @@ namespace TooLearnOfficial
 
 
                             load_total();
+                            bunifuFlatButton1.Visible = true;
 
                         }
 
@@ -920,6 +954,7 @@ namespace TooLearnOfficial
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
 
                             load_total();
+                            bunifuFlatButton1.Visible = true;
 
                         }
 
@@ -990,6 +1025,8 @@ namespace TooLearnOfficial
 
                             load_total();
 
+                            bunifuFlatButton1.Visible = true;
+
 
                         }
 
@@ -1049,6 +1086,8 @@ namespace TooLearnOfficial
 
                             load_total();
 
+                            bunifuFlatButton8.Visible = true;
+
                         }
                     }
 
@@ -1099,7 +1138,7 @@ namespace TooLearnOfficial
                             NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
 
                             load_total();
-
+                            bunifuFlatButton8.Visible = true;
                         }
                     }
                         break;
@@ -1154,6 +1193,8 @@ namespace TooLearnOfficial
 
 
                     load_total();
+
+                    bunifuFlatButton8.Visible = true;
 
                     break;
 
@@ -1213,6 +1254,8 @@ namespace TooLearnOfficial
 
                             load_total();
 
+                            bunifuFlatButton7.Visible = true;
+
                         }
 
                     }
@@ -1268,7 +1311,7 @@ namespace TooLearnOfficial
 
 
                             load_total();
-
+                            bunifuFlatButton7.Visible = true;
                         }
             }
 
@@ -1325,6 +1368,9 @@ namespace TooLearnOfficial
                     NoItems.Text = ShortAnswerLV.Items.Count.ToString();
 
                     load_total();
+
+
+                    bunifuFlatButton7.Visible = true;
 
                     break;
 
@@ -1783,6 +1829,23 @@ namespace TooLearnOfficial
             
         }
 
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            pictureBox3.ImageLocation = "";
+            bunifuFlatButton1.Visible = true;
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            pictureBox4.ImageLocation = "";
+            bunifuFlatButton7.Visible = true;
+        }
+
+        private void bunifuFlatButton9_Click(object sender, EventArgs e)
+        {
+            pictureBox5.ImageLocation = "";
+            bunifuFlatButton8.Visible = true;
+        }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
         {

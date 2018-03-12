@@ -17,7 +17,22 @@ namespace TooLearnOfficial
         delegate void FormCloseCallback(Form frm);
         delegate void BunifuBox(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, bool text);
         delegate void ControlOUt(Form frm, Bunifu.Framework.UI.BunifuFlatButton ctrl, bool text);
+        delegate void imgbuttonin(Form frm, Bunifu.Framework.UI.BunifuImageButton ctrl, bool text);
 
+
+
+        public static void imgbtnIN(Form frm, Bunifu.Framework.UI.BunifuImageButton ctrl, bool text)
+        {
+            if (frm.InvokeRequired)
+            {
+                imgbuttonin d = new imgbuttonin(imgbtnIN);
+                frm.Invoke(d, new object[] { frm, ctrl, text });
+            }
+            else
+            {
+                ctrl.Visible = text;
+            }
+        }
 
 
 

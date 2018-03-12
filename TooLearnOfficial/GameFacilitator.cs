@@ -273,8 +273,8 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
-            
 
+            
             player.controls.play();
 
            
@@ -480,6 +480,9 @@ namespace TooLearnOfficial
             }
         }
 
-        
+        private void GameFacilitator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            player.controls.stop();
+        }
     }
 }
