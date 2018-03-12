@@ -89,7 +89,7 @@ namespace TooLearnOfficial
 
             this.Hide();
             LobbyFacilitator LF = new LobbyFacilitator();
-            LF.Show();
+            LF.ShowDialog();
         }
     }
 }

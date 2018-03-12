@@ -39,14 +39,14 @@ namespace TooLearnOfficial
             if (GameType == "QB")
             {
                 bunifuCustomLabel3.Text = "Quiz Bee";
-                bunifuCustomLabel2.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
+                label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
 
             }
 
             else if (GameType == "PZ")
             {
                 bunifuCustomLabel3.Text = "Picture Puzzle";
-                bunifuCustomLabel2.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
+                label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
             }
         }
 

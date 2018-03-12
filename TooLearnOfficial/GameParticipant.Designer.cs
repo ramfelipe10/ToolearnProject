@@ -184,7 +184,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Century", 9.75F);
+            this.label3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(74, 138);
             this.label3.Name = "label3";

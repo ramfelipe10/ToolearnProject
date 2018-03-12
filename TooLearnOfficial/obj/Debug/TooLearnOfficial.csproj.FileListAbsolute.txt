@@ -188,7 +188,6 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\TooLe
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\MaterialSkin.dll
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csproj.ResolveComReference.cache

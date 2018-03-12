@@ -294,11 +294,37 @@ namespace TooLearnOfficial
         private void load_game(int counter)
         {
 
+            string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
 
-          
+            SendToAllClients(QuizContent);
 
 
-            
+            time = dt.Rows[counter][7].ToString();
+
+            string str = time;
+            int index = str.IndexOf('(');
+
+            if (index >= 0)
+            {
+                convertedtime = str.Substring(0, index);
+
+
+
+            }
+            else
+            {
+
+                convertedtime = str;
+            }
+
+
+            timerstamp = Convert.ToInt32(convertedtime);
+            TimerLabel.Text = timerstamp.ToString();
+
+
+
+
+
 
             if (NoOfITems == 0)
             {
@@ -311,54 +337,41 @@ namespace TooLearnOfficial
                 bunifuFlatButton1.Visible = true;
 
 
-                LabelQuestion.Text = dt.Rows[counter][0].ToString();
-
-                time=dt.Rows[counter][7].ToString();
-
+                LabelQuestion.Text = dt.Rows[counter][0].ToString();         
+               
 
 
-                string str = time;
-                int index = str.IndexOf('(');
-
-                if (index >= 0)
+                if (dt.Rows[counter][6].ToString() != null || dt.Rows[counter][6].ToString() != "")
                 {
-                    convertedtime = str.Substring(0, index);
+                    
+                    ItemPicture.ImageLocation = dt.Rows[counter][6].ToString();
+                    ItemPicture.Enabled = true;
 
 
+                    /*  Size size = new Size(248, 119);
+                      ItemPicture.Size=size;
+
+                      Size Panelsize = new Size(761, 134);
+                      panel1.Size = Panelsize; */                  
 
                 }
+
                 else
                 {
+                    ItemPicture.Enabled = false;
 
-                    convertedtime = str;
+
+                    /*   Size size = new Size(248, 24);
+                       ItemPicture.Size = size;
+
+
+                       Size Panelsize = new Size(761, 215);
+                       panel1.Size = Panelsize;  */                   
                 }
 
-                timerstamp = Convert.ToInt32(convertedtime);
-                TimerLabel.Text = timerstamp.ToString();
+                              
 
-
-
-                /***********************************/
-
-         /*       if (dt.Rows[counter][6].ToString() != null || dt.Rows[counter][6].ToString() != "")
-                {
-                    Bitmap bmp = new Bitmap(dt.Rows[counter][6].ToString());
-                    MemoryStream ms = new MemoryStream();
-                    // Save to memory using the Jpeg format
-                    bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                    // read to end
-                    byte[] bmpBytes = ms.GetBuffer();
-                    bmp.Dispose();
-                    ms.Close();
-
-                } */
-
-                /****************************************/
-
-                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
-
-                SendToAllClients(QuizContent);
+              
 
 
             }
