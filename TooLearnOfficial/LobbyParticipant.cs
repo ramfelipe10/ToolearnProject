@@ -83,7 +83,9 @@ namespace TooLearnOfficial
             }
             catch (Exception ex)
             {
-                ThreadHelper.lsbAddItem(this, lsbWait, ex.ToString());
+                //ThreadHelper.lsbAddItem(this, lsbWait, ex.ToString());
+
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
         }
 
@@ -146,64 +148,71 @@ namespace TooLearnOfficial
 
         private void BeginReceiveCallback(IAsyncResult ar)
         {
-            
-           
+
+            try
+            {
                 // get the client socket
-                TcpClient client = (TcpClient)ar.AsyncState;
+                TcpClient client = (TcpClient)ar.AsyncState; ///error forcibly close
                 int bytesRead = client.Client.EndReceive(ar);
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead);
 
                 Receive();
 
-            if (message.Contains("GAMEQB"))
-            {
-                ThreadHelper.Hide(this);
-                //this.Hide();//kaipuhn muna ithread
-                GameType = "QB";
-                // GameRules GR = new GameRules();
-                //  GR.ShowDialog();
+                if (message.Contains("GAMEQB"))
+                {
+                    ThreadHelper.Hide(this);
+                    //this.Hide();//kaipuhn muna ithread
+                    GameType = "QB";
+                    // GameRules GR = new GameRules();
+                    //  GR.ShowDialog();
 
-                //  testing GR = new testing();
-                GameParticipant GR = new GameParticipant();
-                GR.ShowDialog();
+                    //  testing GR = new testing();
+                    GameParticipant GR = new GameParticipant();
+                    GR.ShowDialog();
 
 
+
+                }
+
+                else if (message.Contains("GAMEPZ"))
+                {
+                    ThreadHelper.Hide(this);
+
+                    //this.Hide();//kaipuhn muna ithread
+                    GameType = "PZ";
+                    //  GameRules GR = new GameRules();
+                    // GR.Show();
+
+
+                    GameParticipant GR = new GameParticipant();
+                    GR.ShowDialog();
+
+
+                }
+
+
+
+
+
+
+                //client.Client.Shutdown(SocketShutdown.Both);
+                //client.Client.Close();
+
+
+                else
+                {
+                    ThreadHelper.lsbAddItem(this, lsbWait, message);
+                    Receive();
+
+                }
 
             }
 
-            else if(message.Contains("GAMEPZ"))
+            catch(Exception ex)
             {
-                ThreadHelper.Hide(this);
-
-                //this.Hide();//kaipuhn muna ithread
-                GameType = "PZ";
-                //  GameRules GR = new GameRules();
-                // GR.Show();
-
-
-                GameParticipant GR = new GameParticipant();
-                GR.ShowDialog();
-
-
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
-
-
-
-
-
-
-            //client.Client.Shutdown(SocketShutdown.Both);
-            //client.Client.Close();
-
-
-            else
-            {
-                ThreadHelper.lsbAddItem(this, lsbWait, message);
-                Receive();
-
-            }
-            
              
         }
 
