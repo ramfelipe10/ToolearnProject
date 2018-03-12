@@ -425,6 +425,7 @@ namespace TooLearnOfficial
             }
             else
             {
+                timer1.Start();//
                 bunifuCustomLabel3.Text = convertedtime.ToString();
                 bunifuCustomLabel2.Visible = false;
                 bunifuCustomLabel3.Visible = true;
