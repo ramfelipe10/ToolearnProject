@@ -13,6 +13,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Text.RegularExpressions;
 
+
 namespace TooLearnOfficial
 {
     public partial class GameParticipant : Form
@@ -168,61 +169,14 @@ namespace TooLearnOfficial
 
                 }
 
-                else //else if start game visible false
-                {
-                    /* string Message = message.Substring(message.Length - 1, 1);
-
-
-                     switch (Message)
-                     {
-                         case "1":
-
-                             ThreadHelper.lblAddLabel(this, label1, message);
-
-                             break;
-
-
-                         case "2":
-
-                             ThreadHelper.btnAddTxtButton(this, button1, message);
-
-                             break;
-
-
-                         case "3":
-                             ThreadHelper.btnAddTxtButton(this, button2, message);
-                             break;
-
-
-                         case "4":
-
-                             ThreadHelper.btnAddTxtButton(this, button3, message);
-
-                             break;
-
-
-                         case "5":
-
-                             ThreadHelper.btnAddTxtButton(this, button4, message);
-
-
-
-                             break;                      
-                    
-                     }  */
-
-                
+                else 
+                {                   
 
 
                     var array = message.Split('\n');
 
-
-                    
+                                      
                    
-                    //correctanswer=Regex.Replace(correctanswer, @"\u00A0", " ");
-                    // ThreadHelper.metrotext(this, bunifuMetroTextbox1, array[5].ToString());
-                    // bunifuMetroTextbox1.Text=array[5].ToString();
-
 
 
 
@@ -267,7 +221,34 @@ namespace TooLearnOfficial
                         convertedtime = Convert.ToInt32(time);//timer
 
 
-                        timer1.Start(); /// dae nagana after mag stop dae na na start to be fixed
+                        string cut = array[7].ToString();
+                        int ind = cut.IndexOf('(');
+                        string form;
+                        if (ind >= 0)
+                        {
+                            form = cut.Substring(ind + 1, 7);
+
+
+
+                        }
+                        else
+                        {
+
+                            form = cut;
+                        }
+
+
+                        if (form == "Minutes")
+                        {
+                            convertedtime = convertedtime * 60;
+                        }
+
+
+
+
+
+
+                        this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
 
 
 
@@ -315,7 +296,32 @@ namespace TooLearnOfficial
 
 
 
-                        timer1.Start();
+                        string cut = array[7].ToString();
+                        int ind = cut.IndexOf('(');
+                        string form;
+                        if (ind >= 0)
+                        {
+                            form = cut.Substring(ind + 1, 7);
+
+
+
+                        }
+                        else
+                        {
+
+                            form = cut;
+                        }
+
+
+                        if (form == "Minutes")
+                        {
+                            convertedtime = convertedtime * 60;
+                        }
+
+
+
+
+                        this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
                     }
 
                     else
@@ -359,28 +365,39 @@ namespace TooLearnOfficial
 
 
 
-                       
-                            timer1.Start();
-                     
 
+                        string cut = array[7].ToString();
+                        int ind = cut.IndexOf('(');
+                        string form;
+                        if (ind >= 0)
+                        {
+                            form = cut.Substring(ind + 1, 7);
+
+
+
+                        }
+                        else
+                        {
+
+                            form = cut;
+                        }
+
+
+                        if (form == "Minutes")
+                        {
+                            convertedtime = convertedtime * 60;
+                        }
+
+
+                        this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
+
+                      
+                        
+                     
+                        
                     }
 
-                /*    ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
-                    ThreadHelper.btnAddTxtButton(this, button1, array[1].ToString());  //A
-                    ThreadHelper.btnAddTxtButton(this, button2, array[2].ToString());  //B
-                    ThreadHelper.btnAddTxtButton(this, button3, array[3].ToString());  //C
-                    ThreadHelper.btnAddTxtButton(this, button4, array[4].ToString());  //D
-                    string Correct = array[5].ToString();  //CorrectAnswer
-                    */
-
-
-                    
-
-                   // array[6].ToString());  //Image
-                  //  array[7].ToString()); //TimeLimit
-                  //  array[8].ToString()); //Points
-                  //  array[9].ToString()); //Game Type
-                  //  array[10].ToString()); //Item Format
+              
 
                     Receive();
 
@@ -392,11 +409,8 @@ namespace TooLearnOfficial
             }
         }
 
-
-        private void Timer()
-        {
-
-        }
+       
+      
 
 
         private void BeginWriteCallback(IAsyncResult ar)
@@ -435,25 +449,6 @@ namespace TooLearnOfficial
 
 
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Send(bunifuFlatButton1.Text);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Send(bunifuFlatButton2.Text);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Send(bunifuFlatButton3.Text);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Send(bunifuFlatButton4.Text);
-        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -464,20 +459,48 @@ namespace TooLearnOfficial
                 timer1.Stop();
                 bunifuCustomLabel2.Visible = true;
                 bunifuCustomLabel3.Visible = false;
+
+                bunifuFlatButton1.Enabled = false;
+                bunifuFlatButton2.Enabled = false;
+                bunifuFlatButton3.Enabled = false;
+                bunifuFlatButton4.Enabled = false;//MC
+
+                bunifuFlatButton5.Enabled = false;//TF
+                bunifuFlatButton6.Enabled = false;
+
+                bunifuMetroTextbox1.Enabled = false;//SA
+                bunifuImageButton1.Enabled = false;
+
+
+
+
             }
             else
             {
-                timer1.Start();//
+                
                 bunifuCustomLabel3.Text = convertedtime.ToString();
                 bunifuCustomLabel2.Visible = false;
                 bunifuCustomLabel3.Visible = true;
+
+
+                bunifuFlatButton1.Enabled = true;
+                bunifuFlatButton2.Enabled = true;
+                bunifuFlatButton3.Enabled = true;
+                bunifuFlatButton4.Enabled = true;//MC
+
+                bunifuFlatButton5.Enabled = true;//TF
+                bunifuFlatButton6.Enabled = true;
+
+                bunifuMetroTextbox1.Enabled = true;//SA
+                bunifuImageButton1.Enabled = true;
+
             }
 
 
         }
 
 
-
+        
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
@@ -500,7 +523,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;                
-                label4.Text = "Wrong, the Right Answer is " + correctanswer ;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper() ;
             }
 
 
@@ -526,7 +549,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -550,7 +573,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -574,7 +597,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -598,7 +621,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -622,7 +645,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -646,7 +669,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 

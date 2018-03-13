@@ -250,24 +250,6 @@ namespace TooLearnOfficial
             }
         }
 
-        private string ScalarReturn(string q)
-        {
-            string s;
-            con.Open();
-            try
-            {
-                SqlCommand cmd = new SqlCommand(q, con);
-
-                s = cmd.ExecuteScalar().ToString();
-            }
-            catch (Exception)
-            {
-                s = "";
-            }
-            con.Close();
-            return s;
-
-        }
 
         
 
@@ -319,8 +301,28 @@ namespace TooLearnOfficial
 
 
             timerstamp = Convert.ToInt32(convertedtime);
-            TimerLabel.Text = timerstamp.ToString();
 
+            string cut = dt.Rows[counter][7].ToString();
+            int ind = cut.IndexOf('(');
+            string form;
+            if (ind >= 0)
+            {
+                form = cut.Substring(ind + 1, 7);
+
+
+
+            }
+            else
+            {
+
+                form = cut;
+            }
+
+
+            if (form == "Minutes")
+            {
+                timerstamp = timerstamp * 60;
+            }
 
 
 
@@ -346,14 +348,8 @@ namespace TooLearnOfficial
                     
                     ItemPicture.ImageLocation = dt.Rows[counter][6].ToString();
                     ItemPicture.Enabled = true;
-
-
-                    /*  Size size = new Size(248, 119);
-                      ItemPicture.Size=size;
-
-                      Size Panelsize = new Size(761, 134);
-                      panel1.Size = Panelsize; */                  
-
+                    
+                 
                 }
 
                 else
@@ -361,56 +357,21 @@ namespace TooLearnOfficial
                     ItemPicture.Enabled = false;
 
 
-                    /*   Size size = new Size(248, 24);
-                       ItemPicture.Size = size;
-
-
-                       Size Panelsize = new Size(761, 215);
-                       panel1.Size = Panelsize;  */                   
+                          
                 }
-
+                                         
                               
-
-              
 
 
             }
 
+                    
 
-            
-
-           
-           
+                      
 
         }
         
-    /*    private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-            i = (ScalarReturn("Select min(quiz_id) from QuestionAnswers"));
-
-            LabelTimer.Text = ScalarReturn("select QA_time_limit from QuestionAnswers where quiz_id='" + i + "'");
-
-           
-
-            time = Convert.ToInt32(LabelTimer.Text);
-
-
-            bunifuCircleProgressbar1.Value = time;
-
-         
-                timer1.Start();
-                bunifuCircleProgressbar1.Value -= 1;
-
-            if (bunifuCircleProgressbar1.Value == 0)
-            {
-                i = i + 1;
-                LabelQuestion.Text = ScalarReturn("select question from QuestionAnswers where quiz_id='" + i + "'");
-
-
-                timer1.Stop();
-            }
-        } */
+   
         
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
@@ -447,7 +408,7 @@ namespace TooLearnOfficial
             counter++;
             NoOfITems--;
             load_game(counter);
-            timer1.Start();// For Next Question
+            this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -471,12 +432,14 @@ namespace TooLearnOfficial
                 timer1.Stop();
                 bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
+                bunifuFlatButton1.Visible = true;
             }
             else
             {
                 TimerLabel.Text = timerstamp.ToString();
                 bunifuCustomLabel1.Visible = false;
                 TimerLabel.Visible = true;
+                bunifuFlatButton1.Visible = false;
             }
         }
 

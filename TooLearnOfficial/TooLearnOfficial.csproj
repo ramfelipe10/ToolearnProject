@@ -737,6 +737,8 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\Multiply_104px.png" />
+    <None Include="TooLearn Pictures\Checkmark_104px.png" />
     <None Include="TooLearn Pictures\clear.png" />
     <None Include="TooLearn Pictures\PDF white.png" />
     <None Include="TooLearn Pictures\PDF 2_52px.png" />

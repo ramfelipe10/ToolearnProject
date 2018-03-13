@@ -203,6 +203,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Checkmark_104px {
+            get {
+                object obj = ResourceManager.GetObject("Checkmark_104px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circle_loading_gif {
             get {
                 object obj = ResourceManager.GetObject("circle-loading-gif", resourceCulture);
@@ -616,6 +626,16 @@ namespace TooLearnOfficial.Properties {
         internal static System.Drawing.Bitmap mode {
             get {
                 object obj = ResourceManager.GetObject("mode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Multiply_104px {
+            get {
+                object obj = ResourceManager.GetObject("Multiply_104px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
