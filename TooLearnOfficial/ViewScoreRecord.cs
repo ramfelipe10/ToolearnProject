@@ -84,10 +84,10 @@ namespace TooLearnOfficial
             //label_average.Text = PG;
 
 
-            int TotalNumberofQuiz;
+                        int TotalNumberofQuiz;
                         int TotalScoreonQuiz = 0;
                         double average;
-            bunifuCircleProgressbar1.Value = 0;
+                        bunifuCircleProgressbar1.Value = 0;
 
                         for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
                         {
@@ -95,9 +95,20 @@ namespace TooLearnOfficial
                         }
                         labelTotal.Text += TotalScoreonQuiz.ToString();
 
-                        TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
+                        TotalNumberofQuiz = DataGridViewGrade.Rows.Count - 1;
+
+                        //Total Nuber of Quiz Take
+                        labelQuizTake.Text += TotalNumberofQuiz;
+
+                        // Total Number of Quiz Take / Total Items of all the Quiz X 100
+
+
+
+
+
                         average = TotalScoreonQuiz / TotalNumberofQuiz;
 
+                        //Average Grade
                         //label_average.Text += average.ToString();
 
 
@@ -147,6 +158,24 @@ namespace TooLearnOfficial
                 labelLetterGrade.Text = "F"; // Failed
                 labelRemarks.Text = "Failed";
             }
+
+            // Count Passed and Failed Quizzes
+            int a = 0, b = -1;
+            for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
+            {              
+                if (Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[1].Value) >= 75)
+                {
+                    a++;
+                }
+                else
+                {
+                    b++;
+                }
+            }
+            labelPassed.Text = a.ToString();
+            labelFailed.Text = b.ToString();
+
+            
         }
     }
 }
