@@ -231,19 +231,21 @@ namespace TooLearnOfficial
 
 
             SendToAllClients("GAME" +  "" +GameType+ "" );
-            
+
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+
 
             this.Hide();
             GameRulesFacilitator GRF = new GameRulesFacilitator();
             GRF.ShowDialog();
            
 
-           
-
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+                   
 
 
         }
@@ -278,6 +280,15 @@ namespace TooLearnOfficial
 
 
             this.Close();
+        }
+
+        private void LobbyFacilitator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

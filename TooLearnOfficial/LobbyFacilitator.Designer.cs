@@ -253,6 +253,7 @@
             this.Name = "LobbyFacilitator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LobbyFacilitator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LobbyFacilitator_FormClosing);
             this.Load += new System.EventHandler(this.LobbyFacilitator_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
