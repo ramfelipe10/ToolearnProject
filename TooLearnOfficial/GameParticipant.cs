@@ -436,62 +436,68 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            /*string box= bunifuMetroTextbox1.Text;
-             string WHAT=validate(box);
-             if (WHAT == "Correct")
-             {
-                int score=Convert.ToInt32(bunifuCustomLabel5.Text);
-                int itempoints= Convert.ToInt32(points);
-                 score = score + itempoints;
+            /*  string anu;
 
-                 bunifuCustomLabel5.Text = score.ToString();
 
-                 MessageBox.Show("tama ka");
+              anu=validate(bunifuMetroTextbox1.Text.ToString());
 
-             }
-             else if(WHAT == "Wrong")
-             {
-                 MessageBox.Show("sala ka");
-             }
 
-             else
-             {
-                 MessageBox.Show("gg");
-             } */
+              if (anu == "Correct")
+              {
 
-            validate(bunifuMetroTextbox1.Text.ToString());
-           // label4.Text = correctanswer;
-            //label5.Text = WHAT;
+                  MessageBox.Show("tama kafsaf");
+              }
+              else
+              {
+                  MessageBox.Show("sala kafsafsafs");
+
+              }
+              label5.Text =  validate(bunifuMetroTextbox1.Text.ToString()); */
+
+            if (bunifuMetroTextbox1.Text.ToString() == correctanswer)
+            {
+
+                MessageBox.Show("tama kafsaf");
+            }
+
+            else
+            {
+                MessageBox.Show("sala ka");
+            }
+
+
         }
 
 
         private string validate(string answer)
         {
-            string score;
+            bool score;
+            string feed;
 
-            string.Compare(answer, correctanswer);
-          //  int x=System.StringComparison.OrdinalIgnoreCase(answer, correctanswer);
-            if (answer==correctanswer)
+            score = String.Equals(answer, correctanswer);
+
+            if (score==true)
             {
-                score = "Correct";
-               
+                feed = "Correct";
+
+                MessageBox.Show("tama ka");
+
             }
-            else if(answer != correctanswer)
+            else 
             {
-                score = "Wrong";
+                feed = "Wrong";
+                MessageBox.Show("sala ka");
+
             }
 
-            else
-            {
-                score = "anu bya";
-            }
+          
 
            
 
 
             label6.Text = answer;
 
-            return score;
+            return feed;
 
             
         }
