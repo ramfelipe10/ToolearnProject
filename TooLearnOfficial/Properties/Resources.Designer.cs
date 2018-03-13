@@ -753,16 +753,6 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Print_52px {
-            get {
-                object obj = ResourceManager.GetObject("Print_52px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap quiz_bank {
             get {
                 object obj = ResourceManager.GetObject("quiz_bank", resourceCulture);
