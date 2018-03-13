@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace TooLearnOfficial
 {
@@ -28,6 +29,9 @@ namespace TooLearnOfficial
 
         string time;
         int convertedtime;
+
+
+        
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
         //  string correct;
@@ -111,6 +115,25 @@ namespace TooLearnOfficial
             }
         }
 
+        private string get(string answer)
+        {
+            string RA = answer;
+            string value = "";
+
+            char[] answerchar = RA.ToArray();
+            for (int i = 0; i < RA.Count(); i++)
+            {
+                if ((i % 2) == 0)
+                {
+                    value += answerchar[i].ToString();
+                }
+
+            }
+
+            return value;
+        }
+
+
         private void BeginReceiveCallback(IAsyncResult ar)
         {
             try
@@ -120,8 +143,8 @@ namespace TooLearnOfficial
                 int bytesRead = client.Client.EndReceive(ar);
 
                 string message = System.Text.Encoding.ASCII.GetString(_buffer, 0, bytesRead); //ini si may laman kang message
-
-               
+                
+                
 
 
 
@@ -194,22 +217,32 @@ namespace TooLearnOfficial
                     var array = message.Split('\n');
 
 
-                    correctanswer=array[5].ToString();
+                    
+                   
+                    //correctanswer=Regex.Replace(correctanswer, @"\u00A0", " ");
+                    // ThreadHelper.metrotext(this, bunifuMetroTextbox1, array[5].ToString());
+                    // bunifuMetroTextbox1.Text=array[5].ToString();
 
-                    points= array[8].ToString();
 
 
 
                     if (array[10].ToString() =="Multiple Choice")//Item Format
                     {
+                        ThreadHelper.PanelOut(this, panel2, false);
+                        ThreadHelper.PanelOut(this, panel3, false);
 
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
                         ThreadHelper.btnAddTxtButton(this, bunifuFlatButton1, array[1].ToString());  //A
                         ThreadHelper.btnAddTxtButton(this, bunifuFlatButton2, array[2].ToString());  //B
                         ThreadHelper.btnAddTxtButton(this, bunifuFlatButton3, array[3].ToString());  //C
                         ThreadHelper.btnAddTxtButton(this, bunifuFlatButton4, array[4].ToString());  //D
-                        string Correct = array[5].ToString();  //CorrectAnswer
+                        correctanswer = array[5].ToString();  //CorrectAnswer
+                        points = array[8].ToString();
+                        
 
+
+
+                        ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton5, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton6, false);
@@ -241,10 +274,15 @@ namespace TooLearnOfficial
                     }
                    else if(array[10].ToString() == "True/False")
                     {
+                        ThreadHelper.PanelOut(this, panel2, false);
+                        ThreadHelper.PanelOut(this, panel3, false);
+
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
-                        string Correct = array[5].ToString();  //CorrectAnswer
+                        correctanswer = array[5].ToString();  //CorrectAnswer
+                        points = array[8].ToString();
 
 
+                        ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton1, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton2, false);
@@ -282,9 +320,13 @@ namespace TooLearnOfficial
 
                     else
                     {
-                        ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
-                        string Correct = array[5].ToString();  //CorrectAnswer
 
+                        ThreadHelper.PanelOut(this, panel2, false);
+                        ThreadHelper.PanelOut(this, panel3, false);
+
+                        ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
+                        correctanswer = array[5].ToString(); ;  //CorrectAnswer
+                        points = array[8].ToString();
 
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, true);
@@ -434,73 +476,208 @@ namespace TooLearnOfficial
 
         }
 
+
+
+
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            /*  string anu;
 
+            string feed = validate(bunifuMetroTextbox1.Text);
+            int score;
 
-              anu=validate(bunifuMetroTextbox1.Text.ToString());
-
-
-              if (anu == "Correct")
-              {
-
-                  MessageBox.Show("tama kafsaf");
-              }
-              else
-              {
-                  MessageBox.Show("sala kafsafsafs");
-
-              }
-              label5.Text =  validate(bunifuMetroTextbox1.Text.ToString()); */
-
-            if (bunifuMetroTextbox1.Text.ToString() == correctanswer)
+            if (feed=="Correct")
             {
 
-                MessageBox.Show("tama kafsaf");
+                score=Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
             }
 
             else
             {
-                MessageBox.Show("sala ka");
+                panel2.Visible = true;
+                panel3.Visible = false;                
+                label4.Text = "Wrong, the Right Answer is " + correctanswer ;
             }
 
 
         }
 
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            string feed = validate("B");
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
+            }
+
+            else
+            {
+                panel2.Visible = true;
+                panel3.Visible = false;
+                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+            }
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            string feed = validate("C");
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
+            }
+
+            else
+            {
+                panel2.Visible = true;
+                panel3.Visible = false;
+                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+            }
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            string feed = validate(bunifuFlatButton5.Text);
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
+            }
+
+            else
+            {
+                panel2.Visible = true;
+                panel3.Visible = false;
+                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+            }
+        }
+
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            string feed = validate(bunifuFlatButton6.Text);
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
+            }
+
+            else
+            {
+                panel2.Visible = true;
+                panel3.Visible = false;
+                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+            }
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            string feed = validate("A");
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
+            }
+
+            else
+            {
+                panel2.Visible = true;
+                panel3.Visible = false;
+                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+            }
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            string feed = validate("D");
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32(points);
+                bunifuCustomLabel5.Text = score.ToString();
+                panel3.Visible = true;
+                panel2.Visible = false;
+                label5.Text = "Correct!";
+            }
+
+            else
+            {
+                panel2.Visible = true;
+                panel3.Visible = false;
+                label4.Text = "Wrong, the Right Answer is " + correctanswer;
+            }
+        }
 
         private string validate(string answer)
         {
-            bool score;
+         
             string feed;
 
-            score = String.Equals(answer, correctanswer);
 
-            if (score==true)
+
+            if (correctanswer.ToLower().ToString().Contains(answer.ToLower().ToString()))
             {
                 feed = "Correct";
 
-                MessageBox.Show("tama ka");
+                
 
             }
             else 
             {
                 feed = "Wrong";
-                MessageBox.Show("sala ka");
+              
 
-            }
-
-          
+            }      
 
            
-
-
-            label6.Text = answer;
-
             return feed;
 
             
         }
+
+        
 
     }
 }
