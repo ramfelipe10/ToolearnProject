@@ -300,6 +300,11 @@
     <Compile Include="PicturePuzzle.Designer.cs">
       <DependentUpon>PicturePuzzle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PublicJoin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -596,14 +601,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="QuizPicturePuzzle.resx">
       <DependentUpon>QuizPicturePuzzle.cs</DependentUpon>
     </EmbeddedResource>
@@ -740,14 +740,11 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-<<<<<<< HEAD
     <None Include="TooLearn Pictures\Multiply_104px.png" />
     <None Include="TooLearn Pictures\Checkmark_104px.png" />
-=======
     <None Include="Resources\toolearn_icon_mAS_icon.ico" />
     <None Include="Resources\TOOLEARN.ico" />
     <None Include="Resources\icon.ico" />
->>>>>>> bda51e482d6f91572737c3acefc092e33941ffa5
     <None Include="TooLearn Pictures\clear.png" />
     <None Include="TooLearn Pictures\PDF white.png" />
     <None Include="TooLearn Pictures\PDF 2_52px.png" />
