@@ -31,8 +31,8 @@ namespace TooLearnOfficial
        // private Form QuizBee;
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-        
-             QuizBee qb = new QuizBee();
+            this.Hide();
+            QuizBee qb = new QuizBee();
              qb.ShowDialog();
             
 
@@ -42,9 +42,9 @@ namespace TooLearnOfficial
        // private Form QuizPicturePuzzle;
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-       
+            this.Hide();
            QuizPicturePuzzle qpp = new QuizPicturePuzzle();
-            qpp.Show();
+            qpp.ShowDialog();
 
 
  
