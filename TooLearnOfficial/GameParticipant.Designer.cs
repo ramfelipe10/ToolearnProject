@@ -58,8 +58,8 @@
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -185,7 +185,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1115, 605);
             this.panel1.TabIndex = 37;
@@ -530,18 +530,6 @@
             this.panel2.TabIndex = 43;
             this.panel2.Visible = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 26);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1115, 605);
-            this.panel3.TabIndex = 44;
-            this.panel3.Visible = false;
-            // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -552,6 +540,17 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "label4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 26);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1115, 605);
+            this.panel3.TabIndex = 44;
+            this.panel3.Visible = false;
             // 
             // label5
             // 
@@ -572,6 +571,7 @@
             this.BackgroundImage = global::TooLearnOfficial.Properties.Resources._444;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1115, 631);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.bunifuImageButton1);
@@ -639,9 +639,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -28,7 +28,7 @@ namespace TooLearnOfficial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewScoreRecord());
+            Application.Run(new Splash());
 
          
 
