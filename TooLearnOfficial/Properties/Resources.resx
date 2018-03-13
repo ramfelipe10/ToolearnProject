@@ -226,9 +226,12 @@
   <data name="PDF 2_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\PDF 2_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="editPar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\editPar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+=======
+>>>>>>> bda51e482d6f91572737c3acefc092e33941ffa5
   <data name="View_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\View_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -408,5 +411,8 @@
   </data>
   <data name="Multiply_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Multiply_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="toolearn_icon_mAS_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toolearn_icon_mAS_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

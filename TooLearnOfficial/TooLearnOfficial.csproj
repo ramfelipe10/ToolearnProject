@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\toolearn_icon_mAS_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
@@ -737,8 +740,14 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+<<<<<<< HEAD
     <None Include="TooLearn Pictures\Multiply_104px.png" />
     <None Include="TooLearn Pictures\Checkmark_104px.png" />
+=======
+    <None Include="Resources\toolearn_icon_mAS_icon.ico" />
+    <None Include="Resources\TOOLEARN.ico" />
+    <None Include="Resources\icon.ico" />
+>>>>>>> bda51e482d6f91572737c3acefc092e33941ffa5
     <None Include="TooLearn Pictures\clear.png" />
     <None Include="TooLearn Pictures\PDF white.png" />
     <None Include="TooLearn Pictures\PDF 2_52px.png" />

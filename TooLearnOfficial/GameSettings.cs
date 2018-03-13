@@ -37,20 +37,33 @@ namespace TooLearnOfficial
 
             switch (bunifuDropdown1.selectedValue)
             {
+                case "Merry Go":
+                    Music = "Kevin MacLeodMerry Go.mp3";
+                    break;
+
+                case "Spinning Monkeys":
+                    Music = "Kevin MacLeodMonkeys Spinning Monkeys.mp3";
+                    break;
+
+                case "Fluffing a Duck":
+                    Music = "Kevin MacLeodFluffing a Duck.mp3";
+                    break;
+
+                case "Sneaky Snitch":
+                    Music = "Kevin MacLeodSneaky Snitch.mp3";
+                break;
 
                 case "Wheel of Fortune":
                     Music = "Wheel of Fortune Theme Song.mp3";
                 break;
 
-
                 case "The Price Is Right":
                     Music = "The Price Is Right theme song.mp3";
-                    break;
-
+                break;
 
                 case "Family Feud":
                     Music = "Family Feud Theme Song.mp3";
-                    break;
+                break;
 
 
                 default:
@@ -90,6 +103,11 @@ namespace TooLearnOfficial
             this.Hide();
             LobbyFacilitator LF = new LobbyFacilitator();
             LF.ShowDialog();
+        }
+
+        private void GameSettings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

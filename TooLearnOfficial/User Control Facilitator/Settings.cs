@@ -42,8 +42,8 @@ namespace TooLearnOfficial.User_Control
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GameCode GC = new GameCode();
-            GC.Show();
+            //GameCode GC = new GameCode();
+            //GC.Show();
         }
     }
 }
