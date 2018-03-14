@@ -67,9 +67,39 @@ namespace TooLearnOfficial
             string Music = GameSettings.Music;          
             player.URL = Music;
 
-            DoubleBuffered = true;
+            SetDoubleBuffered(panel2);
 
         }
+
+
+
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+
+        #endregion
+
+
+        #region .. code for Flucuring ..
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
+
+
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
         {
@@ -458,7 +488,7 @@ namespace TooLearnOfficial
             timerstamp--;
             if (timerstamp == 0)
             {
-                SuspendLayout();
+          
                 timer1.Stop();
                 bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
@@ -471,16 +501,16 @@ namespace TooLearnOfficial
                 {
                     bunifuFlatButton1.Visible = true;
                 }
-                ResumeLayout();
+               
             }
             else
             {
-                SuspendLayout();
+     
                 TimerLabel.Text = timerstamp.ToString();
                 bunifuCustomLabel1.Visible = false;
                 TimerLabel.Visible = true;
                 bunifuFlatButton1.Visible = false;
-                ResumeLayout();
+          
             }
         }
 
