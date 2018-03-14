@@ -39,10 +39,10 @@ namespace TooLearnOfficial
       
 
 
-        private void load_server()
+        private async void load_server()
         {
-            
 
+            await Task.Delay(100);
             Cursor.Current = Cursors.WaitCursor;        
             
             DataTable table = System.Data.Sql.SqlDataSourceEnumerator.Instance.GetDataSources();
@@ -73,7 +73,8 @@ namespace TooLearnOfficial
 
             String  DB, ID, Password;
             Object Source;
-            string servername = Server.SelectedItem.ToString();
+            // string servername = Server.SelectedItem.ToString();
+            string servername = Server.Text;
             try
             {
                 IPHostEntry host = Dns.GetHostEntry(servername); //get the ServerIP
@@ -91,13 +92,15 @@ namespace TooLearnOfficial
             catch(SocketException ex)
             {
 
-                Dialogue.Show(" " + ex.Message.ToString() + " ", "", "Ok", "Cancel");
+                //Dialogue.Show(" " + ex.Message.ToString() + " ", "", "Ok", "Cancel");
             }
 
 
-            if (Server.SelectedItem != null)
+            //if (Server.SelectedItem != null)
+            if (Server.Text != null || Server.Text !="")
             {
-                Source = Server.SelectedItem.ToString() + ",1433";
+                //Source = Server.SelectedItem.ToString() + ",1433";
+                Source = Server.Text + ",1433";
                 DB = "Toolearn";
                 ID = IDbox.Text;
                 Password = Passwordbox.Text;
@@ -157,7 +160,8 @@ namespace TooLearnOfficial
             else
             {
 
-                Dialogue.Show("No Server Selected", "", "Ok", "Cancel");
+                //Dialogue.Show("No Server Selected", "", "Ok", "Cancel");
+                Dialogue.Show("Enter a Server", "", "Ok", "Cancel");
             }
         }
 

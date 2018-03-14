@@ -25,23 +25,55 @@ namespace TooLearnOfficial
         private const int _PORT = 13000;
 
         string GameType = LobbyParticipant.GameType;
-
         string correctanswer,points;
-
         string time;
         int convertedtime;
-
         string Total="9";
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        // string i;
-        //  string correct;
+       
         public GameParticipant()
         {
             InitializeComponent();
             StartConnect();
+            SetDoubleBuffered(panel1);
+            SetDoubleBuffered(panel2);
+            SetDoubleBuffered(panel3);
+            SetDoubleBuffered(panel4);
+
 
         }
+
+
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+
+        #endregion
+
+
+        #region .. code for Flucuring ..
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
+
+
+
+
         private void Send(string message)
         {
             try

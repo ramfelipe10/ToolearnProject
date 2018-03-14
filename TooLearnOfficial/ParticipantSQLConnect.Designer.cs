@@ -157,7 +157,6 @@
             // 
             // Server
             // 
-            this.Server.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Server.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Server.FormattingEnabled = true;
             this.Server.Location = new System.Drawing.Point(155, 24);
