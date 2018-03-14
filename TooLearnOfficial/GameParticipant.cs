@@ -31,8 +31,8 @@ namespace TooLearnOfficial
         string time;
         int convertedtime;
 
+        string Total="9";
 
-        
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
         //  string correct;
@@ -58,7 +58,7 @@ namespace TooLearnOfficial
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+               // MessageBox.Show(ex.ToString());
             }
         }
 
@@ -169,14 +169,51 @@ namespace TooLearnOfficial
 
                 }
 
+               else if (message.Contains("cmpte"))
+                {
+                   int rawscore= Convert.ToInt32(bunifuCustomLabel5.Text);
+                    //label6.Text = rawscore.ToString();
+                    ThreadHelper.SetText(this, label6, rawscore.ToString());
+                    //label10.Text = Total.ToString();
+                    ThreadHelper.SetText(this, label10, Total);
+                    ThreadHelper.PanelOut(this, panel4, true);
+                    //panel4.Visible = true;
+                    float compute = (rawscore / Convert.ToInt32(Total)) * 100;//bawal zero
+
+                    if (compute < Convert.ToInt32("60")){
+                       // label9.Text = compute + " You Needs Improvement, Study and Play!";
+
+                        ThreadHelper.SetText(this, label9, compute + " You Needs Improvement, Study and Play!");
+                    }
+                    else if(compute == Convert.ToInt32("100"))
+                    {
+                        //label9.Text = compute + " Excellent!";
+                        ThreadHelper.SetText(this, label9, compute + " Excellent!");
+                    }
+
+                    else
+                    {
+                        //label9.Text = compute + " Not Bad!, aim 100 Next Time :)";
+                        ThreadHelper.SetText(this, label9, compute + " Not Bad!, aim Perfect Next Time ");
+                    }
+
+
+                }
+
+               else if (message.Contains("CloseThis"))
+                {
+                    Send("DISCONNECT");
+                    ThreadHelper.Hide(this);
+                } 
+
                 else 
                 {                   
 
 
                     var array = message.Split('\n');
 
-                                      
-                   
+
+               
 
 
 
@@ -192,8 +229,8 @@ namespace TooLearnOfficial
                         ThreadHelper.btnAddTxtButton(this, bunifuFlatButton4, array[4].ToString());  //D
                         correctanswer = array[5].ToString();  //CorrectAnswer
                         points = array[8].ToString();
-                        
 
+                    //    Total = array[11].ToString();
 
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
@@ -244,7 +281,7 @@ namespace TooLearnOfficial
                         }
 
 
-
+                      
 
 
 
@@ -261,7 +298,7 @@ namespace TooLearnOfficial
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
                         correctanswer = array[5].ToString();  //CorrectAnswer
                         points = array[8].ToString();
-
+                       // Total = array[11].ToString();
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
@@ -319,7 +356,7 @@ namespace TooLearnOfficial
                         }
 
 
-
+                     
 
                         this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
                     }
@@ -333,7 +370,7 @@ namespace TooLearnOfficial
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
                         correctanswer = array[5].ToString(); ;  //CorrectAnswer
                         points = array[8].ToString();
-
+                     //   Total = array[11].ToString();
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, true);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, true);
@@ -388,7 +425,7 @@ namespace TooLearnOfficial
                             convertedtime = convertedtime * 60;
                         }
 
-
+                      
                         this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
 
                       
@@ -672,6 +709,8 @@ namespace TooLearnOfficial
                 label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
             }
         }
+
+     
 
         private string validate(string answer)
         {

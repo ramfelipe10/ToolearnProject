@@ -37,7 +37,7 @@ namespace TooLearnOfficial
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
-
+       
       
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
@@ -49,12 +49,13 @@ namespace TooLearnOfficial
         int QuizID = QuizBank.QUIZID;
         int NoOfITems;
 
-        string time;
+        string time,totalscore;
         string convertedtime;
         int timerstamp;
         
 
         DataTable dt = new DataTable();
+        DataTable dtr = new DataTable();
 
 
         public GameFacilitator()
@@ -183,7 +184,8 @@ namespace TooLearnOfficial
             try
             {
                 //Get the client socket
-               TcpClient clientSocket = (TcpClient)ar.AsyncState;         
+                 TcpClient clientSocket = (TcpClient)ar.AsyncState;
+                
 
                 //Get the received bytes from the client
                 int received = clientSocket.Client.EndReceive(ar);
@@ -194,7 +196,7 @@ namespace TooLearnOfficial
                 if (!message.Contains("DISCONNECT"))
                 {
 
-                  
+                   // ThreadHelper.lsbAddItem(this, listBox1, message);
 
                     //Begin receiving data from the client socket
                     Receive(clientSocket);
@@ -259,7 +261,7 @@ namespace TooLearnOfficial
             
             player.controls.play();
 
-           
+            
 
 
 
@@ -268,67 +270,22 @@ namespace TooLearnOfficial
 
         private void load_QA()
         {
-            SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer,image,QA_time_limit,points,game_type,item_format from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer,image,QA_time_limit,points,game_type,item_format,quiz_id from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
             adapt.Fill(dt);
             NoOfITems = dt.Rows.Count;//6 rows
+
+
+
+       
+           
+
         }
+
 
         private void load_game(int counter)
         {
 
-            string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
-
-            SendToAllClients(QuizContent);
-
-
-            time = dt.Rows[counter][7].ToString();
-
-            string str = time;
-            int index = str.IndexOf('(');
-
-            if (index >= 0)
-            {
-                convertedtime = str.Substring(0, index);
-
-
-
-            }
-            else
-            {
-
-                convertedtime = str;
-            }
-
-
-            timerstamp = Convert.ToInt32(convertedtime);
-
-            string cut = dt.Rows[counter][7].ToString();
-            int ind = cut.IndexOf('(');
-            string form;
-            if (ind >= 0)
-            {
-                form = cut.Substring(ind + 1, 7);
-
-
-
-            }
-            else
-            {
-
-                form = cut;
-            }
-
-
-            if (form == "Minutes")
-            {
-                timerstamp = timerstamp * 60;
-            }
-
-
-
-
-
-            if (NoOfITems == 0)
+            if (NoOfITems < 1)
             {
                 bunifuFlatButton1.Visible = false;
                 bunifuFlatButton2.Visible = true;
@@ -339,17 +296,17 @@ namespace TooLearnOfficial
                 bunifuFlatButton1.Visible = true;
 
 
-                LabelQuestion.Text = dt.Rows[counter][0].ToString();         
-               
+                LabelQuestion.Text = dt.Rows[counter][0].ToString();
+
 
 
                 if (dt.Rows[counter][6].ToString() != null || dt.Rows[counter][6].ToString() != "")
                 {
-                    
+
                     ItemPicture.ImageLocation = dt.Rows[counter][6].ToString();
                     ItemPicture.Enabled = true;
-                    
-                 
+
+
                 }
 
                 else
@@ -357,15 +314,82 @@ namespace TooLearnOfficial
                     ItemPicture.Enabled = false;
 
 
-                          
-                }
-                                         
-                              
 
+                }
+
+                //Tiglaog //
+
+
+                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
+
+                SendToAllClients(QuizContent);
+
+
+                time = dt.Rows[counter][7].ToString();
+
+                string str = time;
+                int index = str.IndexOf('(');
+
+                if (index >= 0)
+                {
+                    convertedtime = str.Substring(0, index);
+
+
+
+                }
+                else
+                {
+
+                    convertedtime = str;
+                }
+
+
+                timerstamp = Convert.ToInt32(convertedtime);
+
+                string cut = dt.Rows[counter][7].ToString();
+                int ind = cut.IndexOf('(');
+                string form;
+                if (ind >= 0)
+                {
+                    form = cut.Substring(ind + 1, 7);
+
+
+
+                }
+                else
+                {
+
+                    form = cut;
+                }
+
+
+                if (form == "Minutes")
+                {
+                    timerstamp = timerstamp * 60;
+                }
+
+                TimerLabel.Text = timerstamp.ToString();
+
+
+
+
+
+
+                timer1.Start();
+
+
+
+
+                //Tiglaog //
 
             }
 
-                    
+
+
+
+
+
+          
 
                       
 
@@ -403,17 +427,22 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-          
 
-            counter++;
             NoOfITems--;
+            counter++;
+            
             load_game(counter);
-            this.Invoke(new ThreadStart(delegate () { timer1.Enabled = true; timer1.Start(); }));
+           // timer1.Start();
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            SendToAllClients("cmpte");
+            //this.Close();
+            bunifuFlatButton2.Visible = false;
+            bunifuFlatButton3.Visible = true;
+            bunifuFlatButton1.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -432,7 +461,15 @@ namespace TooLearnOfficial
                 timer1.Stop();
                 bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
-                bunifuFlatButton1.Visible = true;
+                if (NoOfITems == 1)
+                {
+                    bunifuFlatButton1.Visible = false;
+                    bunifuFlatButton2.Visible = true;
+                }
+                else
+                {
+                    bunifuFlatButton1.Visible = true;
+                }
             }
             else
             {
@@ -443,9 +480,17 @@ namespace TooLearnOfficial
             }
         }
 
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            SendToAllClients("CloseThis");
+            this.Close();
+        }
+
         private void GameFacilitator_FormClosing(object sender, FormClosingEventArgs e)
         {
             player.controls.stop();
         }
+
+       
     }
 }

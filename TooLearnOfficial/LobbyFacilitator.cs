@@ -21,13 +21,15 @@ namespace TooLearnOfficial
         private const int buffer_size = 2048;        
         private byte[] buffer = new byte[buffer_size];       
         private static string hostIP;
-        private TcpListener listener;      
+       // private TcpListener listener;
+        public static TcpListener listener;
+
         public static Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();// Tg set to Public ko para ma access sa ibang form
         public static string GameType;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-      
 
+        public static TcpClient faci;
       
         
         public LobbyFacilitator()
@@ -59,8 +61,8 @@ namespace TooLearnOfficial
 
                 //End operation and display the received data on the screen
                 TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
-             
-
+                faci = clientSocket;
+                
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
                 
@@ -125,6 +127,8 @@ namespace TooLearnOfficial
 
         private void BeginReceiveCallback(IAsyncResult ar)
         {
+
+           
             try
             {
                 //Get the client socket
@@ -138,13 +142,23 @@ namespace TooLearnOfficial
                 if (!message.Contains("DISCONNECT"))
                 {
                     ThreadHelper.lsbAddItem(this, lsbJoined, message + " has joined the Lobby.");
+                   
 
                     Send("You ("+message+ ") are now connected! Please Wait",clientSocket);
 
-                    
+                    if (message.Contains("SCORE"))
+                    {
+                       /* GameFacilitator GF = new GameFacilitator();
+                        ListBox C = GF.listBox1;
+                        ThreadHelper.lsbAddItem(GF, C, message);
+                        MessageBox.Show(message); */
+                    }
+
                     //Begin receiving data from the client socket
                     Receive(clientSocket);  
                 }
+
+               
                 else
                 {
                     ThreadHelper.lsbAddItem(this, lsbJoined, clientSocket.Client.RemoteEndPoint.ToString() + " has disconnected.");
@@ -240,7 +254,7 @@ namespace TooLearnOfficial
 
 
 
-            this.Hide();
+          // this.Hide();
             GameRulesFacilitator GRF = new GameRulesFacilitator();
             GRF.ShowDialog();
            
