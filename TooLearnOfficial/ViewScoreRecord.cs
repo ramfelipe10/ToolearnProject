@@ -74,7 +74,7 @@ namespace TooLearnOfficial
     */
            
 
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select * from scoreRecords ", con);
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select * from scoreRecords s, participant p where s.participant_id = p.participant_id and p.fullname = '" + PG + "' ", con);
             DataTable datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
