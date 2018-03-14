@@ -60,6 +60,7 @@
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelPName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -215,7 +216,7 @@
             this.DataGridViewGrade.EnableHeadersVisualStyles = false;
             this.DataGridViewGrade.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.DataGridViewGrade.HeaderForeColor = System.Drawing.Color.Black;
-            this.DataGridViewGrade.Location = new System.Drawing.Point(81, 47);
+            this.DataGridViewGrade.Location = new System.Drawing.Point(81, 61);
             this.DataGridViewGrade.Name = "DataGridViewGrade";
             this.DataGridViewGrade.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DataGridViewGrade.RowHeadersVisible = false;
@@ -408,12 +409,24 @@
             this.bunifuCustomLabel8.TabIndex = 37;
             this.bunifuCustomLabel8.Text = "Failed:";
             // 
+            // labelPName
+            // 
+            this.labelPName.AutoSize = true;
+            this.labelPName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelPName.Location = new System.Drawing.Point(77, 33);
+            this.labelPName.Name = "labelPName";
+            this.labelPName.Size = new System.Drawing.Size(176, 25);
+            this.labelPName.TabIndex = 38;
+            this.labelPName.Text = "Participant Name";
+            // 
             // ViewScoreRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(868, 490);
+            this.Controls.Add(this.labelPName);
             this.Controls.Add(this.bunifuCustomLabel8);
             this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.bunifuCustomLabel10);
@@ -480,5 +493,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelPName;
     }
 }

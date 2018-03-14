@@ -81,14 +81,17 @@ namespace TooLearnOfficial
             bs.DataSource = datasd;
             DataGridViewGrade.DataSource = bs;
 
-            //label_average.Text = PG;
+            labelPName.Text = PG;
 
 
                         int TotalNumberofQuiz;
+                        int TotalItemsofQuiz = 0;
                         int TotalScoreonQuiz = 0;
                         double average;
                         bunifuCircleProgressbar1.Value = 0;
 
+
+            //Total Score on Quiz
                         for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
                         {
                             TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value);  
@@ -100,13 +103,22 @@ namespace TooLearnOfficial
                         //Total Nuber of Quiz Take
                         labelQuizTake.Text += TotalNumberofQuiz;
 
-                        // Total Number of Quiz Take / Total Items of all the Quiz X 100
+            // Total Number of Quiz Take / Total Items of all the Quiz X 100
 
 
+            //Total Items of Quiz 
+            for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
+            {
+                TotalItemsofQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[3].Value);
+            }
+            //labelTotal.Text += TotalScoreonQuiz.ToString();
+
+            TotalItemsofQuiz = DataGridViewGrade.Rows.Count - 1;
 
 
+            average = (TotalScoreonQuiz / TotalItemsofQuiz) * 100;
 
-                        average = TotalScoreonQuiz / TotalNumberofQuiz;
+            //average = TotalScoreonQuiz / TotalNumberofQuiz;
 
                         //Average Grade
                         //label_average.Text += average.ToString();
