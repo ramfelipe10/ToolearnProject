@@ -74,7 +74,7 @@ namespace TooLearnOfficial
     */
            
 
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select * from scoreRecords s, participant p where s.participant_id = p.participant_id and p.fullname = '" + PG + "' ", con);
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',q.total_score AS 'Score',s.quiz_score AS 'Quiz Score' from scoreRecords s,quizzes q, participant p where s.participant_id = p.participant_id and p.fullname = '" + PG + "' ", con);
             DataTable datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
@@ -91,7 +91,7 @@ namespace TooLearnOfficial
 
                         for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
                         {
-                            TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[1].Value);  
+                            TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value);  
                         }
                         labelTotal.Text += TotalScoreonQuiz.ToString();
 
@@ -163,7 +163,7 @@ namespace TooLearnOfficial
             int a = 0, b = -1;
             for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
             {              
-                if (Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[1].Value) >= 75)
+                if (Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value) >= 75)
                 {
                     a++;
                 }

@@ -67,7 +67,7 @@ namespace TooLearnOfficial
             string Music = GameSettings.Music;          
             player.URL = Music;
 
-           
+            DoubleBuffered = true;
 
         }
 
@@ -257,7 +257,7 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
-
+        
             
             player.controls.play();
 
@@ -458,6 +458,7 @@ namespace TooLearnOfficial
             timerstamp--;
             if (timerstamp == 0)
             {
+                SuspendLayout();
                 timer1.Stop();
                 bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
@@ -470,13 +471,16 @@ namespace TooLearnOfficial
                 {
                     bunifuFlatButton1.Visible = true;
                 }
+                ResumeLayout();
             }
             else
             {
+                SuspendLayout();
                 TimerLabel.Text = timerstamp.ToString();
                 bunifuCustomLabel1.Visible = false;
                 TimerLabel.Visible = true;
                 bunifuFlatButton1.Visible = false;
+                ResumeLayout();
             }
         }
 
