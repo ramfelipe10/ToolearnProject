@@ -36,123 +36,100 @@ namespace TooLearnOfficial
 
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
-
-            SqlDataAdapter name= new SqlDataAdapter("select participant_id from participant where fullname='" +PG+ "' " ,con);
+            SqlDataAdapter name= new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' " ,con);
             DataTable dt = new DataTable();
             name.Fill(dt);
             string pid=dt.Rows[0][0].ToString();
 
-
-
             SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
             DataTable data = new DataTable();
             classname.Fill(data);
-            string cid = data.Rows[0][0].ToString();
+            string cid = data.Rows[0][0].ToString();           
 
-            
-           
-           
-
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='"+pid+"'AND s.class_id='" +cid+"' ", con);
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='"+ pid +"'AND s.class_id='" + cid +"' ", con);
             DataTable datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
             bs.DataSource = datasd;
             DataGridViewGrade.DataSource = bs;
 
-            labelPName.Text = PG;
+            label_Participant_Name.Text = PG;
+            label_Classroom_name.Text = CR;
 
-
-                        int TotalNumberofQuiz;
-                        
-                        int TotalItemsofQuiz = 0;
-                        int TotalScoreonQuiz = 0;
-                        int average;
-                        bunifuCircleProgressbar1.Value = 0;
-
+                        int Total_Number_of_Quiz;                       
+                        int Quiz_Total_Score = 0;
+                        int Total_Score_on_Quiz = 0;
+                        double average = 0;
+                        Progressbar_Individual.Value = 0;
 
             //Total Score on Quiz
                         for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
                         {
-                            TotalScoreonQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value);  
+                            Total_Score_on_Quiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value);  
                         }
-                        labelTotal.Text += TotalScoreonQuiz.ToString();
+                        label_Total_Score.Text += Total_Score_on_Quiz.ToString();
 
-                        TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
+                        Total_Number_of_Quiz = DataGridViewGrade.Rows.Count;
 
-                        //Total Nuber of Quiz Take
-                        labelQuizTake.Text += TotalNumberofQuiz.ToString();
-
-            // Total Number of Quiz Take / Total Items of all the Quiz X 100
-
+            //Total Number of Quiz Take
+                label_No_of_Taken_Quiz.Text += Total_Number_of_Quiz.ToString();
 
             //Total Items of Quiz 
-            for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
-            {
-                TotalItemsofQuiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[3].Value);
-            }
-            //labelTotal.Text += TotalScoreonQuiz.ToString();
+                        for (int j = 0; j < DataGridViewGrade.Rows.Count; ++j)
+                        {
+                            Quiz_Total_Score += Convert.ToInt32(DataGridViewGrade.Rows[j].Cells[3].Value);
+                        }
+            //Compute the Average Grade
+                average = ((Total_Score_on_Quiz / Quiz_Total_Score) * 100);
 
-            //TotalnumberItemsofQuiz = DataGridViewGrade.Rows.Count - 1;
-            
+            //Average Grade
+            label_average.Text += average.ToString();
 
-
-           average = (TotalScoreonQuiz / TotalItemsofQuiz) * 100;
-
-            //average = TotalScoreonQuiz / TotalNumberofQuiz;
-
-                        //Average Grade
-                        //label_average.Text += average.ToString();
-
-
-            bunifuCircleProgressbar1.Value = Convert.ToInt32(average);
-            
-            
-
-
+            Progressbar_Individual.Value += Convert.ToInt32(average);
+            //Progressbar_Individual.Value = average;
 
             if (average >= 95 && average <= 100)
             {
-                labelLetterGrade.Text = "A"; // Excellent
-                labelRemarks.Text = "Excelent";
+                label_Letter_Grade.Text = "A"; // Excellent
+                label_Remarks.Text = "Excellent";
             }
             else if (average >= 89 && average <= 94)
             {
-                labelLetterGrade.Text = "B+"; // Very Good
-                labelRemarks.Text = "Very Good";
+                label_Letter_Grade.Text = "B+"; // Very Good
+                label_Remarks.Text = "Very Good";
             }
             else if (average >= 83 && average <= 88)
             {
-                labelLetterGrade.Text = "B";  // Very Good
-                labelRemarks.Text = "Very Good";
+                label_Letter_Grade.Text = "B";  // Very Good
+                label_Remarks.Text = "Very Good";
             }
             else if (average >= 77 && average <= 82)
             {
-                labelLetterGrade.Text = "C+";  // Good
-                labelRemarks.Text = "Good";
+                label_Letter_Grade.Text = "C+";  // Good
+                label_Remarks.Text = "Good";
             }
             else if (average >= 71 && average <= 76)
             {
-                labelLetterGrade.Text = "C";  // Satisfaction
-                labelRemarks.Text = "Satisfaction";
+                label_Letter_Grade.Text = "C";  // Satisfaction
+                label_Remarks.Text = "Satisfaction";
             }
             else if (average >= 65 && average <= 70)
             {
-                labelLetterGrade.Text = "D+";  // Satisfaction
-                labelRemarks.Text = "Satisfaction";
+                label_Letter_Grade.Text = "D+";  // Satisfaction
+                label_Remarks.Text = "Satisfaction";
             }
             else if (average >= 60 && average <= 64)
             {
-                labelLetterGrade.Text = "D";  // Passed
-                labelRemarks.Text = "Passed";
+                label_Letter_Grade.Text = "D";  // Passed
+                label_Remarks.Text = "Passed";
             }
             else
             {
-                labelLetterGrade.Text = "F"; // Failed
-                labelRemarks.Text = "Failed";
+                label_Letter_Grade.Text = "F"; // Failed
+                label_Remarks.Text = "Failed";
             }
 
-            // Count Passed and Failed Quizzes
+            //Count Passed and Failed Quizzes
             int a = 0, b = 0;
             for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
             {              
@@ -166,9 +143,7 @@ namespace TooLearnOfficial
                 }
             }
             labelPassed.Text = a.ToString();
-            labelFailed.Text = b.ToString();
-
-            
+            labelFailed.Text = b.ToString();           
         }
     }
 }
