@@ -49,13 +49,13 @@ namespace TooLearnOfficial
         int QuizID = QuizBank.QUIZID;
         int NoOfITems;
 
-        string time,totalscore;
+        string time;
         string convertedtime;
         int timerstamp;
         
 
         DataTable dt = new DataTable();
-        DataTable dtr = new DataTable();
+       
 
 
         public GameFacilitator()
@@ -300,7 +300,7 @@ namespace TooLearnOfficial
 
         private void load_QA()
         {
-            SqlDataAdapter adapt = new SqlDataAdapter("select question,answer_a,answer_b,answer_c,answer_d,correct_answer,image,QA_time_limit,points,game_type,item_format,quiz_id from QuestionAnswers where quiz_id= '" + QuizID + "'", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("select qa.question,qa.answer_a,qa.answer_b,qa.answer_c,qa.answer_d,qa.correct_answer,qa.image,qa.QA_time_limit,qa.points,qa.game_type,qa.item_format,q.total_score from QuestionAnswers qa,quizzes q where qa.quiz_id=q.quiz_id AND qa.quiz_id= '" + QuizID + "'", con);
             adapt.Fill(dt);
             NoOfITems = dt.Rows.Count;//6 rows
 
@@ -350,7 +350,7 @@ namespace TooLearnOfficial
                 //Tiglaog //
 
 
-                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();
+                string QuizContent = dt.Rows[counter][0].ToString() + Environment.NewLine + dt.Rows[counter][1].ToString() + Environment.NewLine + dt.Rows[counter][2].ToString() + Environment.NewLine + dt.Rows[counter][3].ToString() + Environment.NewLine + dt.Rows[counter][4].ToString() + Environment.NewLine + dt.Rows[counter][5].ToString() + Environment.NewLine + dt.Rows[counter][6].ToString() + Environment.NewLine + dt.Rows[counter][7].ToString() + Environment.NewLine + dt.Rows[counter][8].ToString() + Environment.NewLine + dt.Rows[counter][9].ToString() + Environment.NewLine + dt.Rows[counter][11].ToString() + Environment.NewLine + dt.Rows[counter][10].ToString();               
 
                 SendToAllClients(QuizContent);
 
@@ -468,7 +468,7 @@ namespace TooLearnOfficial
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
 
-            SendToAllClients("cmpte");
+            SendToAllClients("C1o2m3pute");
             //this.Close();
             bunifuFlatButton2.Visible = false;
             bunifuFlatButton3.Visible = true;

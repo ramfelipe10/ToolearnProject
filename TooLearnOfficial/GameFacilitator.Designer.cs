@@ -261,7 +261,7 @@
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(242, 51);
             this.bunifuCustomLabel1.TabIndex = 29;
-            this.bunifuCustomLabel1.Text = "Times Up!";
+            this.bunifuCustomLabel1.Text = "Time\'s Up!";
             this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuCustomLabel1.Visible = false;
             // 

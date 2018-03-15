@@ -227,13 +227,14 @@
             // 
             // label3
             // 
+            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 78);
+            this.label3.Location = new System.Drawing.Point(86, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 33);
+            this.label3.Size = new System.Drawing.Size(74, 24);
             this.label3.TabIndex = 161;
             this.label3.Text = "Code:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LobbyFacilitator
             // 

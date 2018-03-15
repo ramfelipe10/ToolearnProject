@@ -28,7 +28,7 @@ namespace TooLearnOfficial
         string correctanswer,points;
         string time;
         int convertedtime;
-        string Total="9";
+        string Total;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
        
@@ -201,7 +201,7 @@ namespace TooLearnOfficial
 
                 }
 
-               else if (message.Contains("cmpte"))
+               else if (message.Contains("C1o2m3pute"))
                 {
                    int rawscore= Convert.ToInt32(bunifuCustomLabel5.Text);
                     //label6.Text = rawscore.ToString();
@@ -249,7 +249,7 @@ namespace TooLearnOfficial
 
 
 
-                    if (array[10].ToString() =="Multiple Choice")//Item Format
+                    if (array[11].ToString() =="Multiple Choice")//Item Format
                     {
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
@@ -262,7 +262,7 @@ namespace TooLearnOfficial
                         correctanswer = array[5].ToString();  //CorrectAnswer
                         points = array[8].ToString();
 
-                    //    Total = array[11].ToString();
+                      Total = array[10].ToString();
 
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
@@ -322,7 +322,7 @@ namespace TooLearnOfficial
 
 
                     }
-                   else if(array[10].ToString() == "True/False")
+                   else if(array[11].ToString() == "True/False")
                     {
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
@@ -330,7 +330,7 @@ namespace TooLearnOfficial
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
                         correctanswer = array[5].ToString();  //CorrectAnswer
                         points = array[8].ToString();
-                       // Total = array[11].ToString();
+                        Total = array[10].ToString();
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
@@ -402,7 +402,7 @@ namespace TooLearnOfficial
                         ThreadHelper.lblAddLabel(this, label1, array[0].ToString());  //Question
                         correctanswer = array[5].ToString(); ;  //CorrectAnswer
                         points = array[8].ToString();
-                     //   Total = array[11].ToString();
+                        Total = array[10].ToString();
 
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, true);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, true);
