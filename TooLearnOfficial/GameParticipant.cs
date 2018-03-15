@@ -201,7 +201,7 @@ namespace TooLearnOfficial
 
                 }
 
-               else if (message.Contains("C1o2m3pute"))
+               else if (message.Contains("Compute"))
                 {
                    int rawscore= Convert.ToInt32(bunifuCustomLabel5.Text);
                     //label6.Text = rawscore.ToString();
@@ -210,29 +210,30 @@ namespace TooLearnOfficial
                     ThreadHelper.SetText(this, label10, Total);
                     ThreadHelper.PanelOut(this, panel4, true);
                     //panel4.Visible = true;
-                    float compute = (rawscore / Convert.ToInt32(Total)) * 100;//bawal zero
-
+                    int compute = (rawscore / Convert.ToInt32(Total)) * 100;//bawal zero
+                    
+                    
                     if (compute < Convert.ToInt32("60")){
                        // label9.Text = compute + " You Needs Improvement, Study and Play!";
 
-                        ThreadHelper.SetText(this, label9, compute + " You Needs Improvement, Study and Play!");
+                        ThreadHelper.SetText(this, label9, compute.ToString() + " You Needs Improvement, Study and Play!");
                     }
                     else if(compute == Convert.ToInt32("100"))
                     {
                         //label9.Text = compute + " Excellent!";
-                        ThreadHelper.SetText(this, label9, compute + " Excellent!");
+                        ThreadHelper.SetText(this, label9, compute.ToString() + " Excellent!");
                     }
 
                     else
                     {
                         //label9.Text = compute + " Not Bad!, aim 100 Next Time :)";
-                        ThreadHelper.SetText(this, label9, compute + " Not Bad!, aim Perfect Next Time ");
+                        ThreadHelper.SetText(this, label9, compute.ToString() + " Not Bad!, aim Perfect Next Time ");
                     }
 
 
                 }
 
-               else if (message.Contains("CloseThis"))
+               else if (message.Contains("HIDE"))
                 {
                     Send("DISCONNECT");
                     ThreadHelper.Hide(this);
@@ -264,11 +265,15 @@ namespace TooLearnOfficial
 
                       Total = array[10].ToString();
 
-
+                        ThreadHelper.ControlHide(this, bunifuFlatButton1, true);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton2, true);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton3, true);
+                        ThreadHelper.ControlHide(this, bunifuFlatButton4, true);
                         ThreadHelper.imgbtnIN(this, bunifuImageButton1, false);
                         ThreadHelper.BunifuBoxHide(this, bunifuMetroTextbox1, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton5, false);
                         ThreadHelper.ControlHide(this, bunifuFlatButton6, false);
+
 
                         string str = array[7].ToString();
                         int index = str.IndexOf('(');

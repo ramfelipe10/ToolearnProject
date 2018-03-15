@@ -33,7 +33,7 @@ namespace TooLearnOfficial
         {
             this.Close();
             QuizBee qb = new QuizBee();
-             qb.ShowDialog();
+             qb.Show();
             
 
 
@@ -44,7 +44,7 @@ namespace TooLearnOfficial
         {
             this.Close();
             QuizPicturePuzzle qpp = new QuizPicturePuzzle();
-            qpp.ShowDialog();
+            qpp.Show();
 
 
  

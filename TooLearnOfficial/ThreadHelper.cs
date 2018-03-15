@@ -96,7 +96,7 @@ namespace TooLearnOfficial
             }
             else
             {
-                frm.Hide();
+                frm.Close();
             }
         }
 

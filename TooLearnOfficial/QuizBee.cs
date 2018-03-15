@@ -33,6 +33,7 @@ namespace TooLearnOfficial
             SetDoubleBuffered(MultipleChoice);
             SetDoubleBuffered(shortAnswer);
             SetDoubleBuffered(trueORfalse);
+            SetDoubleBuffered(header);
         }
 
 

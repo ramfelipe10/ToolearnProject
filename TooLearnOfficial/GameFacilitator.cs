@@ -468,7 +468,7 @@ namespace TooLearnOfficial
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
 
-            SendToAllClients("C1o2m3pute");
+            SendToAllClients("Compute");
             //this.Close();
             bunifuFlatButton2.Visible = false;
             bunifuFlatButton3.Visible = true;
@@ -516,7 +516,7 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-            SendToAllClients("CloseThis");
+            SendToAllClients("HIDE");
             this.Close();
         }
 
