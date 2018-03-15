@@ -23,10 +23,44 @@ namespace TooLearnOfficial
         {
             InitializeComponent();
             Load_Class();
+            SetDoubleBuffered(bunifuCustomDataGrid1);
+            SetDoubleBuffered(bunifuCustomDataGrid2);
         }
 
 
-     public void Load_Class()
+
+        #region .. Double Buffered function ..
+        public static void SetDoubleBuffered(System.Windows.Forms.Control c)
+        {
+            if (System.Windows.Forms.SystemInformation.TerminalServerSession)
+                return;
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control).GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(c, true, null);
+        }
+
+        #endregion
+
+
+        #region .. code for Flucuring ..
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        #endregion
+
+
+
+
+
+
+        public void Load_Class()
         {
 
 
@@ -170,10 +204,10 @@ namespace TooLearnOfficial
         private void createP_Click(object sender, EventArgs e)
         {
 
-            string selected = comboBox1.SelectedItem.ToString();//Getting the Value From COMBO BOX
+          
 
 
-            if (selected == "")
+            if (comboBox1.SelectedItem ==null || comboBox1.SelectedItem.ToString()=="")
             {
                 Dialogue.Show("Invalid Input or Empty", "", "Ok", "Cancel");
             }
@@ -181,6 +215,9 @@ namespace TooLearnOfficial
 
             else
             {
+
+                string selected = comboBox1.SelectedItem.ToString();//Getting the Value From COMBO BOX
+
                 SqlDataAdapter adapt = new SqlDataAdapter("Select class_id from classrooms WHERE class_name = '" + className + "' AND facilitator_id='" +Program.user_id+ "' ", con);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);

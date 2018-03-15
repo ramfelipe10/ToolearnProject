@@ -41,12 +41,19 @@ namespace TooLearnOfficial
                     cf.Show();
 
                 }
+               
                 else if(TextboxPassword.Text != TextboxReTypePassword.Text)
                 {
                     Dialogue.Show("Your Password does not Match", "", "Ok", "Cancel");
                     con.Close();
                 }
             }
+            else if (TextboxName.Text == "" || TextboxPassword.Text == "" || TextboxReTypePassword.Text == "" ||TextboxUsername.Text=="")
+            {
+                Dialogue.Show("Please Fill all Fields", "", "Ok", "Cancel");
+                con.Close();
+            }
+
             else
             {
                 Dialogue.Show("Please use Available Username", "", "Ok", "Cancel");

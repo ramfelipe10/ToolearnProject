@@ -468,6 +468,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.dgpp);
+            this.DoubleBuffered = true;
             this.Name = "Score";
             this.Size = new System.Drawing.Size(916, 525);
             this.Load += new System.EventHandler(this.Score_Load);
