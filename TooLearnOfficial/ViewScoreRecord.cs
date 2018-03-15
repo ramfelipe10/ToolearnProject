@@ -56,10 +56,11 @@ namespace TooLearnOfficial
             label_Participant_Name.Text = PG;
             label_Classroom_name.Text = CR;
 
-                        int Total_Number_of_Quiz;                       
-                        int Quiz_Total_Score = 0;
-                        int Total_Score_on_Quiz = 0;
-                        double average = 0;
+                        int Total_Number_of_Quiz;
+                        double Quiz_Total_Score = 0;
+                        double Total_Score_on_Quiz = 0;
+                        int average;
+                        double aver;
                         Progressbar_Individual.Value = 0;
 
             //Total Score on Quiz
@@ -69,9 +70,8 @@ namespace TooLearnOfficial
                         }
                         label_Total_Score.Text += Total_Score_on_Quiz.ToString();
 
-                        Total_Number_of_Quiz = DataGridViewGrade.Rows.Count;
-
             //Total Number of Quiz Take
+                Total_Number_of_Quiz = DataGridViewGrade.Rows.Count;
                 label_No_of_Taken_Quiz.Text += Total_Number_of_Quiz.ToString();
 
             //Total Items of Quiz 
@@ -79,14 +79,15 @@ namespace TooLearnOfficial
                         {
                             Quiz_Total_Score += Convert.ToInt32(DataGridViewGrade.Rows[j].Cells[3].Value);
                         }
+                        //label_Class_Rank.Text += Quiz_Total_Score;
             //Compute the Average Grade
-                average = ((Total_Score_on_Quiz / Quiz_Total_Score) * 100);
-
+                aver = (Total_Score_on_Quiz / Quiz_Total_Score) * 100;
+                average = Convert.ToInt32(aver);
             //Average Grade
             label_average.Text += average.ToString();
 
             Progressbar_Individual.Value += Convert.ToInt32(average);
-            //Progressbar_Individual.Value = average;
+            
 
             if (average >= 95 && average <= 100)
             {
@@ -132,14 +133,18 @@ namespace TooLearnOfficial
             //Count Passed and Failed Quizzes
             int a = 0, b = 0;
             for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
-            {              
-                if (((Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value) / (Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[3].Value))  * 100 >= 75)))
+            {
+                if (average >= 75)
                 {
                     a++;
+                    Progressbar_Individual.ProgressColor = Color.ForestGreen;
+                    Progressbar_Individual.ForeColor = Color.ForestGreen;
                 }
                 else
                 {
                     b++;
+                    Progressbar_Individual.ProgressColor = Color.Red;
+                    Progressbar_Individual.ForeColor = Color.Red;
                 }
             }
             labelPassed.Text = a.ToString();
