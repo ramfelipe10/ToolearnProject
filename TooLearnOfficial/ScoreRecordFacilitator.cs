@@ -17,7 +17,8 @@ namespace TooLearnOfficial
 
         
 
-        public static string PN; 
+        public static string PN;
+        public static string CR;
 
         public ScoreRecordFacilitator()
         {
@@ -32,6 +33,7 @@ namespace TooLearnOfficial
         public void MyEventHandlerFunction_StatusUpdated(object sender, EventArgs e)
         {
             PN = score1.Data.ToString();
+            CR = score1.Data1.ToString();
         }
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)

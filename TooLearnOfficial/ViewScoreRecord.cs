@@ -16,6 +16,7 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
         string PG = ScoreRecordFacilitator.PN;
+        string CR = ScoreRecordFacilitator.CR;
         
         public ViewScoreRecord()
         {
@@ -36,45 +37,23 @@ namespace TooLearnOfficial
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
 
+            SqlDataAdapter name= new SqlDataAdapter("select participant_id from participant where fullname='" +PG+ "' " ,con);
+            DataTable dt = new DataTable();
+            name.Fill(dt);
+            string pid=dt.Rows[0][0].ToString();
 
-            /*
+
+
+            SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
+            DataTable data = new DataTable();
+            classname.Fill(data);
+            string cid = data.Rows[0][0].ToString();
+
             
-                       SqlDataAdapter adapt = new SqlDataAdapter("Select participant_id from participant where fullname='" +Name+ "' ", con);
-                       DataTable dt = new DataTable();
-                       adapt.Fill(dt);
-                        string ID=dt.Rows[0][0].ToString();
-
-
-                        SqlDataAdapter adapter = new SqlDataAdapter("Select quiz_id,quiz_score from scoreRecords where participant_id='" + ID + "' ", con);
-                        DataTable data = new DataTable();
-                        adapt.Fill(data);
-                        string Qid = data.Rows[0][0].ToString();
-                        string Score = data.Rows[0][1].ToString();
-
-
-                        SqlDataAdapter adapters = new SqlDataAdapter("Select quiz_title from quizzes where quiz_id='" + Qid + "' ", con);
-                        DataTable datas = new DataTable();
-                        adapt.Fill(datas);
-                        string title = datas.Rows[0][0].ToString();
-
-
-
-
-                        SqlDataAdapter adaptersd = new SqlDataAdapter("Q.quiz_title,quiz_score from scoreRecords SR,quizzes Q where SR.participant_id='"+ID+"' AND Q.quiz_id= '" +Qid + "' ", con);
-                        DataTable datasd = new DataTable();
-                        adaptersd.Fill(datasd);
-                        BindingSource bs = new BindingSource();
-                        bs.DataSource = datasd;
-                        DataGridViewGrade.DataSource = bs;
-                        adaptersd.Update(dt);
-
-
-
-
-    */
+           
            
 
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',q.total_score AS 'Score',s.quiz_score AS 'Quiz Score' from scoreRecords s,quizzes q, participant p where s.participant_id = p.participant_id and p.fullname = '" + PG + "' ", con);
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='"+pid+"'AND s.class_id='" +cid+"' ", con);
             DataTable datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
@@ -85,9 +64,10 @@ namespace TooLearnOfficial
 
 
                         int TotalNumberofQuiz;
+                        
                         int TotalItemsofQuiz = 0;
                         int TotalScoreonQuiz = 0;
-                        double average;
+                        int average;
                         bunifuCircleProgressbar1.Value = 0;
 
 
@@ -98,10 +78,10 @@ namespace TooLearnOfficial
                         }
                         labelTotal.Text += TotalScoreonQuiz.ToString();
 
-                        TotalNumberofQuiz = DataGridViewGrade.Rows.Count - 1;
+                        TotalNumberofQuiz = DataGridViewGrade.Rows.Count;
 
                         //Total Nuber of Quiz Take
-                        labelQuizTake.Text += TotalNumberofQuiz;
+                        labelQuizTake.Text += TotalNumberofQuiz.ToString();
 
             // Total Number of Quiz Take / Total Items of all the Quiz X 100
 
@@ -113,10 +93,11 @@ namespace TooLearnOfficial
             }
             //labelTotal.Text += TotalScoreonQuiz.ToString();
 
-            TotalItemsofQuiz = DataGridViewGrade.Rows.Count - 1;
+            //TotalnumberItemsofQuiz = DataGridViewGrade.Rows.Count - 1;
+            
 
 
-            average = (TotalScoreonQuiz / TotalItemsofQuiz) * 100;
+           average = (TotalScoreonQuiz / TotalItemsofQuiz) * 100;
 
             //average = TotalScoreonQuiz / TotalNumberofQuiz;
 
@@ -172,10 +153,10 @@ namespace TooLearnOfficial
             }
 
             // Count Passed and Failed Quizzes
-            int a = 0, b = -1;
+            int a = 0, b = 0;
             for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
             {              
-                if (Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value) >= 75)
+                if (((Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value) / (Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[3].Value))  * 100 >= 75)))
                 {
                     a++;
                 }

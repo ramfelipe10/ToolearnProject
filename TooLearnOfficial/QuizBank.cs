@@ -359,7 +359,7 @@ namespace TooLearnOfficial
                             EditQuizBEE EQB = new EditQuizBEE();
                            EQB.ShowDialog();
                         }
-                       else
+                       else if(GameType == "Picture Puzzle")
                          {
                         EditPuzzle EP = new EditPuzzle();
                         EP.ShowDialog();

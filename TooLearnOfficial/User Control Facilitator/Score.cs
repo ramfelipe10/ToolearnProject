@@ -34,31 +34,12 @@ namespace TooLearnOfficial.User_Control_Facilitator
         }
 
 
-
-    /*    //Alternative
-        static class Helper
-        {
-            public static string ConnectionString
-            {
-                get
-                {
-                    string str = System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString;
-                    return str;
-                }
-            }
-        }
-        //Alternative    */
         
 
 
         public void Load_Class()
         {
-            /*
-      //Alternative
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = Helper.ConnectionString;
-
-            //Alternative-End  */
+       
 
             try
             {
@@ -78,28 +59,15 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 con.Close();
             }
 
-            catch (Exception ex)
-            {
+              catch (Exception ex)
+             {
                 Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-            }
+             }
               
 
-        }
-
-        
-               Random r = new Random();
-               void additem(string _name, string _quiz, string _format, string _score, double _prog)
-               {
-                   bunifuCustomDataGrid1.Rows.Add();
-                   bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[0].Value = _name;
-                   bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[1].Value = _quiz;
-                   bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[2].Value = _format;
-                   bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[3].Value = _score;
-                  bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[4].Value = generate_Progress(_prog);
-
-
-
-               }
+             }
+              
+          
                
                public Image generate_Progress(double pass)
                {
@@ -112,14 +80,14 @@ namespace TooLearnOfficial.User_Control_Facilitator
                             pictureBox3.BackColor = Color.Red;
                         }
 
-            else
-            {
-                pictureBox3.BackColor = Color.Green;
-            }
+                          else
+                        {
+                            pictureBox3.BackColor = Color.Green;
+                        }
 
-                        return PanelToBitmap(dgpp); 
+                            return PanelToBitmap(dgpp); 
 
-                    }  
+               }  
 
         private static Image PanelToBitmap(Control pnl)
             {
@@ -133,20 +101,14 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
         void Trigger_Combo()
         {
-         /*  //Alternative
-                SqlConnection con = new SqlConnection();
-                con.ConnectionString = Helper.ConnectionString;
-
-                //Alternative-End  */
+         
                 try {
                 if (bunifuFlatButton2.selected == true)
                 {
                     SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
                     DataTable data = new DataTable();
                     sed.Fill(data);
-                    string ID = data.Rows[0][0].ToString();
-
-                   // SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NULL ", con);
+                    string ID = data.Rows[0][0].ToString();                 
                     SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -187,7 +149,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    //SqlDataAdapter sda = new SqlDataAdapter("select participant_id,group_id,quiz_score from scoreRecords where class_id= '" + ID + "' AND group_id IS NOT NULL ", con);
+                  
                     SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NOT NULL ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -264,11 +226,19 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
 
         public string PN;
+        public string CR;
         public string Data
         {
             get { return PN; }
             set { PN = value; }
         }
+
+        public string Data1
+        {
+            get { return CR; }
+            set { CR = value; }
+        }
+
 
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -279,7 +249,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             {
                 PN = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-                
+                CR = comboBox1.SelectedItem.ToString();
 
             }
 
@@ -314,7 +284,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             {
                 PN = bunifuCustomDataGrid2.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-               
+                CR = comboBox3.SelectedItem.ToString();
 
             }
 
