@@ -137,10 +137,14 @@ namespace TooLearnOfficial
                 if (average >= 75)
                 {
                     a++;
+                    Progressbar_Individual.ProgressColor = Color.ForestGreen;
+                    Progressbar_Individual.ForeColor = Color.ForestGreen;
                 }
                 else
                 {
                     b++;
+                    Progressbar_Individual.ProgressColor = Color.Red;
+                    Progressbar_Individual.ForeColor = Color.Red;
                 }
             }
             labelPassed.Text = a.ToString();
