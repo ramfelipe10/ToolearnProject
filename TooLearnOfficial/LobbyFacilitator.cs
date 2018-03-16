@@ -30,8 +30,10 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
         public static TcpClient faci;
-      
-        
+
+       
+
+
         public LobbyFacilitator()
         {
             InitializeComponent();
@@ -39,6 +41,8 @@ namespace TooLearnOfficial
             load_server();
             listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
             listener.Start(100);
+
+           
            
             try
             {
@@ -139,27 +143,21 @@ namespace TooLearnOfficial
                 string message = System.Text.Encoding.ASCII.GetString(buffer, 0, received);
 
                 //Check if a disconenct flag was received
-                if (!message.Contains("DISCONNECT"))
+                if (message.Contains("SCORE"))
                 {
-                    ThreadHelper.lsbAddItem(this, lsbJoined, message + " has joined the Lobby.");
-                   
+                    //ThreadHelper.lsbAddItem(this, lsbJoined, message);
 
-                    Send("You ("+message+ ") are now connected! Please Wait",clientSocket);
+                    GameFacilitator GF = (GameFacilitator)Application.OpenForms["GameFacilitator"];
+                    GF.updateScore(message.ToString());
+                    // Send("You ("+message+ ") are now connected! Please Wait",clientSocket);
 
-                    if (message.Contains("SCORE"))
-                    {
-                       /* GameFacilitator GF = new GameFacilitator();
-                        ListBox C = GF.listBox1;
-                        ThreadHelper.lsbAddItem(GF, C, message);
-                        MessageBox.Show(message); */
-                    }
 
                     //Begin receiving data from the client socket
                     Receive(clientSocket);  
                 }
 
                
-                else
+                else if (message.Contains("DISCONNECT"))
                 {
                     ThreadHelper.lsbAddItem(this, lsbJoined, clientSocket.Client.RemoteEndPoint.ToString() + " has disconnected.");
                     //send a disconnect flag to the client to complete disconnection
@@ -168,11 +166,25 @@ namespace TooLearnOfficial
                     clientSockets.Remove(clientSocket.Client.RemoteEndPoint.ToString());
 
                 }
+
+
+                else
+                {
+                    ThreadHelper.lsbAddItem(this, lsbJoined, message);
+
+
+                    // Send("You ("+message+ ") are now connected! Please Wait",clientSocket);
+
+
+                    //Begin receiving data from the client socket
+                    Receive(clientSocket);
+
+                }
             }
             catch (Exception ex)
             {
                 // ThreadHelper.lsbAddItem(this, lsbJoined, ex.ToString());
-                ThreadHelper.lsbAddItem(this, lsbJoined, "Error Detected!,Please Close this Lobby and Reconnect.");
+                ThreadHelper.lsbAddItem(this, lsbJoined,"Error Detected!,Please Close this Lobby and Reconnect.");
             }
         }
 
@@ -254,7 +266,7 @@ namespace TooLearnOfficial
 
 
 
-          // this.Hide();
+           this.Hide();
             GameRulesFacilitator GRF = new GameRulesFacilitator();
             GRF.ShowDialog();
            

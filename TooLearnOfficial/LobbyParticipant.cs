@@ -72,7 +72,7 @@ namespace TooLearnOfficial
             try
             {
                 //Translate the message into its byte form
-                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message);
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message +" has joined the Lobby.");
 
                 //Get a client stream for reading and writing
                 NetworkStream stream = _client.GetStream();
@@ -85,7 +85,7 @@ namespace TooLearnOfficial
             {
                 //ThreadHelper.lsbAddItem(this, lsbWait, ex.ToString());
 
-                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+               // Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
         }
 

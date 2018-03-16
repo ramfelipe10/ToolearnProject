@@ -25,7 +25,7 @@ namespace TooLearnOfficial
         private const int _PORT = 13000;
 
         string GameType = LobbyParticipant.GameType;
-        string correctanswer,points;
+        string correctanswer,points,Pname;
         string time;
         int convertedtime;
         string Total;
@@ -94,7 +94,27 @@ namespace TooLearnOfficial
             }
         }
 
-        
+
+        private void SendScore(string message)
+        {
+            try
+            {
+                //Translate the message into its byte form
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(SCORE),"+Pname+"("+message+")");
+
+                //Get a client stream for reading and writing
+                NetworkStream stream = _client.GetStream();
+
+                //Send the message to the connected server
+                //stream.Write(buffer, 0, buffer.length);
+                stream.BeginWrite(buffer, 0, buffer.Length, BeginWriteCallback, stream);
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.ToString());
+            }
+        }
+
         /*                                   */
 
         public void StartConnect()
@@ -185,7 +205,8 @@ namespace TooLearnOfficial
                 {
 
 
-                    this.Close();
+                   
+                    ThreadHelper.Hide(this);
                     client.Client.Shutdown(SocketShutdown.Both);
                     client.Client.Close();
                     
@@ -502,7 +523,10 @@ namespace TooLearnOfficial
 
         private void GameParticipant_Load(object sender, EventArgs e)
         {
-
+            SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" +Program.par_id+ "' ", con);
+            DataTable dt = new DataTable();
+            Name.Fill(dt);
+            Pname= dt.Rows[0][0].ToString();
           
 
             if (GameType == "QB")
@@ -599,6 +623,8 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else
@@ -625,6 +651,8 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else
@@ -632,6 +660,7 @@ namespace TooLearnOfficial
                 panel2.Visible = true;
                 panel3.Visible = false;
                 label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+
             }
         }
 
@@ -649,6 +678,9 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else
@@ -673,6 +705,8 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else
@@ -697,6 +731,8 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else
@@ -709,6 +745,7 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            
             string feed = validate("A");
             int score;
 
@@ -721,6 +758,8 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else
@@ -745,6 +784,8 @@ namespace TooLearnOfficial
                 panel3.Visible = true;
                 panel2.Visible = false;
                 label5.Text = "Correct!";
+
+                SendScore(bunifuCustomLabel5.Text.ToString());
             }
 
             else

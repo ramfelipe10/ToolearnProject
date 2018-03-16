@@ -101,6 +101,17 @@ namespace TooLearnOfficial
 
 
 
+        public void updateScore(string Score)
+        {
+            string up = Score.ToString();
+
+            
+
+
+            ThreadHelper.lsbAddItem(this, listBox1, up);         
+           
+        }
+
         private void DoAcceptSocketCallback(IAsyncResult ar)
         {
             
