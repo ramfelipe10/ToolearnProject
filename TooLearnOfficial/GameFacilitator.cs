@@ -19,7 +19,7 @@ using System.IO;
 namespace TooLearnOfficial
 
 {
-
+   
     public partial class GameFacilitator : Form
     {
 
@@ -37,13 +37,13 @@ namespace TooLearnOfficial
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
-       
+     
       
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
         // int time;
-
+        string participant = SelectParticipant.participant.ToString();
 
         int counter = 0;
         int QuizID = QuizBank.QUIZID;
@@ -52,7 +52,7 @@ namespace TooLearnOfficial
         string time;
         string convertedtime;
         int timerstamp;
-        
+        string ID = SelectClassroom.ID;
 
         DataTable dt = new DataTable();
        
@@ -108,7 +108,8 @@ namespace TooLearnOfficial
             
 
 
-            ThreadHelper.lsbAddItem(this, listBox1, up);         
+            //ThreadHelper.lsbAddItem(this, listBox1, up);    
+            
            
         }
 
@@ -302,10 +303,32 @@ namespace TooLearnOfficial
             
             player.controls.play();
 
-            
+/*
+            if (participant == "IP")
+            {
+              con.Close();
+              con.Open();
+                SqlCommand cd = new SqlCommand("SELECT p.fullname,p.participant_id FROM participants p, classlist c where p.participant_id=c.particpant_id and c.class_id='" +ID+ "' ", con);
+                SqlDataReader d = cd.ExecuteReader();
+                while (d.Read() == true)
+                {                   
+                        ListViewItem exams = new ListViewItem();
+                        exams.Text = (string)d[("p.fullname")];                     
+                        exams.SubItems.Add(Convert.ToString((int)d[("p.participant_id")]));                    
+                        listView1.Items.Add(exams);                                
 
+                }
+                con.Close();
+            } 
 
+            else if(participant == "GP")
+            {
 
+            }
+            else
+            {
+                
+            }  */ //Thread
 
         }
 

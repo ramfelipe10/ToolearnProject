@@ -104,8 +104,12 @@ namespace TooLearnOfficial
                     adapt.Fill(dt);
                     QUIZID = int.Parse(dt.Rows[0][0].ToString());//Getting the ID of The Quiz
 
-                    GameSettings GS = new GameSettings();
-                    GS.ShowDialog();
+
+                    SelectParticipant SP = new SelectParticipant();
+                    SP.ShowDialog();
+
+                   // GameSettings GS = new GameSettings();
+                   // GS.ShowDialog();
 
                     //  GameCode GC = new GameCode();
                     //  GC.ShowDialog();

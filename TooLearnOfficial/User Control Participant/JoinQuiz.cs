@@ -77,8 +77,8 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
                 if (code == bunifuMetroTextbox1.Text)
-                {   
-
+                {
+                    bunifuMetroTextbox1.Text = "";
                     LobbyParticipant lobby = new LobbyParticipant();
                     lobby.ShowDialog();
                 }

@@ -31,7 +31,7 @@ namespace TooLearnOfficial
 
         public static TcpClient faci;
 
-       
+        string gmode = SelectParticipant.participant.ToString();
 
 
         public LobbyFacilitator()
@@ -207,7 +207,7 @@ namespace TooLearnOfficial
 
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("Insert into Pincode(Game_Pin) Values('" + label3.Text + "')", con);
+            SqlCommand cmd = new SqlCommand("Insert into Pincode(Game_Pin,Mode) Values('" + label3.Text + "','" + gmode + "')", con);
             cmd.ExecuteNonQuery();
             con.Close();
 

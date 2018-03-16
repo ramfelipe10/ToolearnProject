@@ -103,6 +103,7 @@ namespace TooLearnOfficial
             this.Hide();
             LobbyFacilitator LF = new LobbyFacilitator();
             LF.ShowDialog();
+            
         }
 
         private void GameSettings_Load(object sender, EventArgs e)
