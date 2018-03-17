@@ -18,12 +18,56 @@ namespace TooLearnOfficial
         delegate void BunifuBox(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, bool text);
         delegate void ControlOUt(Form frm, Bunifu.Framework.UI.BunifuFlatButton ctrl, bool text);
         delegate void imgbuttonin(Form frm, Bunifu.Framework.UI.BunifuImageButton ctrl, bool text);
-
         delegate void settextmetro(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, string text);
+        delegate void lvadd(Form frm, ListView lv, ListViewItem text);
+        delegate void lvremove(Form frm, ListView lv, int position);
+        delegate void lvinsert(Form frm, ListView lv, ListViewItem item, int position);
 
 
 
 
+
+
+
+        public static void lvInsertItem(Form frm, ListView lv, ListViewItem item, int position)
+        {
+            if (lv.InvokeRequired)
+            {
+                lvinsert d = new lvinsert(lvInsertItem);
+                frm.Invoke(d, new object[] { frm, lv, item, position });
+            }
+            else
+            {
+                lv.Items.Insert(position,item);
+            }
+        }
+
+
+        public static void lvRemoveItem(Form frm, ListView lv, int position)
+        {
+            if (lv.InvokeRequired)
+            {
+                lvremove d = new lvremove(lvRemoveItem);
+                frm.Invoke(d, new object[] { frm, lv, position });
+            }
+            else
+            {
+                lv.Items.RemoveAt(position);
+            }
+        }
+
+        public static void lvAddItem(Form frm, ListView lv, ListViewItem text)
+        {
+            if (lv.InvokeRequired)
+            {
+                lvadd d = new lvadd(lvAddItem);
+                frm.Invoke(d, new object[] { frm, lv, text });
+            }
+            else
+            {
+                lv.Items.Add(text);
+            }
+        }
 
         public static void metrotext(Form frm, Bunifu.Framework.UI.BunifuMetroTextbox ctrl, string text)
         {

@@ -611,7 +611,7 @@ namespace TooLearnOfficial
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
 
-            string feed = validate(bunifuMetroTextbox1.Text);
+            string feed = validateSA(bunifuMetroTextbox1.Text);
             int score;
 
             if (feed=="Correct")
@@ -825,7 +825,35 @@ namespace TooLearnOfficial
             
         }
 
-        
+
+        private string validateSA(string answer)
+        {
+
+            string feed;
+
+
+
+            if (correctanswer.ToLower().ToString().Contains(answer.ToLower().ToString()) && answer.Length==correctanswer.Length )
+            {
+                feed = "Correct";
+
+
+
+            }
+            else
+            {
+                feed = "Wrong";
+
+
+            }
+
+
+            return feed;
+
+
+        }
+
+
 
     }
 }

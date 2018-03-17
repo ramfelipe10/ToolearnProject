@@ -105,11 +105,56 @@ namespace TooLearnOfficial
         {
             string up = Score.ToString();
 
-            
+            string name = up.Substring(8,up.Length-12);
+            int index= up.LastIndexOf('(');
+            string points = up.Substring(index + 1);
+            points = points.Substring(0,points.Length-1);
 
 
-            //ThreadHelper.lsbAddItem(this, listBox1, up);    
-            
+            ThreadHelper.lblAddLabel(this,label11, name);
+            ThreadHelper.lblAddLabel(this, label12, points);
+            ThreadHelper.lsbAddItem(this, listBox1, up);
+
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                ListViewItem exams = listView1.Items[i];
+                try
+                {
+                    if (listView1.Items[i].Text.Contains(name))
+                    {
+                        exams.Text = name;
+                        exams.SubItems.Add(points);
+                       // listView1.Items.RemoveAt(i);
+                       // listView1.Items.Insert(i, exams);
+                        ThreadHelper.lvRemoveItem(this, listView1, i);
+                        ThreadHelper.lvInsertItem(this, listView1,exams, i);
+
+                    }
+
+                    else
+                    {
+                        ListViewItem VIEW = new ListViewItem();
+                        VIEW.Text = name;
+                        VIEW.SubItems.Add(points);
+                        ThreadHelper.lvAddItem(this, listView1, VIEW);
+                    }
+
+
+                 /*   ListViewItem VIEW = new ListViewItem();
+                    VIEW.Text = name;
+                    VIEW.SubItems.Add(points);
+                    ThreadHelper.lvAddItem(this, listView1, VIEW);  */
+                   
+
+                }
+
+                catch
+                {
+
+                }
+
+
+            }
            
         }
 
@@ -303,32 +348,20 @@ namespace TooLearnOfficial
             
             player.controls.play();
 
-/*
-            if (participant == "IP")
-            {
-              con.Close();
-              con.Open();
-                SqlCommand cd = new SqlCommand("SELECT p.fullname,p.participant_id FROM participants p, classlist c where p.participant_id=c.particpant_id and c.class_id='" +ID+ "' ", con);
-                SqlDataReader d = cd.ExecuteReader();
-                while (d.Read() == true)
-                {                   
-                        ListViewItem exams = new ListViewItem();
-                        exams.Text = (string)d[("p.fullname")];                     
-                        exams.SubItems.Add(Convert.ToString((int)d[("p.participant_id")]));                    
-                        listView1.Items.Add(exams);                                
+           
+                        if (participant == "IP")
+                        {
+                          
+                        } 
 
-                }
-                con.Close();
-            } 
+                        else if(participant == "GP")
+                        {
 
-            else if(participant == "GP")
-            {
+                        }
+                        else
+                        {
 
-            }
-            else
-            {
-                
-            }  */ //Thread
+                        }  
 
         }
 
