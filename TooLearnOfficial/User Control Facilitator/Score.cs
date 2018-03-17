@@ -122,8 +122,23 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 pnl.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
                 return bmp; 
     }
-    
 
+        private string remarks(double grade)
+        {
+            string remarks;
+
+            if (grade <= 59)
+            {
+                remarks = "Failed";
+            }
+
+            else
+            {
+                remarks = "Passed";
+            }
+
+            return remarks;
+        }
 
 
         void Trigger_Combo()
@@ -135,8 +150,11 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
                     DataTable data = new DataTable();
                     sed.Fill(data);
-                    string ID = data.Rows[0][0].ToString();                 
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id, ((SUM(sc.quiz_score) /  SUM(q.total_score))*100) from scoreRecords sc, participant p, quizzes q where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL group by p.fullname,sc.group_id,sc.quiz_score,q.total_score ", con);
+                    string ID = data.Rows[0][0].ToString();
+                    // SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id, ((SUM(sc.quiz_score) /  SUM(q.total_score))*100) from scoreRecords sc, participant p, quizzes q where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL group by p.fullname,sc.group_id,sc.quiz_score,q.total_score ", con);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q,participant p,scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname,s.group_id,s.quiz_score,q.total_score ", con);
+
 
                     //select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL 
 
@@ -168,8 +186,9 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                         bunifuCustomDataGrid1.Rows.Add();
                         bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[0].Value = dt.Rows[R][0].ToString();
-                        bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[1].Value = dt.Rows[R][1].ToString();
-                        bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[2].Value = generate_Progress(Convert.ToDouble(dt.Rows[R][2]));
+                        bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[1].Value = remarks(Convert.ToDouble(dt.Rows[R][1]));
+                        bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[2].Value = generate_Progress(Convert.ToDouble(dt.Rows[R][1]));
+
 
 
                         R++;
