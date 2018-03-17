@@ -56,6 +56,7 @@
             // 
             // bunifuGradientPanel1
             // 
+            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
@@ -101,7 +102,7 @@
             this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton2.Image = global::TooLearnOfficial.Properties.Resources.Close_Window_48px;
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(732, 4);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(738, 4);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
             this.bunifuImageButton2.Size = new System.Drawing.Size(20, 20);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,6 +115,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 33);
@@ -141,13 +143,13 @@
             // lsbWait
             // 
             this.lsbWait.Font = new System.Drawing.Font("Century", 11.25F);
-            this.lsbWait.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lsbWait.ForeColor = System.Drawing.Color.Black;
             this.lsbWait.FormattingEnabled = true;
             this.lsbWait.ItemHeight = 18;
             this.lsbWait.Location = new System.Drawing.Point(22, 23);
             this.lsbWait.Name = "lsbWait";
             this.lsbWait.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.lsbWait.Size = new System.Drawing.Size(485, 184);
+            this.lsbWait.Size = new System.Drawing.Size(485, 202);
             this.lsbWait.TabIndex = 1;
             this.lsbWait.SelectedIndexChanged += new System.EventHandler(this.lsbWait_SelectedIndexChanged);
             // 
@@ -182,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(761, 420);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.pictureBox2);

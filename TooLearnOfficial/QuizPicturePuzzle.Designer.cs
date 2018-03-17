@@ -99,6 +99,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(454, 42);
@@ -414,6 +415,7 @@
             this.bunifuFlatButton2.ButtonText = "Clear";
             this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.DimGray;
+            this.bunifuFlatButton2.ForeColor = System.Drawing.Color.Black;
             this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.Iconimage = global::TooLearnOfficial.Properties.Resources.Trash_52px;
             this.bunifuFlatButton2.Iconimage_right = null;
@@ -436,7 +438,7 @@
             this.bunifuFlatButton2.TabIndex = 147;
             this.bunifuFlatButton2.Text = "Clear";
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.Black;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
@@ -484,6 +486,7 @@
             // 
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(135, 471);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(273, 29);
@@ -513,7 +516,7 @@
             this.create.IconVisible = true;
             this.create.IconZoom = 40D;
             this.create.IsTab = false;
-            this.create.Location = new System.Drawing.Point(880, 552);
+            this.create.Location = new System.Drawing.Point(877, 552);
             this.create.Name = "create";
             this.create.Normalcolor = System.Drawing.Color.SeaGreen;
             this.create.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
@@ -582,7 +585,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1045, 615);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.create);

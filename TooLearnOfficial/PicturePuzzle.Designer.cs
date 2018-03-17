@@ -281,6 +281,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(454, 42);
@@ -320,6 +321,7 @@
             // 
             this.QuizFormat.AutoSize = true;
             this.QuizFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuizFormat.ForeColor = System.Drawing.Color.White;
             this.QuizFormat.Location = new System.Drawing.Point(67, 494);
             this.QuizFormat.Name = "QuizFormat";
             this.QuizFormat.Size = new System.Drawing.Size(94, 13);
@@ -330,6 +332,7 @@
             // 
             this.NoItems.AutoSize = true;
             this.NoItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoItems.ForeColor = System.Drawing.Color.White;
             this.NoItems.Location = new System.Drawing.Point(277, 494);
             this.NoItems.Name = "NoItems";
             this.NoItems.Size = new System.Drawing.Size(14, 13);
@@ -1425,6 +1428,7 @@
             // Format
             // 
             this.Format.AutoSize = true;
+            this.Format.ForeColor = System.Drawing.Color.White;
             this.Format.Location = new System.Drawing.Point(21, 494);
             this.Format.Name = "Format";
             this.Format.Size = new System.Drawing.Size(42, 13);
@@ -1444,6 +1448,7 @@
             // NoItemsLBL
             // 
             this.NoItemsLBL.AutoSize = true;
+            this.NoItemsLBL.ForeColor = System.Drawing.Color.White;
             this.NoItemsLBL.Location = new System.Drawing.Point(190, 494);
             this.NoItemsLBL.Name = "NoItemsLBL";
             this.NoItemsLBL.Size = new System.Drawing.Size(90, 13);
@@ -1558,7 +1563,7 @@
             // bunifuImageButton3
             // 
             this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton3.Image = global::TooLearnOfficial.Properties.Resources.Refresh_Black;
+            this.bunifuImageButton3.Image = global::TooLearnOfficial.Properties.Resources.Available_Updates_64px;
             this.bunifuImageButton3.ImageActive = null;
             this.bunifuImageButton3.Location = new System.Drawing.Point(775, 160);
             this.bunifuImageButton3.Name = "bunifuImageButton3";
@@ -1674,7 +1679,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1045, 652);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox13);

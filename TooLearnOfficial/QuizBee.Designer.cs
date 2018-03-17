@@ -290,6 +290,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(291, 42);
@@ -840,6 +841,7 @@
             // NoItemsLBL
             // 
             this.NoItemsLBL.AutoSize = true;
+            this.NoItemsLBL.ForeColor = System.Drawing.Color.White;
             this.NoItemsLBL.Location = new System.Drawing.Point(250, 494);
             this.NoItemsLBL.Name = "NoItemsLBL";
             this.NoItemsLBL.Size = new System.Drawing.Size(90, 13);
@@ -849,6 +851,7 @@
             // bunifuCustomLabel9
             // 
             this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel9.Location = new System.Drawing.Point(426, 494);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
             this.bunifuCustomLabel9.Size = new System.Drawing.Size(141, 13);
@@ -858,6 +861,7 @@
             // Format
             // 
             this.Format.AutoSize = true;
+            this.Format.ForeColor = System.Drawing.Color.White;
             this.Format.Location = new System.Drawing.Point(19, 494);
             this.Format.Name = "Format";
             this.Format.Size = new System.Drawing.Size(42, 13);
@@ -868,6 +872,7 @@
             // 
             this.NoItems.AutoSize = true;
             this.NoItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoItems.ForeColor = System.Drawing.Color.White;
             this.NoItems.Location = new System.Drawing.Point(346, 494);
             this.NoItems.Name = "NoItems";
             this.NoItems.Size = new System.Drawing.Size(14, 13);
@@ -878,6 +883,7 @@
             // 
             this.QuizFormat.AutoSize = true;
             this.QuizFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuizFormat.ForeColor = System.Drawing.Color.White;
             this.QuizFormat.Location = new System.Drawing.Point(67, 494);
             this.QuizFormat.Name = "QuizFormat";
             this.QuizFormat.Size = new System.Drawing.Size(94, 13);
@@ -888,6 +894,7 @@
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Total.ForeColor = System.Drawing.Color.White;
             this.Total.Location = new System.Drawing.Point(569, 494);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(14, 13);
@@ -1829,7 +1836,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1045, 660);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Total);

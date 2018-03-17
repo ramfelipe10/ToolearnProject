@@ -146,10 +146,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(717, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(719, 42);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(230, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 161;
             this.pictureBox1.TabStop = false;
             // 
@@ -173,14 +173,16 @@
             // bunifuElipse5
             // 
             this.bunifuElipse5.ElipseRadius = 5;
+            this.bunifuElipse5.TargetControl = this;
             // 
             // score1
             // 
             this.score1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.score1.Data = null;
-            this.score1.Location = new System.Drawing.Point(16, 138);
+            this.score1.Data1 = null;
+            this.score1.Location = new System.Drawing.Point(16, 112);
             this.score1.Name = "score1";
-            this.score1.Size = new System.Drawing.Size(909, 512);
+            this.score1.Size = new System.Drawing.Size(909, 538);
             this.score1.TabIndex = 167;
             // 
             // ScoreRecordFacilitator

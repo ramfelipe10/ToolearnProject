@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewScoreRecord));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -43,8 +43,8 @@
             this.bunifuCircleProgressbar2 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.DataGridViewGrade = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.label_Class_Rank = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelCR = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelClassRank = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label_No_of_Taken_Quiz = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.labelPassed = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.labelFailed = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -203,21 +203,21 @@
             this.DataGridViewGrade.AllowUserToDeleteRows = false;
             this.DataGridViewGrade.AllowUserToResizeColumns = false;
             this.DataGridViewGrade.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewGrade.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewGrade.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DataGridViewGrade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridViewGrade.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.DataGridViewGrade.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridViewGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataGridViewGrade.DoubleBuffered = true;
             this.DataGridViewGrade.EnableHeadersVisualStyles = false;
@@ -236,27 +236,27 @@
             this.bunifuElipse2.ElipseRadius = 5;
             this.bunifuElipse2.TargetControl = this.DataGridViewGrade;
             // 
-            // label_Class_Rank
+            // labelCR
             // 
-            this.label_Class_Rank.AutoSize = true;
-            this.label_Class_Rank.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Class_Rank.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_Class_Rank.Location = new System.Drawing.Point(423, 296);
-            this.label_Class_Rank.Name = "label_Class_Rank";
-            this.label_Class_Rank.Size = new System.Drawing.Size(122, 25);
-            this.label_Class_Rank.TabIndex = 22;
-            this.label_Class_Rank.Text = "Class Rank";
+            this.labelCR.AutoSize = true;
+            this.labelCR.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCR.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelCR.Location = new System.Drawing.Point(423, 296);
+            this.labelCR.Name = "labelCR";
+            this.labelCR.Size = new System.Drawing.Size(122, 25);
+            this.labelCR.TabIndex = 22;
+            this.labelCR.Text = "Class Rank";
             // 
-            // bunifuCustomLabel5
+            // labelClassRank
             // 
-            this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(440, 324);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(79, 57);
-            this.bunifuCustomLabel5.TabIndex = 23;
-            this.bunifuCustomLabel5.Text = "#1";
+            this.labelClassRank.AutoSize = true;
+            this.labelClassRank.Font = new System.Drawing.Font("Century", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClassRank.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelClassRank.Location = new System.Drawing.Point(440, 324);
+            this.labelClassRank.Name = "labelClassRank";
+            this.labelClassRank.Size = new System.Drawing.Size(79, 57);
+            this.labelClassRank.TabIndex = 23;
+            this.labelClassRank.Text = "#1";
             // 
             // label_No_of_Taken_Quiz
             // 
@@ -461,8 +461,8 @@
             this.Controls.Add(this.labelFailed);
             this.Controls.Add(this.labelPassed);
             this.Controls.Add(this.label_No_of_Taken_Quiz);
-            this.Controls.Add(this.bunifuCustomLabel5);
-            this.Controls.Add(this.label_Class_Rank);
+            this.Controls.Add(this.labelClassRank);
+            this.Controls.Add(this.labelCR);
             this.Controls.Add(this.DataGridViewGrade);
             this.Controls.Add(this.bunifuCircleProgressbar2);
             this.Controls.Add(this.Progressbar_Individual);
@@ -499,8 +499,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel labelFailed;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPassed;
         private Bunifu.Framework.UI.BunifuCustomLabel label_No_of_Taken_Quiz;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel label_Class_Rank;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelClassRank;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelCR;
         private Bunifu.Framework.UI.BunifuCustomLabel label_average;
         private Bunifu.Framework.UI.BunifuCustomLabel label_Letter_Grade;
         private Bunifu.Framework.UI.BunifuCustomLabel label_Remarks;
