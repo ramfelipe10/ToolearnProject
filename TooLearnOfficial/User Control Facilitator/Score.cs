@@ -102,7 +102,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                         double x = 0;
                         x = (pass * dg) / 100;
                         pictureBox3.Width = (int)Math.Round(x, 0);
-                        if (pass <= 60)
+                        if (pass <= 74)
                         {
                             pictureBox3.BackColor = Color.Red;
                         }
@@ -136,7 +136,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     DataTable data = new DataTable();
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();                 
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score, q.total_score, (SUM(sc.quiz_score) /  SUM(q.total_score) * 100) from scoreRecords sc, participant p, quizzes q where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL group by p.fullname,sc.group_id,sc.quiz_score,q.total_score ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id, ((SUM(sc.quiz_score) /  SUM(q.total_score))*100) from scoreRecords sc, participant p, quizzes q where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL group by p.fullname,sc.group_id,sc.quiz_score,q.total_score ", con);
 
                     //select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL 
 
