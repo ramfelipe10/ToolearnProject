@@ -833,7 +833,7 @@ namespace TooLearnOfficial
 
 
 
-            if (correctanswer.ToLower().ToString().Contains(answer.ToLower().ToString()) && answer.Length==correctanswer.Length )
+            if (correctanswer.ToLower().ToString().Contains(answer.ToLower().ToString()) && answer.Length.Equals(correctanswer.Length-1) )
             {
                 feed = "Correct";
 
@@ -844,7 +844,7 @@ namespace TooLearnOfficial
             {
                 feed = "Wrong";
 
-
+                Dialogue.Show(answer.Length.ToString()+ correctanswer.Length.ToString(),"","ok","Cancel");
             }
 
 

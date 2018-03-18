@@ -110,52 +110,94 @@ namespace TooLearnOfficial
             string points = up.Substring(index + 1);
             points = points.Substring(0,points.Length-1);
 
-
-            ThreadHelper.lblAddLabel(this,label11, name);
-            ThreadHelper.lblAddLabel(this, label12, points);
+                       
             ThreadHelper.lsbAddItem(this, listBox1, up);
 
-            for (int i = 0; i < listView1.Items.Count; i++)
+            int count=0;
+            this.Invoke((MethodInvoker)(() => count=listView1.Items.Count));
+          
+            for (int i = 0; i <  count; i++)
             {
-                ListViewItem exams = listView1.Items[i];
+                ListViewItem exams = new ListViewItem();
+                this.Invoke((MethodInvoker)(() =>  exams = listView1.Items[i])) ;
                 try
                 {
-                    if (listView1.Items[i].Text.Contains(name))
-                    {
-                        exams.Text = name;
-                        exams.SubItems.Add(points);
-                       // listView1.Items.RemoveAt(i);
-                       // listView1.Items.Insert(i, exams);
-                        ThreadHelper.lvRemoveItem(this, listView1, i);
-                        ThreadHelper.lvInsertItem(this, listView1,exams, i);
-
-                    }
-
-                    else
-                    {
-                        ListViewItem VIEW = new ListViewItem();
-                        VIEW.Text = name;
-                        VIEW.SubItems.Add(points);
-                        ThreadHelper.lvAddItem(this, listView1, VIEW);
-                    }
-
-
-                 /*   ListViewItem VIEW = new ListViewItem();
-                    VIEW.Text = name;
-                    VIEW.SubItems.Add(points);
-                    ThreadHelper.lvAddItem(this, listView1, VIEW);  */
                    
+                         if (exams.Text.Contains(name.ToString()))
+                            {
+                                ListViewItem push = new ListViewItem();
+                                this.Invoke((MethodInvoker)(() => push.Text = name));
+                                this.Invoke((MethodInvoker)(() => push.SubItems.Add(points))); ;                     
+                                ThreadHelper.lvRemoveItem(this, listView1, i);
+                                ThreadHelper.lvInsertItem(this, listView1,push, i);
+                            }
 
+                                               
                 }
 
-                catch
+                catch(Exception ex)
                 {
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+                }
 
+
+            } 
+           
+        }
+
+        private void leaderboard()
+        {
+
+
+
+            SortedList<int, string> SCOREOUT = new SortedList<int, string>();
+            int count = 0;
+            this.Invoke((MethodInvoker)(() => count = listView1.Items.Count));
+
+            for (int i = 0; i < count; i++)
+            {
+                try
+                {
+                    ListViewItem exams = new ListViewItem();
+                    this.Invoke((MethodInvoker)(() => exams = listView1.Items[i]));
+
+                    SCOREOUT.Add(Convert.ToInt32(exams.SubItems.ToString()),exams.Text);
+
+
+                }
+                catch (Exception ex)
+                {
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
                 }
 
 
             }
-           
+
+            Label[] Name = new Label[4];
+            Label[] Score = new Label[4];
+
+            Name[0] = label1;
+            Name[1] = label3;
+            Name[2] = label5;
+            Name[3] = label7;
+            Name[4] = label9;
+
+            Score[0] = label2;
+            Score[1] = label4;
+            Score[2] = label6;
+            Score[3] = label8;
+            Score[4] = label10;
+
+            int x = 0;
+           // for (int i = 0; i <= SCOREOUT.Count(); i++)
+           foreach(KeyValuePair<int,string> score in SCOREOUT)
+            {
+                Name[x].Text = score.Value;
+                Score[x].Text = score.Key.ToString();
+                x++;
+            }
+
+
         }
 
         private void DoAcceptSocketCallback(IAsyncResult ar)
@@ -347,9 +389,39 @@ namespace TooLearnOfficial
         
             
             player.controls.play();
+            player.settings.setMode("loop", true);
+
+
+
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT p.fullname FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                   
+                    ListViewItem Name = new ListViewItem();
+                    Name.Text = (string)dr[("fullname")];
+                    listView1.Items.Add(Name);
+
+                   
+                }
+                con.Close();
+            } 
+
+
+            catch(Exception ex)
+
+            {
+
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+
+            }
 
            
-                        if (participant == "IP")
+                     /*   if (participant == "IP")
                         {
                           
                         } 
@@ -361,7 +433,7 @@ namespace TooLearnOfficial
                         else
                         {
 
-                        }  
+                        }  */
 
         }
 
