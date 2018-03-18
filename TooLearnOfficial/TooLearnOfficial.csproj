@@ -470,6 +470,12 @@
     <Compile Include="ViewScoreRecord.Designer.cs">
       <DependentUpon>ViewScoreRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewScoreRecord2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewScoreRecord2.Designer.cs">
+      <DependentUpon>ViewScoreRecord2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddGroup.resx">
       <DependentUpon>AddGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -660,6 +666,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewScoreRecord.resx">
       <DependentUpon>ViewScoreRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewScoreRecord2.resx">
+      <DependentUpon>ViewScoreRecord2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

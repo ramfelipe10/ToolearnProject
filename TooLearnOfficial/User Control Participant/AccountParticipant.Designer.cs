@@ -137,6 +137,7 @@
             this.ScoreRecord.TabIndex = 76;
             this.ScoreRecord.TabStop = false;
             this.ScoreRecord.Zoom = 1;
+            this.ScoreRecord.Click += new System.EventHandler(this.ScoreRecord_Click);
             // 
             // EditProfile
             // 

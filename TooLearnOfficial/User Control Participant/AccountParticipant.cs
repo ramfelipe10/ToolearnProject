@@ -30,5 +30,11 @@ namespace TooLearnOfficial.User_Control_Participant
             MyClassParticipant MP = new MyClassParticipant();
             MP.ShowDialog();
         }
+
+        private void ScoreRecord_Click(object sender, EventArgs e)
+        {
+            ViewScoreRecord2 vsr2 = new ViewScoreRecord2();
+            vsr2.ShowDialog();
+        }
     }
 }
