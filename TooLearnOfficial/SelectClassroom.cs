@@ -76,8 +76,9 @@ namespace TooLearnOfficial
                 cd.Fill(dt);
                 ID = dt.Rows[0][0].ToString();
 
+                this.Hide();
                 GameSettings LF = new GameSettings();
-                LF.ShowDialog();
+                LF.Show();
             }
             else
             {
@@ -89,6 +90,13 @@ namespace TooLearnOfficial
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SelectParticipant SP = new SelectParticipant();
+            SP.Show();
         }
     }
 }

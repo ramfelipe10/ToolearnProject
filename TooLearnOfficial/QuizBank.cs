@@ -106,7 +106,7 @@ namespace TooLearnOfficial
 
 
                     SelectParticipant SP = new SelectParticipant();
-                    SP.ShowDialog();
+                    SP.Show();
 
                    // GameSettings GS = new GameSettings();
                    // GS.ShowDialog();

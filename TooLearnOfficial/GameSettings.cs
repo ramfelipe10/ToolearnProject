@@ -52,23 +52,12 @@ namespace TooLearnOfficial
                 case "Sneaky Snitch":
                     Music = "Kevin MacLeodSneaky Snitch.mp3";
                 break;
-
-                case "Wheel of Fortune":
-                    Music = "Wheel of Fortune Theme Song.mp3";
-                break;
-
-                case "The Price Is Right":
-                    Music = "The Price Is Right theme song.mp3";
-                break;
-
-                case "Family Feud":
-                    Music = "Family Feud Theme Song.mp3";
-                break;
+                              
 
 
                 default:
 
-                    break;
+                break;
 
 
             }
@@ -102,13 +91,20 @@ namespace TooLearnOfficial
 
             this.Hide();
             LobbyFacilitator LF = new LobbyFacilitator();
-            LF.ShowDialog();
+            LF.Show();
             
         }
 
         private void GameSettings_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuImageButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SelectClassroom SC = new SelectClassroom();
+            SC.Show();
         }
     }
 }

@@ -32,7 +32,7 @@ namespace TooLearnOfficial
 
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin From Pincode", con);
+            SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin,Mode From Pincode where Mode='GP' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 0)

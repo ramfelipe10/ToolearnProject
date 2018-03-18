@@ -22,23 +22,29 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
+            this.Hide();
             participant = "PUBLIC";
             LobbyFacilitator LF = new LobbyFacilitator();
-            LF.ShowDialog();
+            LF.Show();
+            LF.BringToFront();
         }
 
         private void bunifuImageButton7_Click(object sender, EventArgs e)
         {
+            this.Hide();
             participant = "IP";
             SelectClassroom SC = new SelectClassroom();
-            SC.ShowDialog();
+            SC.Show();
+            SC.BringToFront();
         }
 
         private void bunifuImageButton8_Click(object sender, EventArgs e)
         {
+            this.Hide();
             participant = "GP";
             SelectClassroom SC = new SelectClassroom();
-            SC.ShowDialog();
+            SC.Show();
+            SC.BringToFront();
         }
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)

@@ -844,7 +844,7 @@ namespace TooLearnOfficial
             {
                 feed = "Wrong";
 
-                Dialogue.Show(answer.Length.ToString()+ correctanswer.Length.ToString(),"","ok","Cancel");
+                //Dialogue.Show(answer.Length.ToString()+ correctanswer.Length.ToString(),"","ok","Cancel");
             }
 
 

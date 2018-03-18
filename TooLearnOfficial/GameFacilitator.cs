@@ -16,6 +16,7 @@ using System.IO;
 
 
 
+
 namespace TooLearnOfficial
 
 {
@@ -37,8 +38,10 @@ namespace TooLearnOfficial
         // Set a list of client sockets
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
-     
-      
+        DataTable data;
+
+        string music = GameSettings.IsMusic;
+        string random = GameSettings.IsRandom;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         // string i;
@@ -113,29 +116,70 @@ namespace TooLearnOfficial
                        
             ThreadHelper.lsbAddItem(this, listBox1, up);
 
-            int count=0;
-            this.Invoke((MethodInvoker)(() => count=listView1.Items.Count));
-          
-            for (int i = 0; i <  count; i++)
+            /*  int count=0;
+              this.Invoke((MethodInvoker)(() => count=listView1.Items.Count));
+
+              for (int i = 0; i <  count; i++)
+              {
+                  ListViewItem exams = new ListViewItem();
+                  this.Invoke((MethodInvoker)(() =>  exams = listView1.Items[i])) ;
+                  try
+                  {
+
+                           if (exams.Text.Contains(name.ToString()))
+                              {
+                                  ListViewItem push = new ListViewItem();
+                                  this.Invoke((MethodInvoker)(() => push.Text = name));
+                                  this.Invoke((MethodInvoker)(() => push.SubItems.Add(points)));  
+                                  this.Invoke((MethodInvoker)(() => push.Tag= points));
+                                  ThreadHelper.lvRemoveItem(this, listView1, i);
+                                  ThreadHelper.lvInsertItem(this, listView1,push, i);
+
+
+
+
+
+                              }
+
+                    this.Invoke((MethodInvoker)(() => leaderboard()   ));
+
+                  }  
+                  */
+
+
+
+            int count = 0;
+            this.Invoke((MethodInvoker)(() => count = data.Rows.Count));
+
+            for (int i = 0; i < count; i++)
             {
-                ListViewItem exams = new ListViewItem();
-                this.Invoke((MethodInvoker)(() =>  exams = listView1.Items[i])) ;
+
                 try
                 {
-                   
-                         if (exams.Text.Contains(name.ToString()))
-                            {
-                                ListViewItem push = new ListViewItem();
-                                this.Invoke((MethodInvoker)(() => push.Text = name));
-                                this.Invoke((MethodInvoker)(() => push.SubItems.Add(points))); ;                     
-                                ThreadHelper.lvRemoveItem(this, listView1, i);
-                                ThreadHelper.lvInsertItem(this, listView1,push, i);
-                            }
+                      if (name.ToString()==data.Rows[i][0].ToString()) 
+                    {                        
+                        this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
 
-                                               
+                       this.Invoke((MethodInvoker)(() => leaderboard()));
+
+                        
+
+                        this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
+                        this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
+
+
+                    }
+                   
+
+                 
+
+
                 }
 
-                catch(Exception ex)
+
+
+
+                catch (Exception ex)
                 {
                     Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
                 }
@@ -147,56 +191,70 @@ namespace TooLearnOfficial
 
         private void leaderboard()
         {
+            data.AsEnumerable().Take(2);
+            DataView dv = data.DefaultView;
+            
+            dv.Sort = "Column2 DESC";        
+          
+            bunifuCustomDataGrid1.DataSource = dv.ToTable();           
+
+           // bunifuCustomDataGrid1.Sort(Column1, ListSortDirection.Ascending);
+
+            /*  
+                     SortedList<int, string> SCOREOUT = new SortedList<int, string>();
+                          int count = 0;
+                        this.Invoke((MethodInvoker)(() => count = listView1.Items.Count));
+
+                          for (int i = 0; i < count; i++)
+                          {
+                              try
+                              {
+                                  ListViewItem exams = new ListViewItem();
+                                  this.Invoke((MethodInvoker)(() => exams = listView1.Items[i]));
+                             //  int scores = Convert.ToInt32(exams.SubItems.ToString());
+                             int scores = 90;
+                             MessageBox.Show("scores.ToString()");
+                                 string Names = exams.Text.ToString();
+                                  this.Invoke((MethodInvoker)(() => SCOREOUT.Add(scores,Names)));
 
 
-
-            SortedList<int, string> SCOREOUT = new SortedList<int, string>();
-            int count = 0;
-            this.Invoke((MethodInvoker)(() => count = listView1.Items.Count));
-
-            for (int i = 0; i < count; i++)
-            {
-                try
-                {
-                    ListViewItem exams = new ListViewItem();
-                    this.Invoke((MethodInvoker)(() => exams = listView1.Items[i]));
-
-                    SCOREOUT.Add(Convert.ToInt32(exams.SubItems.ToString()),exams.Text);
+                              }
+                              catch (Exception ex)
+                              {
+                                  Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+                              }
 
 
-                }
-                catch (Exception ex)
-                {
-                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-                }
+                          }
 
+                     Label[] Name = new Label[4];
+                          Label[] Score = new Label[4];
 
-            }
+                          Name[0] = label1;
+                          Name[1] = label3;
+                          Name[2] = label5;
+                          Name[3] = label7;
+                          Name[4] = label9;
 
-            Label[] Name = new Label[4];
-            Label[] Score = new Label[4];
+                          Score[0] = label2;
+                          Score[1] = label4;
+                          Score[2] = label6;
+                          Score[3] = label8;
+                          Score[4] = label10;
 
-            Name[0] = label1;
-            Name[1] = label3;
-            Name[2] = label5;
-            Name[3] = label7;
-            Name[4] = label9;
+                          int x = 0;
+                         // for (int i = 0; i <= SCOREOUT.Count(); i++)
+                         foreach(KeyValuePair<int,string> score in SCOREOUT)
+                          {
+                              Name[x].Text = score.Value;
+                              Score[x].Text = score.Key.ToString();
 
-            Score[0] = label2;
-            Score[1] = label4;
-            Score[2] = label6;
-            Score[3] = label8;
-            Score[4] = label10;
+                              this.Invoke(new ThreadStart(delegate () { Name[x].Text = score.Value; }));
 
-            int x = 0;
-           // for (int i = 0; i <= SCOREOUT.Count(); i++)
-           foreach(KeyValuePair<int,string> score in SCOREOUT)
-            {
-                Name[x].Text = score.Value;
-                Score[x].Text = score.Key.ToString();
-                x++;
-            }
-
+                              this.Invoke(new ThreadStart(delegate () { Score[x].Text = score.Key.ToString(); }));
+                              x++;
+                          }
+                          */
 
         }
 
@@ -386,58 +444,133 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
-        
+
+
+            if (music == "true")
+            {
+                player.controls.play();
+                player.settings.setMode("loop", true);
+            }
             
-            player.controls.play();
-            player.settings.setMode("loop", true);
 
-
-
-            try
+            if (random == "true")
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT p.fullname FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+
+                try
                 {
-                   
-                    ListViewItem Name = new ListViewItem();
-                    Name.Text = (string)dr[("fullname")];
-                    listView1.Items.Add(Name);
+                    /*    con.Open();
+                       SqlCommand cmd = new SqlCommand("SELECT p.fullname FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
+                       SqlDataReader dr = cmd.ExecuteReader();
+                       while (dr.Read())
+                       {
 
-                   
+                            ListViewItem Name = new ListViewItem();
+                            Name.Text = (string)dr[("fullname")];
+                            Name.SubItems.Add("0");
+                            listView1.Items.Add(Name);
+
+                             DataGridScore.Rows.Add();
+                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[0].Value = (string)dr[("fullname")];
+                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[1].Value = 0;  
+
+
+
                 }
-                con.Close();
-            } 
+                    con.Close(); */
+
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ORDER BY NEWID() ", con);
+                    data = new DataTable();
+                    sda.Fill(data);
+                    if (data.Rows.Count != 0)
+                    {
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = data;
+                        bunifuCustomDataGrid1.DataSource = bs;
+                        sda.Update(data);
+                    }
+
+                }
+                catch (Exception ex)
+
+                {
+
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
 
 
-            catch(Exception ex)
-
-            {
-
-                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+                }
 
 
             }
 
+                else{
+
+
+
+
+
+                try
+                {
+                    /*    con.Open();
+                       SqlCommand cmd = new SqlCommand("SELECT p.fullname FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
+                       SqlDataReader dr = cmd.ExecuteReader();
+                       while (dr.Read())
+                       {
+
+                            ListViewItem Name = new ListViewItem();
+                            Name.Text = (string)dr[("fullname")];
+                            Name.SubItems.Add("0");
+                            listView1.Items.Add(Name);
+
+                             DataGridScore.Rows.Add();
+                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[0].Value = (string)dr[("fullname")];
+                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[1].Value = 0;  
+
+
+
+                }
+                    con.Close(); */
+
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
+                    data = new DataTable();
+                    sda.Fill(data);
+                    if (data.Rows.Count != 0)
+                    {
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = data;
+                        bunifuCustomDataGrid1.DataSource = bs;
+                        sda.Update(data);
+                    }
+
+
+                }
+
+                catch (Exception ex)
+
+                {
+
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+
+                }
+
+            
+
+
+          
+
+
+
+                }
+
+
            
-                     /*   if (participant == "IP")
-                        {
-                          
-                        } 
 
-                        else if(participant == "GP")
-                        {
-
-                        }
-                        else
-                        {
-
-                        }  */
+           
+            
 
         }
 
-        private void load_QA()
+                private void load_QA()
         {
             SqlDataAdapter adapt = new SqlDataAdapter("select qa.question,qa.answer_a,qa.answer_b,qa.answer_c,qa.answer_d,qa.correct_answer,qa.image,qa.QA_time_limit,qa.points,qa.game_type,qa.item_format,q.total_score from QuestionAnswers qa,quizzes q where qa.quiz_id=q.quiz_id AND qa.quiz_id= '" + QuizID + "'", con);
             adapt.Fill(dt);
@@ -601,6 +734,7 @@ namespace TooLearnOfficial
             counter++;
             
             load_game(counter);
+            panel3.Visible = false;
            // timer1.Start();
         }
 
@@ -612,6 +746,8 @@ namespace TooLearnOfficial
             bunifuFlatButton2.Visible = false;
             bunifuFlatButton3.Visible = true;
             bunifuFlatButton1.Visible = false;
+
+            panel3.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -631,6 +767,8 @@ namespace TooLearnOfficial
                 timer1.Stop();
                 bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
+                panel3.Visible = true;
+                label5.Text = "Correct Answer is " + dt.Rows[counter][5].ToString();
                 if (NoOfITems == 1)
                 {
                     bunifuFlatButton1.Visible = false;
@@ -662,6 +800,8 @@ namespace TooLearnOfficial
         private void GameFacilitator_FormClosing(object sender, FormClosingEventArgs e)
         {
             player.controls.stop();
+            LobbyFacilitator.listener.Stop();
+
         }
 
        

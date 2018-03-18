@@ -61,7 +61,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
             //Alternative-End 
 
-         SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin From Pincode", con);
+         SqlDataAdapter sda = new SqlDataAdapter("Select Game_Pin,Mode From Pincode where Mode='IP' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 0)

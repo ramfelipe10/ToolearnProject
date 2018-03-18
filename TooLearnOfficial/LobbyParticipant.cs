@@ -25,6 +25,8 @@ namespace TooLearnOfficial
 
         public static string GameType = "";
 
+        string me = ChooseUser.Role;
+
         SqlConnection con = new SqlConnection("Data Source='" + Program.source + "' ; Initial Catalog='" + Program.db + "'; User ID='" + Program.id + "';Password='" + Program.password + "'");
 
         public LobbyParticipant()
@@ -44,12 +46,25 @@ namespace TooLearnOfficial
 
         private void LobbyParticipant_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter sql = new SqlDataAdapter("Select fullname from participant where participant_id='" +Program.par_id+ "'", con);
-            DataTable dt = new DataTable();
-            sql.Fill(dt);
-           name= dt.Rows[0][0].ToString();
+            if (me == "Individual")
+            {
+                SqlDataAdapter sql = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "'", con);
+                DataTable dt = new DataTable();
+                sql.Fill(dt);
+                name = dt.Rows[0][0].ToString();
 
-            Send(name);
+                Send(name);
+            }
+
+            else if(me == "Group")
+                {
+                SqlDataAdapter sql = new SqlDataAdapter("Select  group_name from groups where group_id='" + Program.group_id + "'", con);
+                DataTable dt = new DataTable();
+                sql.Fill(dt);
+                name = dt.Rows[0][0].ToString();
+
+                Send(name);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
