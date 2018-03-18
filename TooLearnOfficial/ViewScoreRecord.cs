@@ -150,5 +150,10 @@ namespace TooLearnOfficial
             labelPassed.Text = a.ToString();
             labelFailed.Text = b.ToString();           
         }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

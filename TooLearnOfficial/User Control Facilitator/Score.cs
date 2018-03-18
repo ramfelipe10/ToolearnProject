@@ -127,14 +127,14 @@ namespace TooLearnOfficial.User_Control_Facilitator
         {
             string remarks;
 
-            if (grade <= 59)
+            if (grade <= 74)
             {
-                remarks = "Failed";
+                remarks = "Failed: Need to Work Hard!";
             }
 
             else
             {
-                remarks = "Passed";
+                remarks = "Passed: Keep It Up!";
             }
 
             return remarks;
