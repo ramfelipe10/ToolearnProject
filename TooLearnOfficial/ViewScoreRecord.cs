@@ -17,7 +17,10 @@ namespace TooLearnOfficial
 
         string PG = ScoreRecordFacilitator.PN;
         string CR = ScoreRecordFacilitator.CR;
-        
+        SqlDataAdapter adaptersd;
+        DataTable datasd;
+        SqlCommandBuilder builder;
+
         public ViewScoreRecord()
         {
             InitializeComponent();
@@ -34,6 +37,13 @@ namespace TooLearnOfficial
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            builder = new SqlCommandBuilder(adaptersd);
+            adaptersd.Update(datasd);
+            Dialogue.Show("Sucessfully Updated!", "", "Ok", "Cancel");
+        }
+
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
             SqlDataAdapter name= new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' " ,con);
@@ -46,8 +56,8 @@ namespace TooLearnOfficial
             classname.Fill(data);
             string cid = data.Rows[0][0].ToString();           
 
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='"+ pid +"'AND s.class_id='" + cid +"' ", con);
-            DataTable datasd = new DataTable();
+            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='"+ pid +"'AND s.class_id='" + cid +"' ", con);
+            datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
             bs.DataSource = datasd;
@@ -151,9 +161,6 @@ namespace TooLearnOfficial
             labelFailed.Text = b.ToString();           
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

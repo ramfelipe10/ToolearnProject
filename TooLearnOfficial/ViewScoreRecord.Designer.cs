@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewScoreRecord));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -62,6 +62,7 @@
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label_Participant_Name = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label_Classroom_name = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btn_Update = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
@@ -203,21 +204,21 @@
             this.DataGridViewGrade.AllowUserToDeleteRows = false;
             this.DataGridViewGrade.AllowUserToResizeColumns = false;
             this.DataGridViewGrade.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.DataGridViewGrade.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridViewGrade.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataGridViewGrade.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DataGridViewGrade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DataGridViewGrade.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DataGridViewGrade.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.DataGridViewGrade.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewGrade.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridViewGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DataGridViewGrade.DoubleBuffered = true;
             this.DataGridViewGrade.EnableHeadersVisualStyles = false;
@@ -225,7 +226,6 @@
             this.DataGridViewGrade.HeaderForeColor = System.Drawing.Color.Black;
             this.DataGridViewGrade.Location = new System.Drawing.Point(81, 74);
             this.DataGridViewGrade.Name = "DataGridViewGrade";
-            this.DataGridViewGrade.ReadOnly = true;
             this.DataGridViewGrade.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DataGridViewGrade.RowHeadersVisible = false;
             this.DataGridViewGrade.Size = new System.Drawing.Size(796, 176);
@@ -439,12 +439,48 @@
             this.label_Classroom_name.TabIndex = 39;
             this.label_Classroom_name.Text = "Classroom";
             // 
+            // btn_Update
+            // 
+            this.btn_Update.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Update.BorderRadius = 5;
+            this.btn_Update.ButtonText = "Update";
+            this.btn_Update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Update.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_Update.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_Update.Iconimage = null;
+            this.btn_Update.Iconimage_right = null;
+            this.btn_Update.Iconimage_right_Selected = null;
+            this.btn_Update.Iconimage_Selected = null;
+            this.btn_Update.IconMarginLeft = 0;
+            this.btn_Update.IconMarginRight = 0;
+            this.btn_Update.IconRightVisible = true;
+            this.btn_Update.IconRightZoom = 0D;
+            this.btn_Update.IconVisible = true;
+            this.btn_Update.IconZoom = 50D;
+            this.btn_Update.IsTab = false;
+            this.btn_Update.Location = new System.Drawing.Point(544, 261);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btn_Update.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btn_Update.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Update.selected = false;
+            this.btn_Update.Size = new System.Drawing.Size(122, 28);
+            this.btn_Update.TabIndex = 88;
+            this.btn_Update.Text = "Update";
+            this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Update.Textcolor = System.Drawing.Color.White;
+            this.btn_Update.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
+            // 
             // ViewScoreRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(960, 530);
+            this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.label_Classroom_name);
             this.Controls.Add(this.label_Participant_Name);
             this.Controls.Add(this.bunifuCustomLabel8);
@@ -515,5 +551,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuCustomLabel label_Participant_Name;
         private Bunifu.Framework.UI.BunifuCustomLabel label_Classroom_name;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_Update;
     }
 }
