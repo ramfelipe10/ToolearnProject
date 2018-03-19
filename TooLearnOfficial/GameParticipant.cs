@@ -357,6 +357,7 @@ namespace TooLearnOfficial
                     }
                    else if(array[11].ToString() == "True/False")
                     {
+                       
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
@@ -525,7 +526,7 @@ namespace TooLearnOfficial
 
 
 
-        private void participant()
+     /*   private void participant()
         {
             if (Program.group_id == 0)
             {
@@ -545,14 +546,18 @@ namespace TooLearnOfficial
 
             }
            
-        }
+        } */
 
         private void GameParticipant_Load(object sender, EventArgs e)
         {
             try
             {
+                SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "' ", con);
+                DataTable dt = new DataTable();
+                Name.Fill(dt);
+                Pname = dt.Rows[0][0].ToString(); //tg balik ko
 
-         
+
 
                 if (GameType == "QB")
                 {
@@ -570,7 +575,7 @@ namespace TooLearnOfficial
 
 
 
-                participant();
+             //   participant();
 
             }
 
@@ -670,6 +675,7 @@ namespace TooLearnOfficial
                 label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper() ;
             }
 
+            bunifuMetroTextbox1.Text = "";
 
         }
 

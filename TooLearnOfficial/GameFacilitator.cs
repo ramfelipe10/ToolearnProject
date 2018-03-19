@@ -106,6 +106,8 @@ namespace TooLearnOfficial
 
         public void updateScore(string Score)
         {
+
+           
             string up = Score.ToString();
 
             string name = up.Substring(8,up.Length-12);
@@ -114,68 +116,35 @@ namespace TooLearnOfficial
             points = points.Substring(0,points.Length-1);
 
                        
-            ThreadHelper.lsbAddItem(this, listBox1, up);
+           ThreadHelper.lsbAddItem(this, listBox1, up);
 
-            /*  int count=0;
-              this.Invoke((MethodInvoker)(() => count=listView1.Items.Count));
+            this.Invoke((MethodInvoker)(() => updatescore(name,points)));
 
-              for (int i = 0; i <  count; i++)
-              {
-                  ListViewItem exams = new ListViewItem();
-                  this.Invoke((MethodInvoker)(() =>  exams = listView1.Items[i])) ;
-                  try
-                  {
-
-                           if (exams.Text.Contains(name.ToString()))
-                              {
-                                  ListViewItem push = new ListViewItem();
-                                  this.Invoke((MethodInvoker)(() => push.Text = name));
-                                  this.Invoke((MethodInvoker)(() => push.SubItems.Add(points)));  
-                                  this.Invoke((MethodInvoker)(() => push.Tag= points));
-                                  ThreadHelper.lvRemoveItem(this, listView1, i);
-                                  ThreadHelper.lvInsertItem(this, listView1,push, i);
+        }
+        private void updatescore(string name,string points)
+        {
 
 
-
-
-
-                              }
-
-                    this.Invoke((MethodInvoker)(() => leaderboard()   ));
-
-                  }  
-                  */
-
-
-
-            int count = 0;
-            this.Invoke((MethodInvoker)(() => count = data.Rows.Count));
-
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < data.Rows.Count; i++)
             {
 
                 try
                 {
-                      if (data.Rows[i][0].ToString()==name.ToString())  ///dae nagana ning if
-                    {                        
+                    if (data.Rows[i][0].ToString() == name.ToString())
+                    {
                         this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
 
                         MessageBox.Show(name.ToString());
 
 
+                        this.Invoke((MethodInvoker)(() => leaderboard()));
+                        this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
+                        this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
 
-                        //this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
-                     // this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
-
-                      //  this.Invoke((MethodInvoker)(() => leaderboard()));
 
                     }
 
 
-                    else
-                    {
-                       // this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
-                    }
 
 
 
@@ -192,8 +161,9 @@ namespace TooLearnOfficial
                 }
 
 
-            } 
-           
+            }
+
+
         }
 
         private void leaderboard()
