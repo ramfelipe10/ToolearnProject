@@ -193,22 +193,33 @@ namespace TooLearnOfficial
         public void exporttopdf(DataGridView dgv, string filename)
         {
 
-            // IMAGE
-            iTextSharp.text.Image PNG = iTextSharp.text.Image.GetInstance("toolearn.png");
+            // IMAGE TOOLEARN
+            iTextSharp.text.Image PNG = iTextSharp.text.Image.GetInstance("toolearns.png");
             //
             PNG.ScaleToFit(150f, 150f);
-            PNG.Alignment = Element.ALIGN_CENTER;
+            PNG.Alignment = Element.ALIGN_LEFT;
             //
-            PNG.Border = iTextSharp.text.Rectangle.BOX;
-            PNG.BorderColor = iTextSharp.text.BaseColor.GRAY;
+            //PNG.Border = iTextSharp.text.Rectangle.BOX;
+            //PNG.BorderColor = iTextSharp.text.BaseColor.GRAY;
             //PNG.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
-            PNG.BorderWidth = 5f;
+            //PNG.BorderWidth = 5f;
+
+            // IMAGE ADNU
+            iTextSharp.text.Image ADNU = iTextSharp.text.Image.GetInstance("ADNU.png");
+            //
+            ADNU.ScaleToFit(150f, 150f);
+            ADNU.Alignment = Element.ALIGN_RIGHT;
+            //
+            //ADNU.Border = iTextSharp.text.Rectangle.BOX;
+            //ADNU.BorderColor = iTextSharp.text.BaseColor.GRAY;
+            //PNG.BackgroundColor = iTextSharp.text.BaseColor.GRAY;
+            //ADNU.BorderWidth = 5f;
 
             //Chunk c1 = new Chunk("TOOLEARN APPLICATION", FontFactory.GetFont("Times New Roman"));
             //c1.Font.Color = new iTextSharp.text.BaseColor(0, 0, 0);
             //c1.Font.SetStyle(0);
             //c1.Font.Size = 14;
-            
+
 
 
 
@@ -259,7 +270,8 @@ namespace TooLearnOfficial
                     PdfWriter.GetInstance(pdfdoc, stream);
                     pdfdoc.Open();
                     pdfdoc.Add(PNG);
-                   // pdfdoc.Add(c1);
+                    pdfdoc.Add(ADNU);
+                    // pdfdoc.Add(c1);
                     pdfdoc.Add(pdftable);                    
                     pdfdoc.Close();
                     stream.Close();
