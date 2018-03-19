@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_00D7EDE2E8484229A83280E6D21B8AD5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_035D460FEAAE400D812BA62B119284BF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0BB746D8E5EF19835DB3E9C259FF5F94"
         "OwnerKey" = "8:_105F3C43EFF7410FB15698E124FCB69E"
         "MsmSig" = "8:_UNDEFINED"
@@ -33,7 +45,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1E4D2453635A462F9826A76CCB47099B"
+        "MsmKey" = "8:_1221F352EB284752958956A977D7BD7E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_156BF22E613143F3ACADBE1CFC71CCAF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_17BBB5B6C9FE4FCC976904C4979BDBD0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_28B05B64B0D64CFBA057D3DA65333BED"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -41,6 +71,24 @@
         {
         "MsmKey" = "8:_33BFCB2584E655DD18C077F6176CACE5"
         "OwnerKey" = "8:_F9F743952BC44A9E9DD5AA31F5E722A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_33BFCB2584E655DD18C077F6176CACE5"
+        "OwnerKey" = "8:_9E68351F7DB5470BBE9B18A0468D730B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_33BFCB2584E655DD18C077F6176CACE5"
+        "OwnerKey" = "8:_17BBB5B6C9FE4FCC976904C4979BDBD0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_33BFCB2584E655DD18C077F6176CACE5"
+        "OwnerKey" = "8:_00D7EDE2E8484229A83280E6D21B8AD5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -57,25 +105,79 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3790E273E4104DD994D152B2BE164891"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3BCF853BACCD83D683AB376596F5D34F"
         "OwnerKey" = "8:_0BB746D8E5EF19835DB3E9C259FF5F94"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_43C262B7BA864AA59FBD37E55DE42A80"
+        "MsmKey" = "8:_3BCF853BACCD83D683AB376596F5D34F"
+        "OwnerKey" = "8:_FD09286AA7C6471180FA8453355AECE3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3BCF853BACCD83D683AB376596F5D34F"
+        "OwnerKey" = "8:_4C20E2EAF063CFB8FA40D4AF3B8D9BED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C20E2EAF063CFB8FA40D4AF3B8D9BED"
+        "OwnerKey" = "8:_28B05B64B0D64CFBA057D3DA65333BED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4C20E2EAF063CFB8FA40D4AF3B8D9BED"
+        "OwnerKey" = "8:_9E68351F7DB5470BBE9B18A0468D730B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4CA4FAB7E5134861AE88BB128F8E0CF5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_494A457239834E7FAB1FB168C51479CC"
+        "MsmKey" = "8:_589044ED611E462690A14776ECFD3995"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5711F63AFCEB4053B7CAE7AF2937DFBB"
+        "MsmKey" = "8:_5D611F2A366E464D8284C5899E2C2F6F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5E7DF307544940AB8DC5E8266F88506A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_617E135B53A240E7A8855E8C1BB2F35F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_65065BC074B4470E82CD3B9FD58D3853"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_67102B09C25C4D3DB259256DF28B7E92"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -87,8 +189,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8D4624B96EE446D79A069D3DD24BDBAD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8F8C7BF63A3EC8B83D152D5AD13FC494"
         "OwnerKey" = "8:_F9F743952BC44A9E9DD5AA31F5E722A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_90D1DA3376D949D783B2D285895A8540"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,13 +213,31 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_98E1EB7909D847D186CDF402EE144074"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9E68351F7DB5470BBE9B18A0468D730B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A065413474D0671AB0613B89CA464F8A"
         "OwnerKey" = "8:_F9F743952BC44A9E9DD5AA31F5E722A5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A4240717035A4F23BFE7EDCA823D5A5B"
+        "MsmKey" = "8:_A065413474D0671AB0613B89CA464F8A"
+        "OwnerKey" = "8:_9E68351F7DB5470BBE9B18A0468D730B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A4B73C290E0A4933A9210B6331E59274"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -123,8 +255,44 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B9EAD465120441ADB5060E483197A134"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C322E86F94F68E082F874D69FBC72D6D"
+        "OwnerKey" = "8:_589044ED611E462690A14776ECFD3995"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C897D9EF2898E41E9CF4DA15959F7BB6"
         "OwnerKey" = "8:_F9F743952BC44A9E9DD5AA31F5E722A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CBA810F3F10749D1AE7D2F7FE62378BE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CE2180C7A8A042339BC3037059FB8903"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E6A2338A9FAE4A6C804BC7A8540DC56A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E7C5C334F050499FA20D741AF69D0344"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -135,8 +303,80 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FD09286AA7C6471180FA8453355AECE3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F9F743952BC44A9E9DD5AA31F5E722A5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_589044ED611E462690A14776ECFD3995"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C322E86F94F68E082F874D69FBC72D6D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9E68351F7DB5470BBE9B18A0468D730B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_67102B09C25C4D3DB259256DF28B7E92"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_17BBB5B6C9FE4FCC976904C4979BDBD0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_00D7EDE2E8484229A83280E6D21B8AD5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CBA810F3F10749D1AE7D2F7FE62378BE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FD09286AA7C6471180FA8453355AECE3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_156BF22E613143F3ACADBE1CFC71CCAF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_28B05B64B0D64CFBA057D3DA65333BED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4C20E2EAF063CFB8FA40D4AF3B8D9BED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -244,6 +484,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -274,6 +522,57 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_00D7EDE2E8484229A83280E6D21B8AD5"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:itextsharp.pdfa, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_00D7EDE2E8484229A83280E6D21B8AD5"
+                    {
+                    "Name" = "8:itextsharp.pdfa.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\itextsharp.pdfa.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_035D460FEAAE400D812BA62B119284BF"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\TooLearnOfficial.pdb"
+            "TargetName" = "8:TooLearnOfficial.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0BB746D8E5EF19835DB3E9C259FF5F94"
             {
             "AssemblyRegister" = "3:1"
@@ -336,10 +635,103 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E4D2453635A462F9826A76CCB47099B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1221F352EB284752958956A977D7BD7E"
             {
-            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodSneaky Snitch.mp3"
-            "TargetName" = "8:Kevin MacLeodSneaky Snitch.mp3"
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\MusicQuiz.mp3"
+            "TargetName" = "8:MusicQuiz.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_156BF22E613143F3ACADBE1CFC71CCAF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_156BF22E613143F3ACADBE1CFC71CCAF"
+                    {
+                    "Name" = "8:Bunifu_UI_v1.5.3.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Bunifu_UI_v1.5.3.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_17BBB5B6C9FE4FCC976904C4979BDBD0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:itextsharp.xtra, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_17BBB5B6C9FE4FCC976904C4979BDBD0"
+                    {
+                    "Name" = "8:itextsharp.xtra.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\itextsharp.xtra.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_28B05B64B0D64CFBA057D3DA65333BED"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_28B05B64B0D64CFBA057D3DA65333BED"
+                    {
+                    "Name" = "8:AxInterop.WMPLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\AxInterop.WMPLib.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
             "Condition" = "8:"
@@ -387,6 +779,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3790E273E4104DD994D152B2BE164891"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Toolearn.mdf"
+            "TargetName" = "8:Toolearn.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3BCF853BACCD83D683AB376596F5D34F"
             {
             "SourcePath" = "8:wmp.dll"
@@ -407,7 +819,109 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_43C262B7BA864AA59FBD37E55DE42A80"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4C20E2EAF063CFB8FA40D4AF3B8D9BED"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4C20E2EAF063CFB8FA40D4AF3B8D9BED"
+                    {
+                    "Name" = "8:Interop.WMPLib.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Interop.WMPLib.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4CA4FAB7E5134861AE88BB128F8E0CF5"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodMerry Go.mp3"
+            "TargetName" = "8:Kevin MacLeodMerry Go.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_589044ED611E462690A14776ECFD3995"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:vshost32, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_589044ED611E462690A14776ECFD3995"
+                    {
+                    "Name" = "8:TooLearnOfficial.vshost.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\TooLearnOfficial.vshost.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5D611F2A366E464D8284C5899E2C2F6F"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodMonkeys Spinning Monkeys.mp3"
+            "TargetName" = "8:Kevin MacLeodMonkeys Spinning Monkeys.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5E7DF307544940AB8DC5E8266F88506A"
             {
             "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodFluffing a Duck.mp3"
             "TargetName" = "8:Kevin MacLeodFluffing a Duck.mp3"
@@ -427,7 +941,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_494A457239834E7FAB1FB168C51479CC"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_617E135B53A240E7A8855E8C1BB2F35F"
             {
             "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\PicturePuzzleRules.txt"
             "TargetName" = "8:PicturePuzzleRules.txt"
@@ -447,10 +961,41 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5711F63AFCEB4053B7CAE7AF2937DFBB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_65065BC074B4470E82CD3B9FD58D3853"
             {
-            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodMerry Go.mp3"
-            "TargetName" = "8:Kevin MacLeodMerry Go.mp3"
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Toolearn_log.ldf"
+            "TargetName" = "8:Toolearn_log.ldf"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_67102B09C25C4D3DB259256DF28B7E92"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_67102B09C25C4D3DB259256DF28B7E92"
+                    {
+                    "Name" = "8:MaterialSkin.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\MaterialSkin.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
             "Condition" = "8:"
@@ -471,6 +1016,26 @@
             {
             "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\QuizBeeRules.txt"
             "TargetName" = "8:QuizBeeRules.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D4624B96EE446D79A069D3DD24BDBAD"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\ADNU.png"
+            "TargetName" = "8:ADNU.png"
             "Tag" = "8:"
             "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
             "Condition" = "8:"
@@ -518,6 +1083,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_90D1DA3376D949D783B2D285895A8540"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Family Feud Theme Song.mp3"
+            "TargetName" = "8:Family Feud Theme Song.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9603D6DEDB90B63B830F692BA3262413"
             {
             "AssemblyRegister" = "3:1"
@@ -547,6 +1132,57 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98E1EB7909D847D186CDF402EE144074"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\TooLearnOfficial.exe.config"
+            "TargetName" = "8:TooLearnOfficial.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9E68351F7DB5470BBE9B18A0468D730B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:TooLearnOfficial, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_9E68351F7DB5470BBE9B18A0468D730B"
+                    {
+                    "Name" = "8:TooLearnOfficial.exe"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\TooLearnOfficial.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A065413474D0671AB0613B89CA464F8A"
@@ -580,10 +1216,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A4240717035A4F23BFE7EDCA823D5A5B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A4B73C290E0A4933A9210B6331E59274"
             {
-            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodMonkeys Spinning Monkeys.mp3"
-            "TargetName" = "8:Kevin MacLeodMonkeys Spinning Monkeys.mp3"
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\toolearn.png"
+            "TargetName" = "8:toolearn.png"
             "Tag" = "8:"
             "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
             "Condition" = "8:"
@@ -651,6 +1287,57 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B9EAD465120441ADB5060E483197A134"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\PDFSTAMP.png"
+            "TargetName" = "8:PDFSTAMP.png"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C322E86F94F68E082F874D69FBC72D6D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C322E86F94F68E082F874D69FBC72D6D"
+                    {
+                    "Name" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.VisualStudio.HostingProcess.Utilities.Sync.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C897D9EF2898E41E9CF4DA15959F7BB6"
             {
             "AssemblyRegister" = "3:1"
@@ -680,6 +1367,128 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CBA810F3F10749D1AE7D2F7FE62378BE"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_CBA810F3F10749D1AE7D2F7FE62378BE"
+                    {
+                    "Name" = "8:itextsharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\itextsharp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CE2180C7A8A042339BC3037059FB8903"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\TooLearnOfficial.vshost.exe.manifest"
+            "TargetName" = "8:TooLearnOfficial.vshost.exe.manifest"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E6A2338A9FAE4A6C804BC7A8540DC56A"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Kevin MacLeodSneaky Snitch.mp3"
+            "TargetName" = "8:Kevin MacLeodSneaky Snitch.mp3"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E7C5C334F050499FA20D741AF69D0344"
+            {
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\TooLearnOfficial.vshost.exe.config"
+            "TargetName" = "8:TooLearnOfficial.vshost.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FD09286AA7C6471180FA8453355AECE3"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_FD09286AA7C6471180FA8453355AECE3"
+                    {
+                    "Name" = "8:Interop.WMPLib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\TooLearnOfficial\\bin\\Debug\\Interop.WMPLib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6BF22BAB4B0C4FDAB24C9AB982C808CB"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -750,7 +1559,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TooLearnOfficial"
         "ProductCode" = "8:{D7736D13-6F76-458A-9C81-E702BA13782F}"
-        "PackageCode" = "8:{5AFB3213-567F-42BC-9C99-D0E4E5358597}"
+        "PackageCode" = "8:{1003030B-EE20-4054-BF2B-86BD0B32BEFF}"
         "UpgradeCode" = "8:{F477DA64-0346-4F87-AD6C-EE35D7BE6D7F}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

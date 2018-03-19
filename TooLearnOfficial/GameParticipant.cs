@@ -523,26 +523,46 @@ namespace TooLearnOfficial
 
         private void GameParticipant_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" +Program.par_id+ "' ", con);
-            DataTable dt = new DataTable();
-            Name.Fill(dt);
-            Pname= dt.Rows[0][0].ToString();
-          
-
-            if (GameType == "QB")
+            try
             {
-                label2.Text = "Quiz Bee";
-                label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
+
+                if (Program.group_id == 0)
+                {
+                    SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "' ", con);
+                    DataTable dt = new DataTable();
+                    Name.Fill(dt);
+                    Pname = dt.Rows[0][0].ToString();
+                }
+
+                else
+                {
+                    SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
+                    DataTable dt = new DataTable();
+                    Name.Fill(dt);
+                    Pname = dt.Rows[0][0].ToString();
+
+                }
+
+                if (GameType == "QB")
+                {
+                    label2.Text = "Quiz Bee";
+                    label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
+
+                }
+
+                else if (GameType == "PZ")
+                {
+                    label2.Text = "Picture Puzzle";
+                    label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
+                }
 
             }
 
-            else if (GameType == "PZ")
+            catch(Exception ex)
             {
-                label2.Text = "Picture Puzzle";
-                label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
+
+                Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
             }
-
-
 
         }  
        
