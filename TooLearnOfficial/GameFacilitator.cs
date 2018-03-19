@@ -156,22 +156,29 @@ namespace TooLearnOfficial
 
                 try
                 {
-                      if (name.ToString()==data.Rows[i][0].ToString()) 
+                      if (data.Rows[i][0].ToString()==name.ToString())  ///dae nagana ning if
                     {                        
                         this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
 
-                       this.Invoke((MethodInvoker)(() => leaderboard()));
+                        MessageBox.Show(name.ToString());
 
-                        
 
-                        this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
-                        this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
 
+                        //this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
+                     // this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
+
+                      //  this.Invoke((MethodInvoker)(() => leaderboard()));
 
                     }
-                   
 
-                 
+
+                    else
+                    {
+                       // this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
+                    }
+
+
+
 
 
                 }
@@ -191,7 +198,7 @@ namespace TooLearnOfficial
 
         private void leaderboard()
         {
-            data.AsEnumerable().Take(2);
+            data.AsEnumerable().Take(5);
             DataView dv = data.DefaultView;
             
             dv.Sort = "Column2 DESC";        

@@ -46,17 +46,25 @@ namespace TooLearnOfficial
 
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter name= new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' " ,con);
+            fillgrid();
+        }
+        public void fillgrid()
+        {
+
+           
+
+
+            SqlDataAdapter name = new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' ", con);
             DataTable dt = new DataTable();
             name.Fill(dt);
-            string pid=dt.Rows[0][0].ToString();
+            string pid = dt.Rows[0][0].ToString();
 
             SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
             DataTable data = new DataTable();
             classname.Fill(data);
-            string cid = data.Rows[0][0].ToString();           
+            string cid = data.Rows[0][0].ToString();
 
-            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='"+ pid +"'AND s.class_id='" + cid +"' ", con);
+            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='" + pid + "'AND s.class_id='" + cid + "' ", con);
             datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
@@ -66,38 +74,38 @@ namespace TooLearnOfficial
             label_Participant_Name.Text = PG;
             label_Classroom_name.Text = CR;
 
-                        int Total_Number_of_Quiz;
-                        double Quiz_Total_Score = 0;
-                        double Total_Score_on_Quiz = 0;
-                        int average;
-                        double aver;
-                        Progressbar_Individual.Value = 0;
+            int Total_Number_of_Quiz;
+            double Quiz_Total_Score = 0;
+            double Total_Score_on_Quiz = 0;
+            int average;
+            double aver;
+            Progressbar_Individual.Value = 0;
 
             //Total Score on Quiz
-                        for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
-                        {
-                            Total_Score_on_Quiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value);  
-                        }
-                        label_Total_Score.Text += Total_Score_on_Quiz.ToString();
+            for (int i = 0; i < DataGridViewGrade.Rows.Count; ++i)
+            {
+                Total_Score_on_Quiz += Convert.ToInt32(DataGridViewGrade.Rows[i].Cells[2].Value);
+            }
+            label_Total_Score.Text += Total_Score_on_Quiz.ToString();
 
             //Total Number of Quiz Take
-                Total_Number_of_Quiz = DataGridViewGrade.Rows.Count;
-                label_No_of_Taken_Quiz.Text += Total_Number_of_Quiz.ToString();
+            Total_Number_of_Quiz = DataGridViewGrade.Rows.Count;
+            label_No_of_Taken_Quiz.Text += Total_Number_of_Quiz.ToString();
 
             //Total Items of Quiz 
-                        for (int j = 0; j < DataGridViewGrade.Rows.Count; ++j)
-                        {
-                            Quiz_Total_Score += Convert.ToInt32(DataGridViewGrade.Rows[j].Cells[3].Value);
-                        }
-                        //label_Class_Rank.Text += Quiz_Total_Score;
+            for (int j = 0; j < DataGridViewGrade.Rows.Count; ++j)
+            {
+                Quiz_Total_Score += Convert.ToInt32(DataGridViewGrade.Rows[j].Cells[3].Value);
+            }
+            //label_Class_Rank.Text += Quiz_Total_Score;
             //Compute the Average Grade
-                aver = (Total_Score_on_Quiz / Quiz_Total_Score) * 100;
-                average = Convert.ToInt32(aver);
+            aver = (Total_Score_on_Quiz / Quiz_Total_Score) * 100;
+            average = Convert.ToInt32(aver);
             //Average Grade
             label_average.Text += average.ToString();
 
             Progressbar_Individual.Value += Convert.ToInt32(average);
-            
+
 
             if (average >= 95 && average <= 100)
             {
@@ -158,9 +166,8 @@ namespace TooLearnOfficial
                 }
             }
             labelPassed.Text = a.ToString();
-            labelFailed.Text = b.ToString();           
+            labelFailed.Text = b.ToString();
         }
-
         
     }
 }

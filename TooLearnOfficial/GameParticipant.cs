@@ -521,27 +521,38 @@ namespace TooLearnOfficial
             stream.EndWrite(ar);
         }
 
+
+
+
+
+        private void participant()
+        {
+            if (Program.group_id == 0)
+            {
+                SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "' ", con);
+                DataTable dt = new DataTable();
+                Name.Fill(dt);
+                Pname = dt.Rows[0][0].ToString();
+            }
+
+            else
+            {
+
+                SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
+                DataTable dt = new DataTable();
+                Name.Fill(dt);
+                Pname = dt.Rows[0][0].ToString();
+
+            }
+           
+        }
+
         private void GameParticipant_Load(object sender, EventArgs e)
         {
             try
             {
 
-                if (Program.group_id == 0)
-                {
-                    SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "' ", con);
-                    DataTable dt = new DataTable();
-                    Name.Fill(dt);
-                    Pname = dt.Rows[0][0].ToString();
-                }
-
-                else
-                {
-                    SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
-                    DataTable dt = new DataTable();
-                    Name.Fill(dt);
-                    Pname = dt.Rows[0][0].ToString();
-
-                }
+         
 
                 if (GameType == "QB")
                 {
@@ -555,6 +566,11 @@ namespace TooLearnOfficial
                     label2.Text = "Picture Puzzle";
                     label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
                 }
+
+
+
+
+                participant();
 
             }
 
