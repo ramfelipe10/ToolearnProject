@@ -76,19 +76,14 @@ namespace TooLearnOfficial
         {
             try
             {
-                //Translate the message into its byte form
-                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message + " is ready!");
-
-                //Get a client stream for reading and writing
+                
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(message);             
                 NetworkStream stream = _client.GetStream();
-
-                //Send the message to the connected server
-                //stream.Write(buffer, 0, buffer.length);
                 stream.BeginWrite(buffer, 0, buffer.Length, BeginWriteCallback, stream);
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.ToString());
+             
             }
         }
 
@@ -97,23 +92,22 @@ namespace TooLearnOfficial
         {
             try
             {
-                //Translate the message into its byte form
+               
                 byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(SCORE)," + Pname + ",(" + message + ")");
 
-                //Get a client stream for reading and writing
+              
                 NetworkStream stream = _client.GetStream();
 
-                //Send the message to the connected server
-                //stream.Write(buffer, 0, buffer.length);
+                
                 stream.BeginWrite(buffer, 0, buffer.Length, BeginWriteCallback, stream);
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.ToString());
+               
             }
         }
 
-        /*                                   */
+       
 
         public void StartConnect()
         {
@@ -889,7 +883,7 @@ namespace TooLearnOfficial
             {
                 feed = "Wrong";
 
-                //Dialogue.Show(answer.Length.ToString()+ correctanswer.Length.ToString(),"","ok","Cancel");
+             
             }
 
 

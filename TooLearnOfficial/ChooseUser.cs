@@ -85,6 +85,12 @@ namespace TooLearnOfficial
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
+
+
+
+            Role = "Public";
+
+
             this.Hide();
             PublicJoin PJ = new PublicJoin();
             PJ.Show();

@@ -65,6 +65,12 @@ namespace TooLearnOfficial
 
                 Send(name);
             }
+
+            else
+            {
+                Send(PublicJoin.NameFREE);
+
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -211,7 +217,7 @@ namespace TooLearnOfficial
                     ThreadHelper.Hide(this);
 
                     //this.Hide();//kaipuhn muna ithread
-                    GameType = "PZ";
+                    GameType = "QB";
                     //  GameRules GR = new GameRules();
                     // GR.Show();
 
@@ -239,9 +245,36 @@ namespace TooLearnOfficial
                 }
 
 
+                else if (message.Contains("GAMEFPQB"))
+                {
+                    ThreadHelper.Hide(this);
+
+                    //this.Hide();//kaipuhn muna ithread
+                    GameType = "QB";
+                    //  GameRules GR = new GameRules();
+                    // GR.Show();
+                    GameFree GF = new GameFree();
+                    GF.ShowDialog();
 
 
+                }
 
+                else if (message.Contains("GAMEFPPZ"))
+                {
+
+                    ThreadHelper.Hide(this);
+
+                    //this.Hide();//kaipuhn muna ithread
+                    GameType = "PZ";
+                    //  GameRules GR = new GameRules();
+                    // GR.Show();
+
+
+                    GameFree GF = new GameFree();
+                    GF.ShowDialog();
+
+
+                }
 
                 //client.Client.Shutdown(SocketShutdown.Both);
                 //client.Client.Close();

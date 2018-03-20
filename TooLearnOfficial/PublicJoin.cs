@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Net;
+using System.Net.Sockets;
 
 namespace TooLearnOfficial
 {
     public partial class PublicJoin : Form
     {
+        public static string NameFREE;
         int Time = 2;
         public PublicJoin()
         {
@@ -38,7 +42,51 @@ namespace TooLearnOfficial
         private void buttonEnterGame_Click(object sender, EventArgs e)
         {
 
-            timer1.Start();
+         
+
+
+            string server = IPBox.Text;
+            if (IPBox.Text == null || IPBox.Text == "")
+            {
+
+
+                Dialogue.Show("Enter Server IP", "", "Ok", "Cancel");
+
+
+            }
+
+            else
+            {
+                try
+                {
+                    IPHostEntry host = Dns.GetHostEntry(server);
+                    foreach (IPAddress ip in host.AddressList)
+                    {
+
+                        if (ip.AddressFamily == AddressFamily.InterNetwork)
+                        {
+                            Program.serverIP = ip.ToString();
+                            timer1.Start();
+
+                        }
+
+                      
+
+                    }
+                }//end try
+
+                catch 
+                {
+                    Dialogue.Show("Connection Failed", "", "Ok", "Cancel");
+                   
+                }
+
+               
+            }        
+                      
+
+            
+        
            
 
         }
@@ -73,5 +121,24 @@ namespace TooLearnOfficial
             }
 
         }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            if (bunifuMetroTextbox1.Text == null || bunifuMetroTextbox1.Text == "")
+            {
+                Dialogue.Show("Please Provide a Screen Name", "", "Ok", "Cancel");
+
+            }
+
+            else
+            {
+
+                NameFREE = bunifuMetroTextbox1.Text;
+                LobbyParticipant con = new LobbyParticipant();
+                con.Show();
+            }
+        }
+
+
     }
 }

@@ -210,6 +210,12 @@
     <Compile Include="GameFacilitator.Designer.cs">
       <DependentUpon>GameFacilitator.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameFree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameFree.Designer.cs">
+      <DependentUpon>GameFree.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameGroup.cs">
       <SubType>Form</SubType>
     </Compile>

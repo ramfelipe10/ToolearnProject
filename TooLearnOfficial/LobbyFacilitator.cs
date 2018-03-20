@@ -269,6 +269,11 @@ namespace TooLearnOfficial
                 SendToAllClients("GAMEGP" + "" + GameType + "");
             }
 
+            else
+            {
+                SendToAllClients("GAMEFP" + "" + GameType + "");
+            }
+
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
             cmd.ExecuteNonQuery();
