@@ -813,7 +813,7 @@ namespace TooLearnOfficial
                     label2.Text = "Quiz Bee";
                     label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
 
-                    label11.Text = Pname;
+              
 
                 }
 

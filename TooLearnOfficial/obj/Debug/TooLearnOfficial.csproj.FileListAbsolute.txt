@@ -258,19 +258,10 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\Inter
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.exe
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameGroup.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.Score2.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ScoreRecordParticipant.resources
->>>>>>> origin/master
->>>>>>> 09ab8664d09d1af04f5b60fbff2bfc654bc3d5ab
-=======
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.Score2.resources
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ScoreRecordParticipant.resources
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.GameGroup.resources
->>>>>>> origin/master
->>>>>>> c7cb0071c90527724a8fc74ec0e64b1917fb8dab
+
+C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.csproj.CopyComplete
