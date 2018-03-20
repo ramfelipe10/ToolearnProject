@@ -15,8 +15,8 @@ namespace TooLearnOfficial
     {
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
-        string PG = ScoreRecordFacilitator.PN;
-        string CR = ScoreRecordFacilitator.CR;
+        string PG = ScoreRecordParticipant.PN;
+        string CR = ScoreRecordParticipant.CR;
 
         public ViewScoreRecord2()
         {
@@ -52,6 +52,11 @@ namespace TooLearnOfficial
             bs.DataSource = datasd;
             DataGridViewGrade.DataSource = bs;
 
+            //Rank Query
+            //SqlDataAdapter rank = new SqlDataAdapter("select p.fullname, sr.quiz_score, DENSE_RANK() over (order by sr.quiz_score) as 'Rank' from classrooms c, participant p, scoreRecords sr, quizzes q where sr.class_id='1' ", con);
+            //DataTable datar = new DataTable();
+            //rank.Fill(datar);
+            ;
             label_Participant_Name.Text = PG;
             label_Classroom_name.Text = CR;
 
