@@ -223,12 +223,12 @@ namespace TooLearnOfficial
                 else if (message.Contains("C1o2mpute"))
                 {
                     int rawscore = Convert.ToInt32(bunifuCustomLabel5.Text);
-                    //label6.Text = rawscore.ToString();
+                 
                     ThreadHelper.SetText(this, label6, rawscore.ToString());
-                    //label10.Text = Total.ToString();
+                   
                     ThreadHelper.SetText(this, label10, Total);
 
-                    //panel4.Visible = true;
+                   
                     double converted_total = Convert.ToInt32(Total);
                     double converted_rawscore = rawscore;
                     double comp = (converted_rawscore / converted_total) * 100;//bawal zero
@@ -236,20 +236,20 @@ namespace TooLearnOfficial
 
                     if (compute < Convert.ToInt32("60"))
                     {
-                        // label9.Text = compute + " You Needs Improvement, Study and Play!";
+                     
 
-                        ThreadHelper.SetText(this, label9, compute.ToString() + "% You Needs Improvement, Study and Play!");
+                        ThreadHelper.SetText(this, label9, compute.ToString() + "% You Need Improvement, Study and Play!");
                     }
                     else if (compute == Convert.ToInt32("100"))
                     {
-                        //label9.Text = compute + " Excellent!";
+                       
                         ThreadHelper.SetText(this, label9, compute.ToString() + "% Excellent!");
                     }
 
                     else
                     {
-                        //label9.Text = compute + " Not Bad!, aim 100 Next Time :)";
-                        ThreadHelper.SetText(this, label9, compute.ToString() + "% Not Bad!, aim Perfect Next Time ");
+                        
+                        ThreadHelper.SetText(this, label9, compute.ToString() + "% Not Bad!, aim for a Perfect Score Next Time ");
                     }
 
                     ThreadHelper.PanelOut(this, panel4, true);

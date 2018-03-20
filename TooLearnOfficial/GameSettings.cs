@@ -14,8 +14,8 @@ namespace TooLearnOfficial
     public partial class GameSettings : Form
     {
        public static string Music;
-       public static string IsRandom;
-       public static string IsMusic;
+       public static bool IsRandom;
+       public static bool IsMusic;
 
         public GameSettings()
         {
@@ -53,11 +53,7 @@ namespace TooLearnOfficial
                     Music = "Kevin MacLeodSneaky Snitch.mp3";
                 break;
                               
-
-
-                default:
-
-                break;
+                                    
 
 
             }
@@ -66,23 +62,23 @@ namespace TooLearnOfficial
             if (RandomBox.Checked == true)
             {
 
-                IsRandom = "true";
+                IsRandom = true;
             }
 
             else
             {
-                IsRandom = "false";
+                IsRandom = false;
             }
 
             if (MusicBox.Checked == true)
             {
 
-                IsMusic = "true";
+                IsMusic = true;
             }
 
             else
             {
-                IsMusic = "false";
+                IsMusic = false;
             }
 
 

@@ -278,7 +278,7 @@ namespace TooLearnOfficial
 
            this.Hide();
             GameRulesFacilitator GRF = new GameRulesFacilitator();
-            GRF.ShowDialog();
+            GRF.Show();
            
 
                    

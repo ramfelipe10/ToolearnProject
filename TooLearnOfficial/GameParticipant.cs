@@ -29,6 +29,7 @@ namespace TooLearnOfficial
         string time;
         int convertedtime;
         string Total;
+      
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
        
@@ -225,32 +226,32 @@ namespace TooLearnOfficial
                else if (message.Contains("C1o2mpute"))
                 {
                    int rawscore= Convert.ToInt32(bunifuCustomLabel5.Text);
-                    //label6.Text = rawscore.ToString();
+                   
                     ThreadHelper.SetText(this, label6, rawscore.ToString());
-                    //label10.Text = Total.ToString();
+                   
                     ThreadHelper.SetText(this, label10, Total);
                     
-                    //panel4.Visible = true;
+                   
                     double converted_total = Convert.ToInt32(Total);
                     double converted_rawscore = rawscore;
                     double comp = (converted_rawscore / converted_total) * 100;//bawal zero
                     int compute = Convert.ToInt32(comp);
                     
                     if (compute < Convert.ToInt32("60")){
-                       // label9.Text = compute + " You Needs Improvement, Study and Play!";
+                      
 
-                        ThreadHelper.SetText(this, label9, compute.ToString() + "% You Needs Improvement, Study and Play!");
+                        ThreadHelper.SetText(this, label9, compute.ToString() + "% You Need Improvement, Study and Play!");
                     }
                     else if(compute == Convert.ToInt32("100"))
                     {
-                        //label9.Text = compute + " Excellent!";
+                        
                         ThreadHelper.SetText(this, label9, compute.ToString() + "% Excellent!");
                     }
 
                     else
                     {
-                        //label9.Text = compute + " Not Bad!, aim 100 Next Time :)";
-                        ThreadHelper.SetText(this, label9, compute.ToString() + "% Not Bad!, aim Perfect Next Time ");
+                      
+                        ThreadHelper.SetText(this, label9, compute.ToString() + "% Not Bad!, aim for a Perfect Score Next Time ");
                     }
 
                     ThreadHelper.PanelOut(this, panel4, true);
@@ -261,8 +262,9 @@ namespace TooLearnOfficial
 
                else if (message.Contains("PleaseHideThis"))
                 {
+                    Send("DISCONNECT");                    
                     ThreadHelper.Hide(this);
-                    Send("DISCONNECT");
+                   
                    
                    
                 } 
@@ -526,27 +528,7 @@ namespace TooLearnOfficial
 
 
 
-     /*   private void participant()
-        {
-            if (Program.group_id == 0)
-            {
-                SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "' ", con);
-                DataTable dt = new DataTable();
-                Name.Fill(dt);
-                Pname = dt.Rows[0][0].ToString();
-            }
-
-            else
-            {
-
-                SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
-                DataTable dt = new DataTable();
-                Name.Fill(dt);
-                Pname = dt.Rows[0][0].ToString();
-
-            }
-           
-        } */
+    
 
         private void GameParticipant_Load(object sender, EventArgs e)
         {
@@ -572,10 +554,9 @@ namespace TooLearnOfficial
                     label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
                 }
 
+                
 
-
-
-             //   participant();
+           
 
             }
 
@@ -588,10 +569,16 @@ namespace TooLearnOfficial
         }  
        
 
-        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        private async void bunifuImageButton2_Click(object sender, EventArgs e)
         {
-            Send("DISCONNECT");
-            this.Close();
+            await Task.Delay(100);
+
+            DialogResult result = Dialogue1.Show("Are you sure you want to Exit?", "", "Ok", "Cancel");
+            if (result == DialogResult.Yes)
+            {
+                Send("DISCONNECT");
+                this.Close();
+            }
         }
 
 
@@ -838,7 +825,7 @@ namespace TooLearnOfficial
             }
         }
 
-     
+       
 
         private string validate(string answer)
         {
@@ -886,7 +873,7 @@ namespace TooLearnOfficial
             {
                 feed = "Wrong";
 
-                //Dialogue.Show(answer.Length.ToString()+ correctanswer.Length.ToString(),"","ok","Cancel");
+                
             }
 
 

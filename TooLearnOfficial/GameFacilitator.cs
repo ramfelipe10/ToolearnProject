@@ -40,12 +40,12 @@ namespace TooLearnOfficial
 
         DataTable data;
 
-        string music = GameSettings.IsMusic;
-        string random = GameSettings.IsRandom;
+        private TcpListener listener = LobbyFacilitator.listener;
+        bool music = GameSettings.IsMusic;
+        bool random = GameSettings.IsRandom;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
-        // string i;
-        // int time;
+       
         string participant = SelectParticipant.participant.ToString();
 
         int counter = 0;
@@ -168,48 +168,13 @@ namespace TooLearnOfficial
         {
             DataView dv = data.DefaultView;
             dv.Sort = "Column2 DESC";
-            data.AsEnumerable().Take(5);
-         
-            bunifuCustomDataGrid1.DataSource = dv.ToTable();
-
-               
-          
-           
+            data.AsEnumerable().Take(5);         
+            bunifuCustomDataGrid1.DataSource = dv.ToTable();                         
 
           
-
         }
 
-        private void DoAcceptSocketCallback(IAsyncResult ar)
-        {
-            
-            try
-            {
-                // Get the listener that handles the client request
-                TcpListener listener = (TcpListener)ar.AsyncState;
-
-                //End operation and display the received data on the screen
-                TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
-
-               
-                //Add client to client list
-                clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
-
-                //Send a confirmation message to client
-                Send("", clientSocket);
-
-                //Acccept another TCPClient connection
-                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
-
-                //Begin recieving data from the client socket
-                Receive(clientSocket);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
+  
 
         private void Send(string text, TcpClient client)
         {
@@ -231,40 +196,7 @@ namespace TooLearnOfficial
 
 
 
-        private void SendImage(byte[] text, TcpClient client)
-        {
-            try
-            {
-
-
-
-                Bitmap bmp = new Bitmap(dt.Rows[counter][6].ToString());
-                MemoryStream ms = new MemoryStream();
-                // Save to memory using the Jpeg format
-                bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                // read to end
-                byte[] bmpBytes = ms.GetBuffer();
-                bmp.Dispose();
-                ms.Close();
-
-                //Set a NetworkStream for sending data
-                NetworkStream stream = client.GetStream();
-                //Store the message into the buffer
-              
-                //Begin writing into the stream bufer for sending
-                stream.BeginWrite(bmpBytes, 0, bmpBytes.Length, BeginSendCallback, stream);
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-
-            }
-        }
-
+      
 
         private void BeginSendCallback(IAsyncResult ar)
         {
@@ -275,56 +207,7 @@ namespace TooLearnOfficial
         }
 
 
-        private void Receive(TcpClient clientSocket)
-        {
-            try
-            {
-                clientSocket.Client.BeginReceive(buffer, 0, buffer_size, SocketFlags.None,
-                    new AsyncCallback(BeginReceiveCallback), clientSocket);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void BeginReceiveCallback(IAsyncResult ar)
-        {
-            try
-            {
-                //Get the client socket
-                 TcpClient clientSocket = (TcpClient)ar.AsyncState;
-                
-
-                //Get the received bytes from the client
-                int received = clientSocket.Client.EndReceive(ar);
-                // Get the string value of the received buffer
-                string message = System.Text.Encoding.ASCII.GetString(buffer, 0, received);
-
-                //Check if a disconenct flag was received
-                if (!message.Contains("DISCONNECT"))
-                {
-
-                   // ThreadHelper.lsbAddItem(this, listBox1, message);
-
-                    //Begin receiving data from the client socket
-                    Receive(clientSocket);
-                    //Send a confirmation message to the client
-                  //  Send("You sent " + message, clientSocket);
-                }
-                else
-                {
-                    clientSockets.Remove(clientSocket.Client.RemoteEndPoint.ToString());
-
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+   
 
         private void SendToAllClients(string message)
         {
@@ -337,15 +220,7 @@ namespace TooLearnOfficial
         }
 
 
-        private void SendToAllClientsImage(byte[] message)
-        {
-
-
-            foreach (KeyValuePair<string, TcpClient> client in clientSockets)
-            {
-                SendImage(message, client.Value);
-            }
-        }
+     
 
         void load_server()
         {
@@ -368,15 +243,22 @@ namespace TooLearnOfficial
         {
 
 
-        //    if (music == "true")
-        //    {
+           if (music == false)
+            {
+                player.controls.stop();
+                bunifuImageButton1.Visible = false;
+                bunifuImageButton2.Visible = false;
+           }
+            else
+            {
                 player.controls.play();
                 player.settings.setMode("loop", true);
-            //     }
+                bunifuImageButton1.Visible = true;
+                bunifuImageButton2.Visible = true;
+            }
 
 
-            //     if (random == "true")
-            //     {
+           
 
             if(participant == "IP")
             {
@@ -440,23 +322,35 @@ namespace TooLearnOfficial
 
 
             }
-
-
-
-
+            
 
 
 
 
         }
 
-                private void load_QA()
-        {
-            SqlDataAdapter adapt = new SqlDataAdapter("select qa.question,qa.answer_a,qa.answer_b,qa.answer_c,qa.answer_d,qa.correct_answer,qa.image,qa.QA_time_limit,qa.points,qa.game_type,qa.item_format,q.total_score from QuestionAnswers qa,quizzes q where qa.quiz_id=q.quiz_id AND qa.quiz_id= '" + QuizID + "'", con);
-            adapt.Fill(dt);
-            NoOfITems = dt.Rows.Count;//6 rows
+       private void load_QA()
+       {
+
+            if (random == false)
+            {
+
+                SqlDataAdapter adapt = new SqlDataAdapter("select qa.question,qa.answer_a,qa.answer_b,qa.answer_c,qa.answer_d,qa.correct_answer,qa.image,qa.QA_time_limit,qa.points,qa.game_type,qa.item_format,q.total_score from QuestionAnswers qa,quizzes q where qa.quiz_id=q.quiz_id AND qa.quiz_id= '" + QuizID + "'", con);
+                adapt.Fill(dt);
+                NoOfITems = dt.Rows.Count;//6 rows
+
+            }
+
+            else
+            {
 
 
+                SqlDataAdapter adapt = new SqlDataAdapter("select qa.question,qa.answer_a,qa.answer_b,qa.answer_c,qa.answer_d,qa.correct_answer,qa.image,qa.QA_time_limit,qa.points,qa.game_type,qa.item_format,q.total_score from QuestionAnswers qa,quizzes q where qa.quiz_id=q.quiz_id AND qa.quiz_id= '" + QuizID + "' Order by NEWID()", con);
+                adapt.Fill(dt);
+                NoOfITems = dt.Rows.Count;//6 rows
+
+
+            }
 
        
            
@@ -583,6 +477,8 @@ namespace TooLearnOfficial
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+            listener.Stop();
+
         }
 
             
@@ -674,13 +570,15 @@ namespace TooLearnOfficial
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
             SendToAllClients("PleaseHideThis");
+            listener.Stop();
             this.Close();
+           
         }
 
         private void GameFacilitator_FormClosing(object sender, FormClosingEventArgs e)
         {
             player.controls.stop();
-            LobbyFacilitator.listener.Stop();
+            
 
         }
 

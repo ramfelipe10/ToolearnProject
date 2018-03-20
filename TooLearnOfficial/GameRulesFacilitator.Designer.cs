@@ -90,6 +90,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameRulesFacilitator";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameRulesFacilitator_FormClosed);
             this.Load += new System.EventHandler(this.GameRulesFacilitator_Load);
             this.ResumeLayout(false);
 

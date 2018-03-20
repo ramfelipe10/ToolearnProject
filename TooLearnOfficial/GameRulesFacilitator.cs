@@ -16,14 +16,14 @@ namespace TooLearnOfficial
     public partial class GameRulesFacilitator : Form
     {
 
-        // Set Buffer size for the data being sent and recieved
+        
         private const int buffer_size = 2048;
-        // Set Buffer as holder of data being sent and received
+       
         private byte[] buffer = new byte[buffer_size];
-        // Set the TCPListeneer on port 13000;
+       
         public static string hostIP;
-        private TcpListener listener;
-        // Set a list of client sockets
+        private TcpListener listener=LobbyFacilitator.listener;
+     
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
 
@@ -49,39 +49,9 @@ namespace TooLearnOfficial
                 label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
             }
         }
+   
 
 
-
-
-        private void DoAcceptSocketCallback(IAsyncResult ar)
-        {
-
-            try
-            {
-                // Get the listener that handles the client request
-                TcpListener listener = (TcpListener)ar.AsyncState;
-
-                //End operation and display the received data on the screen
-                TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
-
-                //Add client to client list
-                clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
-
-                //Send a confirmation message to client
-                Send("", clientSocket);
-
-                //Acccept another TCPClient connection
-                listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);
-
-                //Begin recieving data from the client socket
-                Receive(clientSocket);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-        }
 
         private void Send(string text, TcpClient client)
         {
@@ -109,7 +79,7 @@ namespace TooLearnOfficial
             stream.EndWrite(ar);
         }
 
-
+/*
         private void Receive(TcpClient clientSocket)
         {
             try
@@ -151,7 +121,7 @@ namespace TooLearnOfficial
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
+        } */
 
         private void SendToAllClients(string message)
         {
@@ -184,6 +154,11 @@ namespace TooLearnOfficial
             this.Hide();
             GameFacilitator GF = new GameFacilitator();
             GF.ShowDialog();
+        }
+
+        private void GameRulesFacilitator_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            listener.Stop();
         }
     }
 }
