@@ -110,15 +110,17 @@ namespace TooLearnOfficial
            
             string up = Score.ToString();
 
-            string name = up.Substring(8,up.Length-12);
+            // string name = up.Substring(8,up.Length-12);
+            string name;
+            int nameindex= up.LastIndexOf(',');
+            name=up.Substring(8, nameindex-8);
             int index= up.LastIndexOf('(');
             string points = up.Substring(index + 1);
             points = points.Substring(0,points.Length-1);
 
                        
-           ThreadHelper.lsbAddItem(this, listBox1, up);
-
-            this.Invoke((MethodInvoker)(() => updatescore(name,points)));
+           ThreadHelper.lsbAddItem(this, listBox1, up);            
+           this.Invoke((MethodInvoker)(() => updatescore(name,points)));
 
         }
         private void updatescore(string name,string points)
@@ -132,18 +134,14 @@ namespace TooLearnOfficial
                 {
                     if (data.Rows[i][0].ToString() == name.ToString())
                     {
-                        this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
-
-                        MessageBox.Show(name.ToString());
-
-
+                        this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));              
                         this.Invoke((MethodInvoker)(() => leaderboard()));
                         this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
                         this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
 
 
                     }
-
+                  
 
 
 
@@ -168,70 +166,17 @@ namespace TooLearnOfficial
 
         private void leaderboard()
         {
-            data.AsEnumerable().Take(5);
             DataView dv = data.DefaultView;
-            
-            dv.Sort = "Column2 DESC";        
+            dv.Sort = "Column2 DESC";
+            data.AsEnumerable().Take(5);
+         
+            bunifuCustomDataGrid1.DataSource = dv.ToTable();
+
+               
           
-            bunifuCustomDataGrid1.DataSource = dv.ToTable();           
+           
 
-           // bunifuCustomDataGrid1.Sort(Column1, ListSortDirection.Ascending);
-
-            /*  
-                     SortedList<int, string> SCOREOUT = new SortedList<int, string>();
-                          int count = 0;
-                        this.Invoke((MethodInvoker)(() => count = listView1.Items.Count));
-
-                          for (int i = 0; i < count; i++)
-                          {
-                              try
-                              {
-                                  ListViewItem exams = new ListViewItem();
-                                  this.Invoke((MethodInvoker)(() => exams = listView1.Items[i]));
-                             //  int scores = Convert.ToInt32(exams.SubItems.ToString());
-                             int scores = 90;
-                             MessageBox.Show("scores.ToString()");
-                                 string Names = exams.Text.ToString();
-                                  this.Invoke((MethodInvoker)(() => SCOREOUT.Add(scores,Names)));
-
-
-                              }
-                              catch (Exception ex)
-                              {
-                                  Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-                              }
-
-
-                          }
-
-                     Label[] Name = new Label[4];
-                          Label[] Score = new Label[4];
-
-                          Name[0] = label1;
-                          Name[1] = label3;
-                          Name[2] = label5;
-                          Name[3] = label7;
-                          Name[4] = label9;
-
-                          Score[0] = label2;
-                          Score[1] = label4;
-                          Score[2] = label6;
-                          Score[3] = label8;
-                          Score[4] = label10;
-
-                          int x = 0;
-                         // for (int i = 0; i <= SCOREOUT.Count(); i++)
-                         foreach(KeyValuePair<int,string> score in SCOREOUT)
-                          {
-                              Name[x].Text = score.Value;
-                              Score[x].Text = score.Key.ToString();
-
-                              this.Invoke(new ThreadStart(delegate () { Name[x].Text = score.Value; }));
-
-                              this.Invoke(new ThreadStart(delegate () { Score[x].Text = score.Key.ToString(); }));
-                              x++;
-                          }
-                          */
+          
 
         }
 
@@ -423,37 +368,19 @@ namespace TooLearnOfficial
         {
 
 
-            if (music == "true")
-            {
+        //    if (music == "true")
+        //    {
                 player.controls.play();
                 player.settings.setMode("loop", true);
-            }
+       //     }
             
 
-            if (random == "true")
-            {
+       //     if (random == "true")
+       //     {
 
                 try
                 {
-                    /*    con.Open();
-                       SqlCommand cmd = new SqlCommand("SELECT p.fullname FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
-                       SqlDataReader dr = cmd.ExecuteReader();
-                       while (dr.Read())
-                       {
-
-                            ListViewItem Name = new ListViewItem();
-                            Name.Text = (string)dr[("fullname")];
-                            Name.SubItems.Add("0");
-                            listView1.Items.Add(Name);
-
-                             DataGridScore.Rows.Add();
-                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[0].Value = (string)dr[("fullname")];
-                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[1].Value = 0;  
-
-
-
-                }
-                    con.Close(); */
+    
 
                     SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ORDER BY NEWID() ", con);
                     data = new DataTable();
@@ -477,70 +404,11 @@ namespace TooLearnOfficial
                 }
 
 
-            }
-
-                else{
+     
 
 
 
 
-
-                try
-                {
-                    /*    con.Open();
-                       SqlCommand cmd = new SqlCommand("SELECT p.fullname FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
-                       SqlDataReader dr = cmd.ExecuteReader();
-                       while (dr.Read())
-                       {
-
-                            ListViewItem Name = new ListViewItem();
-                            Name.Text = (string)dr[("fullname")];
-                            Name.SubItems.Add("0");
-                            listView1.Items.Add(Name);
-
-                             DataGridScore.Rows.Add();
-                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[0].Value = (string)dr[("fullname")];
-                             DataGridScore.Rows[DataGridScore.Rows.Count - 1].Cells[1].Value = 0;  
-
-
-
-                }
-                    con.Close(); */
-
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ", con);
-                    data = new DataTable();
-                    sda.Fill(data);
-                    if (data.Rows.Count != 0)
-                    {
-                        BindingSource bs = new BindingSource();
-                        bs.DataSource = data;
-                        bunifuCustomDataGrid1.DataSource = bs;
-                        sda.Update(data);
-                    }
-
-
-                }
-
-                catch (Exception ex)
-
-                {
-
-                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
-
-
-                }
-
-            
-
-
-          
-
-
-
-                }
-
-
-           
 
            
             
