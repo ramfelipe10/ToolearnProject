@@ -416,7 +416,7 @@ namespace TooLearnOfficial
                 {
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT g.group_name,0 AS 'Column2' FROM groups g, grouplist gl WHERE g.group_id=gl.group_id AND g.class_id = '" + ID + "' ORDER BY NEWID() ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT group_name,0 AS 'Column2' FROM groups WHERE class_id = '" + ID + "' ORDER BY NEWID() ", con);
                     data = new DataTable();
                     sda.Fill(data);
                     if (data.Rows.Count != 0)
