@@ -39,7 +39,7 @@ namespace TooLearnOfficial
             InitializeComponent();
 
             load_server();
-            listener = new TcpListener(IPAddress.Parse(hostIP), 1433);
+            listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
             listener.Start(100);
 
            
@@ -240,6 +240,8 @@ namespace TooLearnOfficial
             int ID = QuizBank.QUIZID;
             
 
+
+
             SqlDataAdapter adapt = new SqlDataAdapter("select game_type from quizzes where quiz_id= '" + ID + "'", con);
             DataTable dt = new DataTable();
             adapt.Fill(dt);
@@ -255,9 +257,17 @@ namespace TooLearnOfficial
                 GameType = "PZ";
             }
 
+            if (gmode == "IP")
+            {
 
-            SendToAllClients("GAME" +  "" +GameType+ "" );
+                SendToAllClients("GAMEIP" + "" + GameType + "");
+            }
 
+            else if (gmode == "GP")
+            {
+
+                SendToAllClients("GAMEGP" + "" + GameType + "");
+            }
 
             con.Open();
             SqlCommand cmd = new SqlCommand("Delete From Pincode", con);
