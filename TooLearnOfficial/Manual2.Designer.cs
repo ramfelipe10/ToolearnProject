@@ -114,7 +114,6 @@
             this.panelChooseUser.Name = "panelChooseUser";
             this.panelChooseUser.Size = new System.Drawing.Size(850, 474);
             this.panelChooseUser.TabIndex = 172;
-            this.panelChooseUser.Visible = false;
             // 
             // panelMode
             // 
@@ -1012,6 +1011,7 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manual2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manual2";
             this.panelChooseUser.ResumeLayout(false);
             this.panelMode.ResumeLayout(false);
