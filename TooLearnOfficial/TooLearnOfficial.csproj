@@ -210,6 +210,12 @@
     <Compile Include="GameFacilitator.Designer.cs">
       <DependentUpon>GameFacilitator.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameGroup.Designer.cs">
+      <DependentUpon>GameGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -535,6 +541,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameFacilitator.resx">
       <DependentUpon>GameFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameGroup.resx">
+      <DependentUpon>GameGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameParticipant.resx">
       <DependentUpon>GameParticipant.cs</DependentUpon>

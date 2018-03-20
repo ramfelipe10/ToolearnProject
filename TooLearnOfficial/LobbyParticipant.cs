@@ -20,7 +20,7 @@ namespace TooLearnOfficial
         private const int _buffer_size = 2048;
         private byte[] _buffer = new byte[_buffer_size];
         private string _IPAddress = Program.serverIP;
-        private const int _PORT = 1433;
+        private const int _PORT = 13000;
         string name;
 
         public static string GameType = "";
@@ -174,7 +174,7 @@ namespace TooLearnOfficial
 
                 Receive();
 
-                if (message.Contains("GAMEQB"))
+                if (message.Contains("GAMEIPQB"))
                 {
                     ThreadHelper.Hide(this);
                     //this.Hide();//kaipuhn muna ithread
@@ -190,7 +190,7 @@ namespace TooLearnOfficial
 
                 }
 
-                else if (message.Contains("GAMEPZ"))
+                else if (message.Contains("GAMEIPPZ"))
                 {
                     ThreadHelper.Hide(this);
 
@@ -201,6 +201,38 @@ namespace TooLearnOfficial
 
 
                     GameParticipant GR = new GameParticipant();
+                    GR.ShowDialog();
+
+
+                }
+
+                else if (message.Contains("GAMEGPQB")) //group
+                {
+                    ThreadHelper.Hide(this);
+
+                    //this.Hide();//kaipuhn muna ithread
+                    GameType = "PZ";
+                    //  GameRules GR = new GameRules();
+                    // GR.Show();
+
+
+                    GameGroup GR = new GameGroup();
+                    GR.ShowDialog();
+
+
+                }
+
+                else if (message.Contains("GAMEGPPZ"))//group
+                {
+                    ThreadHelper.Hide(this);
+
+                    //this.Hide();//kaipuhn muna ithread
+                    GameType = "PZ";
+                    //  GameRules GR = new GameRules();
+                    // GR.Show();
+
+
+                    GameGroup GR = new GameGroup();
                     GR.ShowDialog();
 
 

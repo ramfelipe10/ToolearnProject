@@ -37,13 +37,13 @@ namespace TooLearnOfficial
             sda.Fill(dt);
             if (dt.Rows.Count == 0)
             {
-                Dialogue.Show("No Host Server Detected! Please Wait for the Host to Start.", "", "Ok", "Cancel");
+                Dialogue.Show("No Host Server Detected for Groups! Please Wait for the Host to Start.", "", "Ok", "Cancel");
 
             }
 
             else
             {
-
+               
                 string code = dt.Rows[0][0].ToString();
 
 

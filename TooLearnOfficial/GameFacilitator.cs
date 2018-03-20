@@ -372,15 +372,17 @@ namespace TooLearnOfficial
         //    {
                 player.controls.play();
                 player.settings.setMode("loop", true);
-       //     }
-            
+            //     }
 
-       //     if (random == "true")
-       //     {
 
+            //     if (random == "true")
+            //     {
+
+            if(participant == "IP")
+            {
                 try
                 {
-    
+
 
                     SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ORDER BY NEWID() ", con);
                     data = new DataTable();
@@ -404,14 +406,47 @@ namespace TooLearnOfficial
                 }
 
 
-     
+
+            }
+
+            else if (participant == "GP")
+            {
+
+                try
+                {
+
+
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT g.group_name,0 AS 'Column2' FROM groups g, grouplist gl WHERE g.group_id=gl.group_id AND g.class_id = '" + ID + "' ORDER BY NEWID() ", con);
+                    data = new DataTable();
+                    sda.Fill(data);
+                    if (data.Rows.Count != 0)
+                    {
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = data;
+                        bunifuCustomDataGrid1.DataSource = bs;
+                        sda.Update(data);
+                    }
+
+                }
+                catch (Exception ex)
+
+                {
+
+                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+
+                }
+
+
+
+            }
 
 
 
 
 
-           
-            
+
+
 
         }
 
