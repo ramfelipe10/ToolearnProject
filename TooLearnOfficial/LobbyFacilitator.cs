@@ -39,7 +39,7 @@ namespace TooLearnOfficial
             InitializeComponent();
 
             load_server();
-            listener = new TcpListener(IPAddress.Parse(hostIP), 13000);
+            listener = new TcpListener(IPAddress.Parse(hostIP), 1433);
             listener.Start(100);
 
            

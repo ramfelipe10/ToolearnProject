@@ -22,7 +22,7 @@ namespace TooLearnOfficial
         private const int _buffer_size = 2048;
         private byte[] _buffer = new byte[_buffer_size];
         private string _IPAddress = Program.serverIP;
-        private const int _PORT = 13000;
+        private const int _PORT = 1433;
 
         string GameType = LobbyParticipant.GameType;
         string correctanswer,points,Pname;
@@ -100,7 +100,7 @@ namespace TooLearnOfficial
             try
             {
                 //Translate the message into its byte form
-                byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(SCORE),"+Pname+"("+message+")");
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(SCORE),"+Pname+",("+message+")");
 
                 //Get a client stream for reading and writing
                 NetworkStream stream = _client.GetStream();
