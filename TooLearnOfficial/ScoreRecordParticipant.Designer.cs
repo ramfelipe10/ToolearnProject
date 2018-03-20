@@ -165,6 +165,10 @@
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ScoreRecordParticipant";
+<<<<<<< HEAD
+=======
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+>>>>>>> c7cb0071c90527724a8fc74ec0e64b1917fb8dab
             this.Text = "ScoreRecordParticipant";
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
