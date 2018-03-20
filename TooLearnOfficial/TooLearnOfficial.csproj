@@ -341,6 +341,12 @@
     <Compile Include="ScoreRecordFacilitator.Designer.cs">
       <DependentUpon>ScoreRecordFacilitator.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScoreRecordParticipant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreRecordParticipant.Designer.cs">
+      <DependentUpon>ScoreRecordParticipant.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectClassroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -610,6 +616,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScoreRecordFacilitator.resx">
       <DependentUpon>ScoreRecordFacilitator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreRecordParticipant.resx">
+      <DependentUpon>ScoreRecordParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectClassroom.resx">
       <DependentUpon>SelectClassroom.cs</DependentUpon>

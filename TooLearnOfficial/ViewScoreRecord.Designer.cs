@@ -460,13 +460,13 @@
             this.btn_Update.IconVisible = true;
             this.btn_Update.IconZoom = 50D;
             this.btn_Update.IsTab = false;
-            this.btn_Update.Location = new System.Drawing.Point(544, 261);
+            this.btn_Update.Location = new System.Drawing.Point(450, 265);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btn_Update.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btn_Update.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_Update.selected = false;
-            this.btn_Update.Size = new System.Drawing.Size(122, 28);
+            this.btn_Update.Size = new System.Drawing.Size(59, 28);
             this.btn_Update.TabIndex = 88;
             this.btn_Update.Text = "Update";
             this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -546,44 +546,7 @@ namespace TooLearnOfficial
                }
 
            } */
-
-
-
-
-        private void GameParticipant_Load(object sender, EventArgs e)
-        {
-          
-              
-
-            SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
-            DataTable dt = new DataTable();
-            Name.Fill(dt);
-            Pname = dt.Rows[0][0].ToString(); //tg balik ko  
-
-
-            if (GameType == "QB")
-                {
-                    label2.Text = "Quiz Bee";
-                    label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
-
-                }
-
-                else if (GameType == "PZ")
-                {
-                    label2.Text = "Picture Puzzle";
-                    label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
-                }
-
                 
-
-             
-
-        }
-
-
-     
-
-
 
 
 
@@ -830,6 +793,54 @@ namespace TooLearnOfficial
             }
 
             bunifuMetroTextbox1.Text = "";
+        }
+
+        private void GameGroup_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
+                DataTable dt = new DataTable();
+                Name.Fill(dt);
+                Pname = dt.Rows[0][0].ToString(); //tg balik ko  
+                con.Close();
+
+
+
+                if (GameType == "QB")
+                {
+                    label2.Text = "Quiz Bee";
+                    label3.Text = System.IO.File.ReadAllText(@"QuizBeeRules.txt");
+
+                    label11.Text = Pname;
+
+                }
+
+                else if (GameType == "PZ")
+                {
+                    label2.Text = "Picture Puzzle";
+                    label3.Text = System.IO.File.ReadAllText(@"PicturePuzzleRules.txt");
+
+
+
+
+
+
+                }
+
+
+
+            }
+
+
+
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private string validate(string answer)

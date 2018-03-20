@@ -18,6 +18,7 @@ namespace TooLearnOfficial.User_Control_Participant
             InitializeComponent();
            
         }
+        private Form ScoreRecordParticipant;
 
         private void EditProfile_Click(object sender, EventArgs e)
         {
@@ -33,8 +34,18 @@ namespace TooLearnOfficial.User_Control_Participant
 
         private void ScoreRecord_Click(object sender, EventArgs e)
         {
-            ViewScoreRecord2 vsr2 = new ViewScoreRecord2();
-            vsr2.ShowDialog();
+            //ViewScoreRecord2 vsr2 = new ViewScoreRecord2();
+            //vsr2.ShowDialog();
+            if ((ScoreRecordParticipant == null) || (ScoreRecordParticipant.IsDisposed))
+            {
+                ScoreRecordParticipant = new ScoreRecordParticipant();
+                ScoreRecordParticipant.Show();
+            }
+            else
+            {
+                Dialogue.Show("One Instance of this Form is Allowed", "", "Ok", "Cancel");
+                ScoreRecordParticipant.BringToFront();
+            }
         }
     }
 }

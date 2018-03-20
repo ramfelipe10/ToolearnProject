@@ -409,7 +409,7 @@ namespace TooLearnOfficial
 
             }
 
-            else if (participant == "GP")
+            else 
             {
 
                 try
