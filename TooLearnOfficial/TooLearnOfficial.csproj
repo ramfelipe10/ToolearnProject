@@ -458,6 +458,12 @@
     <Compile Include="User Control Participant\JoinQuiz.Designer.cs">
       <DependentUpon>JoinQuiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control Participant\Score2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Participant\Score2.Designer.cs">
+      <DependentUpon>Score2.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control Participant\ScoreParticipant.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -666,6 +672,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Participant\JoinQuiz.resx">
       <DependentUpon>JoinQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Participant\Score2.resx">
+      <DependentUpon>Score2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Participant\ScoreParticipant.resx">
       <DependentUpon>ScoreParticipant.cs</DependentUpon>
