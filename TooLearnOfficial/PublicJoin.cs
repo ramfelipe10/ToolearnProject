@@ -66,7 +66,7 @@ namespace TooLearnOfficial
                         if (ip.AddressFamily == AddressFamily.InterNetwork)
                         {
                             Program.serverIP = ip.ToString();
-                            timer1.Start();
+                         //   timer1.Start();
 
                         }
 

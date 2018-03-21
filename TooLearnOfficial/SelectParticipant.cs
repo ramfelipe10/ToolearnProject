@@ -24,9 +24,12 @@ namespace TooLearnOfficial
         {
             this.Hide();
             participant = "PUBLIC";
-            LobbyFacilitator LF = new LobbyFacilitator();
-            LF.Show();
-            LF.BringToFront();
+            //  LobbyFacilitator LF = new LobbyFacilitator();
+            //  LF.Show();
+            //  LF.BringToFront();
+
+            GameSettings GS = new GameSettings();
+            GS.Show();
         }
 
         private void bunifuImageButton7_Click(object sender, EventArgs e)

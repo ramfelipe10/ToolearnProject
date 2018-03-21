@@ -560,6 +560,9 @@
     <EmbeddedResource Include="GameFacilitator.resx">
       <DependentUpon>GameFacilitator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GameFree.resx">
+      <DependentUpon>GameFree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameGroup.resx">
       <DependentUpon>GameGroup.cs</DependentUpon>
     </EmbeddedResource>
