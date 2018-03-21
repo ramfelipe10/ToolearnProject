@@ -39,6 +39,8 @@ namespace TooLearnOfficial
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
         DataTable data;
+        DataTable EmptyData;
+        DataColumn dc;
 
         private TcpListener listener = LobbyFacilitator.listener;
         bool music = GameSettings.IsMusic;
@@ -125,41 +127,92 @@ namespace TooLearnOfficial
         }
         private void updatescore(string name,string points)
         {
-
-
-            for (int i = 0; i < data.Rows.Count; i++)
+            if (participant == "PUBLIC")
             {
-
-                try
+                int counter = 0;
+                for (int i = 0; i < EmptyData.Rows.Count; i++)
                 {
-                    if (data.Rows[i][0].ToString() == name.ToString())
+
+                    if (EmptyData.Rows[i][0].ToString()== name.ToString())
                     {
-                        this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));              
-                        this.Invoke((MethodInvoker)(() => leaderboard()));
+                        this.Invoke((MethodInvoker)(() => EmptyData.Rows[i][1] = points.ToString()));                       
+                        this.Invoke((MethodInvoker)(() => leaderboardFREE()));
                         this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
                         this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
-
+                        counter++;
 
                     }
-                  
+                   
 
 
+                }
 
+                if (counter == 0)
+                {
 
+                   
 
+                    DataRow DR = EmptyData.NewRow();
+                   // this.Invoke((MethodInvoker)(() => EmptyData.Rows.Add()));
+                    this.Invoke((MethodInvoker)(() => DR[0] = name.ToString()));
+                    this.Invoke((MethodInvoker)(() => DR[1] = points.ToString()));
+                    this.Invoke((MethodInvoker)(() => EmptyData.Rows.Add(DR)));
+
+                    this.Invoke((MethodInvoker)(() => leaderboardFREE()));
+                    this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
+                    this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
 
                 }
 
 
 
+            }
 
-                catch (Exception ex)
+            else
+            {
+
+                for (int i = 0; i < data.Rows.Count; i++)
                 {
-                    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+
+                    try
+                    {
+                        if (data.Rows[i][0].ToString() == name.ToString())
+                        {
+                            this.Invoke((MethodInvoker)(() => data.Rows[i][1] = points.ToString()));
+                            this.Invoke((MethodInvoker)(() => leaderboard()));
+                            this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Update()));
+                            this.Invoke((MethodInvoker)(() => bunifuCustomDataGrid1.Refresh()));
+
+
+                        }
+
+                        
+
+
+                    }
+
+
+
+
+                    catch (Exception ex)
+                    {
+                        Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok", "Cancel");
+                    }
+
+
                 }
 
 
             }
+
+        }
+
+        private void leaderboardFREE()
+        {
+            DataView dv = EmptyData.DefaultView;
+            dv.Sort = "Column2 DESC";
+            EmptyData.AsEnumerable().Take(5);
+            bunifuCustomDataGrid1.DataSource = dv.ToTable();
 
 
         }
@@ -266,7 +319,7 @@ namespace TooLearnOfficial
                 {
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "' ORDER BY NEWID() ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT p.fullname,0 AS 'Column2' FROM participant p, classlist c WHERE p.participant_id=c.participant_id AND c.class_id = '" + ID + "'", con);
                     data = new DataTable();
                     sda.Fill(data);
                     if (data.Rows.Count != 0)
@@ -291,14 +344,14 @@ namespace TooLearnOfficial
 
             }
 
-            else 
+            else if(participant == "GP")
             {
 
                 try
                 {
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT group_name,0 AS 'Column2' FROM groups WHERE class_id = '" + ID + "' ORDER BY NEWID() ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT group_name,0 AS 'Column2' FROM groups WHERE class_id = '" + ID + "'", con);
                     data = new DataTable();
                     sda.Fill(data);
                     if (data.Rows.Count != 0)
@@ -322,7 +375,24 @@ namespace TooLearnOfficial
 
 
             }
-            
+
+
+            else
+            {
+                EmptyData = new DataTable();
+                dc = new DataColumn("Column1", typeof(String));
+                EmptyData.Columns.Add(dc);
+
+                dc = new DataColumn("Column2", typeof(String));
+                EmptyData.Columns.Add(dc);
+
+
+
+                BindingSource bs = new BindingSource();
+                bs.DataSource = EmptyData;
+                bunifuCustomDataGrid1.DataSource = bs;
+
+            }
 
 
 
@@ -571,6 +641,7 @@ namespace TooLearnOfficial
         {
             SendToAllClients("PleaseHideThis");
             listener.Stop();
+            LobbyFacilitator.clientSockets.Clear();//ADDED
             this.Close();
            
         }
@@ -578,7 +649,11 @@ namespace TooLearnOfficial
         private void GameFacilitator_FormClosing(object sender, FormClosingEventArgs e)
         {
             player.controls.stop();
-            
+
+
+            listener.Stop();
+            LobbyFacilitator.clientSockets.Clear();
+
 
         }
 

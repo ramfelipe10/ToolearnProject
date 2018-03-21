@@ -577,7 +577,8 @@ namespace TooLearnOfficial
             if (result == DialogResult.Yes)
             {
                 Send("DISCONNECT");
-                this.Close();
+              
+                
             }
         }
 
@@ -826,7 +827,6 @@ namespace TooLearnOfficial
         }
 
        
-
         private string validate(string answer)
         {
          

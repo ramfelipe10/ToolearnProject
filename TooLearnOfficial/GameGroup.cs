@@ -254,8 +254,9 @@ namespace TooLearnOfficial
 
                 else if (message.Contains("PleaseHideThis"))
                 {
-                    ThreadHelper.Hide(this);
                     Send("DISCONNECT");
+                    ThreadHelper.Hide(this);
+                   
 
 
                 }
@@ -519,27 +520,7 @@ namespace TooLearnOfficial
 
 
 
-        /*   private void participant()
-           {
-               if (Program.group_id == 0)
-               {
-                   SqlDataAdapter Name = new SqlDataAdapter("Select fullname from participant where participant_id='" + Program.par_id + "' ", con);
-                   DataTable dt = new DataTable();
-                   Name.Fill(dt);
-                   Pname = dt.Rows[0][0].ToString();
-               }
-
-               else
-               {
-
-                   SqlDataAdapter Name = new SqlDataAdapter("Select group_name from groups where group_id='" + Program.group_id + "' ", con);
-                   DataTable dt = new DataTable();
-                   Name.Fill(dt);
-                   Pname = dt.Rows[0][0].ToString();
-
-               }
-
-           } */
+     
                 
 
 
@@ -549,10 +530,20 @@ namespace TooLearnOfficial
 
        
 
-        private void bunifuImageButton2_Click_1(object sender, EventArgs e)
+        private async void bunifuImageButton2_Click_1(object sender, EventArgs e)
         {
-            Send("DISCONNECT");
-            this.Close();
+
+            await Task.Delay(100);
+
+            DialogResult result = Dialogue1.Show("Are you sure you want to Exit?", "", "Ok", "Cancel");
+            if (result == DialogResult.Yes)
+            {
+                Send("DISCONNECT");
+
+
+            }
+
+           
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -836,6 +827,8 @@ namespace TooLearnOfficial
                 MessageBox.Show(ex.ToString());
             }
         }
+
+      
 
         private string validate(string answer)
         {

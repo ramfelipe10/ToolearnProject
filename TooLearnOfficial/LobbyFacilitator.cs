@@ -21,7 +21,7 @@ namespace TooLearnOfficial
         private const int buffer_size = 2048;        
         private byte[] buffer = new byte[buffer_size];       
         private static string hostIP;
-       // private TcpListener listener;
+      
         public static TcpListener listener;
 
         public static Dictionary<string, TcpClient> clientSockets = new Dictionary<string, TcpClient>();// Tg set to Public ko para ma access sa ibang form
@@ -29,7 +29,7 @@ namespace TooLearnOfficial
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
 
-        public static TcpClient faci;
+     
 
         string gmode = SelectParticipant.participant.ToString();
 
@@ -65,7 +65,7 @@ namespace TooLearnOfficial
 
                 //End operation and display the received data on the screen
                 TcpClient clientSocket = listener.EndAcceptTcpClient(ar);
-                faci = clientSocket;
+               
                 
                 //Add client to client list
                 clientSockets.Add(clientSocket.Client.RemoteEndPoint.ToString(), clientSocket);
@@ -167,6 +167,7 @@ namespace TooLearnOfficial
 
                 }
 
+               
 
                 else
                 {
@@ -237,10 +238,7 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            int ID = QuizBank.QUIZID;
-            
-
-
+            int ID = QuizBank.QUIZID;           
 
             SqlDataAdapter adapt = new SqlDataAdapter("select game_type from quizzes where quiz_id= '" + ID + "'", con);
             DataTable dt = new DataTable();

@@ -701,7 +701,7 @@
             this.Name = "GameParticipant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameParticipant";
-       
+         
             this.Load += new System.EventHandler(this.GameParticipant_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();

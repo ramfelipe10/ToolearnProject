@@ -159,6 +159,7 @@ namespace TooLearnOfficial
         private void GameRulesFacilitator_FormClosed(object sender, FormClosedEventArgs e)
         {
             listener.Stop();
+            LobbyFacilitator.clientSockets.Clear();
         }
     }
 }
