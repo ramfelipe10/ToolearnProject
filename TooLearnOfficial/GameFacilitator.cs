@@ -613,7 +613,7 @@ namespace TooLearnOfficial
                 bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
                 panel3.Visible = true;
-                label5.Text = "Correct Answer is " + dt.Rows[counter][5].ToString();
+                label5.Text = "Correct Answer is " + dt.Rows[counter][5].ToString().ToUpper();
                 if (NoOfITems == 1)
                 {
                     bunifuFlatButton1.Visible = false;

@@ -195,7 +195,7 @@ namespace TooLearnOfficial
 
 
 
-                    ThreadHelper.Hide(this);
+                    ThreadHelper.Hide(this);                    
                     client.Client.Shutdown(SocketShutdown.Both);
                     client.Client.Close();
 
@@ -253,6 +253,7 @@ namespace TooLearnOfficial
                 {
                     Send("DISCONNECT");
                     ThreadHelper.Hide(this);
+              
 
 
 
