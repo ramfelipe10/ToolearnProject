@@ -126,7 +126,8 @@ namespace TooLearnOfficial
                         {
 
                             this.Hide();
-                            ParticipantLogin PL = new ParticipantLogin();
+                            // ParticipantLogin PL = new ParticipantLogin();
+                            SecondSecurityINDI PL = new SecondSecurityINDI();
                             PL.Show();
 
                         }
@@ -134,7 +135,8 @@ namespace TooLearnOfficial
                         else
                         {
                             this.Hide();
-                            GroupLogin GL = new GroupLogin();
+                            // GroupLogin GL = new GroupLogin();
+                            SecondSecurityGRP GL = new SecondSecurityGRP();
                             GL.Show();
                         }
                     

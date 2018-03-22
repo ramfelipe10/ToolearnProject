@@ -175,5 +175,9 @@ namespace TooLearnOfficial.User_Control_Participant
             }
         }
 
+        private void bunifuMetroTextbox1_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

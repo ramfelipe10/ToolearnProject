@@ -353,6 +353,18 @@
     <Compile Include="ScoreRecordParticipant.Designer.cs">
       <DependentUpon>ScoreRecordParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="SecondSecurityGRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondSecurityGRP.Designer.cs">
+      <DependentUpon>SecondSecurityGRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondSecurityINDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecondSecurityINDI.Designer.cs">
+      <DependentUpon>SecondSecurityINDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelectClassroom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +376,12 @@
     </Compile>
     <Compile Include="SelectParticipant.Designer.cs">
       <DependentUpon>SelectParticipant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SERVER-PIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SERVER-PIN.Designer.cs">
+      <DependentUpon>SERVER-PIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
@@ -623,11 +641,20 @@
     <EmbeddedResource Include="ScoreRecordParticipant.resx">
       <DependentUpon>ScoreRecordParticipant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SecondSecurityGRP.resx">
+      <DependentUpon>SecondSecurityGRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecondSecurityINDI.resx">
+      <DependentUpon>SecondSecurityINDI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectClassroom.resx">
       <DependentUpon>SelectClassroom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectParticipant.resx">
       <DependentUpon>SelectParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SERVER-PIN.resx">
+      <DependentUpon>SERVER-PIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>

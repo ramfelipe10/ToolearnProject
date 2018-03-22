@@ -51,7 +51,7 @@ namespace TooLearnOfficial
         }
         public void fillgridIndividual()
         {
-            SqlDataAdapter name = new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' ", con);
+           SqlDataAdapter name = new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' ", con);
             DataTable dt = new DataTable();
             name.Fill(dt);
             string pid = dt.Rows[0][0].ToString();
@@ -173,13 +173,13 @@ namespace TooLearnOfficial
             sda.Fill(dt);
             BindingSource bs = new BindingSource();
             bs.DataSource = dt;
-            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
+            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]); 
 
 
             //Rank Query
             //SqlDataAdapter rank = new SqlDataAdapter("select p.fullname, sr.quiz_score, DENSE_RANK() over (order by sr.quiz_score) as 'Rank' from classrooms c, participant p, scoreRecords sr, quizzes q where sr.class_id='1' ", con);
             //DataTable datar = new DataTable();
-            //rank.Fill(datar);
+            //rank.Fill(datar);   
         }
     }
 }

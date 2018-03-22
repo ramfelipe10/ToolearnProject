@@ -301,7 +301,7 @@ namespace TooLearnOfficial.User_Control_Participant
             }
 
             FunctionThatRaisesEvent();
-            ViewScoreRecord VSR = new ViewScoreRecord();
+            ViewScoreRecord2 VSR = new ViewScoreRecord2();
             VSR.ShowDialog();
         }
 

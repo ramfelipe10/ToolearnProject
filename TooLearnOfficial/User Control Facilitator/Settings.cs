@@ -37,13 +37,20 @@ namespace TooLearnOfficial.User_Control
 
         private void buttonIPAddress_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(GetLocalIPAddress());
+            //MessageBox.Show(GetLocalIPAddress());
+            Dialogue.Show(GetLocalIPAddress(), "", "Ok", "Cancel");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             //GameCode GC = new GameCode();
             //GC.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SERVER_PIN SP = new SERVER_PIN();
+            SP.ShowDialog();
         }
     }
 }
