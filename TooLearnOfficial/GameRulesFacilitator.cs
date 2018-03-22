@@ -10,13 +10,16 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace TooLearnOfficial
 {
     public partial class GameRulesFacilitator : Form
     {
 
-        
+
+        SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
         private const int buffer_size = 2048;
        
         private byte[] buffer = new byte[buffer_size];
@@ -26,7 +29,7 @@ namespace TooLearnOfficial
      
         private Dictionary<string, TcpClient> clientSockets = LobbyFacilitator.clientSockets;
 
-
+       
         string GameType = LobbyFacilitator.GameType;
         public GameRulesFacilitator()
         {
@@ -36,6 +39,10 @@ namespace TooLearnOfficial
 
         private void GameRulesFacilitator_Load(object sender, EventArgs e)
         {
+
+
+
+
             if (GameType == "QB")
             {
                 bunifuCustomLabel3.Text = "Quiz Bee";
@@ -149,6 +156,10 @@ namespace TooLearnOfficial
 
         private void buttonNextQuestion_Click(object sender, EventArgs e)
         {
+                         
+            
+            
+
             SendToAllClients("StartGame");
 
             this.Hide();
