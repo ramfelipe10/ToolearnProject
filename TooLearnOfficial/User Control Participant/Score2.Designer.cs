@@ -102,6 +102,7 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.Black;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // bunifuFlatButton1
             // 
@@ -137,6 +138,7 @@
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
             // bunifuElipse1
             // 
@@ -160,7 +162,7 @@
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DimGray;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.DimGray;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DimGray;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(32, 74);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(33, 71);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(852, 430);
@@ -188,6 +190,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(256, 29);
             this.comboBox1.TabIndex = 178;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // bunifuCustomLabel1
             // 
@@ -244,7 +247,7 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(15, 74);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(15, 84);
             this.bunifuCustomDataGrid1.MultiSelect = false;
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
@@ -259,6 +262,7 @@
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(819, 331);
             this.bunifuCustomDataGrid1.TabIndex = 182;
+            this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick);
             // 
             // P_Name1
             // 
@@ -283,7 +287,7 @@
             this.dgpp1.BackColor = System.Drawing.Color.Gray;
             this.dgpp1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dgpp1.Controls.Add(this.pictureBox31);
-            this.dgpp1.Location = new System.Drawing.Point(418, 12);
+            this.dgpp1.Location = new System.Drawing.Point(440, 93);
             this.dgpp1.Name = "dgpp1";
             this.dgpp1.Size = new System.Drawing.Size(141, 20);
             this.dgpp1.TabIndex = 185;
@@ -304,14 +308,13 @@
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomDataGrid2);
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomLabel2);
-            this.bunifuGradientPanel2.Controls.Add(this.dgpp1);
             this.bunifuGradientPanel2.Controls.Add(this.label1);
             this.bunifuGradientPanel2.Controls.Add(this.comboBox3);
             this.bunifuGradientPanel2.GradientBottomLeft = System.Drawing.Color.DimGray;
             this.bunifuGradientPanel2.GradientBottomRight = System.Drawing.Color.DimGray;
             this.bunifuGradientPanel2.GradientTopLeft = System.Drawing.Color.DimGray;
             this.bunifuGradientPanel2.GradientTopRight = System.Drawing.Color.DimGray;
-            this.bunifuGradientPanel2.Location = new System.Drawing.Point(32, 74);
+            this.bunifuGradientPanel2.Location = new System.Drawing.Point(32, 71);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(852, 430);
@@ -375,6 +378,7 @@
             this.bunifuCustomDataGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(819, 331);
             this.bunifuCustomDataGrid2.TabIndex = 182;
+            this.bunifuCustomDataGrid2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid2_CellClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -428,6 +432,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(256, 29);
             this.comboBox3.TabIndex = 178;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // Score2
             // 
@@ -435,9 +440,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
-            this.Controls.Add(this.bunifuGradientPanel2);
+            this.Controls.Add(this.dgpp1);
             this.Name = "Score2";
             this.Size = new System.Drawing.Size(916, 525);
             this.bunifuGradientPanel1.ResumeLayout(false);

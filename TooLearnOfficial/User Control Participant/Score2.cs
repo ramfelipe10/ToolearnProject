@@ -64,15 +64,15 @@ namespace TooLearnOfficial.User_Control_Participant
             {
                 comboBox1.Items.Clear();
 
-
-                SqlCommand cmd = new SqlCommand("Select class_name from classrooms WHERE facilitator_id= '" + Program.user_id + "' ", con);
-
+                //Facilitator Name in Combo Box
+                SqlCommand cmd = new SqlCommand("select f.name from facilitator f, classlist cl where f.facilitator_id=cl.facilitator_id and cl.participant_id= '" + Program.par_id + "' ", con);
+                //Select class_name from classrooms WHERE facilitator_id= '" + Program.user_id + "' 
                 con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    comboBox1.Items.Add(dr["class_name"]);
-                    comboBox3.Items.Add(dr["class_name"]);
+                    comboBox1.Items.Add(dr["name"]);
+                    comboBox3.Items.Add(dr["name"]);
                 }
                 dr.Close();
                 con.Close();
@@ -139,24 +139,14 @@ namespace TooLearnOfficial.User_Control_Participant
             try
             {
                 if (bunifuFlatButton2.selected == true)
-                {
-                    SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
-                    DataTable data = new DataTable();
+                {                                          //Select f.name from  facilitator f, classrooms c WHERE c.class_id = '" + Class + "' and f.facilitator_id= '" + Program.user_id + "'
+                    SqlDataAdapter sed = new SqlDataAdapter("select facilitator_id from facilitator where name='" + Class + "'  ", con);
+                    DataTable data = new DataTable();       //select class_id from classrooms where class_name= '" + Class + "'                                                                  //AND cl.participant_id= '" + Program.par_id + "'
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
-                    // SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id, ((SUM(sc.quiz_score) /  SUM(q.total_score))*100) from scoreRecords sc, participant p, quizzes q where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL group by p.fullname,sc.group_id,sc.quiz_score,q.total_score ", con);
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q,participant p,scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname,s.group_id,s.quiz_score,q.total_score ", con);
-
-
-                    //select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL 
-
-
-                    //(Sum of Quiz Score / Total Score * 100)
-
-                    //select p.fullname,sc.group_id,sc.quiz_score, q.total_score, (SUM(sc.quiz_score) / SUM(q.total_score) * 100) from scoreRecords sc, participant p, quizzes q
-                    //where sc.class_id = '23' AND p.participant_id = sc.participant_id AND group_id IS NULL
-                    //group by p.fullname,sc.group_id,sc.quiz_score,q.total_score
+                    SqlDataAdapter sda = new SqlDataAdapter("select c.class_name,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage'  from quizzes q, participant p, scoreRecords s, classrooms c where p.participant_id = s.participant_id AND s.quiz_id = q.quiz_id AND c.facilitator_id = '" + ID + "' AND s.participant_id= '" + Program.par_id + "' AND group_id is null group by s.group_id, s.quiz_score, q.total_score, c.class_name ", con);
+                                                                    //p.fullname
 
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -245,14 +235,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            Class = comboBox1.SelectedItem.ToString();
-            Trigger_Combo();
-            Cursor.Current = Cursors.Default;
-
-        }
+        
 
         private void Score_Load(object sender, EventArgs e)
         {
@@ -288,11 +271,24 @@ namespace TooLearnOfficial.User_Control_Participant
         }
 
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            Class = comboBox1.SelectedItem.ToString();
+            Trigger_Combo();
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            Class = comboBox3.SelectedItem.ToString();
+            Trigger_Combo();
+            Cursor.Current = Cursors.Default;
+        }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
             if (bunifuCustomDataGrid1.CurrentRow.Index != -1)
 
             {
@@ -304,30 +300,10 @@ namespace TooLearnOfficial.User_Control_Participant
             FunctionThatRaisesEvent();
             ViewScoreRecord VSR = new ViewScoreRecord();
             VSR.ShowDialog();
-
-        }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            bunifuGradientPanel1.BringToFront();
-        }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            bunifuGradientPanel2.BringToFront();
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            Class = comboBox3.SelectedItem.ToString();
-            Trigger_Combo();
-            Cursor.Current = Cursors.Default;
         }
 
         private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
 
             {
@@ -340,7 +316,16 @@ namespace TooLearnOfficial.User_Control_Participant
             FunctionThatRaisesEvent();
             ViewScoreRecord VSR = new ViewScoreRecord();
             VSR.ShowDialog();
+        }
 
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            bunifuGradientPanel1.BringToFront();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            bunifuGradientPanel2.BringToFront();
         }
     }
 }
