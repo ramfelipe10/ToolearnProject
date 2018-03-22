@@ -640,18 +640,57 @@ namespace TooLearnOfficial
 
         private void Insert_Score()
         {
-
-            if (participant == "IP")
+            try
             {
+               if (participant == "IP")
+              {
+
+                    con.Open();
+
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+
+                        SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + data.Rows[i][0].ToString() + "' ", con);
+                        adapt.Fill(dt);
+                        string ew = dt.Rows[0][0].ToString();
+
+                int id = Convert.ToInt32(ew);
+
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Today.ToString() + "','" + QuizID + "','" + id + "', '" + ID + "')";
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                        int n = sda.SelectCommand.ExecuteNonQuery();
+                    }
+                    con.Close();
+
+               }
+                else if (participant == "GP")
+               {
+
+                    con.Open();
+
+                    for (int i = 0; i < data.Rows.Count; i++)
+                    {
+
+                        SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + data.Rows[i][0].ToString() + "' ", con);
+                        adapt.Fill(dt);
+                        string ew = dt.Rows[0][0].ToString();
+
+                        int id = Convert.ToInt32(ew);
 
 
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Today.ToString() + "','" + QuizID + "','" + id + "', '" + ID + "')";
+                        SqlDataAdapter sda = new SqlDataAdapter(query, con);
+                        int n = sda.SelectCommand.ExecuteNonQuery();
+                    }
+                    con.Close();
+                }
 
-            }
-            else if (participant == "GP")
+            }//try
+
+            catch(Exception ex)
             {
-
-
-            }
+                MessageBox.Show(ex.ToString());
+            } 
 
         }
 
