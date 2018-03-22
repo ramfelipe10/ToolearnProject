@@ -47,12 +47,15 @@ namespace TooLearnOfficial
         bool random = GameSettings.IsRandom;
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+
+        
        
         string participant = SelectParticipant.participant.ToString();
 
         int counter = 0;
         int QuizID = QuizBank.QUIZID;
         int NoOfITems;
+      
 
         string time;
         string convertedtime;
@@ -66,7 +69,7 @@ namespace TooLearnOfficial
         public GameFacilitator()
         {
             InitializeComponent();            
-            load_server();
+            load_server();            
             load_QA();
             load_game(counter);
             string Music = GameSettings.Music;          
@@ -293,9 +296,10 @@ namespace TooLearnOfficial
 
         private void GameFacilitator_Load(object sender, EventArgs e) // dae nagana ang load
         {
+                              
+           
 
-
-           if (music == false)
+            if (music == false)
             {
                 player.controls.stop();
                 bunifuImageButton1.Visible = false;
@@ -398,8 +402,58 @@ namespace TooLearnOfficial
 
         }
 
-       private void load_QA()
+      /*  void slice_image(string picture)
+        {
+
+            
+
+
+            var imgarray = new Image[9];
+
+            var img = Image.FromFile(picture, true); //Use ImageLocation Of Recent Upload
+
+            for (int x = 0; x < 3; x++) //Row
+            {
+                for (int y = 0; y < 3; y++) //Column
+                {
+                    var index = x * 3 + y;
+
+                    
+
+
+                    imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
+                    var graphics = Graphics.FromImage(imgarray[index]);
+                    graphics.DrawImage(img, new Rectangle(0, 0, 67, 44), new Rectangle(x * (PictureWidth / 3),
+                                     y * (PictureHeight / 3),
+                                     PictureWidth / 3,
+                                    PictureHeight / 3), GraphicsUnit.Pixel);
+                    graphics.Dispose();
+
+                }
+            }
+
+
+
+
+            pictureBox1.Image = imgarray[0];
+            pictureBox2.Image = imgarray[1];
+            pictureBox4.Image = imgarray[2];
+            pictureBox5.Image = imgarray[3];
+            pictureBox6.Image = imgarray[4];
+            pictureBox7.Image = imgarray[5];
+            pictureBox8.Image = imgarray[6];
+            pictureBox9.Image = imgarray[7];
+            pictureBox10.Image = imgarray[8];
+
+        }
+         */
+       
+
+
+        private void load_QA()
        {
+           
+
 
             if (random == false)
             {
@@ -583,8 +637,31 @@ namespace TooLearnOfficial
            // timer1.Start();
         }
 
+
+        private void Insert_Score()
+        {
+
+            if (participant == "IP")
+            {
+
+
+
+            }
+            else if (participant == "GP")
+            {
+
+
+            }
+
+        }
+
+
+
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+
+            Insert_Score();
+
 
             SendToAllClients("C1o2mpute");
             //this.Close();
@@ -595,16 +672,22 @@ namespace TooLearnOfficial
             panel3.Visible = false;
         }
 
+
+        private void image_trigger()
+        {
+
+          /*  PictureWidth = pictureBox11.Image.Width;
+            PictureHeight = pictureBox11.Image.Height;
+            slice_image(n); */
+        }
+
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+                      
 
-
-
-           
-            
-
-             
             timerstamp--;
             if (timerstamp == 0)
             {
@@ -635,6 +718,8 @@ namespace TooLearnOfficial
           
             }
         }
+
+       
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
