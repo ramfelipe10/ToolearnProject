@@ -15,7 +15,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
     public partial class Score : UserControl
     {
         string Class="";
-        
+        //string Class1 = "";
+
         SqlConnection con= new SqlConnection("Data Source=Localhost,1433;Initial Catalog=TooLearn;User ID=TOOLEARN;Password=Toolearn");
 
         public Score()
@@ -151,19 +152,9 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     DataTable data = new DataTable();
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
-                    // SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id, ((SUM(sc.quiz_score) /  SUM(q.total_score))*100) from scoreRecords sc, participant p, quizzes q where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL group by p.fullname,sc.group_id,sc.quiz_score,q.total_score ", con);
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q,participant p,scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname,s.group_id,s.quiz_score,q.total_score ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname, sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q,participant p,scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname,s.group_id,s.quiz_score,q.total_score ", con);
 
-
-                    //select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NULL 
-
-
-                    //(Sum of Quiz Score / Total Score * 100)
-
-                    //select p.fullname,sc.group_id,sc.quiz_score, q.total_score, (SUM(sc.quiz_score) / SUM(q.total_score) * 100) from scoreRecords sc, participant p, quizzes q
-                    //where sc.class_id = '23' AND p.participant_id = sc.participant_id AND group_id IS NULL
-                    //group by p.fullname,sc.group_id,sc.quiz_score,q.total_score
 
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
@@ -200,13 +191,13 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                 else
                 {
-                    SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
+                    SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + Class + "') ", con);
                     DataTable data = new DataTable();
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
                   
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NOT NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -229,8 +220,8 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                         bunifuCustomDataGrid2.Rows.Add();
                         bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[0].Value = dt.Rows[R][0].ToString();
-                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[1].Value = dt.Rows[R][1].ToString();
-                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[2].Value = generate_Progress(Convert.ToDouble(dt.Rows[R][2]));
+                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[1].Value = remarks(Convert.ToDouble(dt.Rows[R][1]));
+                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[2].Value = generate_Progress(Convert.ToDouble(dt.Rows[R][1]));
 
 
                         R++;
@@ -257,7 +248,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
         {
             Cursor.Current = Cursors.WaitCursor;
             Class =comboBox1.SelectedItem.ToString();
-        Trigger_Combo();
+            Trigger_Combo();
             Cursor.Current = Cursors.Default;
 
         }

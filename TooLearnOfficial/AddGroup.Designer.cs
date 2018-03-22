@@ -162,7 +162,7 @@
             // GroupNameBox
             // 
             this.GroupNameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GroupNameBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.GroupNameBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupNameBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.GroupNameBox.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.GroupNameBox.HintText = "";
@@ -170,7 +170,7 @@
             this.GroupNameBox.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.GroupNameBox.LineIdleColor = System.Drawing.Color.Gray;
             this.GroupNameBox.LineMouseHoverColor = System.Drawing.SystemColors.Control;
-            this.GroupNameBox.LineThickness = 3;
+            this.GroupNameBox.LineThickness = 4;
             this.GroupNameBox.Location = new System.Drawing.Point(76, 108);
             this.GroupNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.GroupNameBox.Name = "GroupNameBox";
