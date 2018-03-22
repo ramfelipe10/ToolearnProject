@@ -35,6 +35,11 @@ namespace TooLearnOfficial
 
         private void ViewScoreRecord2_Load(object sender, EventArgs e)
         {
+            fillgridindividual();
+            fillgridgroup();
+        }
+        public void fillgridindividual()
+        {
             SqlDataAdapter name = new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' ", con);
             DataTable dt = new DataTable();
             name.Fill(dt);
@@ -45,7 +50,7 @@ namespace TooLearnOfficial
             classname.Fill(data);
             string cid = data.Rows[0][0].ToString();
 
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.participant_id='" + pid + "'AND s.class_id='" + cid + "' ", con);
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.group_id is NULL AND s.participant_id='" + pid + "'AND s.class_id='" + cid + "' ", con);
             DataTable datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
@@ -93,37 +98,32 @@ namespace TooLearnOfficial
             Progressbar_Individual.Value += Convert.ToInt32(average);
 
 
-            if (average >= 95 && average <= 100)
+            if (average >= 96 && average <= 100)
             {
                 label_Letter_Grade.Text = "A"; // Excellent
                 label_Remarks.Text = "Excellent";
             }
-            else if (average >= 89 && average <= 94)
+            else if (average >= 91 && average == 95)
             {
                 label_Letter_Grade.Text = "B+"; // Very Good
                 label_Remarks.Text = "Very Good";
             }
-            else if (average >= 83 && average <= 88)
+            else if (average >= 86 && average == 90)
             {
                 label_Letter_Grade.Text = "B";  // Very Good
                 label_Remarks.Text = "Very Good";
             }
-            else if (average >= 77 && average <= 82)
+            else if (average >= 81 && average == 85)
             {
                 label_Letter_Grade.Text = "C+";  // Good
                 label_Remarks.Text = "Good";
             }
-            else if (average >= 71 && average <= 76)
+            else if (average >= 76 && average == 80)
             {
                 label_Letter_Grade.Text = "C";  // Satisfaction
                 label_Remarks.Text = "Satisfaction";
             }
-            else if (average >= 65 && average <= 70)
-            {
-                label_Letter_Grade.Text = "D+";  // Satisfaction
-                label_Remarks.Text = "Satisfaction";
-            }
-            else if (average >= 60 && average <= 64)
+            else if (average == 75)
             {
                 label_Letter_Grade.Text = "D";  // Passed
                 label_Remarks.Text = "Passed";
@@ -152,7 +152,22 @@ namespace TooLearnOfficial
                 }
             }
             labelPassed.Text = a.ToString();
-            labelFailed.Text = b.ToString();
+            labelFailed.Text = b.ToString();           
+        }
+        public void fillgridgroup()
+        {
+            SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+            DataTable data = new DataTable();
+            sed.Fill(data);
+            string ID = data.Rows[0][0].ToString();
+
+
+            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dt;
+            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
         }
     }
 }

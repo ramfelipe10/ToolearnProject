@@ -186,13 +186,13 @@ namespace TooLearnOfficial.User_Control_Participant
 
                 else
                 {
-                    SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
+                    SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classlist where facilitator_id=(select facilitator_id from facilitator where name ='" + Class + "')) ", con);
                     DataTable data = new DataTable();
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname,sc.group_id,sc.quiz_score from scoreRecords sc, participant p where sc.class_id= '" + ID + "' AND p.participant_id=sc.participant_id AND group_id IS NOT NULL ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -215,8 +215,8 @@ namespace TooLearnOfficial.User_Control_Participant
 
                         bunifuCustomDataGrid2.Rows.Add();
                         bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[0].Value = dt.Rows[R][0].ToString();
-                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[1].Value = dt.Rows[R][1].ToString();
-                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[2].Value = generate_Progress(Convert.ToDouble(dt.Rows[R][2]));
+                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[1].Value = remarks(Convert.ToDouble(dt.Rows[R][1]));
+                        bunifuCustomDataGrid2.Rows[bunifuCustomDataGrid2.Rows.Count - 1].Cells[2].Value = generate_Progress(Convert.ToDouble(dt.Rows[R][1]));
 
 
                         R++;

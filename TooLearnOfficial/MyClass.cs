@@ -197,7 +197,7 @@ namespace TooLearnOfficial
             iTextSharp.text.Image PNG = iTextSharp.text.Image.GetInstance("toolearns.png");
             //
             PNG.ScaleToFit(150f, 150f);
-            PNG.Alignment = Element.ALIGN_LEFT;
+            PNG.Alignment = Element.ALIGN_CENTER;
             //
             //PNG.Border = iTextSharp.text.Rectangle.BOX;
             //PNG.BorderColor = iTextSharp.text.BaseColor.GRAY;
@@ -205,10 +205,10 @@ namespace TooLearnOfficial
             //PNG.BorderWidth = 5f;
 
             // IMAGE ADNU
-            iTextSharp.text.Image ADNU = iTextSharp.text.Image.GetInstance("ADNU.png");
-            //
-            ADNU.ScaleToFit(150f, 150f);
-            ADNU.Alignment = Element.ALIGN_RIGHT;
+            //iTextSharp.text.Image ADNU = iTextSharp.text.Image.GetInstance("ADNU.png");
+            ////
+            //ADNU.ScaleToFit(150f, 150f);
+            //ADNU.Alignment = Element.ALIGN_RIGHT;
             //
             //ADNU.Border = iTextSharp.text.Rectangle.BOX;
             //ADNU.BorderColor = iTextSharp.text.BaseColor.GRAY;
@@ -270,7 +270,7 @@ namespace TooLearnOfficial
                     PdfWriter.GetInstance(pdfdoc, stream);
                     pdfdoc.Open();
                     pdfdoc.Add(PNG);
-                    pdfdoc.Add(ADNU);
+                    //pdfdoc.Add(ADNU);
                     // pdfdoc.Add(c1);
                     pdfdoc.Add(pdftable);                    
                     pdfdoc.Close();

@@ -176,9 +176,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(11, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 24);
+            this.label2.Size = new System.Drawing.Size(112, 24);
             this.label2.TabIndex = 179;
-            this.label2.Text = "Classroom:";
+            this.label2.Text = "Facilitator:";
             // 
             // comboBox1
             // 
@@ -186,7 +186,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 28);
+            this.comboBox1.Location = new System.Drawing.Point(129, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(256, 29);
             this.comboBox1.TabIndex = 178;
@@ -418,9 +418,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(11, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 24);
+            this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 179;
-            this.label1.Text = "Classroom:";
+            this.label1.Text = "Facilitator:";
             // 
             // comboBox3
             // 
@@ -428,7 +428,7 @@
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(139, 28);
+            this.comboBox3.Location = new System.Drawing.Point(130, 28);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(256, 29);
             this.comboBox3.TabIndex = 178;
