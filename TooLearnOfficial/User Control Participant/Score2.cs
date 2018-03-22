@@ -90,21 +90,21 @@ namespace TooLearnOfficial.User_Control_Participant
 
         public Image generate_Progress(double pass)
         {
-            double dg = double.Parse(dgpp.Width.ToString());
+            double dg = double.Parse(dgpp1.Width.ToString());
             double x = 0;
             x = (pass * dg) / 100;
-            pictureBox3.Width = (int)Math.Round(x, 0);
+            pictureBox31.Width = (int)Math.Round(x, 0);
             if (pass <= 74)
             {
-                pictureBox3.BackColor = Color.Red;
+                pictureBox31.BackColor = Color.Red;
             }
 
             else
             {
-                pictureBox3.BackColor = Color.Green;
+                pictureBox31.BackColor = Color.Green;
             }
 
-            return PanelToBitmap(dgpp);
+            return PanelToBitmap(dgpp1);
 
         }
 
