@@ -134,6 +134,7 @@ namespace TooLearnOfficial
             {
 
                 NameFREE = bunifuMetroTextbox1.Text;
+                this.Hide();
                 LobbyParticipant con = new LobbyParticipant();
                 con.Show();
             }

@@ -376,6 +376,7 @@
             this.Name = "ChooseUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TooLearn";
+          
             this.HomeHeader.ResumeLayout(false);
             this.HomeHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -206,6 +206,21 @@ namespace TooLearnOfficial
 
             label3.Text = randomString;
 
+            if (SelectParticipant.participant == "PUBLIC")
+            {
+
+                label3.Visible = false;
+                label2.Visible = false;
+            }
+
+            else
+            {
+                label3.Visible = true;
+                label2.Visible = true;
+            }
+
+
+
 
             con.Open();
             SqlCommand cmd = new SqlCommand("Insert into Pincode(Game_Pin,Mode) Values('" + label3.Text + "','" + gmode + "')", con);

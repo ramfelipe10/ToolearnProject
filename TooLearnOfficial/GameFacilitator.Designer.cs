@@ -442,6 +442,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(185, 95);
             this.listBox1.TabIndex = 34;
+            this.listBox1.Visible = false;
             // 
             // listView1
             // 

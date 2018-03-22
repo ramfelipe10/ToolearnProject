@@ -167,13 +167,12 @@
         "Merry Go",
         "Spinning Monkeys",
         "Fluffing a Duck",
-        "Sneaky Snitch",
-        "           "};
+        "Sneaky Snitch      "};
             this.bunifuDropdown1.Location = new System.Drawing.Point(229, 144);
             this.bunifuDropdown1.Name = "bunifuDropdown1";
             this.bunifuDropdown1.NomalColor = System.Drawing.Color.White;
             this.bunifuDropdown1.onHoverColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.selectedIndex = 1;
+            this.bunifuDropdown1.selectedIndex = 0;
             this.bunifuDropdown1.Size = new System.Drawing.Size(217, 23);
             this.bunifuDropdown1.TabIndex = 20;
             // 

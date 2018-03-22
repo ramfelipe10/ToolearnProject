@@ -245,7 +245,7 @@ namespace TooLearnOfficial
 
                     ThreadHelper.PanelOut(this, panel4, true);
                    ThreadHelper.PanelOut(this, panel1, true);//for this panel4 to show because of dock
-                    ThreadHelper.PanelOut(this, panel3, true);
+                    
                     Receive();
                 }
 

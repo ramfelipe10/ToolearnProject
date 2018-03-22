@@ -76,7 +76,9 @@ namespace TooLearnOfficial
 
             DialogResult result = Dialogue1.Show("Are You Sure?", "", "Ok", "Cancel");
             if (result == DialogResult.Yes)
-            {
+            {               
+                
+
                 this.Hide();
                 //   this.Close();  error nag loloop ning splash kaya unhandled
 

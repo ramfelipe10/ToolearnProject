@@ -1169,7 +1169,6 @@
             this.MultipleChoice.Controls.Add(this.bunifuCheckbox1);
             this.MultipleChoice.Controls.Add(this.textBox2);
             this.MultipleChoice.Controls.Add(this.label12);
-            this.MultipleChoice.Controls.Add(this.bunifuFlatButton1);
             this.MultipleChoice.Controls.Add(this.pictureBox3);
             this.MultipleChoice.Controls.Add(this.label3);
             this.MultipleChoice.Controls.Add(this.textBoxQuizChoiceD);
@@ -1185,6 +1184,7 @@
             this.MultipleChoice.Controls.Add(this.textBoxQuizQuestion);
             this.MultipleChoice.Controls.Add(this.label4);
             this.MultipleChoice.Controls.Add(this.bunifuCustomLabel1);
+            this.MultipleChoice.Controls.Add(this.bunifuFlatButton1);
             this.MultipleChoice.Controls.Add(this.bunifuFlatButton6);
             this.MultipleChoice.GradientBottomLeft = System.Drawing.Color.Silver;
             this.MultipleChoice.GradientBottomRight = System.Drawing.Color.Silver;
@@ -1430,7 +1430,7 @@
             this.bunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton6.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton6.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton6.Visible = false;
+            this.bunifuFlatButton6.Click += new System.EventHandler(this.bunifuFlatButton6_Click);
             // 
             // pictureBox1
             // 
@@ -1493,7 +1493,6 @@
             this.trueORfalse.Controls.Add(this.label24);
             this.trueORfalse.Controls.Add(this.textBox5);
             this.trueORfalse.Controls.Add(this.label25);
-            this.trueORfalse.Controls.Add(this.bunifuFlatButton8);
             this.trueORfalse.Controls.Add(this.pictureBox5);
             this.trueORfalse.Controls.Add(this.label27);
             this.trueORfalse.Controls.Add(this.button2);
@@ -1501,6 +1500,7 @@
             this.trueORfalse.Controls.Add(this.textBox13);
             this.trueORfalse.Controls.Add(this.label33);
             this.trueORfalse.Controls.Add(this.bunifuCustomLabel3);
+            this.trueORfalse.Controls.Add(this.bunifuFlatButton8);
             this.trueORfalse.Controls.Add(this.bunifuFlatButton5);
             this.trueORfalse.GradientBottomLeft = System.Drawing.Color.Silver;
             this.trueORfalse.GradientBottomRight = System.Drawing.Color.Silver;
@@ -1555,7 +1555,7 @@
             this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton5.Visible = false;
+            this.bunifuFlatButton5.Click += new System.EventHandler(this.bunifuFlatButton5_Click);
             // 
             // CurrentnumSA
             // 
@@ -1589,7 +1589,6 @@
             this.shortAnswer.Controls.Add(this.label17);
             this.shortAnswer.Controls.Add(this.textBox3);
             this.shortAnswer.Controls.Add(this.label13);
-            this.shortAnswer.Controls.Add(this.bunifuFlatButton7);
             this.shortAnswer.Controls.Add(this.pictureBox4);
             this.shortAnswer.Controls.Add(this.label16);
             this.shortAnswer.Controls.Add(this.textBox8);
@@ -1599,6 +1598,7 @@
             this.shortAnswer.Controls.Add(this.label22);
             this.shortAnswer.Controls.Add(this.bunifuCustomLabel4);
             this.shortAnswer.Controls.Add(this.CurrentnumSA);
+            this.shortAnswer.Controls.Add(this.bunifuFlatButton7);
             this.shortAnswer.Controls.Add(this.bunifuFlatButton9);
             this.shortAnswer.GradientBottomLeft = System.Drawing.Color.Silver;
             this.shortAnswer.GradientBottomRight = System.Drawing.Color.Silver;
@@ -1643,7 +1643,7 @@
             this.bunifuFlatButton9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton9.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton9.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton9.Visible = false;
+            this.bunifuFlatButton9.Click += new System.EventHandler(this.bunifuFlatButton9_Click);
             // 
             // splitPicture
             // 

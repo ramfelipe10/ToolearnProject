@@ -95,5 +95,7 @@ namespace TooLearnOfficial
             PublicJoin PJ = new PublicJoin();
             PJ.Show();
         }
+
+        
     }
 }

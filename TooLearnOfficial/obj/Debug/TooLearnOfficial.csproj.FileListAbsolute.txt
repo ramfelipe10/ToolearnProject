@@ -253,7 +253,6 @@ C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLe
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.ClassroomEnrolled.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.JoinQuiz.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.Score2.resources
-C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.User_Control_Participant.ScoreParticipant.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ViewGroupParticipant.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ViewScoreRecord.resources
 C:\Users\Admin\Documents\GitHub\ToolearnProject\TooLearnOfficial\obj\Debug\TooLearnOfficial.ViewScoreRecord2.resources

@@ -152,8 +152,7 @@ namespace TooLearnOfficial
 
                    
 
-                    DataRow DR = EmptyData.NewRow();
-                   // this.Invoke((MethodInvoker)(() => EmptyData.Rows.Add()));
+                    DataRow DR = EmptyData.NewRow();                   
                     this.Invoke((MethodInvoker)(() => DR[0] = name.ToString()));
                     this.Invoke((MethodInvoker)(() => DR[1] = points.ToString()));
                     this.Invoke((MethodInvoker)(() => EmptyData.Rows.Add(DR)));

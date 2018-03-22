@@ -1604,7 +1604,23 @@ namespace TooLearnOfficial
 
         }
 
-     
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            pictureBox3.ImageLocation = "";
+            bunifuFlatButton1.Visible = true;
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            pictureBox5.ImageLocation = "";
+            bunifuFlatButton8.Visible = true;
+        }
+
+        private void bunifuFlatButton9_Click(object sender, EventArgs e)
+        {
+            pictureBox4.ImageLocation = "";
+            bunifuFlatButton7.Visible = true;
+        }
 
         private void updateSA()
         {
