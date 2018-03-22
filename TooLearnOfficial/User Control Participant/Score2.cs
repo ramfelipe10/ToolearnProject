@@ -139,14 +139,17 @@ namespace TooLearnOfficial.User_Control_Participant
             try
             {
                 if (bunifuFlatButton2.selected == true)
-                {                                          //Select f.name from  facilitator f, classrooms c WHERE c.class_id = '" + Class + "' and f.facilitator_id= '" + Program.user_id + "'
+                {                                         
                     SqlDataAdapter sed = new SqlDataAdapter("select facilitator_id from facilitator where name='" + Class + "'  ", con);
-                    DataTable data = new DataTable();       //select class_id from classrooms where class_name= '" + Class + "'                                                                  //AND cl.participant_id= '" + Program.par_id + "'
+                    DataTable data = new DataTable();                                                         
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select c.class_name,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage'  from quizzes q, participant p, scoreRecords s, classrooms c where p.participant_id = s.participant_id AND s.quiz_id = q.quiz_id AND c.facilitator_id = '" + ID + "' AND s.participant_id= '" + Program.par_id + "' AND group_id is null group by s.group_id, s.quiz_score, q.total_score, c.class_name ", con);
-                                                                    //p.fullname
+
+
+
+                    SqlDataAdapter sda = new SqlDataAdapter("select c.class_name,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage'  from quizzes q, participant p, scoreRecords s, classrooms c where p.participant_id = s.participant_id AND c.class_id=s.class_id AND s.quiz_id = q.quiz_id AND c.facilitator_id = '" + ID + "' AND s.participant_id= '" + Program.par_id + "' AND group_id is null group by s.group_id, s.quiz_score, q.total_score, c.class_name ", con);
+                                                                  
 
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
