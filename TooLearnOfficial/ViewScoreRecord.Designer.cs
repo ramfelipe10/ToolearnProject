@@ -178,7 +178,7 @@
             // 
             // bunifuCircleProgressbar2
             // 
-            this.bunifuCircleProgressbar2.animated = false;
+            this.bunifuCircleProgressbar2.animated = true;
             this.bunifuCircleProgressbar2.animationIterval = 5;
             this.bunifuCircleProgressbar2.animationSpeed = 300;
             this.bunifuCircleProgressbar2.BackColor = System.Drawing.Color.Transparent;
@@ -472,6 +472,7 @@
             this.btn_Update.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Update.Textcolor = System.Drawing.Color.White;
             this.btn_Update.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.Visible = false;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // ViewScoreRecord

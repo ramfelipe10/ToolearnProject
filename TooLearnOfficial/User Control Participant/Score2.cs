@@ -192,7 +192,7 @@ namespace TooLearnOfficial.User_Control_Participant
                     string ID = data.Rows[0][0].ToString();
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id AND p.participant_id=sc.participant_id AND sc.participant_id='"+Program.user_id+"' group by g.group_name, sc.quiz_score, q.total_score  ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -317,7 +317,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
             FunctionThatRaisesEvent();
-            ViewScoreRecord VSR = new ViewScoreRecord();
+            ViewScoreRecord2 VSR = new ViewScoreRecord2();
             VSR.ShowDialog();
         }
 

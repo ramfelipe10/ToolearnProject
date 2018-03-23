@@ -327,7 +327,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
         private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
+          /*  if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
 
             {
                 PN = bunifuCustomDataGrid2.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
@@ -338,7 +338,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             FunctionThatRaisesEvent();
             ViewScoreRecord VSR = new ViewScoreRecord();
-            VSR.ShowDialog();  
+            VSR.ShowDialog();  */
 
         }
     }

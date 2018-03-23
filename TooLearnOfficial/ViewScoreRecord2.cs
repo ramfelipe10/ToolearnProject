@@ -40,17 +40,17 @@ namespace TooLearnOfficial
         }
         public void fillgridindividual()
         {
-            SqlDataAdapter name = new SqlDataAdapter("select participant_id from participant where fullname='" + PG + "' ", con);
+            SqlDataAdapter name = new SqlDataAdapter("select class_id from classrooms where class_name='" + PG + "' ", con);
             DataTable dt = new DataTable();
             name.Fill(dt);
             string pid = dt.Rows[0][0].ToString();
 
-            SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
+          /*  SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
             DataTable data = new DataTable();
             classname.Fill(data);
-            string cid = data.Rows[0][0].ToString();
+            string cid = data.Rows[0][0].ToString(); */
 
-            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.group_id is NULL AND s.participant_id='" + pid + "'AND s.class_id='" + cid + "' ", con);
+            SqlDataAdapter adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.group_id is NULL AND s.participant_id='" + Program.par_id + "'AND s.class_id='" + pid + "' ", con);
             DataTable datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();
@@ -143,20 +143,44 @@ namespace TooLearnOfficial
                     a++;
                     Progressbar_Individual.ProgressColor = Color.ForestGreen;
                     Progressbar_Individual.ForeColor = Color.ForestGreen;
+                    bunifuCircleProgressbar2.ProgressColor = Color.ForestGreen;
+                    bunifuCircleProgressbar2.ForeColor = Color.ForestGreen;
                 }
                 else
                 {
                     b++;
                     Progressbar_Individual.ProgressColor = Color.Red;
                     Progressbar_Individual.ForeColor = Color.Red;
+                    bunifuCircleProgressbar2.ProgressColor = Color.Red;
+                    bunifuCircleProgressbar2.ForeColor = Color.Red;
                 }
             }
             labelPassed.Text = a.ToString();
-            labelFailed.Text = b.ToString();           
+            labelFailed.Text = b.ToString();
+
+
+
+
+        SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+            DataTable datas = new DataTable();
+            sed.Fill(datas);
+            string ID = datas.Rows[0][0].ToString(); 
+
+
+            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+            DataTable dte = new DataTable();
+            sda.Fill(dte);
+            BindingSource brs = new BindingSource();
+            brs.DataSource = dte;
+            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]); 
+
+
+
+
         }
         public void fillgridgroup()
         {
-            SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+          /*  SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
             DataTable data = new DataTable();
             sed.Fill(data);
             string ID = data.Rows[0][0].ToString();
@@ -167,7 +191,7 @@ namespace TooLearnOfficial
             sda.Fill(dt);
             BindingSource bs = new BindingSource();
             bs.DataSource = dt;
-            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
+            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);    */
         }
     }
 }
