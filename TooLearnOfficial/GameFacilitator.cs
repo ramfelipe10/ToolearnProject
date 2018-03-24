@@ -63,7 +63,8 @@ namespace TooLearnOfficial
         string ID = SelectClassroom.ID;
 
         DataTable dt = new DataTable();
-       
+        DataTable dts = new DataTable();
+
 
 
         public GameFacilitator()
@@ -402,7 +403,7 @@ namespace TooLearnOfficial
 
         }
 
-      /*  void slice_image(string picture)
+    /*   void slice_image(string picture)
         {
 
             
@@ -418,8 +419,8 @@ namespace TooLearnOfficial
                 {
                     var index = x * 3 + y;
 
-                    
-
+                    int PictureWidth = pictureBox11.Width;
+                    int PictureHeight = pictureBox11.Height;
 
                     imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
                     var graphics = Graphics.FromImage(imgarray[index]);
@@ -445,14 +446,33 @@ namespace TooLearnOfficial
             pictureBox9.Image = imgarray[7];
             pictureBox10.Image = imgarray[8];
 
-        }
-         */
+        } */
+         
        
 
 
         private void load_QA()
        {
-           
+
+        /*    SqlDataAdapter adapter = new SqlDataAdapter("select puzzle_image from quizzes where quiz_id= '" + QuizID + "'", con);
+            adapter.Fill(dts);
+            if (dts.Rows[0][0].ToString() != null)
+            {
+                pictureBox11.ImageLocation = dts.Rows[0][0].ToString();
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = true;
+                pictureBox4.Visible = true;
+                pictureBox5.Visible = true;
+                pictureBox6.Visible = true;
+                pictureBox7.Visible = true;
+                pictureBox8.Visible = true;
+                pictureBox9.Visible = true;
+                pictureBox10.Visible = true;
+
+                slice_image(dts.Rows[0][0].ToString());
+
+            } */
+          
 
 
             if (random == false)

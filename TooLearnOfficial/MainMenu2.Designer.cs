@@ -546,7 +546,7 @@
             // 
             // settings1
             // 
-            this.settings1.BackColor = System.Drawing.Color.Gray;
+            this.settings1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.LogosTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
             this.PanelTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
             this.LogoTransition.SetDecoration(this.settings1, BunifuAnimatorNS.DecorationType.None);
