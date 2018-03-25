@@ -430,7 +430,7 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.MediumSeaGreen;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(286, 50);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(96, 50);
             this.bunifuCustomDataGrid1.MultiSelect = false;
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
@@ -448,7 +448,7 @@
             this.bunifuCustomDataGrid1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bunifuCustomDataGrid1.ShowCellErrors = false;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(350, 136);
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(706, 136);
             this.bunifuCustomDataGrid1.TabIndex = 158;
             // 
             // Column1
@@ -468,7 +468,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(144, 84);
+            this.listBox1.Location = new System.Drawing.Point(195, 331);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(64, 30);
             this.listBox1.TabIndex = 34;
@@ -484,7 +484,7 @@
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Location = new System.Drawing.Point(155, 49);
+            this.listView1.Location = new System.Drawing.Point(144, 332);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(36, 29);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;

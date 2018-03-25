@@ -64,6 +64,7 @@ namespace TooLearnOfficial
 
         DataTable dt = new DataTable();
         DataTable dts = new DataTable();
+        DataTable participants = new DataTable();
 
 
 
@@ -671,10 +672,10 @@ namespace TooLearnOfficial
                     {
 
                         SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + data.Rows[i][0].ToString() + "' ", con);
-                        adapt.Fill(dt);
-                        string ew = dt.Rows[0][0].ToString();
+                        adapt.Fill(participants);
+                        string id = participants.Rows[0][0].ToString();
 
-                int id = Convert.ToInt32(ew);
+                         
 
                         String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Today.ToString() + "','" + QuizID + "','" + id + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
@@ -692,10 +693,8 @@ namespace TooLearnOfficial
                     {
 
                         SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + data.Rows[i][0].ToString() + "' ", con);
-                        adapt.Fill(dt);
-                        string ew = dt.Rows[0][0].ToString();
-
-                        int id = Convert.ToInt32(ew);
+                        adapt.Fill(participants);
+                        string id = participants.Rows[0][0].ToString();
 
 
                         String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Today.ToString() + "','" + QuizID + "','" + id + "', '" + ID + "')";
