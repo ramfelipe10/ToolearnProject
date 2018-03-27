@@ -13,6 +13,8 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
+using System.Text.RegularExpressions;
+
 namespace TooLearnOfficial
 {
     public partial class MyClass : Form
@@ -147,39 +149,6 @@ namespace TooLearnOfficial
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-
-            //Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-            //PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Classroom.pdf", FileMode.Create));
-            //doc.Open();
-
-            ////Paragraph par = new Paragraph("First Line Using Paragraph");
-
-            ////doc.Add(par);
-
-            //PdfPTable table = new PdfPTable(bunifuCustomDataGrid1.Columns.Count);
-
-            ////add the headers from the DGV to the table
-            //for(int j = 0; j < bunifuCustomDataGrid1.Columns.Count; j++)
-            //{
-            //    table.AddCell(new Phrase(bunifuCustomDataGrid1.Columns[j].HeaderText));
-            //}
-
-            ////flag the first row as a header
-            //table.HeaderRows = 1;
-
-            ////add the actual rows from the DGV to the table
-            //for(int i = 0; i < bunifuCustomDataGrid1.Rows.Count; i++)
-            //{
-            //    for(int k = 0; k < bunifuCustomDataGrid1.Columns.Count; k++)
-            //    {
-            //        if(bunifuCustomDataGrid1[k, i].Value != null)
-            //        {
-            //            table.AddCell(new Phrase(bunifuCustomDataGrid1[k, i].Value.ToString()));
-            //        }
-            //    }
-            //}
-            //doc.Add(table);
-            //doc.Close();
             if (comboBox1.SelectedItem == null)
             {
                 Dialogue.Show("Please Select Class First", "", "Ok", "Cancel");
@@ -220,22 +189,12 @@ namespace TooLearnOfficial
             //c1.Font.SetStyle(0);
             //c1.Font.Size = 14;
 
-
-
-
-
-
-
-
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1250, BaseFont.EMBEDDED);
             PdfPTable pdftable = new PdfPTable(dgv.Columns.Count);
             pdftable.DefaultCell.Padding = 3;
             pdftable.WidthPercentage = 100;
             pdftable.HorizontalAlignment = Element.ALIGN_LEFT;
             pdftable.DefaultCell.BorderWidth = 1;
-
-
-      
 
             iTextSharp.text.Font text = new iTextSharp.text.Font(bf, 15, iTextSharp.text.Font.BOLD);
 
@@ -249,7 +208,6 @@ namespace TooLearnOfficial
             }
 
             //Add Datarow
-
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
@@ -279,6 +237,36 @@ namespace TooLearnOfficial
                 Dialogue.Show("PDF SAVED", "", "Ok", "Cancel");
             }
 
+        }
+
+        private void btn_csv_Click(object sender, EventArgs e)
+        {
+            //saveFileDialog1.InitialDirectory = "Downloads";
+            //saveFileDialog1.Title = "Save as Excel File";
+            //saveFileDialog1.FileName = "";
+            //saveFileDialog1.Filter = "CSV|*csv";
+            //if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            //{
+            //    Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
+            //    ExcelApp.Application.Workbooks.Add(Type.Missing);
+
+            //    ExcelApp.Columns.ColumnWidth = 20;
+
+            //    for (int i = 1; i < bunifuCustomDataGrid1.Columns.Count + 1; i++)
+            //    {
+            //        ExcelApp.Cells[1, i] = bunifuCustomDataGrid1.Columns[i - 1].HeaderText;
+            //    }
+            //    for (int i = 0; i < bunifuCustomDataGrid1.Rows.Count; i++)
+            //    {
+            //        for (int j = 0; j < bunifuCustomDataGrid1.Columns.Count; j++)
+            //        {
+            //            ExcelApp.Cells[i + 2, j + i] = bunifuCustomDataGrid1.Rows[i].Cells[j].Value.ToString();
+            //        }
+            //    }
+            //    ExcelApp.ActiveWorkbook.SaveCopyAs(saveFileDialog1.FileName.ToString());
+            //    ExcelApp.ActiveWorkbook.Saved = true;
+            //    ExcelApp.Quit();
+            }
         }
     }
 }

@@ -43,24 +43,27 @@
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_print = new Bunifu.Framework.UI.BunifuImageButton();
             this.buttonCreateClassroom = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton5 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btn_print = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_csv = new Bunifu.Framework.UI.BunifuImageButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_print)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_print)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_csv)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -189,49 +192,6 @@
             this.bunifuElipse4.ElipseRadius = 5;
             this.bunifuElipse4.TargetControl = this.buttonCreateClassroom;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(485, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 24);
-            this.label4.TabIndex = 155;
-            this.label4.Text = "Class Code:";
-            this.label4.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(623, 177);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 24);
-            this.label5.TabIndex = 156;
-            // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.btn_print.Image = global::TooLearnOfficial.Properties.Resources.PDF_white;
-            this.btn_print.ImageActive = null;
-            this.btn_print.Location = new System.Drawing.Point(781, 257);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(43, 33);
-            this.btn_print.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_print.TabIndex = 168;
-            this.btn_print.TabStop = false;
-            this.btn_print.Zoom = 5;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
             // buttonCreateClassroom
             // 
             this.buttonCreateClassroom.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -268,15 +228,12 @@
             this.buttonCreateClassroom.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.buttonCreateClassroom.Click += new System.EventHandler(this.buttonCreateClassroom_Click);
             // 
-            // pictureBox1
+            // bunifuDragControl1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(671, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 148;
-            this.pictureBox1.TabStop = false;
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.bunifuGradientPanel1;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // bunifuGradientPanel1
             // 
@@ -349,12 +306,73 @@
             this.bunifuImageButton5.Zoom = 10;
             this.bunifuImageButton5.Click += new System.EventHandler(this.bunifuImageButton5_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(485, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 24);
+            this.label4.TabIndex = 155;
+            this.label4.Text = "Class Code:";
+            this.label4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(623, 177);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 24);
+            this.label5.TabIndex = 156;
+            // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.btn_print.Image = global::TooLearnOfficial.Properties.Resources.PDF_white;
+            this.btn_print.ImageActive = null;
+            this.btn_print.Location = new System.Drawing.Point(781, 257);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(43, 33);
+            this.btn_print.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_print.TabIndex = 168;
+            this.btn_print.TabStop = false;
+            this.btn_print.Zoom = 5;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(671, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 148;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btn_csv
+            // 
+            this.btn_csv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.btn_csv.Image = global::TooLearnOfficial.Properties.Resources.Export_CSV_40px;
+            this.btn_csv.ImageActive = null;
+            this.btn_csv.Location = new System.Drawing.Point(732, 257);
+            this.btn_csv.Name = "btn_csv";
+            this.btn_csv.Size = new System.Drawing.Size(43, 33);
+            this.btn_csv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_csv.TabIndex = 169;
+            this.btn_csv.TabStop = false;
+            this.btn_csv.Zoom = 5;
+            this.btn_csv.Click += new System.EventHandler(this.btn_csv_Click);
+            // 
             // MyClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(913, 611);
+            this.Controls.Add(this.btn_csv);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -374,13 +392,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyClass";
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_print)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_print)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_csv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +428,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuImageButton btn_print;
+        private Bunifu.Framework.UI.BunifuImageButton btn_csv;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
