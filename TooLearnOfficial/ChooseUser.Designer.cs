@@ -272,9 +272,9 @@
             this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.bunifuCustomLabel4.Location = new System.Drawing.Point(177, 299);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(64, 22);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(65, 22);
             this.bunifuCustomLabel4.TabIndex = 31;
-            this.bunifuCustomLabel4.Text = "Public";
+            this.bunifuCustomLabel4.Text = "Guest";
             // 
             // bunifuImageButton8
             // 
@@ -376,7 +376,6 @@
             this.Name = "ChooseUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TooLearn";
-          
             this.HomeHeader.ResumeLayout(false);
             this.HomeHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -74,7 +74,7 @@ namespace TooLearnOfficial
                 //ThreadHelper.lsbAddItem(this, lsbJoined, "Client connected" + clientSocket.Client.RemoteEndPoint.ToString());
 
                 //Send a confirmation message to client
-                //Send("You are now connected.", clientSocket);
+          //     Send("CONFIRM", clientSocket);
 
                 //Acccept another TCPClient connection
                 listener.BeginAcceptTcpClient(DoAcceptSocketCallback, listener);

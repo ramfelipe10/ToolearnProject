@@ -180,7 +180,12 @@ namespace TooLearnOfficial
 
                 Receive();
 
-                if (message.Contains("GAMEIPQB"))
+                 if (message.Contains("CONFIRM"))
+                {
+                    ThreadHelper.lsbAddItem(this, lsbWait, " You are now connected! Please Wait");
+                }
+
+                else if (message.Contains("GAMEIPQB"))
                 {
                     ThreadHelper.Hide(this);
                     //this.Hide();//kaipuhn muna ithread
@@ -278,8 +283,7 @@ namespace TooLearnOfficial
 
                 //client.Client.Shutdown(SocketShutdown.Both);
                 //client.Client.Close();
-
-
+          
                 else
                 {
                     ThreadHelper.lsbAddItem(this, lsbWait, message);

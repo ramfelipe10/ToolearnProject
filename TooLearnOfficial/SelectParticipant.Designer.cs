@@ -162,9 +162,9 @@
             this.bunifuCustomLabel4.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.bunifuCustomLabel4.Location = new System.Drawing.Point(85, 236);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(64, 22);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(65, 22);
             this.bunifuCustomLabel4.TabIndex = 37;
-            this.bunifuCustomLabel4.Text = "Public";
+            this.bunifuCustomLabel4.Text = "Guest";
             // 
             // bunifuImageButton8
             // 
