@@ -47,6 +47,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -69,7 +70,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -82,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.bunifuGradientPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -198,10 +201,9 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1115, 605);
+            this.panel1.Size = new System.Drawing.Size(1115, 10);
             this.panel1.TabIndex = 37;
             // 
             // panel4
@@ -215,7 +217,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1115, 605);
+            this.panel4.Size = new System.Drawing.Size(1115, 10);
             this.panel4.TabIndex = 2;
             this.panel4.Visible = false;
             // 
@@ -268,6 +270,19 @@
             this.label8.Size = new System.Drawing.Size(102, 36);
             this.label8.TabIndex = 2;
             this.label8.Text = "Score:";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Location = new System.Drawing.Point(182, -48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(727, 43);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Please Wait.........";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -534,13 +549,13 @@
             // 
             // bunifuCustomLabel2
             // 
-            this.bunifuCustomLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.DarkRed;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(827, 152);
+            this.bunifuCustomLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 25F);
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(0, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(248, 51);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(207, 42);
             this.bunifuCustomLabel2.TabIndex = 30;
             this.bunifuCustomLabel2.Text = "Time\'s Up!";
             this.bunifuCustomLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -548,13 +563,13 @@
             // 
             // bunifuCustomLabel3
             // 
-            this.bunifuCustomLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(834, 152);
+            this.bunifuCustomLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(0, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(214, 51);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(207, 42);
             this.bunifuCustomLabel3.TabIndex = 39;
             this.bunifuCustomLabel3.Text = "00:59:00";
             this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -610,10 +625,9 @@
             this.panel2.BackColor = System.Drawing.Color.LightCoral;
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 26);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1115, 605);
+            this.panel2.Size = new System.Drawing.Size(1115, 29);
             this.panel2.TabIndex = 43;
             this.panel2.Visible = false;
             // 
@@ -632,7 +646,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 48F);
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1115, 605);
+            this.label4.Size = new System.Drawing.Size(1115, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "label4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -642,10 +656,9 @@
             this.panel3.BackColor = System.Drawing.Color.SeaGreen;
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 26);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1115, 605);
+            this.panel3.Size = new System.Drawing.Size(1115, 17);
             this.panel3.TabIndex = 44;
             this.panel3.Visible = false;
             // 
@@ -666,23 +679,32 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1115, 605);
+            this.label5.Size = new System.Drawing.Size(1115, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "label5";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // bunifuGradientPanel3
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(182, 547);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(727, 43);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Please Wait.........";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuGradientPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuGradientPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel3.BackgroundImage")));
+            this.bunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel3.Controls.Add(this.bunifuCustomLabel3);
+            this.bunifuGradientPanel3.Controls.Add(this.bunifuCustomLabel2);
+            this.bunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.DarkGray;
+            this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.Black;
+            this.bunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.Black;
+            this.bunifuGradientPanel3.GradientTopRight = System.Drawing.Color.Black;
+            this.bunifuGradientPanel3.Location = new System.Drawing.Point(841, 144);
+            this.bunifuGradientPanel3.Name = "bunifuGradientPanel3";
+            this.bunifuGradientPanel3.Quality = 10;
+            this.bunifuGradientPanel3.Size = new System.Drawing.Size(207, 42);
+            this.bunifuGradientPanel3.TabIndex = 171;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 7;
+            this.bunifuElipse5.TargetControl = this.bunifuGradientPanel3;
             // 
             // GameParticipant
             // 
@@ -692,6 +714,7 @@
             this.BackgroundImage = global::TooLearnOfficial.Properties.Resources._444;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1115, 631);
+            this.Controls.Add(this.bunifuGradientPanel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -702,8 +725,6 @@
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuCustomLabel5);
             this.Controls.Add(this.bunifuCustomLabel4);
-            this.Controls.Add(this.bunifuCustomLabel2);
-            this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton3);
@@ -732,6 +753,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.bunifuGradientPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,5 +801,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
     }
 }

@@ -612,8 +612,8 @@ namespace TooLearnOfficial
             }
             else
             {
-                
-                bunifuCustomLabel3.Text = convertedtime.ToString();
+                bunifuCustomLabel3.Text = TimerFormat(convertedtime);
+               // bunifuCustomLabel3.Text = convertedtime.ToString();
                 bunifuCustomLabel2.Visible = false;
                 bunifuCustomLabel3.Visible = true;
 
@@ -634,8 +634,15 @@ namespace TooLearnOfficial
 
         }
 
+        private string TimerFormat(int secs)
+        {
+            TimeSpan t = TimeSpan.FromSeconds(secs);
+            return string.Format("{0:D2}:{1:D2}:{2:D2}",
+                (int)t.TotalHours,
+                t.Minutes,
+                t.Seconds);
+        }
 
-        
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
