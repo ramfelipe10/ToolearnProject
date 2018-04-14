@@ -114,7 +114,7 @@ namespace TooLearnOfficial
         public void updateScore(string Score)
         {
 
-           
+          
             string up = Score.ToString();
 
             // string name = up.Substring(8,up.Length-12);
@@ -588,9 +588,9 @@ namespace TooLearnOfficial
                     timerstamp = timerstamp * 60;
                 }
 
-                TimerLabel.Text = timerstamp.ToString();
+                //  TimerLabel.Text = timerstamp.ToString();
 
-
+                TimerLabel.Text = TimerFormat(timerstamp);
 
 
 
@@ -751,7 +751,7 @@ namespace TooLearnOfficial
             {
           
                 timer1.Stop();
-                bunifuCustomLabel1.Visible = true;
+               // bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
                 panel3.Visible = true;
                 label5.Text = "Correct Answer is " + dt.Rows[counter][5].ToString().ToUpper();
@@ -768,8 +768,8 @@ namespace TooLearnOfficial
             }
             else
             {
-     
-                TimerLabel.Text = timerstamp.ToString();
+                TimerLabel.Text = TimerFormat(timerstamp);
+              //  TimerLabel.Text = timerstamp.ToString();
                 bunifuCustomLabel1.Visible = false;
                 TimerLabel.Visible = true;
                 bunifuFlatButton1.Visible = false;
@@ -777,7 +777,14 @@ namespace TooLearnOfficial
             }
         }
 
-       
+        private string TimerFormat(int secs)
+        {
+            TimeSpan t = TimeSpan.FromSeconds(secs);
+            return string.Format("{0:D2}:{1:D2}:{2:D2}",
+                (int)t.TotalHours,
+                t.Minutes,
+                t.Seconds);
+        }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {

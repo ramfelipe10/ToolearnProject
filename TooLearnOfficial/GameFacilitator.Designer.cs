@@ -72,6 +72,8 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -90,6 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -254,14 +257,14 @@
             // 
             // bunifuCustomLabel1
             // 
-            this.bunifuCustomLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel1.CausesValidation = false;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 32.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.DarkRed;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(620, 287);
+            this.bunifuCustomLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 25F);
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(242, 51);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(207, 42);
             this.bunifuCustomLabel1.TabIndex = 29;
             this.bunifuCustomLabel1.Text = "Time\'s Up!";
             this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,16 +272,16 @@
             // 
             // TimerLabel
             // 
-            this.TimerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TimerLabel.BackColor = System.Drawing.Color.Transparent;
-            this.TimerLabel.Font = new System.Drawing.Font("Century Gothic", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimerLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TimerLabel.Location = new System.Drawing.Point(671, 286);
+            this.TimerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TimerLabel.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimerLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TimerLabel.Location = new System.Drawing.Point(0, 0);
             this.TimerLabel.Name = "TimerLabel";
-            this.TimerLabel.Size = new System.Drawing.Size(174, 51);
+            this.TimerLabel.Size = new System.Drawing.Size(207, 42);
             this.TimerLabel.TabIndex = 28;
-            this.TimerLabel.Text = "14";
-            this.TimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TimerLabel.Text = "15:06:70";
+            this.TimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -295,8 +298,6 @@
             this.panel2.Controls.Add(this.bunifuImageButton1);
             this.panel2.Controls.Add(this.bunifuCustomLabel2);
             this.panel2.Controls.Add(this.bunifuImageButton2);
-            this.panel2.Controls.Add(this.bunifuCustomLabel1);
-            this.panel2.Controls.Add(this.TimerLabel);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(this.pictureBox11);
@@ -307,6 +308,7 @@
             this.panel2.Controls.Add(this.pictureBox6);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox4);
+            this.panel2.Controls.Add(this.bunifuGradientPanel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -631,6 +633,28 @@
             this.bunifuElipse5.ElipseRadius = 7;
             this.bunifuElipse5.TargetControl = this.bunifuCustomDataGrid1;
             // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.bunifuCustomLabel1);
+            this.bunifuGradientPanel1.Controls.Add(this.TimerLabel);
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.DarkGray;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.Black;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Black;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.Black;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(661, 296);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(207, 42);
+            this.bunifuGradientPanel1.TabIndex = 170;
+            // 
+            // bunifuElipse6
+            // 
+            this.bunifuElipse6.ElipseRadius = 7;
+            this.bunifuElipse6.TargetControl = this.bunifuGradientPanel1;
+            // 
             // GameFacilitator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,6 +691,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -710,5 +735,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
     }
 }
