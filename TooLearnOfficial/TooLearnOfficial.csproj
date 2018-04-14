@@ -812,6 +812,7 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\blurBG.jpg" />
     <None Include="TooLearn Pictures\Export CSV_40px.png" />
     <None Include="TooLearn Pictures\Available Updates_64px.png" />
     <None Include="TooLearn Pictures\Multiply_104px.png" />

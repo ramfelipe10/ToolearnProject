@@ -283,7 +283,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::TooLearnOfficial.Properties.Resources._444;
+            this.panel2.BackgroundImage = global::TooLearnOfficial.Properties.Resources.blurBG;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.bunifuFlatButton3);

@@ -203,6 +203,16 @@ namespace TooLearnOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blurBG {
+            get {
+                object obj = ResourceManager.GetObject("blurBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Checked_40px {
             get {
                 object obj = ResourceManager.GetObject("Checked_40px", resourceCulture);
