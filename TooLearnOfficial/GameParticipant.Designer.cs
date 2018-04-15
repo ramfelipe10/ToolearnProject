@@ -73,6 +73,8 @@
             this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -720,6 +722,32 @@
             this.bunifuCustomLabel6.Text = "TIMER";
             this.bunifuCustomLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(99, 175);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(122, 25);
+            this.bunifuCustomLabel7.TabIndex = 173;
+            this.bunifuCustomLabel7.Text = "Question # ";
+            this.bunifuCustomLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(214, 175);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(24, 25);
+            this.bunifuCustomLabel8.TabIndex = 174;
+            this.bunifuCustomLabel8.Text = "0";
+            this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GameParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -728,6 +756,8 @@
             this.BackgroundImage = global::TooLearnOfficial.Properties.Resources.blurBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1115, 631);
+            this.Controls.Add(this.bunifuCustomLabel8);
+            this.Controls.Add(this.bunifuCustomLabel7);
             this.Controls.Add(this.bunifuCustomLabel6);
             this.Controls.Add(this.bunifuGradientPanel3);
             this.Controls.Add(this.panel1);
@@ -819,5 +849,7 @@
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel3;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
     }
 }

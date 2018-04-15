@@ -655,6 +655,8 @@ namespace TooLearnOfficial
             
             load_game(counter);
             panel3.Visible = false;
+
+            bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString();
            // timer1.Start();
         }
 

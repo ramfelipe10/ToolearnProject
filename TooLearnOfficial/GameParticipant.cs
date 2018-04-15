@@ -282,6 +282,7 @@ namespace TooLearnOfficial
 
                     if (array[11].ToString() =="Multiple Choice")//Item Format
                     {
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString() ));                    
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
@@ -359,7 +360,7 @@ namespace TooLearnOfficial
                     }
                    else if(array[11].ToString() == "True/False")
                     {
-                       
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
@@ -431,7 +432,7 @@ namespace TooLearnOfficial
 
                     else
                     {
-
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
