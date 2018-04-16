@@ -565,8 +565,13 @@ namespace TooLearnOfficial
             {
 
                 textBoxQuizTitle.Text = (string)dr[("quiz_title")];
+                
+                //testing
+                textBox7.Visible = false;
+                bunifuDropdown1.Visible = false;
 
-                if(!dr.IsDBNull(4))
+
+                if (!dr.IsDBNull(4))
 
 
                // if ((string)dr[("quiz_time_limit")] != null)
@@ -713,8 +718,8 @@ namespace TooLearnOfficial
 
             ///// Button OK
 
-            if (textBox7.Text == "")
-            {
+        //    if (textBox7.Text == "")
+        //    {
                 label20.Visible = true; //MC
                 bunifuDropdown2.Visible = true;
                 textBox11.Visible = true;
@@ -733,10 +738,10 @@ namespace TooLearnOfficial
                 textBox7.Visible = false;
                 bunifuDropdown1.Visible = false;
 
-            }
+         //   }
 
 
-            else
+        /*    else
             {
                 label20.Visible = false; //MC
                 bunifuDropdown2.Visible = false;
@@ -758,7 +763,9 @@ namespace TooLearnOfficial
 
                 textBox7.Enabled = false;
 
-            }
+            } */
+
+
             /*  numOfItems = int.Parse(bunifuDropdown6.selectedValue); */
 
             currentNumOfItems = 1;

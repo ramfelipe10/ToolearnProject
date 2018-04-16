@@ -32,7 +32,7 @@ namespace TooLearnOfficial
                 {
                     SqlCommand cmd = new SqlCommand("Insert into facilitator(name, username, password) Values('" + TextboxName.Text + "','" + TextboxUsername.Text + "','" + TextboxPassword.Text + "')", con);
                     cmd.ExecuteNonQuery();
-                    Dialogue.Show("Successfully Inserted", "", "Ok", "Cancel");
+                    Dialogue.Show("Successfully Created", "", "Ok", "Cancel");
                     con.Close();
 
                     this.Hide();
