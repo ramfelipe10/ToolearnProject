@@ -392,7 +392,16 @@ namespace TooLearnOfficial
 
             }
 
+            if (time_limit != null || time_limit != "")
+            {
+               
 
+                label20.Visible = true;
+                bunifuDropdown3.Visible = true;
+                textBox11.Visible = true;
+                
+
+            }
            
 
             if (textBox11.Visible == true)
@@ -481,6 +490,17 @@ namespace TooLearnOfficial
                 bunifuFlatButton8.Visible = false;
             }
 
+
+            if (time_limit != null || time_limit != "")
+            {
+               
+                label24.Visible = true;
+                bunifuDropdown2.Visible = true;
+                textBox10.Visible = true;
+                                
+
+            }
+
             if (textBox10.Visible == true)
             {
                 string str = exams.SubItems[3].Text;
@@ -555,6 +575,17 @@ namespace TooLearnOfficial
             {
                 bunifuFlatButton7.Visible = false;
             }
+
+
+            if (time_limit != null || time_limit != "")
+            {
+                label17.Visible = true;
+                bunifuDropdown1.Visible = true;
+                textBox12.Visible = true;
+
+            }
+
+
 
             if (textBox12.Visible == true)
             {
@@ -817,7 +848,10 @@ namespace TooLearnOfficial
                             //
                             exams4.SubItems.Add(pictureBox3.ImageLocation);
 
-                            exams4.SubItems.Add(textBox11.Text);
+                            // exams4.SubItems.Add(textBox11.Text);
+                            exams4.SubItems.Add(time_limit);
+
+
                             exams4.SubItems.Add(textBox2.Text);
                             //
                             MultipleChoiceLV.Items.Add(exams4);
@@ -996,6 +1030,13 @@ namespace TooLearnOfficial
                     }
                     else
                     {   //else
+
+
+                       
+
+
+
+
                         if (textBoxQuizQuestion.Text == "" || textBox2.Text == "" || textBox11.Text == "" || textBoxQuizChoiceA.Text == "" ||
                        textBoxQuizChoiceB.Text == "" || textBoxQuizChoiceC.Text == "" || textBoxQuizChoiceD.Text == "" || RightAnswer == null)
                         {
@@ -1004,6 +1045,15 @@ namespace TooLearnOfficial
 
                         else
                         {
+                            if (time_limit != null || time_limit != "")
+                            {
+
+                                label20.Visible = false;
+                                bunifuDropdown3.Visible = false;
+                                textBox11.Visible = false;
+                            }
+
+
 
                             int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
                             ListViewItem exams = new ListViewItem();
@@ -1039,7 +1089,18 @@ namespace TooLearnOfficial
 
                             else
                             {
-                                exams.SubItems.Add(textBox11.Text);
+                                if (bunifuDropdown3.selectedIndex == 0)//Minutes
+                                {
+                                    TimeF = textBox11.Text + "(Minutes)";
+                                }
+
+                                else
+                                {
+                                    TimeF = textBox11.Text + "(Seconds)";
+                                }
+
+                                exams.SubItems.Add(TimeF);
+
 
                             }
                             exams.SubItems.Add(textBox2.Text);
@@ -1098,7 +1159,10 @@ namespace TooLearnOfficial
                             exams2.SubItems.Add(bunifuDropdown5.selectedValue);
                             //
                             exams2.SubItems.Add(pictureBox5.ImageLocation);
-                            exams2.SubItems.Add(textBox10.Text);
+                            // exams2.SubItems.Add(textBox10.Text);
+
+                            exams2.SubItems.Add(time_limit);
+
                             exams2.SubItems.Add(textBox5.Text);
 
                             //
@@ -1181,6 +1245,15 @@ namespace TooLearnOfficial
 
                 case "Update":
 
+                    if (time_limit != null || time_limit != "")
+                    {
+                       
+                        label24.Visible = false;
+                        bunifuDropdown2.Visible = false;
+                        textBox10.Visible = false;
+
+                    }
+
                     int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
                     ListViewItem exams1 = new ListViewItem();
                     exams1.Text = textBox13.Text;
@@ -1207,7 +1280,17 @@ namespace TooLearnOfficial
 
                     else
                     {
-                        exams1.SubItems.Add(textBox10.Text);
+                        if (bunifuDropdown2.selectedIndex == 0)//Minutes
+                        {
+                            TimeF = textBox10.Text + "(Minutes)";
+                        }
+
+                        else
+                        {
+                            TimeF = textBox10.Text + "(Seconds)";
+                        }
+
+                        exams1.SubItems.Add(TimeF);
                     }
 
                     exams1.SubItems.Add(textBox5.Text);
@@ -1265,7 +1348,9 @@ namespace TooLearnOfficial
                             //
                             exams2.SubItems.Add(pictureBox4.ImageLocation);
 
-                            exams2.SubItems.Add(textBox12.Text);
+                            // exams2.SubItems.Add(textBox12.Text);
+                            exams2.SubItems.Add(time_limit);
+
                             exams2.SubItems.Add(textBox3.Text);
                             //
                             ShortAnswerLV.Items.Add(exams2);
@@ -1355,6 +1440,15 @@ namespace TooLearnOfficial
 
                 case "Update":
 
+                    if (time_limit != null || time_limit != "")
+                    {
+                        label17.Visible = false;
+                        bunifuDropdown1.Visible = false;
+                        textBox12.Visible = false;                       
+                    }
+            
+
+
                     int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
                     ListViewItem exams3 = new ListViewItem();
                     exams3.Text = textBox9.Text;
@@ -1384,7 +1478,19 @@ namespace TooLearnOfficial
 
                     else
                     {
-                        exams3.SubItems.Add(textBox12.Text);
+                        if (bunifuDropdown1.selectedIndex == 0)//Minutes
+                        {
+                            TimeF = textBox12.Text + "(Minutes)";
+                        }
+
+                        else
+                        {
+                            TimeF = textBox12.Text + "(Seconds)";
+                        }
+
+
+                        exams3.SubItems.Add(TimeF);
+
                     }
                     exams3.SubItems.Add(textBox3.Text);
                     //
@@ -1618,8 +1724,8 @@ namespace TooLearnOfficial
                                    
                                     con2.Open();
 
-                                    if (time_limit == null || time_limit == "")
-                                    {
+                               //     if (time_limit == null || time_limit == "")
+                               //     {
 
 
                                         String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,answer_a,answer_b,answer_c,answer_d,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Multiple Choice','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[5].Text + "','" + examID + "','" + exams.SubItems[8].Text + "','" + exams.SubItems[6].Text + "','" + exams.SubItems[7].Text + "')";
@@ -1629,7 +1735,7 @@ namespace TooLearnOfficial
 
                                        
 
-                                    }
+                               /*     }
 
                                     else
                                     {
@@ -1639,7 +1745,7 @@ namespace TooLearnOfficial
                                         sda.SelectCommand.ExecuteNonQuery();
 
 
-                                    }
+                                    } */
 
 
 
@@ -1669,8 +1775,8 @@ namespace TooLearnOfficial
                                     
                                     con2.Open();
 
-                                    if (time_limit == null || time_limit == "")
-                                    {
+                                 //   if (time_limit == null || time_limit == "")
+                                 //   {
 
 
                                         String query = "INSERT INTO QuestionAnswers(item_format,game_type,question,correct_answer,quiz_id,points,image,QA_time_limit) VALUES ('Short Answer','Picture Puzzle','" + exams.Text + "','" + exams.SubItems[1].Text + "','" + examID + "','" + exams.SubItems[4].Text + "','" + exams.SubItems[2].Text + "','" + exams.SubItems[3].Text + "')";
@@ -1679,7 +1785,7 @@ namespace TooLearnOfficial
                                         sda.SelectCommand.ExecuteNonQuery();
 
                                         
-                                    }
+                               /*     }
 
 
 
@@ -1691,7 +1797,7 @@ namespace TooLearnOfficial
 
                                         sda.SelectCommand.ExecuteNonQuery();
 
-                                    }
+                                    }  */
 
 
                                 }
@@ -1727,8 +1833,8 @@ namespace TooLearnOfficial
                                     con2.Open();
 
 
-                                    if (time_limit == null || time_limit == "")
-                                    {
+                               //     if (time_limit == null || time_limit == "")
+                               //     {
 
 
 
@@ -1740,7 +1846,7 @@ namespace TooLearnOfficial
 
 
 
-                                    }
+                                /*    }
 
 
                                     else
@@ -1753,7 +1859,7 @@ namespace TooLearnOfficial
 
                                         sda.SelectCommand.ExecuteNonQuery();
 
-                                    }
+                                    }   */
 
 
                                 }

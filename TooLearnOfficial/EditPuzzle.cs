@@ -576,7 +576,7 @@ namespace TooLearnOfficial
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read() == true)
             {
-                if (!dr.IsDBNull(4))
+               /* if (!dr.IsDBNull(4))
                
                 {
 
@@ -597,7 +597,7 @@ namespace TooLearnOfficial
                 }
 
                 else//else-if
-                {
+                {   */
                     label17.Visible = true;
                     bunifuDropdown1.Visible = true;
                     textBox12.Visible = true;
@@ -611,7 +611,7 @@ namespace TooLearnOfficial
                     label20.Visible = true;
                     bunifuDropdown3.Visible = true;
                     textBox11.Visible = true;
-                }
+             //   }
 
 
                 try
@@ -1246,7 +1246,7 @@ namespace TooLearnOfficial
                         con.Close();
 
 
-                        SqlDataAdapter cmd = new SqlDataAdapter("select quiz_time_limit from quizzes where quiz_id = '" + examID + "' AND facilitator_id = '" + Program.user_id + "' ", con);
+                     /*   SqlDataAdapter cmd = new SqlDataAdapter("select quiz_time_limit from quizzes where quiz_id = '" + examID + "' AND facilitator_id = '" + Program.user_id + "' ", con);
                         DataTable dt = new DataTable();
                         cmd.Fill(dt);
                         string Time = dt.Rows[0][0].ToString();
@@ -1260,7 +1260,7 @@ namespace TooLearnOfficial
                         else
                         {
                             Time_limit_status = "Active";
-                        }
+                        }  */
 
 
 
@@ -1273,8 +1273,8 @@ namespace TooLearnOfficial
 
                                 
 
-                                if (Time_limit_status == "Null")
-                                {
+                            //    if (Time_limit_status == "Null")
+                            //    {
 
 
 
@@ -1286,7 +1286,7 @@ namespace TooLearnOfficial
                                     sda.SelectCommand.ExecuteNonQuery();
                                     con.Close();
 
-                                }
+                            /*   }
 
                                 else
                                 {
@@ -1298,7 +1298,7 @@ namespace TooLearnOfficial
                                     con.Close();
 
 
-                                }
+                                } */
 
 
 
@@ -1328,8 +1328,8 @@ namespace TooLearnOfficial
 
                               
 
-                                if (Time_limit_status == "Null")
-                                {
+                             //   if (Time_limit_status == "Null")
+                             //   {
 
 
 
@@ -1339,7 +1339,7 @@ namespace TooLearnOfficial
                                     SqlDataAdapter sda = new SqlDataAdapter(query, con);
                                     sda.SelectCommand.ExecuteNonQuery();
                                     con.Close();
-                                }
+                            /*    }
 
 
 
@@ -1352,7 +1352,7 @@ namespace TooLearnOfficial
                                     sda.SelectCommand.ExecuteNonQuery();
                                     con.Close();
 
-                                }
+                                } */
 
 
                             }
@@ -1388,8 +1388,8 @@ namespace TooLearnOfficial
                              
 
 
-                                if (Time_limit_status == "Null")
-                                {
+                             //   if (Time_limit_status == "Null")
+                             //   {
 
 
 
@@ -1402,7 +1402,7 @@ namespace TooLearnOfficial
                                     sda.SelectCommand.ExecuteNonQuery();
                                     con.Close();
 
-                                }
+                           /*     }
 
 
                                 else
@@ -1416,7 +1416,7 @@ namespace TooLearnOfficial
                                     con.Close();
 
 
-                                }
+                                }  */
 
 
                             }
