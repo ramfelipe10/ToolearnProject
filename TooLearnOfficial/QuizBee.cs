@@ -919,6 +919,8 @@ namespace TooLearnOfficial
                             exams4.SubItems.Add(textBox2.Text);
                             //
                             MultipleChoiceLV.Items.Add(exams4);
+
+
                             currentNumOfItems++;
 
                             currentnumMC.Text = currentNumOfItems.ToString();
@@ -1067,7 +1069,9 @@ namespace TooLearnOfficial
                             CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
                             RightAnswer = null;
                             resetAllMC(); ;
+                            button4.Visible = false;
                             buttonNextQuestion.Text = "Next";
+                           
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
                             int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -1158,6 +1162,7 @@ namespace TooLearnOfficial
                             CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
                             RightAnswer = null;
                             resetAllMC(); ;
+                            button4.Visible = false;
                             buttonNextQuestion.Text = "Next";
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
@@ -1372,8 +1377,10 @@ namespace TooLearnOfficial
                     CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
-                    resetAllTF(); ;
+                    resetAllTF();
+                    button6.Visible = false;
                     button2.Text = "Next";
+                   
 
                     NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -1589,8 +1596,10 @@ namespace TooLearnOfficial
                     CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
-                    resetAllSA(); ;
+                    resetAllSA();
+                    button5.Visible = false;
                     button1.Text = "Next";
+                   
 
                     NoItems.Text = ShortAnswerLV.Items.Count.ToString();
                     int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -1747,6 +1756,20 @@ namespace TooLearnOfficial
             }
         } 
 
+
+        private void deleteMC()
+        {
+            button4.Visible = true;
+        }
+        private void deleteSA()
+        {
+            button5.Visible = true;
+        }
+        private void deleteTF()
+        {
+            button6.Visible = true;
+        }
+
         private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(MultipleChoiceLV.Items.Count !=0 && MultipleChoiceLV.SelectedItems.Count !=0)
@@ -1758,6 +1781,9 @@ namespace TooLearnOfficial
                 
                     currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
                     updateMC();
+
+                    deleteMC();
+
                
 
             }      
@@ -2230,6 +2256,7 @@ namespace TooLearnOfficial
               
                     CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.SelectedItems[0].Index + 1);
                     updateTF();
+                deleteTF();
               
 
             }
@@ -2251,6 +2278,7 @@ namespace TooLearnOfficial
 
                 CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.SelectedItems[0].Index + 1);
                 updateSA();
+                deleteSA();
 
 
             }
@@ -2275,6 +2303,75 @@ namespace TooLearnOfficial
         {
             pictureBox5.ImageLocation = "";
             bunifuFlatButton8.Visible = true;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+            MultipleChoiceLV.Items.RemoveAt(listPosition);
+
+            RightAnswer = null;
+            resetAllMC(); ;
+            buttonNextQuestion.Text = "Next";
+            button4.Visible = false;
+
+            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+            currentNumOfItems = Sum1 + 1;
+
+            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+            Total.Text = Sum2.ToString();
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
+            ShortAnswerLV.Items.RemoveAt(listPosition);
+
+            button1.Text = "Next";
+            button5.Visible = false;
+
+
+            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+            currentNumOfItems = Sum1 + 1;
+
+            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+            Total.Text = Sum2.ToString();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
+            TrueOrFalseLV.Items.RemoveAt(listPosition);
+
+            button2.Text = "Next";
+            button6.Visible = false;
+
+            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+            currentNumOfItems = Sum1 + 1;
+
+            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+            int Sum2 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+            Total.Text = Sum2.ToString();
+
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)

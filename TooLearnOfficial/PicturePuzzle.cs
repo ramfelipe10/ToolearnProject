@@ -1017,7 +1017,8 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
                             CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
                             RightAnswer = null;
-                            resetAllMC(); ;
+                            resetAllMC();
+                            button4.Visible = false;
                             buttonNextQuestion.Text = "Next";
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
@@ -1114,7 +1115,8 @@ namespace TooLearnOfficial
                             CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
                             CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
                             RightAnswer = null;
-                            resetAllMC(); ;
+                            resetAllMC();
+                            button4.Visible = false;
                             buttonNextQuestion.Text = "Next";
 
                             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
@@ -1304,7 +1306,8 @@ namespace TooLearnOfficial
                     CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
-                    resetAllTF(); ;
+                    resetAllTF();
+                    button6.Visible = false;
                     button2.Text = "Next";
 
                     NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
@@ -1503,7 +1506,8 @@ namespace TooLearnOfficial
                     CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
                     CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
 
-                    resetAllSA(); ;
+                    resetAllSA();
+                    button5.Visible = false;
                     button1.Text = "Next";
 
                     NoItems.Text = ShortAnswerLV.Items.Count.ToString();
@@ -1581,6 +1585,21 @@ namespace TooLearnOfficial
             }
         }
 
+
+        private void deleteMC()
+        {
+            button4.Visible = true;
+        }
+        private void deleteSA()
+        {
+            button5.Visible = true;
+        }
+        private void deleteTF()
+        {
+            button6.Visible = true;
+        }
+
+
         private void MultipleChoiceLV_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (MultipleChoiceLV.Items.Count != 0 && MultipleChoiceLV.SelectedItems.Count != 0)
@@ -1592,6 +1611,7 @@ namespace TooLearnOfficial
 
                 currentnumMC.Text = Convert.ToString(MultipleChoiceLV.SelectedItems[0].Index + 1);
                 updateMC();
+                deleteMC();
 
 
             }
@@ -1610,6 +1630,7 @@ namespace TooLearnOfficial
 
                 CurrentnumSA.Text = Convert.ToString(ShortAnswerLV.SelectedItems[0].Index + 1);
                 updateSA();
+                deleteSA();
 
 
             }
@@ -1627,6 +1648,7 @@ namespace TooLearnOfficial
 
                 CurrentNumTF.Text = Convert.ToString(TrueOrFalseLV.SelectedItems[0].Index + 1);
                 updateTF();
+                deleteTF();
 
 
             }
@@ -1986,6 +2008,75 @@ namespace TooLearnOfficial
         {
             pictureBox5.ImageLocation = "";
             bunifuFlatButton8.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+            MultipleChoiceLV.Items.RemoveAt(listPosition);
+
+            RightAnswer = null;
+            resetAllMC(); ;
+            buttonNextQuestion.Text = "Next";
+            button4.Visible = false;
+
+            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+            currentNumOfItems = Sum1 + 1;
+
+            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+            
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+            MultipleChoiceLV.Items.RemoveAt(listPosition);
+
+            RightAnswer = null;
+            resetAllMC(); ;
+            buttonNextQuestion.Text = "Next";
+            button4.Visible = false;
+
+            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+            currentNumOfItems = Sum1 + 1;
+
+            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+           
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
+            MultipleChoiceLV.Items.RemoveAt(listPosition);
+
+            RightAnswer = null;
+            resetAllMC(); ;
+            buttonNextQuestion.Text = "Next";
+            button4.Visible = false;
+
+            int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+            currentnumMC.Text = Convert.ToString(Sum1 + 1);
+            CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+            CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+            currentNumOfItems = Sum1 + 1;
+
+            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+           
+
         }
 
         private void bunifuImageButton3_Click(object sender, EventArgs e)
