@@ -56,6 +56,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_csv = new Bunifu.Framework.UI.BunifuImageButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btn_csv_upload = new Bunifu.Framework.UI.BunifuImageButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_chooseFile = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_loadFile = new Bunifu.Framework.UI.BunifuImageButton();
+            this.tb_Path = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.tb_sheet = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,6 +71,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_print)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_csv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_csv_upload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_chooseFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_loadFile)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -366,12 +376,106 @@
             this.btn_csv.Zoom = 5;
             this.btn_csv.Click += new System.EventHandler(this.btn_csv_Click);
             // 
+            // btn_csv_upload
+            // 
+            this.btn_csv_upload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
+            this.btn_csv_upload.Image = global::TooLearnOfficial.Properties.Resources.Export_CSV_40px;
+            this.btn_csv_upload.ImageActive = null;
+            this.btn_csv_upload.Location = new System.Drawing.Point(622, 49);
+            this.btn_csv_upload.Name = "btn_csv_upload";
+            this.btn_csv_upload.Size = new System.Drawing.Size(43, 33);
+            this.btn_csv_upload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_csv_upload.TabIndex = 170;
+            this.btn_csv_upload.TabStop = false;
+            this.btn_csv_upload.Visible = false;
+            this.btn_csv_upload.Zoom = 5;
+            this.btn_csv_upload.Click += new System.EventHandler(this.btn_csv_upload_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btn_chooseFile
+            // 
+            this.btn_chooseFile.BackColor = System.Drawing.Color.Lime;
+            this.btn_chooseFile.ImageActive = null;
+            this.btn_chooseFile.Location = new System.Drawing.Point(382, 47);
+            this.btn_chooseFile.Name = "btn_chooseFile";
+            this.btn_chooseFile.Size = new System.Drawing.Size(43, 33);
+            this.btn_chooseFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_chooseFile.TabIndex = 171;
+            this.btn_chooseFile.TabStop = false;
+            this.btn_chooseFile.Visible = false;
+            this.btn_chooseFile.Zoom = 5;
+            this.btn_chooseFile.Click += new System.EventHandler(this.btn_chooseFile_Click);
+            // 
+            // btn_loadFile
+            // 
+            this.btn_loadFile.BackColor = System.Drawing.Color.Yellow;
+            this.btn_loadFile.ImageActive = null;
+            this.btn_loadFile.Location = new System.Drawing.Point(382, 97);
+            this.btn_loadFile.Name = "btn_loadFile";
+            this.btn_loadFile.Size = new System.Drawing.Size(43, 33);
+            this.btn_loadFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_loadFile.TabIndex = 172;
+            this.btn_loadFile.TabStop = false;
+            this.btn_loadFile.Visible = false;
+            this.btn_loadFile.Zoom = 5;
+            this.btn_loadFile.Click += new System.EventHandler(this.btn_loadFile_Click);
+            // 
+            // tb_Path
+            // 
+            this.tb_Path.BackColor = System.Drawing.Color.LightGray;
+            this.tb_Path.BorderColorFocused = System.Drawing.Color.Gray;
+            this.tb_Path.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_Path.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.tb_Path.BorderThickness = 3;
+            this.tb_Path.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_Path.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Path.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_Path.isPassword = false;
+            this.tb_Path.Location = new System.Drawing.Point(432, 45);
+            this.tb_Path.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_Path.Name = "tb_Path";
+            this.tb_Path.Size = new System.Drawing.Size(190, 33);
+            this.tb_Path.TabIndex = 173;
+            this.tb_Path.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_Path.Visible = false;
+            // 
+            // tb_sheet
+            // 
+            this.tb_sheet.BackColor = System.Drawing.Color.LightGray;
+            this.tb_sheet.BorderColorFocused = System.Drawing.Color.Gray;
+            this.tb_sheet.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_sheet.BorderColorMouseHover = System.Drawing.Color.Gray;
+            this.tb_sheet.BorderThickness = 3;
+            this.tb_sheet.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_sheet.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_sheet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_sheet.isPassword = false;
+            this.tb_sheet.Location = new System.Drawing.Point(432, 97);
+            this.tb_sheet.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_sheet.Name = "tb_sheet";
+            this.tb_sheet.Size = new System.Drawing.Size(190, 33);
+            this.tb_sheet.TabIndex = 174;
+            this.tb_sheet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_sheet.Visible = false;
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
             // MyClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(913, 611);
+            this.Controls.Add(this.tb_sheet);
+            this.Controls.Add(this.tb_Path);
+            this.Controls.Add(this.btn_loadFile);
+            this.Controls.Add(this.btn_chooseFile);
+            this.Controls.Add(this.btn_csv_upload);
             this.Controls.Add(this.btn_csv);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.label5);
@@ -400,6 +504,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_print)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_csv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_csv_upload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_chooseFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_loadFile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +537,12 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_print;
         private Bunifu.Framework.UI.BunifuImageButton btn_csv;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private Bunifu.Framework.UI.BunifuImageButton btn_csv_upload;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private Bunifu.Framework.UI.BunifuImageButton btn_loadFile;
+        private Bunifu.Framework.UI.BunifuImageButton btn_chooseFile;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tb_sheet;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tb_Path;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }

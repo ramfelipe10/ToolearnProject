@@ -12,6 +12,7 @@ using System.Configuration;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Data.OleDb;
 
 using System.Text.RegularExpressions;
 
@@ -321,6 +322,67 @@ namespace TooLearnOfficial
             //    ExcelApp.ActiveWorkbook.Saved = true;
             //    ExcelApp.Quit();
          //   }
+        }
+
+        private void btn_csv_upload_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void BindDataCSV(string filePath)
+        {
+            DataTable dt = new DataTable();
+            string[] lines = System.IO.File.ReadAllLines(filePath);
+            if(lines.Length > 0)
+            {
+                //first line to create header
+                string firstline = lines[0];
+                string[] headerLabels = firstline.Split(',');
+                foreach(string headerWord in headerLabels)
+                {
+                    dt.Columns.Add(new DataColumn(headerWord));
+                }
+                //for data
+                for(int r = 1; r < lines.Length; r++)
+                {
+                    string[] dataWords = lines[r].Split(',');
+                    DataRow dr = dt.NewRow();
+                    int columnIndex = 0;
+                    foreach(string headerWord in headerLabels)
+                    {
+                        dr[headerWord] = dataWords[columnIndex++];
+                    }
+                    dt.Rows.Add(dr);
+                }
+            }
+            if(dt.Rows.Count > 0)
+            {
+                bunifuCustomDataGrid1.DataSource = dt;
+            }
+            
+        }
+
+        private void btn_chooseFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if(openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                this.tb_Path.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void btn_loadFile_Click(object sender, EventArgs e)
+        {
+            string PathConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + tb_Path.Text + ";Extended Properties=\"Excel 8.0;HDR=Yes;\";";
+            OleDbConnection conn = new OleDbConnection(PathConn);
+
+            OleDbDataAdapter myDataAdapter = new OleDbDataAdapter("Select * from [" + tb_sheet.Text + "$]", conn);
+            DataTable dt = new DataTable();
+
+            myDataAdapter.Fill(dt);
+
+            bunifuCustomDataGrid1.DataSource = dt;
         }
     }
 }
