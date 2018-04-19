@@ -575,33 +575,55 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            MultipleChoice.BringToFront();
-            bunifuFlatButton2.selected = true;
-            MultipleChoiceLV.BringToFront();
-            QuizFormat.Text = "Multiple Choice";
-            NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-            int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count ;
-            Total.Text = Sum.ToString();
+            if (button5.Visible == true || button6.Visible == true)
+            {
+                Dialogue.Show("Update Item First", "", "Ok", "Cancel");
+            }
+            else
+            {
+                MultipleChoice.BringToFront();
+                bunifuFlatButton2.selected = true;
+                MultipleChoiceLV.BringToFront();
+                QuizFormat.Text = "Multiple Choice";
+                NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+                int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                Total.Text = Sum.ToString();
+            }
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-            trueORfalse.BringToFront();
-            TrueOrFalseLV.BringToFront();
-            QuizFormat.Text = "True/False";
-            NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
-            int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-            Total.Text = Sum.ToString();
+            if (button4.Visible == true || button5.Visible == true)
+            {
+                Dialogue.Show("Update Item First", "", "Ok", "Cancel");
+            }
+            else
+            {
+                trueORfalse.BringToFront();
+                TrueOrFalseLV.BringToFront();
+                QuizFormat.Text = "True/False";
+                NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
+                int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                Total.Text = Sum.ToString();
+            }
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
-            shortAnswer.BringToFront();
-            ShortAnswerLV.BringToFront();
-            QuizFormat.Text = "Short Answer";
-            NoItems.Text = ShortAnswerLV.Items.Count.ToString();
-            int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
-            Total.Text = Sum.ToString();
+            if (button4.Visible == true || button6.Visible == true)
+            {
+                Dialogue.Show("Update Item First", "", "Ok", "Cancel");
+            }
+            else
+            {
+
+                shortAnswer.BringToFront();
+                ShortAnswerLV.BringToFront();
+                QuizFormat.Text = "Short Answer";
+                NoItems.Text = ShortAnswerLV.Items.Count.ToString();
+                int Sum = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+                Total.Text = Sum.ToString();
+            }
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)

@@ -703,37 +703,54 @@ namespace TooLearnOfficial
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-                         
-           
+            if (button5.Visible == true || button6.Visible == true)
+            {
+                Dialogue.Show("Update Item First", "", "Ok", "Cancel");
+            }
+            else
+            {
+
                 MultipleChoice.BringToFront();
                 bunifuFlatButton2.selected = true;
                 MultipleChoiceLV.BringToFront();
                 QuizFormat.Text = "Multiple Choice";
                 NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-            
+            }
           
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-            
+
+            if (button4.Visible == true || button5.Visible == true)
+            {
+                Dialogue.Show("Update Item First", "", "Ok", "Cancel");
+            }
+            else
+            {
+
                 trueORfalse.BringToFront();
                 TrueOrFalseLV.BringToFront();
                 QuizFormat.Text = "True/False";
                 NoItems.Text = TrueOrFalseLV.Items.Count.ToString();
-      
+            }
             
         }
 
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
-          
+            if (button4.Visible == true || button6.Visible == true)
+            {
+                Dialogue.Show("Update Item First", "", "Ok", "Cancel");
+            }
+            else
+            {
 
                 shortAnswer.BringToFront();
                 ShortAnswerLV.BringToFront();
                 QuizFormat.Text = "Short Answer";
                 NoItems.Text = ShortAnswerLV.Items.Count.ToString();
-            
+            }
            
         }
 
