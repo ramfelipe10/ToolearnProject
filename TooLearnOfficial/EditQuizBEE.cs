@@ -1549,8 +1549,29 @@ namespace TooLearnOfficial
                     int item = totalitems();
                     string totalscore = item.ToString();
 
+
+
+                    int countMC = MultipleChoiceLV.Items.Count;
+                    int countSA = ShortAnswerLV.Items.Count;
+                    int countTF = TrueOrFalseLV.Items.Count;
+                    int[] idsMC;
+                    int[] idsSA;
+                    int[] idsTF;
+
+
+                    int countAll = MultipleChoiceLV.Items.Count + ShortAnswerLV.Items.Count + TrueOrFalseLV.Items.Count;
+                    int[] allids = new int[countAll];
+                    /* int[] ids = new int[50];
+                     for (int i = 0; i < counts; i++)
+                     {
+                         ids[i] += Convert.ToInt32(TrueOrFalseLV.Items[i].Tag);
+
+                     }   */
+
+
+
                     try
-                      {
+                    {
 
 
 
@@ -1614,14 +1635,19 @@ namespace TooLearnOfficial
                                         sda.SelectCommand.ExecuteNonQuery();
 
                                 con.Close();
+                                   
+                    }
 
-
-                            }
-
-
-
+                                idsMC = new int[countMC];
+                                for (int it = 0; it < countMC; it++)
+                                {
+                                    idsMC[it] += Convert.ToInt32(MultipleChoiceLV.Items[i].SubItems[9].Text);
 
                                 }
+
+                                idsMC.CopyTo(allids, 0);
+
+                            }
 
                                 catch (Exception ex)
                                 {
@@ -1697,9 +1723,15 @@ namespace TooLearnOfficial
 
                             }
 
-                      
 
-                    }
+                            idsSA = new int[countSA];
+                            for (int it = 0; it < countSA; it++)
+                            {
+                                idsSA[it] += Convert.ToInt32(ShortAnswerLV.Items[i].SubItems[5].Text);
+
+                            }
+                            idsSA.CopyTo(allids, MultipleChoiceLV.Items.Count);
+                        }
 
 
                             // /// // // // // // // 
@@ -1769,16 +1801,21 @@ namespace TooLearnOfficial
 
                             }
 
-
-                    }
-
-                         
+                            idsTF = new int[countTF];
+                            for (int it = 0; it < countTF; it++)
+                            {
+                                idsTF[it] += Convert.ToInt32(TrueOrFalseLV.Items[i].SubItems[5].Text);
+                               
+                            }
+                         //  idsTF.CopyTo(allids, MultipleChoiceLV.Items.Count+ShortAnswerLV.Items.Count);
                         }
 
 
+                     
+                      
 
 
-
+                    }
 
 
 
@@ -1788,6 +1825,12 @@ namespace TooLearnOfficial
 
                     }
 
+
+                   string ids = String.Join(",", allids.Select(p => p.ToString()).ToArray());
+                  
+
+                    MessageBox.Show(ids);
+                  
 
                     Dialogue.Show("Successfully Updated", "", "Ok", "Cancel");
                     this.Hide();
