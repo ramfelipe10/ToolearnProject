@@ -298,11 +298,13 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 PN = bunifuCustomDataGrid1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 CR = comboBox1.SelectedItem.ToString();
 
+                FunctionThatRaisesEvent();
+                ViewScoreRecord VSR = new ViewScoreRecord();
+                VSR.ShowDialog();
+
             }
 
-            FunctionThatRaisesEvent();
-            ViewScoreRecord VSR = new ViewScoreRecord();
-            VSR.ShowDialog(); 
+            
 
         }
 
@@ -327,18 +329,20 @@ namespace TooLearnOfficial.User_Control_Facilitator
         private void bunifuCustomDataGrid2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-          /*  if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
+           if (bunifuCustomDataGrid2.CurrentRow.Index != -1)
 
             {
                 PN = bunifuCustomDataGrid2.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
                 CR = comboBox3.SelectedItem.ToString();
 
+                FunctionThatRaisesEvent();
+                ViewScoreRecord VSR = new ViewScoreRecord();
+                VSR.ShowDialog();
+
             }
 
 
-            FunctionThatRaisesEvent();
-            ViewScoreRecord VSR = new ViewScoreRecord();
-            VSR.ShowDialog();  */
+            
 
         }
     }

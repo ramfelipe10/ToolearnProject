@@ -19,7 +19,7 @@ namespace TooLearnOfficial
         string CR = ScoreRecordFacilitator.CR;
         SqlDataAdapter adaptersd;
         DataTable datasd;
-        SqlCommandBuilder builder;
+        //SqlCommandBuilder builder;
 
         public ViewScoreRecord()
         {
@@ -53,8 +53,11 @@ namespace TooLearnOfficial
 
         private void ViewScoreRecord_Load(object sender, EventArgs e)
         {
-            fillgridIndividual();
-           // filldgridGroup();
+          fillgridIndividual();
+           //filldgridGroup();
+
+
+           
         }
       
 
@@ -117,22 +120,22 @@ namespace TooLearnOfficial
                 label_Letter_Grade.Text = "A"; // Excellent
                 label_Remarks.Text = "Excellent";
             }
-            else if (average >= 91 && average == 95)
+            else if (average >= 91 && average <= 95)
             {
                 label_Letter_Grade.Text = "B+"; // Very Good
                 label_Remarks.Text = "Very Good";
             }
-            else if (average >= 86 && average == 90)
+            else if (average >= 86 && average <= 90)
             {
                 label_Letter_Grade.Text = "B";  // Very Good
                 label_Remarks.Text = "Very Good";
             }
-            else if (average >=81 && average == 85)
+            else if (average >=81 && average <= 85)
             {
                 label_Letter_Grade.Text = "C+";  // Good
                 label_Remarks.Text = "Good";
             }
-            else if (average >= 76 && average == 80)
+            else if (average >= 76 && average <= 80)
             {
                 label_Letter_Grade.Text = "C";  // Satisfaction
                 label_Remarks.Text = "Satisfaction";
@@ -209,7 +212,7 @@ namespace TooLearnOfficial
 
         }
 
-        /*   public void filldgridGroup()
+           public void filldgridGroup()
            {
                SqlDataAdapter name = new SqlDataAdapter("select group_id from groups where group_name='" + PG + "' ", con);
                DataTable dt = new DataTable();
@@ -237,6 +240,6 @@ namespace TooLearnOfficial
 
 
               // labelClassRank.Text = datar.Rows[0][2].ToString();
-           }*/
+           }
     }
 }

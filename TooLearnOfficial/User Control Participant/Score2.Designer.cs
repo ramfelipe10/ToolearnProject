@@ -439,10 +439,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
-            this.Controls.Add(this.bunifuGradientPanel1);
-            this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.bunifuFlatButton2);
             this.Controls.Add(this.bunifuFlatButton1);
+            this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.dgpp1);
             this.Name = "Score2";
             this.Size = new System.Drawing.Size(916, 525);

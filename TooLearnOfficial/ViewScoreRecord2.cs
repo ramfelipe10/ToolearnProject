@@ -36,7 +36,7 @@ namespace TooLearnOfficial
         private void ViewScoreRecord2_Load(object sender, EventArgs e)
         {
             fillgridindividual();
-            fillgridgroup();
+           // fillgridgroup();
         }
         public void fillgridindividual()
         {
@@ -161,18 +161,7 @@ namespace TooLearnOfficial
 
 
 
-        SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
-            DataTable datas = new DataTable();
-            sed.Fill(datas);
-            string ID = datas.Rows[0][0].ToString(); 
-
-
-            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
-            DataTable dte = new DataTable();
-            sda.Fill(dte);
-            BindingSource brs = new BindingSource();
-            brs.DataSource = dte;
-            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]); 
+        
 
 
 
@@ -180,18 +169,36 @@ namespace TooLearnOfficial
         }
         public void fillgridgroup()
         {
-          /*  SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
-            DataTable data = new DataTable();
-            sed.Fill(data);
-            string ID = data.Rows[0][0].ToString();
+            /*  SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+              DataTable data = new DataTable();
+              sed.Fill(data);
+              string ID = data.Rows[0][0].ToString();
 
 
-            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dt;
-            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);    */
+              SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+              DataTable dt = new DataTable();
+              sda.Fill(dt);
+              BindingSource bs = new BindingSource();
+              bs.DataSource = dt;
+              bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);    */
+
+            //SqlDataAdapter name = new SqlDataAdapter("select class_id from classrooms where class_name='" + PG + "' ", con);
+            //DataTable dt = new DataTable();
+            //name.Fill(dt);
+            //string pid = dt.Rows[0][0].ToString();
+
+            //SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+            //DataTable datas = new DataTable();
+            //sed.Fill(datas);
+            //string ID = datas.Rows[0][0].ToString();
+
+
+            //SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+            //DataTable dte = new DataTable();
+            //sda.Fill(dte);
+            //BindingSource brs = new BindingSource();
+            //brs.DataSource = dte;
+            //bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
         }
     }
 }
