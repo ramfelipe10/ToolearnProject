@@ -214,32 +214,32 @@ namespace TooLearnOfficial
 
            public void filldgridGroup()
            {
-               SqlDataAdapter name = new SqlDataAdapter("select group_id from groups where group_name='" + PG + "' ", con);
-               DataTable dt = new DataTable();
-               name.Fill(dt);
-               string pid = dt.Rows[0][0].ToString();
+            SqlDataAdapter name = new SqlDataAdapter("select group_id from groups where group_name='" + PG + "' ", con);
+            DataTable dt = new DataTable();
+            name.Fill(dt);
+            string pid = dt.Rows[0][0].ToString();
 
-               SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
-               DataTable data = new DataTable();
-               classname.Fill(data);
-               string cid = data.Rows[0][0].ToString();
+            SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
+            DataTable data = new DataTable();
+            classname.Fill(data);
+            string cid = data.Rows[0][0].ToString();
 
-               SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
-               DataTable data1 = new DataTable();
-               sed.Fill(data1);
-               string ID = data1.Rows[0][0].ToString();
-
-
-               SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
-               DataTable dt1 = new DataTable();
-               sda.Fill(dt1);
-               BindingSource bs = new BindingSource();
-               bs.DataSource = dt1;
-               bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
+            SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+            DataTable data1 = new DataTable();
+            sed.Fill(data1);
+            string ID = data1.Rows[0][0].ToString();
 
 
+            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+            DataTable dt1 = new DataTable();
+            sda.Fill(dt1);
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dt1;
+            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
 
-              // labelClassRank.Text = datar.Rows[0][2].ToString();
-           }
+
+
+            // labelClassRank.Text = datar.Rows[0][2].ToString();
+        }
     }
 }

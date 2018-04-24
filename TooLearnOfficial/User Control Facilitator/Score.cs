@@ -336,7 +336,7 @@ namespace TooLearnOfficial.User_Control_Facilitator
                 CR = comboBox3.SelectedItem.ToString();
 
                 FunctionThatRaisesEvent();
-                ViewScoreRecord VSR = new ViewScoreRecord();
+                ViewScoreRecordGroup VSR = new ViewScoreRecordGroup();
                 VSR.ShowDialog();
 
             }
