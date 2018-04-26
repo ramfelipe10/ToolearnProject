@@ -1554,9 +1554,9 @@ namespace TooLearnOfficial
                     int countMC = MultipleChoiceLV.Items.Count;
                     int countSA = ShortAnswerLV.Items.Count;
                     int countTF = TrueOrFalseLV.Items.Count;
-                    int[] idsMC;
-                    int[] idsSA;
-                    int[] idsTF;
+                    int[] idsMC= new int [countMC];
+                    int[] idsSA = new int[countSA]; 
+                    int[] idsTF = new int[countTF]; 
 
 
                     int countAll = MultipleChoiceLV.Items.Count + ShortAnswerLV.Items.Count + TrueOrFalseLV.Items.Count;
@@ -1638,14 +1638,14 @@ namespace TooLearnOfficial
                                    
                     }
 
-                                idsMC = new int[countMC];
-                                for (int it = 0; it < countMC; it++)
-                                {
-                                    idsMC[it] += Convert.ToInt32(MultipleChoiceLV.Items[i].SubItems[9].Text);
+                              
+                               // for (int it = 0; it < countMC; it++)
+                              //  {
+                                    idsMC[i] += Convert.ToInt32(MultipleChoiceLV.Items[i].SubItems[9].Text);
 
-                                }
+                             //   }
 
-                                idsMC.CopyTo(allids, 0);
+                              //  idsMC.CopyTo(allids, 0);
 
                             }
 
@@ -1724,13 +1724,13 @@ namespace TooLearnOfficial
                             }
 
 
-                            idsSA = new int[countSA];
-                            for (int it = 0; it < countSA; it++)
-                            {
-                                idsSA[it] += Convert.ToInt32(ShortAnswerLV.Items[i].SubItems[5].Text);
+                          
+                           // for (int it = 0; it < countSA; it++)
+                          //  {
+                                idsSA[i] += Convert.ToInt32(ShortAnswerLV.Items[i].SubItems[5].Text);
 
-                            }
-                            idsSA.CopyTo(allids, MultipleChoiceLV.Items.Count);
+                          //  }
+                           
                         }
 
 
@@ -1801,13 +1801,13 @@ namespace TooLearnOfficial
 
                             }
 
-                            idsTF = new int[countTF];
-                            for (int it = 0; it < countTF; it++)
-                            {
-                                idsTF[it] += Convert.ToInt32(TrueOrFalseLV.Items[i].SubItems[5].Text);
+                           // idsTF = new int[countTF];
+                           // for (int it = 0; it < countTF; it++)
+                          //  {
+                                idsTF[i] += Convert.ToInt32(TrueOrFalseLV.Items[i].SubItems[5].Text);
                                
-                            }
-                         //  idsTF.CopyTo(allids, MultipleChoiceLV.Items.Count+ShortAnswerLV.Items.Count);
+                            //}
+                        
                         }
 
 
@@ -1826,8 +1826,24 @@ namespace TooLearnOfficial
                     }
 
 
-                   string ids = String.Join(",", allids.Select(p => p.ToString()).ToArray());
-                  
+                    idsMC.CopyTo(allids, 0);
+                    idsSA.CopyTo(allids, MultipleChoiceLV.Items.Count);
+                    idsTF.CopyTo(allids, MultipleChoiceLV.Items.Count + ShortAnswerLV.Items.Count);
+
+
+                    string ids = String.Join(",", allids.Select(p => p.ToString()).ToArray());
+
+                   
+                        con.Open();
+
+                        String delete =String.Format($"DELETE FROM QuestionAnswers WHERE answer_id NOT EXIST({0})",ids);
+
+                        SqlDataAdapter exe = new SqlDataAdapter(delete, con);
+
+                        exe.SelectCommand.ExecuteNonQuery();
+                        con.Close();
+
+                 
 
                     MessageBox.Show(ids);
                   
