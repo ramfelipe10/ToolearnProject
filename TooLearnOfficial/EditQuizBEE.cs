@@ -1834,14 +1834,19 @@ namespace TooLearnOfficial
                     string ids = String.Join(",", allids.Select(p => p.ToString()).ToArray());
 
                    
-                        con.Open();
+                       con.Open();
 
-                        String delete =String.Format($"DELETE FROM QuestionAnswers WHERE answer_id NOT EXIST({0})",ids);
+                      String delete =String.Format($"DELETE FROM QuestionAnswers WHERE answer_id NOT IN({0})",ids);
 
-                        SqlDataAdapter exe = new SqlDataAdapter(delete, con);
+                   // String delete = String.Format("DELETE FROM QuestionAnswers WHERE answer_id NOT IN(ids)");
+
+
+
+
+                    SqlDataAdapter exe = new SqlDataAdapter(delete, con);
 
                         exe.SelectCommand.ExecuteNonQuery();
-                        con.Close();
+                        con.Close(); 
 
                  
 
