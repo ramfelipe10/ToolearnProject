@@ -1554,13 +1554,19 @@ namespace TooLearnOfficial
                     int countMC = MultipleChoiceLV.Items.Count;
                     int countSA = ShortAnswerLV.Items.Count;
                     int countTF = TrueOrFalseLV.Items.Count;
-                    int[] idsMC= new int [countMC];
+                   /* int[] idsMC= new int [countMC];
                     int[] idsSA = new int[countSA]; 
-                    int[] idsTF = new int[countTF]; 
+                    int[] idsTF = new int[countTF];
+                    */
+
+                    string[] idsMC = new string[countMC];
+                    string[] idsSA = new string[countSA];
+                    string[] idsTF = new string[countTF];
 
 
                     int countAll = MultipleChoiceLV.Items.Count + ShortAnswerLV.Items.Count + TrueOrFalseLV.Items.Count;
-                    int[] allids = new int[countAll];
+                    //int[] allids = new int[countAll];
+                    string[] allids = new string[countAll];
                     /* int[] ids = new int[50];
                      for (int i = 0; i < counts; i++)
                      {
@@ -1638,14 +1644,15 @@ namespace TooLearnOfficial
                                    
                     }
 
+
+                                // for (int it = 0; it < countMC; it++)
+                                //  {
+                                // idsMC[i] += Convert.ToInt32(MultipleChoiceLV.Items[i].SubItems[9].Text);
                               
-                               // for (int it = 0; it < countMC; it++)
-                              //  {
-                                    idsMC[i] += Convert.ToInt32(MultipleChoiceLV.Items[i].SubItems[9].Text);
 
-                             //   }
+                                //   }
 
-                              //  idsMC.CopyTo(allids, 0);
+                                //  idsMC.CopyTo(allids, 0);
 
                             }
 
@@ -1657,10 +1664,10 @@ namespace TooLearnOfficial
 
                             }
 
-                      
+                            idsMC[i] += "'" + MultipleChoiceLV.Items[i].SubItems[9].Text + "'";
 
 
-                    }
+                        }
              
 
 
@@ -1727,10 +1734,11 @@ namespace TooLearnOfficial
                           
                            // for (int it = 0; it < countSA; it++)
                           //  {
-                                idsSA[i] += Convert.ToInt32(ShortAnswerLV.Items[i].SubItems[5].Text);
+                               // idsSA[i] += Convert.ToInt32(ShortAnswerLV.Items[i].SubItems[5].Text);
+                            idsSA[i] += "'"+ShortAnswerLV.Items[i].SubItems[5].Text+"'";
 
-                          //  }
-                           
+                            //  }
+
                         }
 
 
@@ -1804,10 +1812,12 @@ namespace TooLearnOfficial
                            // idsTF = new int[countTF];
                            // for (int it = 0; it < countTF; it++)
                           //  {
-                                idsTF[i] += Convert.ToInt32(TrueOrFalseLV.Items[i].SubItems[5].Text);
-                               
+                               // idsTF[i] += Convert.ToInt32(TrueOrFalseLV.Items[i].SubItems[5].Text);
+
+                            idsTF[i] += "'"+TrueOrFalseLV.Items[i].SubItems[5].Text+"'";
+
                             //}
-                        
+
                         }
 
 
@@ -1832,25 +1842,34 @@ namespace TooLearnOfficial
 
 
                     string ids = String.Join(",", allids.Select(p => p.ToString()).ToArray());
+                    string me = ids;
 
-                   
-                       con.Open();
-
-                      String delete =String.Format($"DELETE FROM QuestionAnswers WHERE answer_id NOT IN({0})",ids);
-
-                   // String delete = String.Format("DELETE FROM QuestionAnswers WHERE answer_id NOT IN(ids)");
+                    try
+                    {
 
 
+                        con.Open();
+
+                        //String delete =String.Format($"DELETE FROM QuestionAnswers WHERE answer_id NOT IN({0})",ids);
+
+                        //  String delete = String.Format("DELETE FROM QuestionAnswers WHERE answer_id NOT IN('"+ids+"')");
 
 
-                    SqlDataAdapter exe = new SqlDataAdapter(delete, con);
+
+
+
+                        SqlDataAdapter exe = new SqlDataAdapter("DELETE FROM QuestionAnswers WHERE answer_id NOT IN (" + me + ")", con);
 
                         exe.SelectCommand.ExecuteNonQuery();
-                        con.Close(); 
-
+                        con.Close();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                  
 
-                    MessageBox.Show(ids);
+                   // MessageBox.Show(me);
                   
 
                     Dialogue.Show("Successfully Updated", "", "Ok", "Cancel");
@@ -1887,7 +1906,8 @@ namespace TooLearnOfficial
 
             RightAnswer = null;
             resetAllMC(); ;
-            buttonNextQuestion.Text = "Next";
+            //buttonNextQuestion.Text = "Next";
+            buttonNextQuestion.Visible = false;
             button4.Visible = false;
 
             int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
@@ -1909,7 +1929,8 @@ namespace TooLearnOfficial
             int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
             ShortAnswerLV.Items.RemoveAt(listPosition);
 
-            button1.Text = "Next";
+            //button1.Text = "Next";
+            button1.Visible = false;
             button5.Visible = false;
 
 
@@ -1931,7 +1952,8 @@ namespace TooLearnOfficial
             int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
             TrueOrFalseLV.Items.RemoveAt(listPosition);
 
-            button2.Text = "Next";
+            //button2.Text = "Next";
+            button2.Visible = false;
             button6.Visible = false;
 
             int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
