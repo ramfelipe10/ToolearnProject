@@ -274,6 +274,7 @@ namespace TooLearnOfficial
 
                     if (array[11].ToString() == "Multiple Choice")//Item Format
                     {
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
@@ -351,7 +352,7 @@ namespace TooLearnOfficial
                     }
                     else if (array[11].ToString() == "True/False")
                     {
-
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
@@ -423,7 +424,7 @@ namespace TooLearnOfficial
 
                     else
                     {
-
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
                         ThreadHelper.PanelOut(this, panel3, false);
 
@@ -573,8 +574,8 @@ namespace TooLearnOfficial
             }
             else
             {
-
-                bunifuCustomLabel3.Text = convertedtime.ToString();
+                bunifuCustomLabel3.Text = TimerFormat(convertedtime);
+                //bunifuCustomLabel3.Text = convertedtime.ToString();
                 bunifuCustomLabel2.Visible = false;
                 bunifuCustomLabel3.Visible = true;
 
@@ -592,6 +593,17 @@ namespace TooLearnOfficial
 
             }
 
+        }
+
+
+
+        private string TimerFormat(int secs)
+        {
+            TimeSpan t = TimeSpan.FromSeconds(secs);
+            return string.Format("{0:D2}:{1:D2}:{2:D2}",
+                (int)t.TotalHours,
+                t.Minutes,
+                t.Seconds);
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
