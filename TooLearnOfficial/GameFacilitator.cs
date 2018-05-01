@@ -404,62 +404,65 @@ namespace TooLearnOfficial
 
         }
 
-    /*   void slice_image(string picture)
-        {
-
-            
-
-
-            var imgarray = new Image[9];
-
-            var img = Image.FromFile(picture, true); //Use ImageLocation Of Recent Upload
-
-            for (int x = 0; x < 3; x++) //Row
+           void slice_image(string picture)
             {
-                for (int y = 0; y < 3; y++) //Column
+
+
+
+
+                var imgarray = new Image[9];
+
+               // System.Drawing.Image img = System.Drawing.Image.FromFile()
+
+
+               var img = Image.FromFile(picture, true); //Use ImageLocation Of Recent Upload
+
+                for (int x = 0; x < 3; x++) //Row
                 {
-                    var index = x * 3 + y;
+                    for (int y = 0; y < 3; y++) //Column
+                    {
+                        var index = x * 3 + y;
 
-                    int PictureWidth = pictureBox11.Width;
-                    int PictureHeight = pictureBox11.Height;
+                        int PictureWidth = img.Width;
+                        int PictureHeight = img.Height;
 
-                    imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
-                    var graphics = Graphics.FromImage(imgarray[index]);
-                    graphics.DrawImage(img, new Rectangle(0, 0, 67, 44), new Rectangle(x * (PictureWidth / 3),
-                                     y * (PictureHeight / 3),
-                                     PictureWidth / 3,
-                                    PictureHeight / 3), GraphicsUnit.Pixel);
-                    graphics.Dispose();
+                        imgarray[index] = new Bitmap(PictureWidth / 3, PictureHeight / 3);
+                        var graphics = Graphics.FromImage(imgarray[index]);
+                        graphics.DrawImage(img, new Rectangle(0, 0, 67, 44), new Rectangle(x * (PictureWidth / 3),
+                                         y * (PictureHeight / 3),
+                                         PictureWidth / 3,
+                                        PictureHeight / 3), GraphicsUnit.Pixel);
+                        graphics.Dispose();
 
+                    }
                 }
-            }
 
 
 
 
-            pictureBox1.Image = imgarray[0];
-            pictureBox2.Image = imgarray[1];
-            pictureBox4.Image = imgarray[2];
-            pictureBox5.Image = imgarray[3];
-            pictureBox6.Image = imgarray[4];
-            pictureBox7.Image = imgarray[5];
-            pictureBox8.Image = imgarray[6];
-            pictureBox9.Image = imgarray[7];
-            pictureBox10.Image = imgarray[8];
+                pictureBox1.Image = imgarray[0];
+                pictureBox2.Image = imgarray[1];
+                pictureBox4.Image = imgarray[2];
+                pictureBox5.Image = imgarray[3];
+                pictureBox6.Image = imgarray[4];
+                pictureBox7.Image = imgarray[5];
+                pictureBox8.Image = imgarray[6];
+                pictureBox9.Image = imgarray[7];
+                pictureBox10.Image = imgarray[8];
 
-        } */
-         
-       
+            } 
+
+
 
 
         private void load_QA()
        {
 
-        /*    SqlDataAdapter adapter = new SqlDataAdapter("select puzzle_image from quizzes where quiz_id= '" + QuizID + "'", con);
+           SqlDataAdapter adapter = new SqlDataAdapter("select puzzle_image from quizzes where quiz_id= '" + QuizID + "'", con);
             adapter.Fill(dts);
             if (dts.Rows[0][0].ToString() != null)
             {
-                pictureBox11.ImageLocation = dts.Rows[0][0].ToString();
+               
                 pictureBox1.Visible = true;
                 pictureBox2.Visible = true;
                 pictureBox4.Visible = true;
@@ -472,7 +475,7 @@ namespace TooLearnOfficial
 
                 slice_image(dts.Rows[0][0].ToString());
 
-            } */
+            } 
           
 
 
@@ -753,7 +756,7 @@ namespace TooLearnOfficial
             {
           
                 timer1.Stop();
-               // bunifuCustomLabel1.Visible = true;
+               //bunifuCustomLabel1.Visible = true;
                 TimerLabel.Visible = false;
                 panel3.Visible = true;
                 label5.Text = "Correct Answer is " + dt.Rows[counter][5].ToString().ToUpper();
