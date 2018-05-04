@@ -265,7 +265,20 @@ namespace TooLearnOfficial
 
                     var array = message.Split('\n');
 
+                    if (array[9].ToString().Contains("Quiz Bee"))//Game Format
+                    {
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = false));
+                        this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = false));
+                        this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = false));
 
+                    }
+                    else
+                    {
+                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = true));
+                        this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = true));
+                        this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = true));
+
+                    }
 
 
 

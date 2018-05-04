@@ -126,7 +126,7 @@ namespace TooLearnOfficial
             points = points.Substring(0,points.Length-1);
 
                        
-           ThreadHelper.lsbAddItem(this, listBox1, up);            
+           ThreadHelper.lsbAddItem(this, listBox1, up +"("+DateTime.Now.TimeOfDay+")");            
            this.Invoke((MethodInvoker)(() => updatescore(name,points)));
 
         }
@@ -460,9 +460,26 @@ namespace TooLearnOfficial
 
            SqlDataAdapter adapter = new SqlDataAdapter("select puzzle_image from quizzes where quiz_id= '" + QuizID + "'", con);
             adapter.Fill(dts);
-            if (dts.Rows[0][0].ToString() != null)
+            if (dts.Rows[0][0].ToString() == null || dts.Rows[0][0].ToString() == "")
             {
-               
+
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = false;
+                pictureBox4.Visible = false;
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+                pictureBox7.Visible = false;
+                pictureBox8.Visible = false;
+                pictureBox9.Visible = false;
+                pictureBox10.Visible = false;
+
+
+            }
+            else
+            {
+
+
+
                 pictureBox1.Visible = true;
                 pictureBox2.Visible = true;
                 pictureBox4.Visible = true;
@@ -474,9 +491,7 @@ namespace TooLearnOfficial
                 pictureBox10.Visible = true;
 
                 slice_image(dts.Rows[0][0].ToString());
-
-            } 
-          
+            }
 
 
             if (random == false)
@@ -811,6 +826,16 @@ namespace TooLearnOfficial
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+           panel4.Visible = true;
+            button1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
+            button1.Visible = true;
+        }
     }
 }
