@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace TooLearnOfficial
 {
@@ -107,6 +108,9 @@ namespace TooLearnOfficial
             }
         }
 
+
+       
+
         private void BeginSendCallback(IAsyncResult ar)
         {
             //Get the current asynchronous state of the stream
@@ -156,7 +160,19 @@ namespace TooLearnOfficial
                     Receive(clientSocket);  
                 }
 
-               
+
+                else if (message.Contains("IMAGE"))
+                {
+
+                    this.Invoke((MethodInvoker)(() => MessageBox.Show("DONE")));
+
+                    Receive(clientSocket);
+
+                }
+
+
+
+
                 else if (message.Contains("DISCONNECT"))
                 {
                     ThreadHelper.lsbAddItem(this, lsbJoined, clientSocket.Client.RemoteEndPoint.ToString() + " has disconnected.");
@@ -267,6 +283,7 @@ namespace TooLearnOfficial
 
             else
             {
+               
                 GameType = "PZ";
             }
 

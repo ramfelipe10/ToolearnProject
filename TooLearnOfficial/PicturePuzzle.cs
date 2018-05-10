@@ -23,6 +23,7 @@ namespace TooLearnOfficial
         string imageLocation;
         string title = QuizPicturePuzzle.SetValueForText2;        
         string Picture = QuizPicturePuzzle.SetValueForText3;
+        string Puzzle_Image = QuizPicturePuzzle.SetValueForText4;
         string time_limit = QuizPicturePuzzle.time;           
         int PictureWidth = QuizPicturePuzzle.SetWidth;
         int PictureHeight = QuizPicturePuzzle.SetHeight;
@@ -1707,7 +1708,7 @@ namespace TooLearnOfficial
 
                         if(time_limit==null || time_limit == "") {
 
-                            String query = "INSERT INTO quizzes (total_score,puzzle_image,game_type,quiz_title,facilitator_id,date_created) VALUES ('" + totalscore + "','" + Picture + "','Picture Puzzle','" + title + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (total_score,puzzle_image,game_type,quiz_title,facilitator_id,date_created,image_description) VALUES ('" + totalscore + "','" + Picture + "','Picture Puzzle','" + title + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + Puzzle_Image + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
                         }
@@ -1720,7 +1721,7 @@ namespace TooLearnOfficial
 
 
 
-                            String query = "INSERT INTO quizzes (total_score,puzzle_image,game_type,quiz_title,quiz_time_limit,facilitator_id,date_created) VALUES ('" + totalscore + "','" + Picture + "','Picture Puzzle','" + title + "','" + time_limit + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "')";//limit
+                            String query = "INSERT INTO quizzes (total_score,puzzle_image,game_type,quiz_title,quiz_time_limit,facilitator_id,date_created,image_description) VALUES ('" + totalscore + "','" + Picture + "','Picture Puzzle','" + title + "','" + time_limit + "', '" + Program.user_id + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + Puzzle_Image + "')";//limit
                             SqlDataAdapter sda = new SqlDataAdapter(query, con);
                             sda.SelectCommand.ExecuteNonQuery();
                         }

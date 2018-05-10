@@ -27,6 +27,7 @@ namespace TooLearnOfficial
         string GameType = LobbyParticipant.GameType;
         string correctanswer,points,Pname;
         string time;
+        string puzzle_description;
         int convertedtime;
         string Total;
       
@@ -102,6 +103,28 @@ namespace TooLearnOfficial
             {
                 //Translate the message into its byte form
                 byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(SCORE),"+Pname+",("+message+")");
+
+                //Get a client stream for reading and writing
+                NetworkStream stream = _client.GetStream();
+
+                //Send the message to the connected server
+                //stream.Write(buffer, 0, buffer.length);
+                stream.BeginWrite(buffer, 0, buffer.Length, BeginWriteCallback, stream);
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.ToString());
+            }
+        }
+
+
+
+        private void SendPUZZLE(string message)
+        {
+            try
+            {
+                //Translate the message into its byte form
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(IMAGE)," + Pname + ",(" + message + ")");
 
                 //Get a client stream for reading and writing
                 NetworkStream stream = _client.GetStream();
@@ -214,6 +237,8 @@ namespace TooLearnOfficial
                 }
 
 
+              
+
 
                 else if (message.Contains("StartGame"))
                 {
@@ -287,12 +312,15 @@ namespace TooLearnOfficial
                         this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = true));                        
                         this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = true ));
                         this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = true ));
-                       
+                        this.Invoke((MethodInvoker)(() => puzzle_description = array[11].ToString()));
+                       this.Invoke((MethodInvoker)(() => MessageBox.Show(array[11].ToString()+array[11].Length.ToString())));
+
+
                     }
 
                  
 
-                    if (array[11].ToString() =="Multiple Choice")//Item Format
+                    if (array[12].ToString() =="Multiple Choice")//Item Format
                     {
                         this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString() ));                    
                         ThreadHelper.PanelOut(this, panel2, false);
@@ -370,7 +398,7 @@ namespace TooLearnOfficial
 
 
                     }
-                   else if(array[11].ToString() == "True/False")
+                   else if(array[12].ToString() == "True/False")
                     {
                         this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
@@ -846,7 +874,27 @@ namespace TooLearnOfficial
             }
         }
 
-       
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            string feed = validatePUZZLE(bunifuMetroTextbox2.Text);
+           
+
+            if (feed == "Correct")
+            {
+
+                SendPUZZLE("5");
+                MessageBox.Show("DONE");
+            }
+
+            else
+            {
+                bunifuMetroTextbox2.Text = "";
+                bunifuCustomLabel10.Visible = true;
+            }
+
+            bunifuMetroTextbox2.Text = "";
+        }
+
         private string validate(string answer)
         {
          
@@ -873,6 +921,35 @@ namespace TooLearnOfficial
 
             
         }
+
+
+        private string validatePUZZLE(string answer)
+        {
+
+            string feed;
+
+
+
+            if (puzzle_description.ToLower().ToString().Contains(answer.ToLower().ToString()) && answer.Length.Equals(puzzle_description.Length - 1))
+            {
+                feed = "Correct";
+
+
+
+            }
+            else
+            {
+                feed = "Wrong";
+
+
+            }
+
+
+            return feed;
+
+
+        }
+
 
 
         private string validateSA(string answer)

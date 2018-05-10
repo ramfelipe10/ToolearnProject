@@ -133,6 +133,7 @@ namespace TooLearnOfficial
 
                 //Begin connecting to server
                 _client.BeginConnect(IPAddress.Parse(_IPAddress), _PORT, BeginConnectCallBack, _client);
+                ThreadHelper.lsbAddItem(this, lsbWait, " You are now connected! Please Wait");
             }
             catch (Exception ex)
             {
@@ -146,6 +147,7 @@ namespace TooLearnOfficial
             {
                 TcpClient _client = (TcpClient)ar.AsyncState;
                 _client.EndConnect(ar);
+                
                 Receive();
             }
             catch (Exception ex)

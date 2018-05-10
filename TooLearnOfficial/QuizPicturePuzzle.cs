@@ -17,7 +17,7 @@ namespace TooLearnOfficial
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
         string imagesrc;
 
-        public static string SetValueForText2 = "", SetValueForText3 = "", time = "";
+        public static string SetValueForText2 = "", SetValueForText3 = "", time = "", SetValueForText4 = "";
         public static int SetWidth, SetHeight;
      
        
@@ -170,7 +170,7 @@ namespace TooLearnOfficial
 
 
 
-                if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0)
+                if (splitPicture.ImageLocation == null || textBoxQuizTitle.Text=="" || string.IsNullOrWhiteSpace(textBoxQuizTitle.Text) && textBoxQuizTitle.Text.Length > 0 ||textBox1.Text=="" || string.IsNullOrWhiteSpace(textBox1.Text) && textBox1.Text.Length > 0)
             {
                 Dialogue.Show("Please Fill All Fields", "", "Ok", "Cancel");
 
@@ -187,6 +187,8 @@ namespace TooLearnOfficial
             {
                 SetValueForText3 = splitPicture.ImageLocation;
                 SetValueForText2 = textBoxQuizTitle.Text;
+                SetValueForText4 = textBox1.Text;
+
                 if (textBoxQuizTimeLimit.Text == "" || string.IsNullOrWhiteSpace(textBoxQuizTimeLimit.Text) && textBoxQuizTimeLimit.Text.Length > 0)
                 {
                     time = "";
