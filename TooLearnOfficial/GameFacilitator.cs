@@ -847,6 +847,11 @@ namespace TooLearnOfficial
             button1.Visible = false;
         }
 
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             panel4.Visible = false;

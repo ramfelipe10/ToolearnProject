@@ -63,19 +63,38 @@ namespace TooLearnOfficial
             bsa.DataSource = datasd;
             DataGridViewGrade.DataSource = bsa;
 
-            MessageBox.Show(pid);
-            
-
             SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
             DataTable dt1 = new DataTable();
             sda.Fill(dt1);
             BindingSource bs = new BindingSource();
             bs.DataSource = dt1;
-            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
+            //MessageBox.Show(Convert.ToInt32(dt.Rows[0][0]).ToString());
+            bunifuCircleProgressbar2.Value = Convert.ToInt32(dt1.Rows[0][0]);
+
+            ////
+
+            //SqlDataAdapter seds = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
+            //DataTable data11 = new DataTable();
+            //seds.Fill(data11);
+            //string IDS = data11.Rows[0][0].ToString();
 
 
+            //SqlDataAdapter sdas = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from scoreRecords sc, quizzes q where sc.participant_id = '" + IDS + "' AND q.quiz_id = sc.quiz_id group by sc.quiz_score, q.total_score ", con);
+            //DataTable dt11 = new DataTable();
+            //sdas.Fill(dt11);
+            //BindingSource bt = new BindingSource();
+            //bt.DataSource = dt11;
+            //int aa;
+            //if (dt11.Rows.Count == 0 || dt11.Rows[0][0].ToString() == "")
+            //{
+            //    aa = 0;
+            //}
+            //else
+            //{
+            //    aa = Convert.ToInt32(dt11.Rows[0][0]);
+            //}
+            //bunifuCircleProgressbar2.Value = aa;
 
-            // labelClassRank.Text = datar.Rows[0][2].ToString();
         }
     }
 }
