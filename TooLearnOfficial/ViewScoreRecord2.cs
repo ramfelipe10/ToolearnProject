@@ -17,6 +17,8 @@ namespace TooLearnOfficial
 
         string PG = ScoreRecordParticipant.PN;
         string CR = ScoreRecordParticipant.CR;
+        SqlDataAdapter adaptersd;
+        DataTable datasd;
 
         public ViewScoreRecord2()
         {
@@ -36,7 +38,7 @@ namespace TooLearnOfficial
         private void ViewScoreRecord2_Load(object sender, EventArgs e)
         {
             fillgridindividual();
-           // fillgridgroup();
+           
         }
         public void fillgridindividual()
         {
@@ -158,6 +160,7 @@ namespace TooLearnOfficial
             labelPassed.Text = a.ToString();
             labelFailed.Text = b.ToString();
 
+            
 
             /*           GROUP                          */
 
@@ -185,13 +188,8 @@ namespace TooLearnOfficial
             }
             bunifuCircleProgressbar2.Value = aa;
 
-
-
-
-
-
-
-
         }
+
+        
     }
 }

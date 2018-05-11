@@ -273,10 +273,10 @@ namespace TooLearnOfficial
         private void btn_csv_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            //sfd.Filter = "Excel Document (*.csv)|*.csv";
-            //sfd.FileName = "myclasslist.csv";
-            sfd.Filter = "Excel Document (*.xls)|*.xls";
-            sfd.FileName = "myclasslist.xls";
+            sfd.Filter = "CSV (*.csv)|*.csv";
+            sfd.FileName = "myclasslist.csv";
+            //sfd.Filter = "Excel Document (*.xls)|*.xls";
+            //sfd.FileName = "myclasslist.xls";
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -323,6 +323,11 @@ namespace TooLearnOfficial
             //    ExcelApp.Quit();
          //   }
         }
+
+
+
+
+
 
         private void btn_csv_upload_Click(object sender, EventArgs e)
         {

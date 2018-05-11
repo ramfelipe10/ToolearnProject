@@ -208,13 +208,6 @@ namespace TooLearnOfficial
                 aa = Convert.ToInt32(dt1.Rows[0][0]);
             }
             bunifuCircleProgressbar2.Value = aa;
-            
-
-
-
-
-
-            /*                                   */
 
         }
 

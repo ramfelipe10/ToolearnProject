@@ -386,7 +386,7 @@
             // 
             // bunifuCircleProgressbar2
             // 
-            this.bunifuCircleProgressbar2.animated = false;
+            this.bunifuCircleProgressbar2.animated = true;
             this.bunifuCircleProgressbar2.animationIterval = 5;
             this.bunifuCircleProgressbar2.animationSpeed = 300;
             this.bunifuCircleProgressbar2.BackColor = System.Drawing.Color.Transparent;
