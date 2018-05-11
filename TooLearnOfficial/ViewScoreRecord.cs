@@ -69,7 +69,7 @@ namespace TooLearnOfficial
             classname.Fill(data);
             string cid = data.Rows[0][0].ToString();
 
-            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.group_id is NULL AND s.participant_id='" + pid + "'AND s.class_id='" + cid + "' ", con);
+            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',s.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from scoreRecords s,quizzes q where q.quiz_id=s.quiz_id AND s.group_id is NULL AND s.participant_id='" + pid + "' AND s.class_id='" + cid + "' ", con);
             datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bs = new BindingSource();

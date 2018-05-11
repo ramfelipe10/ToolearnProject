@@ -223,9 +223,9 @@
             this.bunifuCustomLabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bunifuCustomLabel3.Location = new System.Drawing.Point(717, 450);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(138, 24);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(143, 24);
             this.bunifuCustomLabel3.TabIndex = 54;
-            this.bunifuCustomLabel3.Text = "Average Grade";
+            this.bunifuCustomLabel3.Text = "Average Grade:";
             // 
             // bunifuCustomLabel9
             // 
@@ -336,7 +336,7 @@
             this.labelClassRank.Name = "labelClassRank";
             this.labelClassRank.Size = new System.Drawing.Size(79, 57);
             this.labelClassRank.TabIndex = 44;
-            this.labelClassRank.Text = "#1";
+            this.labelClassRank.Text = "#0";
             // 
             // labelCR
             // 
@@ -380,6 +380,7 @@
             this.DataGridViewGrade.ReadOnly = true;
             this.DataGridViewGrade.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.DataGridViewGrade.RowHeadersVisible = false;
+            this.DataGridViewGrade.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridViewGrade.Size = new System.Drawing.Size(796, 176);
             this.DataGridViewGrade.TabIndex = 42;
             // 

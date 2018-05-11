@@ -65,7 +65,7 @@ namespace TooLearnOfficial.User_Control_Participant
                 comboBox1.Items.Clear();
 
                 //Facilitator Name in Combo Box
-                SqlCommand cmd = new SqlCommand("select f.name from facilitator f, classlist cl where f.facilitator_id=cl.facilitator_id and cl.participant_id= '" + Program.par_id + "' ", con);
+                SqlCommand cmd = new SqlCommand("select DISTINCT(f.name) from facilitator f, classlist cl where f.facilitator_id=cl.facilitator_id and cl.participant_id= '" + Program.par_id + "' ", con);
                 //Select class_name from classrooms WHERE facilitator_id= '" + Program.user_id + "' 
                 con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -186,13 +186,15 @@ namespace TooLearnOfficial.User_Control_Participant
 
                 else
                 {
-                    SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classlist where facilitator_id=(select facilitator_id from facilitator where name ='" + Class + "')) ", con);
+                    SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classlist where facilitator_id=(select facilitator_id from facilitator where name ='" + Class + "')AND participant_id='" + Program.par_id + "'AND class_id IN(SELECT class_id from groups)) ", con);
                     DataTable data = new DataTable();
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id AND p.participant_id=sc.participant_id AND sc.participant_id='"+Program.user_id+"' group by g.group_name, sc.quiz_score, q.total_score  ", con);
+                  //  select group_id from groups where class_id = (select class_id from classlist where facilitator_id = (select facilitator_id from facilitator where name = 'Aileen Rillon')AND participant_id = '57' AND class_id IN(SELECT class_id from groups))
+
+                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q, participant p where g.group_id = sc.group_id AND sc.group_id = '" + ID + "' AND q.quiz_id = sc.quiz_id AND p.participant_id=sc.participant_id AND sc.participant_id='"+Program.user_id+"' group by g.group_name, sc.quiz_score, q.total_score  ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -320,7 +322,7 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
                 FunctionThatRaisesEvent();
-                ViewScoreRecord2 VSR = new ViewScoreRecord2();
+                ViewScoreRecordGroup2 VSR = new ViewScoreRecordGroup2();
                 VSR.ShowDialog();
 
             }

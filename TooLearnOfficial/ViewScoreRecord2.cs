@@ -61,7 +61,7 @@ namespace TooLearnOfficial
             //SqlDataAdapter rank = new SqlDataAdapter("select p.fullname, sr.quiz_score, DENSE_RANK() over (order by sr.quiz_score) as 'Rank' from classrooms c, participant p, scoreRecords sr, quizzes q where sr.class_id='1' ", con);
             //DataTable datar = new DataTable();
             //rank.Fill(datar);
-            ;
+            
             label_Participant_Name.Text = PG;
             label_Classroom_name.Text = CR;
 
@@ -103,22 +103,22 @@ namespace TooLearnOfficial
                 label_Letter_Grade.Text = "A"; // Excellent
                 label_Remarks.Text = "Excellent";
             }
-            else if (average >= 91 && average == 95)
+            else if (average >= 91 && average <= 95)
             {
                 label_Letter_Grade.Text = "B+"; // Very Good
                 label_Remarks.Text = "Very Good";
             }
-            else if (average >= 86 && average == 90)
+            else if (average >= 86 && average <= 90)
             {
                 label_Letter_Grade.Text = "B";  // Very Good
                 label_Remarks.Text = "Very Good";
             }
-            else if (average >= 81 && average == 85)
+            else if (average >= 81 && average <= 85)
             {
                 label_Letter_Grade.Text = "C+";  // Good
                 label_Remarks.Text = "Good";
             }
-            else if (average >= 76 && average == 80)
+            else if (average >= 76 && average <= 80)
             {
                 label_Letter_Grade.Text = "C";  // Satisfaction
                 label_Remarks.Text = "Satisfaction";
@@ -159,46 +159,39 @@ namespace TooLearnOfficial
             labelFailed.Text = b.ToString();
 
 
+            /*           GROUP                          */
 
 
-        
+            SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + PG + "') ", con);
+            DataTable data1 = new DataTable();
+            sed.Fill(data1);
+            string ID = data1.Rows[0][0].ToString();
+
+
+
+            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+            DataTable dt1 = new DataTable();
+            sda.Fill(dt1);
+            BindingSource bt = new BindingSource();
+            bt.DataSource = dt1;
+            int aa;
+            if (dt1.Rows.Count != 0)
+            {
+                aa = Convert.ToInt32(dt1.Rows[0][0]);
+            }
+            else
+            {
+                aa = 0;
+            }
+            bunifuCircleProgressbar2.Value = aa;
 
 
 
 
-        }
-        public void fillgridgroup()
-        {
-            /*  SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
-              DataTable data = new DataTable();
-              sed.Fill(data);
-              string ID = data.Rows[0][0].ToString();
 
 
-              SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
-              DataTable dt = new DataTable();
-              sda.Fill(dt);
-              BindingSource bs = new BindingSource();
-              bs.DataSource = dt;
-              bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);    */
-
-            //SqlDataAdapter name = new SqlDataAdapter("select class_id from classrooms where class_name='" + PG + "' ", con);
-            //DataTable dt = new DataTable();
-            //name.Fill(dt);
-            //string pid = dt.Rows[0][0].ToString();
-
-            //SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
-            //DataTable datas = new DataTable();
-            //sed.Fill(datas);
-            //string ID = datas.Rows[0][0].ToString();
 
 
-            //SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
-            //DataTable dte = new DataTable();
-            //sda.Fill(dte);
-            //BindingSource brs = new BindingSource();
-            //brs.DataSource = dte;
-            //bunifuCircleProgressbar2.Value = Convert.ToInt32(dt.Rows[0][0]);
         }
     }
 }
