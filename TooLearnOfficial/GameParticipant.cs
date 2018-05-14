@@ -30,6 +30,7 @@ namespace TooLearnOfficial
         string puzzle_description;
         int convertedtime;
         string Total;
+        bool answered = false;
       
 
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString);
@@ -309,12 +310,14 @@ namespace TooLearnOfficial
                     }
                     else
                     {
-                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = true));                        
-                        this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = true ));
-                        this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = true ));
-                        this.Invoke((MethodInvoker)(() => puzzle_description = array[11].ToString()));
-                       this.Invoke((MethodInvoker)(() => MessageBox.Show(array[11].ToString()+array[11].Length.ToString())));
-
+                        if (answered == false)
+                        {
+                            this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = true));
+                            this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = true));
+                            this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = true));
+                            this.Invoke((MethodInvoker)(() => puzzle_description = array[11].ToString()));
+                            //this.Invoke((MethodInvoker)(() => MessageBox.Show(array[11].ToString()+array[11].Length.ToString())));
+                        }
 
                     }
 
@@ -877,13 +880,25 @@ namespace TooLearnOfficial
         private void bunifuFlatButton7_Click(object sender, EventArgs e)
         {
             string feed = validatePUZZLE(bunifuMetroTextbox2.Text);
-           
+            int score;
 
             if (feed == "Correct")
             {
 
-                SendPUZZLE("5");
-                MessageBox.Show("DONE");
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32("50");
+                bunifuCustomLabel5.Text = score.ToString();
+
+                SendPUZZLE(score.ToString());
+                answered = true;
+
+                 bunifuCustomLabel9.Visible = false;
+                 bunifuMetroTextbox2.Visible = false;
+                bunifuFlatButton7.Visible = false;
+                bunifuCustomLabel10.Visible = false;
+
+
+
             }
 
             else

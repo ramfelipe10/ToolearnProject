@@ -164,7 +164,8 @@ namespace TooLearnOfficial
                 else if (message.Contains("IMAGE"))
                 {
 
-                    this.Invoke((MethodInvoker)(() => MessageBox.Show("DONE")));
+                    GameFacilitator GF = (GameFacilitator)Application.OpenForms["GameFacilitator"];
+                    GF.PUZZLEScore(message.ToString());
 
                     Receive(clientSocket);
 

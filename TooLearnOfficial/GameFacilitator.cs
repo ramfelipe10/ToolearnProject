@@ -110,7 +110,25 @@ namespace TooLearnOfficial
 
         #endregion
 
+        public void PUZZLEScore(string Score)
+        {
 
+
+            string up = Score.ToString();
+
+            // string name = up.Substring(8,up.Length-12);
+            string name;
+            int nameindex = up.LastIndexOf(',');
+            name = up.Substring(8, nameindex - 8);
+            int index = up.LastIndexOf('(');
+            string points = up.Substring(index + 1);
+            points = points.Substring(0, points.Length - 1);
+
+
+            ThreadHelper.lsbAddItem(this, listBox1, up + "(" + DateTime.Now.TimeOfDay + ")");
+            this.Invoke((MethodInvoker)(() => updatescore(name, points)));
+
+        }
 
         public void updateScore(string Score)
         {
@@ -712,7 +730,7 @@ namespace TooLearnOfficial
 
                          
 
-                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Today.ToString() + "','" + QuizID + "','" + id + "', '" + ID + "')";
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + id + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sda.SelectCommand.ExecuteNonQuery();
                     }
@@ -732,7 +750,7 @@ namespace TooLearnOfficial
                         string id = participants.Rows[0][0].ToString();
 
 
-                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Today.ToString() + "','" + QuizID + "','" + id + "', '" + ID + "')";
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + id + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sda.SelectCommand.ExecuteNonQuery();
                     }
