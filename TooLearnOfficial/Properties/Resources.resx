@@ -136,6 +136,9 @@
   <data name="Refresh_Black" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Refresh_Black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Export CSV_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Export CSV_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="my_account2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\my_account2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,9 +160,6 @@
   <data name="loaderbookshelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\loaderbookshelf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu_participant2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Manual Pictures\menu_participant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\After-Effects-and-Cinema-4D-Flat-Design-Animation-Tutorial.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -177,9 +177,6 @@
   </data>
   <data name="circle-loading-gif" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circle-loading-gif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Export CSV_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Export CSV_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Right_104px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Right_104px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -222,6 +219,9 @@
   </data>
   <data name="No Audio_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\No Audio_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Report Card_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\Report Card_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PDF 2_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\PDF 2_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,8 +325,11 @@
   <data name="create_classroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\create_classroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Report Card_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\Report Card_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="attach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\attach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_participant2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Manual Pictures\menu_participant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -354,6 +357,9 @@
   </data>
   <data name="Info_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\Info_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blurBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\blurBG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PDF white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TooLearn Pictures\PDF white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -415,7 +421,7 @@
   <data name="quiz_bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Manual Pictures\quiz_bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blurBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\TooLearn Pictures\blurBG.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="attachB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TooLearn Pictures\attachB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

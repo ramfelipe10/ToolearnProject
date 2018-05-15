@@ -469,7 +469,19 @@ namespace TooLearnOfficial
                 pictureBox9.Image = imgarray[7];
                 pictureBox10.Image = imgarray[8];
 
-            } 
+
+
+            pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
+            pictureBox9.Visible = false;
+            pictureBox10.Visible = false;
+
+        } 
 
 
 
@@ -708,7 +720,21 @@ namespace TooLearnOfficial
             panel3.Visible = false;
 
             bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString();
-           // timer1.Start();
+            // timer1.Start();
+
+            PictureBox[] box = new PictureBox[9];
+            box[0] = pictureBox1;
+            box[1] = pictureBox2;
+            box[2] = pictureBox4;
+            box[3] = pictureBox5;
+            box[4] = pictureBox6;
+            box[5] = pictureBox7;
+            box[6] = pictureBox8;
+            box[7] = pictureBox9;
+            box[8] = pictureBox10;
+
+            box[counter].Visible = true;
+          
         }
 
 
@@ -724,15 +750,28 @@ namespace TooLearnOfficial
                     for (int i = 0; i < data.Rows.Count; i++)
                     {
 
-                        SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + data.Rows[i][0].ToString() + "' ", con);
-                        adapt.Fill(participants);
-                        string id = participants.Rows[0][0].ToString();
 
-                         
+                      //  bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[0].Value
 
-                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + id + "', '" + ID + "')";
+                    //    SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ", con);
+                      //  SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + data.Rows[i][0].ToString() + "' ", con);
+                      //  adapt.Fill(participants);
+                        // string id = participants.Rows[0][0].ToString();
+
+
+                        string querys = "select participant_id from participant where fullname= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ";
+                        SqlCommand cmd = new SqlCommand(querys, con);
+                        string getValue = cmd.ExecuteScalar().ToString();
+
+
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + getValue + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sda.SelectCommand.ExecuteNonQuery();
+
+                       getValue = "";
+
+
+
                     }
                     con.Close();
 
@@ -745,14 +784,21 @@ namespace TooLearnOfficial
                     for (int i = 0; i < data.Rows.Count; i++)
                     {
 
-                        SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + data.Rows[i][0].ToString() + "' ", con);
-                        adapt.Fill(participants);
-                        string id = participants.Rows[0][0].ToString();
+                      //  SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ", con);
+                       // SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + data.Rows[i][0].ToString() + "' ", con);
+                      //  adapt.Fill(participants);
+                      //  string id = participants.Rows[0][0].ToString();
 
+                        string querys = "select group_id from groups where group_name= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ";
+                        SqlCommand cmd = new SqlCommand(querys, con);
+                        string getValue = cmd.ExecuteScalar().ToString();
 
-                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + id + "', '" + ID + "')";
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + getValue + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sda.SelectCommand.ExecuteNonQuery();
+
+                        getValue = "";
+
                     }
                     con.Close();
                 }

@@ -711,7 +711,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;                
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper() ;
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper() ;
             }
 
             bunifuMetroTextbox1.Text = "";
@@ -740,7 +740,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
 
             }
         }
@@ -768,7 +768,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -794,7 +794,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -820,7 +820,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -847,7 +847,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -873,7 +873,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 

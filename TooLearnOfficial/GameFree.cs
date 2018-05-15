@@ -30,6 +30,8 @@ namespace TooLearnOfficial
         string time;
         int convertedtime;
         string Total;
+        string puzzle_description;
+        bool answered = false;
 
         public GameFree()
         {
@@ -104,6 +106,27 @@ namespace TooLearnOfficial
             }
         }
 
+
+
+        private void SendPUZZLE(string message)
+        {
+            try
+            {
+                //Translate the message into its byte form
+                byte[] buffer = System.Text.Encoding.ASCII.GetBytes("(IMAGE)," + Pname + ",(" + message + ")");
+
+                //Get a client stream for reading and writing
+                NetworkStream stream = _client.GetStream();
+
+                //Send the message to the connected server
+                //stream.Write(buffer, 0, buffer.length);
+                stream.BeginWrite(buffer, 0, buffer.Length, BeginWriteCallback, stream);
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show(ex.ToString());
+            }
+        }
 
 
         public void StartConnect()
@@ -274,16 +297,20 @@ namespace TooLearnOfficial
                     }
                     else
                     {
-                        this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = true));
-                        this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = true));
-                        this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = true));
+                        if (answered == false)
+                        {
+                            this.Invoke((MethodInvoker)(() => bunifuCustomLabel9.Visible = true));
+                            this.Invoke((MethodInvoker)(() => bunifuMetroTextbox2.Visible = true));
+                            this.Invoke((MethodInvoker)(() => bunifuFlatButton7.Visible = true));
+                            this.Invoke((MethodInvoker)(() => puzzle_description = array[11].ToString()));
+                            //this.Invoke((MethodInvoker)(() => MessageBox.Show(array[11].ToString()+array[11].Length.ToString())));
+                        }
 
                     }
 
 
 
-
-                    if (array[11].ToString() == "Multiple Choice")//Item Format
+                    if (array[12].ToString() == "Multiple Choice")//Item Format
                     {
 
                         this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
@@ -362,7 +389,7 @@ namespace TooLearnOfficial
 
 
                     }
-                    else if (array[11].ToString() == "True/False")
+                    else if (array[12].ToString() == "True/False")
                     {
                         this.Invoke((MethodInvoker)(() => bunifuCustomLabel8.Text = (Convert.ToInt32(bunifuCustomLabel8.Text) + 1).ToString()));
                         ThreadHelper.PanelOut(this, panel2, false);
@@ -612,7 +639,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -638,7 +665,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
 
             }
         }
@@ -666,7 +693,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -692,7 +719,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -718,7 +745,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -744,7 +771,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
         }
 
@@ -770,7 +797,7 @@ namespace TooLearnOfficial
             {
                 panel2.Visible = true;
                 panel3.Visible = false;
-                label4.Text = "Wrong! The Right Answer is " + correctanswer.ToUpper();
+                label4.Text = "Incorrect! The Right Answer is " + correctanswer.ToUpper();
             }
 
             bunifuMetroTextbox1.Text = "";
@@ -833,6 +860,65 @@ namespace TooLearnOfficial
 
         }
 
+        private string validatePUZZLE(string answer)
+        {
+
+            string feed;
+
+
+
+            if (puzzle_description.ToLower().ToString().Contains(answer.ToLower().ToString()) && answer.Length.Equals(puzzle_description.Length - 1))
+            {
+                feed = "Correct";
+
+
+
+            }
+            else
+            {
+                feed = "Wrong";
+
+
+            }
+
+
+            return feed;
+
+
+        }
+
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            string feed = validatePUZZLE(bunifuMetroTextbox2.Text);
+            int score;
+
+            if (feed == "Correct")
+            {
+
+                score = Convert.ToInt32(bunifuCustomLabel5.Text);
+                score = score + Convert.ToInt32("50");
+                bunifuCustomLabel5.Text = score.ToString();
+
+                SendPUZZLE(score.ToString());
+                answered = true;
+
+                bunifuCustomLabel9.Visible = false;
+                bunifuMetroTextbox2.Visible = false;
+                bunifuFlatButton7.Visible = false;
+                bunifuCustomLabel10.Visible = false;
+
+
+
+            }
+
+            else
+            {
+                bunifuMetroTextbox2.Text = "";
+                bunifuCustomLabel10.Visible = true;
+            }
+
+            bunifuMetroTextbox2.Text = "";
+        }
 
         private string validateSA(string answer)
         {
