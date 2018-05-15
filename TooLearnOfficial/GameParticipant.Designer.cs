@@ -208,9 +208,10 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1115, 10);
+            this.panel1.Size = new System.Drawing.Size(1115, 605);
             this.panel1.TabIndex = 37;
             // 
             // panel4
@@ -224,7 +225,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1115, 10);
+            this.panel4.Size = new System.Drawing.Size(1115, 605);
             this.panel4.TabIndex = 2;
             this.panel4.Visible = false;
             // 
@@ -284,7 +285,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(182, -48);
+            this.label11.Location = new System.Drawing.Point(182, 547);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(727, 43);
             this.label11.TabIndex = 5;
@@ -632,9 +633,10 @@
             this.panel2.BackColor = System.Drawing.Color.LightCoral;
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 26);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1115, 29);
+            this.panel2.Size = new System.Drawing.Size(1115, 605);
             this.panel2.TabIndex = 43;
             this.panel2.Visible = false;
             // 
@@ -653,7 +655,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 48F);
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1115, 29);
+            this.label4.Size = new System.Drawing.Size(1115, 605);
             this.label4.TabIndex = 0;
             this.label4.Text = "label4";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -663,9 +665,10 @@
             this.panel3.BackColor = System.Drawing.Color.SeaGreen;
             this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.label5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 26);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1115, 17);
+            this.panel3.Size = new System.Drawing.Size(1115, 605);
             this.panel3.TabIndex = 44;
             this.panel3.Visible = false;
             // 
@@ -686,7 +689,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1115, 17);
+            this.label5.Size = new System.Drawing.Size(1115, 605);
             this.label5.TabIndex = 1;
             this.label5.Text = "label5";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -845,14 +848,6 @@
             this.BackgroundImage = global::TooLearnOfficial.Properties.Resources.blurBG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1115, 631);
-            this.Controls.Add(this.bunifuCustomLabel10);
-            this.Controls.Add(this.bunifuFlatButton7);
-            this.Controls.Add(this.bunifuCustomLabel9);
-            this.Controls.Add(this.bunifuMetroTextbox2);
-            this.Controls.Add(this.bunifuCustomLabel8);
-            this.Controls.Add(this.bunifuCustomLabel7);
-            this.Controls.Add(this.bunifuCustomLabel6);
-            this.Controls.Add(this.bunifuGradientPanel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -869,6 +864,14 @@
             this.Controls.Add(this.bunifuMetroTextbox1);
             this.Controls.Add(this.bunifuFlatButton5);
             this.Controls.Add(this.bunifuFlatButton6);
+            this.Controls.Add(this.bunifuCustomLabel6);
+            this.Controls.Add(this.bunifuCustomLabel7);
+            this.Controls.Add(this.bunifuCustomLabel8);
+            this.Controls.Add(this.bunifuCustomLabel10);
+            this.Controls.Add(this.bunifuCustomLabel9);
+            this.Controls.Add(this.bunifuMetroTextbox2);
+            this.Controls.Add(this.bunifuFlatButton7);
+            this.Controls.Add(this.bunifuGradientPanel3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
