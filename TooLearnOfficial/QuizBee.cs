@@ -731,70 +731,78 @@ namespace TooLearnOfficial
 
             else
             {
-
-                if (textBox7.Text == "")
+                if (textBoxQuizTitle.Text == "")
                 {
-                    label20.Visible = true; //MC
-                    bunifuDropdown2.Visible = true;
-                    textBox11.Visible = true;
-
-
-                    label17.Visible = true; //SA
-                    bunifuDropdown3.Visible = true;
-                    textBox12.Visible = true;
-
-
-                    label24.Visible = true; //TF
-                    bunifuDropdown4.Visible = true;
-                    textBox10.Visible = true;
-
-                    label5.Visible = false; //TimeLimitQuiz
-                    textBox7.Visible = false;
-                    bunifuDropdown1.Visible = false;
-
+                    Dialogue.Show("Please Provide A Title!","","Ok","Cancel");
                 }
 
+                else {
 
-                else
-                {
-                   label20.Visible = false; //MC
-                    bunifuDropdown2.Visible = false;
-                    textBox11.Visible = false; 
-
-
-                    label17.Visible = false; //SA
-                    bunifuDropdown3.Visible = false;
-                    textBox12.Visible = false;
+                    if (textBox7.Text == "")
+                    {
+                        label20.Visible = true; //MC
+                        bunifuDropdown2.Visible = true;
+                        textBox11.Visible = true;
 
 
-                    label24.Visible = false; //TF
-                    bunifuDropdown4.Visible = false;
-                    textBox10.Visible = false;
+                        label17.Visible = true; //SA
+                        bunifuDropdown3.Visible = true;
+                        textBox12.Visible = true;
 
 
-                    label5.Visible = true; //TimeLimitQuiz
-                    textBox7.Visible = true;
+                        label24.Visible = true; //TF
+                        bunifuDropdown4.Visible = true;
+                        textBox10.Visible = true;
 
-                    textBox7.Enabled = false;
-                    bunifuDropdown1.Enabled = false;
+                        label5.Visible = false; //TimeLimitQuiz
+                        textBox7.Visible = false;
+                        bunifuDropdown1.Visible = false;
+
+                    }
+
+
+                    else
+                    {
+                        label20.Visible = false; //MC
+                        bunifuDropdown2.Visible = false;
+                        textBox11.Visible = false;
+
+
+                        label17.Visible = false; //SA
+                        bunifuDropdown3.Visible = false;
+                        textBox12.Visible = false;
+
+
+                        label24.Visible = false; //TF
+                        bunifuDropdown4.Visible = false;
+                        textBox10.Visible = false;
+
+
+                        label5.Visible = true; //TimeLimitQuiz
+                        textBox7.Visible = true;
+
+                        textBox7.Enabled = false;
+                        bunifuDropdown1.Enabled = false;
+
+                    }
+
+
+                    currentNumOfItems = 1;
+
+                    bunifuFlatButton5.Enabled = false;
+                    enable_fieldsMC();
+                    currentnumMC.Text = currentNumOfItems.ToString();
+                    CurrentnumSA.Text = currentNumOfItems.ToString();
+                    CurrentNumTF.Text = currentNumOfItems.ToString();
+                    MultipleChoiceLV.Enabled = true;
+                    ShortAnswerLV.Enabled = true;
+                    TrueOrFalseLV.Enabled = true;
+
+                    bunifuFlatButton2.selected = true;
+
+                    textBoxQuizTitle.Enabled = false;
 
                 }
-
-
-                currentNumOfItems = 1;
-
-                bunifuFlatButton5.Enabled = false;
-                enable_fieldsMC();
-                currentnumMC.Text = currentNumOfItems.ToString();
-                CurrentnumSA.Text = currentNumOfItems.ToString();
-                CurrentNumTF.Text = currentNumOfItems.ToString();
-                MultipleChoiceLV.Enabled = true;
-                ShortAnswerLV.Enabled = true;
-                TrueOrFalseLV.Enabled = true;
-
-                bunifuFlatButton2.selected = true;
-
-                textBoxQuizTitle.Enabled = false;
 
             }
             
@@ -2395,6 +2403,204 @@ namespace TooLearnOfficial
             Total.Text = Sum2.ToString();
 
         }
+
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+
+            SqlDataAdapter sda = new SqlDataAdapter("Select count(*) From quizzes Where quiz_title ='" + textBoxQuizTitle.Text + "' ", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            int check = Convert.ToInt32(dt.Rows[0][0].ToString());
+
+            if (check >= 1)
+            {
+
+                Dialogue.Show("Quiz already exist, please use other Title", "", "Ok", "Cancel");
+            }
+
+            else
+            {
+                if (textBoxQuizTitle.Text == "")
+                {
+                    Dialogue.Show("Please Provide A Title!", "", "Ok", "Cancel");
+                }
+
+                else
+                {
+
+                    Import T = new Import();
+                    T.type = true;
+                    T.ShowDialog();
+
+                }
+            }
+        }
+
+        public void ImportQA(string QUIZ)
+        {
+
+
+
+            try { 
+
+            con2.Open();
+
+                SqlDataAdapter sql = new SqlDataAdapter("Select quiz_id from quizzes where quiz_title='" + QUIZ + "'", con);
+                DataTable dt = new DataTable();
+                sql.Fill(dt);
+                string ID = dt.Rows[0][0].ToString();
+
+
+
+                SqlCommand cd = new SqlCommand("SELECT * FROM QuestionAnswers WHERE quiz_id = '" + ID + "' ", con2);
+            SqlDataReader d = cd.ExecuteReader();
+            while (d.Read() == true)
+            {
+                if ((string)d[("item_format")] == "Multiple Choice")
+                {
+
+                    ListViewItem exams = new ListViewItem();
+                    exams.Text = (string)d[("question")];
+                    exams.SubItems.Add((string)d[("answer_a")]);
+                    exams.SubItems.Add((string)d[("answer_b")]);
+                    exams.SubItems.Add((string)d[("answer_c")]);
+                    exams.SubItems.Add((string)d[("answer_d")]);
+                    exams.SubItems.Add((string)d[("correct_answer")]);
+                    exams.SubItems.Add((string)d[("image")]);
+                    // exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                    exams.SubItems.Add((string)d[("QA_time_limit")]);
+                    exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                    exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+
+
+
+                    MultipleChoiceLV.Items.Add(exams);
+
+
+                }//end MC
+
+                else if ((string)d[("item_format")] == "Short Answer")
+                {
+
+                    ListViewItem exams = new ListViewItem();
+                    exams.Text = (string)d[("question")];
+                    exams.SubItems.Add((string)d[("correct_answer")]);
+                    exams.SubItems.Add((string)d[("image")]);
+                    //  exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                    exams.SubItems.Add((string)d[("QA_time_limit")]);
+                    exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                    exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+
+                    ShortAnswerLV.Items.Add(exams);
+
+
+                }//end MC
+
+                else if ((string)d[("item_format")] == "True/False")
+                {
+
+                    ListViewItem exams = new ListViewItem();
+                    exams.Text = (string)d[("question")];
+                    exams.SubItems.Add((string)d[("correct_answer")]);
+                    exams.SubItems.Add((string)d[("image")]);
+                    //   exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                    exams.SubItems.Add((string)d[("QA_time_limit")]);
+                    exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                    exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+
+                    TrueOrFalseLV.Items.Add(exams);
+
+
+                }//end MC
+
+
+
+
+
+
+            }//End While
+
+                con2.Close();
+
+
+                if (textBox7.Text == "")
+                {
+                    label20.Visible = true; //MC
+                    bunifuDropdown2.Visible = true;
+                    textBox11.Visible = true;
+
+
+                    label17.Visible = true; //SA
+                    bunifuDropdown3.Visible = true;
+                    textBox12.Visible = true;
+
+
+                    label24.Visible = true; //TF
+                    bunifuDropdown4.Visible = true;
+                    textBox10.Visible = true;
+
+                    label5.Visible = false; //TimeLimitQuiz
+                    textBox7.Visible = false;
+                    bunifuDropdown1.Visible = false;
+
+                }
+
+
+                else
+                {
+                    label20.Visible = false; //MC
+                    bunifuDropdown2.Visible = false;
+                    textBox11.Visible = false;
+
+
+                    label17.Visible = false; //SA
+                    bunifuDropdown3.Visible = false;
+                    textBox12.Visible = false;
+
+
+                    label24.Visible = false; //TF
+                    bunifuDropdown4.Visible = false;
+                    textBox10.Visible = false;
+
+
+                    label5.Visible = true; //TimeLimitQuiz
+                    textBox7.Visible = true;
+
+                    textBox7.Enabled = false;
+                    bunifuDropdown1.Enabled = false;
+
+                }
+
+
+                currentNumOfItems = MultipleChoiceLV.Items.Count+ShortAnswerLV.Items.Count+TrueOrFalseLV.Items.Count+1;
+
+                bunifuFlatButton5.Enabled = false;
+                enable_fieldsMC();
+                currentnumMC.Text = currentNumOfItems.ToString();
+                CurrentnumSA.Text = currentNumOfItems.ToString();
+                CurrentNumTF.Text = currentNumOfItems.ToString();
+                MultipleChoiceLV.Enabled = true;
+                ShortAnswerLV.Enabled = true;
+                TrueOrFalseLV.Enabled = true;
+
+                bunifuFlatButton2.selected = true;
+
+                textBoxQuizTitle.Enabled = false;
+
+
+            }// End try
+
+            
+
+
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+}
+
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {

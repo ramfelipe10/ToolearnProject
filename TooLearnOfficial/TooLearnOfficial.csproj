@@ -264,6 +264,12 @@
     <Compile Include="GroupMain.Designer.cs">
       <DependentUpon>GroupMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import.Designer.cs">
+      <DependentUpon>Import.cs</DependentUpon>
+    </Compile>
     <Compile Include="LobbyFacilitator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -611,6 +617,9 @@
     <EmbeddedResource Include="GroupMain.resx">
       <DependentUpon>GroupMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Import.resx">
+      <DependentUpon>Import.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LobbyFacilitator.resx">
       <DependentUpon>LobbyFacilitator.cs</DependentUpon>
     </EmbeddedResource>
@@ -830,6 +839,7 @@
       <DependentUpon>Toolearn.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="TooLearn Pictures\3982.jpg" />
     <None Include="TooLearn Pictures\attachB.png" />
     <None Include="TooLearn Pictures\attach.png" />
     <None Include="TooLearn Pictures\blurBG.jpg" />

@@ -826,7 +826,8 @@ namespace TooLearnOfficial
             bunifuFlatButton3.Visible = true;
             bunifuFlatButton1.Visible = false;
 
-            panel3.Visible = false;
+            panel3.Visible = true;//fALSE BEFORE
+            panel5.Visible = true;
         }
 
 

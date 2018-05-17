@@ -109,11 +109,20 @@ namespace TooLearnOfficial
                 button2.Visible = false;
             }
 
+            else if (Total > 0)
+            {
+                buttonNextQuestion.Visible = true;
+                button1.Visible = true;
+                button2.Visible = true;
+                bunifuImageButton5.Visible = false;
+
+            }
             else
             {
                 buttonNextQuestion.Visible = true;
                 button1.Visible = true;
                 button2.Visible = true;
+                
 
             }
                       
@@ -2047,19 +2056,20 @@ namespace TooLearnOfficial
             currentNumOfItems = Sum1 + 1;
 
             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
+            load_total();
             
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
-            MultipleChoiceLV.Items.RemoveAt(listPosition);
+            int listPosition = int.Parse(ShortAnswerLV.SelectedIndices[0].ToString());
+            ShortAnswerLV.Items.RemoveAt(listPosition);
 
             RightAnswer = null;
-            resetAllMC(); ;
-            buttonNextQuestion.Text = "Next";
-            button4.Visible = false;
+            resetAllSA(); ;
+            button1.Text = "Next";
+            button5.Visible = false;
 
             int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
 
@@ -2070,19 +2080,21 @@ namespace TooLearnOfficial
             currentNumOfItems = Sum1 + 1;
 
             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-           
+
+            load_total();
+
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int listPosition = int.Parse(MultipleChoiceLV.SelectedIndices[0].ToString());
-            MultipleChoiceLV.Items.RemoveAt(listPosition);
+            int listPosition = int.Parse(TrueOrFalseLV.SelectedIndices[0].ToString());
+            TrueOrFalseLV.Items.RemoveAt(listPosition);
 
-            RightAnswer = null;
-            resetAllMC(); ;
-            buttonNextQuestion.Text = "Next";
-            button4.Visible = false;
+           
+            resetAllTF(); ;
+            button2.Text = "Next";
+            button6.Visible = false;
 
             int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
 
@@ -2093,11 +2105,133 @@ namespace TooLearnOfficial
             currentNumOfItems = Sum1 + 1;
 
             NoItems.Text = MultipleChoiceLV.Items.Count.ToString();
-           
+
+            load_total();
+
 
         }
 
-        private void bunifuImageButton3_Click(object sender, EventArgs e)
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            Import T = new Import();
+            T.type = false;
+            T.ShowDialog();
+        }
+
+        public void ImportQA(string QUIZ)
+        {
+
+
+
+            try
+            {
+
+                con2.Open();
+
+                SqlDataAdapter sql = new SqlDataAdapter("Select quiz_id from quizzes where quiz_title='" + QUIZ + "'", con);
+                DataTable dt = new DataTable();
+                sql.Fill(dt);
+                string ID = dt.Rows[0][0].ToString();
+
+
+
+                SqlCommand cd = new SqlCommand("SELECT * FROM QuestionAnswers WHERE quiz_id = '" + ID + "' ", con2);
+                SqlDataReader d = cd.ExecuteReader();
+                while (d.Read() == true)
+                {
+                    if ((string)d[("item_format")] == "Multiple Choice")
+                    {
+
+                        ListViewItem exams = new ListViewItem();
+                        exams.Text = (string)d[("question")];
+                        exams.SubItems.Add((string)d[("answer_a")]);
+                        exams.SubItems.Add((string)d[("answer_b")]);
+                        exams.SubItems.Add((string)d[("answer_c")]);
+                        exams.SubItems.Add((string)d[("answer_d")]);
+                        exams.SubItems.Add((string)d[("correct_answer")]);
+                        exams.SubItems.Add((string)d[("image")]);
+                        // exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                        exams.SubItems.Add((string)d[("QA_time_limit")]);
+                        exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                        exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+
+
+
+                        MultipleChoiceLV.Items.Add(exams);
+
+
+                    }//end MC
+
+                    else if ((string)d[("item_format")] == "Short Answer")
+                    {
+
+                        ListViewItem exams = new ListViewItem();
+                        exams.Text = (string)d[("question")];
+                        exams.SubItems.Add((string)d[("correct_answer")]);
+                        exams.SubItems.Add((string)d[("image")]);
+                        //  exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                        exams.SubItems.Add((string)d[("QA_time_limit")]);
+                        exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                        exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+
+                        ShortAnswerLV.Items.Add(exams);
+
+
+                    }//end MC
+
+                    else if ((string)d[("item_format")] == "True/False")
+                    {
+
+                        ListViewItem exams = new ListViewItem();
+                        exams.Text = (string)d[("question")];
+                        exams.SubItems.Add((string)d[("correct_answer")]);
+                        exams.SubItems.Add((string)d[("image")]);
+                        //   exams.SubItems.Add(Convert.ToString((int)d[("QA_time_limit")]));
+                        exams.SubItems.Add((string)d[("QA_time_limit")]);
+                        exams.SubItems.Add(Convert.ToString((int)d[("points")]));
+                        exams.SubItems.Add(Convert.ToString((int)d[("answer_id")]));
+
+                        TrueOrFalseLV.Items.Add(exams);
+
+
+                    }//end MC
+
+
+                    bunifuImageButton5.Visible = false;
+                    load_total();
+
+                    int Sum1 = MultipleChoiceLV.Items.Count + TrueOrFalseLV.Items.Count + ShortAnswerLV.Items.Count;
+
+                    currentnumMC.Text = Convert.ToString(Sum1 + 1);
+                    CurrentnumSA.Text = Convert.ToString(Sum1 + 1);
+                    CurrentNumTF.Text = Convert.ToString(Sum1 + 1);
+
+
+
+
+
+                }//End While
+
+                con2.Close();
+
+
+             
+               
+
+
+            }// End try
+
+
+
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+            private void bunifuImageButton3_Click(object sender, EventArgs e)
         {
             DialogResult Result = Dialogue1.Show("Do You Wan't To Continue? \nResetting May Affect Questions and Answers You've Created.", "Confirmation", "Ok", "Cancel");
             if (Result == DialogResult.Yes)
@@ -2149,7 +2283,8 @@ namespace TooLearnOfficial
                 bunifuFlatButton3.selected = false;
                 bunifuFlatButton4.selected = false;
 
-
+                bunifuImageButton5.Visible = true;
+                load_total();
 
                 if (time_limit == "")//For the Time Limit
                 {
