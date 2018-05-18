@@ -136,33 +136,33 @@ namespace TooLearnOfficial
 
         }
 
-        //EXPORT TO EXCEL
-        private void ToExcel(DataGridView dGV, string filename)
-        {
-            string stOutput = "";
-            string sHeaders = "";
-            for(int j = 0; j < dGV.Columns.Count; j++)            
-                sHeaders = sHeaders.ToString() + Convert.ToString(dGV.Columns[j].HeaderText) + "\t";
-                stOutput += sHeaders + "\r\n";
+        ////EXPORT TO EXCEL
+        //private void ToExcel(DataGridView dGV, string filename)
+        //{
+        //    string stOutput = "";
+        //    string sHeaders = "";
+        //    for(int j = 0; j < dGV.Columns.Count; j++)            
+        //        sHeaders = sHeaders.ToString() + Convert.ToString(dGV.Columns[j].HeaderText) + "\t";
+        //        stOutput += sHeaders + "\r\n";
 
-            for(int i = 0; i < dGV.RowCount-1; i++)
-            {
-                string stline = "";
-                for (int j = 0; j < dGV.Rows[i].Cells.Count; j++)
-                    stline = stline.ToString() + Convert.ToString(dGV.Rows[i].Cells[j].Value) + "\t";
-                stOutput += stline + "\r\n";
-            }
+        //    for(int i = 0; i < dGV.RowCount-1; i++)
+        //    {
+        //        string stline = "";
+        //        for (int j = 0; j < dGV.Rows[i].Cells.Count; j++)
+        //            stline = stline.ToString() + Convert.ToString(dGV.Rows[i].Cells[j].Value) + "\t";
+        //        stOutput += stline + "\r\n";
+        //    }
 
-            Encoding utf16 = Encoding.GetEncoding(1254);
-            byte[] output = utf16.GetBytes(stOutput);
-            FileStream fs = new FileStream(filename, FileMode.Create);
-            BinaryWriter bw = new BinaryWriter(fs);
-            bw.Write(output, 0, output.Length);
-            bw.Flush();
-            bw.Close();
-            fs.Close();
+        //    Encoding utf16 = Encoding.GetEncoding(1254);
+        //    byte[] output = utf16.GetBytes(stOutput);
+        //    FileStream fs = new FileStream(filename, FileMode.Create);
+        //    BinaryWriter bw = new BinaryWriter(fs);
+        //    bw.Write(output, 0, output.Length);
+        //    bw.Flush();
+        //    bw.Close();
+        //    fs.Close();
             
-        }
+        //}
 
 
 
@@ -273,121 +273,65 @@ namespace TooLearnOfficial
         private void btn_csv_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "CSV (*.csv)|*.csv";
+            sfd.Filter = "CSV files (*.csv)|*.csv";
             sfd.FileName = "myclasslist.csv";
             //sfd.Filter = "Excel Document (*.xls)|*.xls";
             //sfd.FileName = "myclasslist.xls";
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                ToExcel(bunifuCustomDataGrid1, sfd.FileName);
+                writeCSV(bunifuCustomDataGrid1, sfd.FileName);
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            //saveFileDialog1.InitialDirectory = "Downloads";
-            //saveFileDialog1.Title = "Save as Excel File";
-            //saveFileDialog1.FileName = "";
-            //saveFileDialog1.Filter = "CSV|*csv";
-            //if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
-            //{
-            //    Microsoft.Office.Interop.Excel.Application ExcelApp = new Microsoft.Office.Interop.Excel.Application();
-            //    ExcelApp.Application.Workbooks.Add(Type.Missing);
-
-            //    ExcelApp.Columns.ColumnWidth = 20;
-
-            //    for (int i = 1; i < bunifuCustomDataGrid1.Columns.Count + 1; i++)
-            //    {
-            //        ExcelApp.Cells[1, i] = bunifuCustomDataGrid1.Columns[i - 1].HeaderText;
-            //    }
-            //    for (int i = 0; i < bunifuCustomDataGrid1.Rows.Count; i++)
-            //    {
-            //        for (int j = 0; j < bunifuCustomDataGrid1.Columns.Count; j++)
-            //        {
-            //            ExcelApp.Cells[i + 2, j + i] = bunifuCustomDataGrid1.Rows[i].Cells[j].Value.ToString();
-            //        }
-            //    }
-            //    ExcelApp.ActiveWorkbook.SaveCopyAs(saveFileDialog1.FileName.ToString());
-            //    ExcelApp.ActiveWorkbook.Saved = true;
-            //    ExcelApp.Quit();
-         //   }
         }
-
-
-
-
-
-
-        private void btn_csv_upload_Click(object sender, EventArgs e)
-        {
-            openFileDialog1.ShowDialog();
-        }
-
-        private void BindDataCSV(string filePath)
-        {
-            DataTable dt = new DataTable();
-            string[] lines = System.IO.File.ReadAllLines(filePath);
-            if(lines.Length > 0)
+            public void writeCSV(DataGridView gridIn, string outputFile)
             {
-                //first line to create header
-                string firstline = lines[0];
-                string[] headerLabels = firstline.Split(',');
-                foreach(string headerWord in headerLabels)
+                //test to see if the DataGridView has any rows
+                if (gridIn.RowCount > 0)
                 {
-                    dt.Columns.Add(new DataColumn(headerWord));
-                }
-                //for data
-                for(int r = 1; r < lines.Length; r++)
-                {
-                    string[] dataWords = lines[r].Split(',');
-                    DataRow dr = dt.NewRow();
-                    int columnIndex = 0;
-                    foreach(string headerWord in headerLabels)
+                    string value = "";
+                    DataGridViewRow dr = new DataGridViewRow();
+                    StreamWriter swOut = new StreamWriter(outputFile);
+
+                    //write header rows to csv
+                    for (int i = 0; i <= gridIn.Columns.Count - 1; i++)
                     {
-                        dr[headerWord] = dataWords[columnIndex++];
+                        if (i > 0)
+                        {
+                            swOut.Write(",");
+                        }
+                        swOut.Write(gridIn.Columns[i].HeaderText);
                     }
-                    dt.Rows.Add(dr);
+
+                    swOut.WriteLine();
+
+                    //write DataGridView rows to csv
+                    for (int j = 0; j <= gridIn.Rows.Count - 1; j++)
+                    {
+                        if (j > 0)
+                        {
+                            swOut.WriteLine();
+                        }
+
+                        dr = gridIn.Rows[j];
+
+                        for (int i = 0; i <= gridIn.Columns.Count - 1; i++)
+                        {
+                            if (i > 0)
+                            {
+                                swOut.Write(",");
+                            }
+
+                            value = dr.Cells[i].Value.ToString();
+                            //replace comma's with spaces
+                            value = value.Replace(',', ' ');
+                            //replace embedded newlines with spaces
+                            value = value.Replace(Environment.NewLine, " ");
+
+                            swOut.Write(value);
+                        }
+                    }
+                    swOut.Close();
                 }
-            }
-            if(dt.Rows.Count > 0)
-            {
-                bunifuCustomDataGrid1.DataSource = dt;
-            }
-            
-        }
-
-        private void btn_chooseFile_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            if(openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                this.tb_Path.Text = openFileDialog.FileName;
-            }
-        }
-
-        private void btn_loadFile_Click(object sender, EventArgs e)
-        {
-            string PathConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + tb_Path.Text + ";Extended Properties=\"Excel 8.0;HDR=Yes;\";";
-            OleDbConnection conn = new OleDbConnection(PathConn);
-
-            OleDbDataAdapter myDataAdapter = new OleDbDataAdapter("Select * from [" + tb_sheet.Text + "$]", conn);
-            DataTable dt = new DataTable();
-
-            myDataAdapter.Fill(dt);
-
-            bunifuCustomDataGrid1.DataSource = dt;
-        }
-    }
+            }       
+     } 
 }
