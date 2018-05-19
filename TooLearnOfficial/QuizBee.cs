@@ -2601,6 +2601,80 @@ namespace TooLearnOfficial
 
 }
 
+        private void btn_csv_Click(object sender, EventArgs e)
+        {
+            //declare new SaveFileDialog + set it's initial properties 
+
+            {
+                SaveFileDialog sfd = new SaveFileDialog
+                {
+                    Title = "Choose file to save to",
+                   // FileName = "",
+                    Filter = "CSV (*.csv)|*.csv",
+                    FilterIndex = 0,
+                    InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+                };
+
+                //show the dialog + display the results in a msgbox unless cancelled 
+
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+
+                    string[] headers = MultipleChoiceLV.Columns
+                               .OfType<ColumnHeader>()
+                               .Select(header => header.Text.Trim())
+                               .ToArray();
+
+                    string[][] MCitems = MultipleChoiceLV.Items
+                                .OfType<ListViewItem>()
+                                .Select(lvi => lvi.SubItems
+                                    .OfType<ListViewItem.ListViewSubItem>()
+                                    .Select(si => si.Text).ToArray()).ToArray();
+
+                    string table = string.Join(",", headers) + ",Game Type" + Environment.NewLine;
+                 
+
+
+
+                    foreach (string[] a in MCitems)
+                    {
+                       
+                       // table += string.Join(",", a) + Environment.NewLine;
+                        table += string.Join(",", a)+",MC" + Environment.NewLine;
+                    }
+
+       
+
+                    int SA = ShortAnswerLV.Items.Count;
+                  
+                    for (int i = 0; i < SA; i++)
+                    {
+                        ListViewItem exams = ShortAnswerLV.Items[i];
+                        table += exams.SubItems[0].Text + "," + "," + "," + "," + "," + exams.SubItems[1].Text + "," + exams.SubItems[2].Text + "," + exams.SubItems[3].Text + "," + exams.SubItems[4].Text + "," +"SA"+ Environment.NewLine;
+
+                    }
+
+                    int TF = TrueOrFalseLV.Items.Count;
+                  
+                    for (int i = 0; i < TF; i++)
+                    {
+                        ListViewItem exams = TrueOrFalseLV.Items[i];
+                        table += exams.SubItems[0].Text + "," + "," + "," + "," + "," + exams.SubItems[1].Text + "," + exams.SubItems[2].Text + "," + exams.SubItems[3].Text + "," + exams.SubItems[4].Text + "," + "TF" + Environment.NewLine;
+
+                    }
+
+
+
+                    table = table.TrimEnd('\r', '\n');
+                    System.IO.File.WriteAllText(sfd.FileName, table);
+                }
+
+           
+              
+
+            }
+        }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
         {

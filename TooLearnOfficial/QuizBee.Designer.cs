@@ -165,6 +165,7 @@
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton8 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton10 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_csv = new Bunifu.Framework.UI.BunifuImageButton();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -181,6 +182,7 @@
             this.MultipleChoice.SuspendLayout();
             this.shortAnswer.SuspendLayout();
             this.trueORfalse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_csv)).BeginInit();
             this.SuspendLayout();
             // 
             // header
@@ -1900,12 +1902,27 @@
             this.bunifuFlatButton10.Visible = false;
             this.bunifuFlatButton10.Click += new System.EventHandler(this.bunifuFlatButton10_Click);
             // 
+            // btn_csv
+            // 
+            this.btn_csv.BackColor = System.Drawing.Color.Transparent;
+            this.btn_csv.Image = global::TooLearnOfficial.Properties.Resources.Export_CSV_40px;
+            this.btn_csv.ImageActive = null;
+            this.btn_csv.Location = new System.Drawing.Point(871, 615);
+            this.btn_csv.Name = "btn_csv";
+            this.btn_csv.Size = new System.Drawing.Size(43, 33);
+            this.btn_csv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_csv.TabIndex = 208;
+            this.btn_csv.TabStop = false;
+            this.btn_csv.Zoom = 5;
+            this.btn_csv.Click += new System.EventHandler(this.btn_csv_Click);
+            // 
             // QuizBee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(1045, 660);
+            this.Controls.Add(this.btn_csv);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.QuizFormat);
@@ -1920,12 +1937,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
-            this.Controls.Add(this.MultipleChoiceLV);
-            this.Controls.Add(this.ShortAnswerLV);
-            this.Controls.Add(this.TrueOrFalseLV);
             this.Controls.Add(this.MultipleChoice);
             this.Controls.Add(this.shortAnswer);
             this.Controls.Add(this.trueORfalse);
+            this.Controls.Add(this.MultipleChoiceLV);
+            this.Controls.Add(this.ShortAnswerLV);
+            this.Controls.Add(this.TrueOrFalseLV);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1954,6 +1971,7 @@
             this.shortAnswer.PerformLayout();
             this.trueORfalse.ResumeLayout(false);
             this.trueORfalse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_csv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2096,5 +2114,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuImageButton btn_csv;
     }
 }
