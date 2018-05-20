@@ -2603,19 +2603,19 @@ namespace TooLearnOfficial
 
         private void btn_csv_Click(object sender, EventArgs e)
         {
-            //declare new SaveFileDialog + set it's initial properties 
+          
 
-            {
+           try {
                 SaveFileDialog sfd = new SaveFileDialog
                 {
-                    Title = "Choose file to save to",
-                   // FileName = "",
+                    Title = "Toolearn-CSV",
+                   // FileName = "",                  
                     Filter = "CSV (*.csv)|*.csv",
                     FilterIndex = 0,
                     InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
                 };
 
-                //show the dialog + display the results in a msgbox unless cancelled 
+              
 
 
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -2626,32 +2626,34 @@ namespace TooLearnOfficial
                                .Select(header => header.Text.Trim())
                                .ToArray();
 
-                    string[][] MCitems = MultipleChoiceLV.Items
-                                .OfType<ListViewItem>()
-                                .Select(lvi => lvi.SubItems
-                                    .OfType<ListViewItem.ListViewSubItem>()
-                                    .Select(si => si.Text).ToArray()).ToArray();
+                   
 
                     string table = string.Join(",", headers) + ",Game Type" + Environment.NewLine;
-                 
+
+
+             
 
 
 
-                    foreach (string[] a in MCitems)
+                    int MC = MultipleChoiceLV.Items.Count;
+
+                    for (int i = 0; i < MC; i++)
                     {
-                       
-                       // table += string.Join(",", a) + Environment.NewLine;
-                        table += string.Join(",", a)+",MC" + Environment.NewLine;
+                        ListViewItem exams = MultipleChoiceLV.Items[i];
+
+                        table += '"' + exams.SubItems[0].Text + '"' + "," +exams.SubItems[1].Text + '"' + "," + exams.SubItems[2].Text + '"' + "," + exams.SubItems[3].Text + '"' + "," + exams.SubItems[4].Text + '"' + "," + '"' +  exams.SubItems[5].Text + '"'  + "," + exams.SubItems[6].Text + '"' + "," + exams.SubItems[7].Text + '"' + "," + exams.SubItems[8].Text + '"' + "," + "MC" + Environment.NewLine;
+
                     }
 
-       
 
-                    int SA = ShortAnswerLV.Items.Count;
+
+
+                        int SA = ShortAnswerLV.Items.Count;
                   
                     for (int i = 0; i < SA; i++)
                     {
                         ListViewItem exams = ShortAnswerLV.Items[i];
-                        table += exams.SubItems[0].Text + "," + "," + "," + "," + "," + exams.SubItems[1].Text + "," + exams.SubItems[2].Text + "," + exams.SubItems[3].Text + "," + exams.SubItems[4].Text + "," +"SA"+ Environment.NewLine;
+                        table += '"' + exams.SubItems[0].Text + '"' + "," + "," + "," + "," + "," + '"' + exams.SubItems[1].Text + '"' + "," + '"' + exams.SubItems[2].Text + '"' + "," + '"' + exams.SubItems[3].Text + '"' + "," + '"' + exams.SubItems[4].Text + '"' + "," + "SA" + Environment.NewLine;
 
                     }
 
@@ -2660,13 +2662,14 @@ namespace TooLearnOfficial
                     for (int i = 0; i < TF; i++)
                     {
                         ListViewItem exams = TrueOrFalseLV.Items[i];
-                        table += exams.SubItems[0].Text + "," + "," + "," + "," + "," + exams.SubItems[1].Text + "," + exams.SubItems[2].Text + "," + exams.SubItems[3].Text + "," + exams.SubItems[4].Text + "," + "TF" + Environment.NewLine;
+                        table += '"'+ exams.SubItems[0].Text + '"' + "," + "," + "," + "," + "," + '"' + exams.SubItems[1].Text + '"' + "," + '"' +exams.SubItems[2].Text+ '"' + "," + '"' + exams.SubItems[3].Text + '"' + "," + '"' +exams.SubItems[4].Text + '"' + "," + "TF" + Environment.NewLine;
 
                     }
 
 
 
                     table = table.TrimEnd('\r', '\n');
+                    
                     System.IO.File.WriteAllText(sfd.FileName, table);
                 }
 
@@ -2674,6 +2677,53 @@ namespace TooLearnOfficial
               
 
             }
+
+
+            catch(Exception ex)
+            {
+                Dialogue.Show(ex.Message,"","Ok","Cancel");
+            }
+        }
+
+        private void bunifuImageButton5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog CSV = new OpenFileDialog();
+                try
+                {
+                CSV.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                CSV.DefaultExt = "csv";
+                CSV.Title = "Toolearn Import CSV";
+                CSV.Filter = "CSV (*.csv)|*.csv";
+                    if (CSV.ShowDialog() == DialogResult.OK)
+                    {
+                        FileStream FS;
+                        FS = new FileStream(CSV.FileName, FileMode.Open);
+                        StreamReader SR = new StreamReader(FS, System.Text.Encoding.Default);
+                        do
+                        {
+                            string ins = SR.ReadLine();
+                            string[] EXTRACT = ins.Split(',');
+
+                            ListViewItem lvi = new ListViewItem(EXTRACT[0]);
+
+                            //lvi.SubItems.Add(ins);
+
+                            for (int i = 1; i < EXTRACT.Count(); i++)
+                            {
+                                lvi.SubItems.Add(EXTRACT[i]);
+                            }
+
+                            MultipleChoiceLV.Items.Add(lvi);
+                        
+                    } while (true);
+                    //SR.Close();
+                }
+               
+            }
+                catch (Exception errorMsg)
+                {
+                    MessageBox.Show(errorMsg.Message, "Error reading a file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
 
         private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
