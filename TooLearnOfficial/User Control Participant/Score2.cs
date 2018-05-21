@@ -121,12 +121,12 @@ namespace TooLearnOfficial.User_Control_Participant
 
             if (grade <= 74)
             {
-                remarks = "Failed: Need to Work Hard!";
+                remarks = " Need to Work Hard!";
             }
 
             else
             {
-                remarks = "Passed: Keep It Up!";
+                remarks = " Keep It Up!";
             }
 
             return remarks;
@@ -148,9 +148,11 @@ namespace TooLearnOfficial.User_Control_Participant
 
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select c.class_name,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage'  from quizzes q, participant p, scoreRecords s, classrooms c where p.participant_id = s.participant_id AND c.class_id=s.class_id AND s.quiz_id = q.quiz_id AND c.facilitator_id = '" + ID + "' AND s.participant_id= '" + Program.par_id + "' AND group_id is null group by s.group_id, s.quiz_score, q.total_score, c.class_name ", con);
-                                                                  
+                   // SqlDataAdapter sda = new SqlDataAdapter("select c.class_name,sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage'  from quizzes q, participant p, scoreRecords s, classrooms c where p.participant_id = s.participant_id AND c.class_id=s.class_id AND s.quiz_id = q.quiz_id AND c.facilitator_id = '" + ID + "' AND s.participant_id= '" + Program.par_id + "' AND group_id is null group by s.group_id, s.quiz_score, q.total_score, c.class_name ", con);
 
+                    SqlDataAdapter sda = new SqlDataAdapter(" select c.class_name,sum(s.quiz_score) / sum(q.total_score) * 100 AS 'Percentage'  from quizzes q, participant p, scoreRecords s, classrooms c where p.participant_id = s.participant_id AND c.class_id = s.class_id AND s.quiz_id = q.quiz_id AND c.facilitator_id = '" + ID + "' AND s.participant_id = '" + Program.par_id + "' AND s.group_id is null group by c.class_name", con);
+
+                   
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
@@ -192,9 +194,12 @@ namespace TooLearnOfficial.User_Control_Participant
                     string ID = data.Rows[0][0].ToString();
 
 
-                  //  select group_id from groups where class_id = (select class_id from classlist where facilitator_id = (select facilitator_id from facilitator where name = 'Aileen Rillon')AND participant_id = '57' AND class_id IN(SELECT class_id from groups))
+                    //  select group_id from groups where class_id = (select class_id from classlist where facilitator_id = (select facilitator_id from facilitator where name = 'Aileen Rillon')AND participant_id = '57' AND class_id IN(SELECT class_id from groups))
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q, participant p where g.group_id = sc.group_id AND sc.group_id = '" + ID + "' AND q.quiz_id = sc.quiz_id AND p.participant_id=sc.participant_id AND sc.participant_id='"+Program.user_id+"' group by g.group_name, sc.quiz_score, q.total_score  ", con);
+
+                   // select g.group_name, sum(sc.quiz_score) / sum(q.total_score) * 100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q, participant p where g.group_id = sc.group_id AND sc.group_id = '51' AND q.quiz_id = sc.quiz_id  group by g.group_name
+
+                        SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q, participant p where g.group_id = sc.group_id AND sc.group_id = '" + ID + "' AND q.quiz_id = sc.quiz_id AND p.participant_id=sc.participant_id AND sc.participant_id='"+Program.user_id+"' group by g.group_name, sc.quiz_score, q.total_score  ", con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
