@@ -751,24 +751,27 @@ namespace TooLearnOfficial
                     {
 
 
-                      //  bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[0].Value
+                        //  bunifuCustomDataGrid1.Rows[bunifuCustomDataGrid1.Rows.Count - 1].Cells[0].Value
 
-                    //    SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ", con);
-                      //  SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + data.Rows[i][0].ToString() + "' ", con);
-                      //  adapt.Fill(participants);
+                        //    SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ", con);
+                        //  SqlDataAdapter adapt = new SqlDataAdapter("select participant_id from participant where fullname= '" + data.Rows[i][0].ToString() + "' ", con);
+                        //  adapt.Fill(participants);
                         // string id = participants.Rows[0][0].ToString();
 
-
-                        string querys = "select participant_id from participant where fullname= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ";
+                        string name = data.Rows[i][0].ToString();
+                        string score = data.Rows[i][1].ToString();
+                        string querys = "select participant_id from participant where fullname= '" + name + "' ";
                         SqlCommand cmd = new SqlCommand(querys, con);
                         string getValue = cmd.ExecuteScalar().ToString();
+                       
 
 
-                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + getValue + "', '" + ID + "')";
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,participant_id,class_id) VALUES ('" + score + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + getValue + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sda.SelectCommand.ExecuteNonQuery();
 
                        getValue = "";
+                        score = "";
 
 
 
@@ -784,20 +787,26 @@ namespace TooLearnOfficial
                     for (int i = 0; i < data.Rows.Count; i++)
                     {
 
-                      //  SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ", con);
-                       // SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + data.Rows[i][0].ToString() + "' ", con);
-                      //  adapt.Fill(participants);
-                      //  string id = participants.Rows[0][0].ToString();
+                        //  SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ", con);
+                        // SqlDataAdapter adapt = new SqlDataAdapter("select group_id from groups where group_name= '" + data.Rows[i][0].ToString() + "' ", con);
+                        //  adapt.Fill(participants);
+                        //  string id = participants.Rows[0][0].ToString();
 
-                        string querys = "select group_id from groups where group_name= '" + bunifuCustomDataGrid1.Rows[i].Cells[0].Value.ToString() + "' ";
+
+                        string name = data.Rows[i][0].ToString();
+                        string score = data.Rows[i][1].ToString();
+
+                        string querys = "select group_id from groups where group_name= '" + name + "' ";
                         SqlCommand cmd = new SqlCommand(querys, con);
                         string getValue = cmd.ExecuteScalar().ToString();
 
-                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + data.Rows[i][1].ToString() + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + getValue + "', '" + ID + "')";
+                        String query = "INSERT INTO scoreRecords(quiz_score,date_time,quiz_id,group_id,class_id) VALUES ('" + score + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + QuizID + "','" + getValue + "', '" + ID + "')";
                         SqlDataAdapter sda = new SqlDataAdapter(query, con);
                         int n = sda.SelectCommand.ExecuteNonQuery();
 
                         getValue = "";
+                        score = "";
+
 
                     }
                     con.Close();
