@@ -397,6 +397,7 @@
             this.Controls.Add(this.DataGridViewGrade);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewScoreRecordGroup2";
             this.Text = "ViewScoreRecordGroup2";
             this.Load += new System.EventHandler(this.ViewScoreRecordGroup2_Load);

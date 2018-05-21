@@ -216,7 +216,7 @@ namespace TooLearnOfficial
             char[] letters = "q1we2rty3uio4pas5dfgh6jklz7x8cv9bnm0".ToCharArray();
             Random r = new Random();
             string randomString = "";
-            for (int i = 0; i < 9; i++) //i < # depends how long the password
+            for (int i = 0; i < 5; i++) //i < # depends how long the password
             {
                 randomString += letters[r.Next(0, 34)].ToString();
             }

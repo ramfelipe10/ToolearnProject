@@ -226,7 +226,7 @@
             this.buttonManual.IconVisible = true;
             this.buttonManual.IconZoom = 70D;
             this.buttonManual.IsTab = true;
-            this.buttonManual.Location = new System.Drawing.Point(0, 360);
+            this.buttonManual.Location = new System.Drawing.Point(0, 321);
             this.buttonManual.Name = "buttonManual";
             this.buttonManual.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonManual.OnHovercolor = System.Drawing.Color.DimGray;
@@ -379,7 +379,7 @@
             this.buttonAboutSystem.IconVisible = true;
             this.buttonAboutSystem.IconZoom = 70D;
             this.buttonAboutSystem.IsTab = false;
-            this.buttonAboutSystem.Location = new System.Drawing.Point(0, 407);
+            this.buttonAboutSystem.Location = new System.Drawing.Point(0, 368);
             this.buttonAboutSystem.Name = "buttonAboutSystem";
             this.buttonAboutSystem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonAboutSystem.OnHovercolor = System.Drawing.Color.DimGray;
@@ -418,7 +418,7 @@
             this.buttonSettings.IconVisible = true;
             this.buttonSettings.IconZoom = 70D;
             this.buttonSettings.IsTab = false;
-            this.buttonSettings.Location = new System.Drawing.Point(0, 313);
+            this.buttonSettings.Location = new System.Drawing.Point(0, 478);
             this.buttonSettings.Name = "buttonSettings";
             this.buttonSettings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonSettings.OnHovercolor = System.Drawing.Color.DimGray;
@@ -430,6 +430,7 @@
             this.buttonSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSettings.Textcolor = System.Drawing.Color.White;
             this.buttonSettings.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.buttonSettings.Visible = false;
             this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonJoinGame

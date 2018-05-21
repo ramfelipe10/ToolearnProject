@@ -165,28 +165,47 @@ namespace TooLearnOfficial
             /*           GROUP                          */
 
 
-            SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + PG + "') ", con);
+           /* SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + PG + "') ", con);
+            DataTable data1 = new DataTable();
+            sed.Fill(data1);    
+            string ID = data1.Rows[0][0].ToString();*/
+
+
+
+            SqlDataAdapter sed = new SqlDataAdapter("select group_id from grouplist where participant_id='" + Program.par_id + "' ", con);
             DataTable data1 = new DataTable();
             sed.Fill(data1);
-            string ID = data1.Rows[0][0].ToString();
-
-
-
-            SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
-            DataTable dt1 = new DataTable();
-            sda.Fill(dt1);
-            BindingSource bt = new BindingSource();
-            bt.DataSource = dt1;
-            int aa;
-            if (dt1.Rows.Count != 0)
+           
+            if (data1.Rows.Count != 0)
             {
-                aa = Convert.ToInt32(dt1.Rows[0][0]);
+                string ID = data1.Rows[0][0].ToString();
+
+
+                SqlDataAdapter seds = new SqlDataAdapter("select class_id from classrooms where class_name= '" + PG + "' ", con);
+                DataTable data1s = new DataTable();
+                seds.Fill(data1s);             
+             
+
+                string IDs = data1s.Rows[0][0].ToString();
+
+                // SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+                SqlDataAdapter sda = new SqlDataAdapter("select sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id AND sc.class_id='" + IDs + "' group by g.group_name", con);
+                DataTable dt1 = new DataTable();
+                sda.Fill(dt1);
+                BindingSource bt = new BindingSource();
+                bt.DataSource = dt1;
+                int aa;
+
+                if (dt1.Rows.Count != 0)
+                {
+                    aa = Convert.ToInt32(dt1.Rows[0][0]);
+                }
+                else
+                {
+                    aa = 0;
+                }
+                bunifuCircleProgressbar2.Value = aa;
             }
-            else
-            {
-                aa = 0;
-            }
-            bunifuCircleProgressbar2.Value = aa;
 
         }
 
