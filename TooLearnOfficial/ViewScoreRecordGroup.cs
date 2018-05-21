@@ -46,7 +46,7 @@ namespace TooLearnOfficial
             name.Fill(dt);
             string pid = dt.Rows[0][0].ToString();
 
-            SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
+           SqlDataAdapter classname = new SqlDataAdapter("select class_id from classrooms where class_name='" + CR + "' ", con);
             DataTable data = new DataTable();
             classname.Fill(data);
             string cid = data.Rows[0][0].ToString();
@@ -54,9 +54,9 @@ namespace TooLearnOfficial
             SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + CR + "') ", con);
             DataTable data1 = new DataTable();
             sed.Fill(data1);
-            string ID = data1.Rows[0][0].ToString();
+            string ID = data1.Rows[0][0].ToString(); 
 
-            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',sc.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from groups g, scoreRecords sc, quizzes q where q.quiz_id = sc.quiz_id AND  g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id  ", con);
+            adaptersd = new SqlDataAdapter("select q.quiz_title AS 'Quiz Title',q.date_created AS 'Date Created',sc.quiz_score AS 'Score',q.total_score AS 'Quiz Total Points' from groups g, scoreRecords sc, quizzes q where q.quiz_id = sc.quiz_id AND  g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id AND sc.group_id='"+ pid +"' ", con);
             datasd = new DataTable();
             adaptersd.Fill(datasd);
             BindingSource bsa = new BindingSource();
@@ -157,7 +157,7 @@ namespace TooLearnOfficial
             labelFailed.Text = b.ToString();
 
             //Rank Query
-            SqlDataAdapter rank = new SqlDataAdapter("select p.fullname, sr.quiz_score, DENSE_RANK() over(order by sr.quiz_score desc) as 'Rank' from participant p, scoreRecords sr where sr.class_id = '" + cid + "' and p.participant_id = sr.participant_id AND sr.group_id = '" + ID + "' ", con);
+            SqlDataAdapter rank = new SqlDataAdapter("select p.fullname, sr.quiz_score, DENSE_RANK() over(order by sr.quiz_score desc) as 'Rank' from participant p, scoreRecords sr where sr.class_id = '" + cid + "' and p.participant_id = sr.participant_id AND sr.group_id = '" + pid + "' ", con);
             DataTable datar = new DataTable();
             rank.Fill(datar);
             for (int i = 0; i < datar.Rows.Count; i++)

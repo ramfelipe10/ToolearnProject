@@ -192,13 +192,21 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
                 else
                 {
-                    SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + Class + "') ", con);
+                    /* SqlDataAdapter sed = new SqlDataAdapter("select group_id from groups where class_id=(select class_id from classrooms where class_name= '" + Class + "') ", con);
+                     DataTable data = new DataTable();
+                     sed.Fill(data);
+                     string ID = data.Rows[0][0].ToString();*/
+
+                    SqlDataAdapter sed = new SqlDataAdapter("select class_id from classrooms where class_name= '" + Class + "' ", con);
                     DataTable data = new DataTable();
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                  
-                    SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+
+                   // SqlDataAdapter sda = new SqlDataAdapter("select g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.group_id = '" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name, sc.quiz_score, q.total_score ", con);
+
+                    SqlDataAdapter sda = new SqlDataAdapter("select DISTINCT g.group_name, sum(sc.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from groups g, scoreRecords sc, quizzes q where sc.class_id='" + ID + "' AND g.group_id = sc.group_id AND q.quiz_id = sc.quiz_id group by g.group_name", con);
+
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     if (dt.Rows.Count == 0)
