@@ -268,7 +268,7 @@ namespace TooLearnOfficial
 
                         ThreadHelper.SetText(this, label9, compute.ToString() + "% You Need Improvement, Study and Play!");
                     }
-                    else if(compute == Convert.ToInt32("100"))
+                    else if(compute >= Convert.ToInt32("100"))
                     {
                         
                         ThreadHelper.SetText(this, label9, compute.ToString() + "% Excellent!");

@@ -2641,7 +2641,7 @@ namespace TooLearnOfficial
                     {
                         ListViewItem exams = MultipleChoiceLV.Items[i];
 
-                        table += '"' + exams.SubItems[0].Text + '"' + "," +exams.SubItems[1].Text + '"' + "," + exams.SubItems[2].Text + '"' + "," + exams.SubItems[3].Text + '"' + "," + exams.SubItems[4].Text + '"' + "," + '"' +  exams.SubItems[5].Text + '"'  + "," + exams.SubItems[6].Text + '"' + "," + exams.SubItems[7].Text + '"' + "," + exams.SubItems[8].Text + '"' + "," + "MC" + Environment.NewLine;
+                        table +=  exams.SubItems[0].Text  + "," +exams.SubItems[1].Text  + "," + exams.SubItems[2].Text  + "," + exams.SubItems[3].Text  + "," + exams.SubItems[4].Text  + "," + '"' +  exams.SubItems[5].Text + '"'  + "," + exams.SubItems[6].Text + "," + exams.SubItems[7].Text  + "," + exams.SubItems[8].Text  + "," + "MC" + Environment.NewLine;
 
                     }
 
