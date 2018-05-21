@@ -130,12 +130,12 @@ namespace TooLearnOfficial.User_Control_Facilitator
 
             if (grade <= 74)
             {
-                remarks = "Failed: Need to Work Hard!";
+                remarks = "Need to Work Hard!";
             }
 
             else
             {
-                remarks = "Passed: Keep It Up!";
+                remarks = "Keep It Up!";
             }
 
             return remarks;
@@ -153,8 +153,9 @@ namespace TooLearnOfficial.User_Control_Facilitator
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select p.fullname, sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q,participant p,scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname,s.group_id,s.quiz_score,q.total_score ", con);
-
+                    //SqlDataAdapter sda = new SqlDataAdapter("select p.fullname, sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q,participant p,scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname,s.group_id,s.quiz_score,q.total_score ", con);
+                    //SqlDataAdapter sda = new SqlDataAdapter("select Distinct( p.fullname )from participant p, scoreRecords s where p.participant_id=s.participant_id AND class_id= '29' AND group_id is null", con);
+                    SqlDataAdapter sda = new SqlDataAdapter("select Distinct( p.fullname ), sum(s.quiz_score)/sum(q.total_score)*100 AS 'Percentage' from quizzes q, participant p, scoreRecords s where p.participant_id=s.participant_id AND s.quiz_id=q.quiz_id AND class_id= '" + ID + "' AND group_id is null group by p.fullname", con);
 
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
