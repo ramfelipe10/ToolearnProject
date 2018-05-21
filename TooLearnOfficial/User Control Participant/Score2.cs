@@ -193,6 +193,8 @@ namespace TooLearnOfficial.User_Control_Participant
                     sed.Fill(data);
                     string ID = data.Rows[0][0].ToString();
 
+                    int count = data.Rows.Count;
+
 
                     //  select group_id from groups where class_id = (select class_id from classlist where facilitator_id = (select facilitator_id from facilitator where name = 'Aileen Rillon')AND participant_id = '57' AND class_id IN(SELECT class_id from groups))
 
