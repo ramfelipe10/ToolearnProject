@@ -39,15 +39,27 @@ namespace TooLearnOfficial
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            //UpdateSR usr = new UpdateSR();
+            //usr.Show();
+            //try
+            //{
+            //    cmdbl = new SqlCommandBuilder(adap);
+            //    adap.Update(ds, "");
+            //}
+            //catch(Exception ex)
+            //{
+            //    Dialogue.Show(" ' " + ex.Message.ToString() + "' ", "", "Ok");
+            //}
+
             //builder = new SqlCommandBuilder(adaptersd);
             //adaptersd.Update(datasd);
             //Dialogue.Show("Sucessfully Updated!", "", "Ok", "Cancel");
-            con.Open();
-            String query = "UPDATE scoreRecords set quiz_score='" + DataGridViewGrade.Rows[0].Cells[2].Value.ToString() + "' from scoreRecords s, participant p, facilitator f where s.score_id and p.participant_id=s.participant_id and p.participant_id='" + Program.par_id+ "' and  f.facilitator_id=sc.facilitator_id and facilitator_id= '"+Program.user_id+"' ";
-            SqlDataAdapter sda = new SqlDataAdapter(query, con);
-            sda.SelectCommand.ExecuteNonQuery();
+            //con.Open();
+            //String query = "UPDATE scoreRecords set quiz_score='" + DataGridViewGrade.Rows[0].Cells[2].Value.ToString() + "' from scoreRecords s, participant p, facilitator f where s.score_id and p.participant_id=s.participant_id and p.participant_id='" + Program.par_id+ "' and  f.facilitator_id=sc.facilitator_id and facilitator_id= '"+Program.user_id+"' ";
+            //SqlDataAdapter sda = new SqlDataAdapter(query, con);
+            //sda.SelectCommand.ExecuteNonQuery();
 
-            con.Close();
+            //con.Close();
 
         }
 
